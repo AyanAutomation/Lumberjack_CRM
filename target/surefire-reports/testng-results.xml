@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-09T14:27:14 IST" name="Surefire suite" finished-at="2025-12-09T14:27:24 IST" duration-ms="9959">
+    <groups>
+    </groups>
+    <test started-at="2025-12-09T14:27:14 IST" name="Surefire test" finished-at="2025-12-09T14:27:24 IST" duration-ms="9959">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Login">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@143640d5]" started-at="2025-12-09T14:27:14 IST" name="setup" finished-at="2025-12-09T14:27:16 IST" duration-ms="2410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="login()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@143640d5]" started-at="2025-12-09T14:27:16 IST" name="login" finished-at="2025-12-09T14:27:23 IST" duration-ms="7031" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@143640d5]" started-at="2025-12-09T14:27:23 IST" name="Kill" finished-at="2025-12-09T14:27:24 IST" duration-ms="423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Login -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
