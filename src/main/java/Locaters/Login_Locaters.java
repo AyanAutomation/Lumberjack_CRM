@@ -14,7 +14,7 @@ public class Login_Locaters extends Repeat{
 	
 	
 	
-	@FindBy(name="email")
+	@FindBy(xpath="//*[@name='email']")
 	private WebElement  id_field;
 	@FindBy(name="password")
 	private WebElement  password_field;

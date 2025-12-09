@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -49,6 +50,9 @@ public class Repeat {
 			 JavascriptExecutor js = (JavascriptExecutor)d;
 			 js.executeScript("arguments[0].scrollIntoView(true);", element);}
 	
-	
+    public void Feild_clear(WebElement element){
+		 
+    	element.sendKeys(Keys.CONTROL,"a");
+    	element.sendKeys(Keys.DELETE);}
 	
 }

@@ -1,25 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-09T14:25:54 IST" name="Default suite" finished-at="2025-12-09T14:26:06 IST" duration-ms="11186">
+  <suite started-at="2025-12-09T16:43:37 IST" name="Default suite" finished-at="2025-12-09T16:44:23 IST" duration-ms="45622">
     <groups>
     </groups>
-    <test started-at="2025-12-09T14:25:54 IST" name="Default test" finished-at="2025-12-09T14:26:06 IST" duration-ms="11186">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@7dcf94f8]" started-at="2025-12-09T14:25:55 IST" name="setup" finished-at="2025-12-09T14:25:58 IST" duration-ms="3085" status="PASS">
+    <test started-at="2025-12-09T16:43:37 IST" name="Default test" finished-at="2025-12-09T16:44:23 IST" duration-ms="45622">
+      <class name="Negative_Testcases.Login_negative_testcases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:43:37 IST" name="setup" finished-at="2025-12-09T16:43:40 IST" duration-ms="2677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@7dcf94f8]" started-at="2025-12-09T14:25:58 IST" name="login" finished-at="2025-12-09T14:26:05 IST" duration-ms="7684" status="PASS">
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:43:40 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-09T16:43:53 IST" duration-ms="13259" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=ayan.sengupta@codeclouds.com, pass=22355}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@7dcf94f8]" started-at="2025-12-09T14:26:05 IST" name="Kill" finished-at="2025-12-09T14:26:06 IST" duration-ms="313" status="PASS">
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:43:53 IST" name="Kill" finished-at="2025-12-09T16:43:54 IST" duration-ms="331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Login -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:43:54 IST" name="setup" finished-at="2025-12-09T16:43:55 IST" duration-ms="1343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:43:55 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-09T16:44:08 IST" duration-ms="12787" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=aknnnb202@bm.com, pass=Pass@123}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:44:08 IST" name="Kill" finished-at="2025-12-09T16:44:08 IST" duration-ms="354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:44:08 IST" name="setup" finished-at="2025-12-09T16:44:10 IST" duration-ms="1596" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:44:10 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-09T16:44:23 IST" duration-ms="12762" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=aknnnb202@bm.com, pass=4455m235}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@3bf7ca37]" started-at="2025-12-09T16:44:23 IST" name="Kill" finished-at="2025-12-09T16:44:23 IST" duration-ms="375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Negative_Testcases.Login_negative_testcases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
