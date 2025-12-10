@@ -3,6 +3,7 @@ package Repeatative_codes;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -54,5 +55,10 @@ public class Repeat {
 		 
     	element.sendKeys(Keys.CONTROL,"a");
     	element.sendKeys(Keys.DELETE);}
+    
+    public List<WebElement> wait_for_nested(WebElement parent, By childLocator){
+        WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
+      return  w.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(parent, childLocator));
+    }
 	
 }

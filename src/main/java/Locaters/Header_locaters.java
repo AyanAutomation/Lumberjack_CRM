@@ -10,11 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import Repeatative_codes.Repeat;
 
-public class Sidemenu_Locaters extends Repeat{
+public class Header_locaters extends Repeat{
 
 
-	@FindBy(xpath="//*[@role='menu']")
-	private WebElement Side_Menu;/*
+	@FindBy(xpath="//header")
+	private WebElement Header;/*
 	@FindBy(xpath="")
 	private WebElement  ; 
 	@FindBy(xpath="")
@@ -99,27 +99,29 @@ public class Sidemenu_Locaters extends Repeat{
 	private WebElement  ; */
 	
 	
-	public Sidemenu_Locaters(WebDriver d){
+	public Header_locaters(WebDriver d){
 	super(d);	
 	PageFactory.initElements(d, this);}
 	
 	
-	public WebElement Side_Menu(){
-	wait_for_theElement(Side_Menu);
-	return Side_Menu;}
-	public List <WebElement> Sidemenu_Options(){
-	Side_Menu();
-	List <WebElement> Sidemenu_Options = Side_Menu().findElements(By.xpath(".//*[@role='menuitem']"));
-	wait_for_theElement(Sidemenu_Options);
-	return Sidemenu_Options;}
-	public List <WebElement> submenu_options(){
-	Side_Menu();
-	List <WebElement> submenu_options = Side_Menu().findElements(By.xpath(".//*[@data-menu-list='true']//*[@role='menuitem']"));
-	wait_for_theElement(submenu_options);
-	return submenu_options;}/*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	public WebElement Header(){
+	wait_for_theElement(Header);
+	return Header;}
+	public List <WebElement> Header_buttons(){
+	Header();
+	List <WebElement> Header_buttons = Header().findElements(By.xpath(".//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'][3]//button"));
+	wait_for_theElement(Header_buttons);
+	return Header_buttons;}
+	public WebElement Header_search(){
+	Header();
+	WebElement Header_search = Header().findElement(By.xpath(".//input"));
+	wait_for_theElement(Header_search);
+	return Header_search;}
+	public WebElement search_dropdown(){
+	Header();
+	WebElement search_dropdown = Header().findElement(By.xpath(".//div[@class='global-search-dropdown']"));
+	wait_for_theElement(search_dropdown);
+	return search_dropdown;} /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}
@@ -201,6 +203,4 @@ public class Sidemenu_Locaters extends Repeat{
 	public WebElement (){
 	wait_for_theElement();
 	return ;}  */
-	
-	
 }

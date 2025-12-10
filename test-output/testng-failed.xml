@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Negative_Testcases.Login_negative_testcases">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
           <include name="setup"/>
+          <include name="Add_case" invocation-numbers="0"/>
           <include name="Kill"/>
-          <include name="login_validation" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Negative_Testcases.Login_negative_testcases -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

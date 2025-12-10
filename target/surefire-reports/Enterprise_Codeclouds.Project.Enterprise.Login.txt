@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Enterprise_Codeclouds.Project.Enterprise.Login
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.99 s -- in Enterprise_Codeclouds.Project.Enterprise.Login

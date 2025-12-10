@@ -21,7 +21,7 @@ import Repeatative_codes.Repeat;
 public class Login_negative_testcases extends Base{
 	
 	
-	@Test(dataProvider="login_datas")
+	@Test(dataProvider="loLogin_negative_testcasesgin_datas")
 	public void login_validation(TreeMap<String,String> val) throws InterruptedException, IOException{
 		
 		Login_Locaters l = new Login_Locaters(d);

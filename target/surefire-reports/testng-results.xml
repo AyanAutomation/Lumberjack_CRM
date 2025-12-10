@@ -1,25 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-09T14:27:14 IST" name="Surefire suite" finished-at="2025-12-09T14:27:24 IST" duration-ms="9959">
+  <suite started-at="2025-12-10T16:42:37 IST" name="Surefire suite" finished-at="2025-12-10T16:43:34 IST" duration-ms="57946">
     <groups>
     </groups>
-    <test started-at="2025-12-09T14:27:14 IST" name="Surefire test" finished-at="2025-12-09T14:27:24 IST" duration-ms="9959">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@143640d5]" started-at="2025-12-09T14:27:14 IST" name="setup" finished-at="2025-12-09T14:27:16 IST" duration-ms="2410" status="PASS">
+    <test started-at="2025-12-10T16:42:37 IST" name="Surefire test" finished-at="2025-12-10T16:43:34 IST" duration-ms="57946">
+      <class name="Negative_Testcases.Login_negative_testcases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:42:37 IST" name="setup" finished-at="2025-12-10T16:42:44 IST" duration-ms="7343" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@143640d5]" started-at="2025-12-09T14:27:16 IST" name="login" finished-at="2025-12-09T14:27:23 IST" duration-ms="7031" status="PASS">
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:42:44 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-10T16:43:02 IST" duration-ms="17553" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=ayan.sengupta@codeclouds.com, pass=22355}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Login@143640d5]" started-at="2025-12-09T14:27:23 IST" name="Kill" finished-at="2025-12-09T14:27:24 IST" duration-ms="423" status="PASS">
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:02 IST" name="Kill" finished-at="2025-12-10T16:43:02 IST" duration-ms="787" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Login -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:02 IST" name="setup" finished-at="2025-12-10T16:43:04 IST" duration-ms="1448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:04 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-10T16:43:08 IST" duration-ms="4276" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=aknnnb202@bm.com, pass=Pass@123}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Element list is null or empty. Check the locator or timing.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:36)
+at Locaters.Login_Locaters.buttons(Login_Locaters.java:54)
+at Negative_Testcases.Login_negative_testcases.login_validation(Login_negative_testcases.java:31)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:08 IST" name="Kill" finished-at="2025-12-10T16:43:08 IST" duration-ms="351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:08 IST" name="setup" finished-at="2025-12-10T16:43:10 IST" duration-ms="1310" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:10 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-10T16:43:34 IST" duration-ms="24156" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=aknnnb202@bm.com, pass=4455m235}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@fdefd3f]" started-at="2025-12-10T16:43:34 IST" name="Kill" finished-at="2025-12-10T16:43:34 IST" duration-ms="537" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Negative_Testcases.Login_negative_testcases -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>
