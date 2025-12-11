@@ -34,23 +34,23 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//div[@class='ant-card-extra']")
 	private WebElement  Case_details_edit_buttons;
 	@FindBy(xpath="//form")
-	private WebElement Edit_form; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Edit_form; 
+	@FindBy(xpath="//*[@class='ant-select-clear']")
+	private WebElement  status_field_clear_button;
+	@FindBy(xpath="//*[text()='ALL APPLICATIONS']")
+	private WebElement  landed_in_applicationList_confirmation;
+	@FindBy(xpath="//tbody")
+	private WebElement table_body;
+	@FindBy(xpath="//*[@class='ant-card-head-wrapper']")
+	private WebElement  Application_page_top_section;
+	@FindBy(xpath="//span[@class='ant-tag ant-tag-geekblue css-1egwh03']")
+	private WebElement Case_id_tag;
+	@FindBy(xpath="//ul[@class='ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-light css-1egwh03']")
+	private WebElement  Application_tab_bar;
+	@FindBy(xpath="//*[@aria-label='delete']")
+	private WebElement  Delete_button;
+	@FindBy(xpath="//*[@class='ant-modal-body']")
+	private WebElement  delete_popup_modal;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -171,45 +171,50 @@ public class Application_Locaters extends Repeat{
 	public WebElement Court_index_input(){
 	WebElement Court_index_input= Edit_form().findElement(By.xpath(".//input[@type='text']"));
 	wait_for_theElement(Court_index_input);
-	return Court_index_input;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}  */
+	return Court_index_input;} 
+	public WebElement status_field_clear_button(){
+	wait_for_theElement(status_field_clear_button);
+	return status_field_clear_button;}
+	public WebElement landed_in_applicationList_confirmation(){
+	wait_for_theElement(landed_in_applicationList_confirmation);
+	return landed_in_applicationList_confirmation;}
+	public WebElement table_body(){
+	wait_for_theElement(table_body);
+	return table_body;}
+	public WebElement Application_page_top_section(){
+	wait_for_theElement(Application_page_top_section);
+	return Application_page_top_section;}
+	public WebElement Application_search(){
+	WebElement Application_search = Application_page_top_section().findElement(By.xpath(".//input[@type='text']"));
+	wait_for_theElement(Application_search);
+	return Application_search;}
+	public List <WebElement> rows(){
+	List <WebElement> rows = table_body().findElements(By.xpath(".//tr[@class='ant-table-row ant-table-row-level-0']"));
+	wait_for_theElement(rows);
+	return rows;}
+	public WebElement Case_id_tag(){
+	wait_for_theElement(Case_id_tag);
+	return Case_id_tag;}
+	public WebElement Application_tab_bar(){
+	wait_for_theElement(Application_tab_bar);
+	return Application_tab_bar;}
+	public List <WebElement> tabs(){
+	List <WebElement> tabs = Application_tab_bar().findElements(By.xpath(".//li[@role='menuitem']"));
+	wait_for_theElement(tabs);
+	return tabs;} 
+	public WebElement Delete_button(){
+	wait_for_theElement(Delete_button);
+	return Delete_button;}
+	public WebElement delete_popup_modal(){
+	wait_for_theElement(delete_popup_modal);
+	return delete_popup_modal;}
+	public List <WebElement> modal_buttons(){
+	List <WebElement> modal_buttons = delete_popup_modal().findElements(By.xpath(".//button"));
+	wait_for_theElement(modal_buttons);
+	return modal_buttons;}
+	public WebElement Summary_feild(){
+	WebElement Summary_feild= Edit_form().findElement(By.xpath(".//textarea"));
+	wait_for_theElement(Summary_feild);
+	return Summary_feild;}   
 
 }

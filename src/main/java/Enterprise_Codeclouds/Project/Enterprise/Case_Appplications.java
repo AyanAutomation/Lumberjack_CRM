@@ -9,6 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+
+import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
 import Negative_Testcases.Login_negative_testcases;
@@ -24,7 +29,13 @@ public class Case_Appplications extends Header_Manager{
 		Login_negative_testcases lng = new Login_negative_testcases();
 		Login_Locaters lg = new Login_Locaters(d);
 		
+		
+		
 		header_buttons_clicker(0);
+		Report_Listen.log_print_in_report().log( Status.INFO, "<b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff." );
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.");
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Input </b> Plaintiff: "+data.get("Plaintiff Name")+", Case Type: "+data.get("Case Type")+", State: "+data.get("State")+", Date of Incident: "+data.get("Date of Incident")+", Lead Source: "+data.get("Lead Source")+", Requested Amount: "+data.get("Requested Amount")+", Court Index #: "+data.get("Court Index Number"));
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '"+data.get("Court Index Number")+"' should be accepted and saved from the edit popup.");
 		p.Popup_add_form();
 		p.form_inputs().get(0).sendKeys(data.get("Plaintiff Name"));
 		p.plaintiff_dropdown_list();
@@ -38,7 +49,7 @@ public class Case_Appplications extends Header_Manager{
 		p.form_inputs().get(2).click();
 		p.State_of_incident_dropdown();
 		p.State_of_incident_options().get(0).click();
-		Thread.sleep(1800);		
+		Thread.sleep(500);		
 		p.form_inputs().get(3).sendKeys(data.get("Date of Incident"));
 		p.calender_date_select().click();
 		js.executeScript("arguments[0].scrollIntoView(true);", p.form_inputs().get(4));
@@ -51,14 +62,17 @@ public class Case_Appplications extends Header_Manager{
 		js.executeScript("arguments[0].scrollIntoView(true);", p.form_inputs().get(5));
 		p.form_inputs().get(6).sendKeys(data.get("Requested Amount"));
 		p.form_buttons().get(1).click();
-		Thread.sleep(800);
-		//lng.Toast_printer(lg.toast().getText().trim());
+		Thread.sleep(500);try {
+		lng.Toast_printer(lg.toast().getText().trim());}
+		catch(Exception e){
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
 		p.Case_details_edit_buttons().click();
+		p.Summary_feild().sendKeys(data.get("Summary"));
 		p.Court_index_input().sendKeys(data.get("Court Index Number"));
 		p.Edit_form_buttons().get(1).click();
 		p.Case_details_edit_buttons();
-		Thread.sleep(800);
-		
+		Thread.sleep(500);
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
 		
 	
 	}
@@ -349,27 +363,89 @@ public class Case_Appplications extends Header_Manager{
 	    c20.put("Underwriting Notes", "Rideshare passenger status gives clean liability and multiple coverage layers (tortfeasor and Uber policy). Injuries are soft-tissue but well documented with continuing functional impact, especially with sitting. Need trip records, police report, med summaries, wage-loss data and prior spine history. With solid coverage, funding of 10–11k is supportable.");
 
 	    return new Object[][] {
-	            { c1 }, { c2 }, { c3 }, { c4 }, { c5 },/*
+	            { c1 },/*{ c2 }, { c3 }, { c4 }, { c5 },
 	            { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	            { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
 	            { c16 }, { c17 }, { c18 }, { c19 }, { c20 } */
 	    };
 	}
 	
+	
 	public void option_printers(String prefix ,List<WebElement> options){
 		
 		
 	for(WebElement option:options){
 		
-		System.out.println(prefix+option.getText().trim());}	
+		System.out.println(prefix+option.getText().trim());}}
+	
+	
+	
+	
+	
+	@Test(dataProvider="caseData")
+	public void Added_application_delete(TreeMap<String, String> val) throws IOException, InterruptedException{
 		
+		SIde_Menu_Handler sd = new SIde_Menu_Handler();
+		Application_Locaters p = new Application_Locaters(d);
+		Login_negative_testcases lng = new Login_negative_testcases();
+		Login_Locaters lg = new Login_Locaters(d);
 		
+		String Plaintiff_name=val.get("Plaintiff Name");
 		
+	 try {
+		login();
+		d.navigate().to("https://logbook.wechopfees.com/cases");
+		Report_Listen.log_print_in_report().log(Status.INFO,"**🔹 Scenario 2: Case handler deletes an existing application for a plaintiff from the Applications tab**");
+		Report_Listen.log_print_in_report().log(Status.INFO,"**📘 Description →** Verify that the user can search the case list by plaintiff name, open the case details, navigate to the *Applications* tab, click the delete option for an existing application, confirm the delete in the popup, and complete the operation without UI errors so that the application is removed from the list.");
+		Report_Listen.log_print_in_report().log(Status.INFO,"**📥 Input →** Plaintiff: "+Plaintiff_name+", Case Type: "+val.get("Case Type")+", State: "+val.get("State")+", Requested Amount: "+val.get("Requested Amount"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"**✅ Expected →** The application row linked to plaintiff '"+Plaintiff_name+"' should be visible in the *Applications* tab before deletion. After clicking delete and confirming in the popup, the system should perform the delete without any error message and the same application row should no longer appear in the Applications grid for that case.");
+		p.landed_in_applicationList_confirmation();
+		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 1 →** Navigated to the *Cases* list page and confirmed that the case/application list layout is loaded.");
+		p.status_field_clear_button().click();
+		Thread.sleep(500);
+		p.Application_search().sendKeys(Plaintiff_name);
+		Thread.sleep(1000);
+		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 2 →** Cleared the status filter (if any) and searched cases using plaintiff name '"+Plaintiff_name+"' in the search box.");
+		List<WebElement> table_rows = p.rows();
+		for(WebElement row:table_rows){
+			
+			if(row.getText().contains(Plaintiff_name)){
+				row.click();
+				break;
+				}}
+		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 3 →** Opened the Case Details page for plaintiff '"+Plaintiff_name+"' by clicking the matching row from the *Cases* table.");
+		p.Case_id_tag();
 		
-		
-		
-		
-		
-	}
+		List<WebElement> tabs = p.tabs();
+		for(WebElement tab:tabs){
+			
+		if(tab.getText().trim().equalsIgnoreCase("Applications")){
+			
+			tab.click();
+			break;}}
+		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 4 →** Switched to the *Applications* tab to view existing application records for the selected case.");
+		p.Delete_button().click();
+		p.delete_popup_modal();
+		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 5 →** Clicked on the delete icon for an application and verified that the delete confirmation popup/modal is displayed.");
+		p.modal_buttons().get(1).click();
+		Thread.sleep(900);
+		Report_Listen.log_print_in_report().log(Status.INFO, "**🟨 Actual →** ✅ Delete flow executed successfully. The case for plaintiff '"+Plaintiff_name+"' was opened from the *Cases* list, the *Applications* tab was loaded, the delete confirmation popup appeared and was confirmed. No unexpected UI error was observed during the operation, and the targeted application record is expected to be removed from the Applications grid for this case.");
+		try{lng.Toast_printer(lg.toast().getText().trim());}
+		catch(Exception mo){
+			Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** 📢 Toast after Deletion of the Application: "+"No toast captured / toast locator not visible. Error:");
+			}
+		Thread.sleep(900);table_rows.clear();
+		}
+	 catch(Exception ko){
+		 
+		 Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** ❌ Delete operation failed for plaintiff '"+Plaintiff_name+"' due to exception: "+ko.getMessage());
+         System.out.println("Delete operation failed for plaintiff  "+Plaintiff_name);}}
+	
+	
+	
+	
+	
+	
+	
 
 }

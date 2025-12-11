@@ -1,108 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="6" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-11T14:11:54 IST" name="Default suite" finished-at="2025-12-11T14:13:31 IST" duration-ms="97104">
+  <suite started-at="2025-12-11T20:25:21 IST" name="Default suite" finished-at="2025-12-11T20:25:57 IST" duration-ms="35526">
     <groups>
     </groups>
-    <test started-at="2025-12-11T14:11:54 IST" name="Default test" finished-at="2025-12-11T14:13:31 IST" duration-ms="97104">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:11:54 IST" name="setup" finished-at="2025-12-11T14:11:56 IST" duration-ms="1943" status="PASS">
+    <test started-at="2025-12-11T20:25:21 IST" name="Default test" finished-at="2025-12-11T20:25:57 IST" duration-ms="35526">
+      <class name="Negative_Testcases.Login_negative_testcases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:21 IST" name="setup" finished-at="2025-12-11T20:25:24 IST" duration-ms="2552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:11:56 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-11T14:12:14 IST" duration-ms="18452" status="PASS">
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:24 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-11T20:25:34 IST" duration-ms="10499" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Case #=1, Case Type=Motor Vehicle Accident, Court Index Number=49D12-2403-CT-001201, Date of Incident=03/14/2024, Lead Source=Attorney Referral, Plaintiff Name=Caleb Hunter Lawson, Recommended Max Funding=12000, Requested Amount=25000, Risk Level=Moderate, State=Indiana, Summary=Rear-end collision on I-65; plaintiff rear-ended in congestion, airbags deployed, whiplash, PT with residual stiffness and work loss., Underwriting Notes=Strong rear-end liability with citation for following too closely. Soft-tissue neck/back injury but supported by ER visit, imaging, PT and wage loss. Need full medical records, wage docs and prior-claim check. Assuming clean priors and adequate BI limits, case supports funding up to about 12k.}]]>
+                <![CDATA[{id=ayan.sengupta@codeclouds.com, pass=22355}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:14 IST" name="Kill" finished-at="2025-12-11T14:12:15 IST" duration-ms="355" status="PASS">
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:34 IST" name="Kill" finished-at="2025-12-11T20:25:35 IST" duration-ms="317" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:15 IST" name="setup" finished-at="2025-12-11T14:12:16 IST" duration-ms="862" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:35 IST" name="setup" finished-at="2025-12-11T20:25:36 IST" duration-ms="1155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:16 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-11T14:12:34 IST" duration-ms="18091" status="PASS">
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:36 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-11T20:25:45 IST" duration-ms="9514" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Case #=2, Case Type=Medical Malpractice, Court Index Number=12L03-2311-MD-004589, Date of Incident=11/02/2023, Lead Source=Digital Ad, Plaintiff Name=Jared Michael Fulton, Recommended Max Funding=25000, Requested Amount=50000, Risk Level=Moderate-High, State=Illinois, Summary=Failure to diagnose appendicitis at first ER visit; rupture 48 hours later, emergency surgery and several inpatient days., Underwriting Notes=Classic failure-to-diagnose pattern with clear progression from missed appendicitis to rupture and hospitalization. Need confirmation suit is filed, expert supporting breach and causation, and med-bill summary. Med-mal is slow and expert-heavy, so staged funding in the 20–25k range is prudent once expert support and coverage are confirmed.}]]>
+                <![CDATA[{id=aknnnb202@bm.com, pass=Pass@123}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:34 IST" name="Kill" finished-at="2025-12-11T14:12:34 IST" duration-ms="292" status="PASS">
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:45 IST" name="Kill" finished-at="2025-12-11T20:25:46 IST" duration-ms="293" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:34 IST" name="setup" finished-at="2025-12-11T14:12:35 IST" duration-ms="866" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:46 IST" name="setup" finished-at="2025-12-11T20:25:47 IST" duration-ms="1098" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:35 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-11T14:12:53 IST" duration-ms="17757" status="PASS">
+        <test-method signature="login_validation(java.util.TreeMap)[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:47 IST" name="login_validation" data-provider="login_datas" finished-at="2025-12-11T20:25:56 IST" duration-ms="9668" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Case #=3, Case Type=Slip and Fall, Court Index Number=18CV-2401-PR-000973, Date of Incident=01/09/2024, Lead Source=Direct Plaintiff Call, Plaintiff Name=Marcus Evan Ridley, Recommended Max Funding=7500, Requested Amount=15000, Risk Level=Moderate, State=Ohio, Summary=Grocery store slip from refrigeration leak; no warning signs; fractured wrist, brace and OT; limits lifting and household tasks., Underwriting Notes=Premises claim with potentially strong notice if video shows a long-standing puddle and prior cooler issues. Objective fracture and OT support damages but upside is capped. Need incident report, maintenance logs, video and full med/wage docs. Assuming negligence and coverage, 6–7.5k funding is reasonable.}]]>
+                <![CDATA[{id=aknnnb202@bm.com, pass=4455m235}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:53 IST" name="Kill" finished-at="2025-12-11T14:12:53 IST" duration-ms="297" status="PASS">
+        </test-method> <!-- login_validation -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Login_negative_testcases@4e08711f]" started-at="2025-12-11T20:25:56 IST" name="Kill" finished-at="2025-12-11T20:25:57 IST" duration-ms="338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:53 IST" name="setup" finished-at="2025-12-11T14:12:54 IST" duration-ms="838" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:12:54 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-11T14:13:12 IST" duration-ms="17774" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Case #=4, Case Type=Workplace Injury, Court Index Number=03WC-2306-IN-002764, Date of Incident=06/21/2023, Lead Source=Union Referral, Plaintiff Name=Noah James Corbett, Recommended Max Funding=12000, Requested Amount=30000, Risk Level=Moderate, State=Michigan, Summary=Warehouse forklift struck from behind by coworker; low-back strain with radiating pain; conservative care and restricted duty., Underwriting Notes=Good mechanism but exposure may be mostly workers comp unless there is a viable third-party defendant. Need clarity on comp benefits, separate negligence claim, contracts and lien amounts. If comp-only, funding should be modest; with a strong third-party case and coverage, 10–12k is reasonable.}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:13:12 IST" name="Kill" finished-at="2025-12-11T14:13:12 IST" duration-ms="295" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:13:12 IST" name="setup" finished-at="2025-12-11T14:13:13 IST" duration-ms="854" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:13:13 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-11T14:13:31 IST" duration-ms="18076" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Case #=5, Case Type=Products Liability, Court Index Number=49D10-2309-PL-000811, Date of Incident=09/05/2023, Lead Source=Co-Counsel Referral, Plaintiff Name=Brandon Tyler Vance, Recommended Max Funding=18000, Requested Amount=40000, Risk Level=Moderate, State=Indiana, Summary=New power drill allegedly short-circuited and partially exploded in normal use; burns and deep lacerations to dominant hand; missed work as mechanic., Underwriting Notes=Product defect case with significant dominant-hand injury. Need preservation of drill, manufacturer and retailer identification and engineering expert. Damages include lost income and possible permanent impairment. With good preservation and expert support, funding in the 15–18k range is justified.}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@3d285d7e]" started-at="2025-12-11T14:13:31 IST" name="Kill" finished-at="2025-12-11T14:13:31 IST" duration-ms="283" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
+      </class> <!-- Negative_Testcases.Login_negative_testcases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

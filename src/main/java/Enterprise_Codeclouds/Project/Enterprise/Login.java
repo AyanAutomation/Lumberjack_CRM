@@ -16,7 +16,7 @@ import Negative_Testcases.Login_negative_testcases;
 public class Login extends Base{
 	
 	
-    @Test
+   
 	public void login() throws IOException, InterruptedException{
 		
 	Login_Locaters lg = new Login_Locaters(d);	
@@ -27,7 +27,7 @@ public class Login extends Base{
 	lg.id_field().sendKeys(f.Data_Fetcher("Login_id"));	
 	lg.password_field().sendKeys(f.Data_Fetcher("Pass"));	
 	lg.password_eye_button().click();
-	Report_Listen.log_print_in_report().log(Status.INFO, "Checking with valid Password and email");
+	//Report_Listen.log_print_in_report().log(Status.INFO, "Checking with valid Password and email");
 	lg.buttons().get(1).click();
 	Thread.sleep(500);
 	String toast_message = lg.toast().getText();
