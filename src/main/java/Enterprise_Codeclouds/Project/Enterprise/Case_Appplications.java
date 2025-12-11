@@ -10,6 +10,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Locaters.Application_Locaters;
+import Locaters.Login_Locaters;
+import Negative_Testcases.Login_negative_testcases;
 
 public class Case_Appplications extends Header_Manager{
 	
@@ -19,6 +21,8 @@ public class Case_Appplications extends Header_Manager{
 		
 		Application_Locaters p = new Application_Locaters(d);
 		JavascriptExecutor js = (JavascriptExecutor)d;
+		Login_negative_testcases lng = new Login_negative_testcases();
+		Login_Locaters lg = new Login_Locaters(d);
 		
 		header_buttons_clicker(0);
 		p.Popup_add_form();
@@ -34,6 +38,27 @@ public class Case_Appplications extends Header_Manager{
 		p.form_inputs().get(2).click();
 		p.State_of_incident_dropdown();
 		p.State_of_incident_options().get(0).click();
+		Thread.sleep(1800);		
+		p.form_inputs().get(3).sendKeys(data.get("Date of Incident"));
+		p.calender_date_select().click();
+		js.executeScript("arguments[0].scrollIntoView(true);", p.form_inputs().get(4));
+		p.form_inputs().get(4).click();
+		p.Lead_Type_dropdown();
+		p.Lead_category_options().get(0).click();
+		p.form_inputs().get(5).click();
+		p.Lead_dropdown();
+		p.Leadoptions().get(0).click();
+		js.executeScript("arguments[0].scrollIntoView(true);", p.form_inputs().get(5));
+		p.form_inputs().get(6).sendKeys(data.get("Requested Amount"));
+		p.form_buttons().get(1).click();
+		Thread.sleep(800);
+		//lng.Toast_printer(lg.toast().getText().trim());
+		p.Case_details_edit_buttons().click();
+		p.Court_index_input().sendKeys(data.get("Court Index Number"));
+		p.Edit_form_buttons().get(1).click();
+		p.Case_details_edit_buttons();
+		Thread.sleep(800);
+		
 		
 	
 	}
@@ -324,7 +349,7 @@ public class Case_Appplications extends Header_Manager{
 	    c20.put("Underwriting Notes", "Rideshare passenger status gives clean liability and multiple coverage layers (tortfeasor and Uber policy). Injuries are soft-tissue but well documented with continuing functional impact, especially with sitting. Need trip records, police report, med summaries, wage-loss data and prior spine history. With solid coverage, funding of 10–11k is supportable.");
 
 	    return new Object[][] {
-	            { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
+	            { c1 }, { c2 }, { c3 }, { c4 }, { c5 },/*
 	            { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	            { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
 	            { c16 }, { c17 }, { c18 }, { c19 }, { c20 } */

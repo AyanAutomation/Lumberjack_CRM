@@ -6,7 +6,7 @@
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
           <include name="setup"/>
-          <include name="Add_case" invocation-numbers="0"/>
+          <include name="Add_case" invocation-numbers="0 1 2 3 4"/>
           <include name="Kill"/>
         </methods>
       </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->

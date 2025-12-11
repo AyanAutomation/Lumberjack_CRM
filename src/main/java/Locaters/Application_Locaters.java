@@ -22,19 +22,19 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//div[@class='rc-virtual-list'])[3]")
 	private WebElement  State_of_incident_dropdown; 
 	@FindBy(xpath="(//div[@class='rc-virtual-list-holder-inner'])[2]//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]")
-	private List <WebElement> Incident_options ; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private List <WebElement> Incident_options ; 
+	@FindBy(xpath="//*[@class='ant-picker-content']//*[@class='ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view']")
+	private WebElement  calender_date_select; 
+	@FindBy(xpath="//div[@class='ant-modal-body']//parent::form//div[@class='ant-space-item']//button")
+	private List <WebElement> form_buttons; 
+	@FindBy(xpath="(//div[@class='rc-virtual-list'])[4]")
+	private WebElement  Lead_Type_dropdown; 
+	@FindBy(xpath="(//div[@class='rc-virtual-list'])[5]")
+	private WebElement Lead_dropdown; 
+	@FindBy(xpath="//div[@class='ant-card-extra']")
+	private WebElement  Case_details_edit_buttons;
+	@FindBy(xpath="//form")
+	private WebElement Edit_form; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -133,37 +133,45 @@ public class Application_Locaters extends Repeat{
 	public List<WebElement> State_of_incident_options(){
 	WebElement Droplist=State_of_incident_dropdown();
 	List<WebElement> state_options=wait_for_nested(Droplist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
-	return state_options;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return state_options;} 
+	public WebElement calender_date_select(){
+	wait_for_theElement(calender_date_select);
+	return calender_date_select;} 
+	public List<WebElement> Lead_category_options(){
+	WebElement Lead_Dropdownlist=Lead_Type_dropdown();
+	List<WebElement> lead_cat_options=wait_for_nested(Lead_Dropdownlist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
+	return lead_cat_options;} 
+	public List<WebElement> Leadoptions(){
+	WebElement Lead_Dropdownlist=Lead_dropdown();
+	List<WebElement> lead_options=wait_for_nested(Lead_Dropdownlist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
+	return lead_options;} 
+	public List<WebElement> form_buttons(){
+	wait_for_theElement(form_buttons);
+	return form_buttons;} 
+	public WebElement Lead_Type_dropdown(){
+	wait_for_theElement(Lead_Type_dropdown);
+	return Lead_Type_dropdown;}
+	public WebElement Lead_dropdown(){
+	wait_for_theElement(Lead_dropdown);
+	return Lead_dropdown;} 
+	public WebElement Case_details_edit_buttons(){
+	wait_for_theElement(Case_details_edit_buttons);
+	return Case_details_edit_buttons;}
+	public WebElement Edit_form(){
+	wait_for_theElement(Edit_form);
+	return Edit_form;} 
+	public List <WebElement> Edit_form_inputs(){
+	List <WebElement> Edit_form_inputs = Edit_form().findElements(By.xpath(".//input"));
+	wait_for_theElement(Edit_form_inputs);
+	return Edit_form_inputs;}
+	public List <WebElement> Edit_form_buttons(){
+	List <WebElement> Edit_form_buttons = Edit_form().findElements(By.xpath(".//button"));
+	wait_for_theElement(Edit_form_buttons);
+	return Edit_form_buttons;} 
+	public WebElement Court_index_input(){
+	WebElement Court_index_input= Edit_form().findElement(By.xpath(".//input[@type='text']"));
+	wait_for_theElement(Court_index_input);
+	return Court_index_input;} /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}

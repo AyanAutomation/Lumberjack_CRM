@@ -5,6 +5,9 @@ import java.io.IOException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
+import Listerners.Report_Listen;
 import Locaters.Login_Locaters;
 import Negative_Testcases.Login_negative_testcases;
 
@@ -24,6 +27,7 @@ public class Login extends Base{
 	lg.id_field().sendKeys(f.Data_Fetcher("Login_id"));	
 	lg.password_field().sendKeys(f.Data_Fetcher("Pass"));	
 	lg.password_eye_button().click();
+	Report_Listen.log_print_in_report().log(Status.INFO, "Checking with valid Password and email");
 	lg.buttons().get(1).click();
 	Thread.sleep(500);
 	String toast_message = lg.toast().getText();
