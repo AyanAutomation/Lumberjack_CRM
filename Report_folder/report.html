@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 11, 2025 08:25:21 PM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 12, 2025 10:00:18 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -79,9 +84,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">login_validation</p>
+            <p class="name">Add_case</p>
             <p class="text-sm">
-              <span>8:25:24 PM</span> / <span>00:00:10:500</span>
+              <span>10:00:21 PM</span> / <span>00:01:12:483</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -89,10 +94,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">login_validation</h5>
-<span class='badge badge-success'>12.11.2025 8:25:24 PM</span>
-<span class='badge badge-danger'>12.11.2025 8:25:34 PM</span>
-<span class='badge badge-default'>00:00:10:500</span>
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:00:21 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:01:34 PM</span>
+<span class='badge badge-default'>00:01:12:483</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -104,178 +109,97 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:28 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:00:40 PM</td>
         <td>
-          <b>🔹Scenario 1:</b> User attempts login without entering Email or Password**
+          ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:28 PM</td>
+        <td>10:00:41 PM</td>
         <td>
-          <b>📘 Description →</b> The user clicks the Login button without providing any credentials. The purpose is to verify that the system prevents login and highlights both fields as mandatory.
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:28 PM</td>
+        <td>10:00:41 PM</td>
         <td>
-          <b>📥 Input →</b>  <b>Email:</b>  [BLANK], <b>Password:</b> [BLANK]
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:28 PM</td>
+        <td>10:00:41 PM</td>
         <td>
-          <b>✅ Expected →</b> The system should show inline validation errors for both fields: 'Email is required' and 'Password is required'.
+          <b>🔹 Input </b> Plaintiff: Caleb Hunter Lawson, Case Type: Motor Vehicle Accident, State: Indiana, Date of Incident: 03/14/2024, Lead Source: Attorney Referral, Requested Amount: 25000, Court Index #: 49D12-2403-CT-001201
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:29 PM</td>
+        <td>10:00:41 PM</td>
         <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '49D12-2403-CT-001201' should be accepted and saved from the edit popup.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:29 PM</td>
+        <td>10:01:02 PM</td>
         <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Password is required
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:29 PM</td>
+        <td>10:01:05 PM</td>
         <td>
-          <b>🔹 Scenario 2:</b> User enters only Email and attempts login (Password left blank)**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:29 PM</td>
-        <td>
-          <b>📘 Description →</b> The user provides a valid Email but leaves the Password field empty. The test checks whether the system identifies the missing password and prevents login.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:29 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> ayan.sengupta@codeclouds.com, <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:29 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Password field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:30 PM</td>
-        <td>
-          **🟨 Actual →** ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:31 PM</td>
-        <td>
-          *<b>🔹 Scenario 3:</b> User enters Password but keeps Email field blank**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:31 PM</td>
-        <td>
-          <b>📘 Description →</b> The user enters a Password but leaves the Email empty. This scenario validates that the system detects the missing Email and shows the appropriate validation message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:31 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> [BLANK], <b>Password:</b> 22355
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:31 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Email field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:31 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:32 PM</td>
-        <td>
-          <b>🔹 Scenario 4:</b> User attempts login using invalid Email and Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:32 PM</td>
-        <td>
-          <b>📘 Description →</b>The user enters invalid credentials that do not exist in the system. The purpose is to verify that the system rejects unauthorized login and shows a clear error notification.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:32 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> ayan.sengupta@codeclouds.com, <b>Password:</b> 22355
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:32 PM</td>
-        <td>
-          <b>✅ Expected →</b> A toast message should appear stating: 'Invalid Email or Password' or a similar rejection message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:34 PM</td>
-        <td>
-          **🟨 Actual →** 📢 Toast Message: Login failed. Invalid Email Or Password.
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D12-2403-CT-001201' was entered and saved without visible UI errors.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:25:34 PM</td>
+        <td>10:01:34 PM</td>
         <td>
-          <b>❌ Toast:</b> Login failed. Invalid Email Or Password.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:34 PM</td>
-        <td>
-          -------------------------------------------------------------------------
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:25:34 PM</td>
-        <td>
-          <b>✅ All negative login validations executed successfully for Email:</b> ayan.sengupta@codeclouds.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:25:34 PM</td>
-        <td>
-          Test passed
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (5c6cbbf66e930baaca868463048883c4)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55225}, goog:processID: 20632, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55225/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c6cbbf66e930baaca868463048883c4
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -288,9 +212,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">login_validation</p>
+            <p class="name">Add_case</p>
             <p class="text-sm">
-              <span>8:25:36 PM</span> / <span>00:00:09:517</span>
+              <span>10:01:35 PM</span> / <span>00:00:59:338</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -298,10 +222,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">login_validation</h5>
-<span class='badge badge-success'>12.11.2025 8:25:36 PM</span>
-<span class='badge badge-danger'>12.11.2025 8:25:45 PM</span>
-<span class='badge badge-default'>00:00:09:517</span>
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:01:35 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:02:35 PM</span>
+<span class='badge badge-default'>00:00:59:338</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -313,178 +237,97 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:01:42 PM</td>
         <td>
-          <b>🔹Scenario 1:</b> User attempts login without entering Email or Password**
+          ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td>10:01:42 PM</td>
         <td>
-          <b>📘 Description →</b> The user clicks the Login button without providing any credentials. The purpose is to verify that the system prevents login and highlights both fields as mandatory.
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td>10:01:42 PM</td>
         <td>
-          <b>📥 Input →</b>  <b>Email:</b>  [BLANK], <b>Password:</b> [BLANK]
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td>10:01:42 PM</td>
         <td>
-          <b>✅ Expected →</b> The system should show inline validation errors for both fields: 'Email is required' and 'Password is required'.
+          <b>🔹 Input </b> Plaintiff: Jared Michael Fulton, Case Type: Medical Malpractice, State: Illinois, Date of Incident: 11/02/2023, Lead Source: Digital Ad, Requested Amount: 50000, Court Index #: 12L03-2311-MD-004589
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td>10:01:42 PM</td>
         <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '12L03-2311-MD-004589' should be accepted and saved from the edit popup.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td>10:02:03 PM</td>
         <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Password is required
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
+        <td>10:02:06 PM</td>
         <td>
-          <b>🔹 Scenario 2:</b> User enters only Email and attempts login (Password left blank)**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
-        <td>
-          <b>📘 Description →</b> The user provides a valid Email but leaves the Password field empty. The test checks whether the system identifies the missing password and prevents login.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:40 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Password field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:41 PM</td>
-        <td>
-          **🟨 Actual →** ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:42 PM</td>
-        <td>
-          *<b>🔹 Scenario 3:</b> User enters Password but keeps Email field blank**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:42 PM</td>
-        <td>
-          <b>📘 Description →</b> The user enters a Password but leaves the Email empty. This scenario validates that the system detects the missing Email and shows the appropriate validation message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:42 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> [BLANK], <b>Password:</b> Pass@123
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:42 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Email field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:43 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:43 PM</td>
-        <td>
-          <b>🔹 Scenario 4:</b> User attempts login using invalid Email and Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:43 PM</td>
-        <td>
-          <b>📘 Description →</b>The user enters invalid credentials that do not exist in the system. The purpose is to verify that the system rejects unauthorized login and shows a clear error notification.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:43 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> Pass@123
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:43 PM</td>
-        <td>
-          <b>✅ Expected →</b> A toast message should appear stating: 'Invalid Email or Password' or a similar rejection message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:45 PM</td>
-        <td>
-          **🟨 Actual →** 📢 Toast Message: Login failed. Invalid Email Or Password.
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '12L03-2311-MD-004589' was entered and saved without visible UI errors.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:25:45 PM</td>
+        <td>10:02:35 PM</td>
         <td>
-          <b>❌ Toast:</b> Login failed. Invalid Email Or Password.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:45 PM</td>
-        <td>
-          -------------------------------------------------------------------------
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:25:45 PM</td>
-        <td>
-          <b>✅ All negative login validations executed successfully for Email:</b> aknnnb202@bm.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:25:45 PM</td>
-        <td>
-          Test passed
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (889725d43001d6abae04a3ec95cdcc1b)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63727}, goog:processID: 12972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63727/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 889725d43001d6abae04a3ec95cdcc1b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -497,9 +340,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">login_validation</p>
+            <p class="name">Add_case</p>
             <p class="text-sm">
-              <span>8:25:47 PM</span> / <span>00:00:09:671</span>
+              <span>10:02:36 PM</span> / <span>00:01:13:758</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -507,10 +350,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">login_validation</h5>
-<span class='badge badge-success'>12.11.2025 8:25:47 PM</span>
-<span class='badge badge-danger'>12.11.2025 8:25:56 PM</span>
-<span class='badge badge-default'>00:00:09:671</span>
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:02:36 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:03:50 PM</span>
+<span class='badge badge-default'>00:01:13:758</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -522,178 +365,2229 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:02:59 PM</td>
         <td>
-          <b>🔹Scenario 1:</b> User attempts login without entering Email or Password**
+          ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td>10:02:59 PM</td>
         <td>
-          <b>📘 Description →</b> The user clicks the Login button without providing any credentials. The purpose is to verify that the system prevents login and highlights both fields as mandatory.
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td>10:02:59 PM</td>
         <td>
-          <b>📥 Input →</b>  <b>Email:</b>  [BLANK], <b>Password:</b> [BLANK]
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td>10:02:59 PM</td>
         <td>
-          <b>✅ Expected →</b> The system should show inline validation errors for both fields: 'Email is required' and 'Password is required'.
+          <b>🔹 Input </b> Plaintiff: Marcus Evan Ridley, Case Type: Slip and Fall, State: Ohio, Date of Incident: 01/09/2024, Lead Source: Direct Plaintiff Call, Requested Amount: 15000, Court Index #: 18CV-2401-PR-000973
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td>10:02:59 PM</td>
         <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '18CV-2401-PR-000973' should be accepted and saved from the edit popup.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td>10:03:20 PM</td>
         <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Password is required
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
+        <td>10:03:23 PM</td>
         <td>
-          <b>🔹 Scenario 2:</b> User enters only Email and attempts login (Password left blank)**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
-        <td>
-          <b>📘 Description →</b> The user provides a valid Email but leaves the Password field empty. The test checks whether the system identifies the missing password and prevents login.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:51 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Password field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:52 PM</td>
-        <td>
-          **🟨 Actual →** ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:53 PM</td>
-        <td>
-          *<b>🔹 Scenario 3:</b> User enters Password but keeps Email field blank**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:53 PM</td>
-        <td>
-          <b>📘 Description →</b> The user enters a Password but leaves the Email empty. This scenario validates that the system detects the missing Email and shows the appropriate validation message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:53 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> [BLANK], <b>Password:</b> 4455m235
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:53 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Email field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:54 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:54 PM</td>
-        <td>
-          <b>🔹 Scenario 4:</b> User attempts login using invalid Email and Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:54 PM</td>
-        <td>
-          <b>📘 Description →</b>The user enters invalid credentials that do not exist in the system. The purpose is to verify that the system rejects unauthorized login and shows a clear error notification.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:54 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> 4455m235
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:54 PM</td>
-        <td>
-          <b>✅ Expected →</b> A toast message should appear stating: 'Invalid Email or Password' or a similar rejection message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:56 PM</td>
-        <td>
-          **🟨 Actual →** 📢 Toast Message: Login failed. Invalid Email Or Password.
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '18CV-2401-PR-000973' was entered and saved without visible UI errors.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>8:25:56 PM</td>
+        <td>10:03:50 PM</td>
         <td>
-          <b>❌ Toast:</b> Login failed. Invalid Email Or Password.
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (797677c7f166f669bcbf2f518f845188)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53489}, goog:processID: 2448, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53489/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 797677c7f166f669bcbf2f518f845188
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:03:52 PM</span> / <span>00:00:57:892</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:03:52 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:04:49 PM</span>
+<span class='badge badge-default'>00:00:57:892</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:03:58 PM</td>
+        <td>
+          ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:25:56 PM</td>
+        <td>10:03:58 PM</td>
         <td>
-          -------------------------------------------------------------------------
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:25:56 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:03:58 PM</td>
         <td>
-          <b>✅ All negative login validations executed successfully for Email:</b> aknnnb202@bm.com
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:25:56 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:03:58 PM</td>
         <td>
-          Test passed
+          <b>🔹 Input </b> Plaintiff: Noah James Corbett, Case Type: Workplace Injury, State: Michigan, Date of Incident: 06/21/2023, Lead Source: Union Referral, Requested Amount: 30000, Court Index #: 03WC-2306-IN-002764
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:03:58 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '03WC-2306-IN-002764' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:04:18 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:04:21 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '03WC-2306-IN-002764' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:04:49 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (659ef632fab1d7c31d0048ecf9a94c96)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49581}, goog:processID: 1976, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49581/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 659ef632fab1d7c31d0048ecf9a94c96
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:04:51 PM</span> / <span>00:01:38:826</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:04:51 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:06:30 PM</span>
+<span class='badge badge-default'>00:01:38:826</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:05:37 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:05:37 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:05:37 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:05:37 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Brandon Tyler Vance, Case Type: Products Liability, State: Indiana, Date of Incident: 09/05/2023, Lead Source: Co-Counsel Referral, Requested Amount: 40000, Court Index #: 49D10-2309-PL-000811
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:05:37 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '49D10-2309-PL-000811' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:05:58 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:06:02 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D10-2309-PL-000811' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:06:30 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (e0b9684e5d6529871f7b201f8a83c8b7)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50085}, goog:processID: 21088, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50085/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e0b9684e5d6529871f7b201f8a83c8b7
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:06:31 PM</span> / <span>00:01:06:159</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:06:31 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:07:37 PM</span>
+<span class='badge badge-default'>00:01:06:159</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:06:38 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:06:38 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:06:38 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:06:38 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Raymond Luke Callahan, Case Type: Wrongful Death, State: Kentucky, Date of Incident: 07/18/2022, Lead Source: Attorney Referral, Requested Amount: 100000, Court Index #: 22CI-2207-WD-000342
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:06:38 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '22CI-2207-WD-000342' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:07:06 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:07:10 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '22CI-2207-WD-000342' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:07:37 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b4ed17f003f710c9b90a505d54b8a2ca)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50710}, goog:processID: 21128, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50710/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b4ed17f003f710c9b90a505d54b8a2ca
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:07:39 PM</span> / <span>00:01:48:014</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:07:39 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:09:27 PM</span>
+<span class='badge badge-default'>00:01:48:014</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:08:29 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:08:29 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:08:29 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:08:29 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Trevor Daniel Pierce, Case Type: Premises Liability, State: Ohio, Date of Incident: 02/27/2024, Lead Source: Chiropractor Referral, Requested Amount: 20000, Court Index #: 23CV-2402-PL-001154
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:08:29 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '23CV-2402-PL-001154' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:08:56 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:09:00 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '23CV-2402-PL-001154' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:09:27 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (108ace7a992b5828bb117bfadea21f8c)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50971}, goog:processID: 21444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50971/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 108ace7a992b5828bb117bfadea21f8c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:09:28 PM</span> / <span>00:00:44:386</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:09:28 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:10:13 PM</span>
+<span class='badge badge-default'>00:00:44:386</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:09:36 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:09:36 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:09:36 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:09:36 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Logan Scott McKinney, Case Type: Motor Vehicle Accident, State: Indiana, Date of Incident: 10/29/2023, Lead Source: Broker - Jason Bourne, Requested Amount: 35000, Court Index #: 49D05-2310-CT-002031
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:09:36 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '49D05-2310-CT-002031' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:09:57 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:00 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D05-2310-CT-002031' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:10:13 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:37)
+	at Locaters.Application_Locaters.Application_amount_edit_buttons(Application_Locaters.java:220)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:105)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:10:14 PM</span> / <span>00:01:06:202</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:10:14 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:11:21 PM</span>
+<span class='badge badge-default'>00:01:06:202</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:10:29 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:29 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:29 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:29 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Elliot Jordan Kane, Case Type: Nursing Home Negligence, State: Illinois, Date of Incident: 04/03/2023, Lead Source: Digital Ad, Requested Amount: 45000, Court Index #: 14L02-2304-NH-000627
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:29 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '14L02-2304-NH-000627' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:49 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:10:52 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '14L02-2304-NH-000627' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:11:21 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (1ee33d97fd6b43349648e13379c8071f)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50351}, goog:processID: 10404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50351/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1ee33d97fd6b43349648e13379c8071f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:11:22 PM</span> / <span>00:01:18:313</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:11:22 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:12:40 PM</span>
+<span class='badge badge-default'>00:01:18:313</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:11:49 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:11:49 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:11:49 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:11:49 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Samuel Bryce Donovan, Case Type: Construction Accident, State: Michigan, Date of Incident: 08/11/2023, Lead Source: Attorney Referral, Requested Amount: 55000, Court Index #: 05CV-2308-CA-000958
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:11:49 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '05CV-2308-CA-000958' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:12:09 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:12:13 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '05CV-2308-CA-000958' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:12:40 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (d5fcee96a665b499e3e00d28fd880c7d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62017}, goog:processID: 3204, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62017/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d5fcee96a665b499e3e00d28fd880c7d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:12:42 PM</span> / <span>00:00:57:339</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:12:42 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:13:39 PM</span>
+<span class='badge badge-default'>00:00:57:339</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:13:26 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:13:26 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:13:26 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:13:26 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Owen Parker Mills, Case Type: Dog Bite, State: Ohio, Date of Incident: 09/16/2024, Lead Source: Direct Plaintiff Call, Requested Amount: 10000, Court Index #: 21CV-2409-PR-000423
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:13:26 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '21CV-2409-PR-000423' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:13:39 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (98b614aa417228dec032785a634d65fd)] -> xpath: (//div[@class='rc-virtual-list'])[1]]] -> xpath: .//*[@aria-selected='false']]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63486}, goog:processID: 5384, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63486/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 98b614aa417228dec032785a634d65fd
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Plaintiff_options(Application_Locaters.java:127)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:13:41 PM</span> / <span>00:00:58:467</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:13:41 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:14:39 PM</span>
+<span class='badge badge-default'>00:00:58:467</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:14:02 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:14:02 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:14:02 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:14:02 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Isaac Henry Coleman, Case Type: Medical Malpractice, State: Indiana, Date of Incident: 01/25/2023, Lead Source: Hospital Referral, Requested Amount: 60000, Court Index #: 29D03-2301-MD-000391
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:14:02 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '29D03-2301-MD-000391' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:14:22 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:14:26 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '29D03-2301-MD-000391' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:14:39 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:37)
+	at Locaters.Application_Locaters.Application_amount_edit_buttons(Application_Locaters.java:220)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:105)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:14:41 PM</span> / <span>00:00:30:125</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:14:41 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:15:11 PM</span>
+<span class='badge badge-default'>00:00:30:125</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:15:01 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:01 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:01 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:01 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Adrian Blake Foster, Case Type: Motor Vehicle Accident, State: Kentucky, Date of Incident: 05/07/2024, Lead Source: Attorney Referral, Requested Amount: 28000, Court Index #: 20CI-2405-CT-000774
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:01 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '20CI-2405-CT-000774' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:15:11 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (4188c5a7b5532fc1ac7caa5e9bfcd93a)] -> xpath: //div[@class='ant-modal-body']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62395}, goog:processID: 20248, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62395/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4188c5a7b5532fc1ac7caa5e9bfcd93a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:31)
+	at Locaters.Application_Locaters.Popup_add_form(Application_Locaters.java:108)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:15:12 PM</span> / <span>00:00:50:302</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:15:12 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:16:03 PM</span>
+<span class='badge badge-default'>00:00:50:302</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:15:32 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:33 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:33 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:33 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Connor Dean Whitaker, Case Type: Products Liability, State: Illinois, Date of Incident: 02/10/2022, Lead Source: Co-Counsel Referral, Requested Amount: 75000, Court Index #: 16L04-2202-PL-000519
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:33 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '16L04-2202-PL-000519' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:15:54 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:01 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '16L04-2202-PL-000519' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:16:03 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li class="ant-menu-overflow-item ant-menu-item ant-menu-item-only-child" role="menuitem" tabindex="-1" aria-describedby=":r1i:" data-menu-id="rc-menu-uuid-35433-2-CaseContacts" style="opacity: 1; order: 5;">...</li> is not clickable at point (809, 240). Other element would receive the click: <div tabindex="-1" class="ant-modal-wrap ant-modal-centered">...</div>
+  (Session info: chrome=143.0.7499.41)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [596c241c4b3d6a0a47bfecb4dd0c1046, clickElement {id=f.017EEE10D5DEA6985FC6EC94398DE6D5.d.C251882233072D057A06119E5B80E46F.e.164}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54544}, goog:processID: 8940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54544/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[[[ChromeDriver: chrome on windows (596c241c4b3d6a0a47bfecb4dd0c1046)] -> xpath: //ul[@class='ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-light css-1egwh03']]] -> xpath: .//li[@role='menuitem']]
+Session ID: 596c241c4b3d6a0a47bfecb4dd0c1046
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.tab_selector(Case_Appplications.java:867)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:16:04 PM</span> / <span>00:00:50:799</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:16:04 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:16:55 PM</span>
+<span class='badge badge-default'>00:00:50:799</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:16:18 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:18 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:18 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:18 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Julian Carter Rhodes, Case Type: Workplace Injury, State: Indiana, Date of Incident: 03/30/2024, Lead Source: Employer Referral, Requested Amount: 22000, Court Index #: 49D06-2403-IN-001142
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:18 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '49D06-2403-IN-001142' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:39 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:16:42 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D06-2403-IN-001142' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:16:55 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:37)
+	at Locaters.Application_Locaters.Application_amount_edit_buttons(Application_Locaters.java:220)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:105)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:16:56 PM</span> / <span>00:01:05:315</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:16:56 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:18:02 PM</span>
+<span class='badge badge-default'>00:01:05:315</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:17:11 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:17:11 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:17:11 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:17:11 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Mitchell Aaron Hayes, Case Type: Slip and Fall, State: Michigan, Date of Incident: 12/19/2023, Lead Source: Digital Ad, Requested Amount: 18000, Court Index #: 07CV-2312-PL-000887
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:17:11 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '07CV-2312-PL-000887' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:17:31 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:17:34 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '07CV-2312-PL-000887' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:18:02 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (951deed53f06b7a7310babc6fcd39d00)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52666}, goog:processID: 13788, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52666/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 951deed53f06b7a7310babc6fcd39d00
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:18:03 PM</span> / <span>00:01:00:078</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:18:03 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:19:03 PM</span>
+<span class='badge badge-default'>00:01:00:078</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:18:10 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:18:10 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:18:10 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:18:10 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Dylan Chase Barrett, Case Type: Trucking Accident, State: Ohio, Date of Incident: 06/02/2023, Lead Source: Broker - Jason Bourne, Requested Amount: 80000, Court Index #: 19CV-2306-CT-001339
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:18:10 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '19CV-2306-CT-001339' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:18:31 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:18:35 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '19CV-2306-CT-001339' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:19:03 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (b6179c12b276eaad7310a853e7a9488d)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65070}, goog:processID: 9016, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65070/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b6179c12b276eaad7310a853e7a9488d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:19:05 PM</span> / <span>00:01:26:832</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:19:05 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:20:32 PM</span>
+<span class='badge badge-default'>00:01:26:832</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:19:40 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:19:41 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:19:41 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:19:41 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Gabriel Ryan Summers, Case Type: Pedestrian Knockdown, State: Indiana, Date of Incident: 09/09/2024, Lead Source: Attorney Referral, Requested Amount: 32000, Court Index #: 49D02-2409-CT-000604
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:19:41 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '49D02-2409-CT-000604' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:20:01 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:20:04 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D02-2409-CT-000604' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:20:32 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (87830b5f3d444857133cbfbe0151c53e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64967}, goog:processID: 7024, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64967/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 87830b5f3d444857133cbfbe0151c53e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:20:33 PM</span> / <span>00:01:09:308</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:20:33 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:21:43 PM</span>
+<span class='badge badge-default'>00:01:09:308</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:20:51 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:20:51 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:20:51 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:20:51 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Leonard Joel Harrington, Case Type: Wrongful Death, State: Illinois, Date of Incident: 01/15/2023, Lead Source: Co-Counsel Referral, Requested Amount: 120000, Court Index #: 11L01-2301-WD-000287
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:20:51 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '11L01-2301-WD-000287' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:21:12 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:21:15 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '11L01-2301-WD-000287' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:21:43 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all [[[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input], [[[[ChromeDriver: chrome on windows (fe07adc7f0ae262f139a3b0eb3dda61e)] -> xpath: //*[@class='ant-modal-body']]] -> xpath: .//input]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49861}, goog:processID: 14356, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49861/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fe07adc7f0ae262f139a3b0eb3dda61e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:40)
+	at Locaters.Application_Locaters.Modal_Input_Feilds(Application_Locaters.java:224)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>10:21:44 PM</span> / <span>00:00:47:427</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.12.2025 10:21:44 PM</span>
+<span class='badge badge-danger'>12.12.2025 10:22:32 PM</span>
+<span class='badge badge-default'>00:00:47:427</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>10:21:52 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:21:52 PM</td>
+        <td>
+          <b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:21:52 PM</td>
+        <td>
+          <b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:21:52 PM</td>
+        <td>
+          <b>🔹 Input </b> Plaintiff: Patrick Cole Jennings, Case Type: Motor Vehicle Accident, State: Kentucky, Date of Incident: 04/28/2024, Lead Source: Direct Plaintiff Call, Requested Amount: 26000, Court Index #: 18CI-2404-CT-000933
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:21:52 PM</td>
+        <td>
+          <b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '18CI-2404-CT-000933' should be accepted and saved from the edit popup.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:22:16 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>10:22:19 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '18CI-2404-CT-000933' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:22:32 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:37)
+	at Locaters.Application_Locaters.Application_amount_edit_buttons(Application_Locaters.java:220)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:105)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -710,18 +2604,252 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:15:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>Add_case</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>15</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">15 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>15 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:00:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:01:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:02:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:03:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:04:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:06:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:07:39 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:10:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:11:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:12:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:14:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:16:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:18:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:19:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:20:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>Add_case</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">java.lang.RuntimeException</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.RuntimeException</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:09:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:13:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:16:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>22:21:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>Add_case</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 11, 2025 08:25:21 PM</h3>
+<h3>Dec 12, 2025 10:00:18 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 11, 2025 08:25:57 PM</h3>
+<h3>Dec 12, 2025 10:22:32 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -733,7 +2861,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>3</h3>
+<h3>20</h3>
 </div></div>
 </div>
 </div>
@@ -754,7 +2882,7 @@
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>3</b> tests failed,
+<small data-tooltip='100%'><b>20</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -772,10 +2900,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='8%'><b>6</b> events passed</small></div>
+<div><small data-tooltip='12%'><b>20</b> events passed</small></div>
 <div>
-<small data-tooltip='4%'><b>3</b> events failed,
-<b data-tooltip='%'>66</b> others
+<small data-tooltip='12%'><b>20</b> events failed,
+<b data-tooltip='%'>116</b> others
 </small>
 </div>
 </div>
@@ -791,7 +2919,7 @@
 </div></div>
 <script>
 var timeline = {
-"login_validation":10.5,"login_validation":9.517,"login_validation":9.671
+"Add_case":72.483,"Add_case":59.338,"Add_case":73.758,"Add_case":57.892,"Add_case":98.826,"Add_case":66.159,"Add_case":108.014,"Add_case":44.386,"Add_case":66.202,"Add_case":78.313,"Add_case":57.339,"Add_case":58.467,"Add_case":30.125,"Add_case":50.302,"Add_case":50.799,"Add_case":65.315,"Add_case":60.078,"Add_case":86.832,"Add_case":69.308,"Add_case":47.427
 };
 </script>
 <div class="row">
@@ -831,7 +2959,7 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 0,
-failParent: 3,
+failParent: 20,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -847,11 +2975,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 6,
-failEvents: 3,
+passEvents: 20,
+failEvents: 20,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 66
+infoEvents: 116
 };
 </script>        </div>
       </div>

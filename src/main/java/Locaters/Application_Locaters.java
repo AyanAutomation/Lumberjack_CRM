@@ -50,29 +50,29 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[@aria-label='delete']")
 	private WebElement  Delete_button;
 	@FindBy(xpath="//*[@class='ant-modal-body']")
-	private WebElement  delete_popup_modal;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  popup_modal;
+	@FindBy(xpath="//*[@aria-label='edit']")
+	private List <WebElement> Application_amount_edit_buttons;
+	@FindBy(xpath="//div[@class='ant-descriptions-view']")
+	private WebElement  Application_details_Section;
+	@FindBy(xpath="//*[@aria-label='cloud-download']/..")
+	private WebElement  Generate_contract_button;
+	@FindBy(xpath="//*[@class='ant-card-actions']//*[@class='ant-select-selection-item']")
+	private WebElement  Application_Details_Dropdown_Feild; 
+	@FindBy(xpath="//*[text()='ADD NEW LAWFIRM']")
+	private WebElement  lawFirm_AddButton_ContactTab;
+	@FindBy(xpath="//*[@class='ant-card-extra']//button//span[text()='ADD NEW CONTACT']")
+	private WebElement  Contact_AddButton_ContactTab;
+	@FindBy(xpath="(//div[contains(@class,'ant-dropdown')][.//ul[contains(@class,'ant-dropdown-menu')]])[last()]")
+	private WebElement  Contact_type_option_dropdown_list;
+	@FindBy(xpath="//div[@role='dialog']")
+	private WebElement  pop_up_contact_list;
+	@FindBy(xpath="(//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]")
+	private WebElement  pop_up_contact_list_Footer; 
+	@FindBy(xpath="//*[@class='tox-editor-container']")
+	private WebElement Contract_editor; 
+	@FindBy(xpath="(//tbody[contains(@class,'ant-table-tbody')]//tr[not(@aria-hidden='true')]//td[contains(@class,'ant-table-cell')][.//div[contains(@class,'ant-space')]]//button[contains(@class,'ant-btn') and contains(@class,'ant-btn-dangerous')])[1]")
+	private WebElement  Contact_list_attorney_delete_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -205,16 +205,430 @@ public class Application_Locaters extends Repeat{
 	public WebElement Delete_button(){
 	wait_for_theElement(Delete_button);
 	return Delete_button;}
-	public WebElement delete_popup_modal(){
-	wait_for_theElement(delete_popup_modal);
-	return delete_popup_modal;}
+	public WebElement popup_modal(){
+	wait_for_theElement(popup_modal);
+	return popup_modal;}
 	public List <WebElement> modal_buttons(){
-	List <WebElement> modal_buttons = delete_popup_modal().findElements(By.xpath(".//button"));
+	List <WebElement> modal_buttons = popup_modal().findElements(By.xpath(".//button"));
 	wait_for_theElement(modal_buttons);
 	return modal_buttons;}
 	public WebElement Summary_feild(){
 	WebElement Summary_feild= Edit_form().findElement(By.xpath(".//textarea"));
 	wait_for_theElement(Summary_feild);
 	return Summary_feild;}   
+	public List <WebElement> Application_amount_edit_buttons(){
+	wait_for_theElement(Application_amount_edit_buttons);
+	return Application_amount_edit_buttons;}    
+	public List <WebElement> Modal_Input_Feilds(){
+	List <WebElement> Modal_Input_Feilds = popup_modal().findElements(By.xpath(".//input"));
+	wait_for_theElement(Modal_Input_Feilds);
+	return Modal_Input_Feilds;}   
+	public WebElement Application_details_Section(){
+	wait_for_theElement(Application_details_Section);
+	return Application_details_Section;}   
+	public List <WebElement> Application_Amount_input_Fields(){
+	List <WebElement> Application_Amount_input_Fields = Application_details_Section().findElements(By.xpath(".//input[@role='spinbutton']"));
+	wait_for_theElement(Application_Amount_input_Fields);
+	return Application_Amount_input_Fields;}   
+	public WebElement Generate_contract_button(){
+	wait_for_theElement(Generate_contract_button);
+	return Generate_contract_button;}   
+	public WebElement Application_Details_Dropdown_Feild(){
+	wait_for_theElement(Application_Details_Dropdown_Feild);
+	return Application_Details_Dropdown_Feild;}    
+	public WebElement lawFirm_AddButton_ContactTab(){
+	wait_for_theElement(lawFirm_AddButton_ContactTab);
+	return lawFirm_AddButton_ContactTab;}   
+	public WebElement Contact_AddButton_ContactTab(){
+	wait_for_theElement(Contact_AddButton_ContactTab);
+	return Contact_AddButton_ContactTab;}   
+	public WebElement Contact_type_dropdown_list(){
+	wait_for_theElement(Contact_type_option_dropdown_list);
+	return Contact_type_option_dropdown_list;}   
+	public List <WebElement> Contact_type_Options(){
+	WebElement Contact_type_option_dropdown = Contact_type_dropdown_list();
+	List <WebElement> Contact_type_Options = wait_for_nested(Contact_type_option_dropdown,By.xpath(".//li"));
+	return Contact_type_Options;}   
+	public List <WebElement> List_Checkboxes(){
+	List <WebElement> List_Checkboxes = pop_up_contact_list().findElements(By.xpath(".//input[@type='checkbox']"));
+	wait_for_theElement(List_Checkboxes);
+	return List_Checkboxes;}   
+	public WebElement pop_up_contact_list(){
+	wait_for_theElement(pop_up_contact_list);
+	return pop_up_contact_list;}   
+	public WebElement pop_up_contact_list_Footer(){
+	wait_for_theElement(pop_up_contact_list_Footer);
+	return pop_up_contact_list_Footer;}   
+	public List <WebElement> popup_contact_list_footer_buttons(){
+	List <WebElement> popup_contact_list_footer_buttons = pop_up_contact_list_Footer().findElements(By.xpath(".//button"));
+	wait_for_theElement(popup_contact_list_footer_buttons);
+	return popup_contact_list_footer_buttons;}   
+	public WebElement Contact_list_attorney_delete_button(){
+    wait_for_theElement(Contact_list_attorney_delete_button);
+	return Contact_list_attorney_delete_button;}   
+	public WebElement Contract_editor(){
+	wait_for_theElement(Contract_editor);
+	return Contract_editor;}    /*
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;}   
+	public WebElement (){
+	wait_for_theElement();
+	return ;} */
+	
 
 }
