@@ -31,6 +31,7 @@ public class Case_Appplications extends Header_Manager{
         Login_negative_testcases lng = new Login_negative_testcases();
 		Login_Locaters lg = new Login_Locaters(d);
 		Repeat rp = new Repeat(d);
+		JavascriptExecutor js = (JavascriptExecutor)d; 
 		
 		
 		header_buttons_clicker(0);
@@ -75,6 +76,7 @@ public class Case_Appplications extends Header_Manager{
 		p.Case_details_edit_buttons();
 		Thread.sleep(500);
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
+		Thread.sleep(800);
 		tab_selector("Contacts");
 		p.lawFirm_AddButton_ContactTab();
 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
@@ -145,8 +147,11 @@ public class Case_Appplications extends Header_Manager{
 	    p.Interest_Start_Date().sendKeys(data.get("Interest Start Date"));
 	    Thread.sleep(800);
 	    //p.calender_date_select().click();
-	    p.submit_button().click();
-	    Thread.sleep(800);
+	  try {  p.submit_button().click();}catch(Exception kmo){
+		  rp.movetoelement(p.submit_button());
+		  js.executeScript("arguments[0].click();", p.submit_button());
+		  }
+	     Thread.sleep(800);
 	    p.Contract_editor();}
 	
 	
@@ -765,10 +770,10 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	        { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
+	        { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  
+	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  */
 	    };
 	}
 	

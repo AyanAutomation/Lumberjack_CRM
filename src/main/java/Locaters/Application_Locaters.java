@@ -75,9 +75,9 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Contact_list_attorney_delete_button; 
 	@FindBy(xpath="//form//div[@class='ant-table-content']//input[@type='text']")
 	private WebElement  rate_of_return_feild; 
-	@FindBy(xpath="//button[@type='submit']")
+	@FindBy(xpath="//*[@class='ant-modal-body']//*[@class='ant-btn css-1egwh03 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid']")
 	private WebElement submit_button; /*
-	@FindBy(xpath="")
+	@FindBy(xpath="//form//button[@class='ant-btn css-1egwh03 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid']")
 	private WebElement  ;
 	@FindBy(xpath="")
 	private WebElement  ;

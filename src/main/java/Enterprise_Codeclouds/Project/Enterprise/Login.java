@@ -23,6 +23,7 @@ public class Login extends Base{
 	Data_Reader f = new Data_Reader();
 	Login_negative_testcases ln = new Login_negative_testcases();
 		
+	d.manage().deleteAllCookies();
 	d.get(Target_url);
 	lg.id_field().sendKeys(f.Data_Fetcher("Login_id"));	
 	lg.password_field().sendKeys(f.Data_Fetcher("Pass"));	
