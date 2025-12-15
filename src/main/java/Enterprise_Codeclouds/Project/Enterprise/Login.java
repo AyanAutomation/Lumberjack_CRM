@@ -32,6 +32,7 @@ public class Login extends Base{
 	Thread.sleep(500);
 	String toast_message = lg.toast().getText();
 	ln.Toast_printer(toast_message);
+	System.out.println();
 	lg.login_confirmation();	
 	}
 

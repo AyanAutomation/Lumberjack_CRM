@@ -60,5 +60,15 @@ public class Repeat {
         WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
       return  w.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(parent, childLocator));
     }
+    
+    public List<WebElement> wait_for_nested_presence(WebElement parent, By childLocator){
+        WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
+        return w.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(parent, childLocator));
+    }
+    public WebElement wait_for_presence(By locator){
+        WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
+        return w.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
 	
 }

@@ -72,11 +72,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[@class='tox-editor-container']")
 	private WebElement Contract_editor; 
 	@FindBy(xpath="(//tbody[contains(@class,'ant-table-tbody')]//tr[not(@aria-hidden='true')]//td[contains(@class,'ant-table-cell')][.//div[contains(@class,'ant-space')]]//button[contains(@class,'ant-btn') and contains(@class,'ant-btn-dangerous')])[1]")
-	private WebElement  Contact_list_attorney_delete_button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Contact_list_attorney_delete_button; 
+	@FindBy(xpath="//form//div[@class='ant-table-content']//input[@type='text']")
+	private WebElement  rate_of_return_feild; 
+	@FindBy(xpath="//button[@type='submit']")
+	private WebElement submit_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -268,22 +268,30 @@ public class Application_Locaters extends Repeat{
 	return Contact_list_attorney_delete_button;}   
 	public WebElement Contract_editor(){
 	wait_for_theElement(Contract_editor);
-	return Contract_editor;}    /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Contract_editor;}  
+	public List <WebElement> fee_amount_feilds(){
+	List <WebElement> fee_amount_feilds = Edit_form().findElements(By.xpath(".//input[@placeholder='Fee Amount']"));
+	wait_for_theElement(fee_amount_feilds);
+	return fee_amount_feilds;} 
+	/*  
+	public List<WebElement> Nested_form_inputs(){
+    wait_for_nested_presence(Popup_add_form(),By.xpath(".//form[contains(@class,'ant-form')]"));
+	List<WebElement> Nested_form_inputs= wait_for_nested(Popup_add_form(),By.xpath(".//input[not(@type='hidden')]"));
+	return Nested_form_inputs;}   */
+	public WebElement rate_of_return_feild(){
+	wait_for_theElement(rate_of_return_feild);
+	return rate_of_return_feild;}   
+	public WebElement Interest_Start_Date(){
+	WebElement Interest_Start_Date = Edit_form().findElement(By.xpath(".//input[@placeholder='Interest Start Date']"));
+	wait_for_theElement(Interest_Start_Date);
+	return Interest_Start_Date;}   
+	public WebElement Agreement_Date_feild(){
+	WebElement Agreement_Date_feild = Edit_form().findElement(By.xpath(".//input[@placeholder='Agreement Date']"));
+	wait_for_theElement(Agreement_Date_feild);
+	return Agreement_Date_feild;}    
+	public WebElement submit_button(){
+	wait_for_theElement(submit_button);
+	return submit_button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
