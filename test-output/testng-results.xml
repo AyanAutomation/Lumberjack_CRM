@@ -2,27 +2,27 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-16T17:26:14 IST" name="Default suite" finished-at="2025-12-16T17:27:17 IST" duration-ms="63110">
+  <suite started-at="2025-12-16T19:35:42 IST" name="Default suite" finished-at="2025-12-16T19:36:45 IST" duration-ms="63252">
     <groups>
     </groups>
-    <test started-at="2025-12-16T17:26:14 IST" name="Default test" finished-at="2025-12-16T17:27:17 IST" duration-ms="63110">
+    <test started-at="2025-12-16T19:35:42 IST" name="Default test" finished-at="2025-12-16T19:36:45 IST" duration-ms="63252">
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2cd76f31]" started-at="2025-12-16T17:26:14 IST" name="setup" finished-at="2025-12-16T17:26:17 IST" duration-ms="2820" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@367ffa75]" started-at="2025-12-16T19:35:42 IST" name="setup" finished-at="2025-12-16T19:35:45 IST" duration-ms="2638" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2cd76f31]" started-at="2025-12-16T17:26:17 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-16T17:27:17 IST" duration-ms="59697" status="PASS">
+        <test-method signature="Add_case(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@367ffa75]" started-at="2025-12-16T19:35:45 IST" name="Add_case" data-provider="caseData" finished-at="2025-12-16T19:36:45 IST" duration-ms="60058" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=12/23/2025, Application Status=Approved, Approved Amount=11000, Attorney Name=Atty. Jordan Blake, Buyout Amount=6000, Buyout Expiry Date=12/23/2028, Buyout Funder Name=Frontline Capital Group, Case #=20, Case Type=Motor Vehicle Accident, Court Index Number=18CI-2404-CT-000933, Date of Incident=04/28/2024, Document prep fee=225, Fund transfer fee=70, Interest Start Date=12/23/2025, Law Firm Name=Blake Rideshare Injury Law, Lead Source=Direct Plaintiff Call, Plaintiff Address One=902 Kingston Ave, Plaintiff Address Two=Lexington, KY 40508, Plaintiff Email=patrick.jennings@plaintiffmail.com, Plaintiff Name=Patrick Cole Jennings, Plaintiff Phone Number=555-201-0020, Rate of Return=36, Recommended Max Funding=11000, Requested Amount=26000, Risk Level=Moderate, SMS Message Body=Hi Patrick, your rideshare accident funding request has been approved up to $11,000. After you and your attorney sign the agreement, we’ll proceed with disbursement. – Lumberjack Legal Finance, SMS Message Title=Rideshare Funding Approved, State=Kentucky, Summary=Uber passenger in chain-reaction rear-end crash; neck and low-back soft-tissue injuries, ongoing stiffness, PT and chiropractic care; work disruption., Underwriting Notes=Rideshare passenger status gives clean liability and multiple coverage layers (tortfeasor and Uber policy). Injuries are soft-tissue but well documented with continuing functional impact, especially with sitting. Need trip records, police report, med summaries, wage-loss data and prior spine history. With solid coverage, funding of 10–11k is supportable.}]]>
+                <![CDATA[{Agreement Date=12/23/2025, Application Status=Approved, Approved Amount=12000, Attorney Name=Atty. Melissa Grant, Buyout Amount=8000, Buyout Expiry Date=12/23/2028, Buyout Funder Name=Summit Legal Funding, Case #=1, Case Type=Motor Vehicle Accident, Court Index Number=49D12-2403-CT-001201, Date of Incident=03/14/2024, Document prep fee=250, Fund transfer fee=75, Interest Start Date=12/23/2025, Law Firm Name=Grant & Lawson Injury Law, Lead Source=Attorney Referral, Plaintiff Address One=1245 N Meridian St, Plaintiff Address Two=Indianapolis, IN 46204, Plaintiff Email=caleb.lawson@plaintiffmail.com, Plaintiff Name=Caleb Hunter Lawson, Plaintiff Phone Number=555-201-0001, Rate of Return=38, Recommended Max Funding=12000, Requested Amount=25000, Risk Level=Moderate, SMS Message Body=Hi Caleb, your motor vehicle case funding request has been approved for up to $12,000. Our team will contact you shortly to confirm disbursement details. – Lumberjack Legal Finance, SMS Message Title=Funding Application Approved, State=Indiana, Summary=Rear-end collision on I-65; plaintiff rear-ended in congestion, airbags deployed, whiplash, PT with residual stiffness and work loss., Underwriting Notes=Strong rear-end liability with citation for following too closely. Soft-tissue neck/back injury but supported by ER visit, imaging, PT and wage loss. Need full medical records, wage docs and prior-claim check. Assuming clean priors and adequate BI limits, case supports funding up to about 12k.}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2cd76f31]" started-at="2025-12-16T17:27:17 IST" name="Kill" finished-at="2025-12-16T17:27:17 IST" duration-ms="453" status="PASS">
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@367ffa75]" started-at="2025-12-16T19:36:45 IST" name="Kill" finished-at="2025-12-16T19:36:45 IST" duration-ms="427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->

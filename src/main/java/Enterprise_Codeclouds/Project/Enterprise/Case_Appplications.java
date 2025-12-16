@@ -37,6 +37,21 @@ public class Case_Appplications extends Header_Manager{
 		Actions a = new Actions(d);
 		WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
 		
+		int Requested_Amount = Integer.parseInt(data.get("Requested Amount"));
+		int Buyout_Amount = Integer.parseInt(data.get("Buyout Amount"));
+		int Approved_Amount = Integer.parseInt(data.get("Approved Amount"));
+		int Document_prep_fee = Integer.parseInt(data.get("Document prep fee"));
+		int Fund_transfer_fee = Integer.parseInt(data.get("Fund transfer fee"));
+		int Rate_of_Return = Integer.parseInt(data.get("Rate of Return"));
+		
+		double Funded_amount = Buyout_Amount+Approved_Amount;
+		double Annual_Interest_Amount = (Funded_amount * Rate_of_Return) / 100;
+		double Monthly_Interest_Amount = Annual_Interest_Amount/12;
+		double Monthly_Payable_Amount = Funded_amount+Monthly_Interest_Amount+Document_prep_fee+Fund_transfer_fee;
+		
+		
+		
+		
 		int step=1;
 
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title:</b> Create a New Case + Add Attorney Contact + Create Application + Generate Contract");
@@ -113,7 +128,7 @@ public class Case_Appplications extends Header_Manager{
 		p.pop_up_contact_list();
 		Thread.sleep(800);
 		p.List_Checkboxes().get(1).click();
-		Thread.sleep(800);
+		Thread.sleep(600);
 		rp.Scroll_to_element(p.popup_contact_list_footer_buttons().get(0));
 		Thread.sleep(800);
 		p.popup_contact_list_footer_buttons().get(0).click();
@@ -186,7 +201,7 @@ public class Case_Appplications extends Header_Manager{
 	    p.calender_date_select().click();
 	    p.Interest_Start_Date().sendKeys(data.get("Interest Start Date"));
 	    p.rate_of_return_feild().click();
-	    Thread.sleep(1500);
+	    Thread.sleep(600);
 	    WebElement Generate_Contract_Button = p.contract_generator_button();
 	    rp.movetoelement(Generate_Contract_Button);
 	    rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
@@ -198,9 +213,19 @@ public class Case_Appplications extends Header_Manager{
 		}catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Contract Editor did NOT open after Generate Contract. Flow failed at final step.");
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Case/Application created but contract generation verification failed for CourtIndex="+data.get("Court Index Number"));
-			throw e;
-		}
-}
+			throw e;}
+	    d.switchTo().frame(p.contract_doc_iframe());
+	    Thread.sleep(1000);
+	    System.out.println("First Month Payable  "+Monthly_Payable_Amount);
+	    System.out.println();
+	    rp.Scroll_to_element(p.Contract_lien_table());
+	    List<WebElement> cells = p.Cell_datas();
+	    for(WebElement cell:cells){
+	    	 String cell_text = cell.getText().trim();
+	    	System.out.println(cell_text);
+	    	System.out.println();
+	    	}
+	    d.switchTo().defaultContent();}
 	
 	
 	
@@ -807,7 +832,7 @@ public class Case_Appplications extends Header_Manager{
 	        c1, c2, c3, c4, c5,
 	        c6, c7, c8, c9, c10,
 	        c11, c12, c13, c14, c15,
-	        c16, c17, c18, c19, c20
+	        c16, c17, c18, c19, c20 
 	    };
 
 	    for (TreeMap<String, String> c : allCases) {
@@ -818,10 +843,10 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	     /*   { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
+	     { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, */{ c20 }  
+	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  */
 	    };
 	}
 	
@@ -833,6 +858,10 @@ public class Case_Appplications extends Header_Manager{
 		
 		System.out.println(prefix+option.getText().trim());}}
 	
+	   public void lien_calculator(){
+		
+		
+		 }
 	
 	
 	

@@ -77,11 +77,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//form//div[@class='ant-table-content']//input[@type='text']")
 	private WebElement  rate_of_return_feild;
 	@FindBy(xpath="(//*[@role='dialog']//button)[4]")
-	private WebElement contract_generator_button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement contract_generator_button; 
+	@FindBy(xpath="//iframe")
+	private WebElement  contract_doc_iframe; 
+	@FindBy(xpath="//table[@class='main-table mce-item-table']")
+	private WebElement Contract_lien_table;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -283,16 +283,18 @@ public class Application_Locaters extends Repeat{
 	return Agreement_Date_feild;}    
 	public WebElement contract_generator_button(){
 	wait_for_theElement(contract_generator_button);
-	return contract_generator_button;}  /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return contract_generator_button;}  
+	public WebElement contract_doc_iframe(){
+	wait_for_theElement(contract_doc_iframe);
+	return contract_doc_iframe;}    
+	public WebElement Contract_lien_table(){
+	wait_for_theElement(Contract_lien_table);
+	return Contract_lien_table;}    
+	public List <WebElement> Cell_datas(){
+	Contract_lien_table();
+	List <WebElement> Cell_datas = Contract_lien_table().findElements(By.xpath(".//tr//td"));
+	wait_for_theElement(Cell_datas); 
+	return Cell_datas;}   /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
