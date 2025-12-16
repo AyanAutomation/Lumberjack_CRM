@@ -9,60 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">214,111</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">63,110</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Enterprise_Codeclouds.Project.Enterprise.Case_Appplications</td><td><a href="#m0">Add_case</a></td><td rowspan="1">1765813199214</td><td rowspan="1">180141</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Enterprise_Codeclouds.Project.Enterprise.Case_Appplications</td><td><a href="#m0">Add_case</a></td><td rowspan="1">1765886177556</td><td rowspan="1">59697</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">Enterprise_Codeclouds.Project.Enterprise.Case_Appplications#Add_case</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{Agreement Date=12/22/2025, Application Status=Approved, Approved Amount=12000, Attorney Name=Atty. Melissa Grant, Buyout Amount=8000, Buyout Expiry Date=12/22/2028, Buyout Funder Name=Summit Legal Funding, Case #=1, Case Type=Motor Vehicle Accident, Court Index Number=49D12-2403-CT-001201, Date of Incident=03/14/2024, Document prep fee=250, Fund transfer fee=75, Interest Start Date=12/22/2025, Law Firm Name=Grant &amp; Lawson Injury Law, Lead Source=Attorney Referral, Plaintiff Address One=1245 N Meridian St, Plaintiff Address Two=Indianapolis, IN 46204, Plaintiff Email=caleb.lawson@plaintiffmail.com, Plaintiff Name=Caleb Hunter Lawson, Plaintiff Phone Number=555-201-0001, Rate of Return=38, Recommended Max Funding=12000, Requested Amount=25000, Risk Level=Moderate, SMS Message Body=Hi Caleb, your motor vehicle case funding request has been approved for up to $12,000. Our team will contact you shortly to confirm disbursement details. – Lumberjack Legal Finance, SMS Message Title=Funding Application Approved, State=Indiana, Summary=Rear-end collision on I-65; plaintiff rear-ended in congestion, airbags deployed, whiplash, PT with residual stiffness and work loss., Underwriting Notes=Strong rear-end liability with citation for following too closely. Soft-tissue neck/back injury but supported by ER visit, imaging, PT and wage loss. Need full medical records, wage docs and prior-claim check. Assuming clean priors and adequate BI limits, case supports funding up to about 12k.}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f931d47b7231b77ed5afe86c8a71eeb1, get {url=https://logbook.wechopfees.com/signin}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.42, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56892}, goog:processID: 6292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56892/devtoo..., se:cdpVersion: 143.0.7499.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f931d47b7231b77ed5afe86c8a71eeb1
-	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:427)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:212)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:312)
-	at Enterprise_Codeclouds.Project.Enterprise.Login.login(Login.java:27)
-	at Enterprise_Codeclouds.Project.Enterprise.Header_Manager.header_buttons_clicker(Header_Manager.java:15)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:37)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.util.concurrent.TimeoutException
-	at java.base/java.util.concurrent.CompletableFuture$Timeout.run(CompletableFuture.java:2920)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">Enterprise_Codeclouds.Project.Enterprise.Case_Appplications#Add_case</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{Agreement Date=12/23/2025, Application Status=Approved, Approved Amount=11000, Attorney Name=Atty. Jordan Blake, Buyout Amount=6000, Buyout Expiry Date=12/23/2028, Buyout Funder Name=Frontline Capital Group, Case #=20, Case Type=Motor Vehicle Accident, Court Index Number=18CI-2404-CT-000933, Date of Incident=04/28/2024, Document prep fee=225, Fund transfer fee=70, Interest Start Date=12/23/2025, Law Firm Name=Blake Rideshare Injury Law, Lead Source=Direct Plaintiff Call, Plaintiff Address One=902 Kingston Ave, Plaintiff Address Two=Lexington, KY 40508, Plaintiff Email=patrick.jennings@plaintiffmail.com, Plaintiff Name=Patrick Cole Jennings, Plaintiff Phone Number=555-201-0020, Rate of Return=36, Recommended Max Funding=11000, Requested Amount=26000, Risk Level=Moderate, SMS Message Body=Hi Patrick, your rideshare accident funding request has been approved up to $11,000. After you and your attorney sign the agreement, we’ll proceed with disbursement. – Lumberjack Legal Finance, SMS Message Title=Rideshare Funding Approved, State=Kentucky, Summary=Uber passenger in chain-reaction rear-end crash; neck and low-back soft-tissue injuries, ongoing stiffness, PT and chiropractic care; work disruption., Underwriting Notes=Rideshare passenger status gives clean liability and multiple coverage layers (tortfeasor and Uber policy). Injuries are soft-tissue but well documented with continuing functional impact, especially with sitting. Need trip records, police report, med summaries, wage-loss data and prior spine history. With solid coverage, funding of 10–11k is supportable.}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

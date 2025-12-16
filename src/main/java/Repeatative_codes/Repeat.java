@@ -24,8 +24,17 @@ public class Repeat {
 		
 		this.d=d;}
 	
+	public WebElement wait_for_presenceBy(By locator){
+	    WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
+	    return w.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
 	
-   public void wait_for_theElement(WebElement element){
+    public void wait_for_theElement_tobe_clickable(WebElement element){
+		
+		WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+	    w.until(ExpectedConditions.elementToBeClickable(element));}
+	
+	 public void wait_for_theElement(WebElement element){
 		
 		WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
 	    w.until(ExpectedConditions.visibilityOf(element));}

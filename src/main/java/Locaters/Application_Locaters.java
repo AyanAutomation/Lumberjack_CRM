@@ -1,6 +1,7 @@
 package Locaters;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -74,13 +75,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//tbody[contains(@class,'ant-table-tbody')]//tr[not(@aria-hidden='true')]//td[contains(@class,'ant-table-cell')][.//div[contains(@class,'ant-space')]]//button[contains(@class,'ant-btn') and contains(@class,'ant-btn-dangerous')])[1]")
 	private WebElement  Contact_list_attorney_delete_button; 
 	@FindBy(xpath="//form//div[@class='ant-table-content']//input[@type='text']")
-	private WebElement  rate_of_return_feild; 
-	@FindBy(xpath="//*[@class='ant-modal-body']//*[@class='ant-btn css-1egwh03 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid']")
-	private WebElement submit_button; /*
-	@FindBy(xpath="//form//button[@class='ant-btn css-1egwh03 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid']")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  rate_of_return_feild;
+	@FindBy(xpath="(//*[@role='dialog']//button)[4]")
+	private WebElement contract_generator_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -273,12 +270,7 @@ public class Application_Locaters extends Repeat{
 	List <WebElement> fee_amount_feilds = Edit_form().findElements(By.xpath(".//input[@placeholder='Fee Amount']"));
 	wait_for_theElement(fee_amount_feilds);
 	return fee_amount_feilds;} 
-	/*  
-	public List<WebElement> Nested_form_inputs(){
-    wait_for_nested_presence(Popup_add_form(),By.xpath(".//form[contains(@class,'ant-form')]"));
-	List<WebElement> Nested_form_inputs= wait_for_nested(Popup_add_form(),By.xpath(".//input[not(@type='hidden')]"));
-	return Nested_form_inputs;}   */
-	public WebElement rate_of_return_feild(){
+    public WebElement rate_of_return_feild(){
 	wait_for_theElement(rate_of_return_feild);
 	return rate_of_return_feild;}   
 	public WebElement Interest_Start_Date(){
@@ -289,15 +281,9 @@ public class Application_Locaters extends Repeat{
 	WebElement Agreement_Date_feild = Edit_form().findElement(By.xpath(".//input[@placeholder='Agreement Date']"));
 	wait_for_theElement(Agreement_Date_feild);
 	return Agreement_Date_feild;}    
-	public WebElement submit_button(){
-	wait_for_theElement(submit_button);
-	return submit_button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	public WebElement contract_generator_button(){
+	wait_for_theElement(contract_generator_button);
+	return contract_generator_button;}  /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

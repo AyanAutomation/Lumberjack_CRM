@@ -1,20 +1,22 @@
 package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.TreeMap;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
@@ -32,29 +34,45 @@ public class Case_Appplications extends Header_Manager{
 		Login_Locaters lg = new Login_Locaters(d);
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
+		Actions a = new Actions(d);
+		WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
 		
-		
+		int step=1;
+
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title:</b> Create a New Case + Add Attorney Contact + Create Application + Generate Contract");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📘 Description:</b> User creates a new case for an existing plaintiff, updates case details, links an Attorney contact, creates/updates application amounts & status, then generates a contract and verifies Contract Editor opens.");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📥 Input:</b> Plaintiff="+data.get("Plaintiff Name")+", CaseType="+data.get("Case Type")+", State="+data.get("State")+", DOI="+data.get("Date of Incident")+", LeadSource="+data.get("Lead Source")+", ReqAmt="+data.get("Requested Amount")+", CourtIndex="+data.get("Court Index Number")+", BuyoutFunder="+data.get("Buyout Funder Name")+", BuyoutAmt="+data.get("Buyout Amount")+", BuyoutExpiry="+data.get("Buyout Expiry Date")+", ApprovedAmt="+data.get("Approved Amount")+", DocPrepFee="+data.get("Document prep fee")+", FundTransferFee="+data.get("Fund transfer fee")+", RoR="+data.get("Rate of Return")+", AgreementDate="+data.get("Agreement Date")+", InterestStart="+data.get("Interest Start Date"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>✅ Expected:</b> Case should be created successfully with success toast, case details should save (Court Index + Summary), attorney contact should be linked, application should accept amounts/status, and Contract Editor should open after Generate Contract.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Navigate to Case module from header.");
 		header_buttons_clicker(0);
-		Report_Listen.log_print_in_report().log( Status.INFO, "<b>🔹 Scenario 1 – Positive Testcase:</b> Case handler creates a new case & application with valid inputs for an existing plaintiff." );
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹Description </b>  Verify that the user can open the *New Case* popup, select an existing plaintiff, fill all mandatory fields (Case Type, State of Incident, Date of Incident, Lead Source, Requested Amount) and save the case so that a new Case ID is created and Court Index Number can be updated from the Case Details screen.");
-	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Input </b> Plaintiff: "+data.get("Plaintiff Name")+", Case Type: "+data.get("Case Type")+", State: "+data.get("State")+", Date of Incident: "+data.get("Date of Incident")+", Lead Source: "+data.get("Lead Source")+", Requested Amount: "+data.get("Requested Amount")+", Court Index #: "+data.get("Court Index Number"));
-	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹Expected </b> New case should be created without validation errors, a success toast should appear after clicking *Create*, system should navigate to the Case Details page for the newly created case, and the Court Index Number '"+data.get("Court Index Number")+"' should be accepted and saved from the edit popup.");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case module opened from header.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open New Case popup/form.");
 		p.Popup_add_form();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
 		p.form_inputs().get(0).sendKeys(data.get("Plaintiff Name"));
 		p.plaintiff_dropdown_list();
 		p.Plaintiff_options().get(0).click();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+data.get("Plaintiff Name"));
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
 		p.form_inputs().get(1).sendKeys(data.get("Case Type"));
 		p.form_inputs().get(1).click();
 		p.Incident_type_dropdown();
 		option_printers("Incident Options are ",p.Incident_options());
 		p.Incident_options().get(0).click();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Incident/Case type selected from list for input = "+data.get("Case Type"));
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select State of Incident from dropdown.");
 		p.form_inputs().get(2).sendKeys(data.get("State"));
 		p.form_inputs().get(2).click();
 		p.State_of_incident_dropdown();
 		p.State_of_incident_options().get(0).click();
-		Thread.sleep(500);		
+		Thread.sleep(500);	
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> State selected from list for input = "+data.get("State"));
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Date of Incident and confirm date selection.");
 		p.form_inputs().get(3).sendKeys(data.get("Date of Incident"));
 		p.calender_date_select().click();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+data.get("Date of Incident"));
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
 		rp.Scroll_to_element(p.form_inputs().get(4));
 		p.form_inputs().get(4).click();
 		p.Lead_Type_dropdown();
@@ -62,6 +80,8 @@ public class Case_Appplications extends Header_Manager{
 		p.form_inputs().get(5).click();
 		p.Lead_dropdown();
 		p.Leadoptions().get(0).click();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = "+data.get("Lead Source")+")");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Requested Amount and click Create/Save Case.");
 		rp.Scroll_to_element(p.form_inputs().get(5));
 		p.form_inputs().get(6).sendKeys(data.get("Requested Amount"));
 		p.form_buttons().get(1).click();
@@ -69,6 +89,7 @@ public class Case_Appplications extends Header_Manager{
 		lng.Toast_printer(lg.toast().getText().trim());}
 		catch(Exception e){
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Case Details edit popup and update Summary + Court Index Number.");
 		p.Case_details_edit_buttons().click();
 		p.Summary_feild().sendKeys(data.get("Summary"));
 		p.Court_index_input().sendKeys(data.get("Court Index Number"));
@@ -77,6 +98,8 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(500);
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
 		Thread.sleep(800);
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+data.get("Court Index Number")+")");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
 		tab_selector("Contacts");
 		p.lawFirm_AddButton_ContactTab();
 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
@@ -96,17 +119,26 @@ public class Case_Appplications extends Header_Manager{
 		p.popup_contact_list_footer_buttons().get(0).click();
 		Thread.sleep(600);
 		rp.Scroll_to_element(p.Contact_list_attorney_delete_button());
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 		rp.Scroll_to_element(p.Application_tab_bar());
 		tab_selector("Applications");
 		p.Application_amount_edit_buttons().get(1).click();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
 		p.Modal_Input_Feilds().get(0).sendKeys(data.get("Buyout Funder Name"));
 		p.Modal_Input_Feilds().get(1).sendKeys(data.get("Buyout Amount"));
 		p.Modal_Input_Feilds().get(2).sendKeys(data.get("Buyout Expiry Date"));
 		p.calender_date_select().click();
 		p.modal_buttons().get(1).click();
 		Thread.sleep(800);
+		try {
+			lng.Toast_printer(lg.toast().getText().trim());}
+			catch(Exception e){
+			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
 		List<WebElement> Amount_edit_buttons;
-	try{Amount_edit_buttons= 	p.Application_amount_edit_buttons();
+	try{Amount_edit_buttons= p.Application_amount_edit_buttons();
 	    Amount_edit_buttons.get(2).click(); }
 	catch(Exception em) {
 		Thread.sleep(800);
@@ -119,7 +151,9 @@ public class Case_Appplications extends Header_Manager{
 		p.Application_Amount_input_Fields().get(0).sendKeys(data.get("Approved Amount"));
 	    p.table_body().click();
 	    Thread.sleep(800);
-	    rp.movetoelement(p.Application_Details_Dropdown_Feild());
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Approved Amount entered = "+data.get("Approved Amount"));
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Update Application Status to APPROVED from dropdown.");
+		rp.movetoelement(p.Application_Details_Dropdown_Feild());
 	    p.Application_Details_Dropdown_Feild().click();
 	    p.plaintiff_dropdown_list();
 	    List<WebElement> Status_opts = p.Plaintiff_options();
@@ -127,12 +161,16 @@ public class Case_Appplications extends Header_Manager{
 	    	if(Stat_opt.getText().trim().contains("APPROVED")){
 	    		Stat_opt.click();
 	    		break;}}
-	    p.Generate_contract_button().click();
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Application status set to APPROVED.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click Generate Contract and wait for Contract popup/modal.");
+		p.Generate_contract_button().click();
 	    p.popup_modal();
 	    Thread.sleep(800);
 	    rp.movetoelement(p.Popup_add_form());
 	    Thread.sleep(800);
-	    List<WebElement> Fee_feilds = p.fee_amount_feilds();
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Contract details modal opened.");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill contract fee fields and Rate of Return.");
+		List<WebElement> Fee_feilds = p.fee_amount_feilds();
 	    rp.Scroll_to_element(Fee_feilds.get(0));
 	    rp.Feild_clear(Fee_feilds.get(0));
 	    Fee_feilds.get(0).sendKeys(data.get("Document prep fee"));
@@ -141,18 +179,28 @@ public class Case_Appplications extends Header_Manager{
 	    rp.Scroll_to_element(p.rate_of_return_feild());
 	    rp.Feild_clear(p.rate_of_return_feild());
 	    p.rate_of_return_feild().sendKeys(data.get("Rate of Return"));
-	    rp.Scroll_to_element(p.Agreement_Date_feild());
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep="+data.get("Document prep fee")+", FundTransfer="+data.get("Fund transfer fee")+", RoR="+data.get("Rate of Return")+")");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Agreement Date + Interest Start Date and confirm date selection.");
+		rp.Scroll_to_element(p.Agreement_Date_feild());
 	    p.Agreement_Date_feild().sendKeys(data.get("Agreement Date"));
 	    p.calender_date_select().click();
 	    p.Interest_Start_Date().sendKeys(data.get("Interest Start Date"));
-	    Thread.sleep(800);
-	    //p.calender_date_select().click();
-	  try {  p.submit_button().click();}catch(Exception kmo){
-		  rp.movetoelement(p.submit_button());
-		  js.executeScript("arguments[0].click();", p.submit_button());
-		  }
-	     Thread.sleep(800);
-	    p.Contract_editor();}
+	    p.rate_of_return_feild().click();
+	    Thread.sleep(1500);
+	    WebElement Generate_Contract_Button = p.contract_generator_button();
+	    rp.movetoelement(Generate_Contract_Button);
+	    rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
+	    js.executeScript("arguments[0].click();", Generate_Contract_Button);
+	    try{
+			p.Contract_editor();
+			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.");
+			Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Case created successfully for Plaintiff="+data.get("Plaintiff Name")+" | CourtIndex="+data.get("Court Index Number")+" | AgreementDate="+data.get("Agreement Date"));
+		}catch(Exception e){
+			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Contract Editor did NOT open after Generate Contract. Flow failed at final step.");
+			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Case/Application created but contract generation verification failed for CourtIndex="+data.get("Court Index Number"));
+			throw e;
+		}
+}
 	
 	
 	
@@ -770,10 +818,10 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	        { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
+	     /*   { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  */
+	        { c16 }, { c17 }, { c18 }, { c19 }, */{ c20 }  
 	    };
 	}
 	
