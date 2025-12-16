@@ -34,10 +34,9 @@ public class Case_Appplications extends Header_Manager{
 		Login_Locaters lg = new Login_Locaters(d);
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
-		Actions a = new Actions(d);
-		WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
 		
-		int Requested_Amount = Integer.parseInt(data.get("Requested Amount"));
+		
+		
 		int Buyout_Amount = Integer.parseInt(data.get("Buyout Amount"));
 		int Approved_Amount = Integer.parseInt(data.get("Approved Amount"));
 		int Document_prep_fee = Integer.parseInt(data.get("Document prep fee"));
@@ -48,9 +47,6 @@ public class Case_Appplications extends Header_Manager{
 		double Annual_Interest_Amount = (Funded_amount * Rate_of_Return) / 100;
 		double Monthly_Interest_Amount = Annual_Interest_Amount/12;
 		double Monthly_Payable_Amount = Funded_amount+Monthly_Interest_Amount+Document_prep_fee+Fund_transfer_fee;
-		
-		
-		
 		
 		int step=1;
 
