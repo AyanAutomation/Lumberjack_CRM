@@ -212,14 +212,64 @@ public class Case_Appplications extends Header_Manager{
 			throw e;}
 	    d.switchTo().frame(p.contract_doc_iframe());
 	    Thread.sleep(1000);
-	    System.out.println("First Month Payable  "+Monthly_Payable_Amount);
-	    System.out.println();
+	 // ---------- CALC LOG (2 decimals) ----------
+	    String Buyout_Amount_f = String.format("%.2f", (double) Buyout_Amount);
+	    String Approved_Amount_f = String.format("%.2f", (double) Approved_Amount);
+	    String Document_prep_fee_f = String.format("%.2f", (double) Document_prep_fee);
+	    String Fund_transfer_fee_f = String.format("%.2f", (double) Fund_transfer_fee);
+	    String Rate_of_Return_f = String.format("%.2f", (double) Rate_of_Return);
+
+	    String Funded_amount_f = String.format("%.2f", Funded_amount);
+	    String Annual_Interest_Amount_f = String.format("%.2f", Annual_Interest_Amount);
+	    String Monthly_Interest_Amount_f = String.format("%.2f", Monthly_Interest_Amount);
+	    String Monthly_Payable_Amount_f = String.format("%.2f", Monthly_Payable_Amount);
+	    String Flat_Fees_f = String.format("%.2f", (double) (Document_prep_fee + Fund_transfer_fee));
+
+	    String calc_log =
+	            "<b>🧮 First Month Payable Calculation</b><br>"
+	          + "<b>Buyout Amount:</b> " + Buyout_Amount_f + "<br>"
+	          + "<b>Approved Amount:</b> " + Approved_Amount_f + "<br>"
+	          + "<b>Funded Amount:</b> " + Funded_amount_f + "  (Buyout + Approved)<br><br>"
+	          + "<b>Rate of Return (%):</b> " + Rate_of_Return_f + "<br>"
+	          + "<b>Annual Interest:</b> " + Annual_Interest_Amount_f + "  (Funded × RoR / 100)<br>"
+	          + "<b>Monthly Interest:</b> " + Monthly_Interest_Amount_f + "  (Annual / 12)<br><br>"
+	          + "<b>Document Prep Fee:</b> " + Document_prep_fee_f + "<br>"
+	          + "<b>Fund Transfer Fee:</b> " + Fund_transfer_fee_f + "<br>"
+	          + "<b>Flat Fees Total:</b> " + Flat_Fees_f + "<br><br>"
+	          + "<b>✅ First Month Payable:</b> "
+	          + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + " + Document_prep_fee_f + " + " + Fund_transfer_fee_f
+	          + " = <b>" + Monthly_Payable_Amount_f + "</b>";
+
+	    Report_Listen.log_print_in_report().log(Status.INFO, calc_log);
+
+	    // Console output (same info, clean)
+	    System.out.println("\n===== First Month Payable Calculation =====");
+	    System.out.println("Buyout Amount        : " + Buyout_Amount_f);
+	    System.out.println("Approved Amount      : " + Approved_Amount_f);
+	    System.out.println("Funded Amount        : " + Funded_amount_f + "  (Buyout + Approved)");
+	    System.out.println("------------------------------------------");
+	    System.out.println("Rate of Return (%)   : " + Rate_of_Return_f);
+	    System.out.println("Annual Interest      : " + Annual_Interest_Amount_f + "  (Funded × RoR / 100)");
+	    System.out.println("Monthly Interest     : " + Monthly_Interest_Amount_f + "  (Annual / 12)");
+	    System.out.println("------------------------------------------");
+	    System.out.println("Document Prep Fee    : " + Document_prep_fee_f);
+	    System.out.println("Fund Transfer Fee    : " + Fund_transfer_fee_f);
+	    System.out.println("Flat Fees Total      : " + Flat_Fees_f);
+	    System.out.println("------------------------------------------");
+	    System.out.println("✅ First Month Payable: " + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + "
+	            + Document_prep_fee_f + " + " + Fund_transfer_fee_f + " = " + Monthly_Payable_Amount_f);
+	    System.out.println("==========================================\n");
+        System.out.println();
 	    rp.Scroll_to_element(p.Contract_lien_table());
+	    
 	    List<WebElement> cells = p.Cell_datas();
+	    int i = 0;
 	    for(WebElement cell:cells){
-	    	 String cell_text = cell.getText().trim();
-	    	System.out.println(cell_text);
+	    	String cell_text = cell.getText().trim();
+	    	if(!cell_text.contains("/")) {
+	    	System.out.println("Month "+i+" "+cell_text);
 	    	System.out.println();
+	    	i++;}
 	    	}
 	    d.switchTo().defaultContent();}
 	
@@ -894,10 +944,8 @@ public class Case_Appplications extends Header_Manager{
 			table_rows = p.rows();
 			Report_Listen.log_print_in_report().log(Status.INFO,"Exception found in fetching list rows thereby retried and found");
 			System.out.println("Exception found in fetching list rows thereby retried and found");
-			System.out.println();
-		}
+			System.out.println();}
 		for(WebElement row:table_rows){
-			
 			if(row.getText().contains(Plaintiff_name)){
 				row.click();
 				break;
@@ -916,10 +964,8 @@ public class Case_Appplications extends Header_Manager{
 		catch(Exception mo){
 			Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** 📢 Toast after Deletion of the Application: "+"No toast captured / toast locator not visible. Error:");
 			}
-		Thread.sleep(900);table_rows.clear();
-		}
+		Thread.sleep(900);table_rows.clear();}
 	 catch(Exception ko){
-		 
 		 Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** ❌ Delete operation failed for plaintiff '"+Plaintiff_name+"' due to exception: "+ko.getMessage());
          System.out.println("Delete operation failed for plaintiff  "+Plaintiff_name);
          System.out.println();}}

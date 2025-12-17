@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 16, 2025 07:35:42 PM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 17, 2025 12:51:47 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,7 +66,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +74,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Add_case</p>
+            <p class="name">Added_application_delete</p>
             <p class="text-sm">
-              <span>7:35:45 PM</span> / <span>00:01:00:058</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>12:51:50 PM</span> / <span>00:00:16:640</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Add_case</h5>
-<span class='badge badge-success'>12.16.2025 7:35:45 PM</span>
-<span class='badge badge-danger'>12.16.2025 7:36:45 PM</span>
-<span class='badge badge-default'>00:01:00:058</span>
+<h5 class="test-status text-fail">Added_application_delete</h5>
+<span class='badge badge-success'>12.17.2025 12:51:50 PM</span>
+<span class='badge badge-danger'>12.17.2025 12:52:06 PM</span>
+<span class='badge badge-default'>00:00:16:640</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -104,295 +104,22 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:45 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>12:51:56 PM</td>
         <td>
-          <b>🔹 Scenario Title:</b> Create a New Case + Add Attorney Contact + Create Application + Generate Contract
+          ❌ Toast: Login failed. Invalid Email Or Password.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:45 PM</td>
+        <td>12:52:06 PM</td>
         <td>
-          <b>📘 Description:</b> User creates a new case for an existing plaintiff, updates case details, links an Attorney contact, creates/updates application amounts & status, then generates a contract and verifies Contract Editor opens.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:45 PM</td>
-        <td>
-          <b>📥 Input:</b> Plaintiff=Caleb Hunter Lawson, CaseType=Motor Vehicle Accident, State=Indiana, DOI=03/14/2024, LeadSource=Attorney Referral, ReqAmt=25000, CourtIndex=49D12-2403-CT-001201, BuyoutFunder=Summit Legal Funding, BuyoutAmt=8000, BuyoutExpiry=12/23/2028, ApprovedAmt=12000, DocPrepFee=250, FundTransferFee=75, RoR=38, AgreementDate=12/23/2025, InterestStart=12/23/2025
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:45 PM</td>
-        <td>
-          <b>✅ Expected:</b> Case should be created successfully with success toast, case details should save (Court Index + Summary), attorney contact should be linked, application should accept amounts/status, and Contract Editor should open after Generate Contract.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:45 PM</td>
-        <td>
-          <b>Step 1:</b> Navigate to Case module from header.
+          **🟨 Actual →** ❌ Delete operation failed for plaintiff 'Caleb Hunter Lawson' due to exception: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 10 second(s) with 500 milliseconds interval)
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:35:52 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:52 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Case module opened from header.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:52 PM</td>
-        <td>
-          <b>Step 2:</b> Open New Case popup/form.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:53 PM</td>
-        <td>
-          <b>🟨 Actual:</b> New Case form/popup opened.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:53 PM</td>
-        <td>
-          <b>Step 3:</b> Search and select existing Plaintiff from dropdown.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:55 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Plaintiff selected = Caleb Hunter Lawson
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:55 PM</td>
-        <td>
-          <b>Step 4:</b> Select Incident/Case Type from dropdown.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:56 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Motor Vehicle Accident
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:56 PM</td>
-        <td>
-          <b>Step 5:</b> Select State of Incident from dropdown.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:58 PM</td>
-        <td>
-          <b>🟨 Actual:</b> State selected from list for input = Indiana
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:58 PM</td>
-        <td>
-          <b>Step 6:</b> Enter Date of Incident and confirm date selection.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:59 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Date of Incident entered/selected = 03/14/2024
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:35:59 PM</td>
-        <td>
-          <b>Step 7:</b> Select Lead Type and Lead Source.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:02 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Attorney Referral)
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:02 PM</td>
-        <td>
-          <b>Step 8:</b> Enter Requested Amount and click Create/Save Case.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:13 PM</td>
-        <td>
-          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:13 PM</td>
-        <td>
-          <b>Step 9:</b> Open Case Details edit popup and update Summary + Court Index Number.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:16 PM</td>
-        <td>
-          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D12-2403-CT-001201' was entered and saved without visible UI errors.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:17 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 49D12-2403-CT-001201)
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:17 PM</td>
-        <td>
-          <b>Step 10:</b> Go to Contacts tab and link an Attorney contact from list.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:24 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:24 PM</td>
-        <td>
-          <b>Step 11:</b> Go to Applications tab and open Buyout modal.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:25 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Buyout modal opened.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:25 PM</td>
-        <td>
-          <b>Step 12:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:36:29 PM</td>
-        <td>
-          ✅ Toast: Buyout Info updated successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:29 PM</td>
-        <td>
-          <b>Step 13:</b> Open Approved Amount edit and enter Approved Amount.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:31 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Approved Amount entered = 12000
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:31 PM</td>
-        <td>
-          <b>Step 14:</b> Update Application Status to APPROVED from dropdown.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:32 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Application status set to APPROVED.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:32 PM</td>
-        <td>
-          <b>Step 15:</b> Click Generate Contract and wait for Contract popup/modal.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:35 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Contract details modal opened.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:35 PM</td>
-        <td>
-          <b>Step 16:</b> Fill contract fee fields and Rate of Return.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:37 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=250, FundTransfer=75, RoR=38)
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:36:37 PM</td>
-        <td>
-          <b>Step 17:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:36:42 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:36:42 PM</td>
-        <td>
-          <b>✅ Final Result:</b> Case created successfully for Plaintiff=Caleb Hunter Lawson | CourtIndex=49D12-2403-CT-001201 | AgreementDate=12/23/2025
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:36:45 PM</td>
+        <td>12:52:06 PM</td>
         <td>
           Test passed
         </td>
@@ -416,25 +143,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 16, 2025 07:35:42 PM</h3>
+<h3>Dec 17, 2025 12:51:47 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 16, 2025 07:36:45 PM</h3>
+<h3>Dec 17, 2025 12:52:07 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -450,12 +177,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -473,10 +200,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='11%'><b>5</b> events passed</small></div>
+<div><small data-tooltip='33%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>37</b> others
+<small data-tooltip='33%'><b>1</b> events failed,
+<b data-tooltip='%'>1</b> others
 </small>
 </div>
 </div>
@@ -492,7 +219,7 @@
 </div></div>
 <script>
 var timeline = {
-"Add_case":60.058
+"Added_application_delete":16.64
 };
 </script>
 <div class="row">
@@ -531,8 +258,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -548,11 +275,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 5,
-failEvents: 0,
+passEvents: 1,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 37
+infoEvents: 1
 };
 </script>        </div>
       </div>
