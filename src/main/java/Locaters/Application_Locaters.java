@@ -81,9 +81,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//iframe")
 	private WebElement  contract_doc_iframe; 
 	@FindBy(xpath="//table[@class='main-table mce-item-table']")
-	private WebElement Contract_lien_table;/*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Contract_lien_table;
+	@FindBy(xpath="(//*[@class='ant-modal-body']//button//span)[2]")
+	private WebElement  Save_changes_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -294,10 +294,10 @@ public class Application_Locaters extends Repeat{
 	Contract_lien_table();
 	List <WebElement> Cell_datas = Contract_lien_table().findElements(By.xpath(".//tr//td"));
 	wait_for_theElement(Cell_datas); 
-	return Cell_datas;}   /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Cell_datas;}   
+	public WebElement Save_changes_button(){
+	wait_for_theElement(Save_changes_button);
+	return Save_changes_button;}    /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

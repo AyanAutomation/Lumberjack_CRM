@@ -1,7 +1,6 @@
 package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -9,12 +8,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
@@ -29,13 +23,12 @@ public class Case_Appplications extends Header_Manager{
 	TreeSet<Integer> monthly_emi = new TreeSet<Integer>();
 	
 	
-	@Test(dataProvider="caseData")
-	public void Add_case(TreeMap<String, String> data) throws IOException, InterruptedException{
+	@Test(dataProvider="case_plus_plaintiff")
+	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2) throws IOException, InterruptedException{
 		
 		
 		Application_Locaters p = new Application_Locaters(d);
-        Login_negative_testcases lng = new Login_negative_testcases();
-		Login_Locaters lg = new Login_Locaters(d);
+        Login_Locaters lg = new Login_Locaters(d);
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
 		
@@ -65,7 +58,7 @@ public class Case_Appplications extends Header_Manager{
 		p.Popup_add_form();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
-		p.form_inputs().get(0).sendKeys(data.get("Plaintiff Name"));
+		p.form_inputs().get(0).sendKeys(data2.get("First Name"));
 		p.plaintiff_dropdown_list();
 		p.Plaintiff_options().get(0).click();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+data.get("Plaintiff Name"));
@@ -89,7 +82,8 @@ public class Case_Appplications extends Header_Manager{
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+data.get("Date of Incident"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
 		rp.Scroll_to_element(p.form_inputs().get(4));
-		p.form_inputs().get(4).click();
+		//p.form_inputs().get(4).click();
+		p.form_inputs().get(4).sendKeys(data.get("Lead Source"));
 		p.Lead_Type_dropdown();
 		p.Lead_category_options().get(0).click();
 		p.form_inputs().get(5).click();
@@ -101,7 +95,7 @@ public class Case_Appplications extends Header_Manager{
 		p.form_inputs().get(6).sendKeys(data.get("Requested Amount"));
 		p.form_buttons().get(1).click();
 		Thread.sleep(500);try {
-		lng.Toast_printer(lg.toast().getText().trim());}
+		Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
 		catch(Exception e){
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Case Details edit popup and update Summary + Court Index Number.");
@@ -148,7 +142,7 @@ public class Case_Appplications extends Header_Manager{
 		p.modal_buttons().get(1).click();
 		Thread.sleep(800);
 		try {
-			lng.Toast_printer(lg.toast().getText().trim());}
+			Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
 			catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
@@ -273,20 +267,54 @@ public class Case_Appplications extends Header_Manager{
 	    	if(!cell_text.contains("/")) {
 	    	System.out.println("Month "+i+" "+cell_text);
 	    	System.out.println();
-	    	 // 🔹 Convert UI text to a clean numeric string and parse it to double.
-	        // Example: "$20,958.33" -> "20958.33" -> 20958.33
+	    	// ✅ Convert UI text like "$1,234.50" into pure number string "1234.50" before parsing
+	        // replace(",", "") removes thousand separators
+	        // replace("$", "") removes currency symbol
+	        // trim() removes extra spaces
 	    	double cell_value = Double.parseDouble(cell_text.replace(",", "").replace("$", "").trim());
-	    	
-	    	
-	    	 double cell_value_upto_2_decimal = Double.parseDouble(String.format("%.2f", cell_value));
+	    	// ✅ Round to 2 decimals in a safe UI-matching way:
+	    	// String.format("%.2f", cell_value) -> converts double to String with exactly 2 decimal places ("% = placeholder, .2 = 2 decimals, f = floating number")
+	    	// Double.parseDouble(...) -> converts that 2-decimal String back into a double for reliable numeric comparison (avoids floating precision noise like 10.1999999)
+	    	double cell_value_upto_2_decimal = Double.parseDouble(String.format("%.2f", cell_value));
+	    	// ✅ Compare doubles using tolerance instead of "==" (because doubles can be slightly off, e.g., 100.1 vs 100.0999998)
+	        // Math.abs(a-b) < 0.01 means "difference is less than 1 paisa/cent equivalent at 2-decimal level"
+	        // Here Monthly_Payable_Amount is already calculated, we check if this month cell matches it
 	    	if(Math.abs(Monthly_Payable_Amount-cell_value) < 0.01) {
-	    		System.out.println("Testcase passed "+Monthly_Payable_Amount+" is equals "+cell_value_upto_2_decimal);
+	    		System.out.println("Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
 	    		System.out.println();
-	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed "+Monthly_Payable_Amount+" is equals "+cell_value_upto_2_decimal)
-;	    	}
-	    
-	    	}}
-	    d.switchTo().defaultContent();}
+	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);}}}
+	    d.switchTo().defaultContent();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Switch back from Contract iframe to main page (default content).");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.");
+        Thread.sleep(800);
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Save Changes</i> to save contract edits.");
+		p.Save_changes_button().click();
+		Thread.sleep(800);
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
+		String contract_saved = "";
+		try{
+			contract_saved = lg.toast().getText().trim();
+			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract saved toast = "+contract_saved);
+			System.out.println(contract_saved);
+		}catch(Exception e){
+			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Save toast not captured (toast not visible / locator issue) after clicking Save Changes.");
+			throw e;}
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
+		p.Generate_contract_button().click();
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).");
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Confirm Send action from modal.");
+		p.modal_buttons().get(1).click();
+		Thread.sleep(800);
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after sending contract for signing.");
+		String contract_Sent_for_signing = "";
+		try{
+			contract_Sent_for_signing = lg.toast().getText().trim();
+			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract sent-for-signing toast = "+contract_Sent_for_signing);
+			System.out.println(contract_Sent_for_signing);}
+		catch(Exception e){
+			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Send-for-signing toast not captured (toast not visible / locator issue) after confirming modal.");
+			throw e;}
+		Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='"+contract_saved+"' | SendToast='"+contract_Sent_for_signing+"').");}
 	
 	
 	
@@ -342,7 +370,7 @@ public class Case_Appplications extends Header_Manager{
 	    c2.put("Case Type", "Medical Malpractice");
 	    c2.put("State", "Illinois");
 	    c2.put("Date of Incident", "11/02/2023");
-	    c2.put("Lead Source", "Digital Ad");
+	    c2.put("Lead Source", "Advertising");
 	    c2.put("Requested Amount", "50000");
 	    c2.put("Court Index Number", "12L03-2311-MD-004589");
 	    c2.put("Summary", "Failure to diagnose appendicitis at first ER visit; rupture 48 hours later, emergency surgery and several inpatient days.");
@@ -371,7 +399,7 @@ public class Case_Appplications extends Header_Manager{
 	    c3.put("Case Type", "Slip and Fall");
 	    c3.put("State", "Ohio");
 	    c3.put("Date of Incident", "01/09/2024");
-	    c3.put("Lead Source", "Direct Plaintiff Call");
+	    c3.put("Lead Source", "Organic");
 	    c3.put("Requested Amount", "15000");
 	    c3.put("Court Index Number", "18CV-2401-PR-000973");
 	    c3.put("Summary", "Grocery store slip from refrigeration leak; no warning signs; fractured wrist, brace and OT; limits lifting and household tasks.");
@@ -400,7 +428,7 @@ public class Case_Appplications extends Header_Manager{
 	    c4.put("Case Type", "Workplace Injury");
 	    c4.put("State", "Michigan");
 	    c4.put("Date of Incident", "06/21/2023");
-	    c4.put("Lead Source", "Union Referral");
+	    c4.put("Lead Source", "Other");
 	    c4.put("Requested Amount", "30000");
 	    c4.put("Court Index Number", "03WC-2306-IN-002764");
 	    c4.put("Summary", "Warehouse forklift struck from behind by coworker; low-back strain with radiating pain; conservative care and restricted duty.");
@@ -429,7 +457,7 @@ public class Case_Appplications extends Header_Manager{
 	    c5.put("Case Type", "Products Liability");
 	    c5.put("State", "Indiana");
 	    c5.put("Date of Incident", "09/05/2023");
-	    c5.put("Lead Source", "Co-Counsel Referral");
+	    c5.put("Lead Source", "Attorney Referral");
 	    c5.put("Requested Amount", "40000");
 	    c5.put("Court Index Number", "49D10-2309-PL-000811");
 	    c5.put("Summary", "New power drill allegedly short-circuited and partially exploded in normal use; burns and deep lacerations to dominant hand; missed work as mechanic.");
@@ -487,7 +515,7 @@ public class Case_Appplications extends Header_Manager{
 	    c7.put("Case Type", "Premises Liability");
 	    c7.put("State", "Ohio");
 	    c7.put("Date of Incident", "02/27/2024");
-	    c7.put("Lead Source", "Chiropractor Referral");
+	    c7.put("Lead Source", "Medical Provider");
 	    c7.put("Requested Amount", "20000");
 	    c7.put("Court Index Number", "23CV-2402-PL-001154");
 	    c7.put("Summary", "Long-term tenant slipped on unsalted icy sidewalk; prior complaints; rotator cuff tear with injections and possible arthroscopic surgery.");
@@ -516,7 +544,7 @@ public class Case_Appplications extends Header_Manager{
 	    c8.put("Case Type", "Motor Vehicle Accident");
 	    c8.put("State", "Indiana");
 	    c8.put("Date of Incident", "10/29/2023");
-	    c8.put("Lead Source", "Broker - Jason Bourne");
+	    c8.put("Lead Source", "Broker");
 	    c8.put("Requested Amount", "35000");
 	    c8.put("Court Index Number", "49D05-2310-CT-002031");
 	    c8.put("Summary", "Plaintiff with green light T-boned by red-light violator; spin and curb impact; fractured ribs, concussion and ongoing headaches.");
@@ -545,7 +573,7 @@ public class Case_Appplications extends Header_Manager{
 	    c9.put("Case Type", "Nursing Home Negligence");
 	    c9.put("State", "Illinois");
 	    c9.put("Date of Incident", "04/03/2023");
-	    c9.put("Lead Source", "Digital Ad");
+	    c9.put("Lead Source", "Advertising");
 	    c9.put("Requested Amount", "45000");
 	    c9.put("Court Index Number", "14L02-2304-NH-000627");
 	    c9.put("Summary", "Elderly resident developed multiple Stage III–IV pressure ulcers with delayed reporting and inadequate wound care; required debridement and extended hospitalization.");
@@ -603,7 +631,7 @@ public class Case_Appplications extends Header_Manager{
 	    c11.put("Case Type", "Dog Bite");
 	    c11.put("State", "Ohio");
 	    c11.put("Date of Incident", "09/16/2024");
-	    c11.put("Lead Source", "Direct Plaintiff Call");
+	    c11.put("Lead Source", "Organic");
 	    c11.put("Requested Amount", "10000");
 	    c11.put("Court Index Number", "21CV-2409-PR-000423");
 	    c11.put("Summary", "Eight-year-old child bitten on cheek and forearm by neighbors aggressive dog; stitches, plastic-surgery follow-up and nightmares.");
@@ -632,7 +660,7 @@ public class Case_Appplications extends Header_Manager{
 	    c12.put("Case Type", "Medical Malpractice");
 	    c12.put("State", "Indiana");
 	    c12.put("Date of Incident", "01/25/2023");
-	    c12.put("Lead Source", "Hospital Referral");
+	    c12.put("Lead Source", "Medical Provider");
 	    c12.put("Requested Amount", "60000");
 	    c12.put("Court Index Number", "29D03-2301-MD-000391");
 	    c12.put("Summary", "Retained surgical sponge after abdominal procedure; infection and second corrective surgery with added scarring and wage loss.");
@@ -690,7 +718,7 @@ public class Case_Appplications extends Header_Manager{
 	    c14.put("Case Type", "Products Liability");
 	    c14.put("State", "Illinois");
 	    c14.put("Date of Incident", "02/10/2022");
-	    c14.put("Lead Source", "Co-Counsel Referral");
+	    c14.put("Lead Source", "Attorney Referral");
 	    c14.put("Requested Amount", "75000");
 	    c14.put("Court Index Number", "16L04-2202-PL-000519");
 	    c14.put("Summary", "Commercial e-cigarette battery overheated and exploded; second-degree burns and shrapnel-type injuries to hand and chest; visible scarring.");
@@ -719,7 +747,7 @@ public class Case_Appplications extends Header_Manager{
 	    c15.put("Case Type", "Workplace Injury");
 	    c15.put("State", "Indiana");
 	    c15.put("Date of Incident", "03/30/2024");
-	    c15.put("Lead Source", "Employer Referral");
+	    c15.put("Lead Source", "Other");
 	    c15.put("Requested Amount", "22000");
 	    c15.put("Court Index Number", "49D06-2403-IN-001142");
 	    c15.put("Summary", "Distribution-center worker hit by falling cartons from top shelf; shoulder and upper-back soft-tissue injury; light duty and lost overtime.");
@@ -748,7 +776,7 @@ public class Case_Appplications extends Header_Manager{
 	    c16.put("Case Type", "Slip and Fall");
 	    c16.put("State", "Michigan");
 	    c16.put("Date of Incident", "12/19/2023");
-	    c16.put("Lead Source", "Digital Ad");
+	    c16.put("Lead Source", "Advertising");
 	    c16.put("Requested Amount", "18000");
 	    c16.put("Court Index Number", "07CV-2312-PL-000887");
 	    c16.put("Summary", "Restaurant employee spilled drink and failed to clean or mark area; plaintiff slipped going to restroom; hip contusion and elbow sprain; PT and short cane use.");
@@ -777,7 +805,7 @@ public class Case_Appplications extends Header_Manager{
 	    c17.put("Case Type", "Trucking Accident");
 	    c17.put("State", "Ohio");
 	    c17.put("Date of Incident", "06/02/2023");
-	    c17.put("Lead Source", "Broker - Jason Bourne");
+	    c17.put("Lead Source", "Broker");
 	    c17.put("Requested Amount", "80000");
 	    c17.put("Court Index Number", "19CV-2306-CT-001339");
 	    c17.put("Summary", "Semi-truck drifted into oncoming lane, sideswiping plaintiff and other cars; neck and back injuries, headaches, emotional distress, vehicle total loss.");
@@ -835,7 +863,7 @@ public class Case_Appplications extends Header_Manager{
 	    c19.put("Case Type", "Wrongful Death");
 	    c19.put("State", "Illinois");
 	    c19.put("Date of Incident", "01/15/2023");
-	    c19.put("Lead Source", "Co-Counsel Referral");
+	    c19.put("Lead Source", "Attorney Referral");
 	    c19.put("Requested Amount", "120000");
 	    c19.put("Court Index Number", "11L01-2301-WD-000287");
 	    c19.put("Summary", "Elective procedure complicated by alleged anesthesia or medication error and delayed response to vital-sign changes; intra-op arrest and death.");
@@ -864,7 +892,7 @@ public class Case_Appplications extends Header_Manager{
 	    c20.put("Case Type", "Motor Vehicle Accident");
 	    c20.put("State", "Kentucky");
 	    c20.put("Date of Incident", "04/28/2024");
-	    c20.put("Lead Source", "Direct Plaintiff Call");
+	    c20.put("Lead Source", "Organic");
 	    c20.put("Requested Amount", "26000");
 	    c20.put("Court Index Number", "18CI-2404-CT-000933");
 	    c20.put("Summary", "Uber passenger in chain-reaction rear-end crash; neck and low-back soft-tissue injuries, ongoing stiffness, PT and chiropractic care; work disruption.");
@@ -893,7 +921,7 @@ public class Case_Appplications extends Header_Manager{
 	        c1, c2, c3, c4, c5,
 	        c6, c7, c8, c9, c10,
 	        c11, c12, c13, c14, c15,
-	        c16, c17, c18, c19, c20 
+	        c16, c17, c18, c19, c20
 	    };
 
 	    for (TreeMap<String, String> c : allCases) {
@@ -904,13 +932,32 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	    { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
+	        { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  
-	    };
-	}
+	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }
+	    };}
 	
+	
+	
+	@DataProvider
+	public Object[][] case_plus_plaintiff(){
+
+	    Plaintiff_Module pm = new Plaintiff_Module();
+	    Object[][] plaintiff_datas = pm.plaintiffData(); // each row: { TreeMap<String,String> }
+
+	    Object[][] case_datas = caseData();              // each row: { TreeMap<String,String> }
+
+	    int n = Math.min(plaintiff_datas.length, case_datas.length);
+	    Object[][] final_set = new Object[n][2];
+
+	    for(int i=0;i<n;i++){
+	        final_set[i][0] = case_datas[i][0];      // data
+	        final_set[i][1] = plaintiff_datas[i][0]; // data2
+	    }
+
+	    return final_set;
+	}
 	
 	public void option_printers(String prefix ,List<WebElement> options){
 		
@@ -932,7 +979,7 @@ public class Case_Appplications extends Header_Manager{
 		
 		SIde_Menu_Handler sd = new SIde_Menu_Handler();
 		Application_Locaters p = new Application_Locaters(d);
-		Login_negative_testcases lng = new Login_negative_testcases();
+		
 		Login_Locaters lg = new Login_Locaters(d);
 		
 		String Plaintiff_name=val.get("Plaintiff Name");
@@ -974,7 +1021,7 @@ public class Case_Appplications extends Header_Manager{
 		p.modal_buttons().get(1).click();
 		Thread.sleep(900);
 		Report_Listen.log_print_in_report().log(Status.INFO, "**🟨 Actual →** ✅ Delete flow executed successfully. The case for plaintiff '"+Plaintiff_name+"' was opened from the *Cases* list, the *Applications* tab was loaded, the delete confirmation popup appeared and was confirmed. No unexpected UI error was observed during the operation, and the targeted application record is expected to be removed from the Applications grid for this case.");
-		try{lng.Toast_printer(lg.toast().getText().trim());}
+		try{Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
 		catch(Exception mo){
 			Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** 📢 Toast after Deletion of the Application: "+"No toast captured / toast locator not visible. Error:");
 			}

@@ -126,12 +126,16 @@ public class Login_negative_testcases extends Base{
 	    }
 	    errors.clear();}
 	
-	   public void Toast_printer(String Toast){
+	   public static void Toast_printer(String Toast){
 		
 		   if (Toast.toLowerCase().contains("success")) {
 		        Report_Listen.log_print_in_report().log(Status.PASS, "✅ Toast: " + Toast);
+		        System.out.println("✅ Toast: " + Toast);
+		        System.out.println();
 		    } else {
 		        Report_Listen.log_print_in_report().log(Status.FAIL, "❌ Toast: " + Toast);
+		        System.out.println("❌ Toast: " + Toast);
+		        System.out.println();
 		    }
 		    System.out.println(Toast);}
 	   
