@@ -2,6 +2,7 @@ package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -17,7 +18,7 @@ public class Login extends Base{
 	
 	
    
-	public void login() throws IOException, InterruptedException{
+	public void login(WebDriver d) throws IOException, InterruptedException{
 		
 	Login_Locaters lg = new Login_Locaters(d);	
 	Data_Reader f = new Data_Reader();

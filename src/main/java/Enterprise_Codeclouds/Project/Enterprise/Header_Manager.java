@@ -12,7 +12,7 @@ public class Header_Manager extends Login{
 		Header_locaters p = new Header_locaters(d);
 		
 		
-		login();
+		login(d);
 		p.Header_buttons().get(button_index).click();}
 	
 	
@@ -21,7 +21,7 @@ public class Header_Manager extends Login{
 		Header_locaters p = new Header_locaters(d);
 		
 		
-		login();
+		login(d);
 		p.Header_search().sendKeys(Keyword);
 		p.search_dropdown();}
 	   

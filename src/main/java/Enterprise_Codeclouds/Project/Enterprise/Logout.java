@@ -22,7 +22,7 @@ public class Logout extends Login{
 			
 		}catch(Exception kk){
 			
-			login();
+			login(d);
 			
 			
 		}

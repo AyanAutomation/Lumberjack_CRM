@@ -12,13 +12,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 	
-	public WebDriver d;
-	public String Target_url;
+	 public WebDriver d;
+	public static String Target_url;
 	
 	
 	@BeforeMethod
 	public void setup() throws IOException{
 		
+		d = new ChromeDriver();	
     Data_Reader f = new Data_Reader();
 		
 	String Browser = System.getProperty("Browsername")!=null ? System.getProperty("Browsername") : f.Data_Fetcher("Browser");	
@@ -27,7 +28,7 @@ public class Base {
 	if(Browser.equalsIgnoreCase("Chrome")){
 		
 		WebDriverManager.chromedriver().setup();
-        d = new ChromeDriver();
+        //d = new ChromeDriver();
         d.manage().window().maximize();}
 	
 	if(Browser.equalsIgnoreCase("Firefox")){

@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -24,6 +25,9 @@ import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
 
 public class Case_Appplications extends Header_Manager{
+	
+	TreeSet<Integer> monthly_emi = new TreeSet<Integer>();
+	
 	
 	@Test(dataProvider="caseData")
 	public void Add_case(TreeMap<String, String> data) throws IOException, InterruptedException{
@@ -263,14 +267,25 @@ public class Case_Appplications extends Header_Manager{
 	    rp.Scroll_to_element(p.Contract_lien_table());
 	    
 	    List<WebElement> cells = p.Cell_datas();
-	    int i = 0;
+	    int i=0;
 	    for(WebElement cell:cells){
 	    	String cell_text = cell.getText().trim();
 	    	if(!cell_text.contains("/")) {
 	    	System.out.println("Month "+i+" "+cell_text);
 	    	System.out.println();
-	    	i++;}
-	    	}
+	    	 // 🔹 Convert UI text to a clean numeric string and parse it to double.
+	        // Example: "$20,958.33" -> "20958.33" -> 20958.33
+	    	double cell_value = Double.parseDouble(cell_text.replace(",", "").replace("$", "").trim());
+	    	
+	    	
+	    	 double cell_value_upto_2_decimal = Double.parseDouble(String.format("%.2f", cell_value));
+	    	if(Math.abs(Monthly_Payable_Amount-cell_value) < 0.01) {
+	    		System.out.println("Testcase passed "+Monthly_Payable_Amount+" is equals "+cell_value_upto_2_decimal);
+	    		System.out.println();
+	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed "+Monthly_Payable_Amount+" is equals "+cell_value_upto_2_decimal)
+;	    	}
+	    
+	    	}}
 	    d.switchTo().defaultContent();}
 	
 	
@@ -889,10 +904,10 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	     { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
+	    { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  */
+	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }  
 	    };
 	}
 	
@@ -915,7 +930,7 @@ public class Case_Appplications extends Header_Manager{
 	@Test(dataProvider="caseData")
 	public void Added_application_delete(TreeMap<String, String> val) throws IOException, InterruptedException{
 		
-	//	SIde_Menu_Handler sd = new SIde_Menu_Handler();
+		SIde_Menu_Handler sd = new SIde_Menu_Handler();
 		Application_Locaters p = new Application_Locaters(d);
 		Login_negative_testcases lng = new Login_negative_testcases();
 		Login_Locaters lg = new Login_Locaters(d);
@@ -923,8 +938,7 @@ public class Case_Appplications extends Header_Manager{
 		String Plaintiff_name=val.get("Plaintiff Name");
 		
 	 try {
-		login();
-		d.navigate().to("https://logbook.wechopfees.com/cases");
+		sd.Side_menu_option_clicker("Applications", d);
 		Report_Listen.log_print_in_report().log(Status.INFO,"**🔹 Scenario 2: Case handler deletes an existing application for a plaintiff from the Applications tab**");
 		Report_Listen.log_print_in_report().log(Status.INFO,"**📘 Description →** Verify that the user can search the case list by plaintiff name, open the case details, navigate to the *Applications* tab, click the delete option for an existing application, confirm the delete in the popup, and complete the operation without UI errors so that the application is removed from the list.");
 		Report_Listen.log_print_in_report().log(Status.INFO,"**📥 Input →** Plaintiff: "+Plaintiff_name+", Case Type: "+val.get("Case Type")+", State: "+val.get("State")+", Requested Amount: "+val.get("Requested Amount"));
