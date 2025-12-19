@@ -11,7 +11,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 import Enterprise_Codeclouds.Project.Enterprise.Case_Appplications;
+import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
 import Repeatative_codes.Repeat;
@@ -34,8 +37,12 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 	    List<WebElement> input_feilds = p.form_inputs();
 	    List<WebElement> other_placeholder_feilds = p.form_fields_with_placeholder();
 	    error_checker(input_feilds,other_placeholder_feilds);
-
-		
+	    input_feilds.get(0).sendKeys("Phobos");
+		try{p.plaintiff_dropdown_list();
+		System.out.println("Testcase failed wrong keyword in plaintiff search field showing result");}
+		catch(Exception n) 
+		{System.out.println("Testcase Passed wrong keyword in plaintiff search field not showing any result");
+		p.plaintiff_dropdown_list();}
 	}
   
 	public void error_checker(List<WebElement> fields,List<WebElement> Other_fields) throws InterruptedException{
@@ -48,7 +55,8 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 		List<WebElement> Input_fields = fields;
 		List<WebElement> Other_placeholder_fields = Other_fields;
 		
-		
+		 Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search");
+		 Report_Listen.log_print_in_report().log(Status.INFO, "<b>📘 Description</b> – User opens New Case form, clicks Create with blank mandatory fields to validate inline errors.");
 		for(WebElement field:Input_fields){
 			String Placeholder = field.getAttribute("placeholder");
 			String Placeholder_trimmed = Placeholder.trim();
