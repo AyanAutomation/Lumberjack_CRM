@@ -109,6 +109,11 @@ public class Application_Locaters extends Repeat{
 	List <WebElement> form_inputs = Popup_add_form().findElements(By.xpath(".//input"));
 	wait_for_theElement(form_inputs);
 	return form_inputs;}
+	public List <WebElement> form_fields_with_placeholder(){
+	Popup_add_form();
+	List <WebElement> form_fields_with_placeholder = Popup_add_form().findElements(By.xpath(".//*[@class='ant-select-selection-placeholder']"));
+	wait_for_theElement(form_fields_with_placeholder);
+	return form_fields_with_placeholder;}
 	public WebElement plaintiff_dropdown_list(){
 	wait_for_theElement(plaintiff_dropdown_list);
 	return plaintiff_dropdown_list;}

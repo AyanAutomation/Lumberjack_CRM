@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Plaintiff_Module">
+      <methods>
+      <include name="Plaintiff_Add"></include>
+      </methods>
+      </class>
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
+       <methods>
+       <include name="Add_case"></include>
+       </methods>
+      </class>
+     </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

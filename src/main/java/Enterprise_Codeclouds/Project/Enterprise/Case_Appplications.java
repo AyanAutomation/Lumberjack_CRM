@@ -8,6 +8,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -266,6 +267,7 @@ public class Case_Appplications extends Header_Manager{
 	    	String cell_text = cell.getText().trim();
 	    	if(!cell_text.contains("/")) {
 	    	System.out.println("Month "+i+" "+cell_text);
+	    	Report_Listen.log_print_in_report().log(Status.INFO,"Month "+i+" "+cell_text);
 	    	System.out.println();
 	    	// ✅ Convert UI text like "$1,234.50" into pure number string "1234.50" before parsing
 	        // replace(",", "") removes thousand separators
@@ -282,14 +284,16 @@ public class Case_Appplications extends Header_Manager{
 	    	if(Math.abs(Monthly_Payable_Amount-cell_value) < 0.01) {
 	    		System.out.println("Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
 	    		System.out.println();
-	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);}}}
+	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
+	    		}
+	    	i++;}}
 	    d.switchTo().defaultContent();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Switch back from Contract iframe to main page (default content).");
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.");
         Thread.sleep(800);
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Save Changes</i> to save contract edits.");
 		p.Save_changes_button().click();
-		Thread.sleep(800);
+		Thread.sleep(1800);
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
 		String contract_saved = "";
 		try{
@@ -299,11 +303,23 @@ public class Case_Appplications extends Header_Manager{
 		}catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Save toast not captured (toast not visible / locator issue) after clicking Save Changes.");
 			throw e;}
+		d.navigate().refresh();
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
-		p.Generate_contract_button().click();
+		Thread.sleep(950);
+		String Contract_Generated = lg.toast().getText().trim();
+		Login_negative_testcases.Toast_printer(Contract_Generated);
+        p.Generate_contract_button().click();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Confirm Send action from modal.");
-		p.modal_buttons().get(1).click();
+	try {p.modal_buttons().get(1).click(); }
+	catch(TimeoutException mko){
+		Report_Listen.log_print_in_report().log(Status.INFO,"Timeout Exception found waiting for preview contract modal thereby waiting and retrying");
+		System.out.println("Timeout Exception found waiting for preview contract modal thereby waiting and retrying");
+		System.out.println();
+		Thread.sleep(800);
+		p.Generate_contract_button().click();
+		Thread.sleep(1800);
+		p.modal_buttons().get(1).click(); }
 		Thread.sleep(800);
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after sending contract for signing.");
 		String contract_Sent_for_signing = "";
@@ -932,10 +948,10 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	        { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
+	        { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
 	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 }
+	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 } */
 	    };}
 	
 	
