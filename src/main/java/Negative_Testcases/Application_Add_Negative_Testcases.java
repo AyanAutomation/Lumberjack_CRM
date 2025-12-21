@@ -31,18 +31,70 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
 		
-		header_buttons_clicker(0);
+		int step = 1;
+
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📘 Description</b> – User clicks <b>Case Add</b> button from header to open the New Case popup. Then submits blank mandatory fields to validate inline errors. Finally types an invalid keyword in Plaintiff search and verifies dropdown results behavior.");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📥 Input</b> – Invalid Plaintiff Keyword = <b>Phobos</b> (mandatory fields intentionally blank)");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>✅ Expected</b> – New Case popup should open from header Case Add button. Inline error count should match number of mandatory fields marked with <b>*</b>. Invalid Plaintiff keyword should show <b>no matching results</b>.");
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+		    "<b>Step "+(step++)+":</b> Click <b>Case Add</b> button from Header<br>"
+		  + "<b>📘 Description:</b> User uses header Case Add button to directly open the New Case popup (no module navigation)<br>"
+		  + "<b>✅ Expected:</b> New Case popup should open");
+        header_buttons_clicker(0);
+        Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.");
+        Report_Listen.log_print_in_report().log(Status.INFO,
+         "<b>Step "+(step++)+":</b> Verify New Case popup is opened<br>"
+         + "<b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br>"
+         + "<b>✅ Expected:</b> New Case popup should be visible and ready for input");
 		p.Popup_add_form();
-		
-	    List<WebElement> input_feilds = p.form_inputs();
+		Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step "+(step++)+":</b> Capture form fields for mandatory validation<br>"
+	          + "<b>📘 Description:</b> Fetch input fields + label/placeholder fields to count required fields marked with '*'<br>"
+	          + "<b>✅ Expected:</b> Fields list should be captured so mandatory scan can be performed");
+	        
+        List<WebElement> input_feilds = p.form_inputs();
 	    List<WebElement> other_placeholder_feilds = p.form_fields_with_placeholder();
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click Create/Submit with blank fields and validate inline errors vs '*' mandatory count.");
 	    error_checker(input_feilds,other_placeholder_feilds);
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Mandatory validation executed (mandatory count vs inline errors logged).");
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step "+(step++)+":</b> Enter invalid Plaintiff keyword<br>"
+	          + "<b>📘 Description:</b> Type a wrong keyword into Plaintiff search to verify dropdown result behavior<br>"
+	          + "<b>📥 Input:</b> Plaintiff keyword = <b>Phobos</b><br>"
+	          + "<b>✅ Expected:</b> Dropdown should not show valid matching results");
 	    input_feilds.get(0).sendKeys("Phobos");
 		try{p.plaintiff_dropdown_list();
-		System.out.println("Testcase failed wrong keyword in plaintiff search field showing result");}
+        Report_Listen.log_print_in_report().log(Status.FAIL,
+                "<b>🟨 Actual:</b> Dropdown list opened after invalid keyword <b>Phobos</b>. This indicates results are being shown when they should not (as per expected).");
+            System.out.println("Testcase failed wrong keyword in plaintiff search field showing result");}
 		catch(Exception n) 
-		{System.out.println("Testcase Passed wrong keyword in plaintiff search field not showing any result");
-		p.plaintiff_dropdown_list();}
+		{ Report_Listen.log_print_in_report().log(Status.PASS,
+			    "<b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).");
+            System.out.println("Testcase Passed wrong keyword in plaintiff search field not showing any result");}
+		rp.Feild_clear(input_feilds.get(0));
+		input_feilds.get(0).sendKeys(data2.get("First Name"));
+		p.plaintiff_dropdown_list();
+		p.Plaintiff_options().get(0).click();
+		input_feilds.get(1).sendKeys("Construction Accident");
+		WebElement Dropdown_with_no_data_text;
+		try{p.Incident_type_dropdown();
+        Report_Listen.log_print_in_report().log(Status.FAIL,
+                "<b>🟨 Actual:</b> Dropdown list opened after invalid keyword <b>Construction Accident</b>. This indicates results are being shown when they should not (as per expected).");
+            System.out.println("Testcase failed wrong keyword in Incident type search field showing result");}
+		catch(Exception n) 
+		{ Dropdown_with_no_data_text = p.Dropdown_showing_nodata();
+		Report_Listen.log_print_in_report().log(Status.PASS,
+			    "<b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).");
+            System.out.println("Testcase Passed wrong keyword in Incident type search field not showing any result");}
+		rp.Feild_clear(input_feilds.get(1));
+		input_feilds.get(1).sendKeys(data.get("Case Type"));
+		p.Incident_type_dropdown();
+		p.Incident_options().get(0).click();
+		
+		
+		
 	}
   
 	public void error_checker(List<WebElement> fields,List<WebElement> Other_fields) throws InterruptedException{
@@ -61,11 +113,11 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 			String Placeholder = field.getAttribute("placeholder");
 			String Placeholder_trimmed = Placeholder.trim();
 		if(Placeholder_trimmed.contains("*")){
-			Number_of_fields_with_asterix.add(Placeholder_trimmed);}
+			Number_of_fields_with_asterix.add(Placeholder_trimmed);}}
 		for(WebElement Other_placeholder_field:Other_placeholder_fields){
 			String placeholder_text_trimmed= Other_placeholder_field.getText().trim();
 			if(placeholder_text_trimmed.contains("*")){
-				Number_of_fields_with_asterix.add(placeholder_text_trimmed);}}}
+				Number_of_fields_with_asterix.add(placeholder_text_trimmed);}}
 		
 		WebElement Submit_btn = p.form_buttons().get(1);
 		rp.Scroll_to_element(Submit_btn);

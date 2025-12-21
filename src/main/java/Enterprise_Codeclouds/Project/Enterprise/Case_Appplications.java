@@ -201,8 +201,7 @@ public class Case_Appplications extends Header_Manager{
 	    rp.movetoelement(Generate_Contract_Button);
 	    rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
 	    js.executeScript("arguments[0].click();", Generate_Contract_Button);
-	    try{
-			p.Contract_editor();
+	    try{p.Contract_editor();
 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.");
 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Case created successfully for Plaintiff="+data.get("Plaintiff Name")+" | CourtIndex="+data.get("Court Index Number")+" | AgreementDate="+data.get("Agreement Date"));
 		}catch(Exception e){

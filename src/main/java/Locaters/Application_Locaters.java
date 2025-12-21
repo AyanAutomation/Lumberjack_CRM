@@ -83,9 +83,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//table[@class='main-table mce-item-table']")
 	private WebElement Contract_lien_table;
 	@FindBy(xpath="(//*[@class='ant-modal-body']//button//span)[2]")
-	private WebElement  Save_changes_button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Save_changes_button; 
+	@FindBy(xpath="//*[@class='ant-empty-description']")
+	private WebElement  Dropdown_showing_nodata; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -302,10 +302,10 @@ public class Application_Locaters extends Repeat{
 	return Cell_datas;}   
 	public WebElement Save_changes_button(){
 	wait_for_theElement(Save_changes_button);
-	return Save_changes_button;}    /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Save_changes_button;}     
+	public WebElement Dropdown_showing_nodata(){
+	wait_for_theElement(Dropdown_showing_nodata);
+	return Dropdown_showing_nodata;}    /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
