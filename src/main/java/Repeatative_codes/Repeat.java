@@ -2,6 +2,7 @@ package Repeatative_codes;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -78,6 +79,20 @@ public class Repeat {
         WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
         return w.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
-
+     
+    
+    public void field_space_inserter(List<WebElement> e,int index){
+    	
+       WebElement el = e.get(index);
+       wait_for_theElement_tobe_clickable(el);
+       el.click();
+	   el.clear();
+       for(int k=0;k<=5; k++) {
+    	   
+    	   
+    	   el.sendKeys(Keys.SPACE);
+    	}
+       el.sendKeys(Keys.TAB);
+    }
 	
 }

@@ -24,6 +24,30 @@ public class Case_Appplications extends Header_Manager{
 	TreeSet<Integer> monthly_emi = new TreeSet<Integer>();
 	
 	
+	
+	public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedException{
+		
+		Application_Locaters p = new Application_Locaters(d);
+		
+		int step = s;
+		Report_Listen.log_print_in_report().log(Status.INFO,
+			    "<b>Step "+(step++)+":</b> Click <b>Case Add</b> button from Header<br>"
+			  + "<b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br>"
+			  + "<b>✅ Expected:</b> New Case popup should open");
+	        header_buttons_clicker(0);
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	         "<b>Step "+(step++)+":</b> Verify New Case popup is opened<br>"
+	         + "<b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br>"
+	         + "<b>✅ Expected:</b> New Case Add popup form should be visible and ready for input");
+			p.Popup_add_form();
+		
+	}
+	
+	
+	
+	
+	
 	@Test(dataProvider="case_plus_plaintiff")
 	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2) throws IOException, InterruptedException{
 		
@@ -48,15 +72,7 @@ public class Case_Appplications extends Header_Manager{
 		
 		int step=1;
 
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title:</b> Create a New Case + Add Attorney Contact + Create Application + Generate Contract");
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📘 Description:</b> User creates a new case for an existing plaintiff, updates case details, links an Attorney contact, creates/updates application amounts & status, then generates a contract and verifies Contract Editor opens.");
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📥 Input:</b> Plaintiff="+data.get("Plaintiff Name")+", CaseType="+data.get("Case Type")+", State="+data.get("State")+", DOI="+data.get("Date of Incident")+", LeadSource="+data.get("Lead Source")+", ReqAmt="+data.get("Requested Amount")+", CourtIndex="+data.get("Court Index Number")+", BuyoutFunder="+data.get("Buyout Funder Name")+", BuyoutAmt="+data.get("Buyout Amount")+", BuyoutExpiry="+data.get("Buyout Expiry Date")+", ApprovedAmt="+data.get("Approved Amount")+", DocPrepFee="+data.get("Document prep fee")+", FundTransferFee="+data.get("Fund transfer fee")+", RoR="+data.get("Rate of Return")+", AgreementDate="+data.get("Agreement Date")+", InterestStart="+data.get("Interest Start Date"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>✅ Expected:</b> Case should be created successfully with success toast, case details should save (Court Index + Summary), attorney contact should be linked, application should accept amounts/status, and Contract Editor should open after Generate Contract.");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Navigate to Case module from header.");
-		header_buttons_clicker(0);
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case module opened from header.");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open New Case popup/form.");
-		p.Popup_add_form();
+		Add_New_Case_Form_Accessor(step++);
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
 		p.form_inputs().get(0).sendKeys(data2.get("First Name"));

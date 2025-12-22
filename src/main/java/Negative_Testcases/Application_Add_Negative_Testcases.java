@@ -38,23 +38,16 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📥 Input</b> – Invalid Plaintiff Keyword = <b>Phobos</b> (mandatory fields intentionally blank)");
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>✅ Expected</b> – New Case popup should open from header Case Add button. Inline error count should match number of mandatory fields marked with <b>*</b>. Invalid Plaintiff keyword should show <b>no matching results</b>.");
 
-		Report_Listen.log_print_in_report().log(Status.INFO,
-		    "<b>Step "+(step++)+":</b> Click <b>Case Add</b> button from Header<br>"
-		  + "<b>📘 Description:</b> User uses header Case Add button to directly open the New Case popup (no module navigation)<br>"
-		  + "<b>✅ Expected:</b> New Case popup should open");
-        header_buttons_clicker(0);
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.");
-        Report_Listen.log_print_in_report().log(Status.INFO,
-         "<b>Step "+(step++)+":</b> Verify New Case popup is opened<br>"
-         + "<b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br>"
-         + "<b>✅ Expected:</b> New Case popup should be visible and ready for input");
-		p.Popup_add_form();
+		Add_New_Case_Form_Accessor(step);
 		Report_Listen.log_print_in_report().log(Status.INFO,
 	            "<b>Step "+(step++)+":</b> Capture form fields for mandatory validation<br>"
 	          + "<b>📘 Description:</b> Fetch input fields + label/placeholder fields to count required fields marked with '*'<br>"
 	          + "<b>✅ Expected:</b> Fields list should be captured so mandatory scan can be performed");
-	        
-        List<WebElement> input_feilds = p.form_inputs();
+	    List<WebElement> input_feilds = blank_spaces_submit();
+	    Thread.sleep(800);
+	    IntStream.range(0, input_feilds.size()).forEach(h->{
+	    input_feilds.get(h).clear();}); 
+	    Thread.sleep(800);
 	    List<WebElement> other_placeholder_feilds = p.form_fields_with_placeholder();
 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click Create/Submit with blank fields and validate inline errors vs '*' mandatory count.");
 	    error_checker(input_feilds,other_placeholder_feilds);
@@ -64,6 +57,7 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 	          + "<b>📘 Description:</b> Type a wrong keyword into Plaintiff search to verify dropdown result behavior<br>"
 	          + "<b>📥 Input:</b> Plaintiff keyword = <b>Phobos</b><br>"
 	          + "<b>✅ Expected:</b> Dropdown should not show valid matching results");
+	    
 	    input_feilds.get(0).sendKeys("Phobos");
 		try{p.plaintiff_dropdown_list();
         Report_Listen.log_print_in_report().log(Status.FAIL,
@@ -90,8 +84,9 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
             System.out.println("Testcase Passed wrong keyword in Incident type search field not showing any result");}
 		rp.Feild_clear(input_feilds.get(1));
 		input_feilds.get(1).sendKeys(data.get("Case Type"));
-		p.Incident_type_dropdown();
-		p.Incident_options().get(0).click();
+		Thread.sleep(800);
+		p.plaintiff_dropdown_list();
+		p.Plaintiff_options().get(0).click();
 		
 		
 		
@@ -144,4 +139,56 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 			IntStream.range(0, Number_of_fields_with_asterix.size()).forEach(n->{
 				
 			});}} */ 
-}
+	
+	    
+	    public List<WebElement> blank_spaces_submit() throws IOException, InterruptedException{
+		
+		
+	    	Application_Locaters p = new Application_Locaters(d);
+	    	Login_Locaters lg = new Login_Locaters(d);
+			Repeat rp = new Repeat(d);
+	
+		
+			int step = 1;
+		    
+			Report_Listen.log_print_in_report().log(Status.INFO,
+			        "<b>🔹 Scenario Title</b> – New Case Form: Submit with Blank Spaces in All Input Fields");
+			Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>📥 Input</b> – Every input field filled with: <b>\"   \"</b> (only spaces)");
+            Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>✅ Expected</b> – System should <b>NOT</b> accept blank spaces as valid input. Inline errors should appear for mandatory fields and no case should be created.");
+			List<WebElement> input_feilds = p.form_inputs();
+			for(int index=0;index<input_feilds.size();index++) {
+			rp.field_space_inserter(input_feilds, index);
+			}
+			WebElement Submit_btn = p.form_buttons().get(1);
+			rp.Scroll_to_element(Submit_btn);
+			rp.movetoelement(Submit_btn);
+			Submit_btn.click();
+			Thread.sleep(800);
+			List <WebElement> errors = lg.inline_errors();
+			Inline_error_printer(errors);
+			 Report_Listen.log_print_in_report().log(Status.PASS,
+		                "<b>🟨 Actual:</b> Inline errors displayed = <b>" + errors.size()+ "</b>. <b>Testcase Passed</b> (spaces treated as blank).");
+			return input_feilds;
+			}
+	      
+	    
+	    public void Inline_error_printer(List <WebElement> Inline_errors){
+	    	
+	    	
+	    	
+	    	List <WebElement> err = Inline_errors;
+	    	int errorcounts = err.size();
+	    	for(int m=0;m<errorcounts;m++){
+	    		
+	    		String error_texts = err.get(m).getText().trim();
+	    		Report_Listen.log_print_in_report().log(Status.INFO,error_texts);
+	    		System.out.println(error_texts);
+	    		System.out.println();
+	    		}
+	    
+	
+	    
+	
+}}

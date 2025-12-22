@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 22 00:50:15 IST 2025</td>
+<td>Started on:</td><td>Mon Dec 22 13:18:40 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>22 seconds (22396 ms)</td>
+<tr><td>Total time:</td><td>49 seconds (49728 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -77,9 +77,84 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Negative_Testcases.Application_Add_Negative_Testcases.application_add()'><b>application_add</b><br>Test class: Negative_Testcases.Application_Add_Negative_Testcases<br>Parameters: {Agreement Date=12/29/2025, Application Status=Approved, Approved Amount=12000, Attorney Name=Atty. Melissa Grant, Buyout Amount=8000, Buyout Expiry Date=12/29/2028, Buyout Funder Name=Summit Legal Funding, Case #=1, Case Type=Motor Vehicle Accident, Court Index Number=49D12-2403-CT-001201, Date of Incident=03/14/2024, Document prep fee=250, Fund transfer fee=75, Interest Start Date=12/29/2025, Law Firm Name=Grant & Lawson Injury Law, Lead Source=Attorney Referral, Plaintiff Address One=1245 N Meridian St, Plaintiff Address Two=Indianapolis, IN 46204, Plaintiff Email=caleb.lawson@plaintiffmail.com, Plaintiff Name=Caleb Hunter Lawson, Plaintiff Phone Number=555-201-0001, Rate of Return=38, Recommended Max Funding=12000, Requested Amount=25000, Risk Level=Moderate, SMS Message Body=Hi Caleb, your motor vehicle case funding request has been approved for up to $12,000. Our team will contact you shortly to confirm disbursement details. – Lumberjack Legal Finance, SMS Message Title=Funding Application Approved, State=Indiana, Summary=Rear-end collision on I-65; plaintiff rear-ended in congestion, airbags deployed, whiplash, PT with residual stiffness and work loss., Underwriting Notes=Strong rear-end liability with citation for following too closely. Soft-tissue neck/back injury but supported by ER visit, imaging, PT and wage loss. Need full medical records, wage docs and prior-claim check. Assuming clean priors and adequate BI limits, case supports funding up to about 12k.}, {Address Line 1=100 Queen St W, Address Line 2=Unit 14B, Date of Birth=01/19/1991, Email=emanuel.schreiber@mailto.plus, First Name=Emanuel, Last Name=Schreiber, Middle Name=Gregor, Name Suffix=Jr, Phone number=416-555-0301, Social Security Number=701-18-5532, State=Ontario, Zip code=M5H2N2}</td>
-<td></td>
-<td>19</td>
-<td>Negative_Testcases.Application_Add_Negative_Testcases@1757cd72</td></tr>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (59a8c4d140e4c788532c28e0b9f2ae78)] -&gt; xpath: (//div[@class=&apos;rc-virtual-list&apos;])[2]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.146, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62928}, goog:processID: 17200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62928/devtoo..., se:cdpVersion: 143.0.7499.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+	at Locaters.Application_Locaters.Incident_type_dropdown(Application_Locaters.java:121)
+	at Negative_Testcases.Application_Add_Negative_Testcases.application_add(Application_Add_Negative_Testcases.java:88)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace819680566", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace819680566'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (59a8c4d140e4c788532c28e0b9f2ae78)] -&gt; xpath: (//div[@class=&apos;rc-virtual-list&apos;])[2]] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.146, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62928}, goog:processID: 17200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62928/devtoo..., se:cdpVersion: 143.0.7499.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+	at Locaters.Application_Locaters.Incident_type_dropdown(Application_Locaters.java:121)
+	at Negative_Testcases.Application_Add_Negative_Testcases.application_add(Application_Add_Negative_Testcases.java:88)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>47</td>
+<td>Negative_Testcases.Application_Add_Negative_Testcases@3a52dba3</td></tr>
 </table><p>
 </body>
 </html>
