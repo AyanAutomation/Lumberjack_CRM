@@ -255,6 +255,10 @@ public class Application_Locaters extends Repeat{
 	List <WebElement> List_Checkboxes = pop_up_contact_list().findElements(By.xpath(".//input[@type='checkbox']"));
 	wait_for_theElement(List_Checkboxes);
 	return List_Checkboxes;}   
+	public WebElement Popup_modal_search(){
+	WebElement Popup_modal_search = pop_up_contact_list().findElement(By.xpath(".//input[@type='text']"));
+	wait_for_theElement(Popup_modal_search);
+	return Popup_modal_search;}   
 	public WebElement pop_up_contact_list(){
 	wait_for_theElement(pop_up_contact_list);
 	return pop_up_contact_list;}   

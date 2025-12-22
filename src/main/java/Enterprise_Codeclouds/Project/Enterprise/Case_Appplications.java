@@ -54,7 +54,7 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	@Test(dataProvider="case_plus_plaintiff")
-	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2) throws IOException, InterruptedException{
+	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2 ,TreeMap<String,String> attorneyData) throws IOException, InterruptedException{
 		
 		
 		Application_Locaters p = new Application_Locaters(d);
@@ -143,7 +143,11 @@ public class Case_Appplications extends Header_Manager{
 				break;}}
 		p.pop_up_contact_list();
 		Thread.sleep(800);
-		p.List_Checkboxes().get(1).click();
+		p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
+		Thread.sleep(800);
+		WebElement toast = lg.toast();
+		rp.wait_for_invisibility(toast);
+		p.List_Checkboxes().get(0).click();
 		Thread.sleep(600);
 		rp.Scroll_to_element(p.popup_contact_list_footer_buttons().get(0));
 		Thread.sleep(800);
@@ -985,16 +989,22 @@ public class Case_Appplications extends Header_Manager{
 	public Object[][] case_plus_plaintiff(){
 
 	    Plaintiff_Module pm = new Plaintiff_Module();
-	    Object[][] plaintiff_datas = pm.plaintiffData(); // each row: { TreeMap<String,String> }
+	    Attorney_module at = new Attorney_module();
 
-	    Object[][] case_datas = caseData();              // each row: { TreeMap<String,String> }
+	    Object[][] plaintiff_datas = pm.plaintiffData();   // each row: { TreeMap<String,String> }
+	    Object[][] case_datas      = caseData();           // each row: { TreeMap<String,String> }
+	    Object[][] attorney_datas  = at.attorneyStaffData(); // each row: { TreeMap<String,String> }
 
-	    int n = Math.min(plaintiff_datas.length, case_datas.length);
-	    Object[][] final_set = new Object[n][2];
+	    int n = Math.min(case_datas.length,
+	            Math.min(plaintiff_datas.length, attorney_datas.length));
 
-	    for(int i=0;i<n;i++){
-	        final_set[i][0] = case_datas[i][0];      // data
-	        final_set[i][1] = plaintiff_datas[i][0]; // data2
+	    // ✅ 3 columns now: case, plaintiff, attorney
+	    Object[][] final_set = new Object[n][3];
+
+	    for(int i = 0; i < n; i++){
+	        final_set[i][0] = case_datas[i][0];       // case map
+	        final_set[i][1] = plaintiff_datas[i][0];  // plaintiff map
+	        final_set[i][2] = attorney_datas[i][0];   // attorney map
 	    }
 
 	    return final_set;
@@ -1026,7 +1036,7 @@ public class Case_Appplications extends Header_Manager{
 		String Plaintiff_name=val.get("Plaintiff Name");
 		
 	 try {
-		sd.Side_menu_option_clicker("Applications", d);
+		sd.Side_menu_option_clicker("Applications", d,"N/A");
 		Report_Listen.log_print_in_report().log(Status.INFO,"**🔹 Scenario 2: Case handler deletes an existing application for a plaintiff from the Applications tab**");
 		Report_Listen.log_print_in_report().log(Status.INFO,"**📘 Description →** Verify that the user can search the case list by plaintiff name, open the case details, navigate to the *Applications* tab, click the delete option for an existing application, confirm the delete in the popup, and complete the operation without UI errors so that the application is removed from the list.");
 		Report_Listen.log_print_in_report().log(Status.INFO,"**📥 Input →** Plaintiff: "+Plaintiff_name+", Case Type: "+val.get("Case Type")+", State: "+val.get("State")+", Requested Amount: "+val.get("Requested Amount"));

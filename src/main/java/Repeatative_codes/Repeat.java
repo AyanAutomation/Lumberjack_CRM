@@ -97,7 +97,10 @@ public class Repeat {
     
     
     
-    public void FluentWaits(WebElement element){
+    public void wait_for_invisibility(WebElement element){
+    	
+    	WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+	   	w.until(ExpectedConditions.invisibilityOf(element));
     	
     	
     	
