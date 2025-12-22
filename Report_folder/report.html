@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 22, 2025 01:18:39 PM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 22, 2025 04:36:48 PM</span></a>
 </li>
 </ul>
 </div>
@@ -71,6 +71,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
@@ -79,25 +80,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">application_add</p>
+            <p class="name">Add_case</p>
             <p class="text-sm">
-              <span>1:18:42 PM</span> / <span>00:00:47:200</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>4:36:51 PM</span> / <span>00:01:17:610</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">application_add</h5>
-<span class='badge badge-success'>12.22.2025 1:18:42 PM</span>
-<span class='badge badge-danger'>12.22.2025 1:19:29 PM</span>
-<span class='badge badge-default'>00:00:47:200</span>
+<h5 class="test-status text-pass">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:36:51 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:38:09 PM</span>
+<span class='badge badge-default'>00:01:17:610</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -110,173 +111,727 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:42 PM</td>
-        <td>
-          <b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:42 PM</td>
-        <td>
-          <b>📘 Description</b> – User clicks <b>Case Add</b> button from header to open the New Case popup. Then submits blank mandatory fields to validate inline errors. Finally types an invalid keyword in Plaintiff search and verifies dropdown results behavior.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:42 PM</td>
-        <td>
-          <b>📥 Input</b> – Invalid Plaintiff Keyword = <b>Phobos</b> (mandatory fields intentionally blank)
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:42 PM</td>
-        <td>
-          <b>✅ Expected</b> – New Case popup should open from header Case Add button. Inline error count should match number of mandatory fields marked with <b>*</b>. Invalid Plaintiff keyword should show <b>no matching results</b>.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:42 PM</td>
+        <td>4:36:51 PM</td>
         <td>
           <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:18:47 PM</td>
+        <td>4:36:59 PM</td>
         <td>
           ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:47 PM</td>
+        <td>4:36:59 PM</td>
         <td>
           <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:47 PM</td>
+        <td>4:36:59 PM</td>
         <td>
           <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:48 PM</td>
+        <td>4:37:00 PM</td>
         <td>
-          <b>Step 1:</b> Capture form fields for mandatory validation<br><b>📘 Description:</b> Fetch input fields + label/placeholder fields to count required fields marked with '*'<br><b>✅ Expected:</b> Fields list should be captured so mandatory scan can be performed
+          <b>🟨 Actual:</b> New Case form/popup opened.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:52 PM</td>
+        <td>4:37:00 PM</td>
         <td>
-          Plaintiff is required
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:52 PM</td>
+        <td>4:37:02 PM</td>
         <td>
-          Case type is required
+          <b>🟨 Actual:</b> Plaintiff selected = Korbinian
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:52 PM</td>
+        <td>4:37:02 PM</td>
         <td>
-          State of incident is required
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:52 PM</td>
+        <td>4:37:03 PM</td>
         <td>
-          Date of incident is required
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Products Liability
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:52 PM</td>
+        <td>4:37:03 PM</td>
         <td>
-          Lead source category is required
+          <b>Step 4:</b> Select State of Incident from dropdown.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:52 PM</td>
+        <td>4:37:04 PM</td>
         <td>
-          Requested amount must be greater than 0
+          <b>🟨 Actual:</b> State selected from list for input = Illinois
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:54 PM</td>
+        <td>4:37:04 PM</td>
         <td>
-          <b>Step 2:</b> Click Create/Submit with blank fields and validate inline errors vs '*' mandatory count.
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:54 PM</td>
+        <td>4:37:05 PM</td>
         <td>
-          <b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 02/10/2022
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:54 PM</td>
+        <td>4:37:05 PM</td>
         <td>
-          <b>📘 Description</b> – User opens New Case form, clicks Create with blank mandatory fields to validate inline errors.
+          <b>Step 6:</b> Select Lead Type and Lead Source.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:56 PM</td>
+        <td>4:37:07 PM</td>
         <td>
-          <b>🟨 Actual:</b> Mandatory validation executed (mandatory count vs inline errors logged).
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Attorney Referral)
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:18:56 PM</td>
+        <td>4:37:07 PM</td>
         <td>
-          <b>Step 3:</b> Enter invalid Plaintiff keyword<br><b>📘 Description:</b> Type a wrong keyword into Plaintiff search to verify dropdown result behavior<br><b>📥 Input:</b> Plaintiff keyword = <b>Phobos</b><br><b>✅ Expected:</b> Dropdown should not show valid matching results
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:19 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:19 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:22 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '16L04-2202-PL-000519' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:23 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 16L04-2202-PL-000519)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:23 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:29 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:29 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:31 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Buyout modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:31 PM</td>
+        <td>
+          <b>Step 11:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:19:06 PM</td>
+        <td>4:37:34 PM</td>
         <td>
-          <b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).
+          ✅ Toast: Buyout Info updated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:34 PM</td>
+        <td>
+          <b>Step 12:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:36 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 35000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:36 PM</td>
+        <td>
+          <b>Step 13:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:37 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:37 PM</td>
+        <td>
+          <b>Step 14:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:40 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:40 PM</td>
+        <td>
+          <b>Step 15:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:41 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=310, FundTransfer=105, RoR=42)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:41 PM</td>
+        <td>
+          <b>Step 16:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:19:18 PM</td>
+        <td>4:37:46 PM</td>
         <td>
-          <b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:37:46 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=Connor Dean Whitaker | CourtIndex=16L04-2202-PL-000519 | AgreementDate=12/29/2025
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:47 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 22000.00<br><b>Approved Amount:</b> 35000.00<br><b>Funded Amount:</b> 57000.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 42.00<br><b>Annual Interest:</b> 23940.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 1995.00  (Annual / 12)<br><br><b>Document Prep Fee:</b> 310.00<br><b>Fund Transfer Fee:</b> 105.00<br><b>Flat Fees Total:</b> 415.00<br><br><b>✅ First Month Payable:</b> 57000.00 + 1995.00 + 310.00 + 105.00 = <b>59410.00</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 0 59,410.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Testcase passed First month payable 59410.0 is macthing contract text's first month payable 59410.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 1 83,350.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 2 107,290.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 3 61,405.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 4 85,345.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 5 109,285.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 6 63,400.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 7 87,340.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 8 111,280.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 9 65,395.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 10 89,335.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 11 113,275.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 12 67,390.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 13 91,330.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 14 115,270.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 15 69,385.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 16 93,325.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 17 117,265.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 18 71,380.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 19 95,320.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 20 119,260.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 21 73,375.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 22 97,315.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 23 121,255.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 24 75,370.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 25 99,310.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 26 123,250.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 27 77,365.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 28 101,305.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 29 125,245.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:48 PM</td>
+        <td>
+          Month 30 79,360.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          Month 31 103,300.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          Month 32 127,240.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          Month 33 81,355.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          Month 34 105,295.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          Month 35 129,235.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          <b>Step 17:</b> Switch back from Contract iframe to main page (default content).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 PM</td>
+        <td>
+          <b>Step 18:</b> Click <i>Save Changes</i> to save contract edits.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:51 PM</td>
+        <td>
+          <b>Step 19:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:37:54 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:54 PM</td>
+        <td>
+          <b>Step 20:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:37:54 PM</td>
+        <td>
+          ✅ Toast: Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:54 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:54 PM</td>
+        <td>
+          <b>Step 21:</b> Confirm Send action from modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:05 PM</td>
+        <td>
+          Timeout Exception found waiting for preview contract modal thereby waiting and retrying
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:08 PM</td>
+        <td>
+          <b>Step 22:</b> Capture toast after sending contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:38:09 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract sent-for-signing toast = Finalizing contract...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:38:09 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='Contract saved successfully!' | SendToast='Finalizing contract...').
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:38:09 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>4:38:10 PM</span> / <span>00:00:19:096</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:38:10 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:38:29 PM</span>
+<span class='badge badge-default'>00:00:19:096</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:10 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:38:15 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:16 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:16 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:17 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:17 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:18 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Kajetan
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:18 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>1:19:29 PM</td>
+        <td>4:38:29 PM</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (59a8c4d140e4c788532c28e0b9f2ae78)] -> xpath: (//div[@class='rc-virtual-list'])[2]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.146, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62928}, goog:processID: 17200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62928/devtoo..., se:cdpVersion: 143.0.7499.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//div[@class='rc-virtual-list'])[2]' (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
 	at Locaters.Application_Locaters.Incident_type_dropdown(Application_Locaters.java:121)
-	at Negative_Testcases.Application_Add_Negative_Testcases.application_add(Application_Add_Negative_Testcases.java:88)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:90)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -303,8 +858,2828 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='rc-virtual-list'])[2]"}
+  (Session info: chrome=143.0.7499.146)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a97be743115557e710b023ca10b9c12f, findElement {value=(//div[@class='rc-virtual-list'])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.146, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54726}, goog:processID: 18128, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54726/devtoo..., se:cdpVersion: 143.0.7499.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a97be743115557e710b023ca10b9c12f
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
 </textarea>
           
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>4:38:31 PM</span> / <span>00:01:14:664</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:38:31 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:39:45 PM</span>
+<span class='badge badge-default'>00:01:14:664</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:31 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:38:36 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:36 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:36 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:37 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:37 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:39 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Tassilo
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:39 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:40 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Slip and Fall
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:40 PM</td>
+        <td>
+          <b>Step 4:</b> Select State of Incident from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:41 PM</td>
+        <td>
+          <b>🟨 Actual:</b> State selected from list for input = Michigan
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:41 PM</td>
+        <td>
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:42 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 12/19/2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:42 PM</td>
+        <td>
+          <b>Step 6:</b> Select Lead Type and Lead Source.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:44 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Advertising)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:44 PM</td>
+        <td>
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:56 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:56 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:59 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '07CV-2312-PL-000887' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:00 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 07CV-2312-PL-000887)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:00 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:07 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:07 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:08 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Buyout modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:08 PM</td>
+        <td>
+          <b>Step 11:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:11 PM</td>
+        <td>
+          ✅ Toast: Buyout Info updated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:11 PM</td>
+        <td>
+          <b>Step 12:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:13 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 7000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:13 PM</td>
+        <td>
+          <b>Step 13:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:14 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:14 PM</td>
+        <td>
+          <b>Step 14:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:17 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:17 PM</td>
+        <td>
+          <b>Step 15:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:18 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=215, FundTransfer=65, RoR=35)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:18 PM</td>
+        <td>
+          <b>Step 16:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:22 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:22 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=Mitchell Aaron Hayes | CourtIndex=07CV-2312-PL-000887 | AgreementDate=12/29/2025
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:23 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 4500.00<br><b>Approved Amount:</b> 7000.00<br><b>Funded Amount:</b> 11500.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 35.00<br><b>Annual Interest:</b> 4025.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 335.42  (Annual / 12)<br><br><b>Document Prep Fee:</b> 215.00<br><b>Fund Transfer Fee:</b> 65.00<br><b>Flat Fees Total:</b> 280.00<br><br><b>✅ First Month Payable:</b> 11500.00 + 335.42 + 215.00 + 65.00 = <b>12115.42</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 0 12,115.42
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Testcase passed First month payable 12115.416666666666 is macthing contract text's first month payable 12115.42
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 1 16,140.42
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 2 20,165.42
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 3 12,450.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 4 16,475.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 5 20,500.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 6 12,786.25
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 7 16,811.25
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 8 20,836.25
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 9 13,121.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:24 PM</td>
+        <td>
+          Month 10 17,146.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 11 21,171.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 12 13,457.08
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 13 17,482.08
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 14 21,507.08
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 15 13,792.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 16 17,817.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 17 21,842.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 18 14,127.92
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 19 18,152.92
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 20 22,177.92
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 21 14,463.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 22 18,488.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 23 22,513.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 24 14,798.75
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 25 18,823.75
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 26 22,848.75
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 27 15,134.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 28 19,159.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 29 23,184.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 30 15,469.58
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 31 19,494.58
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 32 23,519.58
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 33 15,805.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 34 19,830.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          Month 35 23,855.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          <b>Step 17:</b> Switch back from Contract iframe to main page (default content).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:25 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:26 PM</td>
+        <td>
+          <b>Step 18:</b> Click <i>Save Changes</i> to save contract edits.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:28 PM</td>
+        <td>
+          <b>Step 19:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:30 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:30 PM</td>
+        <td>
+          <b>Step 20:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:30 PM</td>
+        <td>
+          ✅ Toast: Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:31 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:31 PM</td>
+        <td>
+          <b>Step 21:</b> Confirm Send action from modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:41 PM</td>
+        <td>
+          Timeout Exception found waiting for preview contract modal thereby waiting and retrying
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:45 PM</td>
+        <td>
+          <b>Step 22:</b> Capture toast after sending contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:45 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract sent-for-signing toast = Finalizing contract...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:45 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='Contract saved successfully!' | SendToast='Finalizing contract...').
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:45 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>4:39:47 PM</span> / <span>00:00:19:219</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:39:47 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:40:06 PM</span>
+<span class='badge badge-default'>00:00:19:219</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:47 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:52 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:52 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:52 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:53 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:53 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:55 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Severin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:55 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:40:06 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//div[@class='rc-virtual-list'])[2]' (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+	at Locaters.Application_Locaters.Incident_type_dropdown(Application_Locaters.java:121)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:90)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@class='rc-virtual-list'])[2]"}
+  (Session info: chrome=143.0.7499.146)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [591cffb882c7a0bfa60bb36463d3fceb, findElement {value=(//div[@class='rc-virtual-list'])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.146, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49984}, goog:processID: 14420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49984/devtoo..., se:cdpVersion: 143.0.7499.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591cffb882c7a0bfa60bb36463d3fceb
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>4:40:08 PM</span> / <span>00:01:14:410</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:40:08 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:41:22 PM</span>
+<span class='badge badge-default'>00:01:14:410</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:08 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:40:13 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:13 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:13 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:14 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:14 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:16 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Anselm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:16 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:16 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Pedestrian Knockdown
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:16 PM</td>
+        <td>
+          <b>Step 4:</b> Select State of Incident from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:18 PM</td>
+        <td>
+          <b>🟨 Actual:</b> State selected from list for input = Indiana
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:18 PM</td>
+        <td>
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:19 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 09/09/2024
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:19 PM</td>
+        <td>
+          <b>Step 6:</b> Select Lead Type and Lead Source.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:21 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Attorney Referral)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:21 PM</td>
+        <td>
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:33 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:33 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:36 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D02-2409-CT-000604' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:37 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 49D02-2409-CT-000604)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:37 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:43 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:43 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:44 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Buyout modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:44 PM</td>
+        <td>
+          <b>Step 11:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:40:48 PM</td>
+        <td>
+          ✅ Toast: Buyout Info updated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:48 PM</td>
+        <td>
+          <b>Step 12:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:49 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 16000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:49 PM</td>
+        <td>
+          <b>Step 13:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:50 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:50 PM</td>
+        <td>
+          <b>Step 14:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:53 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:53 PM</td>
+        <td>
+          <b>Step 15:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:54 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=245, FundTransfer=80, RoR=37)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:54 PM</td>
+        <td>
+          <b>Step 16:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:40:59 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:40:59 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=Gabriel Ryan Summers | CourtIndex=49D02-2409-CT-000604 | AgreementDate=12/29/2025
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:00 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 9000.00<br><b>Approved Amount:</b> 16000.00<br><b>Funded Amount:</b> 25000.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 37.00<br><b>Annual Interest:</b> 9250.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 770.83  (Annual / 12)<br><br><b>Document Prep Fee:</b> 245.00<br><b>Fund Transfer Fee:</b> 80.00<br><b>Flat Fees Total:</b> 325.00<br><br><b>✅ First Month Payable:</b> 25000.00 + 770.83 + 245.00 + 80.00 = <b>26095.83</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 0 26,095.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Testcase passed First month payable 26095.833333333332 is macthing contract text's first month payable 26095.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 1 35,345.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 2 44,595.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 3 26,866.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 4 36,116.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 5 45,366.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 6 27,637.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 7 36,887.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 8 46,137.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 9 28,408.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 10 37,658.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 11 46,908.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 12 29,179.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 13 38,429.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 14 47,679.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 15 29,950.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 16 39,200.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 17 48,450.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 18 30,720.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 19 39,970.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 20 49,220.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 PM</td>
+        <td>
+          Month 21 31,491.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 22 40,741.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 23 49,991.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 24 32,262.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 25 41,512.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 26 50,762.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 27 33,033.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 28 42,283.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 29 51,533.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 30 33,804.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 31 43,054.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 32 52,304.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 33 34,575.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 34 43,825.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          Month 35 53,075.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          <b>Step 17:</b> Switch back from Contract iframe to main page (default content).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:02 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:03 PM</td>
+        <td>
+          <b>Step 18:</b> Click <i>Save Changes</i> to save contract edits.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:05 PM</td>
+        <td>
+          <b>Step 19:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:41:07 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:07 PM</td>
+        <td>
+          <b>Step 20:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:41:07 PM</td>
+        <td>
+          ✅ Toast: Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:08 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:08 PM</td>
+        <td>
+          <b>Step 21:</b> Confirm Send action from modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:18 PM</td>
+        <td>
+          Timeout Exception found waiting for preview contract modal thereby waiting and retrying
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:22 PM</td>
+        <td>
+          <b>Step 22:</b> Capture toast after sending contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:41:22 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract sent-for-signing toast = Finalizing contract...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:41:22 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='Contract saved successfully!' | SendToast='Finalizing contract...').
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:41:22 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>4:41:24 PM</span> / <span>00:01:12:833</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:41:24 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:42:36 PM</span>
+<span class='badge badge-default'>00:01:12:833</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:24 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:41:28 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:29 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:29 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:30 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:30 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:31 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Leander
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:31 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:32 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Wrongful Death
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:32 PM</td>
+        <td>
+          <b>Step 4:</b> Select State of Incident from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:33 PM</td>
+        <td>
+          <b>🟨 Actual:</b> State selected from list for input = Illinois
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:33 PM</td>
+        <td>
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:34 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 01/15/2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:34 PM</td>
+        <td>
+          <b>Step 6:</b> Select Lead Type and Lead Source.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:36 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Attorney Referral)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:36 PM</td>
+        <td>
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:48 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:48 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:51 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '11L01-2301-WD-000287' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:52 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 11L01-2301-WD-000287)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:52 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:58 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:58 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:00 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Buyout modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:00 PM</td>
+        <td>
+          <b>Step 11:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:03 PM</td>
+        <td>
+          ✅ Toast: Buyout Info updated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:03 PM</td>
+        <td>
+          <b>Step 12:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:04 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 60000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:04 PM</td>
+        <td>
+          <b>Step 13:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:05 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:05 PM</td>
+        <td>
+          <b>Step 14:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:08 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:08 PM</td>
+        <td>
+          <b>Step 15:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:09 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=320, FundTransfer=115, RoR=43)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:09 PM</td>
+        <td>
+          <b>Step 16:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:14 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:14 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=Leonard Joel Harrington | CourtIndex=11L01-2301-WD-000287 | AgreementDate=12/29/2025
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:15 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 35000.00<br><b>Approved Amount:</b> 60000.00<br><b>Funded Amount:</b> 95000.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 43.00<br><b>Annual Interest:</b> 40850.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 3404.17  (Annual / 12)<br><br><b>Document Prep Fee:</b> 320.00<br><b>Fund Transfer Fee:</b> 115.00<br><b>Flat Fees Total:</b> 435.00<br><br><b>✅ First Month Payable:</b> 95000.00 + 3404.17 + 320.00 + 115.00 = <b>98839.17</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 0 98,839.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Testcase passed First month payable 98839.16666666667 is macthing contract text's first month payable 98839.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 1 139,689.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 2 180,539.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 3 102,243.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 4 143,093.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 5 183,943.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 6 105,647.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 7 146,497.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 8 187,347.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 9 109,051.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 10 149,901.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 11 190,751.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 12 112,455.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 13 153,305.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 14 194,155.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 15 115,860.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 16 156,710.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 17 197,560.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 18 119,264.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 19 160,114.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 20 200,964.17
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 21 122,668.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 22 163,518.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:16 PM</td>
+        <td>
+          Month 23 204,368.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 24 126,072.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 25 166,922.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 26 207,772.50
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 27 129,476.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 28 170,326.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 29 211,176.67
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 30 132,880.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 31 173,730.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 32 214,580.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 33 136,285.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 34 177,135.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          Month 35 217,985.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          <b>Step 17:</b> Switch back from Contract iframe to main page (default content).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:17 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:18 PM</td>
+        <td>
+          <b>Step 18:</b> Click <i>Save Changes</i> to save contract edits.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:20 PM</td>
+        <td>
+          <b>Step 19:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:22 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:22 PM</td>
+        <td>
+          <b>Step 20:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:22 PM</td>
+        <td>
+          ✅ Toast: Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:22 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:22 PM</td>
+        <td>
+          <b>Step 21:</b> Confirm Send action from modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:33 PM</td>
+        <td>
+          Timeout Exception found waiting for preview contract modal thereby waiting and retrying
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:36 PM</td>
+        <td>
+          <b>Step 22:</b> Capture toast after sending contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:36 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract sent-for-signing toast = Finalizing contract...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:36 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='Contract saved successfully!' | SendToast='Finalizing contract...').
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:36 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>4:42:38 PM</span> / <span>00:01:13:092</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add_case</h5>
+<span class='badge badge-success'>12.22.2025 4:42:38 PM</span>
+<span class='badge badge-danger'>12.22.2025 4:43:51 PM</span>
+<span class='badge badge-default'>00:01:13:092</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:38 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:42:43 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:43 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:43 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:44 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:44 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:45 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Ruediger
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:45 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:46 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Motor Vehicle Accident
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:46 PM</td>
+        <td>
+          <b>Step 4:</b> Select State of Incident from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:47 PM</td>
+        <td>
+          <b>🟨 Actual:</b> State selected from list for input = Kentucky
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:47 PM</td>
+        <td>
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:48 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 04/28/2024
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:48 PM</td>
+        <td>
+          <b>Step 6:</b> Select Lead Type and Lead Source.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:50 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Organic)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:50 PM</td>
+        <td>
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:02 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:02 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:05 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '18CI-2404-CT-000933' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:06 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 18CI-2404-CT-000933)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:06 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:12 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:12 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:14 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Buyout modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:14 PM</td>
+        <td>
+          <b>Step 11:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:17 PM</td>
+        <td>
+          ✅ Toast: Buyout Info updated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:17 PM</td>
+        <td>
+          <b>Step 12:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:19 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 11000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:19 PM</td>
+        <td>
+          <b>Step 13:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:20 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:20 PM</td>
+        <td>
+          <b>Step 14:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:23 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:23 PM</td>
+        <td>
+          <b>Step 15:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:24 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=225, FundTransfer=70, RoR=36)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:24 PM</td>
+        <td>
+          <b>Step 16:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:29 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:29 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=Patrick Cole Jennings | CourtIndex=18CI-2404-CT-000933 | AgreementDate=12/29/2025
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:30 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 6000.00<br><b>Approved Amount:</b> 11000.00<br><b>Funded Amount:</b> 17000.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 36.00<br><b>Annual Interest:</b> 6120.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 510.00  (Annual / 12)<br><br><b>Document Prep Fee:</b> 225.00<br><b>Fund Transfer Fee:</b> 70.00<br><b>Flat Fees Total:</b> 295.00<br><br><b>✅ First Month Payable:</b> 17000.00 + 510.00 + 225.00 + 70.00 = <b>17805.00</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 0 17,805.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Testcase passed First month payable 17805.0 is macthing contract text's first month payable 17805.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 1 23,925.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 2 30,045.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 3 18,315.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 4 24,435.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 5 30,555.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 6 18,825.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 7 24,945.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 8 31,065.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 9 19,335.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 10 25,455.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 11 31,575.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 12 19,845.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 13 25,965.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 14 32,085.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 15 20,355.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 16 26,475.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 17 32,595.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 18 20,865.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 19 26,985.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:31 PM</td>
+        <td>
+          Month 20 33,105.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 21 21,375.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 22 27,495.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 23 33,615.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 24 21,885.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 25 28,005.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 26 34,125.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 27 22,395.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 28 28,515.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 29 34,635.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 30 22,905.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 31 29,025.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 32 35,145.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 33 23,415.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 34 29,535.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          Month 35 35,655.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          <b>Step 17:</b> Switch back from Contract iframe to main page (default content).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:32 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:33 PM</td>
+        <td>
+          <b>Step 18:</b> Click <i>Save Changes</i> to save contract edits.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:35 PM</td>
+        <td>
+          <b>Step 19:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:36 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:36 PM</td>
+        <td>
+          <b>Step 20:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:36 PM</td>
+        <td>
+          ✅ Toast: Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:37 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:37 PM</td>
+        <td>
+          <b>Step 21:</b> Confirm Send action from modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:47 PM</td>
+        <td>
+          Timeout Exception found waiting for preview contract modal thereby waiting and retrying
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:51 PM</td>
+        <td>
+          <b>Step 22:</b> Capture toast after sending contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:51 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract sent-for-signing toast = Finalizing contract...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:51 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='Contract saved successfully!' | SendToast='Finalizing contract...').
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:43:51 PM</td>
+        <td>
+          Test passed
         </td>
       </tr>
   </tbody>
@@ -332,15 +3707,15 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log badge-danger'>2</span>
 </span>
 <p class="name">org.openqa.selenium.TimeoutException</p>
-<p class="duration text-sm">1 tests</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>org.openqa.selenium.TimeoutException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -353,9 +3728,16 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>13:18:42 PM</td>
+<td>16:38:10 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>application_add</a>
+<a href="#" class="linked" test-id='2' id='2'>Add_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:39:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>Add_case</a>
 </td>
 </tr>
 </tbody>
@@ -375,25 +3757,25 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 22, 2025 01:18:39 PM</h3>
+<h3>Dec 22, 2025 04:36:48 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 22, 2025 01:19:29 PM</h3>
+<h3>Dec 22, 2025 04:43:52 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>0</h3>
+<h3>5</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>1</h3>
+<h3>2</h3>
 </div></div>
 </div>
 </div>
@@ -409,12 +3791,12 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> tests passed
+<div><small data-tooltip='71%'>
+<b>5</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>1</b> tests failed,
+<small data-tooltip='28%'><b>2</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -432,10 +3814,10 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='13%'><b>3</b> events passed</small></div>
+<div><small data-tooltip='10%'><b>47</b> events passed</small></div>
 <div>
-<small data-tooltip='4%'><b>1</b> events failed,
-<b data-tooltip='%'>19</b> others
+<small data-tooltip='0%'><b>2</b> events failed,
+<b data-tooltip='%'>414</b> others
 </small>
 </div>
 </div>
@@ -451,7 +3833,7 @@ Session ID: 59a8c4d140e4c788532c28e0b9f2ae78
 </div></div>
 <script>
 var timeline = {
-"application_add":47.2
+"Add_case":77.61,"Add_case":19.096,"Add_case":74.664,"Add_case":19.219,"Add_case":74.41,"Add_case":72.833,"Add_case":73.092
 };
 </script>
 <div class="row">
@@ -490,8 +3872,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 1,
+passParent: 5,
+failParent: 2,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -507,11 +3889,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 3,
-failEvents: 1,
+passEvents: 47,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 19
+infoEvents: 414
 };
 </script>        </div>
       </div>

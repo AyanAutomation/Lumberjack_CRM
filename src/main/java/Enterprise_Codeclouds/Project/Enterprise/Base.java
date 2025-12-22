@@ -47,7 +47,7 @@ public class Base {
 		
 		if(d!=null){
 			
-			//d.quit();
+			d.quit();
 			}
 		
 		

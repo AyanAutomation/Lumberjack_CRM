@@ -1,15 +1,20 @@
 package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
@@ -78,7 +83,7 @@ public class Case_Appplications extends Header_Manager{
 		p.form_inputs().get(0).sendKeys(data2.get("First Name"));
 		p.plaintiff_dropdown_list();
 		p.Plaintiff_options().get(0).click();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+data.get("Plaintiff Name"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+data2.get("First Name"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
 		p.form_inputs().get(1).sendKeys(data.get("Case Type"));
 		p.form_inputs().get(1).click();
@@ -318,9 +323,14 @@ public class Case_Appplications extends Header_Manager{
 		}catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Save toast not captured (toast not visible / locator issue) after clicking Save Changes.");
 			throw e;}
-		d.navigate().refresh();
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
-		Thread.sleep(950);
+		//d.navigate().refresh();
+		FluentWait<WebDriver> w = new FluentWait<WebDriver>(d)
+		        .withTimeout(Duration.ofSeconds(30))
+		        .pollingEvery(Duration.ofMillis(500))
+		        .ignoring(NoSuchElementException.class)
+		        .ignoring(StaleElementReferenceException.class);
+
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
 		String Contract_Generated = lg.toast().getText().trim();
 		Login_negative_testcases.Toast_printer(Contract_Generated);
         p.Generate_contract_button().click();
@@ -334,7 +344,7 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(800);
 		p.Generate_contract_button().click();
 		Thread.sleep(1800);
-		p.modal_buttons().get(1).click(); }
+		p.modal_buttons().get(2).click(); }
 		Thread.sleep(800);
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after sending contract for signing.");
 		String contract_Sent_for_signing = "";
@@ -963,10 +973,10 @@ public class Case_Appplications extends Header_Manager{
 
 	    // ===== DataProvider return =====
 	    return new Object[][] {
-	        { c1 },/* { c2 }, { c3 }, { c4 }, { c5 },
+	       /* { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
 	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
-	        { c11 }, { c12 }, { c13 }, { c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 } */
+	        { c11 }, { c12 }, { c13 }, */{ c14 }, { c15 },
+	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 } 
 	    };}
 	
 	

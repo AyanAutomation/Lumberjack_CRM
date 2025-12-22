@@ -77,8 +77,7 @@ public class Repeat {
     }
     public WebElement wait_for_presence(By locator){
         WebDriverWait w = new WebDriverWait(d, Duration.ofSeconds(10));
-        return w.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
+        return w.until(ExpectedConditions.presenceOfElementLocated(locator)); }
      
     
     public void field_space_inserter(List<WebElement> e,int index){
@@ -92,7 +91,16 @@ public class Repeat {
     	   
     	   el.sendKeys(Keys.SPACE);
     	}
-       el.sendKeys(Keys.TAB);
+       el.sendKeys(Keys.TAB);}
+    
+    
+    
+    
+    
+    public void FluentWaits(WebElement element){
+    	
+    	
+    	
     }
 	
 }
