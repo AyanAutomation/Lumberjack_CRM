@@ -85,9 +85,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//*[@class='ant-modal-body']//button//span)[2]")
 	private WebElement  Save_changes_button; 
 	@FindBy(xpath="//*[@class='ant-empty-description']")
-	private WebElement  Dropdown_showing_nodata; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Dropdown_showing_nodata; 
+	@FindBy(xpath="(//*[@class='ant-card-body'])[3]")
+	private WebElement  Plaintiff_section_in_contacts_tab; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -309,13 +309,14 @@ public class Application_Locaters extends Repeat{
 	return Save_changes_button;}     
 	public WebElement Dropdown_showing_nodata(){
 	wait_for_theElement(Dropdown_showing_nodata);
-	return Dropdown_showing_nodata;}    /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Dropdown_showing_nodata;}    
+	public WebElement Plaintiff_section_in_contacts_tab(){
+	wait_for_theElement(Plaintiff_section_in_contacts_tab);
+	return Plaintiff_section_in_contacts_tab;}   
+	public List <WebElement> Plaintiff_feild_labels_and_values(){
+	List <WebElement> Palintiff_feild_labels_and_values = Plaintiff_section_in_contacts_tab().findElements(By.xpath(".//span"));
+	wait_for_theElement(Palintiff_feild_labels_and_values);
+	return Palintiff_feild_labels_and_values;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

@@ -6,14 +6,17 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -21,12 +24,13 @@ import com.aventstack.extentreports.Status;
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
+import Locaters.temp_mail_Locaters;
 import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
 
 public class Case_Appplications extends Header_Manager{
 	
-	TreeSet<Integer> monthly_emi = new TreeSet<Integer>();
+	TreeSet<Double> monthly_emi = new TreeSet<Double>();
 	
 	
 	
@@ -45,9 +49,7 @@ public class Case_Appplications extends Header_Manager{
 	         "<b>Step "+(step++)+":</b> Verify New Case popup is opened<br>"
 	         + "<b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br>"
 	         + "<b>✅ Expected:</b> New Case Add popup form should be visible and ready for input");
-			p.Popup_add_form();
-		
-	}
+			p.Popup_add_form();}
 	
 	
 	
@@ -293,6 +295,7 @@ public class Case_Appplications extends Header_Manager{
 	    	System.out.println("Month "+i+" "+cell_text);
 	    	Report_Listen.log_print_in_report().log(Status.INFO,"Month "+i+" "+cell_text);
 	    	System.out.println();
+	    	
 	    	// ✅ Convert UI text like "$1,234.50" into pure number string "1234.50" before parsing
 	        // replace(",", "") removes thousand separators
 	        // replace("$", "") removes currency symbol
@@ -309,7 +312,7 @@ public class Case_Appplications extends Header_Manager{
 	    		System.out.println("Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
 	    		System.out.println();
 	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed First month payable "+Monthly_Payable_Amount+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
-	    		}
+	    		}monthly_emi.add(cell_value_upto_2_decimal);
 	    	i++;}}
 	    d.switchTo().defaultContent();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Switch back from Contract iframe to main page (default content).");
@@ -359,15 +362,73 @@ public class Case_Appplications extends Header_Manager{
 		catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Send-for-signing toast not captured (toast not visible / locator issue) after confirming modal.");
 			throw e;}
-		Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='"+contract_saved+"' | SendToast='"+contract_Sent_for_signing+"').");}
+		Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='"+contract_saved+"' | SendToast='"+contract_Sent_for_signing+"').");
+	    Docu_Sign_Signature();}
 	
 	
+	
+	
+	
+	    public void future_months_calculations_check(TreeSet<Double> emi,Double monthy_interest){
+		
+	    	TreeSet<Double> each_month_emi = emi;
+	    	Double each_monthly_interest = monthy_interest;
+	    	
+	    	
+		
+		
+		
+		
+	      }
+	
+	
+	    public String Case_plaintiff_mail_id_fetcher() throws InterruptedException{
+		
+	    	Application_Locaters p = new Application_Locaters(d);
+	    	
+	    	tab_selector("Contacts");
+	    	p.lawFirm_AddButton_ContactTab();
+	    	List <WebElement> Plaintiff_datas = p.Plaintiff_feild_labels_and_values();
+		    String Mailid = Plaintiff_datas.get(7).getText().trim();
+		    return Mailid;}
+	    
+	    
+	
+	    public void Docu_Sign_Signature() throws InterruptedException{
+	    	
+	    	temp_mail_Locaters p = new temp_mail_Locaters(d);
+	    	Repeat rp = new Repeat(d);
+	    	
+	    	
+	    	String plaintiff_mail = Case_plaintiff_mail_id_fetcher();
+		    d.switchTo().newWindow(WindowType.TAB);
+		    Set<String> all_window_handles = d.getWindowHandles();
+		    String current_window_handle = d.getWindowHandle();
+		    for(String handle:all_window_handles){
+		    	if(!handle.equals(current_window_handle)){
+		    		d.switchTo().window(handle);
+		    		break;}}
+		    d.navigate().to("https://tempmail.plus/en/#!");
+		    p.mail_id_box().clear();
+		    p.mail_id_box().sendKeys(plaintiff_mail);
+		    p.mail_id_box().sendKeys(Keys.ENTER);
+		    Thread.sleep(800);
+	    	rp.Scroll_to_element(p.inbox_section());
+	    	Thread.sleep(800);
+	    	List<WebElement> Mails = p.mails();
+	    	Mails.get(0).click();
+	    	p.Entered_mail_details();
+	    	
+	    	
+	    }
+	    
+	    
+	    
 	
 	@DataProvider
 	public Object[][] caseData() {
 
-		  // ===== Dynamic date logic =====
-	    LocalDate base = LocalDate.now().plusWeeks(1);       // 1 week in future
+		LocalDate base = LocalDate.now().plusWeeks(1);       // 1 week in future
 	    LocalDate agreementDate = base;                      // Agreement Date = +1 week
 	    LocalDate interestStartDate = base;                  // Interest Start Date = +1 week
 	    LocalDate buyoutExpiryDate = base.plusYears(3);      // Expiry = +3 years
@@ -378,587 +439,424 @@ public class Case_Appplications extends Header_Manager{
 	    String interestStartDateStr = interestStartDate.format(formatter);
 	    String buyoutExpiryDateStr = buyoutExpiryDate.format(formatter);
 
-	    // ===== Case data =====
+	    // ===== Case data (NO plaintiff-related keys) =====
 
 	    TreeMap<String, String> c1 = new TreeMap<String, String>();
 	    c1.put("Case #", "1");
-	    c1.put("Plaintiff Name", "Caleb Hunter Lawson");
 	    c1.put("Case Type", "Motor Vehicle Accident");
 	    c1.put("State", "Indiana");
-	    c1.put("Date of Incident", "03/14/2024");
+	    c1.put("Date of Incident", "02/18/2024");
 	    c1.put("Lead Source", "Attorney Referral");
-	    c1.put("Requested Amount", "25000");
-	    c1.put("Court Index Number", "49D12-2403-CT-001201");
-	    c1.put("Summary", "Rear-end collision on I-65; plaintiff rear-ended in congestion, airbags deployed, whiplash, PT with residual stiffness and work loss.");
+	    c1.put("Requested Amount", "28000");
+	    c1.put("Court Index Number", "49D11-2402-CT-000944");
+	    c1.put("Summary", "Multi-car rear-end on I-465 during stop-and-go traffic; airbags deployed; cervical strain with PT and missed shifts.");
 	    c1.put("Risk Level", "Moderate");
-	    c1.put("Recommended Max Funding", "12000");
-	    c1.put("Underwriting Notes", "Strong rear-end liability with citation for following too closely. Soft-tissue neck/back injury but supported by ER visit, imaging, PT and wage loss. Need full medical records, wage docs and prior-claim check. Assuming clean priors and adequate BI limits, case supports funding up to about 12k.");
+	    c1.put("Recommended Max Funding", "13000");
+	    c1.put("Underwriting Notes", "Liability favorable if police report assigns fault to trailing vehicle. Soft-tissue injury but supported by imaging and structured PT. Confirm coverage limits, prior claims and wage verification before finalizing funding.");
 	    c1.put("Buyout Funder Name", "Summit Legal Funding");
-	    c1.put("Buyout Amount", "8000");
-	    c1.put("Approved Amount", "12000");
+	    c1.put("Buyout Amount", "8500");
+	    c1.put("Approved Amount", "13000");
 	    c1.put("Application Status", "Approved");
-	    c1.put("Attorney Name", "Atty. Melissa Grant");
-	    c1.put("Law Firm Name", "Grant & Lawson Injury Law");
-	    c1.put("Plaintiff Email", "caleb.lawson@plaintiffmail.com");
-	    c1.put("Plaintiff Phone Number", "555-201-0001");
-	    c1.put("Plaintiff Address One", "1245 N Meridian St");
-	    c1.put("Plaintiff Address Two", "Indianapolis, IN 46204");
-	    c1.put("Document prep fee", "250");
-	    c1.put("Fund transfer fee", "75");
+	    c1.put("Attorney Name", "Attorney Maren Vogelhardt");
+	    c1.put("Law Firm Name", "Prairie State Bicycle, Pedestrian & Urban Traffic Collision Law Collective");
+	    c1.put("Document prep fee", "255");
+	    c1.put("Fund transfer fee", "80");
 	    c1.put("Rate of Return", "38");
-	    c1.put("SMS Message Title", "Funding Application Approved");
-	    c1.put("SMS Message Body", "Hi Caleb, your motor vehicle case funding request has been approved for up to $12,000. Our team will contact you shortly to confirm disbursement details. – Lumberjack Legal Finance");
+	    c1.put("SMS Message Title", "Funding Approved");
+	    c1.put("SMS Message Body", "Your case funding request has been approved. We’ll coordinate next steps and agreement review with your attorney. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c2 = new TreeMap<String, String>();
 	    c2.put("Case #", "2");
-	    c2.put("Plaintiff Name", "Jared Michael Fulton");
 	    c2.put("Case Type", "Medical Malpractice");
 	    c2.put("State", "Illinois");
-	    c2.put("Date of Incident", "11/02/2023");
+	    c2.put("Date of Incident", "10/06/2023");
 	    c2.put("Lead Source", "Advertising");
-	    c2.put("Requested Amount", "50000");
-	    c2.put("Court Index Number", "12L03-2311-MD-004589");
-	    c2.put("Summary", "Failure to diagnose appendicitis at first ER visit; rupture 48 hours later, emergency surgery and several inpatient days.");
+	    c2.put("Requested Amount", "65000");
+	    c2.put("Court Index Number", "12L04-2310-MD-003718");
+	    c2.put("Summary", "Delayed diagnosis of sepsis after outpatient procedure; ICU admission and prolonged recovery with ongoing fatigue.");
 	    c2.put("Risk Level", "Moderate-High");
-	    c2.put("Recommended Max Funding", "25000");
-	    c2.put("Underwriting Notes", "Classic failure-to-diagnose pattern with clear progression from missed appendicitis to rupture and hospitalization. Need confirmation suit is filed, expert supporting breach and causation, and med-bill summary. Med-mal is slow and expert-heavy, so staged funding in the 20–25k range is prudent once expert support and coverage are confirmed.");
+	    c2.put("Recommended Max Funding", "28000");
+	    c2.put("Underwriting Notes", "High medical spend and ICU stay support damages but liability depends on expert review of standard of care and timing. Verify suit filing status, expert engagement, and applicable med-mal limitations/caps.");
 	    c2.put("Buyout Funder Name", "Harbor Ridge Finance");
-	    c2.put("Buyout Amount", "15000");
-	    c2.put("Approved Amount", "25000");
+	    c2.put("Buyout Amount", "16000");
+	    c2.put("Approved Amount", "28000");
 	    c2.put("Application Status", "In Review");
-	    c2.put("Attorney Name", "Atty. Daniel Hughes");
-	    c2.put("Law Firm Name", "Hughes & Fairchild Medical Law");
-	    c2.put("Plaintiff Email", "jared.fulton@plaintiffmail.com");
-	    c2.put("Plaintiff Phone Number", "555-201-0002");
-	    c2.put("Plaintiff Address One", "890 W Jackson Blvd");
-	    c2.put("Plaintiff Address Two", "Chicago, IL 60607");
-	    c2.put("Document prep fee", "275");
-	    c2.put("Fund transfer fee", "80");
+	    c2.put("Attorney Name", "Attorney Konstantin Brechtova");
+	    c2.put("Law Firm Name", "Braunova-Petrov Medical Malpractice, Birth Injury & Patient Safety Law Collective");
+	    c2.put("Document prep fee", "295");
+	    c2.put("Fund transfer fee", "90");
 	    c2.put("Rate of Return", "42");
-	    c2.put("SMS Message Title", "Application Under Review");
-	    c2.put("SMS Message Body", "Hi Jared, we’ve received your medical malpractice funding application and it is currently under underwriting review. We’ll update you as soon as the approval amount is finalized. – Lumberjack Legal Finance");
+	    c2.put("SMS Message Title", "Underwriting Review");
+	    c2.put("SMS Message Body", "Your application is currently under underwriting review. We’ll update you once the approval amount is finalized. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c3 = new TreeMap<String, String>();
 	    c3.put("Case #", "3");
-	    c3.put("Plaintiff Name", "Marcus Evan Ridley");
 	    c3.put("Case Type", "Slip and Fall");
 	    c3.put("State", "Ohio");
-	    c3.put("Date of Incident", "01/09/2024");
+	    c3.put("Date of Incident", "12/22/2023");
 	    c3.put("Lead Source", "Organic");
-	    c3.put("Requested Amount", "15000");
-	    c3.put("Court Index Number", "18CV-2401-PR-000973");
-	    c3.put("Summary", "Grocery store slip from refrigeration leak; no warning signs; fractured wrist, brace and OT; limits lifting and household tasks.");
+	    c3.put("Requested Amount", "17000");
+	    c3.put("Court Index Number", "18CV-2312-PR-001308");
+	    c3.put("Summary", "Unmarked wet floor at big-box store entry; knee sprain with possible meniscus tear; ortho consult and MRI pending.");
 	    c3.put("Risk Level", "Moderate");
-	    c3.put("Recommended Max Funding", "7500");
-	    c3.put("Underwriting Notes", "Premises claim with potentially strong notice if video shows a long-standing puddle and prior cooler issues. Objective fracture and OT support damages but upside is capped. Need incident report, maintenance logs, video and full med/wage docs. Assuming negligence and coverage, 6–7.5k funding is reasonable.");
+	    c3.put("Recommended Max Funding", "8000");
+	    c3.put("Underwriting Notes", "Notice/maintenance logs and surveillance are key. MRI results will drive value. Ensure incident report, witness statements, and full treatment notes are obtained.");
 	    c3.put("Buyout Funder Name", "Frontline Capital Group");
-	    c3.put("Buyout Amount", "4000");
-	    c3.put("Approved Amount", "7500");
+	    c3.put("Buyout Amount", "4500");
+	    c3.put("Approved Amount", "8000");
 	    c3.put("Application Status", "Approved");
-	    c3.put("Attorney Name", "Atty. Olivia Carter");
-	    c3.put("Law Firm Name", "Carter Premises Injury Firm");
-	    c3.put("Plaintiff Email", "marcus.ridley@plaintiffmail.com");
-	    c3.put("Plaintiff Phone Number", "555-201-0003");
-	    c3.put("Plaintiff Address One", "432 James Rd");
-	    c3.put("Plaintiff Address Two", "Columbus, OH 43214");
-	    c3.put("Document prep fee", "200");
-	    c3.put("Fund transfer fee", "60");
+	    c3.put("Attorney Name", "Attorney Elsbeth Hartmannski");
+	    c3.put("Law Firm Name", "Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group");
+	    c3.put("Document prep fee", "210");
+	    c3.put("Fund transfer fee", "65");
 	    c3.put("Rate of Return", "36");
-	    c3.put("SMS Message Title", "Slip & Fall Funding Approved");
-	    c3.put("SMS Message Body", "Hi Marcus, your slip-and-fall case has been approved for pre-settlement funding up to $7,500. Reply to this message if you have questions about timing or payment options. – Lumberjack Legal Finance");
+	    c3.put("SMS Message Title", "Funding Approved");
+	    c3.put("SMS Message Body", "Your slip-and-fall case has been approved for funding. We’ll coordinate documents with your attorney. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c4 = new TreeMap<String, String>();
 	    c4.put("Case #", "4");
-	    c4.put("Plaintiff Name", "Noah James Corbett");
 	    c4.put("Case Type", "Workplace Injury");
 	    c4.put("State", "Michigan");
-	    c4.put("Date of Incident", "06/21/2023");
+	    c4.put("Date of Incident", "05/14/2023");
 	    c4.put("Lead Source", "Other");
-	    c4.put("Requested Amount", "30000");
-	    c4.put("Court Index Number", "03WC-2306-IN-002764");
-	    c4.put("Summary", "Warehouse forklift struck from behind by coworker; low-back strain with radiating pain; conservative care and restricted duty.");
+	    c4.put("Requested Amount", "32000");
+	    c4.put("Court Index Number", "03WC-2305-IN-001992");
+	    c4.put("Summary", "Industrial ladder fall during maintenance; lumbar disc symptoms and radicular pain; restricted duty and missed overtime.");
 	    c4.put("Risk Level", "Moderate");
-	    c4.put("Recommended Max Funding", "12000");
-	    c4.put("Underwriting Notes", "Good mechanism but exposure may be mostly workers comp unless there is a viable third-party defendant. Need clarity on comp benefits, separate negligence claim, contracts and lien amounts. If comp-only, funding should be modest; with a strong third-party case and coverage, 10–12k is reasonable.");
+	    c4.put("Recommended Max Funding", "12500");
+	    c4.put("Underwriting Notes", "Clarify third-party exposure beyond workers comp. Review lien posture and any OSHA/safety documentation. Conservative funding if comp-only; higher if third-party claim is viable.");
 	    c4.put("Buyout Funder Name", "Liberty Legal Funding");
-	    c4.put("Buyout Amount", "9000");
-	    c4.put("Approved Amount", "12000");
+	    c4.put("Buyout Amount", "9200");
+	    c4.put("Approved Amount", "12500");
 	    c4.put("Application Status", "Pending Docs");
-	    c4.put("Attorney Name", "Atty. Brian Mercer");
-	    c4.put("Law Firm Name", "Mercer & Lane Workplace Law");
-	    c4.put("Plaintiff Email", "noah.corbett@plaintiffmail.com");
-	    c4.put("Plaintiff Phone Number", "555-201-0004");
-	    c4.put("Plaintiff Address One", "2150 E Grand Blvd");
-	    c4.put("Plaintiff Address Two", "Detroit, MI 48211");
-	    c4.put("Document prep fee", "225");
-	    c4.put("Fund transfer fee", "70");
+	    c4.put("Attorney Name", "Attorney Ilya Kuznetsov-Schmidt");
+	    c4.put("Law Firm Name", "Northern Indiana Construction Site Accident, Scaffold & Workplace Injury Attorneys");
+	    c4.put("Document prep fee", "235");
+	    c4.put("Fund transfer fee", "75");
 	    c4.put("Rate of Return", "34");
-	    c4.put("SMS Message Title", "Documents Required");
-	    c4.put("SMS Message Body", "Hi Noah, we’re almost ready to finalize your workplace injury funding. Please ask your attorney to upload your latest wage records and workers’ comp documents so we can complete approval. – Lumberjack Legal Finance");
+	    c4.put("SMS Message Title", "Documents Needed");
+	    c4.put("SMS Message Body", "We need additional documentation to finalize your case funding. Please coordinate uploads with your attorney. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c5 = new TreeMap<String, String>();
 	    c5.put("Case #", "5");
-	    c5.put("Plaintiff Name", "Brandon Tyler Vance");
 	    c5.put("Case Type", "Products Liability");
 	    c5.put("State", "Indiana");
-	    c5.put("Date of Incident", "09/05/2023");
+	    c5.put("Date of Incident", "08/28/2023");
 	    c5.put("Lead Source", "Attorney Referral");
-	    c5.put("Requested Amount", "40000");
-	    c5.put("Court Index Number", "49D10-2309-PL-000811");
-	    c5.put("Summary", "New power drill allegedly short-circuited and partially exploded in normal use; burns and deep lacerations to dominant hand; missed work as mechanic.");
+	    c5.put("Requested Amount", "42000");
+	    c5.put("Court Index Number", "49D09-2308-PL-000772");
+	    c5.put("Summary", "Pressure cooker lid failure with steam release; second-degree burns to forearm; wound care and scarring risk.");
 	    c5.put("Risk Level", "Moderate");
-	    c5.put("Recommended Max Funding", "18000");
-	    c5.put("Underwriting Notes", "Product defect case with significant dominant-hand injury. Need preservation of drill, manufacturer and retailer identification and engineering expert. Damages include lost income and possible permanent impairment. With good preservation and expert support, funding in the 15–18k range is justified.");
+	    c5.put("Recommended Max Funding", "19000");
+	    c5.put("Underwriting Notes", "Preservation of product and proof of purchase are critical. Expert review required. Damages supported by burn treatment and scarring. Funding contingent on chain-of-custody confirmation.");
 	    c5.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-	    c5.put("Buyout Amount", "12000");
-	    c5.put("Approved Amount", "18000");
+	    c5.put("Buyout Amount", "12500");
+	    c5.put("Approved Amount", "19000");
 	    c5.put("Application Status", "Approved");
-	    c5.put("Attorney Name", "Atty. Sophia Reynolds");
-	    c5.put("Law Firm Name", "Reynolds & Cole Product Liability");
-	    c5.put("Plaintiff Email", "brandon.vance@plaintiffmail.com");
-	    c5.put("Plaintiff Phone Number", "555-201-0005");
-	    c5.put("Plaintiff Address One", "612 Brookside Dr");
-	    c5.put("Plaintiff Address Two", "Bloomington, IN 47401");
-	    c5.put("Document prep fee", "260");
+	    c5.put("Attorney Name", "Attorney Svea Königstein");
+	    c5.put("Law Firm Name", "Dietrich & Kuznetsov-Schmidt Serious Spine, Brain & Orthopedic Injury Advocates");
+	    c5.put("Document prep fee", "265");
 	    c5.put("Fund transfer fee", "85");
 	    c5.put("Rate of Return", "40");
-	    c5.put("SMS Message Title", "Product Injury Case Approved");
-	    c5.put("SMS Message Body", "Hi Brandon, your product-injury funding request has been approved for up to $18,000 based on current medical and wage information. Your attorney will review the agreement terms with you. – Lumberjack Legal Finance");
+	    c5.put("SMS Message Title", "Approved – Product Case");
+	    c5.put("SMS Message Body", "Your product-liability funding has been approved. Your attorney will receive the agreement for review. – Lumberjack Legal Finance");
+
+	    // --- c6 to c20 (same key structure) ---
+	    // To keep this response readable, I’m continuing with 15 more sets using the SAME keys,
+	    // still omitting all plaintiff-related keys.
 
 	    TreeMap<String, String> c6 = new TreeMap<String, String>();
 	    c6.put("Case #", "6");
-	    c6.put("Plaintiff Name", "Raymond Luke Callahan");
 	    c6.put("Case Type", "Wrongful Death");
 	    c6.put("State", "Kentucky");
-	    c6.put("Date of Incident", "07/18/2022");
+	    c6.put("Date of Incident", "09/02/2022");
 	    c6.put("Lead Source", "Attorney Referral");
-	    c6.put("Requested Amount", "100000");
-	    c6.put("Court Index Number", "22CI-2207-WD-000342");
-	    c6.put("Summary", "Passenger killed when truck failed to brake for slowed interstate traffic; catastrophic injuries and death; alleged distraction and HOS violations.");
+	    c6.put("Requested Amount", "110000");
+	    c6.put("Court Index Number", "22CI-2209-WD-000511");
+	    c6.put("Summary", "Highway underride collision with commercial trailer; fatality alleged due to missing/defective underride guard and lighting.");
 	    c6.put("Risk Level", "Low-Moderate");
-	    c6.put("Recommended Max Funding", "50000");
-	    c6.put("Underwriting Notes", "High-severity trucking wrongful death with likely commercial limits and potential punitive angle if logs and hours-of-service issues are proven. Need estate docs, policy limits, reconstruction and ELD/log data. Timeline is long but upside large, so recommend staged funding up to 40–50k as liability and coverage proof develops.");
+	    c6.put("Recommended Max Funding", "52000");
+	    c6.put("Underwriting Notes", "Severe damages with likely commercial limits; liability depends on inspection logs, maintenance records and reconstruction. Recommend staged funding tied to evidence preservation and coverage confirmation.");
 	    c6.put("Buyout Funder Name", "Summit Legal Funding");
-	    c6.put("Buyout Amount", "30000");
-	    c6.put("Approved Amount", "50000");
+	    c6.put("Buyout Amount", "32000");
+	    c6.put("Approved Amount", "52000");
 	    c6.put("Application Status", "Funded");
-	    c6.put("Attorney Name", "Atty. Caroline Blake");
-	    c6.put("Law Firm Name", "Blake & Rowan Trucking Litigation");
-	    c6.put("Plaintiff Email", "estate.callahan@plaintiffmail.com");
-	    c6.put("Plaintiff Phone Number", "555-201-0006");
-	    c6.put("Plaintiff Address One", "74 Maple Ridge Ln");
-	    c6.put("Plaintiff Address Two", "Lexington, KY 40505");
-	    c6.put("Document prep fee", "300");
-	    c6.put("Fund transfer fee", "100");
+	    c6.put("Attorney Name", "Attorney Nadja Voronov");
+	    c6.put("Law Firm Name", "Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners");
+	    c6.put("Document prep fee", "310");
+	    c6.put("Fund transfer fee", "105");
 	    c6.put("Rate of Return", "45");
 	    c6.put("SMS Message Title", "Funding Disbursed");
-	    c6.put("SMS Message Body", "Hello, this is a confirmation that your wrongful death case funding has been finalized and disbursed according to the agreement on file. Please contact your attorney if you have questions about the net amount received. – Lumberjack Legal Finance");
+	    c6.put("SMS Message Body", "Confirmation: funding has been disbursed per the agreement on file. Please contact your attorney for details. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c7 = new TreeMap<String, String>();
 	    c7.put("Case #", "7");
-	    c7.put("Plaintiff Name", "Trevor Daniel Pierce");
 	    c7.put("Case Type", "Premises Liability");
 	    c7.put("State", "Ohio");
-	    c7.put("Date of Incident", "02/27/2024");
+	    c7.put("Date of Incident", "01/31/2024");
 	    c7.put("Lead Source", "Medical Provider");
-	    c7.put("Requested Amount", "20000");
-	    c7.put("Court Index Number", "23CV-2402-PL-001154");
-	    c7.put("Summary", "Long-term tenant slipped on unsalted icy sidewalk; prior complaints; rotator cuff tear with injections and possible arthroscopic surgery.");
+	    c7.put("Requested Amount", "22000");
+	    c7.put("Court Index Number", "23CV-2401-PL-001022");
+	    c7.put("Summary", "Apartment stairwell fall due to loose tread and poor lighting; shoulder labrum tear; injection and PT.");
 	    c7.put("Risk Level", "Moderate");
-	    c7.put("Recommended Max Funding", "10000");
-	    c7.put("Underwriting Notes", "Forecasted freezing temps and prior complaints give decent liability posture, though open-and-obvious defenses apply. Rotator cuff injury and possible surgery increase value. Need weather records, maintenance logs, complaint history, MRI and ortho opinions. Assuming those line up, 8–10k funding is appropriate.");
+	    c7.put("Recommended Max Funding", "10500");
+	    c7.put("Underwriting Notes", "Maintenance logs, prior complaints, and inspection history are key. Imaging confirms tear; value improves if surgery is recommended. Verify coverage and any comparative-fault defenses.");
 	    c7.put("Buyout Funder Name", "Harbor Ridge Finance");
-	    c7.put("Buyout Amount", "6000");
-	    c7.put("Approved Amount", "10000");
+	    c7.put("Buyout Amount", "6200");
+	    c7.put("Approved Amount", "10500");
 	    c7.put("Application Status", "Approved");
-	    c7.put("Attorney Name", "Atty. Steven Patel");
-	    c7.put("Law Firm Name", "Patel & Myers Tenants’ Rights");
-	    c7.put("Plaintiff Email", "trevor.pierce@plaintiffmail.com");
-	    c7.put("Plaintiff Phone Number", "555-201-0007");
-	    c7.put("Plaintiff Address One", "309 Lakeview Ct");
-	    c7.put("Plaintiff Address Two", "Akron, OH 44310");
-	    c7.put("Document prep fee", "230");
+	    c7.put("Attorney Name", "Attorney Reto Schubertov");
+	    c7.put("Law Firm Name", "Wolframova & Königstein Urban Bicycle, Pedestrian & Verkehrskollision Attorneys");
+	    c7.put("Document prep fee", "235");
 	    c7.put("Fund transfer fee", "70");
 	    c7.put("Rate of Return", "36");
-	    c7.put("SMS Message Title", "Icy Sidewalk Case – Approval");
-	    c7.put("SMS Message Body", "Hi Trevor, your premises liability funding for the icy sidewalk case has been approved. The maximum approved amount is $10,000. Your attorney will help you review the contract before signing. – Lumberjack Legal Finance");
+	    c7.put("SMS Message Title", "Approval Notice");
+	    c7.put("SMS Message Body", "Your premises liability funding has been approved. Your attorney will receive paperwork for review. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c8 = new TreeMap<String, String>();
 	    c8.put("Case #", "8");
-	    c8.put("Plaintiff Name", "Logan Scott McKinney");
 	    c8.put("Case Type", "Motor Vehicle Accident");
 	    c8.put("State", "Indiana");
-	    c8.put("Date of Incident", "10/29/2023");
+	    c8.put("Date of Incident", "09/19/2023");
 	    c8.put("Lead Source", "Broker");
-	    c8.put("Requested Amount", "35000");
-	    c8.put("Court Index Number", "49D05-2310-CT-002031");
-	    c8.put("Summary", "Plaintiff with green light T-boned by red-light violator; spin and curb impact; fractured ribs, concussion and ongoing headaches.");
+	    c8.put("Requested Amount", "36000");
+	    c8.put("Court Index Number", "49D03-2309-CT-001887");
+	    c8.put("Summary", "T-bone at uncontrolled intersection; rib fracture and concussion symptoms; neuro follow-up recommended.");
 	    c8.put("Risk Level", "Moderate");
-	    c8.put("Recommended Max Funding", "16000");
-	    c8.put("Underwriting Notes", "Liability strong if signals and witnesses confirm defendant ran red. Rib fractures and concussion put value above typical soft-tissue cases. Need CT scans, neuro follow-up, work-impact details and BI/UM coverage info. With adequate limits and clean priors, 14–16k funding is supportable.");
+	    c8.put("Recommended Max Funding", "16500");
+	    c8.put("Underwriting Notes", "Liability depends on right-of-way evidence and witness statements. Objective rib fracture plus neuro symptoms support damages. Confirm BI/UM limits and treatment continuity.");
 	    c8.put("Buyout Funder Name", "Frontline Capital Group");
-	    c8.put("Buyout Amount", "9000");
-	    c8.put("Approved Amount", "16000");
+	    c8.put("Buyout Amount", "9500");
+	    c8.put("Approved Amount", "16500");
 	    c8.put("Application Status", "Approved");
-	    c8.put("Attorney Name", "Atty. Jason Bourne");
-	    c8.put("Law Firm Name", "Bourne & Associates Injury Law");
-	    c8.put("Plaintiff Email", "logan.mckinney@plaintiffmail.com");
-	    c8.put("Plaintiff Phone Number", "555-201-0008");
-	    c8.put("Plaintiff Address One", "1582 Fairview Ave");
-	    c8.put("Plaintiff Address Two", "Fort Wayne, IN 46805");
+	    c8.put("Attorney Name", "Attorney Jorik Neumannova");
+	    c8.put("Law Firm Name", "1010 South Meridian Street, Justice Square");
 	    c8.put("Document prep fee", "255");
-	    c8.put("Fund transfer fee", "85");
+	    c8.put("Fund transfer fee", "90");
 	    c8.put("Rate of Return", "38");
-	    c8.put("SMS Message Title", "Red-Light Crash Funding Approved");
-	    c8.put("SMS Message Body", "Hi Logan, your auto accident funding request has been approved for a maximum of $16,000 based on your injuries and coverage. Our team will coordinate with your attorney on the final paperwork. – Lumberjack Legal Finance");
+	    c8.put("SMS Message Title", "Approval Confirmed");
+	    c8.put("SMS Message Body", "Your auto case funding has been approved. We’ll coordinate final paperwork with your attorney. – Lumberjack Legal Finance");
 
+	    // --- Create remaining c9..c20 quickly with same structure ---
 	    TreeMap<String, String> c9 = new TreeMap<String, String>();
 	    c9.put("Case #", "9");
-	    c9.put("Plaintiff Name", "Elliot Jordan Kane");
 	    c9.put("Case Type", "Nursing Home Negligence");
 	    c9.put("State", "Illinois");
-	    c9.put("Date of Incident", "04/03/2023");
+	    c9.put("Date of Incident", "03/22/2023");
 	    c9.put("Lead Source", "Advertising");
-	    c9.put("Requested Amount", "45000");
-	    c9.put("Court Index Number", "14L02-2304-NH-000627");
-	    c9.put("Summary", "Elderly resident developed multiple Stage III–IV pressure ulcers with delayed reporting and inadequate wound care; required debridement and extended hospitalization.");
+	    c9.put("Requested Amount", "47000");
+	    c9.put("Court Index Number", "14L01-2303-NH-000518");
+	    c9.put("Summary", "Pressure injuries and fall-related fracture in facility; delayed imaging and inadequate repositioning documented.");
 	    c9.put("Risk Level", "Moderate");
-	    c9.put("Recommended Max Funding", "22000");
-	    c9.put("Underwriting Notes", "Advanced bedsores usually signal prolonged neglect. Focus on understaffing, failure to reposition and regulatory violations. Need full chart, care plans, MDS, staffing and wound-care records plus photos. Litigation is expert-heavy but upside good; with experts on board, staged funding of 18–22k is reasonable.");
+	    c9.put("Recommended Max Funding", "23000");
+	    c9.put("Underwriting Notes", "Focus on staffing levels, care plans, charting integrity and regulatory citations. Obtain full chart, wound-care timeline and expert screening before final approval.");
 	    c9.put("Buyout Funder Name", "Liberty Legal Funding");
-	    c9.put("Buyout Amount", "12000");
-	    c9.put("Approved Amount", "22000");
+	    c9.put("Buyout Amount", "12500");
+	    c9.put("Approved Amount", "23000");
 	    c9.put("Application Status", "In Review");
-	    c9.put("Attorney Name", "Atty. Margaret Stone");
-	    c9.put("Law Firm Name", "Stone & Avery Elder Care Law");
-	    c9.put("Plaintiff Email", "elliot.kane@plaintiffmail.com");
-	    c9.put("Plaintiff Phone Number", "555-201-0009");
-	    c9.put("Plaintiff Address One", "982 Oak Terrace");
-	    c9.put("Plaintiff Address Two", "Springfield, IL 62703");
-	    c9.put("Document prep fee", "270");
-	    c9.put("Fund transfer fee", "90");
+	    c9.put("Attorney Name", "Attorney Elowen Schweitzerova");
+	    c9.put("Law Firm Name", "Kleinberger & Schubertov Nursing Home Abuse, Elder Neglect & Pflegeheim Protection Firm");
+	    c9.put("Document prep fee", "275");
+	    c9.put("Fund transfer fee", "95");
 	    c9.put("Rate of Return", "40");
-	    c9.put("SMS Message Title", "Nursing Home Case – Review");
-	    c9.put("SMS Message Body", "Hi Elliot, your nursing home negligence funding file is in detailed review due to the severity of the injuries. We are working closely with your attorney and will confirm the approved amount once expert documentation is finalized. – Lumberjack Legal Finance");
+	    c9.put("SMS Message Title", "Case In Review");
+	    c9.put("SMS Message Body", "Your case is in detailed review. We’ll update you as soon as underwriting finalizes the approval. – Lumberjack Legal Finance");
 
 	    TreeMap<String, String> c10 = new TreeMap<String, String>();
 	    c10.put("Case #", "10");
-	    c10.put("Plaintiff Name", "Samuel Bryce Donovan");
 	    c10.put("Case Type", "Construction Accident");
 	    c10.put("State", "Michigan");
-	    c10.put("Date of Incident", "08/11/2023");
+	    c10.put("Date of Incident", "07/07/2023");
 	    c10.put("Lead Source", "Attorney Referral");
-	    c10.put("Requested Amount", "55000");
-	    c10.put("Court Index Number", "05CV-2308-CA-000958");
-	    c10.put("Summary", "Scaffolding collapse from improperly secured cross-bracing; fall to concrete; fractures to ankle and wrist; ankle surgery with hardware.");
+	    c10.put("Requested Amount", "60000");
+	    c10.put("Court Index Number", "05CV-2307-CA-000741");
+	    c10.put("Summary", "Scaffold plank failure; fall with wrist ORIF and ankle fracture; ongoing PT and reduced mobility.");
 	    c10.put("Risk Level", "Moderate");
-	    c10.put("Recommended Max Funding", "30000");
-	    c10.put("Underwriting Notes", "Third-party construction claim with clear unsafe condition and objective fractures. Need incident and OSHA reports, subcontractor contracts and indemnity clauses, and full surgical records. Workers comp lien effect must be modeled. Given surgery and future arthritis risk, recommend staged funding up to 25–30k after suit filing and coverage mapping.");
+	    c10.put("Recommended Max Funding", "31000");
+	    c10.put("Underwriting Notes", "Third-party liability depends on subcontractor scope and safety compliance. Obtain OSHA/incident reports and contract indemnity chain. Staged funding recommended.");
 	    c10.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-	    c10.put("Buyout Amount", "18000");
-	    c10.put("Approved Amount", "30000");
+	    c10.put("Buyout Amount", "19000");
+	    c10.put("Approved Amount", "31000");
 	    c10.put("Application Status", "Approved");
-	    c10.put("Attorney Name", "Atty. Michael Turner");
-	    c10.put("Law Firm Name", "Turner & Cole Construction Law");
-	    c10.put("Plaintiff Email", "samuel.donovan@plaintiffmail.com");
-	    c10.put("Plaintiff Phone Number", "555-201-0010");
-	    c10.put("Plaintiff Address One", "450 Ridgecrest Dr");
-	    c10.put("Plaintiff Address Two", "Grand Rapids, MI 49504");
-	    c10.put("Document prep fee", "280");
-	    c10.put("Fund transfer fee", "95");
+	    c10.put("Attorney Name", "Attorney Danilo Dornik");
+	    c10.put("Law Firm Name", "Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei");
+	    c10.put("Document prep fee", "285");
+	    c10.put("Fund transfer fee", "100");
 	    c10.put("Rate of Return", "39");
-	    c10.put("SMS Message Title", "Construction Accident Funding Approved");
-	    c10.put("SMS Message Body", "Hi Samuel, your construction accident funding request has been approved for up to $30,000. Your attorney will review the agreement with you so we can move forward with funding. – Lumberjack Legal Finance");
+	    c10.put("SMS Message Title", "Construction Funding Approved");
+	    c10.put("SMS Message Body", "Your construction accident funding has been approved. Your attorney will review the agreement before disbursement. – Lumberjack Legal Finance");
 
+	    // c11..c20
 	    TreeMap<String, String> c11 = new TreeMap<String, String>();
 	    c11.put("Case #", "11");
-	    c11.put("Plaintiff Name", "Owen Parker Mills");
 	    c11.put("Case Type", "Dog Bite");
 	    c11.put("State", "Ohio");
-	    c11.put("Date of Incident", "09/16/2024");
+	    c11.put("Date of Incident", "08/09/2024");
 	    c11.put("Lead Source", "Organic");
-	    c11.put("Requested Amount", "10000");
-	    c11.put("Court Index Number", "21CV-2409-PR-000423");
-	    c11.put("Summary", "Eight-year-old child bitten on cheek and forearm by neighbors aggressive dog; stitches, plastic-surgery follow-up and nightmares.");
+	    c11.put("Requested Amount", "12000");
+	    c11.put("Court Index Number", "21CV-2408-PR-000391");
+	    c11.put("Summary", "Dog bite to forearm with puncture wounds; antibiotics, follow-up and visible scarring concern.");
 	    c11.put("Risk Level", "Low-Moderate");
-	    c11.put("Recommended Max Funding", "6000");
-	    c11.put("Underwriting Notes", "Child plaintiff with facial scarring and emotional trauma presents well if homeowners coverage is available. Need animal-control report, prior-bite history, photos and plastic-surgery opinion on future care and scarring. Overall value moderate but credible; 5–6k funding is appropriate, with room for small increase if revision surgery is likely.");
+	    c11.put("Recommended Max Funding", "6500");
+	    c11.put("Underwriting Notes", "Confirm homeowners coverage and prior-bite history. Photos and animal-control documentation will support claim. Conservative funding recommended.");
 	    c11.put("Buyout Funder Name", "Summit Legal Funding");
-	    c11.put("Buyout Amount", "3000");
-	    c11.put("Approved Amount", "6000");
+	    c11.put("Buyout Amount", "3200");
+	    c11.put("Approved Amount", "6500");
 	    c11.put("Application Status", "Approved");
-	    c11.put("Attorney Name", "Atty. Rachel Ortiz");
-	    c11.put("Law Firm Name", "Ortiz & Brown Injury Counsel");
-	    c11.put("Plaintiff Email", "owen.mills@plaintiffmail.com");
-	    c11.put("Plaintiff Phone Number", "555-201-0011");
-	    c11.put("Plaintiff Address One", "221 Cedar Glen Ln");
-	    c11.put("Plaintiff Address Two", "Toledo, OH 43614");
-	    c11.put("Document prep fee", "190");
-	    c11.put("Fund transfer fee", "55");
+	    c11.put("Attorney Name", "Attorney Anselm Beckendorf");
+	    c11.put("Law Firm Name", "Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers");
+	    c11.put("Document prep fee", "195");
+	    c11.put("Fund transfer fee", "60");
 	    c11.put("Rate of Return", "32");
-	    c11.put("SMS Message Title", "Dog Bite Case Funding Approved");
-	    c11.put("SMS Message Body", "Hi Owen, we’ve approved funding up to $6,000 for your dog bite case. Your parent/guardian and attorney will receive the agreement to review and sign before funds are released. – Lumberjack Legal Finance");
+	    c11.put("SMS Message Title", "Approval Notice");
+	    c11.put("SMS Message Body", "Funding has been approved. Please coordinate agreement review with your attorney. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c12 = new TreeMap<String, String>();
-	    c12.put("Case #", "12");
-	    c12.put("Plaintiff Name", "Isaac Henry Coleman");
-	    c12.put("Case Type", "Medical Malpractice");
-	    c12.put("State", "Indiana");
-	    c12.put("Date of Incident", "01/25/2023");
-	    c12.put("Lead Source", "Medical Provider");
-	    c12.put("Requested Amount", "60000");
-	    c12.put("Court Index Number", "29D03-2301-MD-000391");
-	    c12.put("Summary", "Retained surgical sponge after abdominal procedure; infection and second corrective surgery with added scarring and wage loss.");
-	    c12.put("Risk Level", "Moderate");
-	    c12.put("Recommended Max Funding", "30000");
-	    c12.put("Underwriting Notes", "Retained foreign object is a very strong liability theory. Damages include second surgery, infection, increased scarring and extra time off work. Indiana med-mal caps require net-recovery modeling. Need panel status, expert support and cap details. With those, 25–30k staged funding is appropriate.");
-	    c12.put("Buyout Funder Name", "Harbor Ridge Finance");
-	    c12.put("Buyout Amount", "20000");
-	    c12.put("Approved Amount", "30000");
-	    c12.put("Application Status", "In Review");
-	    c12.put("Attorney Name", "Atty. Jonathan Wells");
-	    c12.put("Law Firm Name", "Wells & Chang Med-Mal Group");
-	    c12.put("Plaintiff Email", "isaac.coleman@plaintiffmail.com");
-	    c12.put("Plaintiff Phone Number", "555-201-0012");
-	    c12.put("Plaintiff Address One", "909 Millstone Ct");
-	    c12.put("Plaintiff Address Two", "Carmel, IN 46032");
-	    c12.put("Document prep fee", "295");
-	    c12.put("Fund transfer fee", "95");
-	    c12.put("Rate of Return", "41");
-	    c12.put("SMS Message Title", "Foreign Object Case – Review");
-	    c12.put("SMS Message Body", "Hi Isaac, your retained-sponge medical malpractice funding file is in detailed review. Because this is a high-value claim, our team is coordinating with your attorney and experts before final approval. – Lumberjack Legal Finance");
+	    // For brevity: c12..c20 follow same keys exactly (no plaintiff keys)
+	    // ✅ If you want, I can expand c12..c20 fully too—just say “expand full 20 sets”.
 
-	    TreeMap<String, String> c13 = new TreeMap<String, String>();
-	    c13.put("Case #", "13");
-	    c13.put("Plaintiff Name", "Adrian Blake Foster");
-	    c13.put("Case Type", "Motor Vehicle Accident");
-	    c13.put("State", "Kentucky");
-	    c13.put("Date of Incident", "05/07/2024");
-	    c13.put("Lead Source", "Attorney Referral");
-	    c13.put("Requested Amount", "28000");
-	    c13.put("Court Index Number", "20CI-2405-CT-000774");
-	    c13.put("Summary", "Rear-end collision in school zone; defendant allegedly distracted by phone; MRI shows cervical disc bulge with radiating pain.");
-	    c13.put("Risk Level", "Moderate");
-	    c13.put("Recommended Max Funding", "14000");
-	    c13.put("Underwriting Notes", "Rear-end in a school zone plus phone distraction evidence makes liability favorable. Disc pathology raises value above simple sprain or strain. Need pain-management notes, work-impact details, prior neck history and coverage info. With clean priors and decent limits, funding in the 12–14k range is reasonable.");
-	    c13.put("Buyout Funder Name", "Liberty Legal Funding");
-	    c13.put("Buyout Amount", "7000");
-	    c13.put("Approved Amount", "14000");
-	    c13.put("Application Status", "Approved");
-	    c13.put("Attorney Name", "Atty. Peter Collins");
-	    c13.put("Law Firm Name", "Collins & Hart School Zone Injury");
-	    c13.put("Plaintiff Email", "adrian.foster@plaintiffmail.com");
-	    c13.put("Plaintiff Phone Number", "555-201-0013");
-	    c13.put("Plaintiff Address One", "133 Pine Hill Rd");
-	    c13.put("Plaintiff Address Two", "Louisville, KY 40220");
-	    c13.put("Document prep fee", "240");
-	    c13.put("Fund transfer fee", "75");
-	    c13.put("Rate of Return", "37");
-	    c13.put("SMS Message Title", "School Zone Crash Funding Approved");
-	    c13.put("SMS Message Body", "Hi Adrian, your school-zone rear-end accident funding has been approved up to $14,000. Your attorney will walk you through the agreement and next steps before funds are released. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c12 = new TreeMap<String, String>(); 
+	    c12.put("Case #","12"); 
+	    c12.put("Case Type","Medical Malpractice"); 
+	    c12.put("State","Indiana"); 
+	    c12.put("Date of Incident","02/03/2023"); 
+	    c12.put("Lead Source","Medical Provider"); 
+	    c12.put("Requested Amount","62000"); 
+	    c12.put("Court Index Number","29D02-2302-MD-000444"); 
+	    c12.put("Summary","Post-op internal bleeding allegedly missed; re-admission and second procedure with prolonged recovery."); 
+	    c12.put("Risk Level","Moderate"); 
+	    c12.put("Recommended Max Funding","30500"); 
+	    c12.put("Underwriting Notes","Confirm causation and breach via expert screening; obtain full operative report, labs and timeline. Stage funding after suit milestones."); c12.put("Buyout Funder Name","Harbor Ridge Finance"); c12.put("Buyout Amount","20500"); c12.put("Approved Amount","30500"); c12.put("Application Status","In Review"); c12.put("Attorney Name","Attorney Liesel Kleinberger"); c12.put("Law Firm Name","Braunova-Petrov Medical Malpractice, Birth Injury & Patient Safety Law Collective"); c12.put("Document prep fee","300"); c12.put("Fund transfer fee","95"); c12.put("Rate of Return","41"); c12.put("SMS Message Title","File Under Review"); c12.put("SMS Message Body","Your file is under review. We’ll update you once underwriting is complete. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c14 = new TreeMap<String, String>();
-	    c14.put("Case #", "14");
-	    c14.put("Plaintiff Name", "Connor Dean Whitaker");
-	    c14.put("Case Type", "Products Liability");
-	    c14.put("State", "Illinois");
-	    c14.put("Date of Incident", "02/10/2022");
-	    c14.put("Lead Source", "Attorney Referral");
-	    c14.put("Requested Amount", "75000");
-	    c14.put("Court Index Number", "16L04-2202-PL-000519");
-	    c14.put("Summary", "Commercial e-cigarette battery overheated and exploded; second-degree burns and shrapnel-type injuries to hand and chest; visible scarring.");
-	    c14.put("Risk Level", "Moderate");
-	    c14.put("Recommended Max Funding", "35000");
-	    c14.put("Underwriting Notes", "Lithium-ion battery explosion claim; success depends on product preservation and expert proof of defect or inadequate warning. Visible scarring and time off a customer-facing job support damages but litigation is technical and expensive. Need proof of purchase, chain of custody, prior-incident or recall data and a battery expert. With that infrastructure, 30–35k staged funding is justified.");
-	    c14.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-	    c14.put("Buyout Amount", "22000");
-	    c14.put("Approved Amount", "35000");
-	    c14.put("Application Status", "In Review");
-	    c14.put("Attorney Name", "Atty. Laura Mitchell");
-	    c14.put("Law Firm Name", "Mitchell & Brooks Product Safety");
-	    c14.put("Plaintiff Email", "connor.whitaker@plaintiffmail.com");
-	    c14.put("Plaintiff Phone Number", "555-201-0014");
-	    c14.put("Plaintiff Address One", "725 Harbor Point Dr");
-	    c14.put("Plaintiff Address Two", "Waukegan, IL 60085");
-	    c14.put("Document prep fee", "310");
-	    c14.put("Fund transfer fee", "105");
-	    c14.put("Rate of Return", "42");
-	    c14.put("SMS Message Title", "E-Cig Explosion Case – Review");
-	    c14.put("SMS Message Body", "Hi Connor, your e-cigarette battery explosion funding request is in technical review due to product-liability issues. We will confirm the approved amount after engineering and legal assessments are complete. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c13 = new TreeMap<String, String>(); 
+	    c13.put("Case #","13"); 
+	    c13.put("Case Type","Motor Vehicle Accident"); 
+	    c13.put("State","Kentucky"); 
+	    c13.put("Date of Incident","04/12/2024"); 
+	    c13.put("Lead Source","Attorney Referral"); 
+	    c13.put("Requested Amount","29500"); 
+	    c13.put("Court Index Number","20CI-2404-CT-000612"); 
+	    c13.put("Summary","Rear-end in construction zone; lumbar strain with radicular symptoms; injections considered."); 
+	    c13.put("Risk Level","Moderate"); 
+	    c13.put("Recommended Max Funding","14500"); 
+	    c13.put("Underwriting Notes","Construction zone increases liability narrative; verify treatment consistency and prior spine history. Confirm BI/UM limits."); 
+	    c13.put("Buyout Funder Name","Liberty Legal Funding"); c13.put("Buyout Amount","7200"); c13.put("Approved Amount","14500"); 
+	    c13.put("Application Status","Approved"); 
+	    c13.put("Attorney Name","Attorney Timo Markov"); 
+	    c13.put("Law Firm Name","Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners"); 
+	    c13.put("Document prep fee","245"); 
+	    c13.put("Fund transfer fee","80"); 
+	    c13.put("Rate of Return","37"); 
+	    c13.put("SMS Message Title","Approved"); 
+	    c13.put("SMS Message Body","Funding is approved; your attorney will receive the agreement for review. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c15 = new TreeMap<String, String>();
-	    c15.put("Case #", "15");
-	    c15.put("Plaintiff Name", "Julian Carter Rhodes");
-	    c15.put("Case Type", "Workplace Injury");
-	    c15.put("State", "Indiana");
-	    c15.put("Date of Incident", "03/30/2024");
-	    c15.put("Lead Source", "Other");
-	    c15.put("Requested Amount", "22000");
-	    c15.put("Court Index Number", "49D06-2403-IN-001142");
-	    c15.put("Summary", "Distribution-center worker hit by falling cartons from top shelf; shoulder and upper-back soft-tissue injury; light duty and lost overtime.");
-	    c15.put("Risk Level", "Moderate");
-	    c15.put("Recommended Max Funding", "9000");
-	    c15.put("Underwriting Notes", "Unsafe stacking practices and limited training support negligence if there is a premises or third-party claim beyond workers comp. Need safety policies, incident report, witness or supervisor statements and wage records. If recovery is comp-only, funding must be low; with a viable third-party case and coverage, 8–9k funding is reasonable.");
-	    c15.put("Buyout Funder Name", "Summit Legal Funding");
-	    c15.put("Buyout Amount", "5000");
-	    c15.put("Approved Amount", "9000");
-	    c15.put("Application Status", "Approved");
-	    c15.put("Attorney Name", "Atty. Henry Lawson");
-	    c15.put("Law Firm Name", "Lawson & Trent Workplace Counsel");
-	    c15.put("Plaintiff Email", "julian.rhodes@plaintiffmail.com");
-	    c15.put("Plaintiff Phone Number", "555-201-0015");
-	    c15.put("Plaintiff Address One", "311 Westbrook Ave");
-	    c15.put("Plaintiff Address Two", "Indianapolis, IN 46222");
-	    c15.put("Document prep fee", "235");
-	    c15.put("Fund transfer fee", "70");
-	    c15.put("Rate of Return", "33");
-	    c15.put("SMS Message Title", "Warehouse Injury Funding Approved");
-	    c15.put("SMS Message Body", "Hi Julian, your warehouse injury funding request has been approved up to $9,000. Once you and your attorney sign the agreement, we’ll release funds according to the schedule. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c14 = new TreeMap<String, String>(); 
+	    c14.put("Case #","14"); 
+	    c14.put("Case Type","Products Liability"); 
+	    c14.put("State","Illinois"); 
+	    c14.put("Date of Incident","01/08/2022"); 
+	    c14.put("Lead Source","Attorney Referral"); 
+	    c14.put("Requested Amount","78000"); 
+	    c14.put("Court Index Number","16L02-2201-PL-000288"); 
+	    c14.put("Summary","Battery thermal runaway causing burn injury; device preserved; scarring and occupational limitations alleged."); 
+	    c14.put("Risk Level","Moderate"); c14.put("Recommended Max Funding","36000"); 
+	    c14.put("Underwriting Notes","Technical proof required. Verify chain of custody and expert retention. Funding staged after defect opinion and suit progression."); 
+	    c14.put("Buyout Funder Name","Pioneer Plaintiff Finance"); 
+	    c14.put("Buyout Amount","23000"); 
+	    c14.put("Approved Amount","36000"); 
+	    c14.put("Application Status","In Review"); 
+	    c14.put("Attorney Name","Attorney Sarina Falkenova"); 
+	    c14.put("Law Firm Name","Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel"); 
+	    c14.put("Document prep fee","315"); 
+	    c14.put("Fund transfer fee","110"); 
+	    c14.put("Rate of Return","42"); 
+	    c14.put("SMS Message Title","Technical Review"); 
+	    c14.put("SMS Message Body","Your product case is in technical review. We’ll confirm approval after expert validation. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c16 = new TreeMap<String, String>();
-	    c16.put("Case #", "16");
-	    c16.put("Plaintiff Name", "Mitchell Aaron Hayes");
-	    c16.put("Case Type", "Slip and Fall");
-	    c16.put("State", "Michigan");
-	    c16.put("Date of Incident", "12/19/2023");
-	    c16.put("Lead Source", "Advertising");
-	    c16.put("Requested Amount", "18000");
-	    c16.put("Court Index Number", "07CV-2312-PL-000887");
-	    c16.put("Summary", "Restaurant employee spilled drink and failed to clean or mark area; plaintiff slipped going to restroom; hip contusion and elbow sprain; PT and short cane use.");
-	    c16.put("Risk Level", "Moderate");
-	    c16.put("Recommended Max Funding", "7000");
-	    c16.put("Underwriting Notes", "Because an employee created the hazard, notice is easier to prove than in many slip cases. Injuries are moderate with no fracture. Need incident report, witness statements, video if available and complete med bills and records. Upside is capped, so conservative funding in the 6–7k range is appropriate once basic liability docs are reviewed.");
-	    c16.put("Buyout Funder Name", "Harbor Ridge Finance");
-	    c16.put("Buyout Amount", "4500");
-	    c16.put("Approved Amount", "7000");
-	    c16.put("Application Status", "Approved");
-	    c16.put("Attorney Name", "Atty. Victoria Lane");
-	    c16.put("Law Firm Name", "Lane & Harper Restaurant Liability");
-	    c16.put("Plaintiff Email", "mitchell.hayes@plaintiffmail.com");
-	    c16.put("Plaintiff Phone Number", "555-201-0016");
-	    c16.put("Plaintiff Address One", "67 Orchard View Dr");
-	    c16.put("Plaintiff Address Two", "Lansing, MI 48911");
-	    c16.put("Document prep fee", "215");
-	    c16.put("Fund transfer fee", "65");
-	    c16.put("Rate of Return", "35");
-	    c16.put("SMS Message Title", "Restaurant Slip Case Approved");
-	    c16.put("SMS Message Body", "Hi Mitchell, your restaurant slip-and-fall funding has been approved up to $7,000. Your attorney will review the terms and help you complete the agreement for funding. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c15 = new TreeMap<String, String>(); 
+	    c15.put("Case #","15"); 
+	    c15.put("Case Type","Workplace Injury"); 
+	    c15.put("State","Indiana"); 
+	    c15.put("Date of Incident","02/26/2024"); 
+	    c15.put("Lead Source","Other"); 
+	    c15.put("Requested Amount","24000"); 
+	    c15.put("Court Index Number","49D05-2402-IN-000931"); 
+	    c15.put("Summary","Warehouse pallet collapse; shoulder strain and upper-back spasm; restricted duty and wage impact."); 
+	    c15.put("Risk Level","Moderate"); 
+	    c15.put("Recommended Max Funding","9800"); 
+	    c15.put("Underwriting Notes","Clarify comp vs third-party. Obtain safety report, witness statements, wage verification and lien posture."); 
+	    c15.put("Buyout Funder Name","Summit Legal Funding"); 
+	    c15.put("Buyout Amount","5200"); 
+	    c15.put("Approved Amount","9800"); 
+	    c15.put("Application Status","Approved"); 
+	    c15.put("Attorney Name","Attorney Jannik Brandtov"); 
+	    c15.put("Law Firm Name","Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices"); 
+	    c15.put("Document prep fee","240"); 
+	    c15.put("Fund transfer fee","75"); 
+	    c15.put("Rate of Return","33"); 
+	    c15.put("SMS Message Title","Approved"); 
+	    c15.put("SMS Message Body","Your workplace injury funding is approved. Please review next steps with your attorney. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c17 = new TreeMap<String, String>();
-	    c17.put("Case #", "17");
-	    c17.put("Plaintiff Name", "Dylan Chase Barrett");
-	    c17.put("Case Type", "Trucking Accident");
-	    c17.put("State", "Ohio");
-	    c17.put("Date of Incident", "06/02/2023");
-	    c17.put("Lead Source", "Broker");
-	    c17.put("Requested Amount", "80000");
-	    c17.put("Court Index Number", "19CV-2306-CT-001339");
-	    c17.put("Summary", "Semi-truck drifted into oncoming lane, sideswiping plaintiff and other cars; neck and back injuries, headaches, emotional distress, vehicle total loss.");
-	    c17.put("Risk Level", "Moderate");
-	    c17.put("Recommended Max Funding", "35000");
-	    c17.put("Underwriting Notes", "Multi-vehicle trucking crash with clear lane encroachment gives strong liability and potential punitive exposure if fatigue or distraction is proven. Need imaging, treatment history, psych records if any, ELD and dispatch data and carrier safety policies. Commercial limits likely adequate; recommend staged funding up to 30–35k as discovery confirms violations.");
-	    c17.put("Buyout Funder Name", "Frontline Capital Group");
-	    c17.put("Buyout Amount", "22000");
-	    c17.put("Approved Amount", "35000");
-	    c17.put("Application Status", "In Review");
-	    c17.put("Attorney Name", "Atty. Jason Bourne");
-	    c17.put("Law Firm Name", "Bourne Trucking Litigation Group");
-	    c17.put("Plaintiff Email", "dylan.barrett@plaintiffmail.com");
-	    c17.put("Plaintiff Phone Number", "555-201-0017");
-	    c17.put("Plaintiff Address One", "190 Creekside Way");
-	    c17.put("Plaintiff Address Two", "Cleveland, OH 44111");
-	    c17.put("Document prep fee", "305");
-	    c17.put("Fund transfer fee", "110");
-	    c17.put("Rate of Return", "44");
-	    c17.put("SMS Message Title", "Trucking Crash – Review");
-	    c17.put("SMS Message Body", "Hi Dylan, your trucking accident funding file is in advanced review while we analyze log data and coverage. We’ll let you know as soon as we finalize the maximum approval amount. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c16 = new TreeMap<String, String>(); 
+	    c16.put("Case #","16"); 
+	    c16.put("Case Type","Slip and Fall"); 
+	    c16.put("State","Michigan"); 
+	    c16.put("Date of Incident","11/03/2023"); 
+	    c16.put("Lead Source","Advertising"); 
+	    c16.put("Requested Amount","19500"); 
+	    c16.put("Court Index Number","07CV-2311-PL-000812"); 
+	    c16.put("Summary","Restaurant entry slip during rain; ankle sprain with persistent pain; PT and brace use."); 
+	    c16.put("Risk Level","Moderate"); 
+	    c16.put("Recommended Max Funding","7200"); 
+	    c16.put("Underwriting Notes","Notice and floor-mat policy important; obtain video and incident report. Conservative funding given non-fracture injury."); c16.put("Buyout Funder Name","Harbor Ridge Finance"); c16.put("Buyout Amount","4700"); c16.put("Approved Amount","7200"); c16.put("Application Status","Approved"); c16.put("Attorney Name","Attorney Mirela Braunova"); c16.put("Law Firm Name","Horizon Child Injury, School Negligence & Playground Accident Trial Lawyers"); c16.put("Document prep fee","220"); c16.put("Fund transfer fee","70"); c16.put("Rate of Return","35"); c16.put("SMS Message Title","Approved"); c16.put("SMS Message Body","Your slip-and-fall funding has been approved. Your attorney will receive the agreement. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c18 = new TreeMap<String, String>();
-	    c18.put("Case #", "18");
-	    c18.put("Plaintiff Name", "Gabriel Ryan Summers");
-	    c18.put("Case Type", "Pedestrian Knockdown");
-	    c18.put("State", "Indiana");
-	    c18.put("Date of Incident", "09/09/2024");
-	    c18.put("Lead Source", "Attorney Referral");
-	    c18.put("Requested Amount", "32000");
-	    c18.put("Court Index Number", "49D02-2409-CT-000604");
-	    c18.put("Summary", "Pedestrian in marked crosswalk with walk signal struck by right-on-red driver; tibia fracture with hardware; ongoing PT and off work from standing job.");
-	    c18.put("Risk Level", "Moderate-Low");
-	    c18.put("Recommended Max Funding", "16000");
-	    c18.put("Underwriting Notes", "Pedestrian with walk signal has excellent liability posture. Tibial fracture with surgery and temporary total disability supports strong damages. Need operative report, PT records, wage info and BI/UM coverage details. Long-term arthritis risk adds value. Recommend funding in the 14–16k range as recovery and permanency develop.");
-	    c18.put("Buyout Funder Name", "Liberty Legal Funding");
-	    c18.put("Buyout Amount", "9000");
-	    c18.put("Approved Amount", "16000");
-	    c18.put("Application Status", "Approved");
-	    c18.put("Attorney Name", "Atty. Emily Rogers");
-	    c18.put("Law Firm Name", "Rogers & Hale Pedestrian Law Group");
-	    c18.put("Plaintiff Email", "gabriel.summers@plaintiffmail.com");
-	    c18.put("Plaintiff Phone Number", "555-201-0018");
-	    c18.put("Plaintiff Address One", "580 Crosswalk Ln");
-	    c18.put("Plaintiff Address Two", "Indianapolis, IN 46227");
-	    c18.put("Document prep fee", "245");
-	    c18.put("Fund transfer fee", "80");
-	    c18.put("Rate of Return", "37");
-	    c18.put("SMS Message Title", "Pedestrian Case Funding Approved");
-	    c18.put("SMS Message Body", "Hi Gabriel, your pedestrian knockdown funding request has been approved for up to $16,000. Please review the agreement with your attorney so we can release funds quickly. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c17 = new TreeMap<String, String>(); 
+	    c17.put("Case #","17"); 
+	    c17.put("Case Type","Trucking Accident"); 
+	    c17.put("State","Ohio"); 
+	    c17.put("Date of Incident","05/28/2023"); 
+	    c17.put("Lead Source","Broker"); 
+	    c17.put("Requested Amount","82000"); 
+	    c17.put("Court Index Number","19CV-2305-CT-001201"); 
+	    c17.put("Summary","Commercial truck sideswipe with secondary impacts; headaches and cervical symptoms; vehicle total loss."); 
+	    c17.put("Risk Level","Moderate"); 
+	    c17.put("Recommended Max Funding","35500"); 
+	    c17.put("Underwriting Notes","Obtain ELD, dispatch and maintenance records. Coverage likely adequate. Staged funding recommended pending discovery and liability confirmation."); c17.put("Buyout Funder Name","Frontline Capital Group"); c17.put("Buyout Amount","22500"); c17.put("Approved Amount","35500"); c17.put("Application Status","In Review"); c17.put("Attorney Name","Attorney Oskar Dietrich"); c17.put("Law Firm Name","Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners"); c17.put("Document prep fee","310"); c17.put("Fund transfer fee","115"); c17.put("Rate of Return","44"); c17.put("SMS Message Title","Trucking File Review"); c17.put("SMS Message Body","Your trucking case is in advanced review while coverage and evidence are analyzed. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c19 = new TreeMap<String, String>();
-	    c19.put("Case #", "19");
-	    c19.put("Plaintiff Name", "Leonard Joel Harrington");
-	    c19.put("Case Type", "Wrongful Death");
-	    c19.put("State", "Illinois");
-	    c19.put("Date of Incident", "01/15/2023");
-	    c19.put("Lead Source", "Attorney Referral");
-	    c19.put("Requested Amount", "120000");
-	    c19.put("Court Index Number", "11L01-2301-WD-000287");
-	    c19.put("Summary", "Elective procedure complicated by alleged anesthesia or medication error and delayed response to vital-sign changes; intra-op arrest and death.");
-	    c19.put("Risk Level", "Moderate");
-	    c19.put("Recommended Max Funding", "60000");
-	    c19.put("Underwriting Notes", "High-severity med-mal wrongful death with complex causation questions. Need full hospital and anesthesia records, medication logs, monitor data and multiple expert reviews on breach and causation. Litigation will be long and cost-heavy but potential recovery is significant. Recommend staged funding up to 50–60k tied to expert confirmations and key milestones.");
-	    c19.put("Buyout Funder Name", "Summit Legal Funding");
-	    c19.put("Buyout Amount", "35000");
-	    c19.put("Approved Amount", "60000");
-	    c19.put("Application Status", "In Review");
-	    c19.put("Attorney Name", "Atty. Nathaniel Price");
-	    c19.put("Law Firm Name", "Price & Donovan Med-Mal Group");
-	    c19.put("Plaintiff Email", "estate.harrington@plaintiffmail.com");
-	    c19.put("Plaintiff Phone Number", "555-201-0019");
-	    c19.put("Plaintiff Address One", "410 Briarwood Ct");
-	    c19.put("Plaintiff Address Two", "Naperville, IL 60540");
-	    c19.put("Document prep fee", "320");
-	    c19.put("Fund transfer fee", "115");
-	    c19.put("Rate of Return", "43");
-	    c19.put("SMS Message Title", "Wrongful Death Case – Review");
-	    c19.put("SMS Message Body", "Hello, your wrongful death case funding file is in expert review due to the complexity of the medical issues. We’re working with your attorney and will confirm the approved funding range once reviews are complete. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c18 = new TreeMap<String, String>(); 
+	    c18.put("Case #","18"); 
+	    c18.put("Case Type","Pedestrian Knockdown"); 
+	    c18.put("State","Indiana"); 
+	    c18.put("Date of Incident","08/21/2024"); 
+	    c18.put("Lead Source","Attorney Referral"); 
+	    c18.put("Requested Amount","34000"); 
+	    c18.put("Court Index Number","49D01-2408-CT-000533"); 
+	    c18.put("Summary","Pedestrian struck in crosswalk by turning vehicle; tib/fib fracture with surgery; PT and mobility limitation."); 
+	    c18.put("Risk Level","Moderate-Low"); 
+	    c18.put("Recommended Max Funding","17000"); 
+	    c18.put("Underwriting Notes","Liability favorable given crosswalk. Surgical fracture supports damages. Confirm coverage, wage loss and permanency outlook."); c18.put("Buyout Funder Name","Liberty Legal Funding"); c18.put("Buyout Amount","9500"); c18.put("Approved Amount","17000"); c18.put("Application Status","Approved"); c18.put("Attorney Name","Attorney Alina Lindenfeld"); c18.put("Law Firm Name","1010 South Meridian Street, Justice Square"); c18.put("Document prep fee","250"); c18.put("Fund transfer fee","85"); c18.put("Rate of Return","37"); c18.put("SMS Message Title","Approved"); c18.put("SMS Message Body","Your pedestrian case funding has been approved. Please review terms with your attorney. – Lumberjack Legal Finance");
 
-	    TreeMap<String, String> c20 = new TreeMap<String, String>();
-	    c20.put("Case #", "20");
-	    c20.put("Plaintiff Name", "Patrick Cole Jennings");
-	    c20.put("Case Type", "Motor Vehicle Accident");
-	    c20.put("State", "Kentucky");
-	    c20.put("Date of Incident", "04/28/2024");
-	    c20.put("Lead Source", "Organic");
-	    c20.put("Requested Amount", "26000");
-	    c20.put("Court Index Number", "18CI-2404-CT-000933");
-	    c20.put("Summary", "Uber passenger in chain-reaction rear-end crash; neck and low-back soft-tissue injuries, ongoing stiffness, PT and chiropractic care; work disruption.");
-	    c20.put("Risk Level", "Moderate");
-	    c20.put("Recommended Max Funding", "11000");
-	    c20.put("Underwriting Notes", "Rideshare passenger status gives clean liability and multiple coverage layers (tortfeasor and Uber policy). Injuries are soft-tissue but well documented with continuing functional impact, especially with sitting. Need trip records, police report, med summaries, wage-loss data and prior spine history. With solid coverage, funding of 10–11k is supportable.");
-	    c20.put("Buyout Funder Name", "Frontline Capital Group");
-	    c20.put("Buyout Amount", "6000");
-	    c20.put("Approved Amount", "11000");
-	    c20.put("Application Status", "Approved");
-	    c20.put("Attorney Name", "Atty. Jordan Blake");
-	    c20.put("Law Firm Name", "Blake Rideshare Injury Law");
-	    c20.put("Plaintiff Email", "patrick.jennings@plaintiffmail.com");
-	    c20.put("Plaintiff Phone Number", "555-201-0020");
-	    c20.put("Plaintiff Address One", "902 Kingston Ave");
-	    c20.put("Plaintiff Address Two", "Lexington, KY 40508");
-	    c20.put("Document prep fee", "225");
-	    c20.put("Fund transfer fee", "70");
-	    c20.put("Rate of Return", "36");
-	    c20.put("SMS Message Title", "Rideshare Funding Approved");
-	    c20.put("SMS Message Body", "Hi Patrick, your rideshare accident funding request has been approved up to $11,000. After you and your attorney sign the agreement, we’ll proceed with disbursement. – Lumberjack Legal Finance");
+	    TreeMap<String, String> c19 = new TreeMap<String, String>(); 
+	    c19.put("Case #","19"); 
+	    c19.put("Case Type","Wrongful Death"); 
+	    c19.put("State","Illinois"); 
+	    c19.put("Date of Incident","12/04/2022"); 
+	    c19.put("Lead Source","Attorney Referral"); 
+	    c19.put("Requested Amount","125000"); 
+	    c19.put("Court Index Number","11L03-2212-WD-000619"); 
+	    c19.put("Summary","Hospital event with alleged medication error and delayed rapid response; fatal outcome; records under review."); 
+	    c19.put("Risk Level","Moderate"); 
+	    c19.put("Recommended Max Funding","61000"); 
+	    c19.put("Underwriting Notes","Complex causation: needs multiple expert reviews and complete MAR/monitoring data. Staged funding tied to expert confirmation and litigation milestones."); c19.put("Buyout Funder Name","Summit Legal Funding"); c19.put("Buyout Amount","36000"); c19.put("Approved Amount","61000"); c19.put("Application Status","In Review"); c19.put("Attorney Name","Attorney Yannik Krausov"); c19.put("Law Firm Name","Braunova-Petrov Medical Malpractice, Birth Injury & Patient Safety Law Collective"); c19.put("Document prep fee","325"); c19.put("Fund transfer fee","120"); c19.put("Rate of Return","43"); c19.put("SMS Message Title","Expert Review"); c19.put("SMS Message Body","Your wrongful death file is in expert review. We’ll confirm approval after key reviews complete. – Lumberjack Legal Finance");
+
+	    TreeMap<String, String> c20 = new TreeMap<String, String>(); 
+	    c20.put("Case #","20"); c20.put("Case Type","Motor Vehicle Accident"); 
+	    c20.put("State","Kentucky"); c20.put("Date of Incident","03/09/2024"); 
+	    c20.put("Lead Source","Organic"); c20.put("Requested Amount","27500"); 
+	    c20.put("Court Index Number","18CI-2403-CT-000711"); 
+	    c20.put("Summary","Rideshare passenger collision with secondary impact; neck/back pain; chiropractic and PT ongoing."); 
+	    c20.put("Risk Level","Moderate"); 
+	    c20.put("Recommended Max Funding","11500"); 
+	    c20.put("Underwriting Notes","Passenger status improves liability; verify rideshare trip data and applicable policies. Confirm prior spine history and wage impact."); c20.put("Buyout Funder Name","Frontline Capital Group"); c20.put("Buyout Amount","6300"); c20.put("Approved Amount","11500"); c20.put("Application Status","Approved"); c20.put("Attorney Name","Attorney Mirek Bauer"); c20.put("Law Firm Name","Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices"); c20.put("Document prep fee","230"); c20.put("Fund transfer fee","75"); c20.put("Rate of Return","36"); c20.put("SMS Message Title","Approved"); c20.put("SMS Message Body","Your rideshare funding has been approved. We’ll proceed after agreement execution with your attorney. – Lumberjack Legal Finance");
 
 	    // ===== Apply dynamic dates to ALL cases =====
 	    @SuppressWarnings("unchecked")
@@ -976,11 +874,11 @@ public class Case_Appplications extends Header_Manager{
 	    }
 
 	    // ===== DataProvider return =====
-	    return new Object[][] {
-	       /* { c1 }, { c2 }, { c3 }, { c4 }, { c5 },
-	        { c6 }, { c7 }, { c8 }, { c9 }, { c10 },
-	        { c11 }, { c12 }, { c13 }, */{ c14 }, { c15 },
-	        { c16 }, { c17 }, { c18 }, { c19 }, { c20 } 
+	    return new Object[][]{
+	        {c1},{c2},{c3},{c4},{c5},
+	        {c6},{c7},{c8},{c9},{c10},
+	        {c11},{c12},{c13},{c14},{c15},
+	        {c16},{c17},{c18},{c19},{c20}
 	    };}
 	
 	
@@ -1091,7 +989,7 @@ public class Case_Appplications extends Header_Manager{
 	public void tab_selector(String tabname) throws InterruptedException{
 		
 		Application_Locaters p = new Application_Locaters(d);
-		
+		Repeat rp = new Repeat(d);
 		
         List<WebElement> tabs = p.tabs();
 		
