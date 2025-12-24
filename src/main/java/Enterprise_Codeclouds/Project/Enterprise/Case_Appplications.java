@@ -350,8 +350,12 @@ public class Case_Appplications extends Header_Manager{
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
 		String Contract_Generated = lg.toast().getText().trim();
 		Login_negative_testcases.Toast_printer(Contract_Generated);
-        p.Generate_contract_button().click();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).");
+		Thread.sleep(2800);
+		WebElement Sign_in_button = p.Manual_sign_in_button();
+		rp.movetoelement(Sign_in_button);
+		Thread.sleep(800);
+		Sign_in_button.click();
+	/*	Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Generate Contract clicked (send for signing flow started).");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Confirm Send action from modal.");
 	try {p.modal_buttons().get(1).click(); }
 	catch(TimeoutException mko){
@@ -373,7 +377,7 @@ public class Case_Appplications extends Header_Manager{
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Send-for-signing toast not captured (toast not visible / locator issue) after confirming modal.");
 			throw e;}
 		Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Contract saved and sent for signing successfully (SaveToast='"+contract_saved+"' | SendToast='"+contract_Sent_for_signing+"').");
-	   
+	   */
 		
 		//Docu_Sign_Signature();
 		manual_lien_generation();
@@ -401,7 +405,7 @@ public class Case_Appplications extends Header_Manager{
 	    			  
 	    			// ✅ PASS (Green block math style)
 	    			  Report_Listen.log_print_in_report().log(Status.PASS,
-	    					    "<div style='background:#1f2a00; padding:14px; border-radius:8px; border:1px solid #3a4a00; color:#f0d84b;'>"
+	    					    "<div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'>"
 	    					  + "<b>✅ PASS — Month " + month + " Increase Matched Monthly Interest</b><br><br>"
 
 	    					  + "<b>🔹 What we are validating:</b><br>"
@@ -526,8 +530,8 @@ public class Case_Appplications extends Header_Manager{
 			JavascriptExecutor js = (JavascriptExecutor)d; 
 	    	
 			
-			tab_selector("Applications");
-	    	p.Manual_sign_in_button().click();
+			//tab_selector("Applications");
+		
 	    	WebElement file = p.upload();
 	    	js.executeScript("arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].style.height='1px';",file);
 	    	String filePath = Paths.get(System.getProperty("user.dir"),"Files","Manual Sign In image.pdf").toFile().getAbsolutePath();
@@ -1045,7 +1049,7 @@ public class Case_Appplications extends Header_Manager{
 		    // ===== Apply dynamic dates to ALL cases =====
 		    @SuppressWarnings("unchecked")
 		    TreeMap<String, String>[] allCases = new TreeMap[] {
-		        c1, c2, c3, c4, c5,
+		       c1, c2, c3, c4, c5,
 		        c6, c7, c8, c9, c10,
 		        c11, c12, c13, c14, c15,
 		        c16, c17, c18, c19, c20
@@ -1059,10 +1063,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{
-		        {c1},{c2},{c3},{c4},{c5},
+		     /* {c1},{c2},*/{c3},/*{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15},
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
 	
 	

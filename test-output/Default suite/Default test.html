@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 24 14:13:41 IST 2025</td>
+<td>Started on:</td><td>Wed Dec 24 17:11:30 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>90 seconds (90486 ms)</td>
+<tr><td>Total time:</td><td>80 seconds (80374 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case()'><b>Add_case</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: {Agreement Date=01/07/2026, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/09/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}, {Address Line 1=221 Lake Shore Dr, Address Line 2=Apt 10B, Date of Birth=02/14/1991, Email=korbinian.falkenrath@mailto.plus, First Name=Korbinian, Last Name=Falkenrath, Middle Name=Alois, Name Suffix=Jr, Phone number=312-555-2101, Social Security Number=900-11-0001, State=Illinois, Zip code=60601}, {Email=cassian.hohenstauf@mailto.plus, First Name=Attorney Cassian, Last Name=Hohenstauf, Law Firm=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Middle Name=Alaric, Name Suffix=II, Office phone=4165558201, Phone=4165554201}</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[text()=&apos;ADD NEW LAWFIRM&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case()'><b>Add_case</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: {Agreement Date=01/07/2026, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/09/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}, {Address Line 1=22 Marine Corps Dr, Address Line 2=PO Box 211, Date of Birth=06/11/1993, Email=soren.tannenfeld@mailto.plus, First Name=Soren, Last Name=Tannenfeld, Middle Name=Benedikt, Name Suffix=II, Phone number=671-555-4207, Social Security Number=920-17-0207, State=Guam, Zip code=96910}, {Email=cassian.hohenstauf@mailto.plus, First Name=Attorney Cassian, Last Name=Hohenstauf, Law Firm=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Middle Name=Alaric, Name Suffix=II, Office phone=4165558201, Phone=4165554201}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: (//div[contains(@class,&apos;ant-modal&apos;) and not(contains(@style,&apos;display: none&apos;))]//input[@type=&apos;file&apos;])[last()]&apos; (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-	at Locaters.Application_Locaters.lawFirm_AddButton_ContactTab(Application_Locaters.java:242)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Case_plaintiff_mail_id_fetcher(Case_Appplications.java:482)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Docu_Sign_Signature(Case_Appplications.java:495)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:375)
+	at Locaters.Application_Locaters.upload(Application_Locaters.java:448)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.manual_lien_generation(Case_Appplications.java:535)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:383)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -111,15 +110,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;ADD NEW LAWFIRM&apos;]&quot;}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[contains(@class,&apos;ant-modal&apos;) and not(contains(@style,&apos;display: none&apos;))]//input[@type=&apos;file&apos;])[last()]&quot;}
   (Session info: chrome=143.0.7499.170)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c337deda42e7264c1591a3d708c6a64c, findElement {using=xpath, value=//*[text()=&apos;ADD NEW LAWFIRM&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62950}, goog:processID: 9108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62950/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c337deda42e7264c1591a3d708c6a64c
+Command: [af34fd56bdd98dbbaf4a874d7b39b5b2, findElement {value=(//div[contains(@class,&apos;ant-modal&apos;) and not(contains(@style,&apos;display: none&apos;))]//input[@type=&apos;file&apos;])[last()], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65458}, goog:processID: 18404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65458/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af34fd56bdd98dbbaf4a874d7b39b5b2
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -141,16 +140,15 @@ Session ID: c337deda42e7264c1591a3d708c6a64c
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 31 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace181784570", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace181784570'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[text()=&apos;ADD NEW LAWFIRM&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	... 30 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1595979518", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1595979518'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: (//div[contains(@class,&apos;ant-modal&apos;) and not(contains(@style,&apos;display: none&apos;))]//input[@type=&apos;file&apos;])[last()]&apos; (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-	at Locaters.Application_Locaters.lawFirm_AddButton_ContactTab(Application_Locaters.java:242)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Case_plaintiff_mail_id_fetcher(Case_Appplications.java:482)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Docu_Sign_Signature(Case_Appplications.java:495)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:375)
+	at Locaters.Application_Locaters.upload(Application_Locaters.java:448)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.manual_lien_generation(Case_Appplications.java:535)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:383)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -177,15 +175,15 @@ Session ID: c337deda42e7264c1591a3d708c6a64c
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;ADD NEW LAWFIRM&apos;]&quot;}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[contains(@class,&apos;ant-modal&apos;) and not(contains(@style,&apos;display: none&apos;))]//input[@type=&apos;file&apos;])[last()]&quot;}
   (Session info: chrome=143.0.7499.170)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c337deda42e7264c1591a3d708c6a64c, findElement {using=xpath, value=//*[text()=&apos;ADD NEW LAWFIRM&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62950}, goog:processID: 9108, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62950/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c337deda42e7264c1591a3d708c6a64c
+Command: [af34fd56bdd98dbbaf4a874d7b39b5b2, findElement {value=(//div[contains(@class,&apos;ant-modal&apos;) and not(contains(@style,&apos;display: none&apos;))]//input[@type=&apos;file&apos;])[last()], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65458}, goog:processID: 18404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65458/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af34fd56bdd98dbbaf4a874d7b39b5b2
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -207,10 +205,10 @@ Session ID: c337deda42e7264c1591a3d708c6a64c
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 31 more
+	... 30 more
 </pre></div></td>
-<td>87</td>
-<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24aed80c</td></tr>
+<td>77</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@7a8c8dcf</td></tr>
 </table><p>
 </body>
 </html>
