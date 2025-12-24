@@ -23,7 +23,7 @@ public class temp_mail_Locaters extends Repeat{
 	@FindBy(xpath="")
 	private List <WebElement>  ; */
 	@FindBy(xpath="//*[text()='Back']")
-	private WebElement  Entered_mail_details;
+	private WebElement  Entered_mail_details; /*
 	@FindBy(xpath="")/*
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -99,7 +99,7 @@ public class temp_mail_Locaters extends Repeat{
 	wait_for_theElement(form);
 	return form;} 
 	public WebElement mail_id_box(){
-	WebElement mail_id_box = form().findElement(By.xpath(".//input[@type='text']"))
+	WebElement mail_id_box = form().findElement(By.xpath(".//input[@type='text']"));
 	wait_for_theElement(mail_id_box);
 	return mail_id_box;}   
 	public WebElement inbox_section(){

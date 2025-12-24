@@ -87,7 +87,131 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[@class='ant-empty-description']")
 	private WebElement  Dropdown_showing_nodata; 
 	@FindBy(xpath="(//*[@class='ant-card-body'])[3]")
-	private WebElement  Plaintiff_section_in_contacts_tab; /*
+	private WebElement  Plaintiff_section_in_contacts_tab; 
+	@FindBy(xpath="//*[@aria-label='upload']/..")
+	private WebElement  Manual_sign_in_button;
+	@FindBy(xpath="(//div[contains(@class,'ant-modal') and not(contains(@style,'display: none'))]//input[@type='file'])[last()]")
+	private WebElement  upload; 
+	@FindBy(xpath="//*[@class='ant-upload-list-item-name']")
+	private WebElement  file_upload_preview_confirmation; 
+	@FindBy(xpath="//tr[@class='ant-table-row ant-table-row-level-0']")
+	private List <WebElement> Lien_table_contents; /*
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -316,19 +440,19 @@ public class Application_Locaters extends Repeat{
 	public List <WebElement> Plaintiff_feild_labels_and_values(){
 	List <WebElement> Palintiff_feild_labels_and_values = Plaintiff_section_in_contacts_tab().findElements(By.xpath(".//span"));
 	wait_for_theElement(Palintiff_feild_labels_and_values);
-	return Palintiff_feild_labels_and_values;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Palintiff_feild_labels_and_values;}   
+	public WebElement Manual_sign_in_button(){
+	wait_for_theElement(Manual_sign_in_button);
+	return Manual_sign_in_button;}   
+	public WebElement upload(){
+	wait_for_theElement(upload);
+	return upload;}   
+	public WebElement file_upload_preview_confirmation(){
+	wait_for_theElement(file_upload_preview_confirmation);
+	return file_upload_preview_confirmation;}    
+	public List <WebElement> Lien_table_contents(){
+	wait_for_theElement(Lien_table_contents);
+	return Lien_table_contents;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
