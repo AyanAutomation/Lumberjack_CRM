@@ -28,7 +28,7 @@ public class Login_negative_testcases extends Base{
 		Repeat rp = new Repeat(d);
 
 		d.get(Target_url);
-		l.buttons().get(1).click();
+		l.buttons().get(0).click();
 		Thread.sleep(500);
 
 		// === SCENARIO 1 ===
