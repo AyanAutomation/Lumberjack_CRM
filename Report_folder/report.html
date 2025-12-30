@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 30, 2025 05:31:42 PM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 30, 2025 07:33:20 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -66,6 +71,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -73,6 +79,708 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add_case</p>
+            <p class="text-sm">
+              <span>7:33:24 PM</span> / <span>00:01:34:699</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add_case</h5>
+<span class='badge badge-success'>12.30.2025 7:33:24 PM</span>
+<span class='badge badge-danger'>12.30.2025 7:34:58 PM</span>
+<span class='badge badge-default'>00:01:34:699</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:24 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:33:30 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:31 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:31 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:32 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:32 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:34 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Isidore
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:34 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:34 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Civil Rights
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:34 PM</td>
+        <td>
+          <b>Step 4:</b> Select State of Incident from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:36 PM</td>
+        <td>
+          <b>🟨 Actual:</b> State selected from list for input = Indiana
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:36 PM</td>
+        <td>
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:37 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 06/08/2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:37 PM</td>
+        <td>
+          <b>Step 6:</b> Select Lead Type and Lead Source.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:39 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Attorney Referral)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:39 PM</td>
+        <td>
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:50 PM</td>
+        <td>
+          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:50 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:53 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '49D03-2306-CR-001114' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:54 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 49D03-2306-CR-001114)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:33:54 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:06 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:06 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:07 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Buyout modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:07 PM</td>
+        <td>
+          <b>Step 11:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:10 PM</td>
+        <td>
+          ✅ Toast: Buyout Info updated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:10 PM</td>
+        <td>
+          <b>Step 12:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:12 PM</td>
+        <td>
+          Exception found in fetching Ammount edit buttons after filling buyout form retried and found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:13 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 24000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:13 PM</td>
+        <td>
+          <b>Step 13:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:14 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:14 PM</td>
+        <td>
+          <b>Step 14:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:18 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:18 PM</td>
+        <td>
+          <b>Step 15:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:18 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=325, FundTransfer=110, RoR=41)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:18 PM</td>
+        <td>
+          <b>Step 16:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:23 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:23 PM</td>
+        <td>
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=null | CourtIndex=49D03-2306-CR-001114 | AgreementDate=01/13/2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:24 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 15500.00<br><b>Approved Amount:</b> 24000.00<br><b>Funded Amount:</b> 39500.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 41.00<br><b>Annual Interest:</b> 16195.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 1349.58  (Annual / 12)<br><br><b>Document Prep Fee:</b> 325.00<br><b>Fund Transfer Fee:</b> 110.00<br><b>Flat Fees Total:</b> 435.00<br><br><b>✅ First Month Payable:</b> 39500.00 + 1349.58 + 325.00 + 110.00 = <b>41284.58</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          Testcase passed First month payable 41284.58 is macthing contract text's first month payable 41284.58
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <b>Step 17:</b> Validate future months lien calculation from Contract Lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <b>📘 Description:</b> Each month lien should increase only by Monthly Interest compared to previous month.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <b>✅ Expected:</b> For every month >= 1, (Current Month Payable - Previous Month Payable) should equal Monthly Interest = 1349.5833333333333.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 1 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 0) = <b>41284.58</b><br>Curr Month Payable (Month 1) = <b>42634.17</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 42634.17 − 41284.58<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 1.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 2 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 1) = <b>42634.17</b><br>Curr Month Payable (Month 2) = <b>43983.75</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 43983.75 − 42634.17<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 2.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 3 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 2) = <b>43983.75</b><br>Curr Month Payable (Month 3) = <b>45333.33</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 45333.33 − 43983.75<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 3.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 4 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 3) = <b>45333.33</b><br>Curr Month Payable (Month 4) = <b>46682.92</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 46682.92 − 45333.33<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 4.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 5 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 4) = <b>46682.92</b><br>Curr Month Payable (Month 5) = <b>48032.5</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 48032.5 − 46682.92<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 5.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 6 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 5) = <b>48032.5</b><br>Curr Month Payable (Month 6) = <b>49382.08</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 49382.08 − 48032.5<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 6.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 7 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 6) = <b>49382.08</b><br>Curr Month Payable (Month 7) = <b>50731.67</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 50731.67 − 49382.08<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 7.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 8 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 7) = <b>50731.67</b><br>Curr Month Payable (Month 8) = <b>52081.25</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 52081.25 − 50731.67<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 8.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 9 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 8) = <b>52081.25</b><br>Curr Month Payable (Month 9) = <b>53430.83</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 53430.83 − 52081.25<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 9.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 10 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 9) = <b>53430.83</b><br>Curr Month Payable (Month 10) = <b>54780.42</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 54780.42 − 53430.83<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 10.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 11 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 10) = <b>54780.42</b><br>Curr Month Payable (Month 11) = <b>56130.0</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 56130.0 − 54780.42<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 11.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 12 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 11) = <b>56130.0</b><br>Curr Month Payable (Month 12) = <b>57479.58</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 57479.58 − 56130.0<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 12.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 13 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 12) = <b>57479.58</b><br>Curr Month Payable (Month 13) = <b>58829.17</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 58829.17 − 57479.58<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 13.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 14 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 13) = <b>58829.17</b><br>Curr Month Payable (Month 14) = <b>60178.75</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 60178.75 − 58829.17<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 14.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 15 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 14) = <b>60178.75</b><br>Curr Month Payable (Month 15) = <b>61528.33</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 61528.33 − 60178.75<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 15.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 16 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 15) = <b>61528.33</b><br>Curr Month Payable (Month 16) = <b>62877.92</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 62877.92 − 61528.33<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 16.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 17 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 16) = <b>62877.92</b><br>Curr Month Payable (Month 17) = <b>64227.5</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 64227.5 − 62877.92<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 17.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 18 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 17) = <b>64227.5</b><br>Curr Month Payable (Month 18) = <b>65577.08</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 65577.08 − 64227.5<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 18.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 19 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 18) = <b>65577.08</b><br>Curr Month Payable (Month 19) = <b>66926.67</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 66926.67 − 65577.08<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 19.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 20 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 19) = <b>66926.67</b><br>Curr Month Payable (Month 20) = <b>68276.25</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 68276.25 − 66926.67<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 20.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 21 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 20) = <b>68276.25</b><br>Curr Month Payable (Month 21) = <b>69625.83</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 69625.83 − 68276.25<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 21.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 22 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 21) = <b>69625.83</b><br>Curr Month Payable (Month 22) = <b>70975.42</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 70975.42 − 69625.83<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 22.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 23 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 22) = <b>70975.42</b><br>Curr Month Payable (Month 23) = <b>72325.0</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 72325.0 − 70975.42<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 23.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 24 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 23) = <b>72325.0</b><br>Curr Month Payable (Month 24) = <b>73674.58</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 73674.58 − 72325.0<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 24.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 25 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 24) = <b>73674.58</b><br>Curr Month Payable (Month 25) = <b>75024.17</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 75024.17 − 73674.58<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 25.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 26 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 25) = <b>75024.17</b><br>Curr Month Payable (Month 26) = <b>76373.75</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 76373.75 − 75024.17<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 26.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 27 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 26) = <b>76373.75</b><br>Curr Month Payable (Month 27) = <b>77723.33</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 77723.33 − 76373.75<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 27.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 28 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 27) = <b>77723.33</b><br>Curr Month Payable (Month 28) = <b>79072.92</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 79072.92 − 77723.33<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 28.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 29 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 28) = <b>79072.92</b><br>Curr Month Payable (Month 29) = <b>80422.5</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 80422.5 − 79072.92<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 29.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 30 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 29) = <b>80422.5</b><br>Curr Month Payable (Month 30) = <b>81772.08</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 81772.08 − 80422.5<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 30.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 31 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 30) = <b>81772.08</b><br>Curr Month Payable (Month 31) = <b>83121.67</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 83121.67 − 81772.08<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 31.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 32 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 31) = <b>83121.67</b><br>Curr Month Payable (Month 32) = <b>84471.25</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 84471.25 − 83121.67<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 32.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 33 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 32) = <b>84471.25</b><br>Curr Month Payable (Month 33) = <b>85820.83</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 85820.83 − 84471.25<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 33.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 34 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 33) = <b>85820.83</b><br>Curr Month Payable (Month 34) = <b>87170.42</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 87170.42 − 85820.83<br><br><b>✅ Result:</b><br>Increase = <b>1349.5899999999965</b><br><br><b>🔍 Check:</b><br>Increase (1349.5899999999965) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 34.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 35 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 34) = <b>87170.42</b><br>Curr Month Payable (Month 35) = <b>88520.0</b><br>Expected Monthly Interest = <b>1349.58</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 88520.0 − 87170.42<br><br><b>✅ Result:</b><br>Increase = <b>1349.5800000000017</b><br><br><b>🔍 Check:</b><br>Increase (1349.5800000000017) ≈ Monthly Interest (1349.58) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 35.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <b>Step 18:</b> Switch back from Contract iframe to main page (default content).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:25 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:26 PM</td>
+        <td>
+          <b>Step 19:</b> Click <i>Save Changes</i> to save contract edits.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:28 PM</td>
+        <td>
+          <b>Step 20:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:33 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:34:33 PM</td>
+        <td>
+          <b>Step 21:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:34:33 PM</td>
+        <td>
+          ✅ Toast: Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:34:58 PM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]' (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+	at Locaters.Application_Locaters.pop_up_contact_list_Footer(Application_Locaters.java:392)
+	at Locaters.Application_Locaters.popup_contact_list_footer_buttons(Application_Locaters.java:395)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.manual_lien_generation(Case_Appplications.java:547)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:384)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]"}
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [621a6ffe013ff02768049d4d2fa743f4, findElement {value=(//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52730}, goog:processID: 12732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52730/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 621a6ffe013ff02768049d4d2fa743f4
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -82,18 +790,67 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>19:33:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>Add_case</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 30, 2025 05:31:42 PM</h3>
+<h3>Dec 30, 2025 07:33:20 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 30, 2025 05:31:42 PM</h3>
+<h3>Dec 30, 2025 07:34:58 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -105,7 +862,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -126,8 +883,28 @@
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='47%'><b>41</b> events passed</small></div>
+<div>
+<small data-tooltip='1%'><b>1</b> events failed,
+<b data-tooltip='%'>44</b> others
 </small>
 </div>
 </div>
@@ -143,6 +920,7 @@
 </div></div>
 <script>
 var timeline = {
+"Add_case":94.699
 };
 </script>
 <div class="row">
@@ -170,7 +948,7 @@ var timeline = {
 </tr>
 <tr>
 <td>Java Version</td>
-<td>25.0.1</td>
+<td>21.0.9</td>
 </tr>
 </tbody>
 </table></div>
@@ -182,7 +960,7 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 0,
-failParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -198,11 +976,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 0,
-failEvents: 0,
+passEvents: 41,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 44
 };
 </script>        </div>
       </div>

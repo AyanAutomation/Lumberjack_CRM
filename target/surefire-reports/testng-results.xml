@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="3" passed="0" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-30T17:31:42 IST" name="Surefire suite" finished-at="2025-12-30T17:31:42 IST" duration-ms="10">
+  <suite started-at="2025-12-30T17:40:05 IST" name="Surefire suite" finished-at="2025-12-30T17:41:14 IST" duration-ms="68739">
     <groups>
     </groups>
-    <test started-at="2025-12-30T17:31:42 IST" name="Surefire test" finished-at="2025-12-30T17:31:42 IST" duration-ms="10">
+    <test started-at="2025-12-30T17:40:05 IST" name="Surefire test" finished-at="2025-12-30T17:41:14 IST" duration-ms="68739">
+      <class name="Negative_Testcases.Application_Add_Negative_Testcases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T17:40:05 IST" name="setup" finished-at="2025-12-30T17:40:07 IST" duration-ms="1879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="application_add_negative(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T17:40:07 IST" name="application_add_negative" data-provider="case_plus_plaintiff" finished-at="2025-12-30T17:41:14 IST" duration-ms="66552" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/13/2026, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/15/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=55 E Monroe St, Address Line 2=Suite 2100, Date of Birth=03/19/1992, Email=cassimir.vandermere@mailto.plus, First Name=Cassimir, Last Name=Vandermere, Middle Name=Rowan, Name Suffix=III, Phone number=312-555-4301, Social Security Number=930-11-0301, State=Illinois, Zip code=60604}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=cassian.hohenstauf@mailto.plus, First Name=Attorney Cassian, Last Name=Hohenstauf, Law Firm=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Middle Name=Alaric, Name Suffix=II, Office phone=4165558201, Phone=4165554201}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- application_add_negative -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T17:41:14 IST" name="Kill" finished-at="2025-12-30T17:41:14 IST" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Negative_Testcases.Application_Add_Negative_Testcases -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

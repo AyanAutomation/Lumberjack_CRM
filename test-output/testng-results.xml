@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-30T16:22:23 IST" name="Default suite" finished-at="2025-12-30T16:23:31 IST" duration-ms="68075">
+  <suite started-at="2025-12-30T19:33:20 IST" name="Default suite" finished-at="2025-12-30T19:34:58 IST" duration-ms="98038">
     <groups>
     </groups>
-    <test started-at="2025-12-30T16:22:23 IST" name="Default test" finished-at="2025-12-30T16:23:31 IST" duration-ms="68075">
-      <class name="Negative_Testcases.Application_Add_Negative_Testcases">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2a5c8d3f]" started-at="2025-12-30T16:22:23 IST" name="setup" finished-at="2025-12-30T16:22:25 IST" duration-ms="2018" status="PASS">
+    <test started-at="2025-12-30T19:33:20 IST" name="Default test" finished-at="2025-12-30T19:34:58 IST" duration-ms="98038">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2a5c8d3f]" started-at="2025-12-30T19:33:20 IST" name="setup" finished-at="2025-12-30T19:33:24 IST" duration-ms="3250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="application_add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2a5c8d3f]" started-at="2025-12-30T16:22:25 IST" name="application_add" data-provider="case_plus_plaintiff" finished-at="2025-12-30T16:23:30 IST" duration-ms="65664" status="PASS">
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2a5c8d3f]" started-at="2025-12-30T19:33:24 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2025-12-30T19:34:58 IST" duration-ms="94698" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/15/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}]]>
+                <![CDATA[{Agreement Date=01/13/2026, Application Status=In Review, Approved Amount=24000, Attorney Name=Attorney Orson Pfeiffer, Buyout Amount=15500, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Frontline Capital Group, Case #=201, Case Type=Civil Rights, Court Index Number=49D03-2306-CR-001114, Date of Incident=06/08/2023, Document prep fee=325, Fund transfer fee=110, Interest Start Date=01/15/2026, Law Firm Name=Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center, Lead Source=Attorney Referral, Rate of Return=41, Recommended Max Funding=24000, Requested Amount=58000, Risk Level=Moderate, SMS Message Body=Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance, SMS Message Title=Civil Rights File In Review, State=Indiana, Summary=Alleged unlawful search and excessive detention during traffic stop; emotional distress and employment disruption claimed; bodycam footage requested., Underwriting Notes=Primary driver is evidence quality: bodycam, dispatch logs, incident report, and any internal affairs findings. Confirm notice requirements, immunities, and policy limits before expanding funding.}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=22 Marine Corps Dr, Address Line 2=PO Box 211, Date of Birth=06/11/1993, Email=soren.tannenfeld@mailto.plus, First Name=Soren, Last Name=Tannenfeld, Middle Name=Benedikt, Name Suffix=II, Phone number=671-555-4207, Social Security Number=920-17-0207, State=Guam, Zip code=96910}]]>
+                <![CDATA[{Address Line 1=2121 4th Ave, Address Line 2=Apt 12D, Date of Birth=03/14/1990, Email=isidore.schwanemere@mailto.plus, First Name=Isidore, Last Name=Schwanemere, Middle Name=Friedrich, Name Suffix=III, Phone number=206-555-4345, Social Security Number=930-55-0345, State=Washington, Zip code=98121}]]>
               </value>
             </param>
             <param index="2">
@@ -29,14 +29,87 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]' (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: (//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]' (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+at Locaters.Application_Locaters.pop_up_contact_list_Footer(Application_Locaters.java:392)
+at Locaters.Application_Locaters.popup_contact_list_footer_buttons(Application_Locaters.java:395)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.manual_lien_generation(Case_Appplications.java:547)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:384)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]"}
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [621a6ffe013ff02768049d4d2fa743f4, findElement {value=(//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52730}, goog:processID: 12732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52730/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 621a6ffe013ff02768049d4d2fa743f4
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 31 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- application_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2a5c8d3f]" started-at="2025-12-30T16:23:30 IST" name="Kill" finished-at="2025-12-30T16:23:31 IST" duration-ms="317" status="PASS">
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2a5c8d3f]" started-at="2025-12-30T19:34:58 IST" name="Kill" finished-at="2025-12-30T19:34:58 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Negative_Testcases.Application_Add_Negative_Testcases -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

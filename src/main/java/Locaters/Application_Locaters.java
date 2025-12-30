@@ -70,7 +70,7 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Contact_type_option_dropdown_list;
 	@FindBy(xpath="//div[@role='dialog']")
 	private WebElement  pop_up_contact_list;
-	@FindBy(xpath="(//div[@role='dialog']//div[@class='ant-space css-1egwh03 ant-space-horizontal ant-space-align-center ant-space-gap-row-middle ant-space-gap-col-middle'])[2]")
+	@FindBy(xpath="(//div[@role='dialog']//div[@class='ant-space-item'])/..")
 	private WebElement  pop_up_contact_list_Footer; 
 	@FindBy(xpath="//*[@class='tox-editor-container']")
 	private WebElement Contract_editor; 
@@ -90,7 +90,7 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Dropdown_showing_nodata; 
 	@FindBy(xpath="(//*[@class='ant-card-body'])[3]")
 	private WebElement  Plaintiff_section_in_contacts_tab; 
-	@FindBy(xpath="//*[@aria-label='upload']/..")
+	@FindBy(xpath="(//*[@class='ant-card-actions']//button)[1]")
 	private WebElement  Manual_sign_in_button;
 	@FindBy(xpath="(//div[contains(@class,'ant-modal') and not(contains(@style,'display: none'))]//input[@type='file'])[last()]")
 	private WebElement  upload; 
@@ -447,8 +447,8 @@ public class Application_Locaters extends Repeat{
 	wait_for_theElement(Manual_sign_in_button);
 	return Manual_sign_in_button;}   
 	public WebElement upload(){
-	wait_for_theElement(upload);
-	return upload;}   
+	By uploadBy = By.xpath("(//div[contains(@class,'ant-modal') and not(contains(@style,'display: none'))]//input[@type='file'])[last()]");
+	return wait_for_presenceBy(uploadBy);}   
 	public WebElement file_upload_preview_confirmation(){
 	wait_for_theElement(file_upload_preview_confirmation);
 	return file_upload_preview_confirmation;}    

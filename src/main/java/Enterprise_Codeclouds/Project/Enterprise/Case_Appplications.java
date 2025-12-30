@@ -381,7 +381,7 @@ public class Case_Appplications extends Header_Manager{
 	   */
 		
 		//Docu_Sign_Signature();
-		manual_lien_generation();
+		manual_lien_generation(Sign_in_button);
 		}
 	
 	
@@ -523,7 +523,7 @@ public class Case_Appplications extends Header_Manager{
 	    
 	    
 	    
-	    public List<WebElement> manual_lien_generation() throws InterruptedException{
+	    public List<WebElement> manual_lien_generation(WebElement btn) throws InterruptedException{
 	    	
 	    	Application_Locaters p = new Application_Locaters(d);
 	        Login_Locaters lg = new Login_Locaters(d);
@@ -531,10 +531,16 @@ public class Case_Appplications extends Header_Manager{
 			JavascriptExecutor js = (JavascriptExecutor)d; 
 	    	
 			
-			//tab_selector("Applications");
+			
+			WebElement file;
 		
-	    	WebElement file = p.upload();
-	    	js.executeScript("arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].style.height='1px';",file);
+	    try { file = p.upload();}
+	    catch(Exception mmo){ 
+	    	Thread.sleep(800);
+			btn.click();
+			file = p.upload();}
+	        js.executeScript("arguments[0].removeAttribute('hidden');arguments[0].style.setProperty('display','block','important');arguments[0].style.setProperty('visibility','visible','important');arguments[0].style.setProperty('height','1px');arguments[0].style.setProperty('width','1px');", file);
+            //js.executeScript("arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].style.height='1px';",file);
 	    	String filePath = Paths.get(System.getProperty("user.dir"),"Files","Manual Sign In image.pdf").toFile().getAbsolutePath();
 	    	file.sendKeys(filePath);
 	    	p.file_upload_preview_confirmation();
@@ -1064,10 +1070,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{
-		     /* {c1},{c2},*/{c3},/*{c4},{c5},
+		      {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15},
-		        {c16},{c17},{c18},{c19},{c20} */
+		        {c16},{c17},{c18},{c19},{c20} 
 		    };}
 	
 	
