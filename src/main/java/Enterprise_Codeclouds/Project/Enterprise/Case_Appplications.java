@@ -20,6 +20,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import Listerners.Report_Listen;
@@ -28,7 +29,7 @@ import Locaters.Login_Locaters;
 import Locaters.temp_mail_Locaters;
 import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
-
+@Listeners(Listerners.Report_Listen.class)
 public class Case_Appplications extends Header_Manager{
 	
 	TreeSet<Double> monthly_emi = new TreeSet<Double>();

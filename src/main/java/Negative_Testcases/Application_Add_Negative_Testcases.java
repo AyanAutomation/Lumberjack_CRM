@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -19,26 +20,36 @@ import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
 import Repeatative_codes.Repeat;
 
+@Listeners(Listerners.Report_Listen.class)
 public class Application_Add_Negative_Testcases extends Case_Appplications{
 	
 	TreeSet<String> Number_of_fields_with_asterix = new TreeSet<>();
+	String invalid_plaintiff;
+	String invalid_case_type;
+	String Invalid_lead_type;
+	String Invalid_Lead_source;
 	
 	@Test(dataProvider="case_plus_plaintiff")
-	public void application_add(TreeMap<String, String> data, TreeMap<String, String> data2) throws IOException, InterruptedException{
+	public void application_add(TreeMap<String, String> data,TreeMap<String, String> data2,TreeMap<String, String> attorneyData) throws IOException, InterruptedException{
 		
 		Application_Locaters p = new Application_Locaters(d);
         Login_Locaters lg = new Login_Locaters(d);
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
 		
+		
+		invalid_plaintiff = "Phobos";
+		invalid_case_type = "Genocide";
+		
 		int step = 1;
+		Add_New_Case_Form_Accessor(step);
 
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search");
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📘 Description</b> – User clicks <b>Case Add</b> button from header to open the New Case popup. Then submits blank mandatory fields to validate inline errors. Finally types an invalid keyword in Plaintiff search and verifies dropdown results behavior.");
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📥 Input</b> – Invalid Plaintiff Keyword = <b>Phobos</b> (mandatory fields intentionally blank)");
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>✅ Expected</b> – New Case popup should open from header Case Add button. Inline error count should match number of mandatory fields marked with <b>*</b>. Invalid Plaintiff keyword should show <b>no matching results</b>.");
 
-		Add_New_Case_Form_Accessor(step);
+	
 		Report_Listen.log_print_in_report().log(Status.INFO,
 	            "<b>Step "+(step++)+":</b> Capture form fields for mandatory validation<br>"
 	          + "<b>📘 Description:</b> Fetch input fields + label/placeholder fields to count required fields marked with '*'<br>"
@@ -52,16 +63,17 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click Create/Submit with blank fields and validate inline errors vs '*' mandatory count.");
 	    error_checker(input_feilds,other_placeholder_feilds);
 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Mandatory validation executed (mandatory count vs inline errors logged).");
+	    
 	    Report_Listen.log_print_in_report().log(Status.INFO,
 	            "<b>Step "+(step++)+":</b> Enter invalid Plaintiff keyword<br>"
 	          + "<b>📘 Description:</b> Type a wrong keyword into Plaintiff search to verify dropdown result behavior<br>"
-	          + "<b>📥 Input:</b> Plaintiff keyword = <b>Phobos</b><br>"
-	          + "<b>✅ Expected:</b> Dropdown should not show valid matching results");
+	          + "<b>📥 Input:</b> Plaintiff keyword =  "+invalid_plaintiff
+	          + " <b>✅ Expected:</b> Dropdown should not show valid matching results");
 	    
-	    input_feilds.get(0).sendKeys("Phobos");
+	    input_feilds.get(0).sendKeys(invalid_plaintiff);
 		try{p.plaintiff_dropdown_list();
         Report_Listen.log_print_in_report().log(Status.FAIL,
-                "<b>🟨 Actual:</b> Dropdown list opened after invalid keyword <b>Phobos</b>. This indicates results are being shown when they should not (as per expected).");
+                "<b>🟨 Actual:</b> Dropdown list opened after invalid keyword "+invalid_plaintiff+". This indicates results are being shown when they should not (as per expected).");
             System.out.println("Testcase failed wrong keyword in plaintiff search field showing result");}
 		catch(Exception n) 
 		{ Report_Listen.log_print_in_report().log(Status.PASS,
@@ -83,10 +95,22 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 			    "<b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).");
             System.out.println("Testcase Passed wrong keyword in Incident type search field not showing any result");}
 		rp.Feild_clear(input_feilds.get(1));
+		
+		Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step "+(step++)+":</b> Enter invalid Case Type keyword<br>"
+	          + "<b>📘 Description:</b> Type a wrong keyword into Incident Type field search to verify dropdown result behavior<br>"
+	          + "<b>📥 Input:</b> Incident Type keyword = <b>Genocide</b><br>"
+	          + "<b>✅ Expected:</b> Dropdown should not show valid matching results");
+		
+		input_feilds.get(1).sendKeys(invalid_case_type);
+		String dropdown_text= p.Dropdown_showing_nodata().getText().trim();
+		Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid Incident type keyword. <b>Testcase Passed</b> (no match expected).");
+		
+		/*
 		input_feilds.get(1).sendKeys(data.get("Case Type"));
 		Thread.sleep(800);
 		p.plaintiff_dropdown_list();
-		p.Plaintiff_options().get(0).click();
+		p.Plaintiff_options().get(0).click(); */
 		
 		
 		

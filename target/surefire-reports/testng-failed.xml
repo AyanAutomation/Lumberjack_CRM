@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="Kill"/>
-          <include name="login_validation" invocation-numbers="1"/>
+          <include name="login_validation" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- Negative_Testcases.Login_negative_testcases -->
     </classes>
