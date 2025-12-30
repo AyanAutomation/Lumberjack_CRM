@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 30, 2025 04:22:22 PM</span></a>
+<a href="#"><span class="badge badge-primary">Dec 30, 2025 05:31:42 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,7 +66,6 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,271 +73,6 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">application_add</p>
-            <p class="text-sm">
-              <span>4:22:25 PM</span> / <span>00:01:05:657</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">application_add</h5>
-<span class='badge badge-success'>12.30.2025 4:22:25 PM</span>
-<span class='badge badge-danger'>12.30.2025 4:23:30 PM</span>
-<span class='badge badge-default'>00:01:05:657</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:25 PM</td>
-        <td>
-          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:22:31 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:31 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:31 PM</td>
-        <td>
-          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>📘 Description</b> – User clicks <b>Case Add</b> button from header to open the New Case popup. Then submits blank mandatory fields to validate inline errors. Finally types an invalid keyword in Plaintiff search and verifies dropdown results behavior.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>📥 Input</b> – Invalid Plaintiff Keyword = <b>Phobos</b> (mandatory fields intentionally blank)
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>✅ Expected</b> – New Case popup should open from header Case Add button. Inline error count should match number of mandatory fields marked with <b>*</b>. Invalid Plaintiff keyword should show <b>no matching results</b>.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>Step 1:</b> Capture form fields for mandatory validation<br><b>📘 Description:</b> Fetch input fields + label/placeholder fields to count required fields marked with '*'<br><b>✅ Expected:</b> Fields list should be captured so mandatory scan can be performed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>🔹 Scenario Title</b> – New Case Form: Submit with Blank Spaces in All Input Fields
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>📥 Input</b> – Every input field filled with: <b>"   "</b> (only spaces)
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:32 PM</td>
-        <td>
-          <b>✅ Expected</b> – System should <b>NOT</b> accept blank spaces as valid input. Inline errors should appear for mandatory fields and no case should be created.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          Plaintiff is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          Case type is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          State of incident is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          Date of incident is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          Lead source category is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          Requested amount must be greater than 0
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:22:36 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Inline errors displayed = <b>6</b>. <b>Testcase Passed</b> (spaces treated as blank).
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:38 PM</td>
-        <td>
-          <b>Step 2:</b> Click Create/Submit with blank fields and validate inline errors vs '*' mandatory count.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:38 PM</td>
-        <td>
-          <b>🔹 Scenario Title</b> – Mandatory Field Validation + Invalid Plaintiff Search
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:38 PM</td>
-        <td>
-          <b>📘 Description</b> – User opens New Case form, clicks Create with blank mandatory fields to validate inline errors.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:39 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Mandatory validation executed (mandatory count vs inline errors logged).
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:22:39 PM</td>
-        <td>
-          <b>Step 3:</b> Enter invalid Plaintiff keyword<br><b>📘 Description:</b> Type a wrong keyword into Plaintiff search to verify dropdown result behavior<br><b>📥 Input:</b> Plaintiff keyword =  Phobos <b>✅ Expected:</b> Dropdown should not show valid matching results
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:22:50 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:23:02 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid keyword. <b>Testcase Passed</b> (no match expected).
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:23:02 PM</td>
-        <td>
-          <b>Step 4:</b> Enter invalid Case Type keyword<br><b>📘 Description:</b> Type a wrong keyword into Incident Type field search to verify dropdown result behavior<br><b>📥 Input:</b> Incident Type keyword = <b>Genocide</b><br><b>✅ Expected:</b> Dropdown should not show valid matching results
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:23:04 PM</td>
-        <td>
-          Testcase passed invalid state keyword West Bengal in dropdown showing No data
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:23:16 PM</td>
-        <td>
-          <b>🟨 Actual:</b> Dropdown opened but no selectable options were present for invalid lead type keyword. <b>Testcase Passed</b> (no match expected).
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:23:19 PM</td>
-        <td>
-          Testcase passed invalid amount keyword non numeric Fedrick is not accepted
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:23:19 PM</td>
-        <td>
-          Requested amount must be greater than 0
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:23:30 PM</td>
-        <td>
-          <b>🟨 Actual →** 📢,</b> Toast after creating case: No toast captured / toast locator not visible. Error:
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:23:30 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
@@ -353,19 +87,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 30, 2025 04:22:22 PM</h3>
+<h3>Dec 30, 2025 05:31:42 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 30, 2025 04:23:31 PM</h3>
+<h3>Dec 30, 2025 05:31:42 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -387,33 +121,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
 <small data-tooltip='0%'><b>0</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
-</small>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="card">
-<div class="card-header">
-<h6 class="card-title">Log events</h6>
-</div>
-<div class="card-body">
-<div class="">
-<canvas id='events-analysis' width='115' height='90'></canvas>
-</div>
-</div>
-<div class="card-footer">
-<div><small data-tooltip='24%'><b>8</b> events passed</small></div>
-<div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>25</b> others
 </small>
 </div>
 </div>
@@ -429,7 +143,6 @@
 </div></div>
 <script>
 var timeline = {
-"application_add":65.657
 };
 </script>
 <div class="row">
@@ -457,7 +170,7 @@ var timeline = {
 </tr>
 <tr>
 <td>Java Version</td>
-<td>21.0.9</td>
+<td>25.0.1</td>
 </tr>
 </tbody>
 </table></div>
@@ -468,7 +181,7 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
+passParent: 0,
 failParent: 0,
 warningParent: 0,
 skipParent: 0,
@@ -485,11 +198,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 8,
+passEvents: 0,
 failEvents: 0,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 25
+infoEvents: 0
 };
 </script>        </div>
       </div>

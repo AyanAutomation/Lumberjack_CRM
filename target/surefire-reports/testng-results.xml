@@ -1,97 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
+<testng-results ignored="3" total="3" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-30T14:21:27 IST" name="Surefire suite" finished-at="2025-12-30T14:22:19 IST" duration-ms="51377">
+  <suite started-at="2025-12-30T17:31:42 IST" name="Surefire suite" finished-at="2025-12-30T17:31:42 IST" duration-ms="10">
     <groups>
     </groups>
-    <test started-at="2025-12-30T14:21:27 IST" name="Surefire test" finished-at="2025-12-30T14:22:19 IST" duration-ms="51377">
-      <class name="Negative_Testcases.Application_Add_Negative_Testcases">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T14:21:28 IST" name="setup" finished-at="2025-12-30T14:21:30 IST" duration-ms="2833" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="application_add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T14:21:30 IST" name="application_add" data-provider="case_plus_plaintiff" finished-at="2025-12-30T14:22:19 IST" duration-ms="48452" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Agreement Date=01/13/2026, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/15/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=22 Marine Corps Dr, Address Line 2=PO Box 211, Date of Birth=06/11/1993, Email=soren.tannenfeld@mailto.plus, First Name=Soren, Last Name=Tannenfeld, Middle Name=Benedikt, Name Suffix=II, Phone number=671-555-4207, Social Security Number=920-17-0207, State=Guam, Zip code=96910}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=cassian.hohenstauf@mailto.plus, First Name=Attorney Cassian, Last Name=Hohenstauf, Law Firm=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Middle Name=Alaric, Name Suffix=II, Office phone=4165558201, Phone=4165554201}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (aef9f13c9496ab972da53c8d744791ef)] -> xpath: (//div[@class='rc-virtual-list'])[3]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55998}, goog:processID: 15412, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55998/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: aef9f13c9496ab972da53c8d744791ef]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (aef9f13c9496ab972da53c8d744791ef)] -> xpath: (//div[@class='rc-virtual-list'])[3]] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55998}, goog:processID: 15412, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55998/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: aef9f13c9496ab972da53c8d744791ef
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-at Locaters.Application_Locaters.State_of_incident_dropdown(Application_Locaters.java:248)
-at Negative_Testcases.Application_Add_Negative_Testcases.application_add(Application_Add_Negative_Testcases.java:112)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- application_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T14:22:19 IST" name="Kill" finished-at="2025-12-30T14:22:19 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-      </class> <!-- Negative_Testcases.Application_Add_Negative_Testcases -->
+    <test started-at="2025-12-30T17:31:42 IST" name="Surefire test" finished-at="2025-12-30T17:31:42 IST" duration-ms="10">
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

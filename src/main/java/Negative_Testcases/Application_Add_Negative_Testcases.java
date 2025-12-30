@@ -32,7 +32,7 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 	String Invalid_state;
 	
 	@Test(dataProvider="case_plus_plaintiff")
-	public void application_add_neagtive(TreeMap<String, String> data,TreeMap<String, String> data2,TreeMap<String, String> attorneyData) throws IOException, InterruptedException{
+	public void application_add_negative(TreeMap<String, String> data,TreeMap<String, String> data2,TreeMap<String, String> attorneyData) throws IOException, InterruptedException{
 		
 		Application_Locaters p = new Application_Locaters(d);
         Login_Locaters lg = new Login_Locaters(d);
