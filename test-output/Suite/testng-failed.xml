@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Plaintiff_Module">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
-          <include name="Plaintiff_Add" invocation-numbers="7"/>
           <include name="setup"/>
+          <include name="Add_case" invocation-numbers="3 19"/>
           <include name="Kill"/>
         </methods>
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Plaintiff_Module -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
