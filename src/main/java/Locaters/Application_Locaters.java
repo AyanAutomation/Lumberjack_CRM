@@ -99,9 +99,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//tr[@class='ant-table-row ant-table-row-level-0']")
 	private List <WebElement> Lien_table_contents; 
 	@FindBy(xpath="//input[@id='rc_select_6']")
-	private WebElement  lead_source_field; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  lead_source_field; 
+	@FindBy(xpath="//*[@aria-label='import']/../..")
+	private WebElement  import_Button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -465,10 +465,10 @@ public class Application_Locaters extends Repeat{
 	return fifth_dropdown_options;}   
 	public WebElement lead_source_field(){
 	wait_for_theElement(lead_source_field);
-	return lead_source_field;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return lead_source_field;}   
+	public WebElement import_Button(){
+	wait_for_theElement(import_Button);
+	return import_Button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

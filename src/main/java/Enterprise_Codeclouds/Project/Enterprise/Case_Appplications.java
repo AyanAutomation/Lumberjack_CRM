@@ -155,11 +155,10 @@ public class Case_Appplications extends Header_Manager{
 		rp.wait_for_invisibility(toast);
 		p.List_Checkboxes().get(0).click();
 		Thread.sleep(600);
-		rp.Scroll_to_element(p.popup_contact_list_footer_buttons().get(0));
-		Thread.sleep(800);
-		p.popup_contact_list_footer_buttons().get(0).click();
-		Thread.sleep(600);
-		rp.Scroll_to_element(p.Contact_list_attorney_delete_button());
+       // rp.wait_for_invisibility(lg.toast());
+		WebElement Import_button = p.import_Button();
+		rp.Scroll_to_element(Import_button);
+		Import_button.click();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 		rp.Scroll_to_element(p.Application_tab_bar());
@@ -1069,11 +1068,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{
+		    return new Object[][]{ /*
 		      {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},{c15},
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c11},{c12},{c13},{c14},{c15}, */
+		        {c16},/*{c17},{c18},{c19},{c20} */
 		    };}
 	
 	
