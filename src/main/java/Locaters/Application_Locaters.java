@@ -58,7 +58,7 @@ public class Application_Locaters extends Repeat{
 	private List <WebElement> Application_amount_edit_buttons;
 	@FindBy(xpath="//div[@class='ant-descriptions-view']")
 	private WebElement  Application_details_Section;
-	@FindBy(xpath="//*[@aria-label='cloud-download']/..")
+	@FindBy(xpath="//*[@aria-label='cloud-download']/..//span[text()=' GENERATE CONTRACT ']")
 	private WebElement  Generate_contract_button;
 	@FindBy(xpath="//*[@class='ant-card-actions']//*[@class='ant-select-selection-item']")
 	private WebElement  Application_Details_Dropdown_Feild; 
@@ -90,28 +90,28 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Dropdown_showing_nodata; 
 	@FindBy(xpath="(//*[@class='ant-card-body'])[3]")
 	private WebElement  Plaintiff_section_in_contacts_tab; 
-	@FindBy(xpath="(//*[@class='ant-card-actions']//button)[1]")
+	@FindBy(xpath="(//*[@class='ant-card-actions']//button//span[text()='SIGN MANUALLY '])[1]")
 	private WebElement  Manual_sign_in_button;
 	@FindBy(xpath="(//div[contains(@class,'ant-modal') and not(contains(@style,'display: none'))]//input[@type='file'])[last()]")
 	private WebElement  upload; 
 	@FindBy(xpath="//*[@class='ant-upload-list-item-name']")
 	private WebElement  file_upload_preview_confirmation; 
-	@FindBy(xpath="//tr[@class='ant-table-row ant-table-row-level-0']")
-	private List <WebElement> Lien_table_contents; 
+	@FindBy(xpath="(//tbody[@class='ant-table-tbody'])[1]//tr[@class='ant-table-row ant-table-row-level-0']")
+	private List <WebElement> Open_Lien_table_contents; 
 	@FindBy(xpath="//input[@id='rc_select_6']")
 	private WebElement  lead_source_field; 
 	@FindBy(xpath="//*[@aria-label='import']/../..")
-	private WebElement  import_Button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  import_Button; 
+	@FindBy(xpath="//*[@class='ant-select-clear']")
+	private WebElement Filter_clear; 
+	@FindBy(xpath="a//*[@class='ant-spin-container']")
+	private WebElement list_loader; 
+	@FindBy(xpath="//*[contains(@class,'ant-tag ant-tag')]")
+	private List <WebElement> Case_tags; 
+	@FindBy(xpath="//*[@class='ant-table-content'][1]//*[@class='ant-empty-description']")
+	private WebElement  Lien_table_empty; 
+	@FindBy(xpath="(//tbody[@class='ant-table-tbody'])[1]")
+	private WebElement First_table_body; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -316,6 +316,10 @@ public class Application_Locaters extends Repeat{
 	WebElement Application_search = Application_page_top_section().findElement(By.xpath(".//input[@type='text']"));
 	wait_for_theElement(Application_search);
 	return Application_search;}
+    public WebElement Application_status_filter(){
+	WebElement Application_status_filter = Application_page_top_section().findElement(By.xpath(".//*[@class='ant-select-selector']"));
+	wait_for_theElement(Application_status_filter);
+	return Application_status_filter;}
 	public List <WebElement> rows(){
 	List <WebElement> rows = table_body().findElements(By.xpath(".//tr[@class='ant-table-row ant-table-row-level-0']"));
 	wait_for_theElement(rows);
@@ -443,6 +447,14 @@ public class Application_Locaters extends Repeat{
 	List <WebElement> Palintiff_feild_labels_and_values = Plaintiff_section_in_contacts_tab().findElements(By.xpath(".//span"));
 	wait_for_theElement(Palintiff_feild_labels_and_values);
 	return Palintiff_feild_labels_and_values;}   
+	public WebElement Requested_amount_input_field_in_Applications_tab(){
+	WebElement Requested_amount_input_field_in_Applications_tab = Plaintiff_section_in_contacts_tab().findElement(By.xpath(".//input"));
+	wait_for_theElement(Requested_amount_input_field_in_Applications_tab);
+	return Requested_amount_input_field_in_Applications_tab;}
+	public WebElement Appilcation_Add_button(){
+	WebElement Appilcation_Add_button = Plaintiff_section_in_contacts_tab().findElement(By.xpath(".//button"));
+	wait_for_theElement(Appilcation_Add_button);
+	return Appilcation_Add_button;}
 	public WebElement Manual_sign_in_button(){
 	wait_for_theElement(Manual_sign_in_button);
 	return Manual_sign_in_button;}   
@@ -452,9 +464,9 @@ public class Application_Locaters extends Repeat{
 	public WebElement file_upload_preview_confirmation(){
 	wait_for_theElement(file_upload_preview_confirmation);
 	return file_upload_preview_confirmation;}    
-	public List <WebElement> Lien_table_contents(){
-	wait_for_theElement(Lien_table_contents);
-	return Lien_table_contents;}   
+	public List <WebElement> Open_Lien_table_contents(){
+	wait_for_theElement(Open_Lien_table_contents);
+	return Open_Lien_table_contents;}   
 	public WebElement fifth_dropdown(){
 	wait_for_theElement(fifth_dropdown);
 	return fifth_dropdown;}   
@@ -468,7 +480,54 @@ public class Application_Locaters extends Repeat{
 	return lead_source_field;}   
 	public WebElement import_Button(){
 	wait_for_theElement(import_Button);
-	return import_Button;}   /*
+	return import_Button;}   
+	public WebElement Filter_clear(){
+	wait_for_theElement(Filter_clear);
+	return Filter_clear;}   
+	public WebElement list_loader(){
+	wait_for_theElement(list_loader);
+	return list_loader;}    
+	public List <WebElement> Case_tags(){
+	wait_for_theElement(Case_tags);
+	return Case_tags;}    
+	public WebElement Lien_table_empty(){
+	wait_for_theElement(Lien_table_empty);
+	return Lien_table_empty;}   
+	public WebElement First_table_body(){
+	wait_for_theElement(First_table_body);
+	return First_table_body;} 
+	public List <WebElement> First_table_first_column_cells(){
+	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[1]"));
+	wait_for_theElement(First_table_first_column_cellData);
+	return First_table_first_column_cellData;}   
+	public List <WebElement> First_table_second_column_cells(){
+	List<WebElement> First_table_second_column_cells = First_table_body().findElements(By.xpath(".//td[2]"));
+	wait_for_theElement(First_table_second_column_cells);
+	return First_table_second_column_cells;}
+	public List <WebElement> First_table_Third_column_cellData(){
+	List<WebElement> First_table_Third_column_cellData = First_table_body().findElements(By.xpath(".//td[3]"));
+	wait_for_theElement(First_table_Third_column_cellData);
+	return First_table_Third_column_cellData;}
+	public List <WebElement> First_table_fourth_column_cellData(){
+	List<WebElement> First_table_fourth_column_cellData = First_table_body().findElements(By.xpath(".//td[4]"));
+	wait_for_theElement(First_table_fourth_column_cellData);
+	return First_table_fourth_column_cellData;}
+	public List <WebElement> First_table_fifth_column_cellData(){
+	List<WebElement> First_table_fifth_column_cellData = First_table_body().findElements(By.xpath(".//td[5]"));
+	wait_for_theElement(First_table_fifth_column_cellData);
+	return First_table_fifth_column_cellData;}
+	public List <WebElement> First_table_sixth_column_cellData(){
+	List<WebElement> First_table_sixth_column_cellData = First_table_body().findElements(By.xpath(".//td[6]"));
+	wait_for_theElement(First_table_sixth_column_cellData);
+	return First_table_sixth_column_cellData;}
+	public List <WebElement> First_table_seventh_column_cellData(){
+	List<WebElement> First_table_seventh_column_cellData = First_table_body().findElements(By.xpath(".//td[7]"));
+	wait_for_theElement(First_table_seventh_column_cellData);
+	return First_table_seventh_column_cellData;}
+	public List <WebElement> Action_column_cells(){
+	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[8]"));
+	wait_for_theElement(First_table_first_column_cellData);
+	return First_table_first_column_cellData;} /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
@@ -495,25 +554,8 @@ public class Application_Locaters extends Repeat{
 	return ;}   
 	public WebElement (){
 	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return ;}   /*
+	  
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

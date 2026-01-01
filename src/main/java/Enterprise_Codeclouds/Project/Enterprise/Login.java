@@ -3,6 +3,7 @@ package Enterprise_Codeclouds.Project.Enterprise;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -11,6 +12,7 @@ import com.aventstack.extentreports.Status;
 import Listerners.Report_Listen;
 import Locaters.Login_Locaters;
 import Negative_Testcases.Login_negative_testcases;
+import Repeatative_codes.Repeat;
 
 
 @Listeners(Listerners.Report_Listen.class)
@@ -22,7 +24,7 @@ public class Login extends Base{
 		
 	Login_Locaters lg = new Login_Locaters(d);	
 	Data_Reader f = new Data_Reader();
-	Login_negative_testcases ln = new Login_negative_testcases();
+	Repeat rp = new Repeat(d);
 		
 	d.manage().deleteAllCookies();
 	d.get(Target_url);
@@ -32,9 +34,11 @@ public class Login extends Base{
 	//Report_Listen.log_print_in_report().log(Status.INFO, "Checking with valid Password and email");
 	lg.buttons().get(1).click();
 	Thread.sleep(500);
-	String toast_message = lg.toast().getText();
-	ln.Toast_printer(toast_message);
+	WebElement Toast = lg.toast();
+	String toast_message = Toast.getText();
+	Login_negative_testcases.Toast_printer(toast_message);
 	System.out.println();
+	rp.wait_for_invisibility(Toast);
 	lg.login_confirmation();	
 	}
 
