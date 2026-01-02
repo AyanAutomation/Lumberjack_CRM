@@ -30,11 +30,15 @@ import Locaters.Login_Locaters;
 import Locaters.temp_mail_Locaters;
 import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
+import freemarker.cache.StrongCacheStorage;
 @Listeners(Listerners.Report_Listen.class)
 public class Case_Appplications extends Header_Manager{
 	
 	TreeSet<Double> monthly_emi = new TreeSet<Double>();
-	
+	TreeMap<String,Double> LIEN_AMOUNT_Values = new TreeMap<String,Double>();
+	TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();
+    TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
+	TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
 	
 	
 	public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedException{
@@ -67,8 +71,8 @@ public class Case_Appplications extends Header_Manager{
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
 		
+		Collections_Clear();
 		
-		monthly_emi.clear();
 		int Buyout_Amount = Integer.parseInt(data.get("Buyout Amount"));
 		int Approved_Amount = Integer.parseInt(data.get("Approved Amount"));
 		int Document_prep_fee = Integer.parseInt(data.get("Document prep fee"));
@@ -1101,10 +1105,9 @@ public class Case_Appplications extends Header_Manager{
 		   Application_Locaters p = new Application_Locaters(d);
 		   Repeat rp = new Repeat(d);
 		   Login_Locaters lg = new Login_Locaters(d);
-		   TreeMap<String,Double> LIEN_AMOUNT_Values = new TreeMap<String,Double>();
-		   TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();
-		   TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
-		   TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
+		   
+		   
+		   Collections_Clear();
 		   int step=1;
 		   
 		   List<WebElement> lien_rows = null;
@@ -1279,6 +1282,227 @@ public class Case_Appplications extends Header_Manager{
 	   
 	
 	   
+	        @Test(dataProvider="logPaymentData")
+	        public void Payment_Logger(TreeMap<String, String> data) throws IOException, InterruptedException{
+	    	    
+	        	SIde_Menu_Handler sd = new SIde_Menu_Handler();
+	        	Application_Locaters p = new Application_Locaters(d);
+	        	Repeat rp = new Repeat(d);
+	        	
+	        WebElement case_Dropdown;	
+	        try{case_Dropdown=p.Case_Action_Dropdown();}
+	        catch(Exception not_in_Case_Details) {
+	           sd.Side_menu_option_clicker("Applications", d,"N/A");
+	 		   p.landed_in_applicationList_confirmation();
+	 		  p.rows().get(0).click();
+			   Thread.sleep(800);
+			   List<WebElement> Case_Tags;
+			   try {
+			   Case_Tags = p.Case_tags();}
+			   catch(RuntimeException tags){
+				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+				   System.out.println();
+				   Thread.sleep(1200);
+				   Case_Tags = p.Case_tags();}
+			   case_Dropdown=p.Case_Action_Dropdown();}
+	    	   rp.movetoelement(case_Dropdown);
+	    	   p.Case_Action_Dropdown_list();
+	    	   List<WebElement> optionsElements = p.Case_Dropdown_Options();
+	    	   for(WebElement Each_Option:optionsElements){
+	    		   String option_text= Each_Option.getText();
+	    		   if(option_text.contains("Log Payment")){
+	    			   Each_Option.click();
+	    			   break;}}
+	    	   List<WebElement> inputs=p.form_inputs();
+	    	   inputs.get(0).sendKeys(data.get("Payment Mode"));
+	    	   p.plaintiff_dropdown_list();
+	   		   p.Plaintiff_options().get(0).click();
+	   		   inputs.get(1).sendKeys(data.get("Payment Type"));
+	    	   p.Incident_type_dropdown();
+	   		   p.Incident_options().get(0).click();
+	   		   inputs.get(2).sendKeys(data.get("Payer Name"));
+	   		   inputs.get(3).sendKeys(data.get("Payment Date"));
+	   		   p.calender_date_select().click();
+	   		   inputs.get(4).sendKeys(data.get("Amount Received"));
+	   		   p.textArea().sendKeys(data.get("Notes / Remarks"));
+	        }
+	        
+	        @DataProvider
+	        public Object[][] logPaymentData() {
+
+	            // ✅ Always current date (MM/dd/yyyy)
+	            String paymentDate = java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+
+	            TreeMap<String, String> d1 = new TreeMap<>();
+	            d1.put("Payment Mode", "Cash");
+	            d1.put("Payment Type", "Payment by Plaintiff");
+	            d1.put("Payer Name", "Plaintiff Anselm Rothenmark");
+	            d1.put("Payment Date", paymentDate);
+	            d1.put("Amount Received", "2500");
+	            d1.put("Notes / Remarks", "Cash received at front desk; counted and confirmed by two staff; receipt issued and attached to case notes.");
+
+	            TreeMap<String, String> d2 = new TreeMap<>();
+	            d2.put("Payment Mode", "Bank Transfer");
+	            d2.put("Payment Type", "Payment by Attorney");
+	            d2.put("Payer Name", "Attorney Selwyn Kappelmann");
+	            d2.put("Payment Date", paymentDate);
+	            d2.put("Amount Received", "12000");
+	            d2.put("Notes / Remarks", "ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting.");
+
+	            TreeMap<String, String> d3 = new TreeMap<>();
+	            d3.put("Payment Mode", "Credit Card");
+	            d3.put("Payment Type", "Payment by Plaintiff");
+	            d3.put("Payer Name", "Plaintiff Marlowe Eichenauer");
+	            d3.put("Payment Date", paymentDate);
+	            d3.put("Amount Received", "3800");
+	            d3.put("Notes / Remarks", "Card payment approved; verify last 4 digits in gateway report; note: convenience fee handled externally, not part of received amount.");
+
+	            TreeMap<String, String> d4 = new TreeMap<>();
+	            d4.put("Payment Mode", "Cheque");
+	            d4.put("Payment Type", "Payment by Insurance Company");
+	            d4.put("Payer Name", "NorthBridge Casualty Insurance Co.");
+	            d4.put("Payment Date", paymentDate);
+	            d4.put("Amount Received", "45000");
+	            d4.put("Notes / Remarks", "Cheque received via mailroom; deposit scheduled next business day; hold posting until cheque clears per finance policy.");
+
+	            TreeMap<String, String> d5 = new TreeMap<>();
+	            d5.put("Payment Mode", "Online Payment");
+	            d5.put("Payment Type", "Payment by Another Funder");
+	            d5.put("Payer Name", "Summit Equity Legal Funding Partners");
+	            d5.put("Payment Date", paymentDate);
+	            d5.put("Amount Received", "16000");
+	            d5.put("Notes / Remarks", "Online portal payment from another funder for buyout; cross-check reference ID and settlement ledger; attach payment receipt PDF.");
+
+	            TreeMap<String, String> d6 = new TreeMap<>();
+	            d6.put("Payment Mode", "Bank Transfer");
+	            d6.put("Payment Type", "Payment by Insurance Company");
+	            d6.put("Payer Name", "HarborPoint Mutual Insurance Services");
+	            d6.put("Payment Date", paymentDate);
+	            d6.put("Amount Received", "52000");
+	            d6.put("Notes / Remarks", "Wire received (insurance disbursement); confirm sender name matches remittance advice; split allocation recorded in internal ledger.");
+
+	            TreeMap<String, String> d7 = new TreeMap<>();
+	            d7.put("Payment Mode", "Cash");
+	            d7.put("Payment Type", "Payment by Attorney");
+	            d7.put("Payer Name", "Attorney Osric Vandenbrock");
+	            d7.put("Payment Date", paymentDate);
+	            d7.put("Amount Received", "5000");
+	            d7.put("Notes / Remarks", "Cash delivered by attorney runner; ID verified; counted under camera; receipt generated and shared with attorney office.");
+
+	            TreeMap<String, String> d8 = new TreeMap<>();
+	            d8.put("Payment Mode", "Cheque");
+	            d8.put("Payment Type", "Payment by Plaintiff");
+	            d8.put("Payer Name", "Plaintiff Leontius Brackenford");
+	            d8.put("Payment Date", paymentDate);
+	            d8.put("Amount Received", "9000");
+	            d8.put("Notes / Remarks", "Personal cheque accepted; confirm signature and date; pending clearance—do not mark as settled until bank confirmation.");
+
+	            TreeMap<String, String> d9 = new TreeMap<>();
+	            d9.put("Payment Mode", "Online Payment");
+	            d9.put("Payment Type", "Payment by PIP");
+	            d9.put("Payer Name", "PIP Claims Department - MetroShield");
+	            d9.put("Payment Date", paymentDate);
+	            d9.put("Amount Received", "7400");
+	            d9.put("Notes / Remarks", "PIP reimbursement via online payment; verify claim number in remittance; match against case payment schedule.");
+
+	            TreeMap<String, String> d10 = new TreeMap<>();
+	            d10.put("Payment Mode", "Credit Card");
+	            d10.put("Payment Type", "Payment by Insurance Company");
+	            d10.put("Payer Name", "CedarLine Commercial Insurance");
+	            d10.put("Payment Date", paymentDate);
+	            d10.put("Amount Received", "11000");
+	            d10.put("Notes / Remarks", "Insurance card payment processed through billing gateway; ensure transaction receipt is uploaded; confirm no partial capture.");
+
+	            TreeMap<String, String> d11 = new TreeMap<>();
+	            d11.put("Payment Mode", "Bank Transfer");
+	            d11.put("Payment Type", "Payment by PIP");
+	            d11.put("Payer Name", "PIP Unit - Granite Auto Indemnity");
+	            d11.put("Payment Date", paymentDate);
+	            d11.put("Amount Received", "6300");
+	            d11.put("Notes / Remarks", "Bank transfer from PIP unit; reconcile amount against expected PIP reimbursement; document remittance reference in remarks.");
+
+	            TreeMap<String, String> d12 = new TreeMap<>();
+	            d12.put("Payment Mode", "Cash");
+	            d12.put("Payment Type", "Payment by Another Funder");
+	            d12.put("Payer Name", "IronGate Litigation Finance Group");
+	            d12.put("Payment Date", paymentDate);
+	            d12.put("Amount Received", "3000");
+	            d12.put("Notes / Remarks", "In-person cash payment from funder representative; unusual method—flagged for compliance review; receipt and CCTV timestamp recorded.");
+
+	            TreeMap<String, String> d13 = new TreeMap<>();
+	            d13.put("Payment Mode", "Online Payment");
+	            d13.put("Payment Type", "Payment by Attorney");
+	            d13.put("Payer Name", "Attorney Mirek Haldenstein");
+	            d13.put("Payment Date", paymentDate);
+	            d13.put("Amount Received", "18500");
+	            d13.put("Notes / Remarks", "Attorney paid via online link; confirmation number captured; request office to email remittance advice for accurate allocation.");
+
+	            TreeMap<String, String> d14 = new TreeMap<>();
+	            d14.put("Payment Mode", "Cheque");
+	            d14.put("Payment Type", "Payment by Another Funder");
+	            d14.put("Payer Name", "BluePine Settlement Funding Co.");
+	            d14.put("Payment Date", paymentDate);
+	            d14.put("Amount Received", "27000");
+	            d14.put("Notes / Remarks", "Buyout cheque from third-party funder; deposit scheduled; hold status as 'pending' until clearance and final ledger match.");
+
+	            TreeMap<String, String> d15 = new TreeMap<>();
+	            d15.put("Payment Mode", "Credit Card");
+	            d15.put("Payment Type", "Payment by PIP");
+	            d15.put("Payer Name", "PIP Recovery Desk - Atlas Motor Coverage");
+	            d15.put("Payment Date", paymentDate);
+	            d15.put("Amount Received", "4100");
+	            d15.put("Notes / Remarks", "PIP payment by card; confirm authorization and settlement reference; ensure duplicate prevention by checking gateway transaction ID.");
+
+	            TreeMap<String, String> d16 = new TreeMap<>();
+	            d16.put("Payment Mode", "Bank Transfer");
+	            d16.put("Payment Type", "Payment by Plaintiff");
+	            d16.put("Payer Name", "Plaintiff Dorian Kestrelwood");
+	            d16.put("Payment Date", paymentDate);
+	            d16.put("Amount Received", "6000");
+	            d16.put("Notes / Remarks", "Plaintiff bank transfer received; verify payer name matches registered plaintiff; attach bank confirmation screenshot to notes.");
+
+	            TreeMap<String, String> d17 = new TreeMap<>();
+	            d17.put("Payment Mode", "Online Payment");
+	            d17.put("Payment Type", "Payment by Insurance Company");
+	            d17.put("Payer Name", "EverHaven Insurance Group");
+	            d17.put("Payment Date", paymentDate);
+	            d17.put("Amount Received", "32500");
+	            d17.put("Notes / Remarks", "Insurance paid through online portal; remittance attached; verify this is final payment (not partial) before closing the case ledger.");
+
+	            // “Lost Deal” variations (in case UI still requires Amount Received)
+	            TreeMap<String, String> d18 = new TreeMap<>();
+	            d18.put("Payment Mode", "Cash");
+	            d18.put("Payment Type", "Lost Deal");
+	            d18.put("Payer Name", "N/A - Lost Deal");
+	            d18.put("Payment Date", paymentDate);
+	            d18.put("Amount Received", "0");
+	            d18.put("Notes / Remarks", "Deal marked as lost; no payment collected; record created for audit trail and to prevent future reconciliation confusion.");
+
+	            TreeMap<String, String> d19 = new TreeMap<>();
+	            d19.put("Payment Mode", "Bank Transfer");
+	            d19.put("Payment Type", "Lost Deal");
+	            d19.put("Payer Name", "N/A - Lost Deal");
+	            d19.put("Payment Date", paymentDate);
+	            d19.put("Amount Received", "1");
+	            d19.put("Notes / Remarks", "Lost deal logged (system requires amount); placeholder amount used for validation; adjust based on business rule if amount must be blank/optional.");
+
+	            TreeMap<String, String> d20 = new TreeMap<>();
+	            d20.put("Payment Mode", "Cheque");
+	            d20.put("Payment Type", "Payment by Attorney");
+	            d20.put("Payer Name", "Attorney Rowan Silberholl");
+	            d20.put("Payment Date", paymentDate);
+	            d20.put("Amount Received", "14000");
+	            d20.put("Notes / Remarks", "Attorney office cheque received; verify cheque number and payee line; post after clearance; email confirmation requested from firm admin.");
+
+	            return new Object[][]{
+	                    {d1},/*{d2},{d3},{d4},{d5},
+	                    {d6},{d7},{d8},{d9},{d10},
+	                    {d11},{d12},{d13},{d14},{d15},
+	                    {d16},{d17},{d18},{d19},{d20} */
+	            };
+	        }
+
+
 	   
 	   
 	     public List<WebElement> Internal_Application_Generator_and_Manual_Signer(TreeMap<String, String> data, TreeMap<String, String> data2 ,TreeMap<String,String> attorneyData, String Requested_Amount) throws InterruptedException{
@@ -1291,7 +1515,7 @@ public class Case_Appplications extends Header_Manager{
 		   JavascriptExecutor js = (JavascriptExecutor)d; 
 		   
 		   
-		   monthly_emi.clear();
+		   
 			
 			
 		int step=1;
@@ -1618,7 +1842,17 @@ public class Case_Appplications extends Header_Manager{
 			tab.click();
 			break;}}
 		Thread.sleep(900);
-		tabs.clear();
+		tabs.clear();}
+	
+	
+	public void Collections_Clear(){
+		
+		LIEN_AMOUNT_Values.clear();
+		TOTAL_PRINCIPAL_Values.clear();
+		CURRENT_LIEN_BALANCE_Values.clear();
+		RETURNED_AMT_Values.clear();
+		
+		
 	}
 	
 	

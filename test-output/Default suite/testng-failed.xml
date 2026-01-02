@@ -6,8 +6,8 @@
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
           <include name="setup"/>
-          <include name="Add_case" invocation-numbers="0"/>
           <include name="Kill"/>
+          <include name="Payment_Logger" invocation-numbers="0"/>
         </methods>
       </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </classes>

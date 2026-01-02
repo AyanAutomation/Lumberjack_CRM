@@ -113,13 +113,13 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[@class='ant-table-content'][1]//*[@class='ant-empty-description']")
 	private WebElement  Lien_table_empty; 
 	@FindBy(xpath="(//tbody[@class='ant-table-tbody'])[1]")
-	private WebElement First_table_body; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement First_table_body; 
+	@FindBy(xpath="//div[@class='ant-card-body']//button")
+	private WebElement Case_Action_Dropdown; 
+	@FindBy(xpath="//div[@class='ant-dropdown css-1egwh03 ant-dropdown-placement-bottomLeft']//*[@role='menu']")
+	private WebElement Case_Action_Dropdown_list; 
+	@FindBy(xpath="//textArea")
+	private WebElement textArea; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -532,19 +532,20 @@ public class Application_Locaters extends Repeat{
 	public List <WebElement> Action_column_cells(){
 	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[8]"));
 	wait_for_theElement(First_table_first_column_cellData);
-	return First_table_first_column_cellData;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return First_table_first_column_cellData;} 
+	public WebElement Case_Action_Dropdown(){
+	wait_for_theElement(Case_Action_Dropdown);
+	return Case_Action_Dropdown;}   
+	public WebElement Case_Action_Dropdown_list(){
+	wait_for_theElement(Case_Action_Dropdown_list);
+	return Case_Action_Dropdown_list;}   
+	public List <WebElement> Case_Dropdown_Options(){
+	List <WebElement> Case_Dropdown_Options = Case_Action_Dropdown_list().findElements(By.xpath(".//*[@role='menuitem']"));
+	wait_for_theElement(Case_Dropdown_Options);
+	return Case_Dropdown_Options;}   
+	public WebElement textArea(){
+	wait_for_theElement(textArea);
+	return textArea;}  /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
