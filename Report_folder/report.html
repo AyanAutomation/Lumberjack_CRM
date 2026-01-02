@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 1, 2026 05:32:14 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 2, 2026 05:51:14 PM</span></a>
 </li>
 </ul>
 </div>
@@ -81,7 +81,7 @@
           <div class="test-detail">
             <p class="name">Pay_Off_calculator</p>
             <p class="text-sm">
-              <span>5:32:17 PM</span> / <span>00:00:13:475</span>
+              <span>5:51:16 PM</span> / <span>00:00:13:501</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -90,9 +90,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Pay_Off_calculator</h5>
-<span class='badge badge-success'>01.01.2026 5:32:17 PM</span>
-<span class='badge badge-danger'>01.01.2026 5:32:30 PM</span>
-<span class='badge badge-default'>00:00:13:475</span>
+<span class='badge badge-success'>01.02.2026 5:51:16 PM</span>
+<span class='badge badge-danger'>01.02.2026 5:51:30 PM</span>
+<span class='badge badge-default'>00:00:13:501</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -105,58 +105,70 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:32:17 PM</td>
+        <td>5:51:16 PM</td>
         <td>
           <b>🔹 Scenario Title:</b> Pay-Off Calculator – Fetch Funded Application → Ensure Liens Exist (Generate if needed)
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:32:17 PM</td>
+        <td>5:51:16 PM</td>
         <td>
           <b>📘 Description:</b> User goes to <b>Applications</b> list, filters by <b>Funded</b>, opens the first record, then ensures lien rows exist. If lien table is empty / case is closed / application is NEW, system generates application + contract + manual sign flow to create lien rows.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:32:17 PM</td>
+        <td>5:51:16 PM</td>
         <td>
-          <b>📥 Input:</b> Requested Amount = <b>54000</b> | Target Status Filter = <b>Funded</b>
+          <b>📥 Input:</b> Requested Amount = <b>16000</b> | Target Status Filter = <b>Funded</b>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:32:17 PM</td>
+        <td>5:51:16 PM</td>
         <td>
           <b>✅ Expected:</b> A funded application should open. If liens are missing, automation should generate required app/contract and finally obtain lien rows for payoff validation.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>5:32:21 PM</td>
+        <td>5:51:21 PM</td>
         <td>
           ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:32:30 PM</td>
+        <td>5:51:30 PM</td>
         <td>
-          OH2600002 - 3 01/20/2026 01/20/2026 $23,000.00 23,000.00 0.00 0.00
-View
+          <b>Step 1:</b> Insert lien table values into TreeMaps (Row-wise)<br><b>📘 Description:</b> Read each lien row values from table columns and store them into TreeMaps using row-indexed keys.<br><b>✅ Expected:</b> Each row’s values should be stored correctly under keys: Lien AmountsN, Principal AmountN, Lien BalanceN, Paid AmountN.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:32:30 PM</td>
+        <td>5:51:30 PM</td>
         <td>
-          OH2600002 - 2 01/15/2026 01/17/2026 $14,730.00 15,120.00 0.00 0.00
-View
+          <b>🟨 Actual:</b> Values inserted into TreeMaps for all lien rows. Now printing from TreeMaps in math-style for confirmation.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:30 PM</td>
+        <td>
+          <b>Step 2:</b> Print lien values from TreeMaps (Math-style confirmation)<br><b>📘 Description:</b> Fetch stored values using TreeMap keys and print them row-wise to confirm correct insertion + retrieval.<br><b>✅ Expected:</b> Each printed row should show values coming from TreeMaps in a single-line format.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>5:32:30 PM</td>
+        <td>5:51:30 PM</td>
+        <td>
+          <div style='background:#10192a; padding:12px; border-radius:10px; border:1px solid #2a3b66; color:#e8eefc;'><b>🔹 Payoff Validation – Lien Row 1</b><br><br><b>📘 What is being validated:</b> Outstanding should update correctly after a payment is applied.<br><b>✅ Expected Rule:</b> (Balance Before Payment − Paid Amount) = Current Outstanding<br><br><b>📌 Values from table:</b><br><b>Lien Amount (log only):</b> 12000.00<br><b>Total Principal (log only):</b> 12270.00<br><b>Balance Before Payment (derived):</b> 12590.00<br><b>Paid Amount:</b> 0.00<br><b>Outstanding After Payment (Current Outstanding):</b> 12590.00<br><br><b>🧮 Simple Math Proof:</b><br><b>1) Balance Before Payment (derived)</b><br>Current Outstanding + Paid Amount<br>12590.00 + 0.00<br>──────────────<br><b>12590.00</b><br><br><b>2) Outstanding After Payment (calculated)</b><br>Balance Before Payment − Paid Amount<br>12590.00 − 0.00<br>──────────────<br><b>12590.00</b><br><br><b>✅ Result:</b> PASS<br><b>Difference (Calculated vs Current):</b> 0.00 (PASS if &lt; 0.01)</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:30 PM</td>
         <td>
           Test passed
         </td>
@@ -180,13 +192,13 @@ View
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 1, 2026 05:32:14 PM</h3>
+<h3>Jan 2, 2026 05:51:14 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 1, 2026 05:32:30 PM</h3>
+<h3>Jan 2, 2026 05:51:30 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -237,10 +249,10 @@ View
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='25%'><b>2</b> events passed</small></div>
+<div><small data-tooltip='30%'><b>3</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>6</b> others
+<b data-tooltip='%'>7</b> others
 </small>
 </div>
 </div>
@@ -256,7 +268,7 @@ View
 </div></div>
 <script>
 var timeline = {
-"Pay_Off_calculator":13.475
+"Pay_Off_calculator":13.501
 };
 </script>
 <div class="row">
@@ -312,11 +324,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 2,
+passEvents: 3,
 failEvents: 0,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 6
+infoEvents: 7
 };
 </script>        </div>
       </div>

@@ -26,8 +26,10 @@ public class Application_Locaters extends Repeat{
 	private WebElement  fifth_dropdown;
 	@FindBy(xpath="(//div[@class='rc-virtual-list-holder-inner'])[2]//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]")
 	private List <WebElement> Incident_options ; 
-	@FindBy(xpath="//*[@class='ant-picker-content']//*[@class='ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view']")
+	@FindBy(xpath="//*[@class='ant-picker-content']//*[@class='ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view ant-picker-cell-today']")
 	private WebElement  calender_date_select; 
+	@FindBy(xpath="//*[@class='ant-picker-content']//*[@class='ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view']")
+	private WebElement Backup_calender_date_select; 
 	@FindBy(xpath="//div[@class='ant-modal-body']//parent::form//div[@class='ant-space-item']//button")
 	private List <WebElement> form_buttons; 
 	@FindBy(xpath="(//div[@class='rc-virtual-list'])[4]")
@@ -263,8 +265,11 @@ public class Application_Locaters extends Repeat{
 	List<WebElement> state_options=wait_for_nested(Droplist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
 	return state_options;} 
 	public WebElement calender_date_select(){
-	wait_for_theElement(calender_date_select);
-	return calender_date_select;} 
+	try {wait_for_theElement(calender_date_select);
+	return calender_date_select;}
+	catch(Exception switch_to_backup_locater){
+		wait_for_theElement(Backup_calender_date_select);
+		return Backup_calender_date_select;}} 
 	public List<WebElement> Lead_category_options(){
 	WebElement Lead_Dropdownlist=Lead_Type_dropdown();
 	List<WebElement> lead_cat_options=wait_for_nested(Lead_Dropdownlist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
