@@ -1208,16 +1208,10 @@ public class Case_Appplications extends Header_Manager{
 		    		    CURRENT_LIEN_BALANCE_Values.put("Lien Balance"+n,  lienBalance_upto_2_decimal);
 		    		    RETURNED_AMT_Values.put("Paid Amount"+n,  paidAmount_upto_2_decimal);
 		        	});
-		           Report_Listen.log_print_in_report().log(Status.INFO,
-		        	        "<b>🟨 Actual:</b> Values inserted into TreeMaps for all lien rows. Now printing from TreeMaps in math-style for confirmation.");
-
-		           Report_Listen.log_print_in_report().log(Status.INFO,
-		        	        "<b>Step "+(step++)+":</b> Print lien values from TreeMaps (Math-style confirmation)<br>"
-		        	      + "<b>📘 Description:</b> Fetch stored values using TreeMap keys and print them row-wise to confirm correct insertion + retrieval.<br>"
-		        	      + "<b>✅ Expected:</b> Each printed row should show values coming from TreeMaps in a single-line format.");
 		           
-		           
-		           
+		            // =========================
+			        // 2) Fetch from TreeMaps (loop two)
+			        // =========================
 		           
 		           IntStream.range(0, no_of_rows).forEach(n -> {
 
