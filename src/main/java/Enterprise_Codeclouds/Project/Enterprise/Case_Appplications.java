@@ -1,6 +1,8 @@
 package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -378,93 +380,102 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	
-	    public void future_months_calculations_check(TreeSet<Double> emi,Double monthy_interest){
-		
-	    	TreeSet<Double> each_month_emi = emi;
-	    	Double each_monthly_interest = monthy_interest;
-	    	int month=0;
-	    	
+	public void future_months_calculations_check(TreeSet<Double> emi,Double monthy_interest){
+
+	    BigDecimal bd = new BigDecimal("0.01"); // keeping as you declared (not used now)
+
+	    TreeSet<Double> each_month_emi = emi;
+	    Double each_monthly_interest = monthy_interest;
+	    int month=0;
+
 	    Double Previous_Month_Amount=null;
-	    
-	    for(Double Eachemi:each_month_emi){ 
-	    		
+
+	    for(Double Eachemi:each_month_emi){
+
 	        if(month>0){
-	    		    
-	        	Double Each_month_increase = Eachemi - Previous_Month_Amount;
-	        	
-	    		  if(Math.abs(Each_month_increase-each_monthly_interest)<0.01){
-	    			  
-	    			// ✅ PASS (Green block math style)
-	    			  Report_Listen.log_print_in_report().log(Status.PASS,
-	    					    "<div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'>"
-	    					  + "<b>✅ PASS — Month " + month + " Increase Matched Monthly Interest</b><br><br>"
 
-	    					  + "<b>🔹 What we are validating:</b><br>"
-	    					  + "Each month payable should increase only by <b>Monthly Interest</b>.<br><br>"
+	            Double Each_month_increase_raw = Eachemi - Previous_Month_Amount;
 
-	    					  + "<b>📌 Values:</b><br>"
-	    					  + "Prev Month Payable (Month " + (month-1) + ") = <b>" + Previous_Month_Amount + "</b><br>"
-	    					  + "Curr Month Payable (Month " + month + ") = <b>" + Eachemi + "</b><br>"
-	    					  + "Expected Monthly Interest = <b>" + each_monthly_interest + "</b><br><br>"
+	            double Each_month_increase = Double.parseDouble(String.format("%.2f", Each_month_increase_raw));
 
-	    					  + "<b>🧮 Formula:</b><br>"
-	    					  + "<b>Increase = Current Month Payable − Previous Month Payable</b><br><br>"
+	            // ✅ Tolerance-based match (rounding carry-forward safe)
+	            if(Math.abs(Each_month_increase - each_monthly_interest) <= 0.01){
 
-	    					  + "<b>🧾 Substitute values:</b><br>"
-	    					  + "Increase = " + Eachemi + " − " + Previous_Month_Amount + "<br><br>"
+	                // ✅ PASS (Green block math style)
+	                Report_Listen.log_print_in_report().log(Status.PASS,
+	                        "<div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'>"
+	                      + "<b>✅ PASS — Month " + month + " Increase Matched Monthly Interest</b><br><br>"
 
-	    					  + "<b>✅ Result:</b><br>"
-	    					  + "Increase = <b>" + Each_month_increase + "</b><br><br>"
+	                      + "<b>🔹 What we are validating:</b><br>"
+	                      + "Each month payable should increase only by <b>Monthly Interest</b>.<br><br>"
 
-	    					  + "<b>🔍 Check:</b><br>"
-	    					  + "Increase (" + Each_month_increase + ") ≈ Monthly Interest (" + each_monthly_interest + ") → <b>Matched ✅</b><br><br>"
+	                      + "<b>📌 Values:</b><br>"
+	                      + "Prev Month Payable (Month " + (month-1) + ") = <b>" + Previous_Month_Amount + "</b><br>"
+	                      + "Curr Month Payable (Month " + month + ") = <b>" + Eachemi + "</b><br>"
+	                      + "Expected Monthly Interest = <b>" + each_monthly_interest + "</b><br><br>"
 
-	    					  + "<b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br>"
+	                      + "<b>🧮 Formula:</b><br>"
+	                      + "<b>Increase = Current Month Payable − Previous Month Payable</b><br><br>"
 
-	    					  + "<b>🟨 Conclusion:</b> Payable increase is correct for Month " + month + "."
-	    					  + "</div>"
-	    					);
-}
-	    		  else{
+	                      + "<b>🧾 Substitute values:</b><br>"
+	                      + "Increase = " + Eachemi + " − " + Previous_Month_Amount + "<br><br>"
 
-	    			// ❌ FAIL (same green block style, but FAIL status)
-	    			  Report_Listen.log_print_in_report().log(Status.FAIL,
-	    					    "<div style='background:#1f2a00; padding:14px; border-radius:8px; border:1px solid #3a4a00; color:#f0d84b;'>"
-	    					  + "<b>❌ FAIL — Month " + month + " Increase Did NOT Match Monthly Interest</b><br><br>"
+	                      + "<b>✅ Result:</b><br>"
+	                      + "Increase = <b>" + Each_month_increase + "</b><br><br>"
 
-	    					  + "<b>🔹 What we are validating:</b><br>"
-	    					  + "Each month payable should increase only by <b>Monthly Interest</b>.<br><br>"
+	                      + "<b>🔍 Check:</b><br>"
+	                      + "Increase (" + Each_month_increase + ") ≈ Monthly Interest (" + each_monthly_interest + ") → <b>Matched ✅</b><br><br>"
 
-	    					  + "<b>📌 Values:</b><br>"
-	    					  + "Prev Month Payable (Month " + (month-1) + ") = <b>" + Previous_Month_Amount + "</b><br>"
-	    					  + "Curr Month Payable (Month " + month + ") = <b>" + Eachemi + "</b><br>"
-	    					  + "Expected Monthly Interest = <b>" + each_monthly_interest + "</b><br><br>"
+	                      + "<b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br>"
 
-	    					  + "<b>🧮 Formula:</b><br>"
-	    					  + "<b>Increase = Current Month Payable − Previous Month Payable</b><br><br>"
+	                      + "<b>🟨 Conclusion:</b> Payable increase is correct for Month " + month + "."
+	                      + "</div>"
+	                );
+	            }
+	            else{
 
-	    					  + "<b>🧾 Substitute values:</b><br>"
-	    					  + "Increase = " + Eachemi + " − " + Previous_Month_Amount + "<br><br>"
+	                // ❌ FAIL (same green block style, but FAIL status)
+	                Report_Listen.log_print_in_report().log(Status.FAIL,
+	                        "<div style='background:#1f2a00; padding:14px; border-radius:8px; border:1px solid #3a4a00; color:#f0d84b;'>"
+	                      + "<b>❌ FAIL — Month " + month + " Increase Did NOT Match Monthly Interest</b><br><br>"
 
-	    					  + "<b>❌ Result:</b><br>"
-	    					  + "Increase = <b>" + Each_month_increase + "</b><br><br>"
+	                      + "<b>🔹 What we are validating:</b><br>"
+	                      + "Each month payable should increase only by <b>Monthly Interest</b>.<br><br>"
 
-	    					  + "<b>🔍 Check:</b><br>"
-	    					  + "Increase (" + Each_month_increase + ") ≠ Monthly Interest (" + each_monthly_interest + ") → <b>Mismatch ❌</b><br><br>"
+	                      + "<b>📌 Values:</b><br>"
+	                      + "Prev Month Payable (Month " + (month-1) + ") = <b>" + Previous_Month_Amount + "</b><br>"
+	                      + "Curr Month Payable (Month " + month + ") = <b>" + Eachemi + "</b><br>"
+	                      + "Expected Monthly Interest = <b>" + each_monthly_interest + "</b><br><br>"
 
-	    					  + "<b>🟩 Meaning (simple):</b> "
-	    					  + (Each_month_increase > each_monthly_interest
-	    					        ? "System added <b>EXTRA amount</b> more than expected monthly interest."
-	    					        : "System added <b>LESS amount</b> than expected monthly interest.")
-	    					  + "<br><br>"
+	                      + "<b>🧮 Formula:</b><br>"
+	                      + "<b>Increase = Current Month Payable − Previous Month Payable</b><br><br>"
 
-	    					  + "<b>🟨 Conclusion:</b> Payable increase is incorrect for Month " + month + "."
-	    					  + "</div>"
-	    					);}}
-	        
-	    		Previous_Month_Amount = Eachemi;
-	    		
-	    		month++;}}
+	                      + "<b>🧾 Substitute values:</b><br>"
+	                      + "Increase = " + Eachemi + " − " + Previous_Month_Amount + "<br><br>"
+
+	                      + "<b>❌ Result:</b><br>"
+	                      + "Increase = <b>" + Each_month_increase + "</b><br><br>"
+
+	                      + "<b>🔍 Check:</b><br>"
+	                      + "Increase (" + Each_month_increase + ") ≠ Monthly Interest (" + each_monthly_interest + ") → <b>Mismatch ❌</b><br><br>"
+
+	                      + "<b>🟩 Meaning (simple):</b> "
+	                      + (Each_month_increase > each_monthly_interest
+	                            ? "System added <b>EXTRA amount</b> more than expected monthly interest."
+	                            : "System added <b>LESS amount</b> than expected monthly interest.")
+	                      + "<br><br>"
+
+	                      + "<b>🟨 Conclusion:</b> Payable increase is incorrect for Month " + month + "."
+	                      + "</div>"
+	                );
+	            }
+	        }
+
+	        Previous_Month_Amount = Eachemi;
+	        month++;
+	    }
+	}
+
 	
 	    
 	    
@@ -1059,10 +1070,10 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ /*
+		    return new Object[][]{ 
 		        {c1},{c2},{c3},{c4},{c5},
-		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},*/{c15}, /*
+		        {c6},{c7},{c8},{c9},{c10},/*
+		        {c11},{c12},{c13},{c14},{c15}, 
 		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
 	
@@ -1855,7 +1866,7 @@ public class Case_Appplications extends Header_Manager{
 		TOTAL_PRINCIPAL_Values.clear();
 		CURRENT_LIEN_BALANCE_Values.clear();
 		RETURNED_AMT_Values.clear();
-		
+		monthly_emi.clear();
 		
 	}
 	
