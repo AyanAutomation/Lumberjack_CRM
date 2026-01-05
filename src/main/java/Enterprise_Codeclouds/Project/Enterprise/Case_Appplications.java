@@ -110,7 +110,9 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(500);	
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> State selected from list for input = "+data.get("State"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Date of Incident and confirm date selection.");
-		p.form_inputs().get(3).sendKeys(data.get("Date of Incident"));
+		WebElement calender_field = p.form_inputs().get(3);
+		calender_field.sendKeys(data.get("Date of Incident"));
+		calender_field.click();
 		p.calender_date_select().click();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+data.get("Date of Incident"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
@@ -1321,7 +1323,9 @@ public class Case_Appplications extends Header_Manager{
 	    	   p.Incident_type_dropdown();
 	   		   p.Incident_options().get(0).click();
 	   		   inputs.get(2).sendKeys(data.get("Payer Name"));
-	   		   inputs.get(3).sendKeys(data.get("Payment Date"));
+	   		   WebElement Calender_field = inputs.get(3);
+	   		   Calender_field.sendKeys(data.get("Payment Date"));
+	   		   Calender_field.click();
 	   		   p.calender_date_select().click();
 	   		   inputs.get(4).sendKeys(data.get("Amount Received"));
 	   		   p.textArea().sendKeys(data.get("Notes / Remarks"));

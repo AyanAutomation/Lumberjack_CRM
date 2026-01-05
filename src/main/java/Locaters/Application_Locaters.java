@@ -268,8 +268,12 @@ public class Application_Locaters extends Repeat{
 	try {wait_for_theElement(calender_date_select);
 	return calender_date_select;}
 	catch(Exception switch_to_backup_locater){
-		wait_for_theElement(Backup_calender_date_select);
-		return Backup_calender_date_select;}} 
+	try {Thread.sleep(800);
+	wait_for_theElement(Backup_calender_date_select);
+	return Backup_calender_date_select;
+	}catch(Exception mmo)
+	{By Date_element = By.xpath("//*[@class='ant-picker-content']//*[@class='ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view ant-picker-cell-today']");
+	return wait_for_presenceBy(Date_element);}}} 
 	public List<WebElement> Lead_category_options(){
 	WebElement Lead_Dropdownlist=Lead_Type_dropdown();
 	List<WebElement> lead_cat_options=wait_for_nested(Lead_Dropdownlist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
