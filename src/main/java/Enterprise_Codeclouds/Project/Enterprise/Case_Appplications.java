@@ -1134,7 +1134,7 @@ public class Case_Appplications extends Header_Manager{
 		   WebElement Status_filter = p.Application_status_filter();
 		   Status_filter.click();
 		   Application_Filter_Option_Selector("Funded");
-		   p.rows().get(0).click();
+		   p.rows().get(1).click();
 		   Thread.sleep(800);
 		   List<WebElement> Case_Tags;
 		   try {
@@ -1184,11 +1184,8 @@ public class Case_Appplications extends Header_Manager{
 		           List<WebElement> Fifth_cells =  p.First_table_fifth_column_cellData();
 		           List<WebElement> Sixth_cells =  p.First_table_sixth_column_cellData();
 		           List<WebElement> Seventh_cells = p.First_table_seventh_column_cellData();
-		           Report_Listen.log_print_in_report().log(Status.INFO,
-		        	        "<b>Step "+(step++)+":</b> Insert lien table values into TreeMaps (Row-wise)<br>"
-		        	      + "<b>📘 Description:</b> Read each lien row values from table columns and store them into TreeMaps using row-indexed keys.<br>"
-		        	      + "<b>✅ Expected:</b> Each row’s values should be stored correctly under keys: Lien AmountsN, Principal AmountN, Lien BalanceN, Paid AmountN.");
-
+		           
+		           
 		        // =========================
 		        // 1) INSERT into TreeMaps (one loop)
 		        // =========================
@@ -1239,51 +1236,61 @@ public class Case_Appplications extends Header_Manager{
 
 		        	 // ✅ Difference (2-decimal) for client-friendly confirmation
 		        	    Double difference_upto_2_decimal = Double.parseDouble(String.format("%.2f",Math.abs(outstandingAfterPayment_calculated - currentLienBalance)));
-		        	    // 🎨 Non-green client-friendly block style (navy)
-		        	    String blockStyle = "background:#10192a; padding:12px; border-radius:10px; border:1px solid #2a3b66; color:#e8eefc;";
+		        	    // ✅ These 2 values you wanted to print
+		        	       String Result_text = (Math.abs(outstandingAfterPayment_calculated - currentLienBalance) < 0.01) ? "PASS" : "FAIL";
+		        	       String Difference_text = String.format("%.2f", difference_upto_2_decimal);
 
-		        	    String payoff_log = String.format(
-		        	            "<div style='%s'>"
-		        	          + "<b>🔹 Payoff Validation – Lien Row %d</b><br><br>"
+		        	       // 🎨 Non-green client-friendly block style (navy)
+		        	       String blockStyle = "background:#10192a; padding:12px; border-radius:10px; border:1px solid #2a3b66; color:#e8eefc;";
 
-		        	          + "<b>📘 What is being validated:</b> Outstanding should update correctly after a payment is applied.<br>"
-		        	          + "<b>✅ Expected Rule:</b> (Balance Before Payment − Paid Amount) = Current Outstanding<br><br>"
+		        	       String payoff_log = String.format(
+		        	    	        "<div style='%s'>"
+		        	    	      + "<b>🔹 Payoff Validation – Lien Row %d</b><br><br>"
 
-		        	          + "<b>📌 Values from table:</b><br>"
-		        	          + "<b>Lien Amount (log only):</b> %.2f<br>"
-		        	          + "<b>Total Principal (log only):</b> %.2f<br>"
-		        	          + "<b>Balance Before Payment (derived):</b> %.2f<br>"
-		        	          + "<b>Paid Amount:</b> %.2f<br>"
-		        	          + "<b>Outstanding After Payment (Current Outstanding):</b> %.2f<br><br>"
+		        	    	      + "<b>📘 What is being validated:</b> Outstanding should update correctly after a payment is applied.<br>"
+		        	    	      + "<b>✅ Expected Rule:</b> (Balance Before Payment − Paid Amount) = Current Outstanding<br><br>"
 
-		        	          + "<b>🧮 Simple Math Proof:</b><br>"
-		        	          + "<b>1) Balance Before Payment (derived)</b><br>"
-		        	          + "Current Outstanding + Paid Amount<br>"
-		        	          + "%.2f + %.2f<br>"
-		        	          + "──────────────<br>"
-		        	          + "<b>%.2f</b><br><br>"
+		        	    	      + "<b>📌 Values from table:</b><br>"
+		        	    	      + "<b>Lien Amount (log only):</b> %.2f<br>"
+		        	    	      + "<b>Total Principal (log only):</b> %.2f<br>"
+		        	    	      + "<b>Balance Before Payment (derived):</b> %.2f<br>"
+		        	    	      + "<b>Paid Amount:</b> %.2f<br>"
+		        	    	      + "<b>Outstanding After Payment (Current Outstanding):</b> %.2f<br><br>"
 
-		        	          + "<b>2) Outstanding After Payment (calculated)</b><br>"
-		        	          + "Balance Before Payment − Paid Amount<br>"
-		        	          + "%.2f − %.2f<br>"
-		        	          + "──────────────<br>"
-		        	          + "<b>%.2f</b><br><br>"
+		        	    	      + "<b>🧮 Simple Math Proof:</b><br>"
+		        	    	      + "<b>1) Balance Before Payment (derived)</b><br>"
+		        	    	      + "Current Outstanding + Paid Amount<br>"
+		        	    	      + "%.2f + %.2f<br>"
+		        	    	      + "──────────────<br>"
+		        	    	      + "<b>%.2f</b><br><br>"
 
-		        	          + "<b>✅ Result:</b> %s<br>"
-		        	          + "<b>Difference (Calculated vs Current):</b> %.2f (PASS if &lt; 0.01)"
-		        	          + "</div>",
+		        	    	      + "<b>2) Outstanding After Payment (calculated)</b><br>"
+		        	    	      + "Balance Before Payment − Paid Amount<br>"
+		        	    	      + "%.2f − %.2f<br>"
+		        	    	      + "──────────────<br>"
+		        	    	      + "<b>%.2f</b><br><br>"
 
-		        	            blockStyle,
-		        	            (n + 1),
+		        	    	      + "<b>✅ Result:</b> %s<br>"
+		        	    	      + "<b>Calculated (Outstanding After Payment):</b> %.2f<br>"
+		        	    	      + "<b>Current (Outstanding from Table):</b> %.2f<br>"
+		        	    	      + "<b>Difference (Calculated vs Current):</b> %.2f (PASS if &lt; 0.01)"
+		        	    	      + "</div>",
 
-		        	            lienAmount, principal,
-		        	            lienBalanceBeforePayment_derived, paidAmount, currentLienBalance,
+		        	    	        blockStyle,
+		        	    	        (n + 1),
 
-		        	            currentLienBalance, paidAmount, lienBalanceBeforePayment_derived,
+		        	    	        lienAmount, principal,
+		        	    	        lienBalanceBeforePayment_derived, paidAmount, currentLienBalance,
 
-		        	            lienBalanceBeforePayment_derived, paidAmount, outstandingAfterPayment_calculated,
+		        	    	        currentLienBalance, paidAmount, lienBalanceBeforePayment_derived,
 
-		        	            (Math.abs(outstandingAfterPayment_calculated - currentLienBalance) < 0.01) ? "PASS" : "FAIL", difference_upto_2_decimal);
+		        	    	        lienBalanceBeforePayment_derived, paidAmount, outstandingAfterPayment_calculated,
+
+		        	    	        (Math.abs(outstandingAfterPayment_calculated - currentLienBalance) < 0.01) ? "PASS" : "FAIL",
+		        	    	        outstandingAfterPayment_calculated,
+		        	    	        currentLienBalance,
+		        	    	        difference_upto_2_decimal
+		        	    	);
 
 		        	    Report_Listen.log_print_in_report().log((Math.abs(outstandingAfterPayment_calculated - currentLienBalance) < 0.01) ? Status.PASS : Status.FAIL, payoff_log);});}
 	   
@@ -1295,13 +1302,19 @@ public class Case_Appplications extends Header_Manager{
 	        	SIde_Menu_Handler sd = new SIde_Menu_Handler();
 	        	Application_Locaters p = new Application_Locaters(d);
 	        	Repeat rp = new Repeat(d);
+	        	Login_Locaters lg = new Login_Locaters(d);
 	        	
 	        WebElement case_Dropdown;	
 	        try{case_Dropdown=p.Case_Action_Dropdown();}
 	        catch(Exception not_in_Case_Details) {
 	           sd.Side_menu_option_clicker("Applications", d,"N/A");
 	 		   p.landed_in_applicationList_confirmation();
-	 		  p.rows().get(0).click();
+	 		   p.Filter_clear().click();
+			  // rp.wait_for_invisibility(p.list_loader());
+			   WebElement Status_filter = p.Application_status_filter();
+			   Status_filter.click();
+			   Application_Filter_Option_Selector("Funded");
+	 		   p.rows().get(0).click();
 			   Thread.sleep(800);
 			   List<WebElement> Case_Tags;
 			   try {
@@ -1334,6 +1347,10 @@ public class Case_Appplications extends Header_Manager{
 	   		   p.calender_date_select().click();
 	   		   inputs.get(4).sendKeys(data.get("Amount Received"));
 	   		   p.textArea().sendKeys(data.get("Notes / Remarks"));
+	   		   List<WebElement> popup_modal_buttons = p.poup_up_form_buttons();
+	   		   popup_modal_buttons.get(0).click();
+	   		   Login_negative_testcases.Toast_printer(lg.toast().getText().trim());
+	   		   
 	        }
 	        
 	        @DataProvider
@@ -1504,10 +1521,10 @@ public class Case_Appplications extends Header_Manager{
 	            d20.put("Notes / Remarks", "Attorney office cheque received; verify cheque number and payee line; post after clearance; email confirmation requested from firm admin.");
 
 	            return new Object[][]{
-	                    {d1},/*{d2},{d3},{d4},{d5},
+	                    {d1},{d2},{d3},{d4},{d5},
 	                    {d6},{d7},{d8},{d9},{d10},
 	                    {d11},{d12},{d13},{d14},{d15},
-	                    {d16},{d17},{d18},{d19},{d20} */
+	                    {d16},{d17},{d18},{d19},{d20} 
 	            };
 	        }
 
