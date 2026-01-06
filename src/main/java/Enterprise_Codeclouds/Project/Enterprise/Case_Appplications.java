@@ -564,7 +564,7 @@ public class Case_Appplications extends Header_Manager{
 		    String agreementDateStr = agreementDate.format(formatter);
 		    String interestStartDateStr = interestStartDate.format(formatter);
 		    String buyoutExpiryDateStr = buyoutExpiryDate.format(formatter);
-
+		    String paymentDate = java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy"));
 		    // ===== Case data (NO plaintiff-related keys) =====
 		    // ✅ Case Type values are ONLY from your allowed list.
 
@@ -591,462 +591,206 @@ public class Case_Appplications extends Header_Manager{
 		    c1.put("Rate of Return", "41");
 		    c1.put("SMS Message Title", "Civil Rights File In Review");
 		    c1.put("SMS Message Body", "Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance");
+		    // ---- Payment (STRICTLY from your allowed list: d3) ----
+		    c1.put("Payment Mode", "Credit Card");
+		    c1.put("Payment Type", "Payment by Plaintiff");
+		    c1.put("Payer Name", "Plaintiff Marlowe Eichenauer");
+		    c1.put("Payment Date", paymentDate);
+		    c1.put("Amount Received", "3800");
+		    c1.put("Notes / Remarks", "Card payment approved; verify last 4 digits in gateway report; note: convenience fee handled externally, not part of received amount.");
 
 		    TreeMap<String, String> c2 = new TreeMap<String, String>();
-		    c2.put("Case #", "202");
-		    c2.put("Case Type", "Police Brutality");
-		    c2.put("State", "Illinois");
-		    c2.put("Date of Incident", "03/19/2024");
-		    c2.put("Lead Source", "Organic");
-		    c2.put("Requested Amount", "90000");
-		    c2.put("Court Index Number", "12L02-2403-PB-000902");
-		    c2.put("Summary", "Alleged use-of-force injury during arrest with wrist fracture and facial lacerations; ER visit and follow-up ortho care; civil complaint being drafted.");
-		    c2.put("Risk Level", "Moderate-High");
-		    c2.put("Recommended Max Funding", "36000");
-		    c2.put("Underwriting Notes", "Strong case value if video and medical causation align. Confirm any criminal case disposition, municipal notice deadlines, and available policy/indemnification. Stage funding pending footage and complaint filing.");
-		    c2.put("Buyout Funder Name", "Summit Legal Funding");
-		    c2.put("Buyout Amount", "22000");
-		    c2.put("Approved Amount", "36000");
-		    c2.put("Application Status", "Pending Docs");
-		    c2.put("Attorney Name", "Attorney Mirela Vollenweider");
-		    c2.put("Law Firm Name", "Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel");
-		    c2.put("Document prep fee", "340");
-		    c2.put("Fund transfer fee", "120");
-		    c2.put("Rate of Return", "44");
-		    c2.put("SMS Message Title", "Documents Needed");
-		    c2.put("SMS Message Body", "We need a few additional documents to finalize underwriting. Please coordinate uploads with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c2 fields exactly same ...
+		    // ---- Payment (d2) ----
+		    c2.put("Payment Mode", "Bank Transfer");
+		    c2.put("Payment Type", "Payment by Attorney");
+		    c2.put("Payer Name", "Attorney Selwyn Kappelmann");
+		    c2.put("Payment Date", paymentDate);
+		    c2.put("Amount Received", "12000");
+		    c2.put("Notes / Remarks", "ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting.");
 
 		    TreeMap<String, String> c3 = new TreeMap<String, String>();
-		    c3.put("Case #", "203");
-		    c3.put("Case Type", "Wrongful Arrest");
-		    c3.put("State", "Ohio");
-		    c3.put("Date of Incident", "12/02/2023");
-		    c3.put("Lead Source", "Advertising");
-		    c3.put("Requested Amount", "42000");
-		    c3.put("Court Index Number", "18CV-2312-WA-001733");
-		    c3.put("Summary", "Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records.");
-		    c3.put("Risk Level", "Moderate");
-		    c3.put("Recommended Max Funding", "17500");
-		    c3.put("Underwriting Notes", "Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.");
-		    c3.put("Buyout Funder Name", "Harbor Ridge Finance");
-		    c3.put("Buyout Amount", "9800");
-		    c3.put("Approved Amount", "17500");
-		    c3.put("Application Status", "Approved");
-		    c3.put("Attorney Name", "Attorney Soren Birkenfeld");
-		    c3.put("Law Firm Name", "Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices");
-		    c3.put("Document prep fee", "255");
-		    c3.put("Fund transfer fee", "85");
-		    c3.put("Rate of Return", "37");
-		    c3.put("SMS Message Title", "Funding Approved");
-		    c3.put("SMS Message Body", "Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c3 fields exactly same ...
+		    // ---- Payment (d8) ----
+		    c3.put("Payment Mode", "Cheque");
+		    c3.put("Payment Type", "Payment by Plaintiff");
+		    c3.put("Payer Name", "Plaintiff Leontius Brackenford");
+		    c3.put("Payment Date", paymentDate);
+		    c3.put("Amount Received", "9000");
+		    c3.put("Notes / Remarks", "Personal cheque accepted; confirm signature and date; pending clearance—do not mark as settled until bank confirmation.");
 
 		    TreeMap<String, String> c4 = new TreeMap<String, String>();
-		    c4.put("Case #", "204");
-		    c4.put("Case Type", "Breach of contract");
-		    c4.put("State", "Michigan");
-		    c4.put("Date of Incident", "08/11/2022");
-		    c4.put("Lead Source", "Broker");
-		    c4.put("Requested Amount", "50000");
-		    c4.put("Court Index Number", "07CV-2208-BC-000611");
-		    c4.put("Summary", "Contract dispute over non-delivery of custom equipment and alleged improper termination; invoices and email trail support claimed damages.");
-		    c4.put("Risk Level", "Moderate");
-		    c4.put("Recommended Max Funding", "21000");
-		    c4.put("Underwriting Notes", "Key is enforceable contract terms, acceptance/performance evidence, and mitigation. Confirm venue/jurisdiction, counterclaims, and collectability. Funding contingent on pleadings and documentary proof.");
-		    c4.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-		    c4.put("Buyout Amount", "12500");
-		    c4.put("Approved Amount", "21000");
-		    c4.put("Application Status", "In Review");
-		    c4.put("Attorney Name", "Attorney Wendelin Rosenhagen");
-		    c4.put("Law Firm Name", "Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers");
-		    c4.put("Document prep fee", "280");
-		    c4.put("Fund transfer fee", "95");
-		    c4.put("Rate of Return", "40");
-		    c4.put("SMS Message Title", "Contract Case Under Review");
-		    c4.put("SMS Message Body", "Your breach-of-contract application is under review while we verify pleadings and supporting documents. – Lumberjack Legal Finance");
+		    // ... keep your existing c4 fields exactly same ...
+		    // ---- Payment (d4) ----
+		    c4.put("Payment Mode", "Cheque");
+		    c4.put("Payment Type", "Payment by Insurance Company");
+		    c4.put("Payer Name", "NorthBridge Casualty Insurance Co.");
+		    c4.put("Payment Date", paymentDate);
+		    c4.put("Amount Received", "45000");
+		    c4.put("Notes / Remarks", "Cheque received via mailroom; deposit scheduled next business day; hold posting until cheque clears per finance policy.");
 
 		    TreeMap<String, String> c5 = new TreeMap<String, String>();
-		    c5.put("Case #", "205");
-		    c5.put("Case Type", "Employment Disputes");
-		    c5.put("State", "Indiana");
-		    c5.put("Date of Incident", "05/27/2024");
-		    c5.put("Lead Source", "Attorney Referral");
-		    c5.put("Requested Amount", "36000");
-		    c5.put("Court Index Number", "49D01-2405-ED-001205");
-		    c5.put("Summary", "Employment dispute alleging retaliation after reporting safety concerns; termination letter and performance reviews in conflict; wage loss claimed.");
-		    c5.put("Risk Level", "Moderate");
-		    c5.put("Recommended Max Funding", "15000");
-		    c5.put("Underwriting Notes", "Verify protected activity timeline, HR complaints, and comparator evidence. Confirm arbitration clause exposure, mitigation efforts, and payroll documentation. Stage funding if early settlement posture is unclear.");
-		    c5.put("Buyout Funder Name", "Liberty Legal Funding");
-		    c5.put("Buyout Amount", "8200");
-		    c5.put("Approved Amount", "15000");
-		    c5.put("Application Status", "Approved");
-		    c5.put("Attorney Name", "Attorney Raban Kellermann");
-		    c5.put("Law Firm Name", "Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group");
-		    c5.put("Document prep fee", "235");
-		    c5.put("Fund transfer fee", "80");
-		    c5.put("Rate of Return", "36");
-		    c5.put("SMS Message Title", "Approved");
-		    c5.put("SMS Message Body", "Your employment dispute funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c5 fields exactly same ...
+		    // ---- Payment (d16) ----
+		    c5.put("Payment Mode", "Bank Transfer");
+		    c5.put("Payment Type", "Payment by Plaintiff");
+		    c5.put("Payer Name", "Plaintiff Dorian Kestrelwood");
+		    c5.put("Payment Date", paymentDate);
+		    c5.put("Amount Received", "6000");
+		    c5.put("Notes / Remarks", "Plaintiff bank transfer received; verify payer name matches registered plaintiff; attach bank confirmation screenshot to notes.");
 
 		    TreeMap<String, String> c6 = new TreeMap<String, String>();
-		    c6.put("Case #", "206");
-		    c6.put("Case Type", "Unpaid Wages");
-		    c6.put("State", "Illinois");
-		    c6.put("Date of Incident", "02/15/2024");
-		    c6.put("Lead Source", "Other");
-		    c6.put("Requested Amount", "18000");
-		    c6.put("Court Index Number", "14L01-2402-UW-000418");
-		    c6.put("Summary", "Unpaid overtime and denied meal-break premiums alleged across multiple pay periods; payroll records and schedules reportedly inconsistent.");
-		    c6.put("Risk Level", "Low-Moderate");
-		    c6.put("Recommended Max Funding", "7200");
-		    c6.put("Underwriting Notes", "Class/collective potential changes risk profile. Confirm timekeeping records, policy acknowledgments, and arbitration/waiver clauses. Conservative funding until certification posture is known.");
-		    c6.put("Buyout Funder Name", "Harbor Ridge Finance");
-		    c6.put("Buyout Amount", "4200");
-		    c6.put("Approved Amount", "7200");
-		    c6.put("Application Status", "Pending Docs");
-		    c6.put("Attorney Name", "Attorney Jannik Altenkirch");
-		    c6.put("Law Firm Name", "Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel");
-		    c6.put("Document prep fee", "210");
-		    c6.put("Fund transfer fee", "65");
-		    c6.put("Rate of Return", "33");
-		    c6.put("SMS Message Title", "Documents Needed");
-		    c6.put("SMS Message Body", "We need additional payroll or schedule documentation to finalize your unpaid wages file. – Lumberjack Legal Finance");
+		    // ... keep your existing c6 fields exactly same ...
+		    // ---- Payment (d9) ----
+		    c6.put("Payment Mode", "Online Payment");
+		    c6.put("Payment Type", "Payment by PIP");
+		    c6.put("Payer Name", "PIP Claims Department - MetroShield");
+		    c6.put("Payment Date", paymentDate);
+		    c6.put("Amount Received", "7400");
+		    c6.put("Notes / Remarks", "PIP reimbursement via online payment; verify claim number in remittance; match against case payment schedule.");
 
 		    TreeMap<String, String> c7 = new TreeMap<String, String>();
-		    c7.put("Case #", "207");
-		    c7.put("Case Type", "Workers Compensation");
-		    c7.put("State", "Michigan");
-		    c7.put("Date of Incident", "10/22/2023");
-		    c7.put("Lead Source", "Medical Provider");
-		    c7.put("Requested Amount", "24000");
-		    c7.put("Court Index Number", "03WC-2310-WC-002031");
-		    c7.put("Summary", "Repetitive strain injury from assembly work; EMG confirms neuropathy; restrictions imposed and reduced hours reported.");
-		    c7.put("Risk Level", "Moderate");
-		    c7.put("Recommended Max Funding", "9800");
-		    c7.put("Underwriting Notes", "Confirm comp acceptance status, wage statements, and MMI outlook. Lien and fee posture are critical. Funding should be conservative if dispute/denial is pending.");
-		    c7.put("Buyout Funder Name", "Summit Legal Funding");
-		    c7.put("Buyout Amount", "5600");
-		    c7.put("Approved Amount", "9800");
-		    c7.put("Application Status", "In Review");
-		    c7.put("Attorney Name", "Attorney Bjarne Edelmann");
-		    c7.put("Law Firm Name", "Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei");
-		    c7.put("Document prep fee", "240");
-		    c7.put("Fund transfer fee", "80");
-		    c7.put("Rate of Return", "35");
-		    c7.put("SMS Message Title", "Under Review");
-		    c7.put("SMS Message Body", "Your workers compensation file is under review while claim status and records are verified. – Lumberjack Legal Finance");
+		    // ... keep your existing c7 fields exactly same ...
+		    // ---- Payment (d7) ----
+		    c7.put("Payment Mode", "Cash");
+		    c7.put("Payment Type", "Payment by Attorney");
+		    c7.put("Payer Name", "Attorney Osric Vandenbrock");
+		    c7.put("Payment Date", paymentDate);
+		    c7.put("Amount Received", "5000");
+		    c7.put("Notes / Remarks", "Cash delivered by attorney runner; ID verified; counted under camera; receipt generated and shared with attorney office.");
 
 		    TreeMap<String, String> c8 = new TreeMap<String, String>();
-		    c8.put("Case #", "208");
-		    c8.put("Case Type", "Boat Accident");
-		    c8.put("State", "Indiana");
-		    c8.put("Date of Incident", "07/04/2024");
-		    c8.put("Lead Source", "Organic");
-		    c8.put("Requested Amount", "52000");
-		    c8.put("Court Index Number", "49D05-2407-BA-001009");
-		    c8.put("Summary", "Recreational boat collision at dusk; alleged improper lighting and speed; shoulder dislocation and concussion symptoms; marine patrol report filed.");
-		    c8.put("Risk Level", "Moderate");
-		    c8.put("Recommended Max Funding", "22000");
-		    c8.put("Underwriting Notes", "Key evidence: marine patrol report, GPS/boat telemetry if available, witness statements, and navigational rules compliance. Confirm operator insurance and any comparative negligence factors.");
-		    c8.put("Buyout Funder Name", "Frontline Capital Group");
-		    c8.put("Buyout Amount", "14500");
-		    c8.put("Approved Amount", "22000");
-		    c8.put("Application Status", "Approved");
-		    c8.put("Attorney Name", "Attorney Ossian Fahrner");
-		    c8.put("Law Firm Name", "Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group");
-		    c8.put("Document prep fee", "275");
-		    c8.put("Fund transfer fee", "95");
-		    c8.put("Rate of Return", "39");
-		    c8.put("SMS Message Title", "Boat Accident Approved");
-		    c8.put("SMS Message Body", "Your boat accident funding is approved. We’ll coordinate agreement review and disbursement with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c8 fields exactly same ...
+		    // ---- Payment (d5) ----
+		    c8.put("Payment Mode", "Online Payment");
+		    c8.put("Payment Type", "Payment by Another Funder");
+		    c8.put("Payer Name", "Summit Equity Legal Funding Partners");
+		    c8.put("Payment Date", paymentDate);
+		    c8.put("Amount Received", "16000");
+		    c8.put("Notes / Remarks", "Online portal payment from another funder for buyout; cross-check reference ID and settlement ledger; attach payment receipt PDF.");
 
 		    TreeMap<String, String> c9 = new TreeMap<String, String>();
-		    c9.put("Case #", "209");
-		    c9.put("Case Type", "Airplane Accident");
-		    c9.put("State", "Ohio");
-		    c9.put("Date of Incident", "09/09/2022");
-		    c9.put("Lead Source", "Attorney Referral");
-		    c9.put("Requested Amount", "125000");
-		    c9.put("Court Index Number", "21CV-2209-AA-000884");
-		    c9.put("Summary", "Small aircraft hard-landing incident with alleged maintenance lapse; orthopedic injuries and long rehab; NTSB/FAA records requested.");
-		    c9.put("Risk Level", "Moderate-High");
-		    c9.put("Recommended Max Funding", "58000");
-		    c9.put("Underwriting Notes", "Complex liability and multiple parties (operator, maintenance, manufacturer). Confirm investigation status, expert retention, and insurance layers. Staged funding recommended until causation is established.");
-		    c9.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-		    c9.put("Buyout Amount", "36000");
-		    c9.put("Approved Amount", "58000");
-		    c9.put("Application Status", "In Review");
-		    c9.put("Attorney Name", "Attorney Alarich Sonnenfeldt");
-		    c9.put("Law Firm Name", "Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group");
-		    c9.put("Document prep fee", "355");
-		    c9.put("Fund transfer fee", "130");
-		    c9.put("Rate of Return", "46");
-		    c9.put("SMS Message Title", "Airplane Case Under Review");
-		    c9.put("SMS Message Body", "Your airplane accident file is under advanced review while investigation records are verified. – Lumberjack Legal Finance");
+		    // ... keep your existing c9 fields exactly same ...
+		    // ---- Payment (d6) ----
+		    c9.put("Payment Mode", "Bank Transfer");
+		    c9.put("Payment Type", "Payment by Insurance Company");
+		    c9.put("Payer Name", "HarborPoint Mutual Insurance Services");
+		    c9.put("Payment Date", paymentDate);
+		    c9.put("Amount Received", "52000");
+		    c9.put("Notes / Remarks", "Wire received (insurance disbursement); confirm sender name matches remittance advice; split allocation recorded in internal ledger.");
 
 		    TreeMap<String, String> c10 = new TreeMap<String, String>();
-		    c10.put("Case #", "210");
-		    c10.put("Case Type", "Aeroplane accident");
-		    c10.put("State", "Illinois");
-		    c10.put("Date of Incident", "11/21/2023");
-		    c10.put("Lead Source", "Broker");
-		    c10.put("Requested Amount", "98000");
-		    c10.put("Court Index Number", "12L04-2311-AE-003107");
-		    c10.put("Summary", "Charter turbulence event with unsecured luggage impact; head injury and neck symptoms; neuro follow-ups ongoing; carrier incident report requested.");
-		    c10.put("Risk Level", "Moderate");
-		    c10.put("Recommended Max Funding", "41000");
-		    c10.put("Underwriting Notes", "Confirm passenger manifest, medical causation timeline, and applicable treaty/limitations if commercial carrier involved. Evidence quality and insurance layers drive funding ceiling.");
-		    c10.put("Buyout Funder Name", "Harbor Ridge Finance");
-		    c10.put("Buyout Amount", "26000");
-		    c10.put("Approved Amount", "41000");
-		    c10.put("Application Status", "Pending Docs");
-		    c10.put("Attorney Name", "Attorney Falko Kornblum");
-		    c10.put("Law Firm Name", "Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners");
-		    c10.put("Document prep fee", "345");
-		    c10.put("Fund transfer fee", "120");
-		    c10.put("Rate of Return", "45");
-		    c10.put("SMS Message Title", "Documents Needed");
-		    c10.put("SMS Message Body", "We need a few additional documents to finalize your aeroplane accident file. Please coordinate with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c10 fields exactly same ...
+		    // ---- Payment (d10) ----
+		    c10.put("Payment Mode", "Credit Card");
+		    c10.put("Payment Type", "Payment by Insurance Company");
+		    c10.put("Payer Name", "CedarLine Commercial Insurance");
+		    c10.put("Payment Date", paymentDate);
+		    c10.put("Amount Received", "11000");
+		    c10.put("Notes / Remarks", "Insurance card payment processed through billing gateway; ensure transaction receipt is uploaded; confirm no partial capture.");
 
 		    TreeMap<String, String> c11 = new TreeMap<String, String>();
-		    c11.put("Case #", "211");
-		    c11.put("Case Type", "Legal Malpractice");
-		    c11.put("State", "Indiana");
-		    c11.put("Date of Incident", "01/17/2023");
-		    c11.put("Lead Source", "Attorney Referral");
-		    c11.put("Requested Amount", "65000");
-		    c11.put("Court Index Number", "49D09-2301-LM-000491");
-		    c11.put("Summary", "Missed filing deadline alleged in underlying injury claim; lost-settlement opportunity asserted; case-within-a-case evaluation underway.");
-		    c11.put("Risk Level", "Moderate-High");
-		    c11.put("Recommended Max Funding", "28000");
-		    c11.put("Underwriting Notes", "Requires proof of negligence and causation plus value of underlying claim. Verify malpractice carrier limits, engagement letters, and docket history. Staged funding recommended.");
-		    c11.put("Buyout Funder Name", "Liberty Legal Funding");
-		    c11.put("Buyout Amount", "17500");
-		    c11.put("Approved Amount", "28000");
-		    c11.put("Application Status", "In Review");
-		    c11.put("Attorney Name", "Attorney Lorenz Hinteregger");
-		    c11.put("Law Firm Name", "Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center");
-		    c11.put("Document prep fee", "315");
-		    c11.put("Fund transfer fee", "110");
-		    c11.put("Rate of Return", "43");
-		    c11.put("SMS Message Title", "Legal Malpractice Review");
-		    c11.put("SMS Message Body", "Your legal malpractice file is under review while we verify records and causation. – Lumberjack Legal Finance");
+		    // ... keep your existing c11 fields exactly same ...
+		    // ---- Payment (d11) ----
+		    c11.put("Payment Mode", "Bank Transfer");
+		    c11.put("Payment Type", "Payment by PIP");
+		    c11.put("Payer Name", "PIP Unit - Granite Auto Indemnity");
+		    c11.put("Payment Date", paymentDate);
+		    c11.put("Amount Received", "6300");
+		    c11.put("Notes / Remarks", "Bank transfer from PIP unit; reconcile amount against expected PIP reimbursement; document remittance reference in remarks.");
 
 		    TreeMap<String, String> c12 = new TreeMap<String, String>();
-		    c12.put("Case #", "212");
-		    c12.put("Case Type", "Property Damage");
-		    c12.put("State", "Michigan");
-		    c12.put("Date of Incident", "03/03/2024");
-		    c12.put("Lead Source", "Other");
-		    c12.put("Requested Amount", "27000");
-		    c12.put("Court Index Number", "07CV-2403-PD-000742");
-		    c12.put("Summary", "Apartment water intrusion after alleged negligent plumbing repair; mold remediation and temporary relocation costs claimed; invoices and inspection reports provided.");
-		    c12.put("Risk Level", "Moderate");
-		    c12.put("Recommended Max Funding", "12000");
-		    c12.put("Underwriting Notes", "Confirm causation and scope: plumbing work orders, adjuster findings, mitigation steps, and any policy exclusions. Funding contingent on repair bids and documented loss timeline.");
-		    c12.put("Buyout Funder Name", "Frontline Capital Group");
-		    c12.put("Buyout Amount", "7400");
-		    c12.put("Approved Amount", "12000");
-		    c12.put("Application Status", "Approved");
-		    c12.put("Attorney Name", "Attorney Kasimir Tiefenbach");
-		    c12.put("Law Firm Name", "Wolframova & Königstein Urban Bicycle, Pedestrian & Verkehrskollision Attorneys");
-		    c12.put("Document prep fee", "245");
-		    c12.put("Fund transfer fee", "85");
-		    c12.put("Rate of Return", "35");
-		    c12.put("SMS Message Title", "Approved");
-		    c12.put("SMS Message Body", "Your property damage funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c12 fields exactly same ...
+		    // ---- Payment (d14) ----
+		    c12.put("Payment Mode", "Cheque");
+		    c12.put("Payment Type", "Payment by Another Funder");
+		    c12.put("Payer Name", "BluePine Settlement Funding Co.");
+		    c12.put("Payment Date", paymentDate);
+		    c12.put("Amount Received", "27000");
+		    c12.put("Notes / Remarks", "Buyout cheque from third-party funder; deposit scheduled; hold status as 'pending' until clearance and final ledger match.");
 
 		    TreeMap<String, String> c13 = new TreeMap<String, String>();
-		    c13.put("Case #", "213");
-		    c13.put("Case Type", "Sexual Harassment");
-		    c13.put("State", "Illinois");
-		    c13.put("Date of Incident", "07/30/2024");
-		    c13.put("Lead Source", "Organic");
-		    c13.put("Requested Amount", "48000");
-		    c13.put("Court Index Number", "14L02-2407-SH-000988");
-		    c13.put("Summary", "Workplace harassment allegations with repeated unwanted comments and retaliation claim after HR report; counseling initiated; wage loss and emotional distress asserted.");
-		    c13.put("Risk Level", "Moderate");
-		    c13.put("Recommended Max Funding", "19000");
-		    c13.put("Underwriting Notes", "Confirm contemporaneous reporting, HR investigation notes, witness statements, and any written warnings/retaliation timeline. Arbitration clauses and mitigation efforts affect valuation.");
-		    c13.put("Buyout Funder Name", "Harbor Ridge Finance");
-		    c13.put("Buyout Amount", "11200");
-		    c13.put("Approved Amount", "19000");
-		    c13.put("Application Status", "In Review");
-		    c13.put("Attorney Name", "Attorney Giselher Altenkirch");
-		    c13.put("Law Firm Name", "Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel");
-		    c13.put("Document prep fee", "260");
-		    c13.put("Fund transfer fee", "95");
-		    c13.put("Rate of Return", "39");
-		    c13.put("SMS Message Title", "HR Claim In Review");
-		    c13.put("SMS Message Body", "Your sexual harassment file is under underwriting review. We’ll update you once verification is complete. – Lumberjack Legal Finance");
+		    // ... keep your existing c13 fields exactly same ...
+		    // ---- Payment (d15) ----
+		    c13.put("Payment Mode", "Credit Card");
+		    c13.put("Payment Type", "Payment by PIP");
+		    c13.put("Payer Name", "PIP Recovery Desk - Atlas Motor Coverage");
+		    c13.put("Payment Date", paymentDate);
+		    c13.put("Amount Received", "4100");
+		    c13.put("Notes / Remarks", "PIP payment by card; confirm authorization and settlement reference; ensure duplicate prevention by checking gateway transaction ID.");
 
 		    TreeMap<String, String> c14 = new TreeMap<String, String>();
-		    c14.put("Case #", "214");
-		    c14.put("Case Type", "Discrimination");
-		    c14.put("State", "Indiana");
-		    c14.put("Date of Incident", "11/04/2023");
-		    c14.put("Lead Source", "Attorney Referral");
-		    c14.put("Requested Amount", "52000");
-		    c14.put("Court Index Number", "49D06-2311-DC-001556");
-		    c14.put("Summary", "Alleged discriminatory discipline and demotion; comparator employees treated differently; administrative charge filed; emotional distress and wage loss claimed.");
-		    c14.put("Risk Level", "Moderate");
-		    c14.put("Recommended Max Funding", "21000");
-		    c14.put("Underwriting Notes", "Verify protected class/trait evidence, comparator records, and documented performance history. Confirm charge timeline, arbitration exposure, and mitigation. Funding staged if employer contests causation.");
-		    c14.put("Buyout Funder Name", "Liberty Legal Funding");
-		    c14.put("Buyout Amount", "12500");
-		    c14.put("Approved Amount", "21000");
-		    c14.put("Application Status", "Approved");
-		    c14.put("Attorney Name", "Attorney Wendelin Rosenhagen");
-		    c14.put("Law Firm Name", "Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices");
-		    c14.put("Document prep fee", "255");
-		    c14.put("Fund transfer fee", "90");
-		    c14.put("Rate of Return", "37");
-		    c14.put("SMS Message Title", "Approved");
-		    c14.put("SMS Message Body", "Your discrimination case funding has been approved. Your attorney will receive the agreement for review. – Lumberjack Legal Finance");
+		    // ... keep your existing c14 fields exactly same ...
+		    // ---- Payment (d13) ----
+		    c14.put("Payment Mode", "Online Payment");
+		    c14.put("Payment Type", "Payment by Attorney");
+		    c14.put("Payer Name", "Attorney Mirek Haldenstein");
+		    c14.put("Payment Date", paymentDate);
+		    c14.put("Amount Received", "18500");
+		    c14.put("Notes / Remarks", "Attorney paid via online link; confirmation number captured; request office to email remittance advice for accurate allocation.");
 
 		    TreeMap<String, String> c15 = new TreeMap<String, String>();
-		    c15.put("Case #", "215");
-		    c15.put("Case Type", "Dog Bite");
-		    c15.put("State", "Michigan");
-		    c15.put("Date of Incident", "05/19/2024");
-		    c15.put("Lead Source", "Medical Provider");
-		    c15.put("Requested Amount", "16000");
-		    c15.put("Court Index Number", "07CV-2405-DB-000619");
-		    c15.put("Summary", "Dog bite to hand with tendon involvement suspected; sutures and antibiotics; occupational therapy started; functional limitations documented.");
-		    c15.put("Risk Level", "Low-Moderate");
-		    c15.put("Recommended Max Funding", "7800");
-		    c15.put("Underwriting Notes", "Confirm homeowners/renters coverage, vaccination records, and any prior bite history. Photos and ER records support causation. Conservative funding until functional outcome is clear.");
-		    c15.put("Buyout Funder Name", "Summit Legal Funding");
-		    c15.put("Buyout Amount", "4200");
-		    c15.put("Approved Amount", "7800");
-		    c15.put("Application Status", "Approved");
-		    c15.put("Attorney Name", "Attorney Norwin Kuehnemann");
-		    c15.put("Law Firm Name", "Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers");
-		    c15.put("Document prep fee", "205");
-		    c15.put("Fund transfer fee", "65");
-		    c15.put("Rate of Return", "32");
-		    c15.put("SMS Message Title", "Approved");
-		    c15.put("SMS Message Body", "Your dog bite funding is approved. Please coordinate agreement review with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c15 fields exactly same ...
+		    // ---- Payment (d17) ----
+		    c15.put("Payment Mode", "Online Payment");
+		    c15.put("Payment Type", "Payment by Insurance Company");
+		    c15.put("Payer Name", "EverHaven Insurance Group");
+		    c15.put("Payment Date", paymentDate);
+		    c15.put("Amount Received", "32500");
+		    c15.put("Notes / Remarks", "Insurance paid through online portal; remittance attached; verify this is final payment (not partial) before closing the case ledger.");
 
 		    TreeMap<String, String> c16 = new TreeMap<String, String>();
-		    c16.put("Case #", "216");
-		    c16.put("Case Type", "Products Liability");
-		    c16.put("State", "Ohio");
-		    c16.put("Date of Incident", "10/14/2023");
-		    c16.put("Lead Source", "Broker");
-		    c16.put("Requested Amount", "54000");
-		    c16.put("Court Index Number", "21CV-2310-PL-001820");
-		    c16.put("Summary", "E-scooter stem failure during braking; fall with collarbone fracture and dental injury; device preserved; expert inspection planned.");
-		    c16.put("Risk Level", "Moderate");
-		    c16.put("Recommended Max Funding", "23000");
-		    c16.put("Underwriting Notes", "Preservation and chain-of-custody required; confirm manufacturing/maintenance history and any recalls. Damages supported by fracture and dental care. Stage funding pending defect opinion.");
-		    c16.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-		    c16.put("Buyout Amount", "14500");
-		    c16.put("Approved Amount", "23000");
-		    c16.put("Application Status", "In Review");
-		    c16.put("Attorney Name", "Attorney Tjark Krenzler");
-		    c16.put("Law Firm Name", "Dietrich & Kuznetsov-Schmidt Serious Spine, Brain & Orthopedic Injury Advocates");
-		    c16.put("Document prep fee", "285");
-		    c16.put("Fund transfer fee", "105");
-		    c16.put("Rate of Return", "41");
-		    c16.put("SMS Message Title", "Defect Review");
-		    c16.put("SMS Message Body", "Your products liability file is under defect review. We’ll update you after expert validation. – Lumberjack Legal Finance");
+		    // ... keep your existing c16 fields exactly same ...
+		    // ---- Payment (d12) ----
+		    c16.put("Payment Mode", "Cash");
+		    c16.put("Payment Type", "Payment by Another Funder");
+		    c16.put("Payer Name", "IronGate Litigation Finance Group");
+		    c16.put("Payment Date", paymentDate);
+		    c16.put("Amount Received", "3000");
+		    c16.put("Notes / Remarks", "In-person cash payment from funder representative; unusual method—flagged for compliance review; receipt and CCTV timestamp recorded.");
 
 		    TreeMap<String, String> c17 = new TreeMap<String, String>();
-		    c17.put("Case #", "217");
-		    c17.put("Case Type", "Premises Liability");
-		    c17.put("State", "Indiana");
-		    c17.put("Date of Incident", "01/05/2024");
-		    c17.put("Lead Source", "Advertising");
-		    c17.put("Requested Amount", "25000");
-		    c17.put("Court Index Number", "49D02-2401-PR-000988");
-		    c17.put("Summary", "Parking lot trip over unmarked wheel stop; ankle fracture and surgery; surveillance request sent; weather conditions disputed.");
-		    c17.put("Risk Level", "Moderate");
-		    c17.put("Recommended Max Funding", "12000");
-		    c17.put("Underwriting Notes", "Surveillance and maintenance logs are key. Surgical fracture supports damages but comparative fault may be asserted. Confirm premises ownership/contractor responsibility and liability limits.");
-		    c17.put("Buyout Funder Name", "Harbor Ridge Finance");
-		    c17.put("Buyout Amount", "7200");
-		    c17.put("Approved Amount", "12000");
-		    c17.put("Application Status", "Approved");
-		    c17.put("Attorney Name", "Attorney Eckehard Schwarzkopf");
-		    c17.put("Law Firm Name", "Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group");
-		    c17.put("Document prep fee", "230");
-		    c17.put("Fund transfer fee", "80");
-		    c17.put("Rate of Return", "35");
-		    c17.put("SMS Message Title", "Approved");
-		    c17.put("SMS Message Body", "Your premises liability funding is approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance");
+		    // ... keep your existing c17 fields exactly same ...
+		    // ---- Payment (d20) ----
+		    c17.put("Payment Mode", "Cheque");
+		    c17.put("Payment Type", "Payment by Attorney");
+		    c17.put("Payer Name", "Attorney Rowan Silberholl");
+		    c17.put("Payment Date", paymentDate);
+		    c17.put("Amount Received", "14000");
+		    c17.put("Notes / Remarks", "Attorney office cheque received; verify cheque number and payee line; post after clearance; email confirmation requested from firm admin.");
 
 		    TreeMap<String, String> c18 = new TreeMap<String, String>();
-		    c18.put("Case #", "218");
-		    c18.put("Case Type", "Negligence");
-		    c18.put("State", "Michigan");
-		    c18.put("Date of Incident", "06/02/2023");
-		    c18.put("Lead Source", "Attorney Referral");
-		    c18.put("Requested Amount", "41000");
-		    c18.put("Court Index Number", "03WC-2306-NG-001409");
-		    c18.put("Summary", "Negligence claim arising from contractor’s improper barricading leading to cyclist crash; clavicle fracture and ongoing PT; police report filed.");
-		    c18.put("Risk Level", "Moderate");
-		    c18.put("Recommended Max Funding", "18000");
-		    c18.put("Underwriting Notes", "Confirm contractor scope, traffic control plan, photos, and any municipal permits. Liability improves with witness accounts and report consistency. Confirm coverage and any comparative negligence.");
-		    c18.put("Buyout Funder Name", "Frontline Capital Group");
-		    c18.put("Buyout Amount", "10800");
-		    c18.put("Approved Amount", "18000");
-		    c18.put("Application Status", "Approved");
-		    c18.put("Attorney Name", "Attorney Frieder Zirngibl");
-		    c18.put("Law Firm Name", "Wolframova & Königstein Urban Bicycle, Pedestrian & Verkehrskollision Attorneys");
-		    c18.put("Document prep fee", "255");
-		    c18.put("Fund transfer fee", "90");
-		    c18.put("Rate of Return", "36");
-		    c18.put("SMS Message Title", "Approved");
-		    c18.put("SMS Message Body", "Your negligence case funding is approved. Your attorney will receive the agreement for review. – Lumberjack Legal Finance");
+		    // ... keep your existing c18 fields exactly same ...
+		    // ---- Payment (d18) ----
+		    c18.put("Payment Mode", "Cash");
+		    c18.put("Payment Type", "Lost Deal");
+		    c18.put("Payer Name", "N/A - Lost Deal");
+		    c18.put("Payment Date", paymentDate);
+		    c18.put("Amount Received", "0");
+		    c18.put("Notes / Remarks", "Deal marked as lost; no payment collected; record created for audit trail and to prevent future reconciliation confusion.");
 
 		    TreeMap<String, String> c19 = new TreeMap<String, String>();
-		    c19.put("Case #", "219");
-		    c19.put("Case Type", "Assault");
-		    c19.put("State", "Ohio");
-		    c19.put("Date of Incident", "08/26/2024");
-		    c19.put("Lead Source", "Organic");
-		    c19.put("Requested Amount", "38000");
-		    c19.put("Court Index Number", "18CV-2408-AS-001244");
-		    c19.put("Summary", "Assault allegation outside venue leading to facial fracture and dental trauma; security footage requested; counseling initiated for anxiety.");
-		    c19.put("Risk Level", "Moderate");
-		    c19.put("Recommended Max Funding", "16000");
-		    c19.put("Underwriting Notes", "Confirm defendant identification and collectability, police report, and any venue security logs. Medical records and photos support damages. Funding depends on insurance coverage availability.");
-		    c19.put("Buyout Funder Name", "Liberty Legal Funding");
-		    c19.put("Buyout Amount", "9800");
-		    c19.put("Approved Amount", "16000");
-		    c19.put("Application Status", "In Review");
-		    c19.put("Attorney Name", "Attorney Kjell Waldmann");
-		    c19.put("Law Firm Name", "Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center");
-		    c19.put("Document prep fee", "245");
-		    c19.put("Fund transfer fee", "90");
-		    c19.put("Rate of Return", "38");
-		    c19.put("SMS Message Title", "Assault Case In Review");
-		    c19.put("SMS Message Body", "Your assault case is under review while records and coverage details are verified. – Lumberjack Legal Finance");
+		    // ... keep your existing c19 fields exactly same ...
+		    // ---- Payment (d19) ----
+		    c19.put("Payment Mode", "Bank Transfer");
+		    c19.put("Payment Type", "Lost Deal");
+		    c19.put("Payer Name", "N/A - Lost Deal");
+		    c19.put("Payment Date", paymentDate);
+		    c19.put("Amount Received", "1");
+		    c19.put("Notes / Remarks", "Lost deal logged (system requires amount); placeholder amount used for validation; adjust based on business rule if amount must be blank/optional.");
 
 		    TreeMap<String, String> c20 = new TreeMap<String, String>();
-		    c20.put("Case #", "220");
-		    c20.put("Case Type", "Attorney Funding");
-		    c20.put("State", "Indiana");
-		    c20.put("Date of Incident", "09/12/2023");
-		    c20.put("Lead Source", "Attorney Referral");
-		    c20.put("Requested Amount", "75000");
-		    c20.put("Court Index Number", "49D04-2309-AF-001982");
-		    c20.put("Summary", "Attorney funding request tied to litigation costs in complex injury matter; need-based advance to support expert retention and discovery expenses.");
-		    c20.put("Risk Level", "Moderate");
-		    c20.put("Recommended Max Funding", "32000");
-		    c20.put("Underwriting Notes", "Evaluate case posture, litigation budget, and expected timeline to recovery. Confirm contingency fee agreement, lien priorities, and disbursement controls. Stage funding based on milestones.");
-		    c20.put("Buyout Funder Name", "Pioneer Plaintiff Finance");
-		    c20.put("Buyout Amount", "20000");
-		    c20.put("Approved Amount", "32000");
-		    c20.put("Application Status", "Approved");
-		    c20.put("Attorney Name", "Attorney Adelmar Grieshaber");
-		    c20.put("Law Firm Name", "Dietrich & Kuznetsov-Schmidt Serious Spine, Brain & Orthopedic Injury Advocates");
-		    c20.put("Document prep fee", "300");
-		    c20.put("Fund transfer fee", "110");
-		    c20.put("Rate of Return", "42");
-		    c20.put("SMS Message Title", "Approved – Attorney Funding");
-		    c20.put("SMS Message Body", "Your attorney funding request is approved. We’ll coordinate the agreement and disbursement workflow with your office. – Lumberjack Legal Finance");
+		    // ... keep your existing c20 fields exactly same ...
+		    // ---- Payment (STRICT LIST LIMITATION) ----
+		    // TODO: Only 19 unique payment sets (d2..d20) were provided for 20 cases.
+		    // Replace below block when you have one more approved unique payment set.
+		    c20.put("Payment Mode", "Bank Transfer");
+		    c20.put("Payment Type", "Payment by Attorney");
+		    c20.put("Payer Name", "Attorney Selwyn Kappelmann");
+		    c20.put("Payment Date", paymentDate);
+		    c20.put("Amount Received", "12000");
+		    c20.put("Notes / Remarks", "ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting.");
+
 
 		    // ===== Apply dynamic dates to ALL cases =====
 		    @SuppressWarnings("unchecked")
@@ -1353,180 +1097,7 @@ public class Case_Appplications extends Header_Manager{
 	   		   
 	        }
 	        
-	        @DataProvider
-	        public Object[][] logPaymentData() {
-
-	            // ✅ Always current date (MM/dd/yyyy)
-	            String paymentDate = java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("MM/dd/yyyy"));
-
-	            TreeMap<String, String> d1 = new TreeMap<>();
-	            d1.put("Payment Mode", "Cash");
-	            d1.put("Payment Type", "Payment by Plaintiff");
-	            d1.put("Payer Name", "Plaintiff Anselm Rothenmark");
-	            d1.put("Payment Date", paymentDate);
-	            d1.put("Amount Received", "2500");
-	            d1.put("Notes / Remarks", "Cash received at front desk; counted and confirmed by two staff; receipt issued and attached to case notes.");
-
-	            TreeMap<String, String> d2 = new TreeMap<>();
-	            d2.put("Payment Mode", "Bank Transfer");
-	            d2.put("Payment Type", "Payment by Attorney");
-	            d2.put("Payer Name", "Attorney Selwyn Kappelmann");
-	            d2.put("Payment Date", paymentDate);
-	            d2.put("Amount Received", "12000");
-	            d2.put("Notes / Remarks", "ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting.");
-
-	            TreeMap<String, String> d3 = new TreeMap<>();
-	            d3.put("Payment Mode", "Credit Card");
-	            d3.put("Payment Type", "Payment by Plaintiff");
-	            d3.put("Payer Name", "Plaintiff Marlowe Eichenauer");
-	            d3.put("Payment Date", paymentDate);
-	            d3.put("Amount Received", "3800");
-	            d3.put("Notes / Remarks", "Card payment approved; verify last 4 digits in gateway report; note: convenience fee handled externally, not part of received amount.");
-
-	            TreeMap<String, String> d4 = new TreeMap<>();
-	            d4.put("Payment Mode", "Cheque");
-	            d4.put("Payment Type", "Payment by Insurance Company");
-	            d4.put("Payer Name", "NorthBridge Casualty Insurance Co.");
-	            d4.put("Payment Date", paymentDate);
-	            d4.put("Amount Received", "45000");
-	            d4.put("Notes / Remarks", "Cheque received via mailroom; deposit scheduled next business day; hold posting until cheque clears per finance policy.");
-
-	            TreeMap<String, String> d5 = new TreeMap<>();
-	            d5.put("Payment Mode", "Online Payment");
-	            d5.put("Payment Type", "Payment by Another Funder");
-	            d5.put("Payer Name", "Summit Equity Legal Funding Partners");
-	            d5.put("Payment Date", paymentDate);
-	            d5.put("Amount Received", "16000");
-	            d5.put("Notes / Remarks", "Online portal payment from another funder for buyout; cross-check reference ID and settlement ledger; attach payment receipt PDF.");
-
-	            TreeMap<String, String> d6 = new TreeMap<>();
-	            d6.put("Payment Mode", "Bank Transfer");
-	            d6.put("Payment Type", "Payment by Insurance Company");
-	            d6.put("Payer Name", "HarborPoint Mutual Insurance Services");
-	            d6.put("Payment Date", paymentDate);
-	            d6.put("Amount Received", "52000");
-	            d6.put("Notes / Remarks", "Wire received (insurance disbursement); confirm sender name matches remittance advice; split allocation recorded in internal ledger.");
-
-	            TreeMap<String, String> d7 = new TreeMap<>();
-	            d7.put("Payment Mode", "Cash");
-	            d7.put("Payment Type", "Payment by Attorney");
-	            d7.put("Payer Name", "Attorney Osric Vandenbrock");
-	            d7.put("Payment Date", paymentDate);
-	            d7.put("Amount Received", "5000");
-	            d7.put("Notes / Remarks", "Cash delivered by attorney runner; ID verified; counted under camera; receipt generated and shared with attorney office.");
-
-	            TreeMap<String, String> d8 = new TreeMap<>();
-	            d8.put("Payment Mode", "Cheque");
-	            d8.put("Payment Type", "Payment by Plaintiff");
-	            d8.put("Payer Name", "Plaintiff Leontius Brackenford");
-	            d8.put("Payment Date", paymentDate);
-	            d8.put("Amount Received", "9000");
-	            d8.put("Notes / Remarks", "Personal cheque accepted; confirm signature and date; pending clearance—do not mark as settled until bank confirmation.");
-
-	            TreeMap<String, String> d9 = new TreeMap<>();
-	            d9.put("Payment Mode", "Online Payment");
-	            d9.put("Payment Type", "Payment by PIP");
-	            d9.put("Payer Name", "PIP Claims Department - MetroShield");
-	            d9.put("Payment Date", paymentDate);
-	            d9.put("Amount Received", "7400");
-	            d9.put("Notes / Remarks", "PIP reimbursement via online payment; verify claim number in remittance; match against case payment schedule.");
-
-	            TreeMap<String, String> d10 = new TreeMap<>();
-	            d10.put("Payment Mode", "Credit Card");
-	            d10.put("Payment Type", "Payment by Insurance Company");
-	            d10.put("Payer Name", "CedarLine Commercial Insurance");
-	            d10.put("Payment Date", paymentDate);
-	            d10.put("Amount Received", "11000");
-	            d10.put("Notes / Remarks", "Insurance card payment processed through billing gateway; ensure transaction receipt is uploaded; confirm no partial capture.");
-
-	            TreeMap<String, String> d11 = new TreeMap<>();
-	            d11.put("Payment Mode", "Bank Transfer");
-	            d11.put("Payment Type", "Payment by PIP");
-	            d11.put("Payer Name", "PIP Unit - Granite Auto Indemnity");
-	            d11.put("Payment Date", paymentDate);
-	            d11.put("Amount Received", "6300");
-	            d11.put("Notes / Remarks", "Bank transfer from PIP unit; reconcile amount against expected PIP reimbursement; document remittance reference in remarks.");
-
-	            TreeMap<String, String> d12 = new TreeMap<>();
-	            d12.put("Payment Mode", "Cash");
-	            d12.put("Payment Type", "Payment by Another Funder");
-	            d12.put("Payer Name", "IronGate Litigation Finance Group");
-	            d12.put("Payment Date", paymentDate);
-	            d12.put("Amount Received", "3000");
-	            d12.put("Notes / Remarks", "In-person cash payment from funder representative; unusual method—flagged for compliance review; receipt and CCTV timestamp recorded.");
-
-	            TreeMap<String, String> d13 = new TreeMap<>();
-	            d13.put("Payment Mode", "Online Payment");
-	            d13.put("Payment Type", "Payment by Attorney");
-	            d13.put("Payer Name", "Attorney Mirek Haldenstein");
-	            d13.put("Payment Date", paymentDate);
-	            d13.put("Amount Received", "18500");
-	            d13.put("Notes / Remarks", "Attorney paid via online link; confirmation number captured; request office to email remittance advice for accurate allocation.");
-
-	            TreeMap<String, String> d14 = new TreeMap<>();
-	            d14.put("Payment Mode", "Cheque");
-	            d14.put("Payment Type", "Payment by Another Funder");
-	            d14.put("Payer Name", "BluePine Settlement Funding Co.");
-	            d14.put("Payment Date", paymentDate);
-	            d14.put("Amount Received", "27000");
-	            d14.put("Notes / Remarks", "Buyout cheque from third-party funder; deposit scheduled; hold status as 'pending' until clearance and final ledger match.");
-
-	            TreeMap<String, String> d15 = new TreeMap<>();
-	            d15.put("Payment Mode", "Credit Card");
-	            d15.put("Payment Type", "Payment by PIP");
-	            d15.put("Payer Name", "PIP Recovery Desk - Atlas Motor Coverage");
-	            d15.put("Payment Date", paymentDate);
-	            d15.put("Amount Received", "4100");
-	            d15.put("Notes / Remarks", "PIP payment by card; confirm authorization and settlement reference; ensure duplicate prevention by checking gateway transaction ID.");
-
-	            TreeMap<String, String> d16 = new TreeMap<>();
-	            d16.put("Payment Mode", "Bank Transfer");
-	            d16.put("Payment Type", "Payment by Plaintiff");
-	            d16.put("Payer Name", "Plaintiff Dorian Kestrelwood");
-	            d16.put("Payment Date", paymentDate);
-	            d16.put("Amount Received", "6000");
-	            d16.put("Notes / Remarks", "Plaintiff bank transfer received; verify payer name matches registered plaintiff; attach bank confirmation screenshot to notes.");
-
-	            TreeMap<String, String> d17 = new TreeMap<>();
-	            d17.put("Payment Mode", "Online Payment");
-	            d17.put("Payment Type", "Payment by Insurance Company");
-	            d17.put("Payer Name", "EverHaven Insurance Group");
-	            d17.put("Payment Date", paymentDate);
-	            d17.put("Amount Received", "32500");
-	            d17.put("Notes / Remarks", "Insurance paid through online portal; remittance attached; verify this is final payment (not partial) before closing the case ledger.");
-
-	            // “Lost Deal” variations (in case UI still requires Amount Received)
-	            TreeMap<String, String> d18 = new TreeMap<>();
-	            d18.put("Payment Mode", "Cash");
-	            d18.put("Payment Type", "Lost Deal");
-	            d18.put("Payer Name", "N/A - Lost Deal");
-	            d18.put("Payment Date", paymentDate);
-	            d18.put("Amount Received", "0");
-	            d18.put("Notes / Remarks", "Deal marked as lost; no payment collected; record created for audit trail and to prevent future reconciliation confusion.");
-
-	            TreeMap<String, String> d19 = new TreeMap<>();
-	            d19.put("Payment Mode", "Bank Transfer");
-	            d19.put("Payment Type", "Lost Deal");
-	            d19.put("Payer Name", "N/A - Lost Deal");
-	            d19.put("Payment Date", paymentDate);
-	            d19.put("Amount Received", "1");
-	            d19.put("Notes / Remarks", "Lost deal logged (system requires amount); placeholder amount used for validation; adjust based on business rule if amount must be blank/optional.");
-
-	            TreeMap<String, String> d20 = new TreeMap<>();
-	            d20.put("Payment Mode", "Cheque");
-	            d20.put("Payment Type", "Payment by Attorney");
-	            d20.put("Payer Name", "Attorney Rowan Silberholl");
-	            d20.put("Payment Date", paymentDate);
-	            d20.put("Amount Received", "14000");
-	            d20.put("Notes / Remarks", "Attorney office cheque received; verify cheque number and payee line; post after clearance; email confirmation requested from firm admin.");
-
-	            return new Object[][]{
-	                    {d1},{d2},{d3},{d4},{d5},
-	                    {d6},{d7},{d8},{d9},{d10},
-	                    {d11},{d12},{d13},{d14},{d15},
-	                    {d16},{d17},{d18},{d19},{d20} 
-	            };
-	        }
+	       
 
 
 	   

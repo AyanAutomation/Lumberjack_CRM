@@ -2,16 +2,16 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-06T20:19:52 IST" name="Default suite" finished-at="2026-01-06T20:20:10 IST" duration-ms="17747">
+  <suite started-at="2026-01-06T20:31:41 IST" name="Default suite" finished-at="2026-01-06T20:33:24 IST" duration-ms="102799">
     <groups>
     </groups>
-    <test started-at="2026-01-06T20:19:52 IST" name="Default test" finished-at="2026-01-06T20:20:10 IST" duration-ms="17747">
+    <test started-at="2026-01-06T20:31:41 IST" name="Default test" finished-at="2026-01-06T20:33:24 IST" duration-ms="102799">
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@710f4dc7]" started-at="2026-01-06T20:19:52 IST" name="setup" finished-at="2026-01-06T20:19:54 IST" duration-ms="1989" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-06T20:31:42 IST" name="setup" finished-at="2026-01-06T20:31:44 IST" duration-ms="1975" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Pay_Off_calculator(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@710f4dc7]" started-at="2026-01-06T20:19:54 IST" name="Pay_Off_calculator" data-provider="case_plus_plaintiff" finished-at="2026-01-06T20:20:10 IST" duration-ms="15236" status="PASS">
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-06T20:31:44 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-06T20:33:24 IST" duration-ms="100325" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,8 +31,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Pay_Off_calculator -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@710f4dc7]" started-at="2026-01-06T20:20:10 IST" name="Kill" finished-at="2026-01-06T20:20:10 IST" duration-ms="439" status="PASS">
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-06T20:33:24 IST" name="Kill" finished-at="2026-01-06T20:33:24 IST" duration-ms="421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
