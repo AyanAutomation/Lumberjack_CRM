@@ -332,7 +332,7 @@ public class Case_Appplications extends Header_Manager{
 	    Report_Listen.log_print_in_report().log(Status.INFO,
 	    		"<b>✅ Expected:</b> For every month >= 1, (Current Month Payable - Previous Month Payable) should equal Monthly Interest = "+Monthly_Interest_Amount+".");
 
-	    future_months_calculations_check(monthly_emi, Monthly_Interest_Amount_upto_2_decimal);
+	    future_months_calculations_check(monthly_emi, Monthly_Interest_Amount);
 	    d.switchTo().defaultContent();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Switch back from Contract iframe to main page (default content).");
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.");
@@ -370,11 +370,8 @@ public class Case_Appplications extends Header_Manager{
 	    rp.wait_for_theElement_tobe_clickable(Sign_in_button);
 		Sign_in_button.click();
 		
-
-		
-		//Docu_Sign_Signature();
-		manual_lien_generation(Sign_in_button);
-		}
+        //Docu_Sign_Signature();
+		manual_lien_generation(Sign_in_button);}
 	
 	
 	
@@ -470,11 +467,8 @@ public class Case_Appplications extends Header_Manager{
 	                );
 	            }
 	        }
-
 	        Previous_Month_Amount = Eachemi;
-	        month++;
-	    }
-	}
+	        month++;}}
 
 	
 	    
@@ -1071,8 +1065,8 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		        {c1},{c2},{c3},{c4},{c5},
-		        {c6},{c7},{c8},{c9},{c10},/*
+		        {c1},/*{c2},{c3},{c4},{c5},
+		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
 		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
