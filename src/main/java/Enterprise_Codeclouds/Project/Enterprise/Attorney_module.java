@@ -244,10 +244,10 @@ public class Attorney_module extends Plaintiff_Module{
 	    a20.put("Email", "attorney.wulfric.briarnocturne.p5k8@mailto.plus");
 
 	    return new Object[][]{
-	        {a1},{a2},{a3},{a4},{a5},
+	     /*   {a1},*/{a2},{a3},{a4},{a5},
 	        {a6},{a7},{a8},{a9},{a10},
 	        {a11},{a12},{a13},{a14},{a15},
-	        {a16},{a17},{a18},{a19},{a20}
+	        {a16},{a17},{a18},{a19},{a20} 
 	    };
 	}
 

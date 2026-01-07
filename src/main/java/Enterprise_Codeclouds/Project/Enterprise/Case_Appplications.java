@@ -162,7 +162,13 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(800);
 		WebElement toast = lg.toast();
 		rp.wait_for_invisibility(toast);
-		p.List_Checkboxes().get(0).click();
+		try {
+		p.List_Checkboxes().get(0).click();}
+		catch(Exception attorney_searched_not_present){
+			WebElement Create_Contact = p.Create_Contact_button();
+			rp.Scroll_to_element(Create_Contact);
+			Create_Contact.click();
+		}
 		Thread.sleep(600);
        // rp.wait_for_invisibility(lg.toast());
 		WebElement Import_button = p.import_Button();
@@ -372,8 +378,7 @@ public class Case_Appplications extends Header_Manager{
 		
         //Docu_Sign_Signature();
 		manual_lien_generation(Sign_in_button);
-		Pay_Off_calculator(data,data2,attorneyData);
-	}
+		Pay_Off_calculator(data,data2,attorneyData);}
 	
 	
 	

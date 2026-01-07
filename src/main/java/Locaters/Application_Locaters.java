@@ -119,9 +119,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//div[@class='ant-dropdown css-1egwh03 ant-dropdown-placement-bottomLeft']//*[@role='menu']")
 	private WebElement Case_Action_Dropdown_list; 
 	@FindBy(xpath="//textArea")
-	private WebElement textArea; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement textArea; 
+	@FindBy(xpath="//*[@aria-label='plus']/../..//span[text()='Create Contact']")
+	private WebElement  Create_Contact_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -553,10 +553,10 @@ public class Application_Locaters extends Repeat{
 	return Case_Dropdown_Options;}   
 	public WebElement textArea(){
 	wait_for_theElement(textArea);
-	return textArea;}  /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return textArea;}   
+	public WebElement Create_Contact_button(){
+	wait_for_theElement(Create_Contact_button);
+	return Create_Contact_button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
