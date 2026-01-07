@@ -1,42 +1,424 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="18" passed="14" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-06T20:31:41 IST" name="Default suite" finished-at="2026-01-06T20:33:24 IST" duration-ms="102799">
+  <suite started-at="2026-01-07T17:55:36 IST" name="Default suite" finished-at="2026-01-07T18:00:10 IST" duration-ms="274220">
     <groups>
     </groups>
-    <test started-at="2026-01-06T20:31:41 IST" name="Default test" finished-at="2026-01-06T20:33:24 IST" duration-ms="102799">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-06T20:31:42 IST" name="setup" finished-at="2026-01-06T20:31:44 IST" duration-ms="1975" status="PASS">
+    <test started-at="2026-01-07T17:55:36 IST" name="Default test" finished-at="2026-01-07T18:00:10 IST" duration-ms="274220">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Attorney_module">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:55:36 IST" name="setup" finished-at="2026-01-07T17:55:39 IST" duration-ms="3037" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-06T20:31:44 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-06T20:33:24 IST" duration-ms="100325" status="PASS">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:55:39 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:55:57 IST" duration-ms="17377" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/06/2026, Application Status=In Review, Approved Amount=24000, Attorney Name=Attorney Orson Pfeiffer, Buyout Amount=15500, Buyout Expiry Date=01/06/2030, Buyout Funder Name=Frontline Capital Group, Case #=201, Case Type=Civil Rights, Court Index Number=49D03-2306-CR-001114, Date of Incident=06/08/2023, Document prep fee=325, Fund transfer fee=110, Interest Start Date=01/06/2026, Law Firm Name=Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center, Lead Source=Attorney Referral, Rate of Return=41, Recommended Max Funding=24000, Requested Amount=58000, Risk Level=Moderate, SMS Message Body=Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance, SMS Message Title=Civil Rights File In Review, State=Indiana, Summary=Alleged unlawful search and excessive detention during traffic stop; emotional distress and employment disruption claimed; bodycam footage requested., Underwriting Notes=Primary driver is evidence quality: bodycam, dispatch logs, incident report, and any internal affairs findings. Confirm notice requirements, immunities, and policy limits before expanding funding.}]]>
+                <![CDATA[{Email=attorney.aelthorin.vexelthorne.k7q1@mailto.plus, First Name=Attorney Aelthorin, Last Name=Vexelthorne, Middle Name=Quorvayne, Name Suffix=II, Office phone=9888884001, Phone=9887773001}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=1777 Ala Moana Boulevard, Seaside Commerce Atrium, Tower B, Suite 1410, Waikiki Edge, Near Convention Center, Address Line 2=Front Desk: Lobby Counter 2, Deliveries: Weekdays Only, Call-on-arrival Note: Leave with Reception if Door Closed, Date of Birth=03/09/1991, Email=thalassa.valenhurst@mailto.plus, First Name=Thalassa, Last Name=Valenhurst, Middle Name=Seraphine, Name Suffix=II, Phone number=808-555-8401, Social Security Number=963-01-9001, State=Hawaii, Zip code=96815}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=cassian.hohenstauf@mailto.plus, First Name=Attorney Cassian, Last Name=Hohenstauf, Law Firm=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Middle Name=Alaric, Name Suffix=II, Office phone=4165558201, Phone=4165554201}]]>
+                <![CDATA[{City=Chicago, Name=Lakeshore Verdict & Settlement Counsel, Phone=3125557201, State=Illinois, Street Address 1=200 S Wacker Dr, One Riverside Plaza, Lobby Level, Street Address 2=Suite 2450, Intake Desk: West Corridor, Elevator Bank C, Zip code=60606}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-06T20:33:24 IST" name="Kill" finished-at="2026-01-06T20:33:24 IST" duration-ms="421" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:55:57 IST" name="Kill" finished-at="2026-01-07T17:55:57 IST" duration-ms="351" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:55:57 IST" name="setup" finished-at="2026-01-07T17:55:58 IST" duration-ms="1038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:55:58 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:56:16 IST" duration-ms="17595" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.brionyra.krynnemont.m2v8@mailto.plus, First Name=Attorney Brionyra, Last Name=Krynnemont, Middle Name=Selwynne, Name Suffix=Jr, Office phone=9888884002, Phone=9887773002}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Indianapolis, Name=Circle City Plaintiff Strategy Chambers, Phone=3175557202, State=Indiana, Street Address 1=135 N Pennsylvania St, Monument Circle Office Arcade, North Tower, Street Address 2=Floor 16, Suite 1605, Reception Desk B, Zip code=46204}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:16 IST" name="Kill" finished-at="2026-01-07T17:56:16 IST" duration-ms="345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:16 IST" name="setup" finished-at="2026-01-07T17:56:17 IST" duration-ms="920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:17 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:56:34 IST" duration-ms="17121" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.corvandel.draxenvale.p9c4@mailto.plus, First Name=Attorney Corvandel, Last Name=Draxenvale, Middle Name=Rhaedric, Name Suffix=III, Office phone=9888884003, Phone=9887773003}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Cleveland, Name=Cuyahoga Injury Review & Trial Group, Phone=2165557203, State=Ohio, Street Address 1=55 Public Square, Terminal Tower Annex, Concourse Entry, Street Address 2=Suite 2100, Mail Stop TT-21, Deliver to Intake Window 2, Zip code=44113}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:34 IST" name="Kill" finished-at="2026-01-07T17:56:34 IST" duration-ms="358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:34 IST" name="setup" finished-at="2026-01-07T17:56:35 IST" duration-ms="1081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:35 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:56:50 IST" duration-ms="15013" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.delpharyn.orriscarrow.t6n3@mailto.plus, First Name=Attorney Delpharyn, Last Name=Orriscarrow, Middle Name=Nivoria, Name Suffix=Sr, Office phone=9888884004, Phone=9887773004}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Louisville, Name=Derby City Wrongful Death & Liability Advocates, Phone=5025557204, State=Kentucky, Street Address 1=500 W Jefferson St, Riverfront Commerce Center, East Entrance, Street Address 2=Ste 1400, Records Intake: Room 14A, Signature Required, Zip code=40202}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on windows (6b1778be8f87d941c24fa51fc8291945)] -> xpath: //*[@role='alert']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56527}, goog:processID: 7388, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56527/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6b1778be8f87d941c24fa51fc8291945]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on windows (6b1778be8f87d941c24fa51fc8291945)] -> xpath: //*[@role='alert']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56527}, goog:processID: 7388, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56527/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6b1778be8f87d941c24fa51fc8291945
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Repeatative_codes.Repeat.wait_for_invisibility(Repeat.java:103)
+at Enterprise_Codeclouds.Project.Enterprise.Login.login(Login.java:41)
+at Enterprise_Codeclouds.Project.Enterprise.SIde_Menu_Handler.Side_menu_option_clicker(SIde_Menu_Handler.java:18)
+at Enterprise_Codeclouds.Project.Enterprise.Attorney_module.Attorney_Add(Attorney_module.java:33)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:50 IST" name="Kill" finished-at="2026-01-07T17:56:51 IST" duration-ms="263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:51 IST" name="setup" finished-at="2026-01-07T17:56:52 IST" duration-ms="887" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:56:52 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:57:08 IST" duration-ms="16608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.eryndorin.thornquillon.h4x9@mailto.plus, First Name=Attorney Eryndorin, Last Name=Thornquillon, Middle Name=Lucavere, Name Suffix=IV, Office phone=9888884005, Phone=9887773005}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Detroit, Name=Motor City Product Defect Litigation Studio, Phone=3135557205, State=Michigan, Street Address 1=100 Renaissance Center, Riverfront Tower, Check-in Desk A, Street Address 2=Floor 29, Suite 2912, Deliveries: Weekdays 9AM–4PM, Zip code=48243}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:08 IST" name="Kill" finished-at="2026-01-07T17:57:09 IST" duration-ms="303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:09 IST" name="setup" finished-at="2026-01-07T17:57:09 IST" duration-ms="833" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:09 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:57:26 IST" duration-ms="16612" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.faelistra.sablewright.r1j7@mailto.plus, First Name=Attorney Faelistra, Last Name=Sablewright, Middle Name=Junoria, Name Suffix=II, Office phone=9888884006, Phone=9887773006}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Columbus, Name=Scioto Employment Claims & Wage Recovery Counsel, Phone=6145557206, State=Ohio, Street Address 1=41 S High St, Statehouse District Professional Block, South Lobby, Street Address 2=Suite 2320, Intake Desk C, Leave with Reception if Door Closed, Zip code=43215}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:26 IST" name="Kill" finished-at="2026-01-07T17:57:26 IST" duration-ms="309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:26 IST" name="setup" finished-at="2026-01-07T17:57:27 IST" duration-ms="859" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:27 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:57:44 IST" duration-ms="16640" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.galrenic.myridanth.w8d2@mailto.plus, First Name=Attorney Galrenic, Last Name=Myridanth, Middle Name=Kestovar, Name Suffix=Jr, Office phone=9888884007, Phone=9887773007}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Chicago, Name=West Loop Civil Rights & Police Conduct Counsel, Phone=7735557207, State=Illinois, Street Address 1=233 S Wacker Dr, Skyline Concourse Offices, Main Lobby Security, Street Address 2=Suite 980, Elevator Bank B, Attn: Intake Coordinator, Zip code=60606}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:44 IST" name="Kill" finished-at="2026-01-07T17:57:44 IST" duration-ms="278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:44 IST" name="setup" finished-at="2026-01-07T17:57:45 IST" duration-ms="780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:57:45 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:58:02 IST" duration-ms="16768" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.heliandra.wexenford.y5k0@mailto.plus, First Name=Attorney Heliandra, Last Name=Wexenford, Middle Name=Sylphine, Name Suffix=III, Office phone=9888884008, Phone=9887773008}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Cincinnati, Name=Queen City Premises Liability Trial Partners, Phone=5135557208, State=Ohio, Street Address 1=312 Walnut St, Riverfront Legal Arcade, Corner Entrance on 4th St, Street Address 2=Suite 505, Mail Stop QC-05, Deliver to Reception A, Zip code=45202}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:02 IST" name="Kill" finished-at="2026-01-07T17:58:02 IST" duration-ms="279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:02 IST" name="setup" finished-at="2026-01-07T17:58:03 IST" duration-ms="867" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:03 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:58:20 IST" duration-ms="16873" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.iskaviel.crownmireaux.z3q6@mailto.plus, First Name=Attorney Iskaviel, Last Name=Crownmireaux, Middle Name=Vespera, Name Suffix=Sr, Office phone=9888884009, Phone=9887773009}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Fort Wayne, Name=Summit City Workers Comp & Lien Resolution Forum, Phone=2605557209, State=Indiana, Street Address 1=127 W Berry St, Courthouse Corridor Office Row, North Entrance, Street Address 2=Suite 840, Claims Intake Desk, Visitor Badge Required, Zip code=46802}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:20 IST" name="Kill" finished-at="2026-01-07T17:58:20 IST" duration-ms="292" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:20 IST" name="setup" finished-at="2026-01-07T17:58:21 IST" duration-ms="846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:21 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:58:38 IST" duration-ms="16897" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.jorvannis.zephyrnault.b7u1@mailto.plus, First Name=Attorney Jorvannis, Last Name=Zephyrnault, Middle Name=Rheomir, Name Suffix=IV, Office phone=9888884010, Phone=9887773010}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Nashville, Name=Music City Crash Claims & Insurance Dispute Counsel, Phone=6155557210, State=Tennessee, Street Address 1=150 4th Ave N, Downtown Commerce Atrium, Broadway Side Entry, Street Address 2=Floor 19, Suite 1908, Deliveries: Reception Desk B, Zip code=37219}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:38 IST" name="Kill" finished-at="2026-01-07T17:58:38 IST" duration-ms="281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:38 IST" name="setup" finished-at="2026-01-07T17:58:39 IST" duration-ms="839" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:39 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:58:56 IST" duration-ms="17385" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.kaeloria.ravenquarry.c9m5@mailto.plus, First Name=Attorney Kaeloria, Last Name=Ravenquarry, Middle Name=Quintessa, Name Suffix=II, Office phone=9888884011, Phone=9887773011}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Jacksonville, Name=First Coast Maritime & Dock Injury Counsel, Phone=9045557211, State=Florida, Street Address 1=76 S Laura St, River City Financial Center, Main Lobby, Street Address 2=Suite 1415, Attn: Intake Ops, Leave Package with Concierge, Zip code=32202}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:56 IST" name="Kill" finished-at="2026-01-07T17:58:57 IST" duration-ms="305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:57 IST" name="setup" finished-at="2026-01-07T17:58:57 IST" duration-ms="846" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:58:57 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:59:14 IST" duration-ms="16781" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.lysandric.obsidianhart.f2r8@mailto.plus, First Name=Attorney Lysandric, Last Name=Obsidianhart, Middle Name=Mirelle, Name Suffix=Jr, Office phone=9888884012, Phone=9887773012}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Dallas, Name=Uptown Contract Disputes & Business Torts PLLC, Phone=2145557212, State=Texas, Street Address 1=2101 Cedar Springs Rd, Crescent District Office Gallery, North Wing, Street Address 2=Suite 1550, Mail Stop TX-15, Deliver to Intake Window, Zip code=75201}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:14 IST" name="Kill" finished-at="2026-01-07T17:59:14 IST" duration-ms="293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:14 IST" name="setup" finished-at="2026-01-07T17:59:15 IST" duration-ms="836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:15 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:59:32 IST" duration-ms="17089" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.maristane.hollowcairn.n6p4@mailto.plus, First Name=Attorney Maristane, Last Name=Hollowcairn, Middle Name=Talarin, Name Suffix=III, Office phone=9888884013, Phone=9887773013}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Phoenix, Name=Sonoran Slip-Fall & Negligence Litigation Group, Phone=6025557213, State=Arizona, Street Address 1=201 E Washington St, Copper Square Office Terrace, East Lobby, Street Address 2=Suite 1545, Deliveries: Weekdays Only, Reception Desk A2, Zip code=85004}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:32 IST" name="Kill" finished-at="2026-01-07T17:59:33 IST" duration-ms="308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:33 IST" name="setup" finished-at="2026-01-07T17:59:33 IST" duration-ms="833" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:33 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T17:59:52 IST" duration-ms="18089" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.nyxandra.frostmeridian.s1v9@mailto.plus, First Name=Attorney Nyxandra, Last Name=Frostmeridian, Middle Name=Demeris, Name Suffix=Sr, Office phone=9888884014, Phone=9887773014}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Seattle, Name=Puget Sound Medical Malpractice Audit Counsel, Phone=2065557214, State=Washington, Street Address 1=800 5th Ave, Emerald Plaza Offices, Main Entrance Security Desk, Street Address 2=Suite 2680, Attn: Records Intake, Package Scan Required, Zip code=98104}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:52 IST" name="Kill" finished-at="2026-01-07T17:59:52 IST" duration-ms="257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:52 IST" name="setup" finished-at="2026-01-07T17:59:53 IST" duration-ms="853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T17:59:53 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-07T18:00:10 IST" duration-ms="17191" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.orpheline.cindervaleux.g8t3@mailto.plus, First Name=Attorney Orpheline, Last Name=Cindervaleux, Middle Name=Peregrin, Name Suffix=IV, Office phone=9888884015, Phone=9887773015}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Denver, Name=Front Range Discrimination & Retaliation Counsel, Phone=3035557215, State=Colorado, Street Address 1=1700 Lincoln St, Civic Center Professional Annex, East Tower Lobby, Street Address 2=Suite 3100, Intake Desk: Room 31F, Visitor Parking P2, Zip code=80202}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@7817fd62]" started-at="2026-01-07T18:00:10 IST" name="Kill" finished-at="2026-01-07T18:00:10 IST" duration-ms="461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Attorney_module -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

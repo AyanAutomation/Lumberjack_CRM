@@ -19,8 +19,8 @@ public class Attorney_module extends Plaintiff_Module{
 	
 	
 	
-	@Test(dataProvider="attorneyStaffData")
-	public void Attorney_Add(TreeMap<String, String> data) throws IOException, InterruptedException{
+	@Test(dataProvider="law_plus_attorney")
+	public void Attorney_Add(TreeMap<String, String> data,TreeMap<String, String> law_firm) throws IOException, InterruptedException{
 		
 	Attorney_Locaters pp = new Attorney_Locaters(d);	
 	SIde_Menu_Handler sd=new SIde_Menu_Handler();
@@ -29,7 +29,7 @@ public class Attorney_module extends Plaintiff_Module{
 	Repeat rp=new Repeat(d);
 	Login_Locaters lg=new Login_Locaters(d);
 	
-	String Law_Firm = data.get("Law Firm");
+	String Law_Firm = law_firm.get("Name");
 	sd.Side_menu_option_clicker("Firm & Counsel",d,"Attorney");	
 	pp.Landed_in_attorney_module();	
 	rp.Scroll_to_element(p.form());
@@ -63,205 +63,185 @@ public class Attorney_module extends Plaintiff_Module{
 	@DataProvider
 	public Object[][] attorneyStaffData() {
 
-		TreeMap<String, String> a1 = new TreeMap<String, String>();
-	    a1.put("Law Firm", "Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group");
-	    a1.put("First Name", "Attorney Cassian");
-	    a1.put("Middle Name", "Alaric");
-	    a1.put("Last Name", "Hohenstauf");
+		TreeMap<String, String> a1 = new TreeMap<>();
+	    a1.put("First Name", "Attorney Aelthorin");
+	    a1.put("Middle Name", "Quorvayne");
+	    a1.put("Last Name", "Vexelthorne");
 	    a1.put("Name Suffix", "II");
-	    a1.put("Phone", "4165554201");
-	    a1.put("Office phone", "4165558201");
-	    a1.put("Email", "cassian.hohenstauf@mailto.plus");
+	    a1.put("Phone", "9887773001");
+	    a1.put("Office phone", "9888884001");
+	    a1.put("Email", "attorney.aelthorin.vexelthorne.k7q1@mailto.plus");
 
-	    TreeMap<String, String> a2 = new TreeMap<String, String>();
-	    a2.put("Law Firm", "Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners");
-	    a2.put("First Name", "Attorney Evander");
-	    a2.put("Middle Name", "Benoit");
-	    a2.put("Last Name", "Kaltenbrunn");
-	    a2.put("Name Suffix", "Sr");
-	    a2.put("Phone", "6475554202");
-	    a2.put("Office phone", "6475558202");
-	    a2.put("Email", "evander.kaltenbrunn@mailto.plus");
+	    TreeMap<String, String> a2 = new TreeMap<>();
+	    a2.put("First Name", "Attorney Brionyra");
+	    a2.put("Middle Name", "Selwynne");
+	    a2.put("Last Name", "Krynnemont");
+	    a2.put("Name Suffix", "Jr");
+	    a2.put("Phone", "9887773002");
+	    a2.put("Office phone", "9888884002");
+	    a2.put("Email", "attorney.brionyra.krynnemont.m2v8@mailto.plus");
 
-	    TreeMap<String, String> a3 = new TreeMap<String, String>();
-	    a3.put("Law Firm", "Dietrich & Kuznetsov-Schmidt Serious Spine, Brain & Orthopedic Injury Advocates");
-	    a3.put("First Name", "Attorney Leander");
-	    a3.put("Middle Name", "Quentin");
-	    a3.put("Last Name", "Stahlberg");
+	    TreeMap<String, String> a3 = new TreeMap<>();
+	    a3.put("First Name", "Attorney Corvandel");
+	    a3.put("Middle Name", "Rhaedric");
+	    a3.put("Last Name", "Draxenvale");
 	    a3.put("Name Suffix", "III");
-	    a3.put("Phone", "9055554203");
-	    a3.put("Office phone", "9055558203");
-	    a3.put("Email", "leander.stahlberg@mailto.plus");
+	    a3.put("Phone", "9887773003");
+	    a3.put("Office phone", "9888884003");
+	    a3.put("Email", "attorney.corvandel.draxenvale.p9c4@mailto.plus");
 
-	    TreeMap<String, String> a4 = new TreeMap<String, String>();
-	    a4.put("Law Firm", "Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei");
-	    a4.put("First Name", "Attorney Thaddeus");
-	    a4.put("Middle Name", "Matteo");
-	    a4.put("Last Name", "Rosenwald");
-	    a4.put("Name Suffix", "Jr");
-	    a4.put("Phone", "2895554204");
-	    a4.put("Office phone", "2895558204");
-	    a4.put("Email", "thaddeus.rosenwald@mailto.plus");
+	    TreeMap<String, String> a4 = new TreeMap<>();
+	    a4.put("First Name", "Attorney Delpharyn");
+	    a4.put("Middle Name", "Nivoria");
+	    a4.put("Last Name", "Orriscarrow");
+	    a4.put("Name Suffix", "Sr");
+	    a4.put("Phone", "9887773004");
+	    a4.put("Office phone", "9888884004");
+	    a4.put("Email", "attorney.delpharyn.orriscarrow.t6n3@mailto.plus");
 
-	    TreeMap<String, String> a5 = new TreeMap<String, String>();
-	    a5.put("Law Firm", "Braunova-Petrov Medical Malpractice, Birth Injury & Patient Safety Law Collective");
-	    a5.put("First Name", "Attorney Oskar");
-	    a5.put("Middle Name", "Lucien");
-	    a5.put("Last Name", "Falkenrath");
+	    TreeMap<String, String> a5 = new TreeMap<>();
+	    a5.put("First Name", "Attorney Eryndorin");
+	    a5.put("Middle Name", "Lucavere");
+	    a5.put("Last Name", "Thornquillon");
 	    a5.put("Name Suffix", "IV");
-	    a5.put("Phone", "6135554205");
-	    a5.put("Office phone", "6135558205");
-	    a5.put("Email", "oskar.falkenrath@mailto.plus");
+	    a5.put("Phone", "9887773005");
+	    a5.put("Office phone", "9888884005");
+	    a5.put("Email", "attorney.eryndorin.thornquillon.h4x9@mailto.plus");
 
-	    TreeMap<String, String> a6 = new TreeMap<String, String>();
-	    a6.put("Law Firm", "Kleinberger & Schubertov Nursing Home Abuse, Elder Neglect & Pflegeheim Protection Firm");
-	    a6.put("First Name", "Attorney Sylvester");
-	    a6.put("Middle Name", "Noel");
-	    a6.put("Last Name", "Schneefeld");
-	    a6.put("Name Suffix", "Sr");
-	    a6.put("Phone", "5145554206");
-	    a6.put("Office phone", "5145558206");
-	    a6.put("Email", "sylvester.schneefeld@mailto.plus");
+	    TreeMap<String, String> a6 = new TreeMap<>();
+	    a6.put("First Name", "Attorney Faelistra");
+	    a6.put("Middle Name", "Junoria");
+	    a6.put("Last Name", "Sablewright");
+	    a6.put("Name Suffix", "II");
+	    a6.put("Phone", "9887773006");
+	    a6.put("Office phone", "9888884006");
+	    a6.put("Email", "attorney.faelistra.sablewright.r1j7@mailto.plus");
 
-	    TreeMap<String, String> a7 = new TreeMap<String, String>();
-	    a7.put("Law Firm", "Wolframova & Königstein Urban Bicycle, Pedestrian & Verkehrskollision Attorneys");
-	    a7.put("First Name", "Attorney Gideon");
-	    a7.put("Middle Name", "Sebastien");
-	    a7.put("Last Name", "Eisenwald");
-	    a7.put("Name Suffix", "II");
-	    a7.put("Phone", "3435554207");
-	    a7.put("Office phone", "3435558207");
-	    a7.put("Email", "gideon.eisenwald@mailto.plus");
+	    TreeMap<String, String> a7 = new TreeMap<>();
+	    a7.put("First Name", "Attorney Galrenic");
+	    a7.put("Middle Name", "Kestovar");
+	    a7.put("Last Name", "Myridanth");
+	    a7.put("Name Suffix", "Jr");
+	    a7.put("Phone", "9887773007");
+	    a7.put("Office phone", "9888884007");
+	    a7.put("Email", "attorney.galrenic.myridanth.w8d2@mailto.plus");
 
-	    TreeMap<String, String> a8 = new TreeMap<String, String>();
-	    a8.put("Law Firm", "Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers");
-	    a8.put("First Name", "Attorney Marcel");
-	    a8.put("Middle Name", "Remy");
-	    a8.put("Last Name", "Blumenfeld");
-	    a8.put("Name Suffix", "Jr");
-	    a8.put("Phone", "7805554208");
-	    a8.put("Office phone", "7805558208");
-	    a8.put("Email", "marcel.blumenfeld@mailto.plus");
+	    TreeMap<String, String> a8 = new TreeMap<>();
+	    a8.put("First Name", "Attorney Heliandra");
+	    a8.put("Middle Name", "Sylphine");
+	    a8.put("Last Name", "Wexenford");
+	    a8.put("Name Suffix", "III");
+	    a8.put("Phone", "9887773008");
+	    a8.put("Office phone", "9888884008");
+	    a8.put("Email", "attorney.heliandra.wexenford.y5k0@mailto.plus");
 
-	    TreeMap<String, String> a9 = new TreeMap<String, String>();
-	    a9.put("Law Firm", "Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group");
-	    a9.put("First Name", "Attorney Dorian");
-	    a9.put("Middle Name", "Claude");
-	    a9.put("Last Name", "Hohenbruck");
-	    a9.put("Name Suffix", "III");
-	    a9.put("Phone", "9025554209");
-	    a9.put("Office phone", "9025558209");
-	    a9.put("Email", "dorian.hohenbruck@mailto.plus");
+	    TreeMap<String, String> a9 = new TreeMap<>();
+	    a9.put("First Name", "Attorney Iskaviel");
+	    a9.put("Middle Name", "Vespera");
+	    a9.put("Last Name", "Crownmireaux");
+	    a9.put("Name Suffix", "Sr");
+	    a9.put("Phone", "9887773009");
+	    a9.put("Office phone", "9888884009");
+	    a9.put("Email", "attorney.iskaviel.crownmireaux.z3q6@mailto.plus");
 
-	    TreeMap<String, String> a10 = new TreeMap<String, String>();
-	    a10.put("Law Firm", "Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center");
-	    a10.put("First Name", "Attorney Roderick");
-	    a10.put("Middle Name", "Jasper");
-	    a10.put("Last Name", "Sternwalt");
-	    a10.put("Name Suffix", "Sr");
-	    a10.put("Phone", "4505554210");
-	    a10.put("Office phone", "4505558210");
-	    a10.put("Email", "roderick.sternwalt@mailto.plus");
+	    TreeMap<String, String> a10 = new TreeMap<>();
+	    a10.put("First Name", "Attorney Jorvannis");
+	    a10.put("Middle Name", "Rheomir");
+	    a10.put("Last Name", "Zephyrnault");
+	    a10.put("Name Suffix", "IV");
+	    a10.put("Phone", "9887773010");
+	    a10.put("Office phone", "9888884010");
+	    a10.put("Email", "attorney.jorvannis.zephyrnault.b7u1@mailto.plus");
 
-	    TreeMap<String, String> a11 = new TreeMap<String, String>();
-	    a11.put("Law Firm", "Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel");
-	    a11.put("First Name", "Attorney Alphonse");
-	    a11.put("Middle Name", "Thierry");
-	    a11.put("Last Name", "Waldmann");
+	    TreeMap<String, String> a11 = new TreeMap<>();
+	    a11.put("First Name", "Attorney Kaeloria");
+	    a11.put("Middle Name", "Quintessa");
+	    a11.put("Last Name", "Ravenquarry");
 	    a11.put("Name Suffix", "II");
-	    a11.put("Phone", "5875554211");
-	    a11.put("Office phone", "5875558211");
-	    a11.put("Email", "alphonse.waldmann@mailto.plus");
+	    a11.put("Phone", "9887773011");
+	    a11.put("Office phone", "9888884011");
+	    a11.put("Email", "attorney.kaeloria.ravenquarry.c9m5@mailto.plus");
 
-	    TreeMap<String, String> a12 = new TreeMap<String, String>();
-	    a12.put("Law Firm", "Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices");
-	    a12.put("First Name", "Attorney Benedict");
-	    a12.put("Middle Name", "Pascal");
-	    a12.put("Last Name", "Kronfeld");
+	    TreeMap<String, String> a12 = new TreeMap<>();
+	    a12.put("First Name", "Attorney Lysandric");
+	    a12.put("Middle Name", "Mirelle");
+	    a12.put("Last Name", "Obsidianhart");
 	    a12.put("Name Suffix", "Jr");
-	    a12.put("Phone", "2045554212");
-	    a12.put("Office phone", "2045558212");
-	    a12.put("Email", "benedict.kronfeld@mailto.plus");
+	    a12.put("Phone", "9887773012");
+	    a12.put("Office phone", "9888884012");
+	    a12.put("Email", "attorney.lysandric.obsidianhart.f2r8@mailto.plus");
 
-	    TreeMap<String, String> a13 = new TreeMap<String, String>();
-	    a13.put("Law Firm", "Northern Indiana Construction Site Accident, Scaffold & Workplace Injury Attorneys");
-	    a13.put("First Name", "Attorney Magnus");
-	    a13.put("Middle Name", "Caius");
-	    a13.put("Last Name", "Rosenheim");
+	    TreeMap<String, String> a13 = new TreeMap<>();
+	    a13.put("First Name", "Attorney Maristane");
+	    a13.put("Middle Name", "Talarin");
+	    a13.put("Last Name", "Hollowcairn");
 	    a13.put("Name Suffix", "III");
-	    a13.put("Phone", "7785554213");
-	    a13.put("Office phone", "7785558213");
-	    a13.put("Email", "magnus.rosenheim@mailto.plus");
+	    a13.put("Phone", "9887773013");
+	    a13.put("Office phone", "9888884013");
+	    a13.put("Email", "attorney.maristane.hollowcairn.n6p4@mailto.plus");
 
-	    TreeMap<String, String> a14 = new TreeMap<String, String>();
-	    a14.put("Law Firm", "Prairie State Bicycle, Pedestrian & Urban Traffic Collision Law Collective");
-	    a14.put("First Name", "Attorney Cedric");
-	    a14.put("Middle Name", "Hugo");
-	    a14.put("Last Name", "Dachsner");
+	    TreeMap<String, String> a14 = new TreeMap<>();
+	    a14.put("First Name", "Attorney Nyxandra");
+	    a14.put("Middle Name", "Demeris");
+	    a14.put("Last Name", "Frostmeridian");
 	    a14.put("Name Suffix", "Sr");
-	    a14.put("Phone", "4185554214");
-	    a14.put("Office phone", "4185558214");
-	    a14.put("Email", "cedric.dachsner@mailto.plus");
+	    a14.put("Phone", "9887773014");
+	    a14.put("Office phone", "9888884014");
+	    a14.put("Email", "attorney.nyxandra.frostmeridian.s1v9@mailto.plus");
 
-	    TreeMap<String, String> a15 = new TreeMap<String, String>();
-	    a15.put("Law Firm", "Horizon Child Injury, School Negligence & Playground Accident Trial Lawyers");
-	    a15.put("First Name", "Attorney Emilian");
-	    a15.put("Middle Name", "Marc");
-	    a15.put("Last Name", "Eichenstein");
+	    TreeMap<String, String> a15 = new TreeMap<>();
+	    a15.put("First Name", "Attorney Orpheline");
+	    a15.put("Middle Name", "Peregrin");
+	    a15.put("Last Name", "Cindervaleux");
 	    a15.put("Name Suffix", "IV");
-	    a15.put("Phone", "5065554215");
-	    a15.put("Office phone", "5065558215");
-	    a15.put("Email", "emilian.eichenstein@mailto.plus");
+	    a15.put("Phone", "9887773015");
+	    a15.put("Office phone", "9888884015");
+	    a15.put("Email", "attorney.orpheline.cindervaleux.g8t3@mailto.plus");
 
-	    TreeMap<String, String> a16 = new TreeMap<String, String>();
-	    a16.put("Law Firm", "1010 South Meridian Street, Justice Square");
-	    a16.put("First Name", "Attorney Florian");
-	    a16.put("Middle Name", "Anselm");
-	    a16.put("Last Name", "Kieselberg");
+	    TreeMap<String, String> a16 = new TreeMap<>();
+	    a16.put("First Name", "Attorney Quorimel");
+	    a16.put("Middle Name", "Vallorin");
+	    a16.put("Last Name", "Stormeichen");
 	    a16.put("Name Suffix", "II");
-	    a16.put("Phone", "5195554216");
-	    a16.put("Office phone", "5195558216");
-	    a16.put("Email", "florian.kieselberg@mailto.plus");
+	    a16.put("Phone", "9887773016");
+	    a16.put("Office phone", "9888884016");
+	    a16.put("Email", "attorney.quorimel.stormeichen.j4x7@mailto.plus");
 
-	    TreeMap<String, String> a17 = new TreeMap<String, String>();
-	    a17.put("Law Firm", "Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group");
-	    a17.put("First Name", "Attorney Casimir");
-	    a17.put("Middle Name", "Noel");
-	    a17.put("Last Name", "Hirschfeld");
+	    TreeMap<String, String> a17 = new TreeMap<>();
+	    a17.put("First Name", "Attorney Rivenna");
+	    a17.put("Middle Name", "Caelith");
+	    a17.put("Last Name", "Marblethistledown");
 	    a17.put("Name Suffix", "Jr");
-	    a17.put("Phone", "7055554217");
-	    a17.put("Office phone", "7055558217");
-	    a17.put("Email", "casimir.hirschfeld@mailto.plus");
+	    a17.put("Phone", "9887773017");
+	    a17.put("Office phone", "9888884017");
+	    a17.put("Email", "attorney.rivenna.marblethistledown.l0q2@mailto.plus");
 
-	    TreeMap<String, String> a18 = new TreeMap<String, String>();
-	    a18.put("Law Firm", "Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners");
-	    a18.put("First Name", "Attorney Rowan");
-	    a18.put("Middle Name", "Bastian");
-	    a18.put("Last Name", "Vogelhardt");
+	    TreeMap<String, String> a18 = new TreeMap<>();
+	    a18.put("First Name", "Attorney Seredane");
+	    a18.put("Middle Name", "Zorion");
+	    a18.put("Last Name", "Kleinvorst");
 	    a18.put("Name Suffix", "III");
-	    a18.put("Phone", "8675554218");
-	    a18.put("Office phone", "8675558218");
-	    a18.put("Email", "rowan.vogelhardt@mailto.plus");
+	    a18.put("Phone", "9887773018");
+	    a18.put("Office phone", "9888884018");
+	    a18.put("Email", "attorney.seredane.kleinvorst.v3n6@mailto.plus");
 
-	    TreeMap<String, String> a19 = new TreeMap<String, String>();
-	    a19.put("Law Firm", "Dietrich & Kuznetsov-Schmidt Serious Spine, Brain & Orthopedic Injury Advocates");
-	    a19.put("First Name", "Attorney Silas");
-	    a19.put("Middle Name", "Matthieu");
-	    a19.put("Last Name", "Schwarzenau");
+	    TreeMap<String, String> a19 = new TreeMap<>();
+	    a19.put("First Name", "Attorney Tressavian");
+	    a19.put("Middle Name", "Vionette");
+	    a19.put("Last Name", "Quillnevarre");
 	    a19.put("Name Suffix", "Sr");
-	    a19.put("Phone", "7095554219");
-	    a19.put("Office phone", "7095558219");
-	    a19.put("Email", "silas.schwarzenau@mailto.plus");
+	    a19.put("Phone", "9887773019");
+	    a19.put("Office phone", "9888884019");
+	    a19.put("Email", "attorney.tressavian.quillnevarre.d7m1@mailto.plus");
 
-	    TreeMap<String, String> a20 = new TreeMap<String, String>();
-	    a20.put("Law Firm", "Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei");
-	    a20.put("First Name", "Attorney Percival");
-	    a20.put("Middle Name", "Quirin");
-	    a20.put("Last Name", "Tiefenborn");
+	    TreeMap<String, String> a20 = new TreeMap<>();
+	    a20.put("First Name", "Attorney Wulfric");
+	    a20.put("Middle Name", "Ysolde");
+	    a20.put("Last Name", "Briarnocturne");
 	    a20.put("Name Suffix", "IV");
-	    a20.put("Phone", "6045554220");
-	    a20.put("Office phone", "6045558220");
-	    a20.put("Email", "percival.tiefenborn@mailto.plus");
+	    a20.put("Phone", "9887773020");
+	    a20.put("Office phone", "9888884020");
+	    a20.put("Email", "attorney.wulfric.briarnocturne.p5k8@mailto.plus");
 
 	    return new Object[][]{
 	        {a1},{a2},{a3},{a4},{a5},
@@ -271,6 +251,26 @@ public class Attorney_module extends Plaintiff_Module{
 	    };
 	}
 
-
+	@DataProvider
+	public Object[][] law_plus_attorney(){
+		
+		
+		Law_Firm_Module lfm = new Law_Firm_Module();
+		
+		Object[][] attorney_datas = attorneyStaffData();
+		Object[][] law_firm_data = lfm.lawFirmData();
+		
+		int n = Math.min(attorney_datas.length, law_firm_data.length);
+		Object[][] final_set = new Object[n][2];
+		
+		for(int i=0;i<n;i++){
+			   final_set[i][0] = attorney_datas[i][0];      
+		       final_set[i][1] = law_firm_data[i][0]; 
+		       
+		    }
+		    return final_set;
+		
+		
+	}
 
 }
