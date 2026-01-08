@@ -3,13 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="Negative_Testcases.Application_Add_Negative_Testcases">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
-          <include name="application_add" invocation-numbers="0"/>
           <include name="setup"/>
+          <include name="Add_case" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
           <include name="Kill"/>
         </methods>
-      </class> <!-- Negative_Testcases.Application_Add_Negative_Testcases -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

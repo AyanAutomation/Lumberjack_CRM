@@ -92,7 +92,7 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Dropdown_showing_nodata; 
 	@FindBy(xpath="(//*[@class='ant-card-body'])[3]")
 	private WebElement  Plaintiff_section_in_contacts_tab; 
-	@FindBy(xpath="(//*[@class='ant-card-actions']//button//span[text()='SIGN MANUALLY '])[1]")
+	@FindBy(xpath="(//*[@class='ant-card-actions']//button//span[text()='SIGNED MANUALLY '])[1]")
 	private WebElement  Manual_sign_in_button;
 	@FindBy(xpath="(//div[contains(@class,'ant-modal') and not(contains(@style,'display: none'))]//input[@type='file'])[last()]")
 	private WebElement  upload; 

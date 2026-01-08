@@ -1214,8 +1214,8 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		        {c1},{c2},{c3},{c4},{c5},
-		        {c6},{c7},{c8},{c9},{c10},/*
+		        {c1},{c2},{c3},{c4},{c5},/*
+		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
 		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
@@ -1230,7 +1230,7 @@ public class Case_Appplications extends Header_Manager{
 
 	    Object[][] plaintiff_datas = pm.plaintiffData();   // each row: { TreeMap<String,String> }
 	    Object[][] case_datas      = caseData();           // each row: { TreeMap<String,String> }
-	    Object[][] attorney_datas  = at.attorneyStaffData(); // each row: { TreeMap<String,String> }
+	    Object[][] attorney_datas  = at.attorneyfData(); // each row: { TreeMap<String,String> }
 
 	    int n = Math.min(case_datas.length,Math.min(plaintiff_datas.length, attorney_datas.length));
 

@@ -1,42 +1,1033 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="11" passed="0" failed="10" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-30T17:40:05 IST" name="Surefire suite" finished-at="2025-12-30T17:41:14 IST" duration-ms="68739">
+  <suite started-at="2026-01-08T17:57:46 IST" name="Surefire suite" finished-at="2026-01-08T18:04:59 IST" duration-ms="432068">
     <groups>
     </groups>
-    <test started-at="2025-12-30T17:40:05 IST" name="Surefire test" finished-at="2025-12-30T17:41:14 IST" duration-ms="68739">
-      <class name="Negative_Testcases.Application_Add_Negative_Testcases">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T17:40:05 IST" name="setup" finished-at="2025-12-30T17:40:07 IST" duration-ms="1879" status="PASS">
+    <test started-at="2026-01-08T17:57:46 IST" name="Surefire test" finished-at="2026-01-08T18:04:59 IST" duration-ms="432068">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:57:47 IST" name="setup" finished-at="2026-01-08T17:57:49 IST" duration-ms="2146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="application_add_negative(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T17:40:07 IST" name="application_add_negative" data-provider="case_plus_plaintiff" finished-at="2025-12-30T17:41:14 IST" duration-ms="66552" status="PASS">
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:57:49 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T17:58:31 IST" duration-ms="42145" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/15/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}]]>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=12000, Application Status=In Review, Approved Amount=24000, Attorney Name=Attorney Orson Pfeiffer, Buyout Amount=15500, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Frontline Capital Group, Case #=201, Case Type=Civil Rights, Court Index Number=49D03-2306-CR-001114, Date of Incident=06/08/2023, Document prep fee=325, Fund transfer fee=110, Interest Start Date=01/08/2026, Law Firm Name=Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center, Lead Source=Attorney Referral, Notes / Remarks=ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting., Payer Name=Attorney Selwyn Kappelmann, Payment Date=01/08/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Attorney, Rate of Return=41, Recommended Max Funding=24000, Requested Amount=58000, Risk Level=Moderate, SMS Message Body=Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance, SMS Message Title=Civil Rights File In Review, State=Indiana, Summary=Alleged unlawful search and excessive detention during traffic stop; emotional distress and employment disruption claimed; bodycam footage requested., Underwriting Notes=Primary driver is evidence quality: bodycam, dispatch logs, incident report, and any internal affairs findings. Confirm notice requirements, immunities, and policy limits before expanding funding.}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=55 E Monroe St, Address Line 2=Suite 2100, Date of Birth=03/19/1992, Email=cassimir.vandermere@mailto.plus, First Name=Cassimir, Last Name=Vandermere, Middle Name=Rowan, Name Suffix=III, Phone number=312-555-4301, Social Security Number=930-11-0301, State=Illinois, Zip code=60604}]]>
+                <![CDATA[{Address Line 1=615 2nd Avenue, Pioneer Square Commerce Block, Suite 1210, Near Waterfront Streetcar Stop, Address Line 2=Unit 12A, Attn: Intake Desk, Delivery Notes: Main Lobby Only, Signature Required at Reception, Date of Birth=02/11/1991, Email=caelindra.hearthrow.t9p2@mailto.plus, First Name=Caelindra, Last Name=Hearthrow, Middle Name=Marcelline, Name Suffix=II, Phone number=9776668501, Social Security Number=974-01-8001, State=Washington, Zip code=98104}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=cassian.hohenstauf@mailto.plus, First Name=Attorney Cassian, Last Name=Hohenstauf, Law Firm=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Middle Name=Alaric, Name Suffix=II, Office phone=4165558201, Phone=4165554201}]]>
+                <![CDATA[{Email=attorney.zepharion.vandrysse.r9k2qf@mailto.plus, First Name=Attorney Zepharion, Last Name=Vandrysse, Middle Name=Quellith, Name Suffix=II, Office phone=9776629101, Phone=9776615101}]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [83156a3f19cd154b1c9cfabec90b6fa6, clickElement {id=f.B2DC081514FFB71DA8062D540A873E16.d.4862DF20265B557982795D3B571554A7.e.128}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58864}, goog:processID: 16044, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58864/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (83156a3f19cd154b1c9cfabec90b6fa6)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 83156a3f19cd154b1c9cfabec90b6fa6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [83156a3f19cd154b1c9cfabec90b6fa6, clickElement {id=f.B2DC081514FFB71DA8062D540A873E16.d.4862DF20265B557982795D3B571554A7.e.128}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58864}, goog:processID: 16044, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58864/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (83156a3f19cd154b1c9cfabec90b6fa6)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 83156a3f19cd154b1c9cfabec90b6fa6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- application_add_negative -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Negative_Testcases.Application_Add_Negative_Testcases@2aa3cd93]" started-at="2025-12-30T17:41:14 IST" name="Kill" finished-at="2025-12-30T17:41:14 IST" duration-ms="221" status="PASS">
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:58:31 IST" name="Kill" finished-at="2026-01-08T17:58:31 IST" duration-ms="302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Negative_Testcases.Application_Add_Negative_Testcases -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:58:31 IST" name="setup" finished-at="2026-01-08T17:58:32 IST" duration-ms="979" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:58:32 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T17:59:15 IST" duration-ms="42574" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=3800, Application Status=Pending Docs, Approved Amount=36000, Attorney Name=Attorney Mirela Vollenweider, Buyout Amount=22000, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Summit Legal Funding, Case #=202, Case Type=Police Brutality, Court Index Number=12L02-2403-PB-000902, Date of Incident=03/19/2024, Document prep fee=340, Fund transfer fee=120, Interest Start Date=01/08/2026, Law Firm Name=Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel, Lead Source=Organic, Notes / Remarks=Card payment approved; verify last 4 digits in gateway report; note: convenience fee handled externally, not part of received amount., Payer Name=Plaintiff Marlowe Eichenauer, Payment Date=01/08/2026, Payment Mode=Credit Card, Payment Type=Payment by Plaintiff, Rate of Return=44, Recommended Max Funding=36000, Requested Amount=90000, Risk Level=Moderate-High, SMS Message Body=We need a few additional documents to finalize underwriting. Please coordinate uploads with your attorney. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Alleged use-of-force injury during arrest with wrist fracture and facial lacerations; ER visit and follow-up ortho care; civil complaint being drafted., Underwriting Notes=Strong case value if video and medical causation align. Confirm any criminal case disposition, municipal notice deadlines, and available policy/indemnification. Stage funding pending footage and complaint filing.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=88 Reade Street, Civic Center Business Terrace, Floor 9, Near City Hall Park Corridor, Address Line 2=Mailbox Tag: CC-09, Delivery Instructions: Check-in at Security, Elevator Bank B, Floor 9, Date of Birth=08/27/1989, Email=briarion.kestermere.q4m7@mailto.plus, First Name=Briarion, Last Name=Kestermere, Middle Name=Laurentis, Name Suffix=Jr, Phone number=9776668502, Social Security Number=974-02-8002, State=New York, Zip code=10007}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.bryndovia.kestrelmoire.t4m8vx@mailto.plus, First Name=Attorney Bryndovia, Last Name=Kestrelmoire, Middle Name=Selvarune, Name Suffix=Jr, Office phone=9776629102, Phone=9776615102}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [231d4ece5979ab5c16540d3febd238c0, clickElement {id=f.0931165C638CC3935921A1852E868CA1.d.9B1B8AA6CE37CECF82C5034A16FDE538.e.126}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56769}, goog:processID: 6620, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56769/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (231d4ece5979ab5c16540d3febd238c0)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 231d4ece5979ab5c16540d3febd238c0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [231d4ece5979ab5c16540d3febd238c0, clickElement {id=f.0931165C638CC3935921A1852E868CA1.d.9B1B8AA6CE37CECF82C5034A16FDE538.e.126}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56769}, goog:processID: 6620, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56769/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (231d4ece5979ab5c16540d3febd238c0)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 231d4ece5979ab5c16540d3febd238c0
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:59:15 IST" name="Kill" finished-at="2026-01-08T17:59:15 IST" duration-ms="470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:59:15 IST" name="setup" finished-at="2026-01-08T17:59:16 IST" duration-ms="946" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:59:16 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T17:59:57 IST" duration-ms="40594" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=45000, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/08/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Notes / Remarks=Cheque received via mailroom; deposit scheduled next business day; hold posting until cheque clears per finance policy., Payer Name=NorthBridge Casualty Insurance Co., Payment Date=01/08/2026, Payment Mode=Cheque, Payment Type=Payment by Insurance Company, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=101 Federal Street, Downtown Crossing Office Gallery, Suite 1605, Near Harborwalk Connector, Address Line 2=Unit 16E, Attn: Records Intake, Leave with Concierge, Add Ref: BOS-1605-REC, Date of Birth=11/19/1992, Email=elowenna.violetquill.h1x6@mailto.plus, First Name=Elowenna, Last Name=Violetquill, Middle Name=Seraphiel, Name Suffix=III, Phone number=9776668503, Social Security Number=974-03-8003, State=Massachusetts, Zip code=02110}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.corvexian.draevenholt.p7c1nd@mailto.plus, First Name=Attorney Corvexian, Last Name=Draevenholt, Middle Name=Rhaedon, Name Suffix=III, Office phone=9776629103, Phone=9776615103}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4cf162e8006ec131d293a85b8cf412fd, clickElement {id=f.26416E7317C071413E1DABEE79C192D9.d.B514FE64F71EB27B8B5FCB62728F1F15.e.125}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64890}, goog:processID: 16984, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64890/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4cf162e8006ec131d293a85b8cf412fd)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 4cf162e8006ec131d293a85b8cf412fd]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4cf162e8006ec131d293a85b8cf412fd, clickElement {id=f.26416E7317C071413E1DABEE79C192D9.d.B514FE64F71EB27B8B5FCB62728F1F15.e.125}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64890}, goog:processID: 16984, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64890/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4cf162e8006ec131d293a85b8cf412fd)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 4cf162e8006ec131d293a85b8cf412fd
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:59:57 IST" name="Kill" finished-at="2026-01-08T17:59:57 IST" duration-ms="266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:59:57 IST" name="setup" finished-at="2026-01-08T17:59:58 IST" duration-ms="873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T17:59:58 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:00:41 IST" duration-ms="43395" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=16000, Application Status=In Review, Approved Amount=21000, Attorney Name=Attorney Wendelin Rosenhagen, Buyout Amount=12500, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=204, Case Type=Breach of contract, Court Index Number=07CV-2208-BC-000611, Date of Incident=08/11/2022, Document prep fee=280, Fund transfer fee=95, Interest Start Date=01/08/2026, Law Firm Name=Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers, Lead Source=Broker, Notes / Remarks=Online portal payment from another funder for buyout; cross-check reference ID and settlement ledger; attach payment receipt PDF., Payer Name=Summit Equity Legal Funding Partners, Payment Date=01/08/2026, Payment Mode=Online Payment, Payment Type=Payment by Another Funder, Rate of Return=40, Recommended Max Funding=21000, Requested Amount=50000, Risk Level=Moderate, SMS Message Body=Your breach-of-contract application is under review while we verify pleadings and supporting documents. – Lumberjack Legal Finance, SMS Message Title=Contract Case Under Review, State=Michigan, Summary=Contract dispute over non-delivery of custom equipment and alleged improper termination; invoices and email trail support claimed damages., Underwriting Notes=Key is enforceable contract terms, acceptance/performance evidence, and mitigation. Confirm venue/jurisdiction, counterclaims, and collectability. Funding contingent on pleadings and documentary proof.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=275 Spear Street, Embarcadero Corporate Promenade, Suite 2020, Bay-side Corridor, Near Ferry Building, Address Line 2=Suite 20C, Delivery Notes: Use Front Entrance, Drop at Reception A, Do Not Leave Unattended, Date of Birth=04/03/1990, Email=damarisette.stonefen.v7k0@mailto.plus, First Name=Damarisette, Last Name=Stonefen, Middle Name=Quintana, Name Suffix=Sr, Phone number=9776668504, Social Security Number=974-04-8004, State=California, Zip code=94105}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.delmoryn.orisewick.g3n6ta@mailto.plus, First Name=Attorney Delmoryn, Last Name=Orisewick, Middle Name=Nivessa, Name Suffix=Sr, Office phone=9776629104, Phone=9776615104}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [24b7045b6cf0e9d0e91c532935c8189d, clickElement {id=f.9642AFA030DA628DBAEBD8DEAACECBF1.d.C387FBE48BF2F8093987DB9A82785F96.e.128}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49950}, goog:processID: 19060, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49950/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (24b7045b6cf0e9d0e91c532935c8189d)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 24b7045b6cf0e9d0e91c532935c8189d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [24b7045b6cf0e9d0e91c532935c8189d, clickElement {id=f.9642AFA030DA628DBAEBD8DEAACECBF1.d.C387FBE48BF2F8093987DB9A82785F96.e.128}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49950}, goog:processID: 19060, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49950/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (24b7045b6cf0e9d0e91c532935c8189d)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 24b7045b6cf0e9d0e91c532935c8189d
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:00:41 IST" name="Kill" finished-at="2026-01-08T18:00:42 IST" duration-ms="246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:00:42 IST" name="setup" finished-at="2026-01-08T18:00:42 IST" duration-ms="821" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:00:42 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:01:25 IST" duration-ms="42584" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=52000, Application Status=Approved, Approved Amount=15000, Attorney Name=Attorney Raban Kellermann, Buyout Amount=8200, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Liberty Legal Funding, Case #=205, Case Type=Employment Disputes, Court Index Number=49D01-2405-ED-001205, Date of Incident=05/27/2024, Document prep fee=235, Fund transfer fee=80, Interest Start Date=01/08/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Attorney Referral, Notes / Remarks=Wire received (insurance disbursement); confirm sender name matches remittance advice; split allocation recorded in internal ledger., Payer Name=HarborPoint Mutual Insurance Services, Payment Date=01/08/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Insurance Company, Rate of Return=36, Recommended Max Funding=15000, Requested Amount=36000, Risk Level=Moderate, SMS Message Body=Your employment dispute funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Approved, State=Indiana, Summary=Employment dispute alleging retaliation after reporting safety concerns; termination letter and performance reviews in conflict; wage loss claimed., Underwriting Notes=Verify protected activity timeline, HR complaints, and comparator evidence. Confirm arbitration clause exposure, mitigation efforts, and payroll documentation. Stage funding if early settlement posture is unclear.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=233 North Michigan Avenue, Millennium Loop Office Terrace, Suite 1470, Near Riverwalk Bridge Access, Address Line 2=Office 14B, Attn: Intake Ops, Delivery Window: 9AM–5PM, Visitor Garage Level 2, Date of Birth=06/08/1993, Email=orionel.crownbarrow.c2r9@mailto.plus, First Name=Orionel, Last Name=Crownbarrow, Middle Name=Matthieu, Name Suffix=IV, Phone number=9776668505, Social Security Number=974-05-8005, State=Illinois, Zip code=60601}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.eryndel.thornelux.h8x0jq@mailto.plus, First Name=Attorney Eryndel, Last Name=Thornelux, Middle Name=Lucavine, Name Suffix=IV, Office phone=9776629105, Phone=9776615105}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bdcc3412c79acd698f139e9816ab0273, clickElement {id=f.AF30DE466FAFB01D1798A804B94F0FCA.d.08537A67FD4D3E4F25AFB99E6C487484.e.126}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54744}, goog:processID: 3332, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54744/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bdcc3412c79acd698f139e9816ab0273)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: bdcc3412c79acd698f139e9816ab0273]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bdcc3412c79acd698f139e9816ab0273, clickElement {id=f.AF30DE466FAFB01D1798A804B94F0FCA.d.08537A67FD4D3E4F25AFB99E6C487484.e.126}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54744}, goog:processID: 3332, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54744/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bdcc3412c79acd698f139e9816ab0273)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: bdcc3412c79acd698f139e9816ab0273
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:01:25 IST" name="Kill" finished-at="2026-01-08T18:01:25 IST" duration-ms="230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:01:25 IST" name="setup" finished-at="2026-01-08T18:01:26 IST" duration-ms="799" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:01:26 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:02:08 IST" duration-ms="41774" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=5000, Application Status=Pending Docs, Approved Amount=7200, Attorney Name=Attorney Jannik Altenkirch, Buyout Amount=4200, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=206, Case Type=Unpaid Wages, Court Index Number=14L01-2402-UW-000418, Date of Incident=02/15/2024, Document prep fee=210, Fund transfer fee=65, Interest Start Date=01/08/2026, Law Firm Name=Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel, Lead Source=Other, Notes / Remarks=Cash delivered by attorney runner; ID verified; counted under camera; receipt generated and shared with attorney office., Payer Name=Attorney Osric Vandenbrock, Payment Date=01/08/2026, Payment Mode=Cash, Payment Type=Payment by Attorney, Rate of Return=33, Recommended Max Funding=7200, Requested Amount=18000, Risk Level=Low-Moderate, SMS Message Body=We need additional payroll or schedule documentation to finalize your unpaid wages file. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Unpaid overtime and denied meal-break premiums alleged across multiple pay periods; payroll records and schedules reportedly inconsistent., Underwriting Notes=Class/collective potential changes risk profile. Confirm timekeeping records, policy acknowledgments, and arbitration/waiver clauses. Conservative funding until certification posture is known.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=940 Poydras Street, Crescent City Legal Arcade, Suite 2115, Central Business District, Near Superdome Route, Address Line 2=Unit 21D, Attn: Intake Coordinator, Deliver to Lobby Desk, Add Note: “Hold for Signature”, Date of Birth=09/14/1988, Email=nyxalia.hollowmere.p8d3@mailto.plus, First Name=Nyxalia, Last Name=Hollowmere, Middle Name=Genevra, Name Suffix=II, Phone number=9776668506, Social Security Number=974-06-8006, State=Louisiana, Zip code=70112}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.faeloria.sablethorne.k1j7rd@mailto.plus, First Name=Attorney Faeloria, Last Name=Sablethorne, Middle Name=Junavelle, Name Suffix=II, Office phone=9776629106, Phone=9776615106}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [542b5ebf82337100ccd1b7da3866c57a, clickElement {id=f.11CB8C173C1E726529EC83ACDAF31813.d.0CF26C61D5CDB50D788E190DFE46A2C7.e.124}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57647}, goog:processID: 18100, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57647/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (542b5ebf82337100ccd1b7da3866c57a)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 542b5ebf82337100ccd1b7da3866c57a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [542b5ebf82337100ccd1b7da3866c57a, clickElement {id=f.11CB8C173C1E726529EC83ACDAF31813.d.0CF26C61D5CDB50D788E190DFE46A2C7.e.124}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57647}, goog:processID: 18100, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57647/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (542b5ebf82337100ccd1b7da3866c57a)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 542b5ebf82337100ccd1b7da3866c57a
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:02:08 IST" name="Kill" finished-at="2026-01-08T18:02:08 IST" duration-ms="298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:02:08 IST" name="setup" finished-at="2026-01-08T18:02:09 IST" duration-ms="851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:02:09 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:02:50 IST" duration-ms="41469" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=9000, Application Status=In Review, Approved Amount=9800, Attorney Name=Attorney Bjarne Edelmann, Buyout Amount=5600, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Summit Legal Funding, Case #=207, Case Type=Workers Compensation, Court Index Number=03WC-2310-WC-002031, Date of Incident=10/22/2023, Document prep fee=240, Fund transfer fee=80, Interest Start Date=01/08/2026, Law Firm Name=Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei, Lead Source=Medical Provider, Notes / Remarks=Personal cheque accepted; confirm signature and date; pending clearance—do not mark as settled until bank confirmation., Payer Name=Plaintiff Leontius Brackenford, Payment Date=01/08/2026, Payment Mode=Cheque, Payment Type=Payment by Plaintiff, Rate of Return=35, Recommended Max Funding=9800, Requested Amount=24000, Risk Level=Moderate, SMS Message Body=Your workers compensation file is under review while claim status and records are verified. – Lumberjack Legal Finance, SMS Message Title=Under Review, State=Michigan, Summary=Repetitive strain injury from assembly work; EMG confirms neuropathy; restrictions imposed and reduced hours reported., Underwriting Notes=Confirm comp acceptance status, wage statements, and MMI outlook. Lien and fee posture are critical. Funding should be conservative if dispute/denial is pending.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=111 West Monroe Street, Midtown Commerce Gallery, Suite 980, North Tower, Near Light Rail Stop, Address Line 2=Suite 9F, Delivery Instructions: Leave at Reception, Visitor Parking: Garage B, Bring Ticket for Validation, Date of Birth=01/26/1994, Email=sorevian.windervault.m0q5@mailto.plus, First Name=Sorevian, Last Name=Windervault, Middle Name=Raffaele, Name Suffix=Jr, Phone number=9776668507, Social Security Number=974-07-8007, State=Arizona, Zip code=85004}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.galren.myridanthe.w2d8qb@mailto.plus, First Name=Attorney Galren, Last Name=Myridanthe, Middle Name=Kestovar, Name Suffix=Jr, Office phone=9776629107, Phone=9776615107}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7ce1e80f68b81b538f58296925a690af, clickElement {id=f.214E908EA0D4C22BB8A786A898DFA956.d.3AF428C555E232C79912EA1B7C81EF80.e.124}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64068}, goog:processID: 16984, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64068/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7ce1e80f68b81b538f58296925a690af)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 7ce1e80f68b81b538f58296925a690af]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7ce1e80f68b81b538f58296925a690af, clickElement {id=f.214E908EA0D4C22BB8A786A898DFA956.d.3AF428C555E232C79912EA1B7C81EF80.e.124}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64068}, goog:processID: 16984, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64068/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7ce1e80f68b81b538f58296925a690af)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 7ce1e80f68b81b538f58296925a690af
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:02:50 IST" name="Kill" finished-at="2026-01-08T18:02:51 IST" duration-ms="275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:02:51 IST" name="setup" finished-at="2026-01-08T18:02:52 IST" duration-ms="878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:02:52 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:03:35 IST" duration-ms="43002" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=7400, Application Status=Approved, Approved Amount=22000, Attorney Name=Attorney Ossian Fahrner, Buyout Amount=14500, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Frontline Capital Group, Case #=208, Case Type=Boat Accident, Court Index Number=49D05-2407-BA-001009, Date of Incident=07/04/2024, Document prep fee=275, Fund transfer fee=95, Interest Start Date=01/08/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Organic, Notes / Remarks=PIP reimbursement via online payment; verify claim number in remittance; match against case payment schedule., Payer Name=PIP Claims Department - MetroShield, Payment Date=01/08/2026, Payment Mode=Online Payment, Payment Type=Payment by PIP, Rate of Return=39, Recommended Max Funding=22000, Requested Amount=52000, Risk Level=Moderate, SMS Message Body=Your boat accident funding is approved. We’ll coordinate agreement review and disbursement with your attorney. – Lumberjack Legal Finance, SMS Message Title=Boat Accident Approved, State=Indiana, Summary=Recreational boat collision at dusk; alleged improper lighting and speed; shoulder dislocation and concussion symptoms; marine patrol report filed., Underwriting Notes=Key evidence: marine patrol report, GPS/boat telemetry if available, witness statements, and navigational rules compliance. Confirm operator insurance and any comparative negligence factors.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=901 5th Avenue, Emerald Plaza Offices, Suite 2655, Downtown Core, Between Westlake and Waterfront, Address Line 2=Office 26A, Attn: Intake Team, Deliveries: Main Lobby Only, Package Scan Required, Date of Birth=12/16/1991, Email=ysolveta.glenwicke.z6t1@mailto.plus, First Name=Ysolveta, Last Name=Glenwicke, Middle Name=Monique, Name Suffix=III, Phone number=9776668508, Social Security Number=974-08-8008, State=Washington, Zip code=98101}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.heliandria.wexenforde.y5k0zu@mailto.plus, First Name=Attorney Heliandria, Last Name=Wexenforde, Middle Name=Sylphene, Name Suffix=III, Office phone=9776629108, Phone=9776615108}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [06f838e601fc3757d372e4dfadd1fb23, clickElement {id=f.04CFC6E632887A38EC1D489FEF7247FC.d.2B6707464BD01AA99BF74BE0385C0199.e.121}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, goog:processID: 14312, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (06f838e601fc3757d372e4dfadd1fb23)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 06f838e601fc3757d372e4dfadd1fb23]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [06f838e601fc3757d372e4dfadd1fb23, clickElement {id=f.04CFC6E632887A38EC1D489FEF7247FC.d.2B6707464BD01AA99BF74BE0385C0199.e.121}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57599}, goog:processID: 14312, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57599/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (06f838e601fc3757d372e4dfadd1fb23)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 06f838e601fc3757d372e4dfadd1fb23
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:03:35 IST" name="Kill" finished-at="2026-01-08T18:03:35 IST" duration-ms="264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:03:35 IST" name="setup" finished-at="2026-01-08T18:03:36 IST" duration-ms="763" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:03:36 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:04:16 IST" duration-ms="40187" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=11000, Application Status=In Review, Approved Amount=58000, Attorney Name=Attorney Alarich Sonnenfeldt, Buyout Amount=36000, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=209, Case Type=Airplane Accident, Court Index Number=21CV-2209-AA-000884, Date of Incident=09/09/2022, Document prep fee=355, Fund transfer fee=130, Interest Start Date=01/08/2026, Law Firm Name=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Lead Source=Attorney Referral, Notes / Remarks=Insurance card payment processed through billing gateway; ensure transaction receipt is uploaded; confirm no partial capture., Payer Name=CedarLine Commercial Insurance, Payment Date=01/08/2026, Payment Mode=Credit Card, Payment Type=Payment by Insurance Company, Rate of Return=46, Recommended Max Funding=58000, Requested Amount=125000, Risk Level=Moderate-High, SMS Message Body=Your airplane accident file is under advanced review while investigation records are verified. – Lumberjack Legal Finance, SMS Message Title=Airplane Case Under Review, State=Ohio, Summary=Small aircraft hard-landing incident with alleged maintenance lapse; orthopedic injuries and long rehab; NTSB/FAA records requested., Underwriting Notes=Complex liability and multiple parties (operator, maintenance, manufacturer). Confirm investigation status, expert retention, and insurance layers. Staged funding recommended until causation is established.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=500 Woodward Avenue, Midtown Legal Exchange, Suite 1405, Near Riverfront Access Road, Address Line 2=Unit 14C, Attn: Records Intake, Use Side Loading Dock for Large Packages (Dock #2), Date of Birth=06/21/1989, Email=valkorin.marblecairn.b3h7@mailto.plus, First Name=Valkorin, Last Name=Marblecairn, Middle Name=Antonin, Name Suffix=Sr, Phone number=9776668509, Social Security Number=974-09-8009, State=Michigan, Zip code=48226}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.iskavion.crownmirel.z3q6lp@mailto.plus, First Name=Attorney Iskavion, Last Name=Crownmirel, Middle Name=Vesperra, Name Suffix=Sr, Office phone=9776629109, Phone=9776615109}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bd926f35c0c3f62783c4dfa3cb821a0e, clickElement {id=f.AF59375AF82EFFE27288CFAF7ED3C4A8.d.EC4F5C05AE15E0211CD7013AB4E8B4D0.e.126}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54512}, goog:processID: 20096, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54512/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bd926f35c0c3f62783c4dfa3cb821a0e)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: bd926f35c0c3f62783c4dfa3cb821a0e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bd926f35c0c3f62783c4dfa3cb821a0e, clickElement {id=f.AF59375AF82EFFE27288CFAF7ED3C4A8.d.EC4F5C05AE15E0211CD7013AB4E8B4D0.e.126}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54512}, goog:processID: 20096, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54512/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bd926f35c0c3f62783c4dfa3cb821a0e)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: bd926f35c0c3f62783c4dfa3cb821a0e
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:04:16 IST" name="Kill" finished-at="2026-01-08T18:04:16 IST" duration-ms="231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:04:16 IST" name="setup" finished-at="2026-01-08T18:04:17 IST" duration-ms="773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:04:17 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-08T18:04:58 IST" duration-ms="41518" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Agreement Date=01/08/2026, Amount Received=6300, Application Status=Pending Docs, Approved Amount=41000, Attorney Name=Attorney Falko Kornblum, Buyout Amount=26000, Buyout Expiry Date=01/08/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=210, Case Type=Aeroplane accident, Court Index Number=12L04-2311-AE-003107, Date of Incident=11/21/2023, Document prep fee=345, Fund transfer fee=120, Interest Start Date=01/08/2026, Law Firm Name=Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners, Lead Source=Broker, Notes / Remarks=Bank transfer from PIP unit; reconcile amount against expected PIP reimbursement; document remittance reference in remarks., Payer Name=PIP Unit - Granite Auto Indemnity, Payment Date=01/08/2026, Payment Mode=Bank Transfer, Payment Type=Payment by PIP, Rate of Return=45, Recommended Max Funding=41000, Requested Amount=98000, Risk Level=Moderate, SMS Message Body=We need a few additional documents to finalize your aeroplane accident file. Please coordinate with your attorney. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Charter turbulence event with unsecured luggage impact; head injury and neck symptoms; neuro follow-ups ongoing; carrier incident report requested., Underwriting Notes=Confirm passenger manifest, medical causation timeline, and applicable treaty/limitations if commercial carrier involved. Evidence quality and insurance layers drive funding ceiling.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=2101 Cedar Springs Road, Uptown Commercial Promenade, Suite 1555, Crescent District, Near Oak Lawn, Address Line 2=Suite 15B, Attn: Intake Desk, Delivery Hours: 9AM–4PM, Parking: Visitor Deck Level 2, Date of Birth=04/08/1992, Email=priyanka.briarhaven.u1n8@mailto.plus, First Name=Priyanka, Last Name=Briarhaven, Middle Name=Anika, Name Suffix=IV, Phone number=9776668510, Social Security Number=974-10-8010, State=Texas, Zip code=75201}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.jorvannis.zephyrnaut.b7u1ex@mailto.plus, First Name=Attorney Jorvannis, Last Name=Zephyrnaut, Middle Name=Rheomir, Name Suffix=IV, Office phone=9776629110, Phone=9776615110}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2804550babb58c32822f09fc918bc353, clickElement {id=f.3AE76C7BDEF306D87AE822E2BCBEE301.d.E426FF60EE7785D0E946106270FF192C.e.129}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59667}, goog:processID: 9972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59667/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2804550babb58c32822f09fc918bc353)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 2804550babb58c32822f09fc918bc353]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="ant-card-extra">...</div> is not clickable at point (705, 411). Other element would receive the click: <div class="ant-float-btn-body">...</div>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2804550babb58c32822f09fc918bc353, clickElement {id=f.3AE76C7BDEF306D87AE822E2BCBEE301.d.E426FF60EE7785D0E946106270FF192C.e.129}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59667}, goog:processID: 9972, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59667/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2804550babb58c32822f09fc918bc353)] -> xpath: //div[@class='ant-card-extra']]
+Session ID: 2804550babb58c32822f09fc918bc353
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@78dd667e]" started-at="2026-01-08T18:04:58 IST" name="Kill" finished-at="2026-01-08T18:04:59 IST" duration-ms="246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

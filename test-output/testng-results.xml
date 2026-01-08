@@ -1,114 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="11" passed="5" failed="5" skipped="0">
+<testng-results ignored="3" total="23" passed="19" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-07T20:27:49 IST" name="Default suite" finished-at="2026-01-07T20:42:00 IST" duration-ms="850865">
+  <suite started-at="2026-01-08T20:09:57 IST" name="Default suite" finished-at="2026-01-08T20:17:28 IST" duration-ms="451336">
     <groups>
     </groups>
-    <test started-at="2026-01-07T20:27:49 IST" name="Default test" finished-at="2026-01-07T20:42:00 IST" duration-ms="850865">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:27:49 IST" name="setup" finished-at="2026-01-07T20:27:52 IST" duration-ms="3234" status="PASS">
+    <test started-at="2026-01-08T20:09:57 IST" name="Default test" finished-at="2026-01-08T20:17:28 IST" duration-ms="451336">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Attorney_module">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:09:57 IST" name="setup" finished-at="2026-01-08T20:09:59 IST" duration-ms="2121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:27:52 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:29:46 IST" duration-ms="114186" status="PASS">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:09:59 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:10:20 IST" duration-ms="21209" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=12000, Application Status=In Review, Approved Amount=24000, Attorney Name=Attorney Orson Pfeiffer, Buyout Amount=15500, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Frontline Capital Group, Case #=201, Case Type=Civil Rights, Court Index Number=49D03-2306-CR-001114, Date of Incident=06/08/2023, Document prep fee=325, Fund transfer fee=110, Interest Start Date=01/07/2026, Law Firm Name=Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center, Lead Source=Attorney Referral, Notes / Remarks=ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting., Payer Name=Attorney Selwyn Kappelmann, Payment Date=01/07/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Attorney, Rate of Return=41, Recommended Max Funding=24000, Requested Amount=58000, Risk Level=Moderate, SMS Message Body=Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance, SMS Message Title=Civil Rights File In Review, State=Indiana, Summary=Alleged unlawful search and excessive detention during traffic stop; emotional distress and employment disruption claimed; bodycam footage requested., Underwriting Notes=Primary driver is evidence quality: bodycam, dispatch logs, incident report, and any internal affairs findings. Confirm notice requirements, immunities, and policy limits before expanding funding.}]]>
+                <![CDATA[{Email=attorney.axiomara.thornabyss.q7lz4p2n@mailto.plus, First Name=Attorney Axiomara, Last Name=Thornabyss, Middle Name=Velun, Name Suffix=II, Office phone=9551318801, Phone=9551307601}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=615 2nd Avenue, Pioneer Square Commerce Block, Suite 1210, Near Waterfront Streetcar Stop, Address Line 2=Unit 12A, Attn: Intake Desk, Delivery Notes: Main Lobby Only, Signature Required at Reception, Date of Birth=02/11/1991, Email=caelindra.hearthrow.t9p2@mailto.plus, First Name=Caelindra, Last Name=Hearthrow, Middle Name=Marcelline, Name Suffix=II, Phone number=9776668501, Social Security Number=974-01-8001, State=Washington, Zip code=98104}]]>
+                <![CDATA[{City=New York, Name=Harborline Catastrophic Injury & Trial Atelier, Phone=9295558301, State=New York, Street Address 1=110 Wall Street, Seaport Financial Arcade, South Lobby Check-in, Street Address 2=Suite 2410, Intake Window: Desk S2, Elevator Bank D, Visitor Badge Required, Zip code=10005}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=attorney.brionyra.krynnemont.m2v8@mailto.plus, First Name=Attorney Brionyra, Last Name=Krynnemont, Middle Name=Selwynne, Name Suffix=Jr, Office phone=9888884002, Phone=9887773002}]]>
+                <![CDATA[{Staff Email=staff.zephyrella.vexelmont.r8q1mz@mailto.plus, Staff First Name=Staff Zephyrella, Staff Last Name=Vexelmont, Staff Middle Name=Quorinza, Staff Name Suffix=II, Staff Office phone=9794328601, Staff Phone=9794317601}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:29:46 IST" name="Kill" finished-at="2026-01-07T20:29:47 IST" duration-ms="372" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:10:20 IST" name="Kill" finished-at="2026-01-08T20:10:20 IST" duration-ms="328" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:29:47 IST" name="setup" finished-at="2026-01-07T20:29:47 IST" duration-ms="888" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:10:20 IST" name="setup" finished-at="2026-01-08T20:10:21 IST" duration-ms="854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:29:47 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:31:35 IST" duration-ms="107570" status="PASS">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:10:21 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:10:42 IST" duration-ms="20543" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=3800, Application Status=Pending Docs, Approved Amount=36000, Attorney Name=Attorney Mirela Vollenweider, Buyout Amount=22000, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Summit Legal Funding, Case #=202, Case Type=Police Brutality, Court Index Number=12L02-2403-PB-000902, Date of Incident=03/19/2024, Document prep fee=340, Fund transfer fee=120, Interest Start Date=01/07/2026, Law Firm Name=Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel, Lead Source=Organic, Notes / Remarks=Card payment approved; verify last 4 digits in gateway report; note: convenience fee handled externally, not part of received amount., Payer Name=Plaintiff Marlowe Eichenauer, Payment Date=01/07/2026, Payment Mode=Credit Card, Payment Type=Payment by Plaintiff, Rate of Return=44, Recommended Max Funding=36000, Requested Amount=90000, Risk Level=Moderate-High, SMS Message Body=We need a few additional documents to finalize underwriting. Please coordinate uploads with your attorney. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Alleged use-of-force injury during arrest with wrist fracture and facial lacerations; ER visit and follow-up ortho care; civil complaint being drafted., Underwriting Notes=Strong case value if video and medical causation align. Confirm any criminal case disposition, municipal notice deadlines, and available policy/indemnification. Stage funding pending footage and complaint filing.}]]>
+                <![CDATA[{Email=attorney.brontelius.wickharrow.m3t9kq8v@mailto.plus, First Name=Attorney Brontelius, Last Name=Wickharrow, Middle Name=Caerwyn, Name Suffix=Jr, Office phone=9551318802, Phone=9551307602}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=88 Reade Street, Civic Center Business Terrace, Floor 9, Near City Hall Park Corridor, Address Line 2=Mailbox Tag: CC-09, Delivery Instructions: Check-in at Security, Elevator Bank B, Floor 9, Date of Birth=08/27/1989, Email=briarion.kestermere.q4m7@mailto.plus, First Name=Briarion, Last Name=Kestermere, Middle Name=Laurentis, Name Suffix=Jr, Phone number=9776668502, Social Security Number=974-02-8002, State=New York, Zip code=10007}]]>
+                <![CDATA[{City=Seattle, Name=Cascadia Surgical Negligence Review Counsel, Phone=9295558302, State=Washington, Street Address 1=901 5th Avenue, Emerald Plaza Offices, Main Entrance Security Desk, Street Address 2=Floor 19, Suite 1906, Records Intake: Scan Package at Lobby Counter, Zip code=98104}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=attorney.corvandel.draxenvale.p9c4@mailto.plus, First Name=Attorney Corvandel, Last Name=Draxenvale, Middle Name=Rhaedric, Name Suffix=III, Office phone=9888884003, Phone=9887773003}]]>
+                <![CDATA[{Staff Email=staff.dravionne.kryndelair.t2v7kp@mailto.plus, Staff First Name=Staff Dravionne, Staff Last Name=Kryndelair, Staff Middle Name=Selvayna, Staff Name Suffix=Jr, Staff Office phone=9794328602, Staff Phone=9794317602}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:31:35 IST" name="Kill" finished-at="2026-01-07T20:31:35 IST" duration-ms="317" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:10:42 IST" name="Kill" finished-at="2026-01-08T20:10:42 IST" duration-ms="315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:31:35 IST" name="setup" finished-at="2026-01-07T20:31:36 IST" duration-ms="866" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:10:42 IST" name="setup" finished-at="2026-01-08T20:10:43 IST" duration-ms="941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:31:36 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:32:29 IST" duration-ms="52519" status="FAIL">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:10:43 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:11:04 IST" duration-ms="20453" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=45000, Application Status=Approved, Approved Amount=17500, Attorney Name=Attorney Soren Birkenfeld, Buyout Amount=9800, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=203, Case Type=Wrongful Arrest, Court Index Number=18CV-2312-WA-001733, Date of Incident=12/02/2023, Document prep fee=255, Fund transfer fee=85, Interest Start Date=01/07/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Notes / Remarks=Cheque received via mailroom; deposit scheduled next business day; hold posting until cheque clears per finance policy., Payer Name=NorthBridge Casualty Insurance Co., Payment Date=01/07/2026, Payment Mode=Cheque, Payment Type=Payment by Insurance Company, Rate of Return=37, Recommended Max Funding=17500, Requested Amount=42000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest allegation due to mistaken identity; overnight detention and missed work; reputational harm claimed with corroborating alibi records., Underwriting Notes=Confirm dismissal/acquittal paperwork, arrest report narrative, and any video evidence. Damages improve with lost-wage verification and documented mental health treatment. Review immunities/notice rules.}]]>
+                <![CDATA[{Email=attorney.celandrine.glassmoraine.r8y1v6jd@mailto.plus, First Name=Attorney Celandrine, Last Name=Glassmoraine, Middle Name=Orvessa, Name Suffix=III, Office phone=9551318803, Phone=9551307603}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=101 Federal Street, Downtown Crossing Office Gallery, Suite 1605, Near Harborwalk Connector, Address Line 2=Unit 16E, Attn: Records Intake, Leave with Concierge, Add Ref: BOS-1605-REC, Date of Birth=11/19/1992, Email=elowenna.violetquill.h1x6@mailto.plus, First Name=Elowenna, Last Name=Violetquill, Middle Name=Seraphiel, Name Suffix=III, Phone number=9776668503, Social Security Number=974-03-8003, State=Massachusetts, Zip code=02110}]]>
+                <![CDATA[{City=Louisville, Name=Bluegrass Liability & Wrongful Death Chambers, Phone=9295558303, State=Kentucky, Street Address 1=601 W Main Street, Riverfront Commerce Center, East Entrance, Street Address 2=Suite 1425, Intake Desk: Room 14A, Signature Required on Delivery, Zip code=40202}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=attorney.delpharyn.orriscarrow.t6n3@mailto.plus, First Name=Attorney Delpharyn, Last Name=Orriscarrow, Middle Name=Nivoria, Name Suffix=Sr, Office phone=9888884004, Phone=9887773004}]]>
+                <![CDATA[{Staff Email=staff.caelthorin.draxenwick.p4c9nd@mailto.plus, Staff First Name=Staff Caelthorin, Staff Last Name=Draxenwick, Staff Middle Name=Rhaemiro, Staff Name Suffix=III, Staff Office phone=9794328603, Staff Phone=9794317603}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:04 IST" name="Kill" finished-at="2026-01-08T20:11:04 IST" duration-ms="369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:04 IST" name="setup" finished-at="2026-01-08T20:11:05 IST" duration-ms="894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:05 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:11:28 IST" duration-ms="23554" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.dromedon.sablequay.p2n7cx5m@mailto.plus, First Name=Attorney Dromedon, Last Name=Sablequay, Middle Name=Halrix, Name Suffix=Sr, Office phone=9551318804, Phone=9551307604}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Phoenix, Name=High Desert Crash Claims & Coverage Dispute Counsel, Phone=9295558304, State=Arizona, Street Address 1=2 N Central Avenue, Copper Square Office Terrace, North Lobby, Street Address 2=Suite 1750, Deliver to Reception A1, Weekdays Only 9AM–4PM, Zip code=85004}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.nymeravia.orrisvale.z6n3ga@mailto.plus, Staff First Name=Staff Nymeravia, Staff Last Name=Orrisvale, Staff Middle Name=Vesperin, Staff Name Suffix=Sr, Staff Office phone=9794328604, Staff Phone=9794317604}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:28 IST" name="Kill" finished-at="2026-01-08T20:11:29 IST" duration-ms="335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:29 IST" name="setup" finished-at="2026-01-08T20:11:30 IST" duration-ms="948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:30 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:11:51 IST" duration-ms="21011" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.elarisette.runeviaduct.z6h3q0wt@mailto.plus, First Name=Attorney Elarisette, Last Name=Runeviaduct, Middle Name=Junor, Name Suffix=IV, Office phone=9551318805, Phone=9551307605}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Denver, Name=Front Range Wage Recovery & Retaliation Counsel, Phone=9295558305, State=Colorado, Street Address 1=1700 Broadway, Civic Center Professional Annex, East Tower Lobby, Street Address 2=Suite 3108, Intake Desk: 31F, Visitor Parking: Garage P2 (Validate at Reception), Zip code=80202}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.elyndoriel.thornquarry.h4x9jq@mailto.plus, Staff First Name=Staff Elyndoriel, Staff Last Name=Thornquarry, Staff Middle Name=Lucavere, Staff Name Suffix=IV, Staff Office phone=9794328605, Staff Phone=9794317605}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:51 IST" name="Kill" finished-at="2026-01-08T20:11:51 IST" duration-ms="362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:51 IST" name="setup" finished-at="2026-01-08T20:11:52 IST" duration-ms="881" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:11:52 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:12:07 IST" duration-ms="14815" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.fennorik.ironlattice.b9x4m1qa@mailto.plus, First Name=Attorney Fennorik, Last Name=Ironlattice, Middle Name=Mirelle, Name Suffix=II, Office phone=9551318806, Phone=9551307606}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Jacksonville, Name=Gulfstream Maritime & Dock Injury Counsel, Phone=9295558306, State=Florida, Street Address 1=200 S Hogan Street, River City Financial Center, Main Lobby Check-in, Street Address 2=Suite 1412, Attn: Intake Ops, Leave Package with Concierge if Office Door Closed, Zip code=32202}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.faelunessa.sablethorn.r1j7kd@mailto.plus, Staff First Name=Staff Faelunessa, Staff Last Name=Sablethorn, Staff Middle Name=Junoriel, Staff Name Suffix=II, Staff Office phone=9794328606, Staff Phone=9794317606}]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[element click intercepted: Element <button type="button" class="ant-btn css-1egwh03 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid" disabled="">...</button> is not clickable at point (1141, 541). Other element would receive the click: <div class="ant-modal-content">...</div>
+              <![CDATA[element click intercepted: Element <div aria-selected="false" class="ant-select-item ant-select-item-option ant-select-item-option-active" title="Gulfstream Maritime &amp; Dock Injury Counsel">...</div> is not clickable at point (458, 411). Other element would receive the click: <label class="ant-form-item-required" title="...">Last Name</label>
   (Session info: chrome=143.0.7499.170)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ef47eac69be22bb5dfc8f409483f6181, clickElement {id=f.02AF6FC41F2A3F7477B43E4627F4CFD9.d.5A323F56031A4C6C4E932485383259B6.e.230}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64911}, goog:processID: 6340, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64911/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ef47eac69be22bb5dfc8f409483f6181)] -> xpath: //*[@aria-label='import']/../..]
-Session ID: ef47eac69be22bb5dfc8f409483f6181]]>
+Command: [c0be0a6972632056236c6b0fc546338b, clickElement {id=f.A48E9F51CE3681FA98C49CFDF6801C70.d.F8AB210B78D5E55671E02B913C2829AC.e.162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50943}, goog:processID: 14792, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50943/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[[[ChromeDriver: chrome on windows (c0be0a6972632056236c6b0fc546338b)] -> xpath: (//div[@class='rc-virtual-list'])[1]]] -> xpath: .//*[@aria-selected='false']]
+Session ID: c0be0a6972632056236c6b0fc546338b]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button type="button" class="ant-btn css-1egwh03 ant-btn-primary ant-btn-color-primary ant-btn-variant-solid" disabled="">...</button> is not clickable at point (1141, 541). Other element would receive the click: <div class="ant-modal-content">...</div>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div aria-selected="false" class="ant-select-item ant-select-item-option ant-select-item-option-active" title="Gulfstream Maritime &amp; Dock Injury Counsel">...</div> is not clickable at point (458, 411). Other element would receive the click: <label class="ant-form-item-required" title="...">Last Name</label>
   (Session info: chrome=143.0.7499.170)
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ef47eac69be22bb5dfc8f409483f6181, clickElement {id=f.02AF6FC41F2A3F7477B43E4627F4CFD9.d.5A323F56031A4C6C4E932485383259B6.e.230}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64911}, goog:processID: 6340, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64911/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ef47eac69be22bb5dfc8f409483f6181)] -> xpath: //*[@aria-label='import']/../..]
-Session ID: ef47eac69be22bb5dfc8f409483f6181
+Command: [c0be0a6972632056236c6b0fc546338b, clickElement {id=f.A48E9F51CE3681FA98C49CFDF6801C70.d.F8AB210B78D5E55671E02B913C2829AC.e.162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50943}, goog:processID: 14792, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50943/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[[[ChromeDriver: chrome on windows (c0be0a6972632056236c6b0fc546338b)] -> xpath: (//div[@class='rc-virtual-list'])[1]]] -> xpath: .//*[@aria-selected='false']]
+Session ID: c0be0a6972632056236c6b0fc546338b
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -121,11 +208,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:176)
+at Enterprise_Codeclouds.Project.Enterprise.Attorney_module.Attorney_Add(Attorney_module.java:44)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -157,506 +240,418 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:32:29 IST" name="Kill" finished-at="2026-01-07T20:32:29 IST" duration-ms="292" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:07 IST" name="Kill" finished-at="2026-01-08T20:12:07 IST" duration-ms="309" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:32:29 IST" name="setup" finished-at="2026-01-07T20:32:30 IST" duration-ms="862" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:07 IST" name="setup" finished-at="2026-01-08T20:12:08 IST" duration-ms="910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:32:30 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:32:48 IST" duration-ms="18558" status="FAIL">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:08 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:12:30 IST" duration-ms="21619" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=16000, Application Status=In Review, Approved Amount=21000, Attorney Name=Attorney Wendelin Rosenhagen, Buyout Amount=12500, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=204, Case Type=Breach of contract, Court Index Number=07CV-2208-BC-000611, Date of Incident=08/11/2022, Document prep fee=280, Fund transfer fee=95, Interest Start Date=01/07/2026, Law Firm Name=Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers, Lead Source=Broker, Notes / Remarks=Online portal payment from another funder for buyout; cross-check reference ID and settlement ledger; attach payment receipt PDF., Payer Name=Summit Equity Legal Funding Partners, Payment Date=01/07/2026, Payment Mode=Online Payment, Payment Type=Payment by Another Funder, Rate of Return=40, Recommended Max Funding=21000, Requested Amount=50000, Risk Level=Moderate, SMS Message Body=Your breach-of-contract application is under review while we verify pleadings and supporting documents. – Lumberjack Legal Finance, SMS Message Title=Contract Case Under Review, State=Michigan, Summary=Contract dispute over non-delivery of custom equipment and alleged improper termination; invoices and email trail support claimed damages., Underwriting Notes=Key is enforceable contract terms, acceptance/performance evidence, and mitigation. Confirm venue/jurisdiction, counterclaims, and collectability. Funding contingent on pleadings and documentary proof.}]]>
+                <![CDATA[{Email=attorney.gossamira.cinderfjord.k5u8r2vn@mailto.plus, First Name=Attorney Gossamira, Last Name=Cinderfjord, Middle Name=Selthic, Name Suffix=Jr, Office phone=9551318807, Phone=9551307607}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=275 Spear Street, Embarcadero Corporate Promenade, Suite 2020, Bay-side Corridor, Near Ferry Building, Address Line 2=Suite 20C, Delivery Notes: Use Front Entrance, Drop at Reception A, Do Not Leave Unattended, Date of Birth=04/03/1990, Email=damarisette.stonefen.v7k0@mailto.plus, First Name=Damarisette, Last Name=Stonefen, Middle Name=Quintana, Name Suffix=Sr, Phone number=9776668504, Social Security Number=974-04-8004, State=California, Zip code=94105}]]>
+                <![CDATA[{City=Chicago, Name=Prairie State Product Liability Proof Lab, Phone=9295558307, State=Illinois, Street Address 1=200 S Wacker Drive, One Riverside Plaza, Lobby Level Visitor Check-in, Street Address 2=Suite 2675, Intake Desk: West Corridor, Elevator Bank C, Mail Stop IL-26, Zip code=60606}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=attorney.eryndorin.thornquillon.h4x9@mailto.plus, First Name=Attorney Eryndorin, Last Name=Thornquillon, Middle Name=Lucavere, Name Suffix=IV, Office phone=9888884005, Phone=9887773005}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-at Locaters.Login_Locaters.login_confirmation(Login_Locaters.java:60)
-at Enterprise_Codeclouds.Project.Enterprise.Login.login(Login.java:42)
-at Enterprise_Codeclouds.Project.Enterprise.Header_Manager.header_buttons_clicker(Header_Manager.java:15)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_New_Case_Form_Accessor(Case_Appplications.java:55)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:93)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@role='menu']"}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [24f8bd428787077c249dc007bc3924ff, findElement {using=xpath, value=//*[@role='menu']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56391}, goog:processID: 5828, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56391/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 24f8bd428787077c249dc007bc3924ff
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 32 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:32:48 IST" name="Kill" finished-at="2026-01-07T20:32:49 IST" duration-ms="303" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:32:49 IST" name="setup" finished-at="2026-01-07T20:32:50 IST" duration-ms="875" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:32:50 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:34:42 IST" duration-ms="111930" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=52000, Application Status=Approved, Approved Amount=15000, Attorney Name=Attorney Raban Kellermann, Buyout Amount=8200, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Liberty Legal Funding, Case #=205, Case Type=Employment Disputes, Court Index Number=49D01-2405-ED-001205, Date of Incident=05/27/2024, Document prep fee=235, Fund transfer fee=80, Interest Start Date=01/07/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Attorney Referral, Notes / Remarks=Wire received (insurance disbursement); confirm sender name matches remittance advice; split allocation recorded in internal ledger., Payer Name=HarborPoint Mutual Insurance Services, Payment Date=01/07/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Insurance Company, Rate of Return=36, Recommended Max Funding=15000, Requested Amount=36000, Risk Level=Moderate, SMS Message Body=Your employment dispute funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Approved, State=Indiana, Summary=Employment dispute alleging retaliation after reporting safety concerns; termination letter and performance reviews in conflict; wage loss claimed., Underwriting Notes=Verify protected activity timeline, HR complaints, and comparator evidence. Confirm arbitration clause exposure, mitigation efforts, and payroll documentation. Stage funding if early settlement posture is unclear.}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=233 North Michigan Avenue, Millennium Loop Office Terrace, Suite 1470, Near Riverwalk Bridge Access, Address Line 2=Office 14B, Attn: Intake Ops, Delivery Window: 9AM–5PM, Visitor Garage Level 2, Date of Birth=06/08/1993, Email=orionel.crownbarrow.c2r9@mailto.plus, First Name=Orionel, Last Name=Crownbarrow, Middle Name=Matthieu, Name Suffix=IV, Phone number=9776668505, Social Security Number=974-05-8005, State=Illinois, Zip code=60601}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.faelistra.sablewright.r1j7@mailto.plus, First Name=Attorney Faelistra, Last Name=Sablewright, Middle Name=Junoria, Name Suffix=II, Office phone=9888884006, Phone=9887773006}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1502e25369653571f511010526388abb, isElementDisplayed {id=f.3065E2D98634A9E8BC6BE78FA8801561.d.3188A38DF43699971167D1F1F39C0692.e.638}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62187}, goog:processID: 1904, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62187/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (1502e25369653571f511010526388abb)] -> xpath: (//tbody[@class='ant-table-tbody'])[1]]] -> xpath: .//td[6]]
-Session ID: 1502e25369653571f511010526388abb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1502e25369653571f511010526388abb, isElementDisplayed {id=f.3065E2D98634A9E8BC6BE78FA8801561.d.3188A38DF43699971167D1F1F39C0692.e.638}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62187}, goog:processID: 1904, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62187/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on windows (1502e25369653571f511010526388abb)] -> xpath: (//tbody[@class='ant-table-tbody'])[1]]] -> xpath: .//td[6]]
-Session ID: 1502e25369653571f511010526388abb
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
-at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:264)
-at org.openqa.selenium.support.ui.ExpectedConditions$9.apply(ExpectedConditions.java:260)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:50)
-at Locaters.Application_Locaters.First_table_sixth_column_cellData(Application_Locaters.java:534)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Pay_Off_calculator(Case_Appplications.java:1337)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:381)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:34:42 IST" name="Kill" finished-at="2026-01-07T20:34:42 IST" duration-ms="369" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:34:42 IST" name="setup" finished-at="2026-01-07T20:34:43 IST" duration-ms="865" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:34:43 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:36:30 IST" duration-ms="107123" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=5000, Application Status=Pending Docs, Approved Amount=7200, Attorney Name=Attorney Jannik Altenkirch, Buyout Amount=4200, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=206, Case Type=Unpaid Wages, Court Index Number=14L01-2402-UW-000418, Date of Incident=02/15/2024, Document prep fee=210, Fund transfer fee=65, Interest Start Date=01/07/2026, Law Firm Name=Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel, Lead Source=Other, Notes / Remarks=Cash delivered by attorney runner; ID verified; counted under camera; receipt generated and shared with attorney office., Payer Name=Attorney Osric Vandenbrock, Payment Date=01/07/2026, Payment Mode=Cash, Payment Type=Payment by Attorney, Rate of Return=33, Recommended Max Funding=7200, Requested Amount=18000, Risk Level=Low-Moderate, SMS Message Body=We need additional payroll or schedule documentation to finalize your unpaid wages file. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Unpaid overtime and denied meal-break premiums alleged across multiple pay periods; payroll records and schedules reportedly inconsistent., Underwriting Notes=Class/collective potential changes risk profile. Confirm timekeeping records, policy acknowledgments, and arbitration/waiver clauses. Conservative funding until certification posture is known.}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=940 Poydras Street, Crescent City Legal Arcade, Suite 2115, Central Business District, Near Superdome Route, Address Line 2=Unit 21D, Attn: Intake Coordinator, Deliver to Lobby Desk, Add Note: “Hold for Signature”, Date of Birth=09/14/1988, Email=nyxalia.hollowmere.p8d3@mailto.plus, First Name=Nyxalia, Last Name=Hollowmere, Middle Name=Genevra, Name Suffix=II, Phone number=9776668506, Social Security Number=974-06-8006, State=Louisiana, Zip code=70112}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.galrenic.myridanth.w8d2@mailto.plus, First Name=Attorney Galrenic, Last Name=Myridanth, Middle Name=Kestovar, Name Suffix=Jr, Office phone=9888884007, Phone=9887773007}]]>
+                <![CDATA[{Staff Email=staff.galvadorin.myridanse.w8d2qb@mailto.plus, Staff First Name=Staff Galvadorin, Staff Last Name=Myridanse, Staff Middle Name=Kestovyn, Staff Name Suffix=Jr, Staff Office phone=9794328607, Staff Phone=9794317607}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:36:30 IST" name="Kill" finished-at="2026-01-07T20:36:30 IST" duration-ms="308" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:30 IST" name="Kill" finished-at="2026-01-08T20:12:30 IST" duration-ms="321" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:36:30 IST" name="setup" finished-at="2026-01-07T20:36:31 IST" duration-ms="902" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:30 IST" name="setup" finished-at="2026-01-08T20:12:31 IST" duration-ms="854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:36:31 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:38:17 IST" duration-ms="105827" status="PASS">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:31 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:12:51 IST" duration-ms="20076" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=9000, Application Status=In Review, Approved Amount=9800, Attorney Name=Attorney Bjarne Edelmann, Buyout Amount=5600, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Summit Legal Funding, Case #=207, Case Type=Workers Compensation, Court Index Number=03WC-2310-WC-002031, Date of Incident=10/22/2023, Document prep fee=240, Fund transfer fee=80, Interest Start Date=01/07/2026, Law Firm Name=Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei, Lead Source=Medical Provider, Notes / Remarks=Personal cheque accepted; confirm signature and date; pending clearance—do not mark as settled until bank confirmation., Payer Name=Plaintiff Leontius Brackenford, Payment Date=01/07/2026, Payment Mode=Cheque, Payment Type=Payment by Plaintiff, Rate of Return=35, Recommended Max Funding=9800, Requested Amount=24000, Risk Level=Moderate, SMS Message Body=Your workers compensation file is under review while claim status and records are verified. – Lumberjack Legal Finance, SMS Message Title=Under Review, State=Michigan, Summary=Repetitive strain injury from assembly work; EMG confirms neuropathy; restrictions imposed and reduced hours reported., Underwriting Notes=Confirm comp acceptance status, wage statements, and MMI outlook. Lien and fee posture are critical. Funding should be conservative if dispute/denial is pending.}]]>
+                <![CDATA[{Email=attorney.heliovar.oakhollow.t1c7z9ph@mailto.plus, First Name=Attorney Heliovar, Last Name=Oakhollow, Middle Name=Quillane, Name Suffix=III, Office phone=9551318808, Phone=9551307608}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=111 West Monroe Street, Midtown Commerce Gallery, Suite 980, North Tower, Near Light Rail Stop, Address Line 2=Suite 9F, Delivery Instructions: Leave at Reception, Visitor Parking: Garage B, Bring Ticket for Validation, Date of Birth=01/26/1994, Email=sorevian.windervault.m0q5@mailto.plus, First Name=Sorevian, Last Name=Windervault, Middle Name=Raffaele, Name Suffix=Jr, Phone number=9776668507, Social Security Number=974-07-8007, State=Arizona, Zip code=85004}]]>
+                <![CDATA[{City=Indianapolis, Name=Circle City Plaintiff Strategy & Lien Resolution Forum, Phone=9295558308, State=Indiana, Street Address 1=135 N Pennsylvania Street, Monument Circle Office Arcade, North Tower Entrance, Street Address 2=Floor 16, Suite 1612, Reception Desk B, Deliveries: Weekdays 9AM–5PM, Zip code=46204}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=attorney.heliandra.wexenford.y5k0@mailto.plus, First Name=Attorney Heliandra, Last Name=Wexenford, Middle Name=Sylphine, Name Suffix=III, Office phone=9888884008, Phone=9887773008}]]>
+                <![CDATA[{Staff Email=staff.heliovanna.wexenfell.y5k0zu@mailto.plus, Staff First Name=Staff Heliovanna, Staff Last Name=Wexenfell, Staff Middle Name=Sylphiora, Staff Name Suffix=III, Staff Office phone=9794328608, Staff Phone=9794317608}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:38:17 IST" name="Kill" finished-at="2026-01-07T20:38:17 IST" duration-ms="324" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:51 IST" name="Kill" finished-at="2026-01-08T20:12:51 IST" duration-ms="275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:38:17 IST" name="setup" finished-at="2026-01-07T20:38:18 IST" duration-ms="877" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:51 IST" name="setup" finished-at="2026-01-08T20:12:52 IST" duration-ms="863" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:38:18 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:39:45 IST" duration-ms="86677" status="FAIL">
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:12:52 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:13:12 IST" duration-ms="19751" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=7400, Application Status=Approved, Approved Amount=22000, Attorney Name=Attorney Ossian Fahrner, Buyout Amount=14500, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Frontline Capital Group, Case #=208, Case Type=Boat Accident, Court Index Number=49D05-2407-BA-001009, Date of Incident=07/04/2024, Document prep fee=275, Fund transfer fee=95, Interest Start Date=01/07/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Organic, Notes / Remarks=PIP reimbursement via online payment; verify claim number in remittance; match against case payment schedule., Payer Name=PIP Claims Department - MetroShield, Payment Date=01/07/2026, Payment Mode=Online Payment, Payment Type=Payment by PIP, Rate of Return=39, Recommended Max Funding=22000, Requested Amount=52000, Risk Level=Moderate, SMS Message Body=Your boat accident funding is approved. We’ll coordinate agreement review and disbursement with your attorney. – Lumberjack Legal Finance, SMS Message Title=Boat Accident Approved, State=Indiana, Summary=Recreational boat collision at dusk; alleged improper lighting and speed; shoulder dislocation and concussion symptoms; marine patrol report filed., Underwriting Notes=Key evidence: marine patrol report, GPS/boat telemetry if available, witness statements, and navigational rules compliance. Confirm operator insurance and any comparative negligence factors.}]]>
+                <![CDATA[{Email=attorney.ivernael.marbletide.d4m6k8sx@mailto.plus, First Name=Attorney Ivernael, Last Name=Marbletide, Middle Name=Vosslyn, Name Suffix=Sr, Office phone=9551318809, Phone=9551307609}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=901 5th Avenue, Emerald Plaza Offices, Suite 2655, Downtown Core, Between Westlake and Waterfront, Address Line 2=Office 26A, Attn: Intake Team, Deliveries: Main Lobby Only, Package Scan Required, Date of Birth=12/16/1991, Email=ysolveta.glenwicke.z6t1@mailto.plus, First Name=Ysolveta, Last Name=Glenwicke, Middle Name=Monique, Name Suffix=III, Phone number=9776668508, Social Security Number=974-08-8008, State=Washington, Zip code=98101}]]>
+                <![CDATA[{City=Dallas, Name=Lone Star Contract Disputes & Business Torts Studio, Phone=9295558309, State=Texas, Street Address 1=1700 Pacific Avenue, Uptown Commerce Gallery, Main Lobby Security Counter, Street Address 2=Suite 1822, Mail Stop TX-18, Deliver to Intake Window 1 (Package Scan Required), Zip code=75201}]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[{Email=attorney.iskaviel.crownmireaux.z3q6@mailto.plus, First Name=Attorney Iskaviel, Last Name=Crownmireaux, Middle Name=Vespera, Name Suffix=Sr, Office phone=9888884009, Phone=9887773009}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@aria-label='cloud-download']/..//span[text()=' GENERATE CONTRACT ']' (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@aria-label='cloud-download']/..//span[text()=' GENERATE CONTRACT ']' (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-at Locaters.Application_Locaters.Generate_contract_button(Application_Locaters.java:379)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:221)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@aria-label='cloud-download']/..//span[text()=' GENERATE CONTRACT ']"}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8d13e9c5bd05c3a2cd60839818652f9c, findElement {using=xpath, value=//*[@aria-label='cloud-download']/..//span[text()=' GENERATE CONTRACT ']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59404}, goog:processID: 16784, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59404/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8d13e9c5bd05c3a2cd60839818652f9c
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 29 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:39:45 IST" name="Kill" finished-at="2026-01-07T20:39:45 IST" duration-ms="270" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:39:45 IST" name="setup" finished-at="2026-01-07T20:39:46 IST" duration-ms="786" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:39:46 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:40:05 IST" duration-ms="18843" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=11000, Application Status=In Review, Approved Amount=58000, Attorney Name=Attorney Alarich Sonnenfeldt, Buyout Amount=36000, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=209, Case Type=Airplane Accident, Court Index Number=21CV-2209-AA-000884, Date of Incident=09/09/2022, Document prep fee=355, Fund transfer fee=130, Interest Start Date=01/07/2026, Law Firm Name=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Lead Source=Attorney Referral, Notes / Remarks=Insurance card payment processed through billing gateway; ensure transaction receipt is uploaded; confirm no partial capture., Payer Name=CedarLine Commercial Insurance, Payment Date=01/07/2026, Payment Mode=Credit Card, Payment Type=Payment by Insurance Company, Rate of Return=46, Recommended Max Funding=58000, Requested Amount=125000, Risk Level=Moderate-High, SMS Message Body=Your airplane accident file is under advanced review while investigation records are verified. – Lumberjack Legal Finance, SMS Message Title=Airplane Case Under Review, State=Ohio, Summary=Small aircraft hard-landing incident with alleged maintenance lapse; orthopedic injuries and long rehab; NTSB/FAA records requested., Underwriting Notes=Complex liability and multiple parties (operator, maintenance, manufacturer). Confirm investigation status, expert retention, and insurance layers. Staged funding recommended until causation is established.}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=500 Woodward Avenue, Midtown Legal Exchange, Suite 1405, Near Riverfront Access Road, Address Line 2=Unit 14C, Attn: Records Intake, Use Side Loading Dock for Large Packages (Dock #2), Date of Birth=06/21/1989, Email=valkorin.marblecairn.b3h7@mailto.plus, First Name=Valkorin, Last Name=Marblecairn, Middle Name=Antonin, Name Suffix=Sr, Phone number=9776668509, Social Security Number=974-09-8009, State=Michigan, Zip code=48226}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.jorvannis.zephyrnault.b7u1@mailto.plus, First Name=Attorney Jorvannis, Last Name=Zephyrnault, Middle Name=Rheomir, Name Suffix=IV, Office phone=9888884010, Phone=9887773010}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-at Locaters.Login_Locaters.login_confirmation(Login_Locaters.java:60)
-at Enterprise_Codeclouds.Project.Enterprise.Login.login(Login.java:42)
-at Enterprise_Codeclouds.Project.Enterprise.Header_Manager.header_buttons_clicker(Header_Manager.java:15)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_New_Case_Form_Accessor(Case_Appplications.java:55)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:93)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@role='menu']"}
-  (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ee3f74efa4cf3c9c05eda2181456c49f, findElement {using=xpath, value=//*[@role='menu']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62579}, goog:processID: 2292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62579/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ee3f74efa4cf3c9c05eda2181456c49f
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 32 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:40:05 IST" name="Kill" finished-at="2026-01-07T20:40:05 IST" duration-ms="278" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:40:05 IST" name="setup" finished-at="2026-01-07T20:40:06 IST" duration-ms="847" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:40:06 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-07T20:41:59 IST" duration-ms="113305" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Agreement Date=01/07/2026, Amount Received=6300, Application Status=Pending Docs, Approved Amount=41000, Attorney Name=Attorney Falko Kornblum, Buyout Amount=26000, Buyout Expiry Date=01/07/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=210, Case Type=Aeroplane accident, Court Index Number=12L04-2311-AE-003107, Date of Incident=11/21/2023, Document prep fee=345, Fund transfer fee=120, Interest Start Date=01/07/2026, Law Firm Name=Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners, Lead Source=Broker, Notes / Remarks=Bank transfer from PIP unit; reconcile amount against expected PIP reimbursement; document remittance reference in remarks., Payer Name=PIP Unit - Granite Auto Indemnity, Payment Date=01/07/2026, Payment Mode=Bank Transfer, Payment Type=Payment by PIP, Rate of Return=45, Recommended Max Funding=41000, Requested Amount=98000, Risk Level=Moderate, SMS Message Body=We need a few additional documents to finalize your aeroplane accident file. Please coordinate with your attorney. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Charter turbulence event with unsecured luggage impact; head injury and neck symptoms; neuro follow-ups ongoing; carrier incident report requested., Underwriting Notes=Confirm passenger manifest, medical causation timeline, and applicable treaty/limitations if commercial carrier involved. Evidence quality and insurance layers drive funding ceiling.}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=2101 Cedar Springs Road, Uptown Commercial Promenade, Suite 1555, Crescent District, Near Oak Lawn, Address Line 2=Suite 15B, Attn: Intake Desk, Delivery Hours: 9AM–4PM, Parking: Visitor Deck Level 2, Date of Birth=04/08/1992, Email=priyanka.briarhaven.u1n8@mailto.plus, First Name=Priyanka, Last Name=Briarhaven, Middle Name=Anika, Name Suffix=IV, Phone number=9776668510, Social Security Number=974-10-8010, State=Texas, Zip code=75201}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.kaeloria.ravenquarry.c9m5@mailto.plus, First Name=Attorney Kaeloria, Last Name=Ravenquarry, Middle Name=Quintessa, Name Suffix=II, Office phone=9888884011, Phone=9887773011}]]>
+                <![CDATA[{Staff Email=staff.iskavion.crownmirel.k3q6lp@mailto.plus, Staff First Name=Staff Iskavion, Staff Last Name=Crownmirel, Staff Middle Name=Quintressa, Staff Name Suffix=Sr, Staff Office phone=9794328609, Staff Phone=9794317609}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@2925bf5b]" started-at="2026-01-07T20:41:59 IST" name="Kill" finished-at="2026-01-07T20:42:00 IST" duration-ms="368" status="PASS">
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:13:12 IST" name="Kill" finished-at="2026-01-08T20:13:12 IST" duration-ms="289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:13:12 IST" name="setup" finished-at="2026-01-08T20:13:13 IST" duration-ms="890" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:13:13 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:13:37 IST" duration-ms="24187" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.jasporyn.briarkeel.n7q2v5ld@mailto.plus, First Name=Attorney Jasporyn, Last Name=Briarkeel, Middle Name=Rhalor, Name Suffix=IV, Office phone=9551318810, Phone=9551307610}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Detroit, Name=Great Lakes Class Action & Mass Tort Review Counsel, Phone=9295558310, State=Michigan, Street Address 1=500 Woodward Avenue, Riverfront Tower Annex, Check-in Desk A, Street Address 2=Floor 22, Suite 2214, Deliveries: Reception Desk R2, Weekdays 9AM–4PM, Zip code=48226}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.jorvandre.zephyrnox.b7u1ex@mailto.plus, Staff First Name=Staff Jorvandre, Staff Last Name=Zephyrnox, Staff Middle Name=Rheomir, Staff Name Suffix=IV, Staff Office phone=9794328610, Staff Phone=9794317610}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:13:37 IST" name="Kill" finished-at="2026-01-08T20:13:37 IST" duration-ms="296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:13:37 IST" name="setup" finished-at="2026-01-08T20:13:38 IST" duration-ms="939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:13:38 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:14:00 IST" duration-ms="21155" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.kalythra.stormvellum.s0w9c3ja@mailto.plus, First Name=Attorney Kalythra, Last Name=Stormvellum, Middle Name=Eldren, Name Suffix=II, Office phone=9551318811, Phone=9551307611}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Columbus, Name=Buckeye Premises Liability & Negligence Trial Partners, Phone=9295558311, State=Ohio, Street Address 1=155 N High Street, Statehouse District Professional Block, South Lobby, Street Address 2=Suite 2310, Intake Desk C, Leave with Reception if Door Closed, Zip code=43215}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.kaelorina.ravenhollow.c9m5as@mailto.plus, Staff First Name=Staff Kaelorina, Staff Last Name=Ravenhollow, Staff Middle Name=Vallorine, Staff Name Suffix=II, Staff Office phone=9794328611, Staff Phone=9794317611}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:00 IST" name="Kill" finished-at="2026-01-08T20:14:00 IST" duration-ms="376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:00 IST" name="setup" finished-at="2026-01-08T20:14:01 IST" duration-ms="938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:01 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:14:22 IST" duration-ms="21158" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.lumerick.gildedcairn.f6t1r8vb@mailto.plus, First Name=Attorney Lumerick, Last Name=Gildedcairn, Middle Name=Perevin, Name Suffix=Jr, Office phone=9551318812, Phone=9551307612}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Nashville, Name=Volunteer State Crash Claims & Coverage Dispute Counsel, Phone=9295558312, State=Tennessee, Street Address 1=150 4th Avenue N, Downtown Commerce Atrium, Broadway Side Entry, Street Address 2=Floor 19, Suite 1911, Deliveries: Reception Desk B, Visitor Badge Required, Zip code=37219}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.lysandorix.obsidianmere.f2r8km@mailto.plus, Staff First Name=Staff Lysandorix, Staff Last Name=Obsidianmere, Staff Middle Name=Mirelune, Staff Name Suffix=Jr, Staff Office phone=9794328612, Staff Phone=9794317612}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:22 IST" name="Kill" finished-at="2026-01-08T20:14:22 IST" duration-ms="282" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:22 IST" name="setup" finished-at="2026-01-08T20:14:23 IST" duration-ms="864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:23 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:14:44 IST" duration-ms="20994" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.marnessa.ashviolin.h3p7x0km@mailto.plus, First Name=Attorney Marnessa, Last Name=Ashviolin, Middle Name=Quenric, Name Suffix=III, Office phone=9551318813, Phone=9551307613}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Pittsburgh, Name=Keystone Bad Faith Insurance & Claim Denial Counsel, Phone=9295558313, State=Pennsylvania, Street Address 1=600 Grant Street, Steel City Office Terrace, Main Lobby Check-in, Street Address 2=Suite 1520, Attn: Intake Operations, Mail Stop PA-15, Package Scan at Security, Zip code=15219}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.maristavelle.hollowcairne.n6p4vt@mailto.plus, Staff First Name=Staff Maristavelle, Staff Last Name=Hollowcairne, Staff Middle Name=Talarion, Staff Name Suffix=III, Staff Office phone=9794328613, Staff Phone=9794317613}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:44 IST" name="Kill" finished-at="2026-01-08T20:14:44 IST" duration-ms="267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:44 IST" name="setup" finished-at="2026-01-08T20:14:45 IST" duration-ms="862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:14:45 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:15:05 IST" duration-ms="20217" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.norellius.riveranvil.j9m2q6cw@mailto.plus, First Name=Attorney Norellius, Last Name=Riveranvil, Middle Name=Sableen, Name Suffix=Sr, Office phone=9551318814, Phone=9551307614}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Providence, Name=Ocean State Workers Comp & Wage Claims Counsel, Phone=9295558314, State=Rhode Island, Street Address 1=10 Dorrance Street, Downtown Legal Arcade, North Entrance, Street Address 2=Suite 900, Claims Intake: Desk 9B, Deliveries: Weekdays Only, Zip code=02903}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.nyxaviera.frostmerrow.s1v9de@mailto.plus, Staff First Name=Staff Nyxaviera, Staff Last Name=Frostmerrow, Staff Middle Name=Demeris, Staff Name Suffix=Sr, Staff Office phone=9794328614, Staff Phone=9794317614}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:05 IST" name="Kill" finished-at="2026-01-08T20:15:06 IST" duration-ms="261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:06 IST" name="setup" finished-at="2026-01-08T20:15:07 IST" duration-ms="855" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:07 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:15:27 IST" duration-ms="20154" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.odramira.frostcantle.v2k8n4rz@mailto.plus, First Name=Attorney Odramira, Last Name=Frostcantle, Middle Name=Velorin, Name Suffix=IV, Office phone=9551318815, Phone=9551307615}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Buffalo, Name=Empire State Civil Rights & Police Conduct Counsel, Phone=9295558315, State=New York, Street Address 1=200 Delaware Avenue, City Center Office Row, Main Lobby, Street Address 2=Suite 1210, Attn: Records Intake, Elevator Bank A, Floor 12, Zip code=14202}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.orphelianne.cindervaux.g8t3hx@mailto.plus, Staff First Name=Staff Orphelianne, Staff Last Name=Cindervaux, Staff Middle Name=Peregrin, Staff Name Suffix=IV, Staff Office phone=9794328615, Staff Phone=9794317615}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:27 IST" name="Kill" finished-at="2026-01-08T20:15:27 IST" duration-ms="264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:27 IST" name="setup" finished-at="2026-01-08T20:15:28 IST" duration-ms="828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:28 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:15:53 IST" duration-ms="25378" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.prysmond.obsidianwharf.q5d1t7xy@mailto.plus, First Name=Attorney Prysmond, Last Name=Obsidianwharf, Middle Name=Calith, Name Suffix=II, Office phone=9551318816, Phone=9551307616}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Washington, Name=Capital District Regulatory & Administrative Hearing Counsel, Phone=9295558316, State=Washington DC, Street Address 1=750 9th Street NW, Judiciary Square Business Annex, Main Entrance, Street Address 2=Suite 1205, Intake Desk: Lobby Counter 2, Package Scan Required, Zip code=20001}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.quorimelle.stormeichen.j4x7wy@mailto.plus, Staff First Name=Staff Quorimelle, Staff Last Name=Stormeichen, Staff Middle Name=Anselune, Staff Name Suffix=II, Staff Office phone=9794328616, Staff Phone=9794317616}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:53 IST" name="Kill" finished-at="2026-01-08T20:15:54 IST" duration-ms="295" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:54 IST" name="setup" finished-at="2026-01-08T20:15:54 IST" duration-ms="960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:15:54 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:16:16 IST" duration-ms="21929" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.quenvara.cobaltgrove.w8h0p3nl@mailto.plus, First Name=Attorney Quenvara, Last Name=Cobaltgrove, Middle Name=Mireth, Name Suffix=Jr, Office phone=9551318817, Phone=9551307617}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Arlington, Name=Armed Forces Claims & Benefits Advocacy Office, Phone=9295558317, State=Armed Forces Europe, Street Address 1=1 Defense Way, Service Member Support Center, Main Gate Check-in, Street Address 2=Suite 410, Attn: Intake Ops, Deliver to Admin Desk, ID Required at Entry, Zip code=22202}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.rivenoria.marblethistrel.l0q2pk@mailto.plus, Staff First Name=Staff Rivenoria, Staff Last Name=Marblethistrel, Staff Middle Name=Caelith, Staff Name Suffix=Jr, Staff Office phone=9794328617, Staff Phone=9794317617}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:16:16 IST" name="Kill" finished-at="2026-01-08T20:16:17 IST" duration-ms="312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:16:17 IST" name="setup" finished-at="2026-01-08T20:16:18 IST" duration-ms="978" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:16:18 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:16:39 IST" duration-ms="21737" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.ravelion.hearthglaive.c1s6v9qd@mailto.plus, First Name=Attorney Ravelion, Last Name=Hearthglaive, Middle Name=Zorrel, Name Suffix=III, Office phone=9551318818, Phone=9551307618}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Honolulu, Name=Aloha Settlement Strategy & Medical Negligence Counsel, Phone=9295558318, State=Hawaii, Street Address 1=1001 Bishop Street, Downtown Honolulu Office Gallery, South Lobby, Street Address 2=Suite 1810, Reception Desk H1, Deliveries: Weekdays 9AM–4PM, Zip code=96813}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.seredalion.kleinvorsten.v3n6cr@mailto.plus, Staff First Name=Staff Seredalion, Staff Last Name=Kleinvorsten, Staff Middle Name=Zorion, Staff Name Suffix=III, Staff Office phone=9794328618, Staff Phone=9794317618}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:16:39 IST" name="Kill" finished-at="2026-01-08T20:16:40 IST" duration-ms="313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:16:40 IST" name="setup" finished-at="2026-01-08T20:16:41 IST" duration-ms="1000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:16:41 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:17:04 IST" duration-ms="23044" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.sorynthia.violetcauseway.m7q4k2tz@mailto.plus, First Name=Attorney Sorynthia, Last Name=Violetcauseway, Middle Name=Eldessa, Name Suffix=Sr, Office phone=9551318819, Phone=9551307619}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Baton Rouge, Name=Bayou Evidence Preservation & Trial Support Counsel, Phone=9295558319, State=Louisiana, Street Address 1=445 North Boulevard, Capitol Park Legal Terrace, Main Lobby, Street Address 2=Suite 915, Attn: Intake Desk, Deliver to Reception, Add Note: “Hold for Signature”, Zip code=70802}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.tressavine.quillnevarra.d7m1qa@mailto.plus, Staff First Name=Staff Tressavine, Staff Last Name=Quillnevarra, Staff Middle Name=Vionette, Staff Name Suffix=Sr, Staff Office phone=9794328619, Staff Phone=9794317619}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:17:04 IST" name="Kill" finished-at="2026-01-08T20:17:04 IST" duration-ms="326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:17:04 IST" name="setup" finished-at="2026-01-08T20:17:05 IST" duration-ms="918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Attorney_Add(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:17:05 IST" name="Attorney_Add" data-provider="law_plus_attorney" finished-at="2026-01-08T20:17:28 IST" duration-ms="22643" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Email=attorney.tovinelle.saffronbreak.z0x8n5pr@mailto.plus, First Name=Attorney Tovinelle, Last Name=Saffronbreak, Middle Name=Rhaelis, Name Suffix=IV, Office phone=9551318820, Phone=9551307620}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{City=Manchester, Name=Granite State Workplace Injury & Disability Counsel, Phone=9295558320, State=New Hampshire, Street Address 1=900 Elm Street, Queen City Commerce Atrium, North Lobby, Street Address 2=Suite 1700, Claims Intake: Desk 17C, Visitor Parking: Garage Level 1, Zip code=03101}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Staff Email=staff.wulfrina.briarnoctis.p5k8zn@mailto.plus, Staff First Name=Staff Wulfrina, Staff Last Name=Briarnoctis, Staff Middle Name=Ysolde, Staff Name Suffix=IV, Staff Office phone=9794328620, Staff Phone=9794317620}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Attorney_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Attorney_module@2362f559]" started-at="2026-01-08T20:17:28 IST" name="Kill" finished-at="2026-01-08T20:17:28 IST" duration-ms="360" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Attorney_module -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
