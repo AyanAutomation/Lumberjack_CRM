@@ -5,7 +5,7 @@
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Attorney_module">
         <methods>
-          <include name="Attorney_Add" invocation-numbers="5"/>
+          <include name="Atttorney_Add_through_case" invocation-numbers="0"/>
           <include name="setup"/>
           <include name="Kill"/>
         </methods>

@@ -121,11 +121,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//textArea")
 	private WebElement textArea; 
 	@FindBy(xpath="//*[@aria-label='plus']/../..//span[text()='Create Contact']")
-	private WebElement  Create_Contact_button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Create_Contact_button; 
+	@FindBy(xpath="(//div[@class='ant-modal-body'])[2]")
+	private WebElement  second_pop_up_form; 
+	@FindBy(xpath="(//div[@class='ant-modal-body'])[3]")
+	private WebElement  Third_popup_form; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -556,26 +556,29 @@ public class Application_Locaters extends Repeat{
 	return textArea;}   
 	public WebElement Create_Contact_button(){
 	wait_for_theElement(Create_Contact_button);
-	return Create_Contact_button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   /*
-	  
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Create_Contact_button;}   
+	public WebElement second_pop_up_form(){
+	wait_for_theElement(second_pop_up_form);
+	return second_pop_up_form;}   
+	public List <WebElement> second_popup_form_inputs(){
+	List <WebElement> second_popup_form_inputs = second_pop_up_form().findElements(By.xpath(".//input"));
+	wait_for_theElement(second_popup_form_inputs);
+	return second_popup_form_inputs;} 
+	public List <WebElement> second_popup_form_buttons(){
+	List <WebElement> second_popup_form_buttons = second_pop_up_form().findElements(By.xpath(".//button"));
+	wait_for_theElement(second_popup_form_buttons);
+	return second_popup_form_buttons;}  
+	public WebElement Third_popup_form(){
+	wait_for_theElement(Third_popup_form);
+	return Third_popup_form;}   
+	public List <WebElement> Third_popup_form_inputs(){
+	List <WebElement> Third_popup_form_inputs = Third_popup_form().findElements(By.xpath(".//input"));
+	wait_for_theElement(Third_popup_form_inputs);
+	return Third_popup_form_inputs;} 
+	public List <WebElement> Third_popup_form_buttons(){
+	List <WebElement> Third_popup_form_buttons = Third_popup_form().findElements(By.xpath(".//button"));
+	wait_for_theElement(Third_popup_form_buttons);
+	return Third_popup_form_buttons;}  /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

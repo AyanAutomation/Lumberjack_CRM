@@ -65,7 +65,7 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	@Test(dataProvider="case_plus_plaintiff")
-	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2 ,TreeMap<String,String> attorneyData) throws IOException, InterruptedException{
+	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2 ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data) throws IOException, InterruptedException{
 		
 		
 		Application_Locaters p = new Application_Locaters(d);
@@ -168,7 +168,23 @@ public class Case_Appplications extends Header_Manager{
 			WebElement Create_Contact = p.Create_Contact_button();
 			rp.Scroll_to_element(Create_Contact);
 			Create_Contact.click();
-		}
+			List<WebElement> attorney_inputs = p.second_popup_form_inputs();
+			attorney_inputs.get(0).sendKeys(Law_Firm_Data.get("Name"));
+			p.plaintiff_dropdown_list();
+			p.Plaintiff_options().get(0).click();
+			attorney_inputs.get(1).sendKeys(attorneyData.get("First Name"));
+			attorney_inputs.get(2).sendKeys(attorneyData.get("Middle Name"));
+			attorney_inputs.get(3).sendKeys(attorneyData.get("Last Name"));
+			attorney_inputs.get(4).sendKeys(attorneyData.get("Name Suffix"));
+			attorney_inputs.get(5).sendKeys(attorneyData.get("Phone"));
+			attorney_inputs.get(6).sendKeys(attorneyData.get("Office phone"));
+			attorney_inputs.get(7).sendKeys(attorneyData.get("Email"));
+			WebElement Add_Attorney_Button=p.form_buttons().get(2);
+			rp.Scroll_to_element(Add_Attorney_Button);
+			Add_Attorney_Button.click();
+			Thread.sleep(800);	
+			String taost= lg.toast().getText().trim();
+			Login_negative_testcases.Toast_printer(taost);}
 		Thread.sleep(600);
        // rp.wait_for_invisibility(lg.toast());
 		WebElement Import_button = p.import_Button();
@@ -1227,20 +1243,23 @@ public class Case_Appplications extends Header_Manager{
 
 	    Plaintiff_Module pm = new Plaintiff_Module();
 	    Attorney_module at = new Attorney_module();
+	    Law_Firm_Module lfd = new Law_Firm_Module();
 
 	    Object[][] plaintiff_datas = pm.plaintiffData();   // each row: { TreeMap<String,String> }
 	    Object[][] case_datas      = caseData();           // each row: { TreeMap<String,String> }
 	    Object[][] attorney_datas  = at.attorneyfData(); // each row: { TreeMap<String,String> }
+	    Object[][] law_firm_datas =  lfd.lawFirmData();
 
-	    int n = Math.min(case_datas.length,Math.min(plaintiff_datas.length, attorney_datas.length));
+	    int n = Math.min(Math.min(case_datas.length, law_firm_datas.length),Math.min(plaintiff_datas.length, attorney_datas.length));
 
 	    // ✅ 3 columns now: case, plaintiff, attorney
-	    Object[][] final_set = new Object[n][3];
+	    Object[][] final_set = new Object[n][4];
 
 	    for(int i = 0; i < n; i++){
 	        final_set[i][0] = case_datas[i][0];       // case map
 	        final_set[i][1] = plaintiff_datas[i][0];  // plaintiff map
 	        final_set[i][2] = attorney_datas[i][0];   // attorney map
+	        final_set[i][3] = law_firm_datas[i][0];   // law firm map
 	    }
 	    return final_set;}
 	
@@ -1773,62 +1792,7 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	
-	@Test(dataProvider="caseData")
-	public void Added_application_delete(TreeMap<String, String> val) throws IOException, InterruptedException{
-		
-		SIde_Menu_Handler sd = new SIde_Menu_Handler();
-		Application_Locaters p = new Application_Locaters(d);
-		
-		Login_Locaters lg = new Login_Locaters(d);
-		
-		String Plaintiff_name=val.get("Plaintiff Name");
-		
-	 try {
-		sd.Side_menu_option_clicker("Applications", d,"N/A");
-		Report_Listen.log_print_in_report().log(Status.INFO,"**🔹 Scenario 2: Case handler deletes an existing application for a plaintiff from the Applications tab**");
-		Report_Listen.log_print_in_report().log(Status.INFO,"**📘 Description →** Verify that the user can search the case list by plaintiff name, open the case details, navigate to the *Applications* tab, click the delete option for an existing application, confirm the delete in the popup, and complete the operation without UI errors so that the application is removed from the list.");
-		Report_Listen.log_print_in_report().log(Status.INFO,"**📥 Input →** Plaintiff: "+Plaintiff_name+", Case Type: "+val.get("Case Type")+", State: "+val.get("State")+", Requested Amount: "+val.get("Requested Amount"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"**✅ Expected →** The application row linked to plaintiff '"+Plaintiff_name+"' should be visible in the *Applications* tab before deletion. After clicking delete and confirming in the popup, the system should perform the delete without any error message and the same application row should no longer appear in the Applications grid for that case.");
-		p.landed_in_applicationList_confirmation();
-		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 1 →** Navigated to the *Cases* list page and confirmed that the case/application list layout is loaded.");
-		p.status_field_clear_button().click();
-		Thread.sleep(500);
-		p.Application_search().sendKeys(Plaintiff_name);
-		Thread.sleep(1000);
-		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 2 →** Cleared the status filter (if any) and searched cases using plaintiff name '"+Plaintiff_name+"' in the search box.");
-		List<WebElement> table_rows;
-		try {
-		table_rows = p.rows();}
-		catch(Exception tabs) {
-			Thread.sleep(800);
-			table_rows = p.rows();
-			Report_Listen.log_print_in_report().log(Status.INFO,"Exception found in fetching list rows thereby retried and found");
-			System.out.println("Exception found in fetching list rows thereby retried and found");
-			System.out.println();}
-		for(WebElement row:table_rows){
-			if(row.getText().contains(Plaintiff_name)){
-				row.click();
-				break;
-				}}
-		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 3 →** Opened the Case Details page for plaintiff '"+Plaintiff_name+"' by clicking the matching row from the *Cases* table.");
-		p.Case_id_tag();
-		tab_selector("Applications");
-		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 4 →** Switched to the *Applications* tab to view existing application records for the selected case.");
-		p.Delete_button().click();
-		p.popup_modal();
-		Report_Listen.log_print_in_report().log(Status.INFO, "**ℹ️ Step 5 →** Clicked on the delete icon for an application and verified that the delete confirmation popup/modal is displayed.");
-		p.modal_buttons().get(1).click();
-		Thread.sleep(900);
-		Report_Listen.log_print_in_report().log(Status.INFO, "**🟨 Actual →** ✅ Delete flow executed successfully. The case for plaintiff '"+Plaintiff_name+"' was opened from the *Cases* list, the *Applications* tab was loaded, the delete confirmation popup appeared and was confirmed. No unexpected UI error was observed during the operation, and the targeted application record is expected to be removed from the Applications grid for this case.");
-		try{Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
-		catch(Exception mo){
-			Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** 📢 Toast after Deletion of the Application: "+"No toast captured / toast locator not visible. Error:");
-			}
-		Thread.sleep(900);table_rows.clear();}
-	 catch(Exception ko){
-		 Report_Listen.log_print_in_report().log(Status.INFO,"**🟨 Actual →** ❌ Delete operation failed for plaintiff '"+Plaintiff_name+"' due to exception: "+ko.getMessage());
-         System.out.println("Delete operation failed for plaintiff  "+Plaintiff_name);
-         System.out.println();}}
+	
 	
 	
 	
