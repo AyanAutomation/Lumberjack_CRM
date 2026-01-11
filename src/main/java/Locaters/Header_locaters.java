@@ -14,11 +14,11 @@ public class Header_locaters extends Repeat{
 
 
 	@FindBy(xpath="//header")
-	private WebElement Header;/*
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Header;
+	@FindBy(xpath="//h5/..")
+	private WebElement  header_profile_section; 
+	@FindBy(xpath="//*[contains(@class,'ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light user-dropdown')]")
+	private WebElement dropdown; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -121,16 +121,17 @@ public class Header_locaters extends Repeat{
 	Header();
 	WebElement search_dropdown = Header().findElement(By.xpath(".//div[@class='global-search-dropdown']"));
 	wait_for_theElement(search_dropdown);
-	return search_dropdown;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return search_dropdown;} 
+	public WebElement header_profile_section(){
+	wait_for_theElement(header_profile_section);
+	return header_profile_section;} 
+	public WebElement Header_dropdown(){
+	wait_for_theElement(dropdown);
+	return dropdown;} 
+	public List <WebElement> Header_dropdown_options(){
+	List<WebElement> Header_dropdown_options = Header_dropdown().findElements(By.xpath(".//li"));
+	wait_for_theElement(Header_dropdown_options);
+	return Header_dropdown_options;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}
