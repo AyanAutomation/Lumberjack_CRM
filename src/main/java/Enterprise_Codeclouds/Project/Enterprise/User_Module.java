@@ -34,25 +34,31 @@ public class User_Module extends Header_Manager{
 		header_dropdown_option_selector("My Preferences");
 		p.landed_in_user_module();
 		rp.Scroll_to_element(pt.form());
-		List<WebElement> input_feilds= pt.inputs();
-		input_feilds.get(0).sendKeys(user_name);;
-	    input_feilds.get(1).sendKeys(data.get("Middle Name"));
-		input_feilds.get(2).sendKeys(data.get("Last Name"));
-		input_feilds.get(3).sendKeys(data.get("Phone Number (Primary)"));	
-		input_feilds.get(4).sendKeys(data.get("Phone Number (Secondary)"));
-		input_feilds.get(5).sendKeys(data.get("Email"));
-		input_feilds.get(6).click();	
-		ap.plaintiff_dropdown_list();
+		p.First_Name().sendKeys(user_name);
+		p.Middle_Name().sendKeys(data.get("Middle Name"));
+		p.Last_Name().sendKeys(data.get("Last Name"));
+		List<WebElement> phone_number_fields = p.ph_number_fields();
+		phone_number_fields.get(0).sendKeys(data.get("Phone Number (Primary)"));
+		phone_number_fields.get(1).sendKeys(data.get("Phone Number (Secondary)"));
+		p.email().sendKeys(data.get("Email"));
+		p.Group_feild().click();
+		Thread.sleep(800);
+        ap.plaintiff_dropdown_list();
 		List<WebElement> group_options = ap.Plaintiff_options();
 		for(WebElement opt:group_options){
-			if(opt.getText().trim().contains(Group_name)){
-				opt.click();}}
+			String option_text = opt.getText().trim();
+			if(option_text.equalsIgnoreCase(Group_name)){
+				System.out.println(option_text);
+				opt.click();
+				break;}} 
 		WebElement Add_Law_Frim_Button=pt.form_buttons().get(0);
 		rp.Scroll_to_element(Add_Law_Frim_Button);
 		Add_Law_Frim_Button.click();
 		Thread.sleep(800);	
-		String taost= lg.toast().getText().trim();
-		Login_negative_testcases.Toast_printer(taost);}
+		WebElement Toast= lg.toast();
+		String toast= Toast.getText().trim();
+		Login_negative_testcases.Toast_printer(toast);
+		}
 	    
 	
 	
@@ -66,9 +72,9 @@ public class User_Module extends Header_Manager{
 	    u1.put("First Name", "Anvay");
 	    u1.put("Middle Name", "Kiron");
 	    u1.put("Last Name", "Halderwyn");
-	    u1.put("Phone Number (Primary)", "9714387051");
-	    u1.put("Phone Number (Secondary)", "4586139041");
-	    u1.put("Email", "anvay.halderwyn7051@mailto.plus");
+	    u1.put("Phone Number (Primary)", "9814387051");
+	    u1.put("Phone Number (Secondary)", "3586139041");
+	    u1.put("Email", "anvay.halderwyn051@mailto.plus");
 	    u1.put("Groups", "Super Admin");
 
 	    TreeMap<String, String> u2 = new TreeMap<>();
@@ -105,7 +111,7 @@ public class User_Module extends Header_Manager{
 	    u5.put("Phone Number (Primary)", "4025178395");
 	    u5.put("Phone Number (Secondary)", "5317781465");
 	    u5.put("Email", "nayeli.stonevoss8395@mailto.plus");
-	    u5.put("Groups", "New Group,Test Group");
+	    u5.put("Groups", "Super Admin");
 
 	    TreeMap<String, String> u6 = new TreeMap<>();
 	    u6.put("First Name", "Ishaan");
@@ -114,7 +120,7 @@ public class User_Module extends Header_Manager{
 	    u6.put("Phone Number (Primary)", "7079365526");
 	    u6.put("Phone Number (Secondary)", "9166042196");
 	    u6.put("Email", "ishaan.moorfield5526@mailto.plus");
-	    u6.put("Groups", "Test Group,Submodule test group");
+	    u6.put("Groups", "New Group");
 
 	    TreeMap<String, String> u7 = new TreeMap<>();
 	    u7.put("First Name", "Soraya");
@@ -123,7 +129,7 @@ public class User_Module extends Header_Manager{
 	    u7.put("Phone Number (Primary)", "9194831077");
 	    u7.put("Phone Number (Secondary)", "2527609447");
 	    u7.put("Email", "soraya.brindleham1077@mailto.plus");
-	    u7.put("Groups", "Super Admin,New Group");
+	    u7.put("Groups", "Test Group");
 
 	    TreeMap<String, String> u8 = new TreeMap<>();
 	    u8.put("First Name", "Leocadia");
@@ -132,7 +138,7 @@ public class User_Module extends Header_Manager{
 	    u8.put("Phone Number (Primary)", "5126749838");
 	    u8.put("Phone Number (Secondary)", "7375801168");
 	    u8.put("Email", "leocadia.ashbriar9838@mailto.plus");
-	    u8.put("Groups", "New Group,Submodule test group");
+	    u8.put("Groups", "Submodule test group");
 
 	    TreeMap<String, String> u9 = new TreeMap<>();
 	    u9.put("First Name", "Kairav");
@@ -141,7 +147,7 @@ public class User_Module extends Header_Manager{
 	    u9.put("Phone Number (Primary)", "6469052289");
 	    u9.put("Phone Number (Secondary)", "3327416609");
 	    u9.put("Email", "kairav.velmont2289@mailto.plus");
-	    u9.put("Groups", "Test Group,Super Admin");
+	    u9.put("Groups", "Super Admin");
 
 	    TreeMap<String, String> u10 = new TreeMap<>();
 	    u10.put("First Name", "Yara");
@@ -150,7 +156,7 @@ public class User_Module extends Header_Manager{
 	    u10.put("Phone Number (Primary)", "2168394750");
 	    u10.put("Phone Number (Secondary)", "4407821190");
 	    u10.put("Email", "yara.crownhill4750@mailto.plus");
-	    u10.put("Groups", "Submodule test group,Super Admin");
+	    u10.put("Groups", "New Group");
 
 	    TreeMap<String, String> u11 = new TreeMap<>();
 	    u11.put("First Name", "Ronan");
@@ -159,7 +165,7 @@ public class User_Module extends Header_Manager{
 	    u11.put("Phone Number (Primary)", "4807169301");
 	    u11.put("Phone Number (Secondary)", "6025397081");
 	    u11.put("Email", "ronan.lindenrow9301@mailto.plus");
-	    u11.put("Groups", "New Group,Test Group,Submodule test group");
+	    u11.put("Groups", "Test Group");
 
 	    TreeMap<String, String> u12 = new TreeMap<>();
 	    u12.put("First Name", "Aurelio");
@@ -168,7 +174,7 @@ public class User_Module extends Header_Manager{
 	    u12.put("Phone Number (Primary)", "3036587422");
 	    u12.put("Phone Number (Secondary)", "7203419052");
 	    u12.put("Email", "aurelio.merrivale7422@mailto.plus");
-	    u12.put("Groups", "New Group,Test Group,Submodule test group,Super Admin");
+	    u12.put("Groups", "Submodule test group");
 
 	    TreeMap<String, String> u13 = new TreeMap<>();
 	    u13.put("First Name", "Saskia");
@@ -177,7 +183,7 @@ public class User_Module extends Header_Manager{
 	    u13.put("Phone Number (Primary)", "8014972633");
 	    u13.put("Phone Number (Secondary)", "3856087713");
 	    u13.put("Email", "saskia.vinteron2633@mailto.plus");
-	    u13.put("Groups", "New Group");
+	    u13.put("Groups", "Super Admin");
 
 	    TreeMap<String, String> u14 = new TreeMap<>();
 	    u14.put("First Name", "Navin");
@@ -186,7 +192,7 @@ public class User_Module extends Header_Manager{
 	    u14.put("Phone Number (Primary)", "6158205144");
 	    u14.put("Phone Number (Secondary)", "6294779014");
 	    u14.put("Email", "navin.hearthlane5144@mailto.plus");
-	    u14.put("Groups", "Test Group");
+	    u14.put("Groups", "New Group");
 
 	    TreeMap<String, String> u15 = new TreeMap<>();
 	    u15.put("First Name", "Meadow");
@@ -195,7 +201,7 @@ public class User_Module extends Header_Manager{
 	    u15.put("Phone Number (Primary)", "2067339855");
 	    u15.put("Phone Number (Secondary)", "4256017725");
 	    u15.put("Email", "meadow.glenwarren9855@mailto.plus");
-	    u15.put("Groups", "Submodule test group");
+	    u15.put("Groups", "Test Group");
 
 	    TreeMap<String, String> u16 = new TreeMap<>();
 	    u16.put("First Name", "Zubair");
@@ -204,7 +210,7 @@ public class User_Module extends Header_Manager{
 	    u16.put("Phone Number (Primary)", "9046821966");
 	    u16.put("Phone Number (Secondary)", "3865194406");
 	    u16.put("Email", "zubair.crestmore1966@mailto.plus");
-	    u16.put("Groups", "New Group,Test Group");
+	    u16.put("Groups", "Submodule test group");
 
 	    TreeMap<String, String> u17 = new TreeMap<>();
 	    u17.put("First Name", "Elowen");
@@ -213,7 +219,7 @@ public class User_Module extends Header_Manager{
 	    u17.put("Phone Number (Primary)", "5057493077");
 	    u17.put("Phone Number (Secondary)", "5756142387");
 	    u17.put("Email", "elowen.rookhaven3077@mailto.plus");
-	    u17.put("Groups", "Test Group,Super Admin");
+	    u17.put("Groups", "Super Admin");
 
 	    TreeMap<String, String> u18 = new TreeMap<>();
 	    u18.put("First Name", "Keziah");
@@ -222,7 +228,7 @@ public class User_Module extends Header_Manager{
 	    u18.put("Phone Number (Primary)", "3176084188");
 	    u18.put("Phone Number (Secondary)", "4637712098");
 	    u18.put("Email", "keziah.briarwick4188@mailto.plus");
-	    u18.put("Groups", "Super Admin,New Group");
+	    u18.put("Groups", "New Group");
 
 	    TreeMap<String, String> u19 = new TreeMap<>();
 	    u19.put("First Name", "Tenzin");
@@ -231,7 +237,7 @@ public class User_Module extends Header_Manager{
 	    u19.put("Phone Number (Primary)", "9138275299");
 	    u19.put("Phone Number (Secondary)", "8166947709");
 	    u19.put("Email", "tenzin.rivenshaw5299@mailto.plus");
-	    u19.put("Groups", "New Group,Submodule test group");
+	    u19.put("Groups", "Test Group");
 
 	    TreeMap<String, String> u20 = new TreeMap<>();
 	    u20.put("First Name", "Marcellus");
@@ -240,15 +246,17 @@ public class User_Module extends Header_Manager{
 	    u20.put("Phone Number (Primary)", "7026157400");
 	    u20.put("Phone Number (Secondary)", "7255031960");
 	    u20.put("Email", "marcellus.wrenford7400@mailto.plus");
-	    u20.put("Groups", "New Group,Test Group,Submodule test group");
+	    u20.put("Groups", "Submodule test group");
 
-	    return new Object[][]{/*
-	      {u1},{u2},{u3},{u4},{u5},
+	    return new Object[][]{
+	        {u1},{u2},{u3},{u4},{u5},
 	        {u6},{u7},{u8},{u9},{u10},
 	        {u11},{u12},{u13},{u14},{u15},
-	        {u16},{u17},{u18},{u19},*/{u20}
+	        {u16},{u17},{u18},{u19},{u20}
 	    };
 	}
+
+	
 
 
 }
