@@ -2,402 +2,202 @@
 <testng-results ignored="1" total="11" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-13T15:36:02 IST" name="Default suite" finished-at="2026-01-13T15:42:45 IST" duration-ms="403566">
+  <suite started-at="2026-01-13T18:14:33 IST" name="Default suite" finished-at="2026-01-13T18:17:15 IST" duration-ms="161913">
     <groups>
     </groups>
-    <test started-at="2026-01-13T15:36:02 IST" name="Default test" finished-at="2026-01-13T15:42:45 IST" duration-ms="403566">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:36:02 IST" name="setup" finished-at="2026-01-13T15:36:07 IST" duration-ms="5134" status="PASS">
+    <test started-at="2026-01-13T18:14:33 IST" name="Default test" finished-at="2026-01-13T18:17:15 IST" duration-ms="161913">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Access_Permissions">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:14:33 IST" name="setup" finished-at="2026-01-13T18:14:38 IST" duration-ms="4812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:36:07 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:36:46 IST" duration-ms="39208" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:14:38 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:14:53 IST" duration-ms="15440" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=13500, Application Status=In Review, Approved Amount=27000, Attorney Name=Attorney Dax Halloway, Buyout Amount=16800, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Cobalt Ridge Capital, Case #=301, Case Type=Civil Rights, Court Index Number=49D01-2404-CR-001887, Date of Incident=04/18/2024, Document prep fee=335, Fund transfer fee=115, Interest Start Date=01/13/2026, Law Firm Name=West Loop Civil Rights & Police Conduct Counsel, Lead Source=Attorney Referral, Notes / Remarks=Attorney office initiated bank transfer; remittance email received; reconcile with bank statement and attach confirmation before posting., Payer Name=Attorney Marius Calder, Payment Date=01/13/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Attorney, Rate of Return=42, Recommended Max Funding=27000, Requested Amount=64000, Risk Level=Moderate, SMS Message Body=Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance, SMS Message Title=Civil Rights File In Review, State=Indiana, Summary=Civil rights claim alleging improper stop escalation and prolonged roadside detention; loss of wages and anxiety symptoms reported; requesting dashcam/bodycam and dispatch logs., Underwriting Notes=Prioritize objective evidence: bodycam/dashcam, CAD logs, incident report, and any suppression hearing rulings. Confirm notice deadlines, qualified immunity posture, and policy limits. Stage funding pending video confirmation., Underwriting Tag=Video Verification Pending}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=250 Front Street West, Tower South, Suite 1208, Address Line 2=Attn: Intake Desk, Deliver to Lobby Concierge, Call on arrival, Date of Birth=02/11/1991, Email=elodie.beaulac5211@mailto.plus, First Name=Élodie, Last Name=Beaulac, Middle Name=Maëlle, Name Suffix=II, Phone number=4167325211, Social Security Number=963-21-9021, State=Ontario, Zip code=M5V2T6}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.cailen.ashbourne61@mailto.plus, First Name=Attorney Cailen, Last Name=Ashbourne, Middle Name=Voren, Name Suffix=II, Office phone=9727719046, Phone=9724186307}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Wilmington, Name=VerdictForge Litigation Atelier, Phone=3024389017, State=Delaware, Street Address 1=919 N Market St, Brandywine Commerce Center, Main Lobby, Street Address 2=Suite 1204, Intake: Desk 3, Elevator Bank A, Zip code=19801}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.nivaren.thornwick25@mailto.plus, Staff First Name=Staff Nivaren, Staff Last Name=Thornwick, Staff Middle Name=Calix, Staff Name Suffix=II, Staff Office phone=9718821460, Staff Phone=9716043825}]]>
+                <![CDATA[{Role Name=User View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:36:46 IST" name="Kill" finished-at="2026-01-13T15:36:47 IST" duration-ms="325" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:14:53 IST" name="Kill" finished-at="2026-01-13T18:14:54 IST" duration-ms="306" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:36:47 IST" name="setup" finished-at="2026-01-13T15:36:47 IST" duration-ms="908" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:14:54 IST" name="setup" finished-at="2026-01-13T18:14:55 IST" duration-ms="902" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:36:47 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:37:28 IST" duration-ms="40320" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:14:55 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:15:10 IST" duration-ms="15518" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=4200, Application Status=Pending Docs, Approved Amount=35000, Attorney Name=Attorney Rowena Larkspur, Buyout Amount=21400, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Summit Legal Funding, Case #=302, Case Type=Police Brutality, Court Index Number=14L03-2309-PB-001204, Date of Incident=09/07/2023, Document prep fee=345, Fund transfer fee=125, Interest Start Date=01/13/2026, Law Firm Name=Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel, Lead Source=Organic, Notes / Remarks=Card approved; validate gateway reference and last 4 digits; convenience fee not included in received amount., Payer Name=Plaintiff Harper Ouellette, Payment Date=01/13/2026, Payment Mode=Credit Card, Payment Type=Payment by Plaintiff, Rate of Return=45, Recommended Max Funding=35000, Requested Amount=88000, Risk Level=Moderate-High, SMS Message Body=We need a few additional documents to finalize underwriting. Please coordinate uploads with your attorney. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Use-of-force claim during arrest with reported shoulder dislocation and facial injury; ER records and follow-up ortho visits cited; complaint drafting in progress., Underwriting Notes=High upside if medical causation and video align. Confirm criminal disposition, municipal notice timelines, policy/indemnification, and whether discipline/IA findings exist. Stage funding until complaint is filed and footage reviewed., Underwriting Tag=Medical Causation Review}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=80 Rue Saint-Paul Ouest, Vieux-Montréal, Suite 905, Address Line 2=Security desk sign-in required, leave package with Reception B, Date of Birth=07/03/1989, Email=mathieu.lafreniere7342@mailto.plus, First Name=Mathieu, Last Name=Lafrenière, Middle Name=Olivier, Name Suffix=Jr, Phone number=5146087342, Social Security Number=963-22-9022, State=Quebec, Zip code=H2Y1C6}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.mireya.hawkridge74@mailto.plus, First Name=Attorney Mireya, Last Name=Hawkridge, Middle Name=Solenne, Name Suffix=Jr, Office phone=6198062954, Phone=6195837421}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Burlington, Name=NorthStar Docketworks, Phone=8026317742, State=Vermont, Street Address 1=100 Main St, Lakefront Professional Building, Street Entrance, Street Address 2=Floor 6, Suite 6B, Delivery: Reception Window, Zip code=05401}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.mirelia.ashmont69@mailto.plus, Staff First Name=Staff Mirelia, Staff Last Name=Ashmont, Staff Middle Name=Solene, Staff Name Suffix=Jr, Staff Office phone=4159057341, Staff Phone=4157382069}]]>
+                <![CDATA[{Role Name=Case Underwriting View Verify and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:37:28 IST" name="Kill" finished-at="2026-01-13T15:37:28 IST" duration-ms="299" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:10 IST" name="Kill" finished-at="2026-01-13T18:15:10 IST" duration-ms="314" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:37:28 IST" name="setup" finished-at="2026-01-13T15:37:29 IST" duration-ms="881" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:10 IST" name="setup" finished-at="2026-01-13T18:15:11 IST" duration-ms="857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:37:29 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:38:07 IST" duration-ms="38048" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:11 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:15:26 IST" duration-ms="14787" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=48000, Application Status=Approved, Approved Amount=18500, Attorney Name=Attorney Silas Markham, Buyout Amount=10200, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=303, Case Type=Wrongful Arrest, Court Index Number=18CV-2402-WA-002031, Date of Incident=02/11/2024, Document prep fee=265, Fund transfer fee=90, Interest Start Date=01/13/2026, Law Firm Name=Capital City Consumer Protection, Bad Faith Insurance & Claim Denial Law Offices, Lead Source=Advertising, Notes / Remarks=Cheque received via mailroom; deposit next business day; hold posting until clearance per finance policy., Payer Name=Riverstone Casualty Insurance Co., Payment Date=01/13/2026, Payment Mode=Cheque, Payment Type=Payment by Insurance Company, Rate of Return=38, Recommended Max Funding=18500, Requested Amount=46000, Risk Level=Moderate, SMS Message Body=Your wrongful arrest funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Funding Approved, State=Ohio, Summary=Wrongful arrest due to mistaken identity; held overnight; missed shifts and reputational harm claimed; alibi documentation and witness statement referenced., Underwriting Notes=Confirm dismissal/acquittal, arrest report narrative, and any station video. Damages strengthen with payroll loss proof and documented counseling/therapy. Review immunity defenses and notice compliance., Underwriting Tag=Disposition Confirmed}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=1055 West Georgia Street, Coal Harbour Offices, Suite 1710, Address Line 2=Deliveries weekdays 9–4, use Main Lobby, concierge holds for signature, Date of Birth=11/28/1992, Email=kiera.mackinnon9063@mailto.plus, First Name=Kiera, Last Name=MacKinnon, Middle Name=Noëlle, Name Suffix=III, Phone number=6044159063, Social Security Number=963-23-9023, State=British Columbia, Zip code=V6C3N2}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.renzo.wytherby38@mailto.plus, First Name=Attorney Renzo, Last Name=Wytherby, Middle Name=Calder, Name Suffix=III, Office phone=4157402269, Phone=4152679038}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Portland, Name=Cascade Claimcraft Legal Studio, Phone=5032196804, State=Oregon, Street Address 1=111 SW 5th Ave, Pioneer District Office Arcade, Security Desk, Street Address 2=Suite 1740, Mail Stop OR-17, Signature Required, Zip code=97204}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.corven.wetherby51@mailto.plus, Staff First Name=Staff Corven, Staff Last Name=Wetherby, Staff Middle Name=Bastien, Staff Name Suffix=III, Staff Office phone=6199041876, Staff Phone=6194027851}]]>
+                <![CDATA[{Role Name=Case Liens Create Update View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:38:07 IST" name="Kill" finished-at="2026-01-13T15:38:07 IST" duration-ms="346" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:26 IST" name="Kill" finished-at="2026-01-13T18:15:26 IST" duration-ms="274" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:38:07 IST" name="setup" finished-at="2026-01-13T15:38:08 IST" duration-ms="889" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:26 IST" name="setup" finished-at="2026-01-13T18:15:27 IST" duration-ms="892" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:38:08 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:38:46 IST" duration-ms="37924" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:27 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:15:42 IST" duration-ms="14515" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=17400, Application Status=In Review, Approved Amount=22000, Attorney Name=Attorney Tessa Wainwright, Buyout Amount=13200, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=304, Case Type=Breach of contract, Court Index Number=07CV-2306-BC-001072, Date of Incident=06/14/2023, Document prep fee=290, Fund transfer fee=100, Interest Start Date=01/13/2026, Law Firm Name=Beckendorf & Neumannova School Negligence, Child Injury & Jugend Safety Trial Lawyers, Lead Source=Broker, Notes / Remarks=Online portal payment from another funder for buyout; cross-check reference ID and ledger; attach receipt PDF., Payer Name=Summit Equity Legal Funding Partners, Payment Date=01/13/2026, Payment Mode=Online Payment, Payment Type=Payment by Another Funder, Rate of Return=41, Recommended Max Funding=22000, Requested Amount=52000, Risk Level=Moderate, SMS Message Body=Your breach-of-contract application is under review while we verify pleadings and supporting documents. – Lumberjack Legal Finance, SMS Message Title=Contract Case Under Review, State=Michigan, Summary=Contract dispute over delayed delivery and alleged termination without cause; invoice trail and email acknowledgements attached; damages claimed for downtime and replacement sourcing., Underwriting Notes=Focus on enforceable terms, acceptance/performance evidence, and mitigation steps. Confirm venue, counterclaims, and collectability. Funding contingent on pleadings plus documentary proof of breach and damages., Underwriting Tag=Pleadings Requested}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=10180 101 Street NW, Downtown Core, Suite 2200, Address Line 2=Front desk drop-off only, include label: “PLAINTIFF FILE”, Date of Birth=01/19/1990, Email=bastien.desrochers1874@mailto.plus, First Name=Bastien, Last Name=Desrochers, Middle Name=Rémi, Name Suffix=Sr, Phone number=7806391874, Social Security Number=963-24-9024, State=Alberta, Zip code=T5J0K1}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.eirwyn.dunleavy52@mailto.plus, First Name=Attorney Eirwyn, Last Name=Dunleavy, Middle Name=Marcelle, Name Suffix=Sr, Office phone=2068051137, Phone=2063915742}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Pittsburgh, Name=Keystone Dispute Lab, Phone=4127765409, State=Pennsylvania, Street Address 1=600 Grant St, Steel City Tower, Concourse Entry, Street Address 2=Suite 2109, Intake: Counter B, Visitor Badge Needed, Zip code=15219}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.elowen.harrowdale74@mailto.plus, Staff First Name=Staff Elowen, Staff Last Name=Harrowdale, Staff Middle Name=Rhiannon, Staff Name Suffix=Sr, Staff Office phone=2069073518, Staff Phone=2065839174}]]>
+                <![CDATA[{Role Name=Case Contacts Update View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:38:46 IST" name="Kill" finished-at="2026-01-13T15:38:46 IST" duration-ms="304" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:42 IST" name="Kill" finished-at="2026-01-13T18:15:42 IST" duration-ms="333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:38:46 IST" name="setup" finished-at="2026-01-13T15:38:47 IST" duration-ms="866" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:42 IST" name="setup" finished-at="2026-01-13T18:15:43 IST" duration-ms="996" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:38:47 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:39:26 IST" duration-ms="38720" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:43 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:15:58 IST" duration-ms="14567" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=54000, Application Status=Approved, Approved Amount=16000, Attorney Name=Attorney Nolan Vercetti, Buyout Amount=8700, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Liberty Legal Funding, Case #=305, Case Type=Employment Disputes, Court Index Number=49D05-2408-ED-001443, Date of Incident=08/29/2024, Document prep fee=245, Fund transfer fee=85, Interest Start Date=01/13/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Attorney Referral, Notes / Remarks=Wire received; confirm sender matches remittance advice; allocation captured in internal ledger., Payer Name=HarborPoint Mutual Insurance Services, Payment Date=01/13/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Insurance Company, Rate of Return=37, Recommended Max Funding=16000, Requested Amount=39000, Risk Level=Moderate, SMS Message Body=Your employment dispute funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Approved, State=Indiana, Summary=Retaliation claim after reporting safety violations; termination letter conflicts with performance records; wage loss and emotional distress alleged., Underwriting Notes=Validate protected activity timeline, HR reports, comparator evidence, and payroll history. Confirm arbitration exposure and mitigation. Stage funding if early settlement posture is uncertain., Underwriting Tag=HR File Review}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=1791 Barrington Street, Waterfront District, Suite 608, Address Line 2=Leave with Reception if door is closed, call-on-arrival requested, Date of Birth=05/08/1993, Email=sienna.tremblayleduc4405@mailto.plus, First Name=Sienna, Last Name=Tremblay-Leduc, Middle Name=Claire, Name Suffix=IV, Phone number=9024014405, Social Security Number=963-25-9025, State=Nova Scotia, Zip code=B3J3K8}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.soren.falkner90@mailto.plus, First Name=Attorney Soren, Last Name=Falkner, Middle Name=Quillon, Name Suffix=IV, Office phone=3039026814, Phone=3036184950}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Atlanta, Name=Peachtree Litigation Works, Phone=4049152638, State=Georgia, Street Address 1=191 Peachtree St NE, Midtown Commerce Annex, Main Lobby, Street Address 2=Floor 14, Suite 1402, Deliveries: Desk A, Zip code=30303}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.tavion.kingsmere82@mailto.plus, Staff First Name=Staff Tavion, Staff Last Name=Kingsmere, Staff Middle Name=Lucien, Staff Name Suffix=IV, Staff Office phone=3039026657, Staff Phone=3037164082}]]>
+                <![CDATA[{Role Name=Plaintiff Create View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:39:26 IST" name="Kill" finished-at="2026-01-13T15:39:26 IST" duration-ms="308" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:58 IST" name="Kill" finished-at="2026-01-13T18:15:58 IST" duration-ms="323" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:39:26 IST" name="setup" finished-at="2026-01-13T15:39:27 IST" duration-ms="883" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:58 IST" name="setup" finished-at="2026-01-13T18:15:59 IST" duration-ms="874" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:39:27 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:40:05 IST" duration-ms="37663" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:15:59 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:16:13 IST" duration-ms="14218" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=5200, Application Status=Pending Docs, Approved Amount=8000, Attorney Name=Attorney Veda Langford, Buyout Amount=4600, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=306, Case Type=Unpaid Wages, Court Index Number=14L01-2401-UW-000587, Date of Incident=01/26/2024, Document prep fee=220, Fund transfer fee=70, Interest Start Date=01/13/2026, Law Firm Name=Schweitzerova & Voronov Bad Faith Insurance, Claim Denial & Verbraucherrechte Counsel, Lead Source=Other, Notes / Remarks=Cash delivered by office runner; counted and receipted; attach receipt scan and ID verification note., Payer Name=Attorney Keiran Holbrook, Payment Date=01/13/2026, Payment Mode=Cash, Payment Type=Payment by Attorney, Rate of Return=34, Recommended Max Funding=8000, Requested Amount=20000, Risk Level=Low-Moderate, SMS Message Body=We need additional payroll or schedule documentation to finalize your unpaid wages file. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Unpaid overtime and denied meal-break premiums across multiple pay cycles; timekeeping entries reportedly edited; paystubs and schedules in conflict., Underwriting Notes=Confirm arbitration/class waiver and payroll record integrity. Risk depends on certification posture and employer defenses. Conservative funding until early discovery clarifies timekeeping practices., Underwriting Tag=Payroll Reconciliation}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=130 Albert Street, Parliament Corridor, Suite 1505, Address Line 2=Deliver to Lobby Desk C, visitor badge required for elevator, Date of Birth=09/12/1988, Email=callum.bouchard7726@mailto.plus, First Name=Callum, Last Name=Bouchard, Middle Name=Étienne, Name Suffix=II, Phone number=6135087726, Social Security Number=963-26-9026, State=Ontario, Zip code=K1P5G4}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.liora.kensleigh68@mailto.plus, First Name=Attorney Liora, Last Name=Kensleigh, Middle Name=Nadine, Name Suffix=II, Office phone=5128846031, Phone=5127391068}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Baltimore, Name=HarborLedger Trial Office, Phone=4106821570, State=Maryland, Street Address 1=10 Light St, Inner Harbor Business Tower, West Entrance, Street Address 2=Suite 1806, Intake: Room 18C, Package Scan at Security, Zip code=21202}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.kaelina.briarholt47@mailto.plus, Staff First Name=Staff Kaelina, Staff Last Name=Briarholt, Staff Middle Name=Odette, Staff Name Suffix=II, Staff Office phone=5129043716, Staff Phone=5126398047}]]>
+                <![CDATA[{Role Name=Law Firm Create Update View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:40:05 IST" name="Kill" finished-at="2026-01-13T15:40:05 IST" duration-ms="317" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:13 IST" name="Kill" finished-at="2026-01-13T18:16:14 IST" duration-ms="383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:40:05 IST" name="setup" finished-at="2026-01-13T15:40:06 IST" duration-ms="840" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:14 IST" name="setup" finished-at="2026-01-13T18:16:14 IST" duration-ms="885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:40:06 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:40:45 IST" duration-ms="38769" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:14 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:16:28 IST" duration-ms="13083" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=9800, Application Status=In Review, Approved Amount=10500, Attorney Name=Attorney Sienna Marwick, Buyout Amount=6100, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Summit Legal Funding, Case #=307, Case Type=Workers Compensation, Court Index Number=03WC-2309-WC-002244, Date of Incident=09/03/2023, Document prep fee=250, Fund transfer fee=85, Interest Start Date=01/13/2026, Law Firm Name=Lindenfeld, Hartmannski & Blumenkov Worksite, Scaffold & Industrial Injury Kanzlei, Lead Source=Medical Provider, Notes / Remarks=Personal cheque received; hold settlement status until clearance; log cheque number and deposit date., Payer Name=Plaintiff Gideon Carruthers, Payment Date=01/13/2026, Payment Mode=Cheque, Payment Type=Payment by Plaintiff, Rate of Return=36, Recommended Max Funding=10500, Requested Amount=26000, Risk Level=Moderate, SMS Message Body=Your workers compensation file is under review while claim status and records are verified. – Lumberjack Legal Finance, SMS Message Title=Under Review, State=Michigan, Summary=Work comp claim for repetitive strain injury; EMG indicates neuropathy; work restrictions and reduced hours reported; treatment ongoing., Underwriting Notes=Confirm claim acceptance vs dispute, wage statement accuracy, and MMI outlook. Lien and fee posture matters. Keep funding conservative if denial/IME dispute is active., Underwriting Tag=Claim Status Verification}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=2828 Boulevard Laurier, Sainte-Foy, Suite 1202, Address Line 2=Drop at reception A, include reference: QC-INT-1202, Date of Birth=12/02/1994, Email=amelie.gagnon3187@mailto.plus, First Name=Amélie, Last Name=Gagnon, Middle Name=Sophie, Name Suffix=Jr, Phone number=4386203187, Social Security Number=963-27-9027, State=Quebec, Zip code=G1V0A6}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.tavish.brackenwell13@mailto.plus, First Name=Attorney Tavish, Last Name=Brackenwell, Middle Name=Elio, Name Suffix=Jr, Office phone=7048305746, Phone=7042659813}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Worcester, Name=BayState Casebuilders, Phone=5084339261, State=Massachusetts, Street Address 1=255 Park Ave, Downtown Professional Row, Main Desk, Street Address 2=Suite 901, Mail Stop MA-09, Leave with Reception, Zip code=01609}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.rovenna.quarryn96@mailto.plus, Staff First Name=Staff Rovenna, Staff Last Name=Quarryn, Staff Middle Name=Marin, Staff Name Suffix=Jr, Staff Office phone=7049062841, Staff Phone=7045831096}]]>
+                <![CDATA[{Role Name=Documents View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:40:45 IST" name="Kill" finished-at="2026-01-13T15:40:45 IST" duration-ms="362" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:28 IST" name="Kill" finished-at="2026-01-13T18:16:28 IST" duration-ms="381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:40:45 IST" name="setup" finished-at="2026-01-13T15:40:46 IST" duration-ms="853" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:28 IST" name="setup" finished-at="2026-01-13T18:16:29 IST" duration-ms="838" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:40:46 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:41:24 IST" duration-ms="37713" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:29 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:16:43 IST" duration-ms="14721" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=7600, Application Status=Approved, Approved Amount=23500, Attorney Name=Attorney Orion Sedgewick, Buyout Amount=15200, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Frontline Capital Group, Case #=308, Case Type=Boat Accident, Court Index Number=49D03-2406-BA-001136, Date of Incident=06/15/2024, Document prep fee=285, Fund transfer fee=100, Interest Start Date=01/13/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Organic, Notes / Remarks=PIP reimbursement via online payment; verify remittance claim number; match against payment schedule., Payer Name=PIP Claims Department - MetroShield, Payment Date=01/13/2026, Payment Mode=Online Payment, Payment Type=Payment by PIP, Rate of Return=40, Recommended Max Funding=23500, Requested Amount=56000, Risk Level=Moderate, SMS Message Body=Your boat accident funding is approved. We’ll coordinate agreement review and disbursement with your attorney. – Lumberjack Legal Finance, SMS Message Title=Boat Accident Approved, State=Indiana, Summary=Recreational boat collision at low visibility; alleged excessive speed and improper lookout; concussion symptoms and shoulder injury reported; patrol report requested., Underwriting Notes=Key evidence: marine patrol report, witness statements, photos, and compliance with navigation rules. Confirm operator insurance and comparative negligence risks., Underwriting Tag=Marine Report Pending}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=1 Lombard Place, Exchange District, Suite 905, Address Line 2=Security scan required, deliveries weekdays only, Date of Birth=03/26/1991, Email=rowan.henderson6908@mailto.plus, First Name=Rowan, Last Name=Henderson, Middle Name=Declan, Name Suffix=III, Phone number=2045876908, Social Security Number=963-28-9028, State=Manitoba, Zip code=R3C4T3}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.kaori.wetherell09@mailto.plus, First Name=Attorney Kaori, Last Name=Wetherell, Middle Name=Yseult, Name Suffix=III, Office phone=6179053182, Phone=6174827609}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Minneapolis, Name=MillCity Docket Foundry, Phone=6125078436, State=Minnesota, Street Address 1=120 S 6th St, Skyway Commerce Plaza, North Lobby, Street Address 2=Suite 2405, Intake: Desk 2, Elevator Bank C, Zip code=55402}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.doriane.valewood83@mailto.plus, Staff First Name=Staff Doriane, Staff Last Name=Valewood, Staff Middle Name=Noemi, Staff Name Suffix=III, Staff Office phone=6179054172, Staff Phone=6174029683}]]>
+                <![CDATA[{Role Name=Email View List and Verify}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:41:24 IST" name="Kill" finished-at="2026-01-13T15:41:24 IST" duration-ms="292" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:43 IST" name="Kill" finished-at="2026-01-13T18:16:44 IST" duration-ms="255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:41:24 IST" name="setup" finished-at="2026-01-13T15:41:25 IST" duration-ms="851" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:44 IST" name="setup" finished-at="2026-01-13T18:16:45 IST" duration-ms="878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:41:25 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:42:04 IST" duration-ms="39251" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:45 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:16:59 IST" duration-ms="14128" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=12500, Application Status=In Review, Approved Amount=56000, Attorney Name=Attorney Elara Whitcombe, Buyout Amount=34500, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=309, Case Type=Airplane Accident, Court Index Number=21CV-2305-AA-001019, Date of Incident=05/02/2023, Document prep fee=360, Fund transfer fee=135, Interest Start Date=01/13/2026, Law Firm Name=Brandtov & Lindenfeld Catastrophic Injury Rechtsanwälte Group, Lead Source=Attorney Referral, Notes / Remarks=Insurance card payment processed; attach transaction receipt; verify no partial capture in gateway., Payer Name=CedarLine Commercial Insurance, Payment Date=01/13/2026, Payment Mode=Credit Card, Payment Type=Payment by Insurance Company, Rate of Return=47, Recommended Max Funding=56000, Requested Amount=118000, Risk Level=Moderate-High, SMS Message Body=Your airplane accident file is under advanced review while investigation records are verified. – Lumberjack Legal Finance, SMS Message Title=Airplane Case Under Review, State=Ohio, Summary=Small aircraft runway excursion with alleged maintenance oversight; orthopedic injuries and extended rehab; requesting NTSB/FAA records and maintenance logs., Underwriting Notes=Multiple potentially liable parties (operator, maintenance, manufacturer). Confirm investigation status, insurance layers, and expert retention. Staged funding recommended until causation is clarified., Underwriting Tag=Investigation Layering}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=2400 13th Avenue, Downtown, Suite 610, Address Line 2=Deliver to main lobby, ask for Intake Coordinator, Date of Birth=06/17/1989, Email=talia.sinclair2479@mailto.plus, First Name=Talia, Last Name=Sinclair, Middle Name=Jade, Name Suffix=Sr, Phone number=3065742479, Social Security Number=963-29-9029, State=Saskatchewan, Zip code=S4P3Y2}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.niall.ravenhurst25@mailto.plus, First Name=Attorney Niall, Last Name=Ravenhurst, Middle Name=Pascal, Name Suffix=Sr, Office phone=6479041578, Phone=6473168025}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=St. Louis, Name=Gateway Pleading House, Phone=3147905524, State=Missouri, Street Address 1=1 S Memorial Dr, Arch District Office Tower, Main Lobby, Street Address 2=Floor 16, Suite 1608, Deliveries: Weekdays Only, Zip code=63102}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.erynden.stormley29@mailto.plus, Staff First Name=Staff Erynden, Staff Last Name=Stormley, Staff Middle Name=Pascal, Staff Name Suffix=Sr, Staff Office phone=4169072638, Staff Phone=4167385129}]]>
+                <![CDATA[{Role Name=Messages View and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:42:04 IST" name="Kill" finished-at="2026-01-13T15:42:04 IST" duration-ms="306" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:59 IST" name="Kill" finished-at="2026-01-13T18:16:59 IST" duration-ms="302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:42:04 IST" name="setup" finished-at="2026-01-13T15:42:05 IST" duration-ms="850" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:16:59 IST" name="setup" finished-at="2026-01-13T18:17:00 IST" duration-ms="881" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Underwriting_Notes(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:42:05 IST" name="Underwriting_Notes" data-provider="case_plus_plaintiff" finished-at="2026-01-13T15:42:45 IST" duration-ms="39543" status="PASS">
+        <test-method signature="Role_Add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:17:00 IST" name="Role_Add" data-provider="roleData" finished-at="2026-01-13T18:17:15 IST" duration-ms="14628" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/13/2026, Amount Received=6500, Application Status=Pending Docs, Approved Amount=42000, Attorney Name=Attorney Maeve Calderon, Buyout Amount=27200, Buyout Expiry Date=01/13/2030, Buyout Funder Name=Harbor Ridge Finance, Case #=310, Case Type=Aeroplane accident, Court Index Number=12L04-2310-AE-002611, Date of Incident=10/09/2023, Document prep fee=350, Fund transfer fee=125, Interest Start Date=01/13/2026, Law Firm Name=Markov-Bauer Cross-Border Truck & Autobahn Accident Trial Partners, Lead Source=Broker, Notes / Remarks=Bank transfer from PIP unit; reconcile amount vs expected reimbursement; document remittance reference., Payer Name=PIP Unit - Granite Auto Indemnity, Payment Date=01/13/2026, Payment Mode=Bank Transfer, Payment Type=Payment by PIP, Rate of Return=46, Recommended Max Funding=42000, Requested Amount=102000, Risk Level=Moderate, SMS Message Body=We need a few additional documents to finalize your aeroplane accident file. Please coordinate with your attorney. – Lumberjack Legal Finance, SMS Message Title=Documents Needed, State=Illinois, Summary=Charter turbulence event with unsecured cabin items causing head/neck injury; neurology follow-ups ongoing; carrier incident report requested., Underwriting Notes=Confirm passenger records, medical timeline, and applicable treaty/limitations if commercial carriage applies. Evidence quality and insurance layers drive funding cap. Stage until incident report and treating notes received., Underwriting Tag=Treaty/Limitation Check}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=10 Kenmount Road, Business Park, Suite 410, Address Line 2=Leave package with reception, signature required on delivery, Date of Birth=10/21/1992, Email=noah.chenier8030@mailto.plus, First Name=Noah, Last Name=Chénier, Middle Name=Laurent, Name Suffix=IV, Phone number=7095558030, Social Security Number=963-30-9030, State=Newfoundland and Labrador, Zip code=A1C5N5}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.elara.montclair73@mailto.plus, First Name=Attorney Elara, Last Name=Montclair, Middle Name=Giselle, Name Suffix=IV, Office phone=9057902461, Phone=9054281673}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Wichita, Name=PrairieMotion Claims Studio, Phone=3166881049, State=Kansas, Street Address 1=100 N Broadway St, Old Town Commerce Block, East Entrance, Street Address 2=Suite 705, Intake: Window 1, Visitor Parking Level 2, Zip code=67202}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.selvara.montclair74@mailto.plus, Staff First Name=Staff Selvara, Staff Last Name=Montclair, Staff Middle Name=Giselle, Staff Name Suffix=IV, Staff Office phone=5149027415, Staff Phone=5146093874}]]>
+                <![CDATA[{Role Name=Access Control Roles Create Update and List}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Underwriting_Notes -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ad82709]" started-at="2026-01-13T15:42:45 IST" name="Kill" finished-at="2026-01-13T15:42:45 IST" duration-ms="307" status="PASS">
+        </test-method> <!-- Role_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Access_Permissions@8297b3a]" started-at="2026-01-13T18:17:15 IST" name="Kill" finished-at="2026-01-13T18:17:15 IST" duration-ms="483" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Access_Permissions -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

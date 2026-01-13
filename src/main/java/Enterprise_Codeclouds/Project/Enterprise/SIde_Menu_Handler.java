@@ -32,10 +32,11 @@ public class SIde_Menu_Handler extends Login{
             		break Outerloop;
             		}}
             	}}}
-    		else {
+    	
+    		
+    	else {
     			
-    
-        for(WebElement menuopt:menuoptions){
+            for(WebElement menuopt:menuoptions){
         	if(menuopt.getText().trim().contains(menu_option)){
         		
         		menuopt.click();
