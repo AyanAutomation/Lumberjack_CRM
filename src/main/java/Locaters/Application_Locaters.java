@@ -125,11 +125,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//div[@class='ant-modal-body'])[2]")
 	private WebElement  second_pop_up_form; 
 	@FindBy(xpath="(//div[@class='ant-modal-body'])[3]")
-	private WebElement  Third_popup_form; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Third_popup_form; 
+	@FindBy(xpath="(//*[@aria-label='plus']/..)[2]")
+	private WebElement Notes_Add_Button; 
+	@FindBy(xpath="//button[@type='submit']")
+	private WebElement Submit_Button;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -578,13 +578,13 @@ public class Application_Locaters extends Repeat{
 	public List <WebElement> Third_popup_form_buttons(){
 	List <WebElement> Third_popup_form_buttons = Third_popup_form().findElements(By.xpath(".//button"));
 	wait_for_theElement(Third_popup_form_buttons);
-	return Third_popup_form_buttons;}  /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Third_popup_form_buttons;}  
+	public WebElement Notes_Add_Button(){
+	wait_for_theElement(Notes_Add_Button);
+	return Notes_Add_Button;}   
+	public WebElement Submit_Button(){
+	wait_for_theElement(Submit_Button);
+	return Submit_Button;}   /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
