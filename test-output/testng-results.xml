@@ -1,393 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-12T15:54:56 IST" name="Default suite" finished-at="2026-01-12T16:00:24 IST" duration-ms="328190">
+  <suite started-at="2026-01-12T21:03:27 IST" name="Default suite" finished-at="2026-01-12T21:05:06 IST" duration-ms="98579">
     <groups>
     </groups>
-    <test started-at="2026-01-12T15:54:56 IST" name="Default test" finished-at="2026-01-12T16:00:24 IST" duration-ms="328190">
-      <class name="Enterprise_Codeclouds.Project.Enterprise.User_Module">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:54:56 IST" name="setup" finished-at="2026-01-12T15:54:58 IST" duration-ms="1997" status="PASS">
+    <test started-at="2026-01-12T21:03:27 IST" name="Default test" finished-at="2026-01-12T21:05:06 IST" duration-ms="98579">
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@61322f9d]" started-at="2026-01-12T21:03:27 IST" name="setup" finished-at="2026-01-12T21:03:29 IST" duration-ms="2058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:54:58 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:55:15 IST" duration-ms="16277" status="PASS">
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@61322f9d]" started-at="2026-01-12T21:03:29 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-12T21:05:05 IST" duration-ms="96003" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Email=anvay.halderwyn051@mailto.plus, First Name=Anvay, Groups=Super Admin, Last Name=Halderwyn, Middle Name=Kiron, Phone Number (Primary)=9814387051, Phone Number (Secondary)=3586139041}]]>
+                <![CDATA[{Agreement Date=01/12/2026, Amount Received=12000, Application Status=In Review, Approved Amount=24000, Attorney Name=Attorney Orson Pfeiffer, Buyout Amount=15500, Buyout Expiry Date=01/12/2030, Buyout Funder Name=Frontline Capital Group, Case #=201, Case Type=Civil Rights, Court Index Number=49D03-2306-CR-001114, Date of Incident=06/08/2023, Document prep fee=325, Fund transfer fee=110, Interest Start Date=01/12/2026, Law Firm Name=Krausov-Bauer Polizeimisconduct, Civil Rights & Bürgerfreiheiten Law Center, Lead Source=Attorney Referral, Notes / Remarks=ACH/Bank transfer initiated by attorney office; confirmation email received; reconcile with bank statement before final posting., Payer Name=Attorney Selwyn Kappelmann, Payment Date=01/12/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Attorney, Rate of Return=41, Recommended Max Funding=24000, Requested Amount=58000, Risk Level=Moderate, SMS Message Body=Your civil rights application is under review while key records are verified. We’ll update you soon. – Lumberjack Legal Finance, SMS Message Title=Civil Rights File In Review, State=Indiana, Summary=Alleged unlawful search and excessive detention during traffic stop; emotional distress and employment disruption claimed; bodycam footage requested., Underwriting Notes=Primary driver is evidence quality: bodycam, dispatch logs, incident report, and any internal affairs findings. Confirm notice requirements, immunities, and policy limits before expanding funding.}]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{Address Line 1=250 Front Street West, Tower South, Suite 1208, Address Line 2=Attn: Intake Desk, Deliver to Lobby Concierge, Call on arrival, Date of Birth=02/11/1991, Email=elodie.beaulac5211@mailto.plus, First Name=Élodie, Last Name=Beaulac, Middle Name=Maëlle, Name Suffix=II, Phone number=4167325211, Social Security Number=963-21-9021, State=Ontario, Zip code=M5V2T6}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{Email=attorney.cailen.ashbourne61@mailto.plus, First Name=Attorney Cailen, Last Name=Ashbourne, Middle Name=Voren, Name Suffix=II, Office phone=9727719046, Phone=9724186307}]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[{City=Wilmington, Name=VerdictForge Litigation Atelier, Phone=3024389017, State=Delaware, Street Address 1=919 N Market St, Brandywine Commerce Center, Main Lobby, Street Address 2=Suite 1204, Intake: Desk 3, Elevator Bank A, Zip code=19801}]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[{Staff Email=staff.nivaren.thornwick25@mailto.plus, Staff First Name=Staff Nivaren, Staff Last Name=Thornwick, Staff Middle Name=Calix, Staff Name Suffix=II, Staff Office phone=9718821460, Staff Phone=9716043825}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:55:15 IST" name="Kill" finished-at="2026-01-12T15:55:15 IST" duration-ms="467" status="PASS">
+        </test-method> <!-- Add_case -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@61322f9d]" started-at="2026-01-12T21:05:05 IST" name="Kill" finished-at="2026-01-12T21:05:06 IST" duration-ms="408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:55:15 IST" name="setup" finished-at="2026-01-12T15:55:16 IST" duration-ms="931" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:55:16 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:55:41 IST" duration-ms="25471" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=eulalia.quistrel1742@mailto.plus, First Name=Eulalia, Groups=New Group, Last Name=Quistrel, Middle Name=Maren, Phone Number (Primary)=6238051742, Phone Number (Secondary)=5206948832}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:55:41 IST" name="Kill" finished-at="2026-01-12T15:55:44 IST" duration-ms="2109" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:55:44 IST" name="setup" finished-at="2026-01-12T15:55:48 IST" duration-ms="4358" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:55:48 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:56:03 IST" duration-ms="14912" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=tamsin.ridgeley4603@mailto.plus, First Name=Tamsin, Groups=Test Group, Last Name=Ridgeley, Middle Name=Ivo, Phone Number (Primary)=3157724603, Phone Number (Secondary)=5859013373}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:03 IST" name="Kill" finished-at="2026-01-12T15:56:03 IST" duration-ms="365" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:03 IST" name="setup" finished-at="2026-01-12T15:56:04 IST" duration-ms="848" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:04 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:56:19 IST" duration-ms="15246" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=bodhi.kerrivane2914@mailto.plus, First Name=Bodhi, Groups=Submodule test group, Last Name=Kerrivane, Middle Name=Sage, Phone Number (Primary)=9186402914, Phone Number (Secondary)=5398846204}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:19 IST" name="Kill" finished-at="2026-01-12T15:56:20 IST" duration-ms="418" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:20 IST" name="setup" finished-at="2026-01-12T15:56:21 IST" duration-ms="911" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:21 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:56:35 IST" duration-ms="14067" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=nayeli.stonevoss8395@mailto.plus, First Name=Nayeli, Groups=Super Admin, Last Name=Stonevoss, Middle Name=Reina, Phone Number (Primary)=4025178395, Phone Number (Secondary)=5317781465}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:35 IST" name="Kill" finished-at="2026-01-12T15:56:35 IST" duration-ms="350" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:35 IST" name="setup" finished-at="2026-01-12T15:56:36 IST" duration-ms="869" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:36 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:56:50 IST" duration-ms="13936" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=ishaan.moorfield5526@mailto.plus, First Name=Ishaan, Groups=New Group, Last Name=Moorfield, Middle Name=Dev, Phone Number (Primary)=7079365526, Phone Number (Secondary)=9166042196}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:50 IST" name="Kill" finished-at="2026-01-12T15:56:50 IST" duration-ms="423" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:50 IST" name="setup" finished-at="2026-01-12T15:56:51 IST" duration-ms="841" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:56:51 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:57:05 IST" duration-ms="13795" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=soraya.brindleham1077@mailto.plus, First Name=Soraya, Groups=Test Group, Last Name=Brindleham, Middle Name=Noor, Phone Number (Primary)=9194831077, Phone Number (Secondary)=2527609447}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:05 IST" name="Kill" finished-at="2026-01-12T15:57:05 IST" duration-ms="445" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:05 IST" name="setup" finished-at="2026-01-12T15:57:06 IST" duration-ms="859" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:06 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:57:20 IST" duration-ms="13599" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=leocadia.ashbriar9838@mailto.plus, First Name=Leocadia, Groups=Submodule test group, Last Name=Ashbriar, Middle Name=Rue, Phone Number (Primary)=5126749838, Phone Number (Secondary)=7375801168}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:20 IST" name="Kill" finished-at="2026-01-12T15:57:20 IST" duration-ms="397" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:20 IST" name="setup" finished-at="2026-01-12T15:57:21 IST" duration-ms="881" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:21 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:57:35 IST" duration-ms="13835" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=kairav.velmont2289@mailto.plus, First Name=Kairav, Groups=Super Admin, Last Name=Velmont, Middle Name=Omri, Phone Number (Primary)=6469052289, Phone Number (Secondary)=3327416609}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:35 IST" name="Kill" finished-at="2026-01-12T15:57:35 IST" duration-ms="456" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:35 IST" name="setup" finished-at="2026-01-12T15:57:36 IST" duration-ms="865" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:36 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:57:52 IST" duration-ms="15885" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=yara.crownhill4750@mailto.plus, First Name=Yara, Groups=New Group, Last Name=Crownhill, Middle Name=Esme, Phone Number (Primary)=2168394750, Phone Number (Secondary)=4407821190}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:52 IST" name="Kill" finished-at="2026-01-12T15:57:53 IST" duration-ms="375" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:53 IST" name="setup" finished-at="2026-01-12T15:57:53 IST" duration-ms="898" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:57:53 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:58:07 IST" duration-ms="13688" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=ronan.lindenrow9301@mailto.plus, First Name=Ronan, Groups=Test Group, Last Name=Lindenrow, Middle Name=Keir, Phone Number (Primary)=4807169301, Phone Number (Secondary)=6025397081}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:07 IST" name="Kill" finished-at="2026-01-12T15:58:08 IST" duration-ms="476" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:08 IST" name="setup" finished-at="2026-01-12T15:58:08 IST" duration-ms="856" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:08 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:58:22 IST" duration-ms="13466" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=aurelio.merrivale7422@mailto.plus, First Name=Aurelio, Groups=Submodule test group, Last Name=Merrivale, Middle Name=Paz, Phone Number (Primary)=3036587422, Phone Number (Secondary)=7203419052}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:22 IST" name="Kill" finished-at="2026-01-12T15:58:22 IST" duration-ms="336" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:22 IST" name="setup" finished-at="2026-01-12T15:58:23 IST" duration-ms="882" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:23 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:58:36 IST" duration-ms="13375" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=saskia.vinteron2633@mailto.plus, First Name=Saskia, Groups=Super Admin, Last Name=Vinteron, Middle Name=Liv, Phone Number (Primary)=8014972633, Phone Number (Secondary)=3856087713}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:37 IST" name="Kill" finished-at="2026-01-12T15:58:37 IST" duration-ms="363" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:37 IST" name="setup" finished-at="2026-01-12T15:58:38 IST" duration-ms="838" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:38 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:58:51 IST" duration-ms="13612" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=navin.hearthlane5144@mailto.plus, First Name=Navin, Groups=New Group, Last Name=Hearthlane, Middle Name=Ryo, Phone Number (Primary)=6158205144, Phone Number (Secondary)=6294779014}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:51 IST" name="Kill" finished-at="2026-01-12T15:58:53 IST" duration-ms="1873" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:53 IST" name="setup" finished-at="2026-01-12T15:58:54 IST" duration-ms="757" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:58:54 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:59:08 IST" duration-ms="13590" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=meadow.glenwarren9855@mailto.plus, First Name=Meadow, Groups=Test Group, Last Name=Glenwarren, Middle Name=Skye, Phone Number (Primary)=2067339855, Phone Number (Secondary)=4256017725}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:08 IST" name="Kill" finished-at="2026-01-12T15:59:08 IST" duration-ms="354" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:08 IST" name="setup" finished-at="2026-01-12T15:59:09 IST" duration-ms="894" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:09 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:59:22 IST" duration-ms="13347" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=zubair.crestmore1966@mailto.plus, First Name=Zubair, Groups=Submodule test group, Last Name=Crestmore, Middle Name=Irfan, Phone Number (Primary)=9046821966, Phone Number (Secondary)=3865194406}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:22 IST" name="Kill" finished-at="2026-01-12T15:59:23 IST" duration-ms="362" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:23 IST" name="setup" finished-at="2026-01-12T15:59:23 IST" duration-ms="842" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:23 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:59:37 IST" duration-ms="13723" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=elowen.rookhaven3077@mailto.plus, First Name=Elowen, Groups=Super Admin, Last Name=Rookhaven, Middle Name=Faye, Phone Number (Primary)=5057493077, Phone Number (Secondary)=5756142387}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:37 IST" name="Kill" finished-at="2026-01-12T15:59:37 IST" duration-ms="388" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:37 IST" name="setup" finished-at="2026-01-12T15:59:38 IST" duration-ms="892" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:38 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T15:59:52 IST" duration-ms="13886" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=keziah.briarwick4188@mailto.plus, First Name=Keziah, Groups=New Group, Last Name=Briarwick, Middle Name=Nell, Phone Number (Primary)=3176084188, Phone Number (Secondary)=4637712098}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:52 IST" name="Kill" finished-at="2026-01-12T15:59:53 IST" duration-ms="346" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:53 IST" name="setup" finished-at="2026-01-12T15:59:53 IST" duration-ms="861" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T15:59:53 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T16:00:08 IST" duration-ms="14451" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=tenzin.rivenshaw5299@mailto.plus, First Name=Tenzin, Groups=Test Group, Last Name=Rivenshaw, Middle Name=Pema, Phone Number (Primary)=9138275299, Phone Number (Secondary)=8166947709}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T16:00:08 IST" name="Kill" finished-at="2026-01-12T16:00:08 IST" duration-ms="521" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T16:00:08 IST" name="setup" finished-at="2026-01-12T16:00:09 IST" duration-ms="849" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="user_add(java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T16:00:09 IST" name="user_add" data-provider="UserData" finished-at="2026-01-12T16:00:24 IST" duration-ms="14681" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Email=marcellus.wrenford7400@mailto.plus, First Name=Marcellus, Groups=Submodule test group, Last Name=Wrenford, Middle Name=Jude, Phone Number (Primary)=7026157400, Phone Number (Secondary)=7255031960}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- user_add -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.User_Module@40005471]" started-at="2026-01-12T16:00:24 IST" name="Kill" finished-at="2026-01-12T16:00:24 IST" duration-ms="430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Kill -->
-      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.User_Module -->
+      </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

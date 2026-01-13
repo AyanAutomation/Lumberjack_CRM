@@ -55,6 +55,88 @@ public class Law_Firm_Module extends Attorney_module{
 		String taost= lg.toast().getText().trim();
 		Login_negative_testcases.Toast_printer(taost);}
 		
+	
+	   @Test(dataProvider="law_plus_attorney")
+	   public void Law_firm_contact_Add_through_Case_Contact(TreeMap<String, String> data,TreeMap<String, String> law_firm,TreeMap<String, String> staff) throws IOException, InterruptedException{
+		   
+		    SIde_Menu_Handler sd = new SIde_Menu_Handler();
+			Application_Locaters p = new Application_Locaters(d);
+			Repeat rp = new Repeat(d);
+			Login_Locaters lg = new Login_Locaters(d);
+		
+			
+	     String	Law_Firm_Name = law_firm.get("Name");	
+		
+		WebElement Create_Contact;
+		try{Create_Contact = p.Create_Contact_button();}
+		catch(Exception not_inside_case_contact_list){
+			sd.Side_menu_option_clicker("Applications", d,"N/A");
+			p.landed_in_applicationList_confirmation();	
+			p.rows().get(1).click();
+			Thread.sleep(800);}	
+		List<WebElement> Case_Tags;
+		   try {
+		   Case_Tags = p.Case_tags();}
+		   catch(RuntimeException tags){
+			   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+			   System.out.println();
+			   Thread.sleep(1200);
+			   Case_Tags = p.Case_tags(); }
+		    tab_selector("Contacts");
+			p.lawFirm_AddButton_ContactTab();
+			rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
+			p.Contact_AddButton_ContactTab().click();
+			p.Contact_type_dropdown_list();
+			List<WebElement> Contact_Options = p.Contact_type_Options();
+			for(WebElement Cn_opt:Contact_Options){
+			if(Cn_opt.getText().trim().equalsIgnoreCase("Law Firm Contact")){
+					Cn_opt.click();
+					break;}}
+			p.pop_up_contact_list(); 
+			p.pop_up_contact_list();
+			Thread.sleep(800);
+			p.Popup_modal_search().sendKeys(Law_Firm_Name);
+			Thread.sleep(800);
+			WebElement toast = lg.toast();
+			rp.wait_for_invisibility(toast);
+			try {
+			p.List_Checkboxes().get(0).click();}
+			catch(Exception Law_firm_){
+				WebElement CreateContact = p.Create_Contact_button();
+				rp.Scroll_to_element(CreateContact);
+				CreateContact.click();
+				List<WebElement> Law_firm_contacts_inputs = p.second_popup_form_inputs();
+				Law_firm_contacts_inputs.get(0).sendKeys(Law_Firm_Name);
+				p.plaintiff_dropdown_list();
+				p.Plaintiff_options().get(0).click();
+				Law_firm_contacts_inputs.get(1).sendKeys(data.get("First Name"));
+				Law_firm_contacts_inputs.get(2).sendKeys(data.get("Middle Name"));
+				Law_firm_contacts_inputs.get(3).sendKeys(data.get("Last Name"));
+				Law_firm_contacts_inputs.get(4).sendKeys(data.get("Name Suffix"));
+				Law_firm_contacts_inputs.get(5).sendKeys(data.get("Phone"));
+				Law_firm_contacts_inputs.get(6).sendKeys(data.get("Office phone"));
+				Law_firm_contacts_inputs.get(7).sendKeys(data.get("Email"));
+			/*	WebElement Add_staff_button= p.second_popup_form_buttons().get(1);
+				Add_staff_button.click();
+				List<WebElement> fields = p.Third_popup_form_inputs();
+				WebElement Staff_pop_up_form = p.Third_popup_form();
+				WebElement Staff_Add_button= p.Third_popup_form_buttons().get(1);
+				staff_add(staff,fields,Staff_pop_up_form,Staff_Add_button); */
+				WebElement Add_Create_Contact_Button=p.second_popup_form_buttons().get(2);
+				rp.Scroll_to_element(Add_Create_Contact_Button);
+				Add_Create_Contact_Button.click();
+				Thread.sleep(800);	
+				WebElement Toast = lg.toast();
+				String taost= Toast.getText().trim();
+				Login_negative_testcases.Toast_printer(taost);}}
+	
+	
+	
+	
+	
+	
+	
+	
 		@DataProvider
 		public Object[][] lawFirmData() {
 
@@ -242,10 +324,10 @@ public class Law_Firm_Module extends Attorney_module{
 		    lf20.put("Zip code", "87501");
 
 		    return new Object[][]{
-		        {lf1},/*{lf2},{lf3},{lf4},{lf5},
+		        {lf1},{lf2},{lf3},{lf4},{lf5},
 		        {lf6},{lf7},{lf8},{lf9},{lf10},
 		        {lf11},{lf12},{lf13},{lf14},{lf15},
-		        {lf16},{lf17},{lf18},{lf19},{lf20} */
+		        {lf16},{lf17},{lf18},{lf19},{lf20} 
 		    };
 		}
 

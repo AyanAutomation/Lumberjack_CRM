@@ -65,21 +65,22 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	@Test(dataProvider="case_plus_plaintiff")
-	public void Add_case(TreeMap<String, String> data, TreeMap<String, String> data2 ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data) throws IOException, InterruptedException{
+	public void Add_case(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data) throws IOException, InterruptedException{
 		
 		
 		Application_Locaters p = new Application_Locaters(d);
         Login_Locaters lg = new Login_Locaters(d);
 		Repeat rp = new Repeat(d);
 		JavascriptExecutor js = (JavascriptExecutor)d; 
+		Attorney_module at = new Attorney_module();
 		
 		Collections_Clear();
 		
-		int Buyout_Amount = Integer.parseInt(data.get("Buyout Amount"));
-		int Approved_Amount = Integer.parseInt(data.get("Approved Amount"));
-		int Document_prep_fee = Integer.parseInt(data.get("Document prep fee"));
-		int Fund_transfer_fee = Integer.parseInt(data.get("Fund transfer fee"));
-		int Rate_of_Return = Integer.parseInt(data.get("Rate of Return"));
+		int Buyout_Amount = Integer.parseInt(Case_Data.get("Buyout Amount"));
+		int Approved_Amount = Integer.parseInt(Case_Data.get("Approved Amount"));
+		int Document_prep_fee = Integer.parseInt(Case_Data.get("Document prep fee"));
+		int Fund_transfer_fee = Integer.parseInt(Case_Data.get("Fund transfer fee"));
+		int Rate_of_Return = Integer.parseInt(Case_Data.get("Rate of Return"));
 		
 		double Funded_amount = Buyout_Amount+Approved_Amount;
 		double Annual_Interest_Amount = (Funded_amount * Rate_of_Return) / 100;
@@ -93,43 +94,43 @@ public class Case_Appplications extends Header_Manager{
 		Add_New_Case_Form_Accessor(step++);
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
-		p.form_inputs().get(0).sendKeys(data2.get("First Name"));
+		p.form_inputs().get(0).sendKeys(Plaintiff.get("First Name"));
 		p.plaintiff_dropdown_list();
 		p.Plaintiff_options().get(0).click();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+data2.get("First Name"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+Plaintiff.get("First Name"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
-		p.form_inputs().get(1).sendKeys(data.get("Case Type"));
+		p.form_inputs().get(1).sendKeys(Case_Data.get("Case Type"));
 		p.form_inputs().get(1).click();
 		p.Incident_type_dropdown();
 		option_printers("Incident Options are ",p.Incident_options());
 		p.Incident_options().get(0).click();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Incident/Case type selected from list for input = "+data.get("Case Type"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Incident/Case type selected from list for input = "+Case_Data.get("Case Type"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select State of Incident from dropdown.");
-		p.form_inputs().get(2).sendKeys(data.get("State"));
+		p.form_inputs().get(2).sendKeys(Case_Data.get("State"));
 		p.form_inputs().get(2).click();
 		p.State_of_incident_dropdown();
 		p.State_of_incident_options().get(0).click();
 		Thread.sleep(500);	
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> State selected from list for input = "+data.get("State"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> State selected from list for input = "+Case_Data.get("State"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Date of Incident and confirm date selection.");
 		WebElement calender_field = p.form_inputs().get(3);
-		calender_field.sendKeys(data.get("Date of Incident"));
+		calender_field.sendKeys(Case_Data.get("Date of Incident"));
 		calender_field.click();
 		p.calender_date_select().click();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+data.get("Date of Incident"));
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+Case_Data.get("Date of Incident"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
 		rp.Scroll_to_element(p.form_inputs().get(4));
 		//p.form_inputs().get(4).click();
-		p.form_inputs().get(4).sendKeys(data.get("Lead Source"));
+		p.form_inputs().get(4).sendKeys(Case_Data.get("Lead Source"));
 		p.Lead_Type_dropdown();
 		p.Lead_category_options().get(0).click();
 		p.form_inputs().get(5).click();
 		p.Lead_dropdown();
 		p.Leadoptions().get(0).click();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = "+data.get("Lead Source")+")");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = "+Case_Data.get("Lead Source")+")");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Requested Amount and click Create/Save Case.");
 		rp.Scroll_to_element(p.form_inputs().get(5));
-		p.form_inputs().get(6).sendKeys(data.get("Requested Amount"));
+		p.form_inputs().get(6).sendKeys(Case_Data.get("Requested Amount"));
 		p.form_buttons().get(1).click();
 		Thread.sleep(500); /*	
 		try {
@@ -143,9 +144,9 @@ public class Case_Appplications extends Header_Manager{
 		p.Edit_form_buttons().get(1).click();
 		p.Case_details_edit_buttons(); */
 		Thread.sleep(500);
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+Case_Data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
 		Thread.sleep(800);
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+data.get("Court Index Number")+")");
+		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+Case_Data.get("Court Index Number")+")");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
 		tab_selector("Contacts");
 		p.lawFirm_AddButton_ContactTab();
@@ -166,26 +167,15 @@ public class Case_Appplications extends Header_Manager{
 		try {
 		p.List_Checkboxes().get(0).click();}
 		catch(Exception attorney_searched_not_present){
-			WebElement Create_Contact = p.Create_Contact_button();
-			rp.Scroll_to_element(Create_Contact);
-			Create_Contact.click();
-			List<WebElement> attorney_inputs = p.second_popup_form_inputs();
-			attorney_inputs.get(0).sendKeys(Law_Firm_Data.get("Name"));
-			p.plaintiff_dropdown_list();
-			p.Plaintiff_options().get(0).click();
-			attorney_inputs.get(1).sendKeys(attorneyData.get("First Name"));
-			attorney_inputs.get(2).sendKeys(attorneyData.get("Middle Name"));
-			attorney_inputs.get(3).sendKeys(attorneyData.get("Last Name"));
-			attorney_inputs.get(4).sendKeys(attorneyData.get("Name Suffix"));
-			attorney_inputs.get(5).sendKeys(attorneyData.get("Phone"));
-			attorney_inputs.get(6).sendKeys(attorneyData.get("Office phone"));
-			attorney_inputs.get(7).sendKeys(attorneyData.get("Email"));
-			WebElement Add_Attorney_Button=p.form_buttons().get(2);
-			rp.Scroll_to_element(Add_Attorney_Button);
-			Add_Attorney_Button.click();
-			Thread.sleep(800);	
-			String taost= lg.toast().getText().trim();
-			Login_negative_testcases.Toast_printer(taost);}
+			at.Atttorney_Add_through_case(attorneyData,Law_Firm_Data,Staff_Data,d);
+			Thread.sleep(800);
+			p.Popup_modal_search().clear();
+			Thread.sleep(800);
+			p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
+			Thread.sleep(800);
+			WebElement Newtoast = lg.toast();
+			rp.wait_for_invisibility(Newtoast);
+			p.List_Checkboxes().get(0).click();}
 		Thread.sleep(600);
        // rp.wait_for_invisibility(lg.toast());
 		WebElement Import_button = p.import_Button();
@@ -198,9 +188,9 @@ public class Case_Appplications extends Header_Manager{
 		p.Application_amount_edit_buttons().get(1).click();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
-		p.Modal_Input_Feilds().get(0).sendKeys(data.get("Buyout Funder Name"));
-		p.Modal_Input_Feilds().get(1).sendKeys(data.get("Buyout Amount"));
-		p.Modal_Input_Feilds().get(2).sendKeys(data.get("Buyout Expiry Date"));
+		p.Modal_Input_Feilds().get(0).sendKeys(Case_Data.get("Buyout Funder Name"));
+		p.Modal_Input_Feilds().get(1).sendKeys(Case_Data.get("Buyout Amount"));
+		p.Modal_Input_Feilds().get(2).sendKeys(Case_Data.get("Buyout Expiry Date"));
 		p.calender_date_select().click();
 		p.modal_buttons().get(1).click();
 		Thread.sleep(800);
@@ -220,10 +210,10 @@ public class Case_Appplications extends Header_Manager{
 		Report_Listen.log_print_in_report().log(Status.INFO,"Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
 		System.out.println("Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
 		System.out.println();}
-		p.Application_Amount_input_Fields().get(0).sendKeys(data.get("Approved Amount"));
+		p.Application_Amount_input_Fields().get(0).sendKeys(Case_Data.get("Approved Amount"));
 	    p.table_body().click();
 	    Thread.sleep(800);
-	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Approved Amount entered = "+data.get("Approved Amount"));
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Approved Amount entered = "+Case_Data.get("Approved Amount"));
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Update Application Status to APPROVED from dropdown.");
 		rp.movetoelement(p.Application_Details_Dropdown_Feild());
 	    p.Application_Details_Dropdown_Feild().click();
@@ -245,18 +235,18 @@ public class Case_Appplications extends Header_Manager{
 		List<WebElement> Fee_feilds = p.fee_amount_feilds();
 	    rp.Scroll_to_element(Fee_feilds.get(0));
 	    rp.Feild_clear(Fee_feilds.get(0));
-	    Fee_feilds.get(0).sendKeys(data.get("Document prep fee"));
+	    Fee_feilds.get(0).sendKeys(Case_Data.get("Document prep fee"));
 	    rp.Feild_clear(Fee_feilds.get(1));
-	    Fee_feilds.get(1).sendKeys(data.get("Fund transfer fee"));
+	    Fee_feilds.get(1).sendKeys(Case_Data.get("Fund transfer fee"));
 	    rp.Scroll_to_element(p.rate_of_return_feild());
 	    rp.Feild_clear(p.rate_of_return_feild());
-	    p.rate_of_return_feild().sendKeys(data.get("Rate of Return"));
-	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep="+data.get("Document prep fee")+", FundTransfer="+data.get("Fund transfer fee")+", RoR="+data.get("Rate of Return")+")");
+	    p.rate_of_return_feild().sendKeys(Case_Data.get("Rate of Return"));
+	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep="+Case_Data.get("Document prep fee")+", FundTransfer="+Case_Data.get("Fund transfer fee")+", RoR="+Case_Data.get("Rate of Return")+")");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Agreement Date + Interest Start Date and confirm date selection.");
 		rp.Scroll_to_element(p.Agreement_Date_feild());
-	    p.Agreement_Date_feild().sendKeys(data.get("Agreement Date"));
+	    p.Agreement_Date_feild().sendKeys(Case_Data.get("Agreement Date"));
 	    p.calender_date_select().click();
-	    p.Interest_Start_Date().sendKeys(data.get("Interest Start Date"));
+	    p.Interest_Start_Date().sendKeys(Case_Data.get("Interest Start Date"));
 	    p.rate_of_return_feild().click();
 	    Thread.sleep(600);
 	    WebElement Generate_Contract_Button = p.contract_generator_button();
@@ -265,10 +255,10 @@ public class Case_Appplications extends Header_Manager{
 	    js.executeScript("arguments[0].click();", Generate_Contract_Button);
 	    try{p.Contract_editor();
 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.");
-			Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Case created successfully for Plaintiff="+data.get("Plaintiff Name")+" | CourtIndex="+data.get("Court Index Number")+" | AgreementDate="+data.get("Agreement Date"));
+			Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Case created successfully for Plaintiff="+Case_Data.get("Plaintiff Name")+" | CourtIndex="+Case_Data.get("Court Index Number")+" | AgreementDate="+Case_Data.get("Agreement Date"));
 		}catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Contract Editor did NOT open after Generate Contract. Flow failed at final step.");
-			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Case/Application created but contract generation verification failed for CourtIndex="+data.get("Court Index Number"));
+			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Case/Application created but contract generation verification failed for CourtIndex="+Case_Data.get("Court Index Number"));
 			throw e;}
 	    d.switchTo().frame(p.contract_doc_iframe());
 	    Thread.sleep(1000);
@@ -395,7 +385,7 @@ public class Case_Appplications extends Header_Manager{
 		
         //Docu_Sign_Signature();
 		manual_lien_generation(Sign_in_button);
-		Pay_Off_calculator(data,data2,attorneyData);}
+		Pay_Off_calculator(Case_Data,Plaintiff,attorneyData);}
 	
 	
 	
@@ -1231,8 +1221,8 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		        {c1},{c2},{c3},{c4},{c5},/*
-		        {c6},{c7},{c8},{c9},{c10},
+		        {c1},{c2},{c3},{c4},{c5},
+		        {c6},{c7},{c8},{c9},{c10},/*
 		        {c11},{c12},{c13},{c14},{c15}, 
 		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
@@ -1246,21 +1236,23 @@ public class Case_Appplications extends Header_Manager{
 	    Attorney_module at = new Attorney_module();
 	    Law_Firm_Module lfd = new Law_Firm_Module();
 
-	    Object[][] plaintiff_datas = pm.plaintiffData();   // each row: { TreeMap<String,String> }
-	    Object[][] case_datas      = caseData();           // each row: { TreeMap<String,String> }
-	    Object[][] attorney_datas  = at.attorneyfData(); // each row: { TreeMap<String,String> }
+	    Object[][] plaintiff_datas = pm.plaintiffData();   
+	    Object[][] case_datas      = caseData();           
+	    Object[][] attorney_datas  = at.attorneyfData(); 
 	    Object[][] law_firm_datas =  lfd.lawFirmData();
-
+	    Object[][] Staff_datas =     at.Staff_data();
+	    
 	    int n = Math.min(Math.min(case_datas.length, law_firm_datas.length),Math.min(plaintiff_datas.length, attorney_datas.length));
 
 	    // ✅ 3 columns now: case, plaintiff, attorney
-	    Object[][] final_set = new Object[n][4];
+	    Object[][] final_set = new Object[n][5];
 
 	    for(int i = 0; i < n; i++){
 	        final_set[i][0] = case_datas[i][0];       // case map
 	        final_set[i][1] = plaintiff_datas[i][0];  // plaintiff map
 	        final_set[i][2] = attorney_datas[i][0];   // attorney map
 	        final_set[i][3] = law_firm_datas[i][0];   // law firm map
+	        final_set[i][4] = Staff_datas[i][0];     // Staff map
 	    }
 	    return final_set;}
 	
