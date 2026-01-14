@@ -169,11 +169,7 @@ public class Case_Appplications extends Header_Manager{
 		catch(Exception attorney_searched_not_present){
 			at.Atttorney_Add_through_case(attorneyData,Law_Firm_Data,Staff_Data,d);
 			Thread.sleep(800);
-			p.Popup_modal_search().clear();
-			Thread.sleep(800);
-			p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
-			Thread.sleep(800);
-			WebElement Newtoast = lg.toast();
+		    WebElement Newtoast = lg.toast();
 			rp.wait_for_invisibility(Newtoast);
 			p.List_Checkboxes().get(0).click();}
 		Thread.sleep(600);
@@ -204,7 +200,7 @@ public class Case_Appplications extends Header_Manager{
 	    Amount_edit_buttons.get(2).click(); }
 	catch(Exception em) {
 		Thread.sleep(800);
-		Amount_edit_buttons= 	p.Application_amount_edit_buttons();
+		Amount_edit_buttons= p.Application_amount_edit_buttons();
 	    Amount_edit_buttons.get(2).click();
 		Thread.sleep(800);
 		Report_Listen.log_print_in_report().log(Status.INFO,"Exception found in fetching Ammount edit buttons after filling buyout form retried and found");

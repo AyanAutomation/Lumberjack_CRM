@@ -74,52 +74,7 @@ public class Attorney_module extends Plaintiff_Module{
 		Repeat rp = new Repeat(d);
 		Login_Locaters lg = new Login_Locaters(d);
 	
-/*	WebElement Create_Contact;
-	//try{
-		Create_Contact = p.Create_Contact_button();
-		
-		//} */
-	
-	
-	/*
-		catch(Exception not_inside_case_contact_list)
-		{
-		sd.Side_menu_option_clicker("Applications", d,"N/A");
-		p.landed_in_applicationList_confirmation();	
-		p.rows().get(1).click();
-		Thread.sleep(800);
-	List<WebElement> Case_Tags;
-	   try {
-	   Case_Tags = p.Case_tags();}
-	   catch(RuntimeException tags){
-		   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-		   System.out.println();
-		   Thread.sleep(1200);
-		   Case_Tags = p.Case_tags(); }
-	    tab_selector("Contacts");
-		p.lawFirm_AddButton_ContactTab();
-		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
-		p.Contact_AddButton_ContactTab().click();
-		p.Contact_type_dropdown_list();
-		List<WebElement> Contact_Options = p.Contact_type_Options();
-		for(WebElement Cn_opt:Contact_Options){
-		if(Cn_opt.getText().trim().equalsIgnoreCase("Attorney")){
-				Cn_opt.click();
-				break;}}
-		p.pop_up_contact_list();
-		Thread.sleep(800);
-		p.Popup_modal_search().sendKeys(data.get("First Name"));
-		Thread.sleep(800);
-		WebElement toast = lg.toast();
-		rp.wait_for_invisibility(toast);
-		} */
-	
-	
-	
-	
-		
-		
-		WebElement	Create_Contact = p.Create_Contact_button();
+            WebElement Create_Contact = p.Create_Contact_button();
 			rp.Scroll_to_element(Create_Contact);
 			Create_Contact.click();
 			List<WebElement> attorney_inputs = p.second_popup_form_inputs();
@@ -143,9 +98,10 @@ public class Attorney_module extends Plaintiff_Module{
 			rp.Scroll_to_element(Add_Attorney_Button);
 			Add_Attorney_Button.click();
 			Thread.sleep(800);	
-			String taost= lg.toast().getText().trim();
+			WebElement Local_Toast = lg.toast();
+			String taost= Local_Toast.getText().trim();
 			Login_negative_testcases.Toast_printer(taost);
-		Thread.sleep(600);}
+		    Thread.sleep(600);}
 	
 	
 	public void staff_add(TreeMap<String, String> data,List<WebElement>Form_fields,WebElement pop_up_form,WebElement Submit_button){
