@@ -2,6 +2,7 @@ package Locaters;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,7 +27,7 @@ public class User_Module_Locaters extends Repeat{
 	private List <WebElement> ph_number_fields ; 
 	@FindBy(name="email")
 	private WebElement email;
-	@FindBy(xpath="(//*[contains(@class,'ant-select-selection-overflow')])[1]")
+	@FindBy(xpath="//span[contains(@class,'ant-select-selection-placeholder') and normalize-space()='Select groups']/ancestor::div[contains(@class,'ant-select')]")
 	private WebElement Group_feild; /*
 	@FindBy(xpath="")
 	private WebElement  ;
@@ -148,11 +149,12 @@ public class User_Module_Locaters extends Repeat{
 	wait_for_theElement(Middle_Name);
 	return Middle_Name;}
 	public WebElement Group_feild(){
-	wait_for_theElement(Group_feild);
-	return Group_feild;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	wait_for_theElement_tobe_clickable(Group_feild);
+	return Group_feild;} 
+	public WebElement Group_feild_input(){
+	WebElement input = Group_feild().findElement(By.xpath(".//input[contains(@class,'ant-select-selection-search-input')]"));
+    wait_for_theElement(input); 
+    return input;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}

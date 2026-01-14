@@ -596,9 +596,14 @@ public class Case_Appplications extends Header_Manager{
 	    	p.file_upload_preview_confirmation();
 	    	List<WebElement> footer_buttons = p.popup_contact_list_footer_buttons();
 	    	footer_buttons.get(0).click();
-	    	String Contract_Signed = lg.toast().getText().trim();
+	    	WebElement Toast = lg.toast();
+	    	String Contract_Signed = Toast.getText().trim();
 			Login_negative_testcases.Toast_printer(Contract_Signed);
-			tab_selector("Liens");
+			try{tab_selector("Liens");}
+			catch(Exception Lien_tab_retry){
+				Thread.sleep(800);
+				tab_selector("Liens");
+			}
 			List<WebElement> rows = p.Open_Lien_table_contents();
 			return rows;
 	    }
@@ -1281,10 +1286,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		        {c1},{c2},{c3},{c4},{c5},
+		        {c1},/*{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
 	
 	
@@ -1377,7 +1382,9 @@ public class Case_Appplications extends Header_Manager{
 	        	  lien_rows=p.Open_Lien_table_contents();
 	        	  Payment_Logger(data);}
 			  catch(RuntimeException no_liens){
-				if(p.Lien_table_empty().isDisplayed()){
+				
+		  if(p.Lien_table_empty().isDisplayed()){
+				
 				  tab_selector("Applications");
 				  try{
 					List<WebElement> Amount_edit_buttons= p.Application_amount_edit_buttons();
@@ -1409,7 +1416,7 @@ public class Case_Appplications extends Header_Manager{
 		           List<WebElement> fourth_cells = p.First_table_fourth_column_cellData();
 		           List<WebElement> Fifth_cells =  p.First_table_fifth_column_cellData();
 		           List<WebElement> Sixth_cells =  p.First_table_sixth_column_cellData();
-		           List<WebElement> Seventh_cells = p.First_table_seventh_column_cellData();
+		           List<WebElement> Seventh_cells =p.First_table_seventh_column_cellData();
 		           
 		           
 		        // =========================

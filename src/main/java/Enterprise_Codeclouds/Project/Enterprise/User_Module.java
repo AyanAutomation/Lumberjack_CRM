@@ -18,8 +18,8 @@ import Repeatative_codes.Repeat;
 public class User_Module extends Header_Manager{
 	
 	
-	@Test(dataProvider="UserData")
-	public void user_add(TreeMap<String, String> data) throws IOException, InterruptedException{
+	@Test(dataProvider="User_and_group_Data")
+	public void user_add(TreeMap<String, String> data,TreeMap<String, String> Group_data) throws IOException, InterruptedException{
 		
 		
 		User_Module_Locaters p = new User_Module_Locaters(d);
@@ -29,7 +29,7 @@ public class User_Module extends Header_Manager{
 		Login_Locaters lg=new Login_Locaters(d);
 		
 		String user_name = data.get("First Name");
-		String Group_name = data.get("Groups");
+		String Group_name = Group_data.get("Group Name");
 		
 		header_dropdown_option_selector("My Preferences");
 		p.landed_in_user_module();
@@ -41,7 +41,10 @@ public class User_Module extends Header_Manager{
 		phone_number_fields.get(0).sendKeys(data.get("Phone Number (Primary)"));
 		phone_number_fields.get(1).sendKeys(data.get("Phone Number (Secondary)"));
 		p.email().sendKeys(data.get("Email"));
-		p.Group_feild().click();
+		WebElement Group_feild = p.Group_feild();
+		rp.movetoelement(Group_feild);
+		Group_feild.click();
+		Group_feild.sendKeys(Group_name);
 		Thread.sleep(800);
         ap.plaintiff_dropdown_list();
 		List<WebElement> group_options = ap.Plaintiff_options();
@@ -61,198 +64,194 @@ public class User_Module extends Header_Manager{
 		}
 	    
 	
-	
+	@DataProvider
+	public Object[][] User_and_group_Data(){
+		
+		Access_Permissions ac = new Access_Permissions();
+		
+		Object[][] user_datas = UserData();
+		Object[][] group_data = ac.roleData();
+		
+		int n = Math.min(user_datas.length, group_data.length);
+		Object[][] final_set = new Object[n][2];
+		for(int i=0;i<n;i++){
+			   final_set[i][0] = user_datas[i][0];      
+		       final_set[i][1] = group_data[i][0]; 
+		    }
+		
+		return final_set;
+	}
 	
 	
 	@DataProvider
 	public Object[][] UserData() {
 
 
-	    TreeMap<String, String> u1 = new TreeMap<>();
-	    u1.put("First Name", "Anvay");
-	    u1.put("Middle Name", "Kiron");
-	    u1.put("Last Name", "Halderwyn");
-	    u1.put("Phone Number (Primary)", "9814387051");
-	    u1.put("Phone Number (Secondary)", "3586139041");
-	    u1.put("Email", "anvay.halderwyn051@mailto.plus");
-	    u1.put("Groups", "Super Admin");
+		TreeMap<String, String> u1 = new TreeMap<>();
+	    u1.put("First Name", "Avenor");
+	    u1.put("Middle Name", "Kyren");
+	    u1.put("Last Name", "Thornveil");
+	    u1.put("Phone Number (Primary)", "9867123401");
+	    u1.put("Phone Number (Secondary)", "3579128401");
+	    u1.put("Email", "avenor.thornveil01@yopmail.com");
 
 	    TreeMap<String, String> u2 = new TreeMap<>();
-	    u2.put("First Name", "Eulalia");
-	    u2.put("Middle Name", "Maren");
-	    u2.put("Last Name", "Quistrel");
-	    u2.put("Phone Number (Primary)", "6238051742");
-	    u2.put("Phone Number (Secondary)", "5206948832");
-	    u2.put("Email", "eulalia.quistrel1742@mailto.plus");
-	    u2.put("Groups", "New Group");
+	    u2.put("First Name", "Elviora");
+	    u2.put("Middle Name", "Maelis");
+	    u2.put("Last Name", "Quenridge");
+	    u2.put("Phone Number (Primary)", "9867123402");
+	    u2.put("Phone Number (Secondary)", "3579128402");
+	    u2.put("Email", "elviora.quenridge02@yopmail.com");
 
 	    TreeMap<String, String> u3 = new TreeMap<>();
-	    u3.put("First Name", "Tamsin");
-	    u3.put("Middle Name", "Ivo");
-	    u3.put("Last Name", "Ridgeley");
-	    u3.put("Phone Number (Primary)", "3157724603");
-	    u3.put("Phone Number (Secondary)", "5859013373");
-	    u3.put("Email", "tamsin.ridgeley4603@mailto.plus");
-	    u3.put("Groups", "Test Group");
+	    u3.put("First Name", "Tavryn");
+	    u3.put("Middle Name", "Iver");
+	    u3.put("Last Name", "Rookmere");
+	    u3.put("Phone Number (Primary)", "9867123403");
+	    u3.put("Phone Number (Secondary)", "3579128403");
+	    u3.put("Email", "tavryn.rookmere03@yopmail.com");
 
 	    TreeMap<String, String> u4 = new TreeMap<>();
-	    u4.put("First Name", "Bodhi");
+	    u4.put("First Name", "Brynola");
 	    u4.put("Middle Name", "Sage");
-	    u4.put("Last Name", "Kerrivane");
-	    u4.put("Phone Number (Primary)", "9186402914");
-	    u4.put("Phone Number (Secondary)", "5398846204");
-	    u4.put("Email", "bodhi.kerrivane2914@mailto.plus");
-	    u4.put("Groups", "Submodule test group");
+	    u4.put("Last Name", "Kerrithorne");
+	    u4.put("Phone Number (Primary)", "9867123404");
+	    u4.put("Phone Number (Secondary)", "3579128404");
+	    u4.put("Email", "brynola.kerrithorne04@yopmail.com");
 
 	    TreeMap<String, String> u5 = new TreeMap<>();
-	    u5.put("First Name", "Nayeli");
+	    u5.put("First Name", "Nayorin");
 	    u5.put("Middle Name", "Reina");
-	    u5.put("Last Name", "Stonevoss");
-	    u5.put("Phone Number (Primary)", "4025178395");
-	    u5.put("Phone Number (Secondary)", "5317781465");
-	    u5.put("Email", "nayeli.stonevoss8395@mailto.plus");
-	    u5.put("Groups", "Super Admin");
+	    u5.put("Last Name", "Stoneweld");
+	    u5.put("Phone Number (Primary)", "9867123405");
+	    u5.put("Phone Number (Secondary)", "3579128405");
+	    u5.put("Email", "nayorin.stoneweld05@yopmail.com");
 
 	    TreeMap<String, String> u6 = new TreeMap<>();
-	    u6.put("First Name", "Ishaan");
-	    u6.put("Middle Name", "Dev");
-	    u6.put("Last Name", "Moorfield");
-	    u6.put("Phone Number (Primary)", "7079365526");
-	    u6.put("Phone Number (Secondary)", "9166042196");
-	    u6.put("Email", "ishaan.moorfield5526@mailto.plus");
-	    u6.put("Groups", "New Group");
+	    u6.put("First Name", "Ishven");
+	    u6.put("Middle Name", "Devran");
+	    u6.put("Last Name", "Moorwyn");
+	    u6.put("Phone Number (Primary)", "9867123406");
+	    u6.put("Phone Number (Secondary)", "3579128406");
+	    u6.put("Email", "ishven.moorwyn06@yopmail.com");
 
 	    TreeMap<String, String> u7 = new TreeMap<>();
-	    u7.put("First Name", "Soraya");
-	    u7.put("Middle Name", "Noor");
-	    u7.put("Last Name", "Brindleham");
-	    u7.put("Phone Number (Primary)", "9194831077");
-	    u7.put("Phone Number (Secondary)", "2527609447");
-	    u7.put("Email", "soraya.brindleham1077@mailto.plus");
-	    u7.put("Groups", "Test Group");
+	    u7.put("First Name", "Sorayna");
+	    u7.put("Middle Name", "Noira");
+	    u7.put("Last Name", "Brindlehart");
+	    u7.put("Phone Number (Primary)", "9867123407");
+	    u7.put("Phone Number (Secondary)", "3579128407");
+	    u7.put("Email", "sorayna.brindlehart07@yopmail.com");
 
 	    TreeMap<String, String> u8 = new TreeMap<>();
-	    u8.put("First Name", "Leocadia");
+	    u8.put("First Name", "Leocindra");
 	    u8.put("Middle Name", "Rue");
-	    u8.put("Last Name", "Ashbriar");
-	    u8.put("Phone Number (Primary)", "5126749838");
-	    u8.put("Phone Number (Secondary)", "7375801168");
-	    u8.put("Email", "leocadia.ashbriar9838@mailto.plus");
-	    u8.put("Groups", "Submodule test group");
+	    u8.put("Last Name", "Ashfallow");
+	    u8.put("Phone Number (Primary)", "9867123408");
+	    u8.put("Phone Number (Secondary)", "3579128408");
+	    u8.put("Email", "leocindra.ashfallow08@yopmail.com");
 
 	    TreeMap<String, String> u9 = new TreeMap<>();
-	    u9.put("First Name", "Kairav");
+	    u9.put("First Name", "Kairen");
 	    u9.put("Middle Name", "Omri");
-	    u9.put("Last Name", "Velmont");
-	    u9.put("Phone Number (Primary)", "6469052289");
-	    u9.put("Phone Number (Secondary)", "3327416609");
-	    u9.put("Email", "kairav.velmont2289@mailto.plus");
-	    u9.put("Groups", "Super Admin");
+	    u9.put("Last Name", "Velthorn");
+	    u9.put("Phone Number (Primary)", "9867123409");
+	    u9.put("Phone Number (Secondary)", "3579128409");
+	    u9.put("Email", "kairen.velthorn09@yopmail.com");
 
 	    TreeMap<String, String> u10 = new TreeMap<>();
-	    u10.put("First Name", "Yara");
-	    u10.put("Middle Name", "Esme");
-	    u10.put("Last Name", "Crownhill");
-	    u10.put("Phone Number (Primary)", "2168394750");
-	    u10.put("Phone Number (Secondary)", "4407821190");
-	    u10.put("Email", "yara.crownhill4750@mailto.plus");
-	    u10.put("Groups", "New Group");
+	    u10.put("First Name", "Yariel");
+	    u10.put("Middle Name", "Esmae");
+	    u10.put("Last Name", "Crownhallow");
+	    u10.put("Phone Number (Primary)", "9867123410");
+	    u10.put("Phone Number (Secondary)", "3579128410");
+	    u10.put("Email", "yariel.crownhallow10@yopmail.com");
 
 	    TreeMap<String, String> u11 = new TreeMap<>();
-	    u11.put("First Name", "Ronan");
+	    u11.put("First Name", "Ronivar");
 	    u11.put("Middle Name", "Keir");
-	    u11.put("Last Name", "Lindenrow");
-	    u11.put("Phone Number (Primary)", "4807169301");
-	    u11.put("Phone Number (Secondary)", "6025397081");
-	    u11.put("Email", "ronan.lindenrow9301@mailto.plus");
-	    u11.put("Groups", "Test Group");
+	    u11.put("Last Name", "Lindenmark");
+	    u11.put("Phone Number (Primary)", "9867123411");
+	    u11.put("Phone Number (Secondary)", "3579128411");
+	    u11.put("Email", "ronivar.lindenmark11@yopmail.com");
 
 	    TreeMap<String, String> u12 = new TreeMap<>();
-	    u12.put("First Name", "Aurelio");
+	    u12.put("First Name", "Aurelian");
 	    u12.put("Middle Name", "Paz");
-	    u12.put("Last Name", "Merrivale");
-	    u12.put("Phone Number (Primary)", "3036587422");
-	    u12.put("Phone Number (Secondary)", "7203419052");
-	    u12.put("Email", "aurelio.merrivale7422@mailto.plus");
-	    u12.put("Groups", "Submodule test group");
+	    u12.put("Last Name", "Merriswold");
+	    u12.put("Phone Number (Primary)", "9867123412");
+	    u12.put("Phone Number (Secondary)", "3579128412");
+	    u12.put("Email", "aurelian.merriswold12@yopmail.com");
 
 	    TreeMap<String, String> u13 = new TreeMap<>();
-	    u13.put("First Name", "Saskia");
-	    u13.put("Middle Name", "Liv");
-	    u13.put("Last Name", "Vinteron");
-	    u13.put("Phone Number (Primary)", "8014972633");
-	    u13.put("Phone Number (Secondary)", "3856087713");
-	    u13.put("Email", "saskia.vinteron2633@mailto.plus");
-	    u13.put("Groups", "Super Admin");
+	    u13.put("First Name", "Saskiora");
+	    u13.put("Middle Name", "Livra");
+	    u13.put("Last Name", "Vintermere");
+	    u13.put("Phone Number (Primary)", "9867123413");
+	    u13.put("Phone Number (Secondary)", "3579128413");
+	    u13.put("Email", "saskiora.vintermere13@yopmail.com");
 
 	    TreeMap<String, String> u14 = new TreeMap<>();
-	    u14.put("First Name", "Navin");
+	    u14.put("First Name", "Naviren");
 	    u14.put("Middle Name", "Ryo");
-	    u14.put("Last Name", "Hearthlane");
-	    u14.put("Phone Number (Primary)", "6158205144");
-	    u14.put("Phone Number (Secondary)", "6294779014");
-	    u14.put("Email", "navin.hearthlane5144@mailto.plus");
-	    u14.put("Groups", "New Group");
+	    u14.put("Last Name", "Hearthwyn");
+	    u14.put("Phone Number (Primary)", "9867123414");
+	    u14.put("Phone Number (Secondary)", "3579128414");
+	    u14.put("Email", "naviren.hearthwyn14@yopmail.com");
 
 	    TreeMap<String, String> u15 = new TreeMap<>();
-	    u15.put("First Name", "Meadow");
+	    u15.put("First Name", "Meador");
 	    u15.put("Middle Name", "Skye");
-	    u15.put("Last Name", "Glenwarren");
-	    u15.put("Phone Number (Primary)", "2067339855");
-	    u15.put("Phone Number (Secondary)", "4256017725");
-	    u15.put("Email", "meadow.glenwarren9855@mailto.plus");
-	    u15.put("Groups", "Test Group");
+	    u15.put("Last Name", "Glenvarn");
+	    u15.put("Phone Number (Primary)", "9867123415");
+	    u15.put("Phone Number (Secondary)", "3579128415");
+	    u15.put("Email", "meador.glenvarn15@yopmail.com");
 
 	    TreeMap<String, String> u16 = new TreeMap<>();
-	    u16.put("First Name", "Zubair");
+	    u16.put("First Name", "Zubairen");
 	    u16.put("Middle Name", "Irfan");
-	    u16.put("Last Name", "Crestmore");
-	    u16.put("Phone Number (Primary)", "9046821966");
-	    u16.put("Phone Number (Secondary)", "3865194406");
-	    u16.put("Email", "zubair.crestmore1966@mailto.plus");
-	    u16.put("Groups", "Submodule test group");
+	    u16.put("Last Name", "Crestvale");
+	    u16.put("Phone Number (Primary)", "9867123416");
+	    u16.put("Phone Number (Secondary)", "3579128416");
+	    u16.put("Email", "zubairen.crestvale16@yopmail.com");
 
 	    TreeMap<String, String> u17 = new TreeMap<>();
-	    u17.put("First Name", "Elowen");
-	    u17.put("Middle Name", "Faye");
-	    u17.put("Last Name", "Rookhaven");
-	    u17.put("Phone Number (Primary)", "5057493077");
-	    u17.put("Phone Number (Secondary)", "5756142387");
-	    u17.put("Email", "elowen.rookhaven3077@mailto.plus");
-	    u17.put("Groups", "Super Admin");
+	    u17.put("First Name", "Elowynne");
+	    u17.put("Middle Name", "Fayen");
+	    u17.put("Last Name", "Rookspire");
+	    u17.put("Phone Number (Primary)", "9867123417");
+	    u17.put("Phone Number (Secondary)", "3579128417");
+	    u17.put("Email", "elowynne.rookspire17@yopmail.com");
 
 	    TreeMap<String, String> u18 = new TreeMap<>();
-	    u18.put("First Name", "Keziah");
+	    u18.put("First Name", "Kezaria");
 	    u18.put("Middle Name", "Nell");
-	    u18.put("Last Name", "Briarwick");
-	    u18.put("Phone Number (Primary)", "3176084188");
-	    u18.put("Phone Number (Secondary)", "4637712098");
-	    u18.put("Email", "keziah.briarwick4188@mailto.plus");
-	    u18.put("Groups", "New Group");
+	    u18.put("Last Name", "Briarhold");
+	    u18.put("Phone Number (Primary)", "9867123418");
+	    u18.put("Phone Number (Secondary)", "3579128418");
+	    u18.put("Email", "kezaria.briarhold18@yopmail.com");
 
 	    TreeMap<String, String> u19 = new TreeMap<>();
-	    u19.put("First Name", "Tenzin");
+	    u19.put("First Name", "Tenzaro");
 	    u19.put("Middle Name", "Pema");
-	    u19.put("Last Name", "Rivenshaw");
-	    u19.put("Phone Number (Primary)", "9138275299");
-	    u19.put("Phone Number (Secondary)", "8166947709");
-	    u19.put("Email", "tenzin.rivenshaw5299@mailto.plus");
-	    u19.put("Groups", "Test Group");
+	    u19.put("Last Name", "Rivenshore");
+	    u19.put("Phone Number (Primary)", "9867123419");
+	    u19.put("Phone Number (Secondary)", "3579128419");
+	    u19.put("Email", "tenzaro.rivenshore19@yopmail.com");
 
 	    TreeMap<String, String> u20 = new TreeMap<>();
-	    u20.put("First Name", "Marcellus");
+	    u20.put("First Name", "Marcellan");
 	    u20.put("Middle Name", "Jude");
-	    u20.put("Last Name", "Wrenford");
-	    u20.put("Phone Number (Primary)", "7026157400");
-	    u20.put("Phone Number (Secondary)", "7255031960");
-	    u20.put("Email", "marcellus.wrenford7400@mailto.plus");
-	    u20.put("Groups", "Submodule test group");
+	    u20.put("Last Name", "Wrenmoor");
+	    u20.put("Phone Number (Primary)", "9867123420");
+	    u20.put("Phone Number (Secondary)", "3579128420");
+	    u20.put("Email", "marcellan.wrenmoor20@yopmail.com");
 
 	    return new Object[][]{
-	        {u1},/*{u2},{u3},{u4},{u5},
+	        {u1},{u2},{u3},{u4},{u5},
 	        {u6},{u7},{u8},{u9},{u10},
 	        {u11},{u12},{u13},{u14},{u15},
-	        {u16},{u17},{u18},{u19},{u20} */
+	        {u16},{u17},{u18},{u19},{u20} 
 	    };
 	}
 
