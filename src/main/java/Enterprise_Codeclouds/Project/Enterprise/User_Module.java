@@ -3,7 +3,10 @@ package Enterprise_Codeclouds.Project.Enterprise;
 import java.io.IOException;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -24,9 +27,11 @@ public class User_Module extends Header_Manager{
 		
 		User_Module_Locaters p = new User_Module_Locaters(d);
 		Plaintiff_Locaters pt=new Plaintiff_Locaters(d);
-		Application_Locaters ap = new Application_Locaters(d);
+		
 		Repeat rp=new Repeat(d);
 		Login_Locaters lg=new Login_Locaters(d);
+		
+		
 		
 		String user_name = data.get("First Name");
 		String Group_name = Group_data.get("Group Name");
@@ -42,18 +47,9 @@ public class User_Module extends Header_Manager{
 		phone_number_fields.get(1).sendKeys(data.get("Phone Number (Secondary)"));
 		p.email().sendKeys(data.get("Email"));
 		WebElement Group_feild = p.Group_feild();
-		rp.movetoelement(Group_feild);
 		Group_feild.click();
-		Group_feild.sendKeys(Group_name);
-		Thread.sleep(800);
-        ap.plaintiff_dropdown_list();
-		List<WebElement> group_options = ap.Plaintiff_options();
-		for(WebElement opt:group_options){
-			String option_text = opt.getText().trim();
-			if(option_text.equalsIgnoreCase(Group_name)){
-				System.out.println(option_text);
-				opt.click();
-				break;}} 
+	    Thread.sleep(800);
+	    dropdown_list_option_fetcher(Group_name);
 		WebElement Add_Law_Frim_Button=pt.form_buttons().get(0);
 		rp.Scroll_to_element(Add_Law_Frim_Button);
 		Add_Law_Frim_Button.click();
@@ -63,6 +59,71 @@ public class User_Module extends Header_Manager{
 		Login_negative_testcases.Toast_printer(toast);
 		}
 	    
+	
+	
+	public void dropdown_list_option_fetcher(String name) throws InterruptedException{
+		
+		User_Module_Locaters ap = new User_Module_Locaters(d);
+	     JavascriptExecutor js = (JavascriptExecutor)d;
+	     Repeat rp=new Repeat(d);
+			
+	     String Group_name = name;
+			
+	     WebElement Dropdown_list= ap.Inner_dropdown_holder();
+	     rp.movetoelement(Dropdown_list);
+         Thread.sleep(800);	
+	     js.executeScript("document.querySelector('.rc-virtual-list-holder').scrollBy(0,60)");
+	     TreeSet<String> option_set= new TreeSet<String>();
+	     OuterLoop:
+	      for(int i=0;i<4;i++) {
+	    	  option_set.clear(); 
+	        List<WebElement> group_options = Dropdown_list.findElements(By.xpath(".//*[@aria-selected='false']"));
+	     
+       
+	        for(WebElement opt:group_options){
+	            String option_text = opt.getText().trim();
+	            option_set.add(option_text);
+	            if(option_text.equalsIgnoreCase(Group_name)){
+	               
+	                opt.click();
+	                ap.item_selected();
+	                break OuterLoop;}}
+	        
+	        if(option_set.contains(Group_name)) {
+	        	 
+	        	 break OuterLoop;
+	        }else{
+	        	
+	        	option_set.clear();
+	        	rp.movetoelement(Dropdown_list);
+	            Thread.sleep(800);
+	        	js.executeScript("document.querySelector('.rc-virtual-list-holder').scrollBy(0,160)");
+	        	Thread.sleep(800);
+	        	List<WebElement> new_group_options = Dropdown_list.findElements(By.xpath(".//*[@aria-selected='false']"));
+	   	     
+	            
+		        for(WebElement opt:new_group_options){
+		            String option_text = opt.getText().trim();
+		            option_set.add(option_text);
+		            if(option_text.equalsIgnoreCase(Group_name)){
+		               
+		                opt.click();
+		                ap.item_selected();
+		                break OuterLoop;}}
+	        }
+	        
+	        
+       }
+	
+	}
+
+	
+	
+	
+	
+	
+	
+	
 	
 	@DataProvider
 	public Object[][] User_and_group_Data(){
@@ -250,7 +311,7 @@ public class User_Module extends Header_Manager{
 	    return new Object[][]{
 	        {u1},{u2},{u3},{u4},{u5},
 	        {u6},{u7},{u8},{u9},{u10},
-	        {u11},{u12},{u13},{u14},{u15},
+	        {u11},{u12},{u13},{u14},{u15}, 
 	        {u16},{u17},{u18},{u19},{u20} 
 	    };
 	}

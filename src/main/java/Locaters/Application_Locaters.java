@@ -37,7 +37,7 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//div[@class='rc-virtual-list'])[5]")
 	private WebElement Lead_dropdown; 
 	@FindBy(xpath="//div[@class='ant-card-extra']")
-	private WebElement  Case_details_edit_buttons;
+	private WebElement Case_details_edit_buttons;
 	@FindBy(xpath="//form")
 	private WebElement Edit_form; 
 	@FindBy(xpath="//*[@class='ant-select-clear']")

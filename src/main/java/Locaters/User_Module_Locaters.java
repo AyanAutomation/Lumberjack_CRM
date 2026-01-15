@@ -28,13 +28,13 @@ public class User_Module_Locaters extends Repeat{
 	@FindBy(name="email")
 	private WebElement email;
 	@FindBy(xpath="//span[contains(@class,'ant-select-selection-placeholder') and normalize-space()='Select groups']/ancestor::div[contains(@class,'ant-select')]")
-	private WebElement Group_feild; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Group_feild; 
+	@FindBy(xpath="(//*[contains(@class,'rc-virtual-list')])[1]")
+	private WebElement Group_dropdown; 
+	@FindBy(xpath="(//*[contains(@class,'rc-virtual-list-holder-inner')])[1]")
+	private WebElement Inner_dropdown_holder;  
+	@FindBy(xpath="//*[@class='ant-select-selection-item']")
+	private WebElement item_selected; /*
 	@FindBy(xpath="")
 	private WebElement  ; 
 	@FindBy(xpath="")
@@ -154,19 +154,28 @@ public class User_Module_Locaters extends Repeat{
 	public WebElement Group_feild_input(){
 	WebElement input = Group_feild().findElement(By.xpath(".//input[contains(@class,'ant-select-selection-search-input')]"));
     wait_for_theElement(input); 
-    return input;}/*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+    return input;}
+	public WebElement Group_dropdown(){
+	wait_for_theElement(Group_dropdown);
+	return Group_dropdown;}
+	public WebElement Inner_dropdown_holder(){
+	wait_for_theElement(Inner_dropdown_holder);
+	return Inner_dropdown_holder;}
+	public List<WebElement> options(){
+	WebElement dropdown;
+	List<WebElement> options;
+	try{
+		dropdown= Group_dropdown();
+		options = wait_for_nested_presence(dropdown,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
+	}catch(Exception mm){
+		dropdown= Inner_dropdown_holder();
+		options = wait_for_nested_presence(dropdown,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
+	}
+	wait_for_theElement(options);
+	return options;}
+	public WebElement item_selected(){
+	wait_for_theElement(item_selected);
+	return item_selected;} /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;} 
