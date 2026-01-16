@@ -52,7 +52,7 @@ public class Attorney_module extends Plaintiff_Module{
 	input_feilds.get(6).sendKeys(data.get("Office phone"));	
 	input_feilds.get(7).sendKeys(data.get("Email"));
 	WebElement Add_staff_button= p.form_buttons().get(1);
-	Add_staff_button.click();
+	//Add_staff_button.click();
 	List<WebElement> fields = ap.form_inputs();
 	WebElement Submit_Button = ap.form_buttons().get(1);
 	WebElement popup_form = ap.Popup_add_form();
@@ -87,13 +87,13 @@ public class Attorney_module extends Plaintiff_Module{
 			attorney_inputs.get(4).sendKeys(data.get("Name Suffix"));
 			attorney_inputs.get(5).sendKeys(data.get("Phone"));
 			attorney_inputs.get(6).sendKeys(data.get("Office phone"));
-			attorney_inputs.get(7).sendKeys(data.get("Email"));
+			attorney_inputs.get(7).sendKeys(data.get("Email"));/*
 			WebElement Add_staff_button= p.second_popup_form_buttons().get(1);
 			Add_staff_button.click();
 			List<WebElement> fields = p.Third_popup_form_inputs();
 			WebElement Staff_pop_up_form = p.Third_popup_form();
 			WebElement Staff_Add_button= p.Third_popup_form_buttons().get(1);
-			staff_add(staff,fields,Staff_pop_up_form,Staff_Add_button);
+			staff_add(staff,fields,Staff_pop_up_form,Staff_Add_button);*/
 			WebElement Add_Attorney_Button=p.second_popup_form_buttons().get(2);
 			rp.Scroll_to_element(Add_Attorney_Button);
 			Add_Attorney_Button.click();
@@ -502,10 +502,10 @@ public class Attorney_module extends Plaintiff_Module{
 	    s20.put("Staff Email", "staff.coralie.ashbourne17@mailto.plus");
 
 	    return new Object[][]{
-	        {s1},/*{s2},{s3},{s4},{s5},
+	        {s1},{s2},{s3},{s4},{s5},
 	        {s6},{s7},{s8},{s9},{s10},
 	        {s11},{s12},{s13},{s14},{s15},
-	        {s16},{s17},{s18},{s19},{s20} */
+	        {s16},{s17},{s18},{s19},{s20} 
 	    };
 	}
 

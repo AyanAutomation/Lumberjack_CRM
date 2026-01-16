@@ -129,23 +129,19 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//*[@aria-label='plus']/..)[2]")
 	private WebElement Notes_Add_Button; 
 	@FindBy(xpath="//button[@type='submit']")
-	private WebElement Submit_Button;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Submit_Button;
+	@FindBy(xpath="//*[text()=' EDIT TERMS ']/..")
+	private WebElement  Edit_contract_button;
+	@FindBy(xpath="//span[text()='Add Buyout']")
+	private WebElement  Add_buyout_button_inside_edit_contract_from;
+	@FindBy(xpath="//span[normalize-space()='Funder Name']/following::input[1]")
+	private WebElement  Buyout_funder_name_inside_pop_up_modal_form;
+	@FindBy(xpath="//span[normalize-space()='Buyout Amount']/following::input[1]")
+	private WebElement  Buyout_Amount_inside_pop_up_modal_form;
+	@FindBy(xpath="//span[normalize-space()='Expiry On']/following::input[1]")
+	private WebElement  Buyout_Date_inside_pop_up_modal_form; 
+	@FindBy(xpath="//button[@type='submit']")
+	private WebElement Submit_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -589,25 +585,25 @@ public class Application_Locaters extends Repeat{
 	return Notes_Add_Button;}   
 	public WebElement Submit_Button(){
 	wait_for_theElement(Submit_Button);
-	return Submit_Button;}   /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Submit_Button;}   
+	public WebElement Edit_contract_button(){
+	wait_for_theElement(Edit_contract_button);
+	return Edit_contract_button;}   
+	public WebElement Add_buyout_button_inside_edit_contract_from(){
+	wait_for_theElement(Add_buyout_button_inside_edit_contract_from);
+	return Add_buyout_button_inside_edit_contract_from;}    
+	public WebElement Buyout_funder_name_inside_pop_up_modal_form(){
+	wait_for_theElement(Buyout_funder_name_inside_pop_up_modal_form);
+	return Buyout_funder_name_inside_pop_up_modal_form;}   
+	public WebElement Buyout_Amount_inside_pop_up_modal_form(){
+	wait_for_theElement(Buyout_Amount_inside_pop_up_modal_form);
+	return Buyout_Amount_inside_pop_up_modal_form;}   
+	public WebElement Buyout_Date_inside_pop_up_modal_form(){
+	wait_for_theElement(Buyout_Date_inside_pop_up_modal_form);
+	return Buyout_Date_inside_pop_up_modal_form;}   
+	public WebElement Submit_button(){
+	wait_for_theElement(Submit_button);
+	return Submit_button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
