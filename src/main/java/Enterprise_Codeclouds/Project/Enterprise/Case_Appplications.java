@@ -558,6 +558,7 @@ public class Case_Appplications extends Header_Manager{
 	 	    p.Interest_Start_Date().sendKeys(Case_Data.get("Interest Start Date"));
 	 	    p.rate_of_return_feild().click();
 	 	    Thread.sleep(600);
+	 	    
 	 	    WebElement Generate_Contract_Button;
 	 	    Generate_Contract_Button= p.Submit_button();
 	 	    rp.movetoelement(Generate_Contract_Button);
@@ -662,8 +663,9 @@ public class Case_Appplications extends Header_Manager{
 	 	    d.switchTo().defaultContent();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Switch back from Contract iframe to main page (default content).");
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.");
-	         Thread.sleep(800);
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Save Changes</i> to save contract edits.");
+	        Thread.sleep(800);
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Save Changes</i> to save contract edits.");
+	        Reopen_contract_without_saving();
 	 		p.Save_changes_button().click();
 	 		Thread.sleep(1800);
 	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
@@ -717,6 +719,19 @@ public class Case_Appplications extends Header_Manager{
 	 	        System.out.println();
 	 	        System.out.println(Funder_name.equalsIgnoreCase(Buyout_Funder)&&Buyout_amount.equalsIgnoreCase(Buyout_price)&&Buyout_Expiry_date.equalsIgnoreCase(Buyout_date)?"Testcase Passed All Buyout details matching with details in modal":"Testcase Failed All Buyout details not matching with details in modal");
 	 	        System.out.println();}}
+	     
+	 
+	     
+	     public void Reopen_contract_without_saving() throws InterruptedException{
+	    	 
+	    	 Application_Locaters p = new Application_Locaters(d);
+	    	 
+	    	 
+	    	 d.navigate().refresh();
+	    	 Thread.sleep(800);
+	    	 WebElement Preview_Contract = p.Preview_Contract_Button();
+	    	 Preview_Contract.click();
+	    	 p.Contract_editor();}
 	
 	
 	
@@ -1624,8 +1639,8 @@ public class Case_Appplications extends Header_Manager{
 		    return new Object[][]{ /*
 		        {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},*/{c20} 
+		        {c11},{c12},{c13},{c14},{c15}, */
+		        {c16},/*{c17},{c18},{c19},{c20} */
 		    };}
 	
 	

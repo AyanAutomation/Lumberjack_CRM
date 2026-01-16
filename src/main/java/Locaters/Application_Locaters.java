@@ -141,9 +141,9 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//span[normalize-space()='Expiry On']/following::input[1]")
 	private WebElement  Buyout_Date_inside_pop_up_modal_form; 
 	@FindBy(xpath="//button[@type='submit']")
-	private WebElement Submit_button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Submit_button; 
+	@FindBy(xpath="//*[text()=' PREVIEW CONTRACT ']/..")
+	private WebElement  Preview_Contract_Button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -603,10 +603,10 @@ public class Application_Locaters extends Repeat{
 	return Buyout_Date_inside_pop_up_modal_form;}   
 	public WebElement Submit_button(){
 	wait_for_theElement(Submit_button);
-	return Submit_button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Submit_button;}   
+	public WebElement Preview_Contract_Button(){
+	wait_for_theElement(Preview_Contract_Button);
+	return Preview_Contract_Button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
