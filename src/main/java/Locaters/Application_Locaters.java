@@ -237,6 +237,11 @@ public class Application_Locaters extends Repeat{
 	List <WebElement> form_inputs = Popup_add_form().findElements(By.xpath(".//input"));
 	wait_for_theElement(form_inputs);
 	return form_inputs;}
+	public List <WebElement> payment_logger_form_inputs(){
+	Popup_add_form();
+	List <WebElement> payment_logger_form_inputs = Popup_add_form().findElements(By.xpath(".//input[@type='search' or @type='text' or @placeholder='Select date' or @name='amount']"));
+	wait_for_theElement(payment_logger_form_inputs);
+	return payment_logger_form_inputs;}
 	public List <WebElement> form_fields_with_placeholder(){
 	Popup_add_form();
 	List <WebElement> form_fields_with_placeholder = Popup_add_form().findElements(By.xpath(".//*[@class='ant-select-selection-placeholder']"));

@@ -90,48 +90,48 @@ public class Access_Permissions extends Case_Appplications{
     public Object[][] roleData() {
 
     	TreeMap<String, String> rg1 = new TreeMap<>();
-        rg1.put("Role Name", "User Directory Viewer");
-        rg1.put("Group Name", "User Directory Team");
+        rg1.put("Role Name", "User List and Profile Auditor");
+        rg1.put("Group Name", "User Visibility Crew");
 
         TreeMap<String, String> rg2 = new TreeMap<>();
-        rg2.put("Role Name", "Underwriting Review and Verification");
-        rg2.put("Group Name", "Underwriting Review Team");
+        rg2.put("Role Name", "Underwriting Checklist Verifier");
+        rg2.put("Group Name", "Underwriting Verification Unit");
 
         TreeMap<String, String> rg3 = new TreeMap<>();
-        rg3.put("Role Name", "Liens Management Operator");
-        rg3.put("Group Name", "Liens Operations Team");
+        rg3.put("Role Name", "Lien Lifecycle Controller");
+        rg3.put("Group Name", "Lien Control Desk");
 
         TreeMap<String, String> rg4 = new TreeMap<>();
-        rg4.put("Role Name", "Case Contacts Coordinator");
-        rg4.put("Group Name", "Case Contacts Team");
+        rg4.put("Role Name", "Case Contact Update Steward");
+        rg4.put("Group Name", "Case Contact Stewardship Team");
 
         TreeMap<String, String> rg5 = new TreeMap<>();
-        rg5.put("Role Name", "Plaintiff Intake Specialist");
-        rg5.put("Group Name", "Plaintiff Intake Team");
+        rg5.put("Role Name", "Plaintiff Record Creator");
+        rg5.put("Group Name", "Plaintiff Onboarding Squad");
 
         TreeMap<String, String> rg6 = new TreeMap<>();
-        rg6.put("Role Name", "Law Firm Records Manager");
-        rg6.put("Group Name", "Law Firm Records Team");
+        rg6.put("Role Name", "Law Firm Directory Maintainer");
+        rg6.put("Group Name", "Law Firm Maintenance Cell");
 
         TreeMap<String, String> rg7 = new TreeMap<>();
-        rg7.put("Role Name", "Document Library Reviewer");
-        rg7.put("Group Name", "Document Review Team");
+        rg7.put("Role Name", "Document Index Reviewer");
+        rg7.put("Group Name", "Document Indexing Team");
 
         TreeMap<String, String> rg8 = new TreeMap<>();
-        rg8.put("Role Name", "Email Verification Operator");
-        rg8.put("Group Name", "Email Verification Team");
+        rg8.put("Role Name", "Email Log Reviewer and Verifier");
+        rg8.put("Group Name", "Email Review Pod");
 
         TreeMap<String, String> rg9 = new TreeMap<>();
-        rg9.put("Role Name", "Message Center Viewer");
-        rg9.put("Group Name", "Message Monitoring Team");
+        rg9.put("Role Name", "Message Queue Observer");
+        rg9.put("Group Name", "Message Oversight Circle");
 
         TreeMap<String, String> rg10 = new TreeMap<>();
-        rg10.put("Role Name", "Access Control Role Administrator");
-        rg10.put("Group Name", "Access Control Team");
+        rg10.put("Role Name", "Role Permission Custodian");
+        rg10.put("Group Name", "Permission Governance Team");
 
         return new Object[][]{
             {rg1}, {rg2}, {rg3}, {rg4}, {rg5},
-            {rg6}, {rg7}, {rg8}, {rg9}, {rg10} 
+            {rg6},{rg7}, {rg8}, {rg9}, {rg10} 
         };
     }
 

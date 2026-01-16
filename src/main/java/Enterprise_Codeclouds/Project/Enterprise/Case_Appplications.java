@@ -1380,7 +1380,8 @@ public class Case_Appplications extends Header_Manager{
 			  
 	          try { 
 	        	  lien_rows=p.Open_Lien_table_contents();
-	        	  Payment_Logger(data);}
+	        	  Payment_Logger(data);
+	        	  }
 			  catch(RuntimeException no_liens){
 				
 		  if(p.Lien_table_empty().isDisplayed()){
@@ -1566,7 +1567,7 @@ public class Case_Appplications extends Header_Manager{
 	    		   if(option_text.contains("Log Payment")){
 	    			   Each_Option.click();
 	    			   break;}}
-	    	   List<WebElement> inputs=p.form_inputs();
+	    	   List<WebElement> inputs=p.payment_logger_form_inputs();
 	    	   inputs.get(0).sendKeys(data.get("Payment Mode"));
 	    	   p.plaintiff_dropdown_list();
 	   		   p.Plaintiff_options().get(0).click();
