@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
+import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Attorney_Locaters;
 import Locaters.Login_Locaters;
@@ -31,6 +34,20 @@ public class Attorney_module extends Plaintiff_Module{
 	Login_Locaters lg=new Login_Locaters(d);
 	
 	String Law_Firm = law_firm.get("Name");
+	Report_Listen.log_print_in_report().log(Status.INFO,
+            "<b>🔹 Scenario Title:</b> Add Attorney – Create Attorney under selected Law Firm and confirm save");
+
+    Report_Listen.log_print_in_report().log(Status.INFO,
+            "<b>📘 Description:</b> Validate that a user can add a new <b>Attorney</b> under a selected <b>Law Firm</b>, optionally add staff details, and the system saves the attorney successfully.");
+
+    Report_Listen.log_print_in_report().log(Status.INFO,
+            "<b>📥 Input:</b> Law Firm=<b>"+Law_Firm+"</b> | Attorney Name=<b>"+data.get("First Name")+" "+data.get("Last Name")+
+            "</b> | Email=<b>"+data.get("Email")+"</b> | Phone=<b>"+data.get("Phone")+
+            "</b> | Office Phone=<b>"+data.get("Office phone")+"</b>");
+
+    Report_Listen.log_print_in_report().log(Status.INFO,
+            "<b>✅ Expected:</b> Attorney should be created under the selected Law Firm and a confirmation toast/message should appear.");
+
 	sd.Side_menu_option_clicker("Firm & Counsel",d,"Attorney");	
 	pp.Landed_in_attorney_module();	
 	rp.Scroll_to_element(p.form());
@@ -39,6 +56,8 @@ public class Attorney_module extends Plaintiff_Module{
 	input_feilds.get(0).clear();
 	input_feilds.get(0).sendKeys(Law_Firm);;
 	ap.plaintiff_dropdown_list();
+	Report_Listen.log_print_in_report().log(Status.INFO,
+            "<b>🟨 Actual:</b> Law Firm search performed and firm selection is being verified.");
 	List<WebElement> options = ap.Plaintiff_options();
 	for(WebElement option:options){
 		if(option.getText().trim().contains(Law_Firm)){
@@ -53,6 +72,8 @@ public class Attorney_module extends Plaintiff_Module{
 	input_feilds.get(7).sendKeys(data.get("Email"));
 	WebElement Add_staff_button= p.form_buttons().get(1);
 	//Add_staff_button.click();
+	Report_Listen.log_print_in_report().log(Status.INFO,
+            "<b>🟨 Actual:</b> Attorney details entered. Staff details (if applicable) are being added before final submission.");
 	List<WebElement> fields = ap.form_inputs();
 	WebElement Submit_Button = ap.form_buttons().get(1);
 	WebElement popup_form = ap.Popup_add_form();
@@ -63,6 +84,16 @@ public class Attorney_module extends Plaintiff_Module{
 	Thread.sleep(800);	
 	String taost= lg.toast().getText().trim();
 	Login_negative_testcases.Toast_printer(taost);
+	try{
+        String toast_text = lg.toast().getText().trim();
+        Report_Listen.log_print_in_report().log(Status.PASS,
+                "<b>🟨 Actual:</b> ✅ Attorney created successfully under <b>"+Law_Firm+
+                "</b>. Confirmation message received: <b>"+toast_text+"</b>");
+    }catch(Exception e){
+        Report_Listen.log_print_in_report().log(Status.FAIL,
+                "<b>🟨 Actual:</b> ❌ Attorney save confirmation toast was not captured (toast not visible / locator issue).");
+        throw e;
+    }
 	}
 	
 	
@@ -109,7 +140,20 @@ public class Attorney_module extends Plaintiff_Module{
 		Application_Locaters p = new Application_Locaters(d);
 		Repeat rp = new Repeat(d);
 		
-		
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Scenario Title:</b> Add Staff – Save staff details and confirm popup closes");
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>📘 Description:</b> Validate that staff details can be entered and saved, and the staff add popup closes after successful submission.");
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>📥 Input:</b> Staff Name=<b>"+data.get("Staff First Name")+" "+data.get("Staff Last Name")+
+				"</b> | Email=<b>"+data.get("Staff Email")+"</b> | Phone=<b>"+data.get("Staff Phone")+
+				"</b> | Office Phone=<b>"+data.get("Staff Office phone")+"</b>");
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>✅ Expected:</b> Staff should be added successfully and the staff popup/form should close (no popup should remain visible).");
+
 		
 		List<WebElement> fields = Form_fields;
 		fields.get(0).sendKeys(data.get("Staff First Name"));
@@ -121,7 +165,15 @@ public class Attorney_module extends Plaintiff_Module{
 		fields.get(6).sendKeys(data.get("Staff Email"));
 		WebElement Add_button = Submit_button;
 		Add_button.click();
-		rp.wait_for_invisibility(pop_up_form);
+		try{
+			rp.wait_for_invisibility(pop_up_form);
+			Report_Listen.log_print_in_report().log(Status.PASS,
+					"<b>🟨 Actual:</b> ✅ Staff details saved and popup closed successfully.");
+		}catch(Exception e){
+			Report_Listen.log_print_in_report().log(Status.FAIL,
+					"<b>🟨 Actual:</b> ❌ Staff popup did not close after clicking Add/Submit (save may have failed or UI did not respond).");
+			throw e;
+		}
 	}
 	
 	

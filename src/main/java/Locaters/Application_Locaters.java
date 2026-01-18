@@ -143,11 +143,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement Submit_button; 
 	@FindBy(xpath="//*[text()=' PREVIEW CONTRACT ']/..")
-	private WebElement  Preview_Contract_Button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Preview_Contract_Button; 
+	@FindBy(xpath="(//*[@class='ant-float-btn-body']/..)[1]")
+	private WebElement Send_button;
+	@FindBy(xpath="(//*[@class='ant-float-btn-body']/..)[2]")
+	private WebElement  Email_button;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -606,13 +606,13 @@ public class Application_Locaters extends Repeat{
 	return Submit_button;}   
 	public WebElement Preview_Contract_Button(){
 	wait_for_theElement(Preview_Contract_Button);
-	return Preview_Contract_Button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Preview_Contract_Button;}   
+	public WebElement Send_button(){
+	wait_for_theElement(Send_button);
+	return Send_button;}   
+	public WebElement Email_button(){
+	wait_for_theElement(Email_button);
+	return Email_button;} /*  
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
