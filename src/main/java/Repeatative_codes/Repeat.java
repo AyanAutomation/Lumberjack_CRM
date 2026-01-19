@@ -93,7 +93,12 @@ public class Repeat {
     	}
        el.sendKeys(Keys.TAB);}
     
-    
+    public void wait_for_Clickable(WebElement element){
+    	
+    	WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+	   	w.until(ExpectedConditions.elementToBeClickable(element));
+    	
+    	}
     
     
     

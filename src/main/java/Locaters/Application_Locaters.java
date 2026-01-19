@@ -86,7 +86,7 @@ public class Application_Locaters extends Repeat{
 	private WebElement  contract_doc_iframe; 
 	@FindBy(xpath="//table[@class='main-table mce-item-table']")
 	private WebElement Contract_lien_table;
-	@FindBy(xpath="(//*[@class='ant-modal-body']//button//span)[2]")
+	@FindBy(xpath="(//*[text()='Save Changes']/..)[1]")
 	private WebElement  Save_changes_button; 
 	@FindBy(xpath="//*[@class='ant-empty-description']")
 	private WebElement  Dropdown_showing_nodata; 
@@ -142,30 +142,30 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Buyout_Date_inside_pop_up_modal_form; 
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement Submit_button; 
-	@FindBy(xpath="//*[text()=' PREVIEW CONTRACT ']/..")
-	private WebElement  Preview_Contract_Button; 
+	@FindBy(xpath="//*[contains(@class,'ant-btn-dangerous ant-btn-color-dangerous ant-btn-variant-text')]")
+	private WebElement  Cancel_Contract_Button; 
 	@FindBy(xpath="(//*[@class='ant-float-btn-body']/..)[1]")
 	private WebElement Send_button;
 	@FindBy(xpath="(//*[@class='ant-float-btn-body']/..)[2]")
-	private WebElement  Email_button;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Email_button;
+	@FindBy(xpath="(//*[@class='ant-float-btn-body']/..)[3]")
+	private WebElement SMS_Send_Button;
+	@FindBy(xpath="//*[text()=' SAVED MESSAGES ']/..")
+	private WebElement Saved_Message_button;
+	@FindBy(xpath="//*[contains(@class,'ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-ligh')]")
+	private WebElement  Message_Template_Dropdown_list;
+	@FindBy(xpath="//*[text()='Save New Message']")
+	private WebElement  Landed_In_Template_Creation_Form;
+	@FindBy(xpath="//*[text()='SEND SMS']")
+	private WebElement  Landed_in_sms_send_form; 
+	@FindBy(xpath="(//input[@type='text' or contains(@class,'ant-input-outlined')])[2]")
+	private WebElement  Subject_field;
+	@FindBy(xpath="(//input[@type='search'])[5]")
+	private WebElement  Email_to_field;
+	@FindBy(xpath="(//*[contains(@class,'ant-select-dropdown-placement-bottomLeft')])[2]")
+	private WebElement  Email_to_option_dropdown;
+	@FindBy(xpath="//body[@spellcheck='false']")
+	private WebElement  Email_Body; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -565,6 +565,10 @@ public class Application_Locaters extends Repeat{
 	List <WebElement> second_popup_form_inputs = second_pop_up_form().findElements(By.xpath(".//input"));
 	wait_for_theElement(second_popup_form_inputs);
 	return second_popup_form_inputs;} 
+	public List <WebElement> second_popup_form_TextArea(){
+	List <WebElement> second_popup_form_TextArea = second_pop_up_form().findElements(By.xpath(".//textarea"));
+	wait_for_theElement(second_popup_form_TextArea);
+	return second_popup_form_TextArea;} 
 	public List <WebElement> second_popup_form_buttons(){
 	List <WebElement> second_popup_form_buttons = second_pop_up_form().findElements(By.xpath(".//button"));
 	wait_for_theElement(second_popup_form_buttons);
@@ -604,45 +608,47 @@ public class Application_Locaters extends Repeat{
 	public WebElement Submit_button(){
 	wait_for_theElement(Submit_button);
 	return Submit_button;}   
-	public WebElement Preview_Contract_Button(){
-	wait_for_theElement(Preview_Contract_Button);
-	return Preview_Contract_Button;}   
+	public WebElement Cancel_Contract_Button(){
+	wait_for_theElement(Cancel_Contract_Button);
+	return Cancel_Contract_Button;}   
 	public WebElement Send_button(){
 	wait_for_theElement(Send_button);
 	return Send_button;}   
 	public WebElement Email_button(){
 	wait_for_theElement(Email_button);
-	return Email_button;} /*  
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Email_button;} 
+	public WebElement SMS_Send_Button(){
+	wait_for_theElement(SMS_Send_Button);
+	return SMS_Send_Button;}    
+	public WebElement Saved_Message_button(){
+	wait_for_theElement(Saved_Message_button);
+	return Saved_Message_button;}   
+	public WebElement Message_Template_Dropdown_list(){
+	wait_for_theElement(Message_Template_Dropdown_list);
+	return Message_Template_Dropdown_list;}   
+	public List <WebElement> Message_Template_Option(){
+	List <WebElement> Message_Template_Option = Message_Template_Dropdown_list().findElements(By.xpath(".//li[@role='menuitem']"));
+	wait_for_theElement(Message_Template_Option);
+	return Message_Template_Option;}   
+	public WebElement Landed_In_Template_Creation_Form(){
+	wait_for_theElement(Landed_In_Template_Creation_Form);
+	return Landed_In_Template_Creation_Form;}   
+	public WebElement Landed_in_sms_send_form(){
+	wait_for_theElement(Landed_in_sms_send_form);
+	return Landed_in_sms_send_form;}   
+	public WebElement Subject_field(){
+	wait_for_theElement(Subject_field);
+	return Subject_field;}   
+	public WebElement Email_to_field(){
+	wait_for_theElement(Email_to_field);
+	wait_for_Clickable(Email_to_field);
+	return Email_to_field;}   
+	public WebElement Email_to_option_dropdown(){
+	wait_for_theElement(Email_to_option_dropdown);
+	return Email_to_option_dropdown;}   
+	public WebElement Email_Body(){
+	wait_for_theElement(Email_Body);
+	return Email_Body;}  /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

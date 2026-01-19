@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
+<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-19T00:26:01 IST" name="Default suite" finished-at="2026-01-19T00:27:14 IST" duration-ms="72774">
+  <suite started-at="2026-01-19T20:34:39 IST" name="Default suite" finished-at="2026-01-19T20:36:40 IST" duration-ms="121789">
     <groups>
     </groups>
-    <test started-at="2026-01-19T00:26:01 IST" name="Default test" finished-at="2026-01-19T00:27:14 IST" duration-ms="72774">
+    <test started-at="2026-01-19T20:34:39 IST" name="Default test" finished-at="2026-01-19T20:36:40 IST" duration-ms="121789">
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ab778a]" started-at="2026-01-19T00:26:01 IST" name="setup" finished-at="2026-01-19T00:26:05 IST" duration-ms="4415" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@4c178a76]" started-at="2026-01-19T20:34:39 IST" name="setup" finished-at="2026-01-19T20:34:41 IST" duration-ms="1985" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Buyout_Add_After_Contract_Generation_through_Edit_Terms(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ab778a]" started-at="2026-01-19T00:26:05 IST" name="Buyout_Add_After_Contract_Generation_through_Edit_Terms" data-provider="case_plus_plaintiff" finished-at="2026-01-19T00:27:13 IST" duration-ms="67536" status="FAIL">
+        <test-method signature="Buyout_Add_After_Contract_Generation_through_Edit_Terms(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@4c178a76]" started-at="2026-01-19T20:34:41 IST" name="Buyout_Add_After_Contract_Generation_through_Edit_Terms" data-provider="case_plus_plaintiff" finished-at="2026-01-19T20:36:40 IST" duration-ms="119708" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/19/2026, Amount Received=33800, Application Status=In Review, Approved Amount=24500, Attorney Name=Attorney Juno Hartwell, Buyout Amount=15100, Buyout Expiry Date=01/19/2030, Buyout Funder Name=Pioneer Plaintiff Finance, Case #=316, Case Type=Products Liability, Court Index Number=21CV-2309-PL-001606, Date of Incident=09/22/2023, Document prep fee=295, Fund transfer fee=110, Interest Start Date=01/19/2026, Law Firm Name=Dietrich & Kuznetsov-Schmidt Serious Spine, Brain & Orthopedic Injury Advocates, Lead Source=Broker, Notes / Remarks=Insurance payment received via portal; attach remittance; confirm final vs partial payment before closing ledger., Payer Name=EverHaven Insurance Group, Payment Date=01/19/2026, Payment Mode=Online Payment, Payment Type=Payment by Insurance Company, Rate of Return=42, Recommended Max Funding=24500, Requested Amount=57000, Risk Level=Moderate, SMS Message Body=Your products liability file is under defect review. We’ll update you after expert validation. – Lumberjack Legal Finance, SMS Message Title=Defect Review, State=Ohio, Summary=Consumer device malfunction caused fall and fracture; item preserved; expert inspection planned; dental and ortho treatment ongoing., Underwriting Notes=Preservation and chain-of-custody required. Confirm recall history and maintenance/usage factors. Stage funding until defect opinion and medical causation are documented., Underwriting Tag=Chain-of-Custody}]]>
+                <![CDATA[{Agreement Date=01/19/2026, Amount Received=54000, Application Status=Approved, Approved Amount=16000, Attorney Name=Attorney Nolan Vercetti, Buyout Amount=8700, Buyout Expiry Date=01/19/2030, Buyout Funder Name=Liberty Legal Funding, Case #=305, Case Type=Employment Disputes, Court Index Number=49D05-2408-ED-001443, Date of Incident=08/29/2024, Document prep fee=245, Fund transfer fee=85, Interest Start Date=01/19/2026, Law Firm Name=Falkenova, Dornik & Brechtova Maritime, Boat & Seeufer Accident Rechtsberatung Group, Lead Source=Attorney Referral, Notes / Remarks=Wire received; confirm sender matches remittance advice; allocation captured in internal ledger., Payer Name=HarborPoint Mutual Insurance Services, Payment Date=01/19/2026, Payment Mode=Bank Transfer, Payment Type=Payment by Insurance Company, Rate of Return=37, Recommended Max Funding=16000, Requested Amount=39000, Risk Level=Moderate, SMS Message Body=Your employment dispute funding has been approved. We’ll coordinate agreement review with your attorney. – Lumberjack Legal Finance, SMS Message Title=Approved, State=Indiana, Summary=Retaliation claim after reporting safety violations; termination letter conflicts with performance records; wage loss and emotional distress alleged., Underwriting Notes=Validate protected activity timeline, HR reports, comparator evidence, and payroll history. Confirm arbitration exposure and mitigation. Stage funding if early settlement posture is uncertain., Underwriting Tag=HR File Review}]]>
               </value>
             </param>
             <param index="1">
@@ -39,18 +39,45 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@class='tox-editor-container']' (tried for 10 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[element click intercepted: Element <span class="ant-select-clear" unselectable="on" aria-hidden="true" style="user-select: none;">...</span> is not clickable at point (870, 159). Other element would receive the click: <div class="ant-modal-content">...</div>
+  (Session info: chrome=143.0.7499.193)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c4534fa010efec6803a8f2734ebebe02, clickElement {id=f.AB8D5E45F283F01A243EFE4C39095082.d.E672B4CB92A66579504ECAB0944F66A3.e.549}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58651}, goog:processID: 12400, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58651/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c4534fa010efec6803a8f2734ebebe02)] -> xpath: //*[@class='ant-select-clear']]
+Session ID: c4534fa010efec6803a8f2734ebebe02]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@class='tox-editor-container']' (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-at Locaters.Application_Locaters.Contract_editor(Application_Locaters.java:420)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Reopen_contract_without_saving(Case_Appplications.java:821)
-at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Buyout_Add_After_Contract_Generation_through_Edit_Terms(Case_Appplications.java:602)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="ant-select-clear" unselectable="on" aria-hidden="true" style="user-select: none;">...</span> is not clickable at point (870, 159). Other element would receive the click: <div class="ant-modal-content">...</div>
+  (Session info: chrome=143.0.7499.193)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c4534fa010efec6803a8f2734ebebe02, clickElement {id=f.AB8D5E45F283F01A243EFE4C39095082.d.E672B4CB92A66579504ECAB0944F66A3.e.549}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58651}, goog:processID: 12400, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58651/devtoo..., se:cdpVersion: 143.0.7499.193, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c4534fa010efec6803a8f2734ebebe02)] -> xpath: //*[@class='ant-select-clear']]
+Session ID: c4534fa010efec6803a8f2734ebebe02
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy17.click(Unknown Source)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Buyout_Add_After_Contract_Generation_through_Edit_Terms(Case_Appplications.java:1040)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -61,7 +88,7 @@ at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInv
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:741)
 at org.testng.TestRunner.run(TestRunner.java:616)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
@@ -77,44 +104,13 @@ at org.testng.TestNG.run(TestNG.java:1079)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class='tox-editor-container']"}
-  (Session info: chrome=109.0.5414.168)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2344738f2d007ec727dbc56bf41fde1a, findElement {value=//*[@class='tox-editor-container'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.168, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\user1\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55782}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55782/devtoo..., se:cdpVersion: 109.0.5414.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2344738f2d007ec727dbc56bf41fde1a
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 30 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Buyout_Add_After_Contract_Generation_through_Edit_Terms -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@6ab778a]" started-at="2026-01-19T00:27:13 IST" name="Kill" finished-at="2026-01-19T00:27:14 IST" duration-ms="705" status="PASS">
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@4c178a76]" started-at="2026-01-19T20:36:40 IST" name="Kill" finished-at="2026-01-19T20:36:40 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->

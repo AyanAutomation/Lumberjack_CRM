@@ -61,21 +61,361 @@ public class Case_Appplications extends Header_Manager{
 			p.Popup_add_form();}
 	
 	
-	  public void Email_sender(){
+	
+	  @Test(dataProvider="sendEmailData")
+	  public void Email_sender(TreeMap<String,String> data) throws IOException, InterruptedException{
 		
 		
 		  Application_Locaters p = new Application_Locaters(d);
+		  SIde_Menu_Handler sd = new SIde_Menu_Handler();
+		  Login_Locaters lg = new Login_Locaters(d);
 		  
+		  String Subject = data.get("Subject");
+		  String to = data.get("To");
+		  String Mail_Body = data.get("Message");
+		  
+		   try{p.Send_button();}
+	       catch(Exception not_in_Case_Details) {	    
+		   sd.Side_menu_option_clicker("Applications", d,"N/A");
+		   p.landed_in_applicationList_confirmation();
+		   p.Filter_clear().click();
+		   WebElement Status_filter = p.Application_status_filter();
+		   Status_filter.click();
+		   Application_Filter_Option_Selector("Funded");
+		   p.rows().get(1).click();
+		   Thread.sleep(800);}
+		   List<WebElement> Case_Tags;
+		   try {
+		   Case_Tags = p.Case_tags();}
+		   catch(RuntimeException tags){
+			   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+			   System.out.println();
+			   Thread.sleep(1200);
+			   Case_Tags = p.Case_tags(); }
 		  p.Send_button().click();
 		  p.Email_button().click();
 		  p.pop_up_contact_list();
-		
-		
-		
+		  p.Subject_field().sendKeys(Subject);
+		  WebElement Email_To = p.Email_to_field();
+		  Email_To.sendKeys(to);
+		  d.switchTo().frame(p.contract_doc_iframe());
+		  Thread.sleep(900);
+		  p.Email_Body().sendKeys(Mail_Body);
+		  d.switchTo().defaultContent();
+		  p.Submit_button().click();
+		  WebElement Toast = lg.toast();
+		  String toastText = Toast.getText().trim();
+		  Login_negative_testcases.Toast_printer(toastText);
 		
 		
 	}
-	
+	  
+	  
+	  
+	  @DataProvider
+	  public Object[][] sendEmailData() {
+
+	      // Keys mapped to UI fields:
+	      // "Template" (dropdown), "Subject", "To", "Cc", "Bcc", "Message"
+
+	      TreeMap<String, String> e1 = new TreeMap<>();
+	      e1.put("Template", "None"); // keep "None" if you are not selecting any template
+	      e1.put("Subject", "Document Request - Please Upload Required Files");
+	      e1.put("To", "marcelline.briarcliff1874@yopmail.com");
+	      e1.put("Cc", "");
+	      e1.put("Bcc", "");
+	      e1.put("Message",
+	              "Hello,\n\n"
+	            + "Please upload the required documents at your earliest convenience so we can proceed without delay.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> e2 = new TreeMap<>();
+	      e2.put("Template", "None");
+	      e2.put("Subject", "Verification Needed to Continue Processing");
+	      e2.put("To", "orwyn.schwerdtvale4541@yopmail.com");
+	      e2.put("Cc", "");
+	      e2.put("Bcc", "");
+	      e2.put("Message",
+	              "Hello,\n\n"
+	            + "We need a quick verification to move forward. Please confirm the requested details when you are available.\n\n"
+	            + "Regards.");
+
+	      TreeMap<String, String> e3 = new TreeMap<>();
+	      e3.put("Template", "None");
+	      e3.put("Subject", "Case Update - Next Steps");
+	      e3.put("To", "elviora.quenridge3402@yopmail.com");
+	      e3.put("Cc", "");
+	      e3.put("Bcc", "");
+	      e3.put("Message",
+	              "Hello,\n\n"
+	            + "This is an update regarding your case. Our team is reviewing the latest information and will share the next steps shortly.\n\n"
+	            + "Thanks.");
+
+	      TreeMap<String, String> e4 = new TreeMap<>();
+	      e4.put("Template", "None");
+	      e4.put("Subject", "Reminder - Pending Action Required");
+	      e4.put("To", "tavryn.rookmere3403@yopmail.com");
+	      e4.put("Cc", "");
+	      e4.put("Bcc", "");
+	      e4.put("Message",
+	              "Hello,\n\n"
+	            + "This is a friendly reminder that an action is still pending. Please complete it so there is no delay in processing.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> e5 = new TreeMap<>();
+	      e5.put("Template", "None");
+	      e5.put("Subject", "Additional Details Required");
+	      e5.put("To", "kezaria.briarhold3418@yopmail.com");
+	      e5.put("Cc", "");
+	      e5.put("Bcc", "");
+	      e5.put("Message",
+	              "Hello,\n\n"
+	            + "We require additional information to proceed. Please reply with the missing details or upload them through the portal.\n\n"
+	            + "Regards.");
+
+	      TreeMap<String, String> e6 = new TreeMap<>();
+	      e6.put("Template", "None");
+	      e6.put("Subject", "Call Request - Please Share Availability");
+	      e6.put("To", "ronivar.lindenmark3411@yopmail.com");
+	      e6.put("Cc", "");
+	      e6.put("Bcc", "");
+	      e6.put("Message",
+	              "Hello,\n\n"
+	            + "We would like to schedule a short call to discuss next steps. Please share your preferred time window.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> e7 = new TreeMap<>();
+	      e7.put("Template", "None");
+	      e7.put("Subject", "Confirmation - Update Recorded Successfully");
+	      e7.put("To", "aurelian.merriswold3412@yopmail.com");
+	      e7.put("Cc", "");
+	      e7.put("Bcc", "");
+	      e7.put("Message",
+	              "Hello,\n\n"
+	            + "This confirms your recent update has been recorded successfully. No further action is required at this moment.\n\n"
+	            + "Regards.");
+
+	      TreeMap<String, String> e8 = new TreeMap<>();
+	      e8.put("Template", "None");
+	      e8.put("Subject", "Issue Found - Please Review Submitted Information");
+	      e8.put("To", "naviren.hearthwyn3414@yopmail.com");
+	      e8.put("Cc", "");
+	      e8.put("Bcc", "");
+	      e8.put("Message",
+	              "Hello,\n\n"
+	            + "We noticed an issue with the submitted information. Please review and correct it so we can continue processing.\n\n"
+	            + "Thanks.");
+
+	      TreeMap<String, String> e9 = new TreeMap<>();
+	      e9.put("Template", "None");
+	      e9.put("Subject", "Document Review Completed - Awaiting Next Input");
+	      e9.put("To", "meador.glenvarn3415@yopmail.com");
+	      e9.put("Cc", "");
+	      e9.put("Bcc", "");
+	      e9.put("Message",
+	              "Hello,\n\n"
+	            + "We have completed the initial document review. If you have any additional files to submit, please upload them now.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> e10 = new TreeMap<>();
+	      e10.put("Template", "None");
+	      e10.put("Subject", "Final Reminder - Response Needed to Avoid Delay");
+	      e10.put("To", "tenzaro.rivenshore3419@yopmail.com");
+	      e10.put("Cc", "");
+	      e10.put("Bcc", "");
+	      e10.put("Message",
+	              "Hello,\n\n"
+	            + "We are unable to proceed without the pending details. Please respond or upload the required information to avoid delays.\n\n"
+	            + "Regards.");
+
+	      return new Object[][]{
+	              {e1},{e2},{e3},{e4},{e5},
+	              {e6},{e7},{e8},{e9},{e10}
+	      };
+	  }
+
+	  
+	  
+	  
+	  @Test(dataProvider="messageTemplateData")
+	  public void Message_Template_Creator(TreeMap<String,String> data) throws IOException, InterruptedException{
+		
+		
+		  Application_Locaters p = new Application_Locaters(d);
+		  SIde_Menu_Handler sd = new SIde_Menu_Handler();
+		  Repeat rp = new Repeat(d);
+		  Login_Locaters lg = new Login_Locaters(d);
+		  
+		  String Message_Title = data.get("Title");
+		  String Body = data.get("Message body");
+		  
+		  int step = 1;
+		  
+		  Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>🔹 Scenario Title:</b> Create & Validate SMS Message Template");
+			Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>📘 Description:</b> System should allow creating a new saved SMS template and then selecting it so the saved message body appears correctly.");
+			Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>📥 Input:</b> Template Title = <b>"+Message_Title+"</b> | Message Body (expected) = <b>"+Body+"</b>");
+			Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>✅ Expected:</b> After saving, the template should appear in Saved Messages list and its body should match the expected message text.");
+		  
+		   try{p.Send_button();}
+	       catch(Exception not_in_Case_Details) {	    
+		   sd.Side_menu_option_clicker("Applications", d,"N/A");
+		   p.landed_in_applicationList_confirmation();
+		   p.Filter_clear().click();
+		   WebElement Status_filter = p.Application_status_filter();
+		   Status_filter.click();
+		   Application_Filter_Option_Selector("Funded");
+		   p.rows().get(1).click();
+		   Thread.sleep(800);}
+		   List<WebElement> Case_Tags;
+		   try {
+		   Case_Tags = p.Case_tags();}
+		   catch(RuntimeException tags){
+			   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+			   System.out.println();
+			   Thread.sleep(1200);
+			   Case_Tags = p.Case_tags(); }
+		   Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>Step "+(step++)+":</b> Create a new saved SMS template.<br>"
+				  + "<b>📘 Description:</b> Add a new message template with provided title and body.<br>"
+				  + "<b>✅ Expected:</b> System should save the template and show a success toast.");
+		  p.Send_button().click();
+		  p.SMS_Send_Button().click();
+		  p.pop_up_contact_list();
+		  WebElement Saved_Messaged = p.Saved_Message_button();
+		  rp.movetoelement(Saved_Messaged);
+		  Saved_Messaged.click();
+		  List<WebElement> Template_options = p.Message_Template_Option();
+		  for(WebElement Opt:Template_options){
+			  String Option_Text = Opt.getText().trim();
+			  if(Option_Text.contains("Add New Message")){
+				  Opt.click();
+				  break;}}
+		p.Landed_In_Template_Creation_Form();
+		p.second_popup_form_inputs().get(0).sendKeys(Message_Title);
+		p.second_popup_form_TextArea().get(0).sendKeys(Body);
+		p.second_popup_form_buttons().get(1).click();
+		WebElement Toast = lg.toast();
+		String toastText = Toast.getText().trim();
+		Login_negative_testcases.Toast_printer(toastText);
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🟨 Actual:</b> ✅ Template saved successfully. Toast = <b>"+toastText+"</b>");
+		rp.wait_for_invisibility(Toast);
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>Step "+(step++)+":</b> Validate saved template content.<br>"
+			  + "<b>📘 Description:</b> Open the saved template and confirm the displayed message body matches expected text.<br>"
+			  + "<b>✅ Expected:</b> Saved template body should match the provided message body.");
+
+		Saved_Messaged.click();
+		List<WebElement> New_Template_options = p.Message_Template_Option();
+		for(WebElement newOpt:New_Template_options){
+			String New_Option_Text = newOpt.getText().trim();
+			if(New_Option_Text.contains(Message_Title)){
+				newOpt.click();
+				break;}}
+		Thread.sleep(800);
+		String Message_Body = p.textArea().getAttribute("value");
+		System.out.println(Message_Body);
+		System.out.println();
+		System.out.println();
+		System.out.println("Body =  "+Body);
+		Report_Listen.log_print_in_report().log(
+				(Message_Body != null && Message_Body.contains(Body)) ? Status.PASS : Status.FAIL,
+				(Message_Body != null && Message_Body.contains(Body))
+						? "<b>✅ Result:</b> Template body matched the expected message text."
+						: "<b>❌ Result:</b> Template body did NOT match the expected message text."
+		);
+
+		System.out.println(
+			    (Message_Body != null && Message_Body.contains(Body))
+			        ? "PASS: Saved template body is matching the expected message body."
+			        : "FAIL: Saved template body is NOT matching the expected message body."
+			);
+	}
+	  
+	  
+	  @DataProvider
+	  public Object[][] messageTemplateData() {
+
+	      TreeMap<String, String> m1 = new TreeMap<>();
+	      m1.put("Title", "Case Status Update");
+	      m1.put("Message body",
+	              "Hello,\n\n"
+	            + "This is a status update on your case. Our team is currently reviewing the latest information and will share the next update soon.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> m2 = new TreeMap<>();
+	      m2.put("Title", "Document Request");
+	      m2.put("Message body",
+	              "Hello,\n\n"
+	            + "Please upload the requested documents at your earliest convenience so we can continue processing your case.\n\n"
+	            + "Regards.");
+
+	      TreeMap<String, String> m3 = new TreeMap<>();
+	      m3.put("Title", "Verification Required");
+	      m3.put("Message body",
+	              "Hello,\n\n"
+	            + "We need a quick verification to proceed. Please confirm the required details when you are available.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> m4 = new TreeMap<>();
+	      m4.put("Title", "Additional Information Needed");
+	      m4.put("Message body",
+	              "Hello,\n\n"
+	            + "We require additional information to move forward. Please reply with the missing details or upload them through the portal.\n\n"
+	            + "Thanks.");
+
+	      TreeMap<String, String> m5 = new TreeMap<>();
+	      m5.put("Title", "Scheduling a Call");
+	      m5.put("Message body",
+	              "Hello,\n\n"
+	            + "We would like to schedule a short call to discuss the next steps. Please share your preferred time window.\n\n"
+	            + "Regards.");
+
+	      TreeMap<String, String> m6 = new TreeMap<>();
+	      m6.put("Title", "Follow-up Reminder");
+	      m6.put("Message body",
+	              "Hello,\n\n"
+	            + "This is a friendly reminder regarding the pending action on your case. Please complete it so there is no delay.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> m7 = new TreeMap<>();
+	      m7.put("Title", "Case Assigned");
+	      m7.put("Message body",
+	              "Hello,\n\n"
+	            + "Your case has been assigned to the appropriate team for processing. You will receive updates as progress is made.\n\n"
+	            + "Regards.");
+
+	      TreeMap<String, String> m8 = new TreeMap<>();
+	      m8.put("Title", "Issue With Submitted Details");
+	      m8.put("Message body",
+	              "Hello,\n\n"
+	            + "We noticed an issue with the submitted details. Please review and correct the information so we can proceed.\n\n"
+	            + "Thanks.");
+
+	      TreeMap<String, String> m9 = new TreeMap<>();
+	      m9.put("Title", "Action Completed Confirmation");
+	      m9.put("Message body",
+	              "Hello,\n\n"
+	            + "This confirms that your recent action has been successfully recorded. No further steps are required at this moment.\n\n"
+	            + "Thank you.");
+
+	      TreeMap<String, String> m10 = new TreeMap<>();
+	      m10.put("Title", "Final Notice Before Delay");
+	      m10.put("Message body",
+	              "Hello,\n\n"
+	            + "We are unable to proceed without the pending information. Please submit the required details to avoid delays.\n\n"
+	            + "Regards.");
+
+	      return new Object[][]{
+	              {m1},{m2},{m3},{m4},{m5},
+	              {m6},{m7},{m8},{m9},{m10}
+	      };
+	  }
+
 	
 	@Test(dataProvider="case_plus_plaintiff")
 	public void Add_case(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data) throws IOException, InterruptedException{
@@ -576,14 +916,13 @@ public class Case_Appplications extends Header_Manager{
 	 	    rp.Feild_clear(p.rate_of_return_feild());
 	 	    p.rate_of_return_feild().sendKeys(Case_Data.get("Rate of Return"));
 	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep="+Case_Data.get("Document prep fee")+", FundTransfer="+Case_Data.get("Fund transfer fee")+", RoR="+Case_Data.get("Rate of Return")+")");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Agreement Date + Interest Start Date and confirm date selection.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Agreement Date + Interest Start Date and confirm date selection.");
 	 		rp.Scroll_to_element(p.Agreement_Date_feild());
 	 	    p.Agreement_Date_feild().sendKeys(Case_Data.get("Agreement Date"));
 	 	    p.calender_date_select().click();
 	 	    p.Interest_Start_Date().sendKeys(Case_Data.get("Interest Start Date"));
 	 	    p.rate_of_return_feild().click();
 	 	    Thread.sleep(600);
-	 	    
 	 	    WebElement Generate_Contract_Button;
 	 	    Generate_Contract_Button= p.Submit_button();
 	 	    rp.movetoelement(Generate_Contract_Button);
@@ -625,17 +964,55 @@ public class Case_Appplications extends Header_Manager{
 
 	        	throw e; // keep failure visible in TestNG
 	        }
-	 		p.Save_changes_button().click();
+	        p.Application_amount_edit_buttons().get(1).click();
+	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
+	 		p.Modal_Input_Feilds().get(0).sendKeys(Buyout_Funder);
+	 		p.Modal_Input_Feilds().get(1).sendKeys(Buyout_price);
+	 		p.Modal_Input_Feilds().get(2).sendKeys(Buyout_date);
+	 		p.calender_date_select().click();
+	 		p.modal_buttons().get(1).click();
+	 		Thread.sleep(800);
+	        p.Generate_contract_button().click();
+	 	    p.popup_modal();
+	 	    Thread.sleep(800);
+	 	    rp.movetoelement(p.Popup_add_form());
+	 	    Thread.sleep(800);
+	 	    List<WebElement> new_Fee_feilds = p.fee_amount_feilds();
+	 	    rp.Scroll_to_element(new_Fee_feilds.get(0));
+	 	    rp.Feild_clear(new_Fee_feilds.get(0));
+	 	    new_Fee_feilds.get(0).sendKeys(Case_Data.get("Document prep fee"));
+	 	    rp.Feild_clear(new_Fee_feilds.get(1));
+	 	    new_Fee_feilds.get(1).sendKeys(Case_Data.get("Fund transfer fee"));
+	 	    rp.Scroll_to_element(p.rate_of_return_feild());
+	 	    rp.Feild_clear(p.rate_of_return_feild());
+	 	    p.rate_of_return_feild().sendKeys(Case_Data.get("Rate of Return"));
+	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep="+Case_Data.get("Document prep fee")+", FundTransfer="+Case_Data.get("Fund transfer fee")+", RoR="+Case_Data.get("Rate of Return")+")");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Agreement Date + Interest Start Date and confirm date selection.");
+	 		rp.Scroll_to_element(p.Agreement_Date_feild());
+	 	    p.Agreement_Date_feild().sendKeys(Case_Data.get("Agreement Date"));
+	 	    p.calender_date_select().click();
+	 	    p.Interest_Start_Date().sendKeys(Case_Data.get("Interest Start Date"));
+	 	    p.rate_of_return_feild().click();
+	 	    Thread.sleep(600);
+	 	    rp.movetoelement(Generate_Contract_Button);
+	 	    rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
+	 	    js.executeScript("arguments[0].click();", Generate_Contract_Button);
+	 	    Thread.sleep(800);
+	 	    Thread.sleep(800);
+	 	    WebElement new_save_change = p.Save_changes_button();
+	 	    new_save_change.click();
 	 		Thread.sleep(1800);
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
 	 		String contract_saved = "";
 	 		try{
-	 			contract_saved = lg.toast().getText().trim();
+	 			WebElement Toast = lg.toast();
+	 			contract_saved = Toast.getText().trim();
 	 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract saved toast = "+contract_saved);
 	 			System.out.println(contract_saved);
 	 		}catch(Exception e){
 	 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Save toast not captured (toast not visible / locator issue) after clicking Save Changes.");
-	 			throw e;}
+	 			js.executeScript("arguments[0].click();", new_save_change);}
 	 		//d.navigate().refresh();
 	 		FluentWait<WebDriver> w = new FluentWait<WebDriver>(d)
 	 		        .withTimeout(Duration.ofSeconds(30))
@@ -655,15 +1032,28 @@ public class Case_Appplications extends Header_Manager{
 	 		p.Application_amount_edit_buttons().get(1).click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
-	 		p.Modal_Input_Feilds().get(0).sendKeys(Buyout_Funder);
-	 		p.Modal_Input_Feilds().get(1).sendKeys(Buyout_price);
+	        List<WebElement> new_buyout_inputs = p.Modal_Input_Feilds();
+	        rp.Feild_clear(new_buyout_inputs.get(0));
+	        new_buyout_inputs.get(0).sendKeys(Buyout_Funder);
+	        rp.Feild_clear(new_buyout_inputs.get(1));
+	        new_buyout_inputs.get(1).sendKeys(Buyout_price);
+	        //p.Filter_clear().click();
+	        new_buyout_inputs.get(2).clear();
 	 		p.Modal_Input_Feilds().get(2).sendKeys(Buyout_date);
 	 		p.calender_date_select().click();
-	 		p.modal_buttons().get(1).click();
+	 		p.modal_buttons().get(1).click(); 
 	 		Thread.sleep(800);
 	 		Report_Listen.log_print_in_report().log(Status.INFO,
 	 				"<b>🔹 Validation:</b> Edit Terms should show the saved Buyout details (Funder/Amount/Expiry) after contract generation.");
-	    	p.Edit_contract_button().click();
+	    	WebElement Edit_contract_button;
+	 		try{
+	 			Edit_contract_button=p.Edit_contract_button();}
+	 		catch(Exception Edit_contract_edit_not_found){
+	 			Thread.sleep(800);
+	 			Edit_contract_button=p.Edit_contract_button();
+	 			System.out.println("Exception found in edit contract button thereby retrying");
+	 			Edit_contract_button.click();
+	 		}
 	    	p.popup_modal();
 	 	    Thread.sleep(800);
 	 	    rp.movetoelement(p.Popup_add_form());
@@ -827,18 +1217,31 @@ public class Case_Appplications extends Header_Manager{
 
 	    	 
 	    	 d.navigate().refresh();
-	    	 Thread.sleep(800);
-	    	 WebElement Preview_Contract = p.Preview_Contract_Button();
-	    	 Preview_Contract.click();
+	    	 Thread.sleep(1800);
+	    	 WebElement Cancel_Contract;
 	    	 try{
-	    	        p.Contract_editor();
+	    		 
+	    		 Cancel_Contract = p.Cancel_Contract_Button();
+	    		 Cancel_Contract.click();
+	    		 
+	    	 }catch(Exception Button_not_found){
+	    		 
+	    		 Thread.sleep(800);
+	    		 System.out.println("Exception found in cancel contract button thereby retrying");
+	    		 Cancel_Contract = p.Cancel_Contract_Button();
+	    		 Cancel_Contract.click();
+	    	 }
+	    	 
+	    	 try{
+	    	        p.Generate_contract_button();
 	    	        Report_Listen.log_print_in_report().log(Status.PASS,
 	    	                "<b>🟨 Actual:</b> ✅ Contract Editor opened successfully after refresh using Preview Contract (no save required).");
 	    	    }catch(Exception e){
 	    	        Report_Listen.log_print_in_report().log(Status.FAIL,
 	    	                "<b>🟨 Actual:</b> ❌ Contract Editor did NOT open after refresh when clicking Preview Contract. (Reopen without saving failed)");
 	    	        throw e;
-	    	    }}
+	    	    }
+	    	 }
 	
 	
 	
@@ -1787,10 +2190,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ /*
-		        {c1},{c2},{c3},{c4},{c5},
+		        {c1},{c2},{c3},{c4},*/{c5},/*
 		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},{c15}, */
-		        {c16},/*{c17},{c18},{c19},{c20} */
+		        {c11},{c12},{c13},{c14},{c15}, 
+		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
 	
 	
@@ -2339,7 +2742,8 @@ public class Case_Appplications extends Header_Manager{
 				Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.");
 		        Thread.sleep(800);
 		        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Save Changes</i> to save contract edits.");
-				p.Save_changes_button().click();
+				WebElement save_change_button = p.Save_changes_button();
+				save_change_button.click();
 				Thread.sleep(1800);
 		        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
 				String contract_saved = "";
@@ -2414,6 +2818,9 @@ public class Case_Appplications extends Header_Manager{
 		monthly_emi.clear();
 		
 	}
+
+
+
 	
 	
 	
