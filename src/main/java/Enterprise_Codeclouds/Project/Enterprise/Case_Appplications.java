@@ -1037,21 +1037,41 @@ public class Case_Appplications extends Header_Manager{
 	        new_buyout_inputs.get(0).sendKeys(Buyout_Funder);
 	        rp.Feild_clear(new_buyout_inputs.get(1));
 	        new_buyout_inputs.get(1).sendKeys(Buyout_price);
-	        //p.Filter_clear().click();
-	        new_buyout_inputs.get(2).clear();
+	        rp.Feild_clear(new_buyout_inputs.get(2));
 	 		p.Modal_Input_Feilds().get(2).sendKeys(Buyout_date);
 	 		p.calender_date_select().click();
 	 		p.modal_buttons().get(1).click(); 
 	 		Thread.sleep(800);
 	 		Report_Listen.log_print_in_report().log(Status.INFO,
 	 				"<b>🔹 Validation:</b> Edit Terms should show the saved Buyout details (Funder/Amount/Expiry) after contract generation.");
+	 		WebElement newToast = lg.toast();
+	 		rp.wait_for_invisibility(newToast);
+	 		Thread.sleep(800);
+	 		FluentWait<WebDriver> fw = new FluentWait<WebDriver>(d)
+			        .withTimeout(Duration.ofSeconds(30))
+			        .pollingEvery(Duration.ofMillis(500))
+			        .ignoring(NoSuchElementException.class)
+			        .ignoring(StaleElementReferenceException.class);
+	 		WebElement Contract_generated_Toast = lg.toast();
+	 		String required_toast_text = Contract_generated_Toast.getText().trim();
+	 		rp.wait_for_invisibility(Contract_generated_Toast);
+	 		Thread.sleep(800); 
+	 		System.out.println("Toast shown --------------->>  "+required_toast_text);
+	 		System.out.println();
+	 		if(required_toast_text.contains("Contract generated successfully")) {
 	    	WebElement Edit_contract_button;
-	 		try{
-	 			Edit_contract_button=p.Edit_contract_button();}
+	    	try{
+	 			Edit_contract_button=p.Edit_contract_button();
+	 			rp.Scroll_to_element(Edit_contract_button);
+	 			rp.movetoelement(Edit_contract_button);
+	 			Thread.sleep(800);
+	 			js.executeScript("arguments[0].click();", Edit_contract_button);}
 	 		catch(Exception Edit_contract_edit_not_found){
 	 			Thread.sleep(800);
 	 			Edit_contract_button=p.Edit_contract_button();
 	 			System.out.println("Exception found in edit contract button thereby retrying");
+	 			rp.Scroll_to_element(Edit_contract_button);
+	 			rp.movetoelement(Edit_contract_button);
 	 			Edit_contract_button.click();
 	 		}
 	    	p.popup_modal();
@@ -1108,9 +1128,10 @@ public class Case_Appplications extends Header_Manager{
 		 			WebElement new_Generate_Contract_Button= p.Submit_button();
 		 			rp.wait_for_theElement_tobe_clickable(new_Generate_Contract_Button);
 			 	    js.executeScript("arguments[0].click();", new_Generate_Contract_Button);}
-		 	    d.switchTo().frame(p.contract_doc_iframe());
+		 	    WebElement new_frame = p.contract_doc_iframe();
+		 	    d.switchTo().frame(new_frame);
 		 	    Thread.sleep(1000);
-		 	    d.switchTo().defaultContent();
+		 	    
 	 			 // ---------- CALC LOG (2 decimals) ----------
 		 	    String Buyout_Amount_f = String.format("%.2f", (double) Buyout_Amount);
 		 	    String Approved_Amount_f = String.format("%.2f", (double) Approved_Amount);
@@ -1195,6 +1216,12 @@ public class Case_Appplications extends Header_Manager{
 		 	    		"<b>✅ Expected:</b> For every month >= 1, (Current Month Payable - Previous Month Payable) should equal Monthly Interest = "+Monthly_Interest_Amount+".");
 
 		 	    future_months_calculations_check(monthly_emi, Monthly_Interest_Amount);}}
+	 		
+	 		else{
+	 			
+	 			
+	 			System.out.println("Didn't encounter Contract generated successfully Toast so thats why couldn't proceed with edit terms process");
+	 			System.out.println();}}
 	     
 	     
 	 
@@ -2189,11 +2216,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ /*
-		        {c1},{c2},{c3},{c4},*/{c5},/*
+		    return new Object[][]{ 
+		        {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} */
+		        {c16},{c17},{c18},{c19},{c20} 
 		    };}
 	
 	

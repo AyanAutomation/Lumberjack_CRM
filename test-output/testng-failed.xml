@@ -5,7 +5,7 @@
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
-          <include name="Buyout_Add_After_Contract_Generation_through_Edit_Terms" invocation-numbers="0"/>
+          <include name="Buyout_Add_After_Contract_Generation_through_Edit_Terms" invocation-numbers="16 17 18 11 13 14 15"/>
           <include name="setup"/>
           <include name="Kill"/>
         </methods>
