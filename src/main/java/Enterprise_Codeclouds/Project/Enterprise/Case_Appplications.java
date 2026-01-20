@@ -26,6 +26,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
+import com.microsoft.playwright.impl.Stream;
+
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
@@ -62,8 +64,8 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	
-	  @Test(dataProvider="sendEmailData")
-	  public void Email_sender(TreeMap<String,String> data) throws IOException, InterruptedException{
+	  @Test(dataProvider="case_plus_plaintiff")
+	  public void Email_sender(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> data) throws IOException, InterruptedException{
 		
 		
 		  Application_Locaters p = new Application_Locaters(d);
@@ -73,17 +75,31 @@ public class Case_Appplications extends Header_Manager{
 		  String Subject = data.get("Subject");
 		  String to = data.get("To");
 		  String Mail_Body = data.get("Message");
+		  String Plaintiff_name = Plaintiff.get("First Name");
+		  
+		  System.out.println("Plaintiff Name is   "+Plaintiff_name);
+		  System.out.println();
 		  
 		   try{p.Send_button();}
 	       catch(Exception not_in_Case_Details) {	    
 		   sd.Side_menu_option_clicker("Applications", d,"N/A");
 		   p.landed_in_applicationList_confirmation();
 		   p.Filter_clear().click();
-		   WebElement Status_filter = p.Application_status_filter();
-		   Status_filter.click();
-		   Application_Filter_Option_Selector("Funded");
-		   p.rows().get(1).click();
+		   WebElement Search = p.Application_search();
+		   Search.sendKeys(Plaintiff_name);
+		   Thread.sleep(1800);
+		   List<WebElement> result_rows;
+		  try {
+		   result_rows = p.rows();
+		   result_rows.get(0).click();
 		   Thread.sleep(800);}
+		  catch(Exception Result_still_not_fetched){
+			 System.out.println("Exception Found in fetching result rows thereby retrying");
+			 System.out.println();
+		   Thread.sleep(800);  
+		   result_rows = p.rows();
+		   result_rows.get(0).click();
+		   Thread.sleep(800);}}
 		   List<WebElement> Case_Tags;
 		   try {
 		   Case_Tags = p.Case_tags();}
@@ -228,9 +244,9 @@ public class Case_Appplications extends Header_Manager{
 	            + "We are unable to proceed without the pending details. Please respond or upload the required information to avoid delays.\n\n"
 	            + "Regards.");
 
-	      return new Object[][]{
+	      return new Object[][]{/*
 	              {e1},{e2},{e3},{e4},{e5},
-	              {e6},{e7},{e8},{e9},{e10}
+	              {e6},{e7},{e8},{e9},*/{e10}
 	      };
 	  }
 
@@ -418,7 +434,7 @@ public class Case_Appplications extends Header_Manager{
 
 	
 	@Test(dataProvider="case_plus_plaintiff")
-	public void Add_case(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data) throws IOException, InterruptedException{
+	public void Add_case(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> Email_Send_Data) throws IOException, InterruptedException{
 		
 		
 		Application_Locaters p = new Application_Locaters(d);
@@ -737,7 +753,7 @@ public class Case_Appplications extends Header_Manager{
 	
 	    
 	     @Test(dataProvider="case_plus_plaintiff")
-	     public void Buyout_Add_After_Contract_Generation_through_Edit_Terms(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data) throws InterruptedException, IOException{
+	     public void Buyout_Add_After_Contract_Generation_through_Edit_Terms(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> Email_Send_Data) throws InterruptedException, IOException{
 	    	 
 	    	Application_Locaters p = new Application_Locaters(d);
 	        Login_Locaters lg = new Login_Locaters(d);
@@ -2237,18 +2253,20 @@ public class Case_Appplications extends Header_Manager{
 	    Object[][] attorney_datas  = at.attorneyfData(); 
 	    Object[][] law_firm_datas =  lfd.lawFirmData();
 	    Object[][] Staff_datas =     at.Staff_data();
+	    Object[][] Email_datas =       sendEmailData();
 	    
-	    int n = Math.min(Math.min(case_datas.length, law_firm_datas.length),Math.min(plaintiff_datas.length, attorney_datas.length));
+	    int n =  IntStream.of( plaintiff_datas.length, case_datas.length, attorney_datas.length, law_firm_datas.length, Staff_datas.length, Email_datas.length ).min().orElse(0);
 
 	    // ✅ 3 columns now: case, plaintiff, attorney
-	    Object[][] final_set = new Object[n][5];
+	    Object[][] final_set = new Object[n][6];
 
 	    for(int i = 0; i < n; i++){
 	        final_set[i][0] = case_datas[i][0];       // case map
 	        final_set[i][1] = plaintiff_datas[i][0];  // plaintiff map
 	        final_set[i][2] = attorney_datas[i][0];   // attorney map
 	        final_set[i][3] = law_firm_datas[i][0];   // law firm map
-	        final_set[i][4] = Staff_datas[i][0];     // Staff map
+	        final_set[i][4] = Staff_datas[i][0];      // Staff map
+	        final_set[i][5] = Email_datas[i][0];      // Email data
 	    }
 	    return final_set;}
 	
