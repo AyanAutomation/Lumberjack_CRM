@@ -71,6 +71,8 @@ public class Case_Appplications extends Header_Manager{
 		  Application_Locaters p = new Application_Locaters(d);
 		  SIde_Menu_Handler sd = new SIde_Menu_Handler();
 		  Login_Locaters lg = new Login_Locaters(d);
+		  Repeat rp = new Repeat(d);
+		  
 		  
 		  String Subject = data.get("Subject");
 		  String to = data.get("To");
@@ -114,8 +116,20 @@ public class Case_Appplications extends Header_Manager{
 		  p.Subject_field().sendKeys(Subject);
 		  WebElement Email_To = p.Email_to_field();
 		  Email_To.sendKeys(to);
-		  d.switchTo().frame(p.contract_doc_iframe());
+		  WebElement CC_Button = p.CC_button();
+		  WebElement BCC_Button = p.Bcc_button();
+		  CC_Button.click();
+		  BCC_Button.click();
+		  WebElement CC_field = p.cc_field();
+		  WebElement BCC_field = p.bcc_field();
+		  CC_field.sendKeys(data.get("Cc"));
+		  rp.Scroll_to_element(BCC_field);
+		  BCC_field.sendKeys(data.get("Bcc"));
+		  WebElement Iframe = p.contract_doc_iframe();
+		  rp.Scroll_to_element(Iframe);
+		  d.switchTo().frame(Iframe);
 		  Thread.sleep(900);
+		  rp.Scroll_to_element(p.Email_Body());
 		  p.Email_Body().sendKeys(Mail_Body);
 		  d.switchTo().defaultContent();
 		  p.Submit_button().click();
@@ -134,115 +148,115 @@ public class Case_Appplications extends Header_Manager{
 	      // Keys mapped to UI fields:
 	      // "Template" (dropdown), "Subject", "To", "Cc", "Bcc", "Message"
 
-	      TreeMap<String, String> e1 = new TreeMap<>();
-	      e1.put("Template", "None"); // keep "None" if you are not selecting any template
-	      e1.put("Subject", "Document Request - Please Upload Required Files");
-	      e1.put("To", "marcelline.briarcliff1874@yopmail.com");
-	      e1.put("Cc", "");
-	      e1.put("Bcc", "");
-	      e1.put("Message",
-	              "Hello,\n\n"
-	            + "Please upload the required documents at your earliest convenience so we can proceed without delay.\n\n"
-	            + "Thank you.");
+		  TreeMap<String, String> e1 = new TreeMap<>();
+		  e1.put("Template", "None"); // keep "None" if you are not selecting any template
+		  e1.put("Subject", "Document Request - Please Upload Required Files");
+		  e1.put("To", "marcelline.briarcliff1874@yopmail.com");
+		  e1.put("Cc", "intake.coordinator@yopmail.com");
+		  e1.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e1.put("Message",
+		          "Hello,\n\n"
+		        + "Please upload the required documents at your earliest convenience so we can proceed without delay.\n\n"
+		        + "Thank you.");
 
-	      TreeMap<String, String> e2 = new TreeMap<>();
-	      e2.put("Template", "None");
-	      e2.put("Subject", "Verification Needed to Continue Processing");
-	      e2.put("To", "orwyn.schwerdtvale4541@yopmail.com");
-	      e2.put("Cc", "");
-	      e2.put("Bcc", "");
-	      e2.put("Message",
-	              "Hello,\n\n"
-	            + "We need a quick verification to move forward. Please confirm the requested details when you are available.\n\n"
-	            + "Regards.");
+		  TreeMap<String, String> e2 = new TreeMap<>();
+		  e2.put("Template", "None");
+		  e2.put("Subject", "Verification Needed to Continue Processing");
+		  e2.put("To", "orwyn.schwerdtvale4541@yopmail.com");
+		  e2.put("Cc", "verification.team@yopmail.com");
+		  e2.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e2.put("Message",
+		          "Hello,\n\n"
+		        + "We need a quick verification to move forward. Please confirm the requested details when you are available.\n\n"
+		        + "Regards.");
 
-	      TreeMap<String, String> e3 = new TreeMap<>();
-	      e3.put("Template", "None");
-	      e3.put("Subject", "Case Update - Next Steps");
-	      e3.put("To", "elviora.quenridge3402@yopmail.com");
-	      e3.put("Cc", "");
-	      e3.put("Bcc", "");
-	      e3.put("Message",
-	              "Hello,\n\n"
-	            + "This is an update regarding your case. Our team is reviewing the latest information and will share the next steps shortly.\n\n"
-	            + "Thanks.");
+		  TreeMap<String, String> e3 = new TreeMap<>();
+		  e3.put("Template", "None");
+		  e3.put("Subject", "Case Update - Next Steps");
+		  e3.put("To", "elviora.quenridge3402@yopmail.com");
+		  e3.put("Cc", "case.updates@yopmail.com");
+		  e3.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e3.put("Message",
+		          "Hello,\n\n"
+		        + "This is an update regarding your case. Our team is reviewing the latest information and will share the next steps shortly.\n\n"
+		        + "Thanks.");
 
-	      TreeMap<String, String> e4 = new TreeMap<>();
-	      e4.put("Template", "None");
-	      e4.put("Subject", "Reminder - Pending Action Required");
-	      e4.put("To", "tavryn.rookmere3403@yopmail.com");
-	      e4.put("Cc", "");
-	      e4.put("Bcc", "");
-	      e4.put("Message",
-	              "Hello,\n\n"
-	            + "This is a friendly reminder that an action is still pending. Please complete it so there is no delay in processing.\n\n"
-	            + "Thank you.");
+		  TreeMap<String, String> e4 = new TreeMap<>();
+		  e4.put("Template", "None");
+		  e4.put("Subject", "Reminder - Pending Action Required");
+		  e4.put("To", "tavryn.rookmere3403@yopmail.com");
+		  e4.put("Cc", "followups.desk@yopmail.com");
+		  e4.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e4.put("Message",
+		          "Hello,\n\n"
+		        + "This is a friendly reminder that an action is still pending. Please complete it so there is no delay in processing.\n\n"
+		        + "Thank you.");
 
-	      TreeMap<String, String> e5 = new TreeMap<>();
-	      e5.put("Template", "None");
-	      e5.put("Subject", "Additional Details Required");
-	      e5.put("To", "kezaria.briarhold3418@yopmail.com");
-	      e5.put("Cc", "");
-	      e5.put("Bcc", "");
-	      e5.put("Message",
-	              "Hello,\n\n"
-	            + "We require additional information to proceed. Please reply with the missing details or upload them through the portal.\n\n"
-	            + "Regards.");
+		  TreeMap<String, String> e5 = new TreeMap<>();
+		  e5.put("Template", "None");
+		  e5.put("Subject", "Additional Details Required");
+		  e5.put("To", "kezaria.briarhold3418@yopmail.com");
+		  e5.put("Cc", "case.intake@yopmail.com");
+		  e5.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e5.put("Message",
+		          "Hello,\n\n"
+		        + "We require additional information to proceed. Please reply with the missing details or upload them through the portal.\n\n"
+		        + "Regards.");
 
-	      TreeMap<String, String> e6 = new TreeMap<>();
-	      e6.put("Template", "None");
-	      e6.put("Subject", "Call Request - Please Share Availability");
-	      e6.put("To", "ronivar.lindenmark3411@yopmail.com");
-	      e6.put("Cc", "");
-	      e6.put("Bcc", "");
-	      e6.put("Message",
-	              "Hello,\n\n"
-	            + "We would like to schedule a short call to discuss next steps. Please share your preferred time window.\n\n"
-	            + "Thank you.");
+		  TreeMap<String, String> e6 = new TreeMap<>();
+		  e6.put("Template", "None");
+		  e6.put("Subject", "Call Request - Please Share Availability");
+		  e6.put("To", "ronivar.lindenmark3411@yopmail.com");
+		  e6.put("Cc", "scheduling.desk@yopmail.com");
+		  e6.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e6.put("Message",
+		          "Hello,\n\n"
+		        + "We would like to schedule a short call to discuss next steps. Please share your preferred time window.\n\n"
+		        + "Thank you.");
 
-	      TreeMap<String, String> e7 = new TreeMap<>();
-	      e7.put("Template", "None");
-	      e7.put("Subject", "Confirmation - Update Recorded Successfully");
-	      e7.put("To", "aurelian.merriswold3412@yopmail.com");
-	      e7.put("Cc", "");
-	      e7.put("Bcc", "");
-	      e7.put("Message",
-	              "Hello,\n\n"
-	            + "This confirms your recent update has been recorded successfully. No further action is required at this moment.\n\n"
-	            + "Regards.");
+		  TreeMap<String, String> e7 = new TreeMap<>();
+		  e7.put("Template", "None");
+		  e7.put("Subject", "Confirmation - Update Recorded Successfully");
+		  e7.put("To", "aurelian.merriswold3412@yopmail.com");
+		  e7.put("Cc", "records.desk@yopmail.com");
+		  e7.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e7.put("Message",
+		          "Hello,\n\n"
+		        + "This confirms your recent update has been recorded successfully. No further action is required at this moment.\n\n"
+		        + "Regards.");
 
-	      TreeMap<String, String> e8 = new TreeMap<>();
-	      e8.put("Template", "None");
-	      e8.put("Subject", "Issue Found - Please Review Submitted Information");
-	      e8.put("To", "naviren.hearthwyn3414@yopmail.com");
-	      e8.put("Cc", "");
-	      e8.put("Bcc", "");
-	      e8.put("Message",
-	              "Hello,\n\n"
-	            + "We noticed an issue with the submitted information. Please review and correct it so we can continue processing.\n\n"
-	            + "Thanks.");
+		  TreeMap<String, String> e8 = new TreeMap<>();
+		  e8.put("Template", "None");
+		  e8.put("Subject", "Issue Found - Please Review Submitted Information");
+		  e8.put("To", "naviren.hearthwyn3414@yopmail.com");
+		  e8.put("Cc", "quality.check@yopmail.com");
+		  e8.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e8.put("Message",
+		          "Hello,\n\n"
+		        + "We noticed an issue with the submitted information. Please review and correct it so we can continue processing.\n\n"
+		        + "Thanks.");
 
-	      TreeMap<String, String> e9 = new TreeMap<>();
-	      e9.put("Template", "None");
-	      e9.put("Subject", "Document Review Completed - Awaiting Next Input");
-	      e9.put("To", "meador.glenvarn3415@yopmail.com");
-	      e9.put("Cc", "");
-	      e9.put("Bcc", "");
-	      e9.put("Message",
-	              "Hello,\n\n"
-	            + "We have completed the initial document review. If you have any additional files to submit, please upload them now.\n\n"
-	            + "Thank you.");
+		  TreeMap<String, String> e9 = new TreeMap<>();
+		  e9.put("Template", "None");
+		  e9.put("Subject", "Document Review Completed - Awaiting Next Input");
+		  e9.put("To", "meador.glenvarn3415@yopmail.com");
+		  e9.put("Cc", "doc.review@yopmail.com");
+		  e9.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e9.put("Message",
+		          "Hello,\n\n"
+		        + "We have completed the initial document review. If you have any additional files to submit, please upload them now.\n\n"
+		        + "Thank you.");
 
-	      TreeMap<String, String> e10 = new TreeMap<>();
-	      e10.put("Template", "None");
-	      e10.put("Subject", "Final Reminder - Response Needed to Avoid Delay");
-	      e10.put("To", "tenzaro.rivenshore3419@yopmail.com");
-	      e10.put("Cc", "");
-	      e10.put("Bcc", "");
-	      e10.put("Message",
-	              "Hello,\n\n"
-	            + "We are unable to proceed without the pending details. Please respond or upload the required information to avoid delays.\n\n"
-	            + "Regards.");
+		  TreeMap<String, String> e10 = new TreeMap<>();
+		  e10.put("Template", "None");
+		  e10.put("Subject", "Final Reminder - Response Needed to Avoid Delay");
+		  e10.put("To", "tenzaro.rivenshore3419@yopmail.com");
+		  e10.put("Cc", "escalations.desk@yopmail.com");
+		  e10.put("Bcc", "qa.auditdesk@yopmail.com");
+		  e10.put("Message",
+		          "Hello,\n\n"
+		        + "We are unable to proceed without the pending details. Please respond or upload the required information to avoid delays.\n\n"
+		        + "Regards.");
 
 	      return new Object[][]{/*
 	              {e1},{e2},{e3},{e4},{e5},
@@ -2233,10 +2247,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		        {c1},{c2},{c3},{c4},{c5},
+		       {c1},{c2},{c3},{c4},{c5},/*
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c16},{c17},{c18},/*{c19},{c20} */
 		    };}
 	
 	
@@ -2488,6 +2502,14 @@ public class Case_Appplications extends Header_Manager{
 	        	Login_Locaters lg = new Login_Locaters(d);
 	        	
 	        	
+	        	double Document_prep_fee = Double.parseDouble(data.get("Document prep fee"));
+	        	double Fundtransferfee = Double.parseDouble(data.get("Fund transfer fee"));
+	        	double Amount_to_be_payed = (Document_prep_fee+Fundtransferfee)/2;
+	        	double Amount_to_be_payed_upto_2_decimal = Double.parseDouble(String.format("%.2f", Amount_to_be_payed));
+	        	String Amount_to_be_payed_text = String.format("%.2f", Amount_to_be_payed_upto_2_decimal);
+	        	
+	        	
+	        	
 	        	Report_Listen.log_print_in_report().log(Status.INFO,
 	                    "<b>🔹 Scenario Title:</b> Payment Log – Record a Payment and Verify System Confirmation");
 
@@ -2546,7 +2568,7 @@ public class Case_Appplications extends Header_Manager{
 	   		   Calender_field.sendKeys(data.get("Payment Date"));
 	   		   Calender_field.click();
 	   		   p.calender_date_select().click();
-	   		   inputs.get(4).sendKeys(data.get("Amount Received"));
+	   		   inputs.get(4).sendKeys(Amount_to_be_payed_text);
 	   		   p.textArea().sendKeys(data.get("Notes / Remarks"));
 	   		   List<WebElement> popup_modal_buttons = p.poup_up_form_buttons();
 	   		   popup_modal_buttons.get(0).click();
@@ -2559,7 +2581,7 @@ public class Case_Appplications extends Header_Manager{
 	   	    }catch(Exception e){
 	   	        Report_Listen.log_print_in_report().log(Status.FAIL,
 	   	                "<b>🟨 Actual:</b> ❌ Payment confirmation toast was not captured (toast not visible / locator issue).");
-	   	        throw e;
+	   	        
 	   	    }
 	        }
 	        

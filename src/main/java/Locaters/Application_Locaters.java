@@ -165,15 +165,15 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//*[contains(@class,'ant-select-dropdown-placement-bottomLeft')])[2]")
 	private WebElement  Email_to_option_dropdown;
 	@FindBy(xpath="//body[@spellcheck='false']")
-	private WebElement  Email_Body; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Email_Body; 
+	@FindBy(xpath="//*[text()='Cc']/..")
+	private WebElement CC_button;
+	@FindBy(xpath="(//input[@type='search'])[6]")
+	private WebElement cc_field;
+	@FindBy(xpath="(//input[@type='search'])[7]")
+	private WebElement bcc_field;
+	@FindBy(xpath="//*[text()='Bcc']/..")
+	private WebElement Bcc_button;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -648,19 +648,19 @@ public class Application_Locaters extends Repeat{
 	return Email_to_option_dropdown;}   
 	public WebElement Email_Body(){
 	wait_for_theElement(Email_Body);
-	return Email_Body;}  /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Email_Body;}   
+	public WebElement CC_button(){
+	wait_for_theElement(CC_button);
+	return CC_button;}   
+	public WebElement cc_field(){
+	wait_for_theElement(cc_field);
+	return cc_field;}   
+	public WebElement bcc_field(){
+	wait_for_theElement(bcc_field);
+	return bcc_field;}   
+	public WebElement Bcc_button(){
+	wait_for_theElement(Bcc_button);
+	return Bcc_button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
