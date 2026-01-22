@@ -160,7 +160,7 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Landed_in_sms_send_form; 
 	@FindBy(xpath="(//input[@type='text' or contains(@class,'ant-input-outlined')])[2]")
 	private WebElement  Subject_field;
-	@FindBy(xpath="(//input[@type='search'])[5]")
+	@FindBy(xpath="(//input[@type='search'])[4]")
 	private WebElement  Email_to_field;
 	@FindBy(xpath="(//*[contains(@class,'ant-select-dropdown-placement-bottomLeft')])[2]")
 	private WebElement  Email_to_option_dropdown;
@@ -168,18 +168,18 @@ public class Application_Locaters extends Repeat{
 	private WebElement  Email_Body; 
 	@FindBy(xpath="//*[text()='Cc']/..")
 	private WebElement CC_button;
-	@FindBy(xpath="(//input[@type='search'])[6]")
+	@FindBy(xpath="(//input[@type='search'])[5]")
 	private WebElement cc_field;
-	@FindBy(xpath="(//input[@type='search'])[7]")
+	@FindBy(xpath="(//input[@type='search'])[6]")
 	private WebElement bcc_field;
 	@FindBy(xpath="//*[text()='Bcc']/..")
-	private WebElement Bcc_button;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Bcc_button;
+	@FindBy(xpath="//*[contains(@class,'ant-descriptions ant-descriptions-small')]")
+	private WebElement  Application_Card_Body; 
+	@FindBy(xpath="//*[@class='case-feed-container']")
+	private WebElement  Case_Feed_Section; 
+	@FindBy(xpath="(//*[@class='ant-timeline-item-content']//div)[1]")
+	private WebElement  mail_card_in_feed; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -660,19 +660,20 @@ public class Application_Locaters extends Repeat{
 	return bcc_field;}   
 	public WebElement Bcc_button(){
 	wait_for_theElement(Bcc_button);
-	return Bcc_button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Bcc_button;}   
+	public WebElement Application_Card_Body(){
+	wait_for_theElement(Application_Card_Body);
+	return Application_Card_Body;}   
+	public WebElement Case_Feed_Section(){
+	wait_for_theElement(Case_Feed_Section);
+	return Case_Feed_Section;}   
+	public List <WebElement> mail_card_sections(){
+	List <WebElement> mail_card_sections = Case_Feed_Section().findElements(By.xpath(".//*[contains(@class,'ant-typography')]"));
+	wait_for_theElement(mail_card_sections);
+	return mail_card_sections;}   
+	public WebElement mail_card_in_feed(){
+	wait_for_theElement(mail_card_in_feed);
+	return mail_card_in_feed;}    /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
