@@ -179,11 +179,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[@class='case-feed-container']")
 	private WebElement  Case_Feed_Section; 
 	@FindBy(xpath="(//*[@class='ant-timeline-item-content']//div)[1]")
-	private WebElement  mail_card_in_feed; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  mail_card_in_feed; 
+	@FindBy(xpath="//*[text()='Payoff Details']/..")
+	private WebElement  Payoff_Button;
+	@FindBy(xpath="//*[text()='Payoff Table']")
+	private WebElement  Payoff_table;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -673,19 +673,22 @@ public class Application_Locaters extends Repeat{
 	return mail_card_sections;}   
 	public WebElement mail_card_in_feed(){
 	wait_for_theElement(mail_card_in_feed);
-	return mail_card_in_feed;}    /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return mail_card_in_feed;}    
+	public WebElement Payoff_Button(){
+	By payoff_button = By.xpath("//*[text()='Payoff Details']/..");
+	WebElement Payoff_Button= wait_for_presenceBy(payoff_button);
+	return Payoff_Button;}   
+	public WebElement Payoff_table_title(){
+	wait_for_theElement(Payoff_table);
+	return Payoff_table;}   
+	public WebElement modal_table(){
+	WebElement modal_table = popup_modal().findElement(By.xpath(".//tbody"));
+	wait_for_theElement(modal_table);
+	return modal_table;}   
+	public List <WebElement> modal_table_cells(){
+	List <WebElement> modal_table_cells = modal_table().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')]"));
+	wait_for_theElement(modal_table_cells);
+	return modal_table_cells;}  /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

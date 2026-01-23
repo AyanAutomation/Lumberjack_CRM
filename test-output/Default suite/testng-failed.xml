@@ -5,9 +5,9 @@
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
-          <include name="Email_sender" invocation-numbers="2"/>
           <include name="setup"/>
           <include name="Kill"/>
+          <include name="PayOff_Lien_List"/>
         </methods>
       </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->
     </classes>

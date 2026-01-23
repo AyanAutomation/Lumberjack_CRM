@@ -43,6 +43,7 @@ public class Case_Appplications extends Header_Manager{
 	TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();
     TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
 	TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
+	TreeMap<String,Double> PayoffTable_values =  new TreeMap<String,Double>();
 	
 	
 	public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedException{
@@ -481,7 +482,8 @@ public class Case_Appplications extends Header_Manager{
 		JavascriptExecutor js = (JavascriptExecutor)d; 
 		Attorney_module at = new Attorney_module();
 		
-		Collections_Clear();
+		//Collections_Clear();
+		monthly_emi.clear();
 		
 		int Buyout_Amount = Integer.parseInt(Case_Data.get("Buyout Amount"));
 		int Approved_Amount = Integer.parseInt(Case_Data.get("Approved Amount"));
@@ -799,7 +801,7 @@ public class Case_Appplications extends Header_Manager{
 	 		JavascriptExecutor js = (JavascriptExecutor)d; 
 	 		Attorney_module at = new Attorney_module();
 	 		
-	 		Collections_Clear();
+	 		monthly_emi.clear();
 	 		
 	 		int Buyout_Amount = Integer.parseInt(Case_Data.get("Buyout Amount"));
 	 		int Approved_Amount = Integer.parseInt(Case_Data.get("Approved Amount"));
@@ -1321,7 +1323,74 @@ public class Case_Appplications extends Header_Manager{
 	 			System.out.println();}}
 	     
 	     
-	 
+	     @Test
+	      public void PayOff_Lien_List() throws IOException, InterruptedException{
+	    	  
+	    	  
+	    	  Application_Locaters p = new Application_Locaters(d);
+		      Login_Locaters lg = new Login_Locaters(d);
+			  SIde_Menu_Handler sd = new SIde_Menu_Handler();
+			  Repeat rp = new Repeat(d);
+	    	  
+			  
+			  
+			  PayoffTable_values.clear();
+			  
+			  
+			  try{p.Case_Action_Dropdown();}
+		       catch(Exception not_in_Case_Details) {	    
+			   sd.Side_menu_option_clicker("Applications", d,"N/A");
+			   p.landed_in_applicationList_confirmation();
+			   p.Filter_clear().click();
+			   WebElement Status_filter = p.Application_status_filter();
+			   Status_filter.click();
+			   Application_Filter_Option_Selector("Funded");
+			   p.rows().get(2).click();
+			   Thread.sleep(800);}
+			   List<WebElement> Case_Tags;
+			   try {
+			   Case_Tags = p.Case_tags();}
+			   catch(RuntimeException tags){
+				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+				   System.out.println();
+				   Thread.sleep(1200);
+				   Case_Tags = p.Case_tags();}
+			   try{tab_selector("Liens");}
+				catch(Exception Lien_tab_retry){
+					Thread.sleep(800);
+					tab_selector("Liens");}
+	    	    WebElement payoff_button = p.Payoff_Button();
+	    	    rp.Scroll_to_element(payoff_button);
+	    	    rp.wait_for_Clickable(payoff_button);
+	    	    payoff_button.click();
+	    	    p.Payoff_table_title();
+	    	    List<WebElement> Cells;
+	    	    try{
+	    	    	Cells = p.modal_table_cells();}
+	    	    catch(Exception pay_off_table_rows_not_found){
+	    	    	Thread.sleep(800);
+	    	    	p.modal_table();
+	    	    	Cells = p.modal_table_cells();}
+	    	    int m=0;
+	    	    for(WebElement Cell:Cells){
+	    	    	
+	    	    	String cellvalue=Cell.getText().trim();
+	    	    	
+	    	    	
+	    	    	if(!cellvalue.contains("/")){
+	    	    		String cellvalue_clean = cellvalue .replace("$","") .replace(",","") .replace("\u00A0","") .trim();
+	    	    		double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
+	    	            double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
+                        PayoffTable_values.put("month "+m, each_month_payable);
+                        System.out.println("month "+m+"  "+ each_month_payable);
+    	    	    	System.out.println();
+	    	            m++;
+	    	    	}
+	    	    }
+	    	    
+	    	    
+	    	  
+	      }
 	     
 	     public void Reopen_contract_without_saving() throws InterruptedException{
 	    	 
@@ -2349,7 +2418,11 @@ public class Case_Appplications extends Header_Manager{
 		   Login_Locaters lg = new Login_Locaters(d);
 		   
 		   
-		   Collections_Clear();
+		   LIEN_AMOUNT_Values.clear();
+		   TOTAL_PRINCIPAL_Values.clear();
+		   CURRENT_LIEN_BALANCE_Values.clear();
+		   RETURNED_AMT_Values.clear();
+		  // Collections_Clear();
 		   int step=1;
 		   
 		   List<WebElement> lien_rows = null;
@@ -2645,7 +2718,7 @@ public class Case_Appplications extends Header_Manager{
 			   JavascriptExecutor js = (JavascriptExecutor)d; 
 			   SIde_Menu_Handler sd = new SIde_Menu_Handler();
 			   
-			   Collections_Clear();
+			  // Collections_Clear();
 			   
 				String Requested_Amount= Case_Data.get("Requested Amount");
 				
@@ -2993,16 +3066,7 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(900);
 		tabs.clear();}
 	
-	
-	public void Collections_Clear(){
-		
-		LIEN_AMOUNT_Values.clear();
-		TOTAL_PRINCIPAL_Values.clear();
-		CURRENT_LIEN_BALANCE_Values.clear();
-		RETURNED_AMT_Values.clear();
-		monthly_emi.clear();
-		
-	}
+
 
 
 
