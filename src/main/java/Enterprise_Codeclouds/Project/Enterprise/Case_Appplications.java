@@ -1312,7 +1312,7 @@ public class Case_Appplications extends Header_Manager{
 			    Sign_in_button_.click();
 				//Docu_Sign_Signature();
 				manual_lien_generation(Sign_in_button_);
-				Pay_Off_calculator(Case_Data,Plaintiff,attorneyData);
+			//	Pay_Off_calculator(Case_Data,Plaintiff,attorneyData);
 				Email_sender(Case_Data,Plaintiff,attorneyData,Law_Firm_Data,Staff_Data,Email_Send_Data);
 	 	    }}
 	 		
