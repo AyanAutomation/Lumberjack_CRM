@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 23, 2026 03:55:43 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 24, 2026 08:52:03 pm</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +80,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">PayOff_Lien_List</p>
+            <p class="name">Plaintiff_edit_in_case</p>
             <p class="text-sm">
-              <span>3:55:46 PM</span> / <span>00:00:28:418</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:52:11 pm</span> / <span>00:00:24:326</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">PayOff_Lien_List</h5>
-<span class='badge badge-success'>01.23.2026 3:55:46 PM</span>
-<span class='badge badge-danger'>01.23.2026 3:56:14 PM</span>
-<span class='badge badge-default'>00:00:28:418</span>
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:52:11 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:52:35 pm</span>
+<span class='badge badge-default'>00:00:24:326</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -104,15 +110,2985 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:11 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:11 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:11 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 2058368716<br>
+<b>City/State/Zip:</b> Birmingham / Alabama / 35203<br>
+<b>Address Line 1:</b> 1801 5th Ave N<br>
+<b>Address Line 2:</b> Suite 710
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:11 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:56:01 PM</td>
+        <td>8:52:17 pm</td>
         <td>
           ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:25 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:56:14 PM</td>
+        <td>8:52:35 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:35 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:52:35 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (205) 836-8716<br>
+<b>Displayed Phone:</b> (205) 836-8716<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:52:35 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> vaelora.thorncairn8716@yopmail.com<br>
+<b>Displayed Email:</b> vaelora.thorncairn8716@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:52:35 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 1801 5th Ave N, Suite 710, Birmingham, 35203<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 1801 5th Ave N<br>
+• Address Line 2: Suite 710<br>
+• City: Birmingham<br>
+• State: Alabama<br>
+• Zip: 35203<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:52:35 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-11-8716<br>
+<b>Displayed SSN:</b> 903-11-8716<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:52:35 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:52:42 pm</span> / <span>00:00:24:279</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:52:42 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:53:07 pm</span>
+<span class='badge badge-default'>00:00:24:279</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:42 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:42 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:42 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 9074684429<br>
+<b>City/State/Zip:</b> Anchorage / Alaska / 99501<br>
+<b>Address Line 1:</b> 701 W 8th Ave<br>
+<b>Address Line 2:</b> Apt 4B
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:42 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:52:49 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:52:57 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:06 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:06 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:07 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (907) 468-4429<br>
+<b>Displayed Phone:</b> (907) 468-4429<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:07 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> orinthia.foxmere4429@yopmail.com<br>
+<b>Displayed Email:</b> orinthia.foxmere4429@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:53:07 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 701 W 8th Ave, Apt 4B, Anchorage, 99501<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 701 W 8th Ave<br>
+• Address Line 2: Apt 4B<br>
+• City: Anchorage<br>
+• State: Alaska<br>
+• Zip: 99501<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:07 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-12-4429<br>
+<b>Displayed SSN:</b> 903-12-4429<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:07 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:53:12 pm</span> / <span>00:00:22:812</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:53:12 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:53:35 pm</span>
+<span class='badge badge-default'>00:00:22:812</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:12 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:12 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:12 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 4807199068<br>
+<b>City/State/Zip:</b> Phoenix / Arizona / 85004<br>
+<b>Address Line 1:</b> 2 N Central Ave<br>
+<b>Address Line 2:</b> Floor 18
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:12 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:17 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:25 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:34 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:34 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:35 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (480) 719-9068<br>
+<b>Displayed Phone:</b> (480) 719-9068<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:35 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> thalvren.rivenhart9068@yopmail.com<br>
+<b>Displayed Email:</b> thalvren.rivenhart9068@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:53:35 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 2 N Central Ave, Floor 18, Phoenix, 85004<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 2 N Central Ave<br>
+• Address Line 2: Floor 18<br>
+• City: Phoenix<br>
+• State: Arizona<br>
+• Zip: 85004<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:35 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-13-9068<br>
+<b>Displayed SSN:</b> 903-13-9068<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:35 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:53:47 pm</span> / <span>00:00:23:098</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:53:47 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:54:10 pm</span>
+<span class='badge badge-default'>00:00:23:098</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:47 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:47 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:47 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 5016631879<br>
+<b>City/State/Zip:</b> Little Rock / Arkansas / 72201<br>
+<b>Address Line 1:</b> 425 W Capitol Ave<br>
+<b>Address Line 2:</b> Unit 1508
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:53:47 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:53:52 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:00 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:09 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:09 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:10 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (501) 663-1879<br>
+<b>Displayed Phone:</b> (501) 663-1879<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:10 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> marivelle.briarlock1879@yopmail.com<br>
+<b>Displayed Email:</b> marivelle.briarlock1879@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:54:10 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 425 W Capitol Ave, Unit 1508, Little Rock, 72201<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 425 W Capitol Ave<br>
+• Address Line 2: Unit 1508<br>
+• City: Little Rock<br>
+• State: Arkansas<br>
+• Zip: 72201<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:10 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-14-1879<br>
+<b>Displayed SSN:</b> 903-14-1879<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:10 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:54:14 pm</span> / <span>00:00:11:633</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:54:14 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:54:26 pm</span>
+<span class='badge badge-default'>00:00:11:633</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:14 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:14 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:14 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 4159024409<br>
+<b>City/State/Zip:</b> San Francisco / California / 94105<br>
+<b>Address Line 1:</b> 1 Market St<br>
+<b>Address Line 2:</b> Suite 820
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:14 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:20 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:54:26 pm</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:47)
+	at Locaters.Application_Locaters.Case_tags(Application_Locaters.java:509)
+	at Enterprise_Codeclouds.Project.Enterprise.Plaintiff_Module.Plaintiff_edit_in_case(Plaintiff_Module.java:194)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:54:33 pm</span> / <span>00:00:11:244</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:54:33 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:54:45 pm</span>
+<span class='badge badge-default'>00:00:11:244</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:33 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:33 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:33 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 3036147729<br>
+<b>City/State/Zip:</b> Denver / Colorado / 80202<br>
+<b>Address Line 1:</b> 1700 Lincoln St<br>
+<b>Address Line 2:</b> Suite 2130
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:33 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:54:39 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:54:45 pm</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:47)
+	at Locaters.Application_Locaters.Case_tags(Application_Locaters.java:509)
+	at Enterprise_Codeclouds.Project.Enterprise.Plaintiff_Module.Plaintiff_edit_in_case(Plaintiff_Module.java:194)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:54:53 pm</span> / <span>00:00:27:331</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:54:53 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:55:20 pm</span>
+<span class='badge badge-default'>00:00:27:331</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:53 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:53 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:53 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 2037753189<br>
+<b>City/State/Zip:</b> Hartford / Connecticut / 06103<br>
+<b>Address Line 1:</b> 100 Pearl St<br>
+<b>Address Line 2:</b> Apt 14C
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:54:53 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:00 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:11 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (203) 775-3189<br>
+<b>Displayed Phone:</b> (203) 775-3189<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> caldrin.hearthvale3189@yopmail.com<br>
+<b>Displayed Email:</b> caldrin.hearthvale3189@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 100 Pearl St, Apt 14C, Hartford, 06103<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 100 Pearl St<br>
+• Address Line 2: Apt 14C<br>
+• City: Hartford<br>
+• State: Connecticut<br>
+• Zip: 06103<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-17-3189<br>
+<b>Displayed SSN:</b> 903-17-3189<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:20 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:55:32 pm</span> / <span>00:00:23:398</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:55:32 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:55:56 pm</span>
+<span class='badge badge-default'>00:00:23:398</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:32 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:32 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:32 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 3026886914<br>
+<b>City/State/Zip:</b> Wilmington / Delaware / 19801<br>
+<b>Address Line 1:</b> 1201 N Market St<br>
+<b>Address Line 2:</b> Suite 930
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:32 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:39 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:46 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:55 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:55 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:56 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (302) 688-6914<br>
+<b>Displayed Phone:</b> (302) 688-6914<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:56 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> saskiora.wrenfield6914@yopmail.com<br>
+<b>Displayed Email:</b> saskiora.wrenfield6914@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:55:56 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 1201 N Market St, Suite 930, Wilmington, 19801<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 1201 N Market St<br>
+• Address Line 2: Suite 930<br>
+• City: Wilmington<br>
+• State: Delaware<br>
+• Zip: 19801<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:56 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-18-6914<br>
+<b>Displayed SSN:</b> 903-18-6914<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:55:56 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:55:58 pm</span> / <span>00:00:22:806</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:55:58 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:56:21 pm</span>
+<span class='badge badge-default'>00:00:22:806</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:58 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:58 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:58 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 9046182486<br>
+<b>City/State/Zip:</b> Miami / Florida / 33130<br>
+<b>Address Line 1:</b> 200 S Biscayne Blvd<br>
+<b>Address Line 2:</b> Unit 2806
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:55:58 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:04 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:11 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:20 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:20 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:21 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (904) 618-2486<br>
+<b>Displayed Phone:</b> (904) 618-2486<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:21 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> neryssa.crownbridge2486@yopmail.com<br>
+<b>Displayed Email:</b> neryssa.crownbridge2486@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:56:21 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 200 S Biscayne Blvd, Unit 2806, Miami, 33130<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 200 S Biscayne Blvd<br>
+• Address Line 2: Unit 2806<br>
+• City: Miami<br>
+• State: Florida<br>
+• Zip: 33130<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:21 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-19-2486<br>
+<b>Displayed SSN:</b> 903-19-2486<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:21 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:56:24 pm</span> / <span>00:00:21:758</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:56:24 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:56:45 pm</span>
+<span class='badge badge-default'>00:00:21:758</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:24 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:24 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:24 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 4046178037<br>
+<b>City/State/Zip:</b> Atlanta / Georgia / 30303<br>
+<b>Address Line 1:</b> 191 Peachtree St NE<br>
+<b>Address Line 2:</b> Floor 32
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:24 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:30 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:36 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (404) 617-8037<br>
+<b>Displayed Phone:</b> (404) 617-8037<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> tenzair.ashbrynn8037@yopmail.com<br>
+<b>Displayed Email:</b> tenzair.ashbrynn8037@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 191 Peachtree St NE, Floor 32, Atlanta, 30303<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 191 Peachtree St NE<br>
+• Address Line 2: Floor 32<br>
+• City: Atlanta<br>
+• State: Georgia<br>
+• Zip: 30303<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-20-8037<br>
+<b>Displayed SSN:</b> 903-20-8037<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:45 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:56:48 pm</span> / <span>00:00:21:018</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:56:48 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:57:09 pm</span>
+<span class='badge badge-default'>00:00:21:018</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:48 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:48 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:48 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 6719024117<br>
+<b>City/State/Zip:</b> Hagåtña / Guam / 96910<br>
+<b>Address Line 1:</b> 238 Archbishop Flores St<br>
+<b>Address Line 2:</b> Suite 410
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:56:48 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:56:53 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:00 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (671) 902-4117<br>
+<b>Displayed Phone:</b> (671) 902-4117<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> leocindra.stonehaven4117@yopmail.com<br>
+<b>Displayed Email:</b> leocindra.stonehaven4117@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 238 Archbishop Flores St, Suite 410, Hagåtña, 96910<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 238 Archbishop Flores St<br>
+• Address Line 2: Suite 410<br>
+• City: Hagåtña<br>
+• State: Guam<br>
+• Zip: 96910<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-21-4117<br>
+<b>Displayed SSN:</b> 903-21-4117<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:09 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:57:12 pm</span> / <span>00:00:22:517</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:57:12 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:57:34 pm</span>
+<span class='badge badge-default'>00:00:22:517</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:12 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:12 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:12 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 8086149021<br>
+<b>City/State/Zip:</b> Honolulu / Hawaii / 96813<br>
+<b>Address Line 1:</b> 1001 Bishop St<br>
+<b>Address Line 2:</b> Suite 2120
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:12 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:18 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:25 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (808) 614-9021<br>
+<b>Displayed Phone:</b> (808) 614-9021<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> aureliox.merrisford9021@yopmail.com<br>
+<b>Displayed Email:</b> aureliox.merrisford9021@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 1001 Bishop St, Suite 2120, Honolulu, 96813<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 1001 Bishop St<br>
+• Address Line 2: Suite 2120<br>
+• City: Honolulu<br>
+• State: Hawaii<br>
+• Zip: 96813<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-22-9021<br>
+<b>Displayed SSN:</b> 903-22-9021<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:34 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:57:36 pm</span> / <span>00:00:22:445</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:57:36 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:57:59 pm</span>
+<span class='badge badge-default'>00:00:22:445</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:36 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:36 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:36 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 2086147327<br>
+<b>City/State/Zip:</b> Boise / Idaho / 83702<br>
+<b>Address Line 1:</b> 950 W Bannock St<br>
+<b>Address Line 2:</b> Suite 1125
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:36 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:42 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:50 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:58 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:57:58 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:59 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (208) 614-7327<br>
+<b>Displayed Phone:</b> (208) 614-7327<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:59 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> kairenox.velmont7327@yopmail.com<br>
+<b>Displayed Email:</b> kairenox.velmont7327@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:57:59 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 950 W Bannock St, Suite 1125, Boise, 83702<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 950 W Bannock St<br>
+• Address Line 2: Suite 1125<br>
+• City: Boise<br>
+• State: Idaho<br>
+• Zip: 83702<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:59 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-23-7327<br>
+<b>Displayed SSN:</b> 903-23-7327<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:57:59 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:58:01 pm</span> / <span>00:00:22:226</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:58:01 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:58:23 pm</span>
+<span class='badge badge-default'>00:00:22:226</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:01 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:01 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:01 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 3126141577<br>
+<b>City/State/Zip:</b> Chicago / Illinois / 60606<br>
+<b>Address Line 1:</b> 233 S Wacker Dr<br>
+<b>Address Line 2:</b> Suite 7520
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:01 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:06 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:14 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (312) 614-1577<br>
+<b>Displayed Phone:</b> (312) 614-1577<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> sorynna.brindlehart1577@yopmail.com<br>
+<b>Displayed Email:</b> sorynna.brindlehart1577@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 233 S Wacker Dr, Suite 7520, Chicago, 60606<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 233 S Wacker Dr<br>
+• Address Line 2: Suite 7520<br>
+• City: Chicago<br>
+• State: Illinois<br>
+• Zip: 60606<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-24-1577<br>
+<b>Displayed SSN:</b> 903-24-1577<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:23 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:58:38 pm</span> / <span>00:00:21:868</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:58:38 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:59:00 pm</span>
+<span class='badge badge-default'>00:00:21:868</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:38 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:38 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:38 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 3178364696<br>
+<b>City/State/Zip:</b> Indianapolis / Indiana / 46204<br>
+<b>Address Line 1:</b> 50 W Washington St<br>
+<b>Address Line 2:</b> Suite 1415
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:38 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:44 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:50 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:58:59 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:58:59 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:00 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (317) 836-4696<br>
+<b>Displayed Phone:</b> (317) 836-4696<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:00 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> navior.hearthwyn4696@yopmail.com<br>
+<b>Displayed Email:</b> navior.hearthwyn4696@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:00 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 50 W Washington St, Suite 1415, Indianapolis, 46204<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 50 W Washington St<br>
+• Address Line 2: Suite 1415<br>
+• City: Indianapolis<br>
+• State: Indiana<br>
+• Zip: 46204<br><br>
+
+<b>Result:</b> PASS (Address updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:00 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-25-4696<br>
+<b>Displayed SSN:</b> 903-25-4696<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:00 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:59:03 pm</span> / <span>00:00:22:514</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:59:03 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:59:26 pm</span>
+<span class='badge badge-default'>00:00:22:514</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:03 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:03 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:03 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 5156147931<br>
+<b>City/State/Zip:</b> Des Moines / Iowa / 50309<br>
+<b>Address Line 1:</b> 801 Grand Ave<br>
+<b>Address Line 2:</b> Suite 2615
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:03 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:09 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:16 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:25 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:25 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:26 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (515) 614-7931<br>
+<b>Displayed Phone:</b> (515) 614-7931<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:26 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> meadorin.glenvarn7931@yopmail.com<br>
+<b>Displayed Email:</b> meadorin.glenvarn7931@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>8:59:26 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 801 Grand Ave, Suite 2615, Des Moines, 50309<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 801 Grand Ave<br>
+• Address Line 2: Suite 2615<br>
+• City: Des Moines<br>
+• State: Iowa<br>
+• Zip: 50309<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:26 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-26-7931<br>
+<b>Displayed SSN:</b> 903-26-7931<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:26 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:59:28 pm</span> / <span>00:00:22:207</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:59:28 pm</span>
+<span class='badge badge-danger'>01.24.2026 8:59:50 pm</span>
+<span class='badge badge-default'>00:00:22:207</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:28 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:28 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:28 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 7858369215<br>
+<b>City/State/Zip:</b> Topeka / Kansas / 66603<br>
+<b>Address Line 1:</b> 701 S Kansas Ave<br>
+<b>Address Line 2:</b> Unit 510
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:28 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:33 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:41 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (785) 836-9215<br>
+<b>Displayed Phone:</b> (785) 836-9215<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> brynolyn.kerrithorne9215@yopmail.com<br>
+<b>Displayed Email:</b> brynolyn.kerrithorne9215@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 701 S Kansas Ave, Unit 510, Topeka, 66603<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 701 S Kansas Ave<br>
+• Address Line 2: Unit 510<br>
+• City: Topeka<br>
+• State: Kansas<br>
+• Zip: 66603<br><br>
+
+<b>Result:</b> PASS (Address updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-27-9215<br>
+<b>Displayed SSN:</b> 903-27-9215<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:50 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>8:59:53 pm</span> / <span>00:00:21:831</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 8:59:53 pm</span>
+<span class='badge badge-danger'>01.24.2026 9:00:15 pm</span>
+<span class='badge badge-default'>00:00:21:831</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:53 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:53 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:53 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 5028363758<br>
+<b>City/State/Zip:</b> Louisville / Kentucky / 40202<br>
+<b>Address Line 1:</b> 500 W Jefferson St<br>
+<b>Address Line 2:</b> Suite 1825
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:59:53 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:59:59 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:05 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:14 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:14 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:15 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (502) 836-3758<br>
+<b>Displayed Phone:</b> (502) 836-3758<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:15 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> yarielle.crownhill3758@yopmail.com<br>
+<b>Displayed Email:</b> yarielle.crownhill3758@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:00:15 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 500 W Jefferson St, Suite 1825, Louisville, 40202<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 500 W Jefferson St<br>
+• Address Line 2: Suite 1825<br>
+• City: Louisville<br>
+• State: Kentucky<br>
+• Zip: 40202<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:15 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-28-3758<br>
+<b>Displayed SSN:</b> 903-28-3758<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:15 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Plaintiff_edit_in_case</p>
+            <p class="text-sm">
+              <span>9:00:17 pm</span> / <span>00:00:20:858</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Plaintiff_edit_in_case</h5>
+<span class='badge badge-success'>01.24.2026 9:00:17 pm</span>
+<span class='badge badge-danger'>01.24.2026 9:00:38 pm</span>
+<span class='badge badge-default'>00:00:20:858</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:17 pm</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Plaintiff Contact Edit in Case – Save & Verify Updated Values
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:17 pm</td>
+        <td>
+          <b>📘 Description:</b> Open an existing case (<b>CA2600365</b>), edit Plaintiff contact details, save, and verify the Contact summary shows the updated values.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:17 pm</td>
+        <td>
+          <b>📥 Input (New Values):</b><br>
+<b>Phone:</b> 5048366428<br>
+<b>City/State/Zip:</b> New Orleans / Louisiana / 70112<br>
+<b>Address Line 1:</b> 935 Gravier St<br>
+<b>Address Line 2:</b> Apt 21B
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:17 pm</td>
+        <td>
+          <b>✅ Expected:</b> After saving, the case’s Plaintiff Contact summary should reflect the updated phone and updated address (line1, line2, city, state, zip).
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:22 pm</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:29 pm</td>
+        <td>
+          <b>Step 1:</b> Update Plaintiff Contact details and save
+<br><b>📘 What is being validated:</b> Edited Plaintiff details should persist after saving.
+<br><b>✅ Expected:</b> Save should succeed and updated details should appear in the Contact summary.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:38 pm</td>
+        <td>
+          <b>🟨 Actual:</b> Save completed successfully.
+<br><b>📢 System Message:</b> The Plaintiff have been successfully updated.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:00:38 pm</td>
+        <td>
+          <b>Step 2:</b> Verify updated values in Plaintiff Contact summary (post-save)
+<br><b>📘 What is being validated:</b> The Contact summary displays updated Phone and Address after saving.
+<br><b>✅ Expected:</b> Phone should match the saved phone value; Address should contain line1, line2, city, state, zip.
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:38 pm</td>
+        <td>
+          <b>📞 Phone Verification</b><br>
+<b>Expected Phone:</b> (504) 836-6428<br>
+<b>Displayed Phone:</b> (504) 836-6428<br>
+<b>Result:</b> PASS (Phone updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:38 pm</td>
+        <td>
+          <b>📧 Email Verification</b><br>
+<b>Expected Email:</b> ronivar.lindenmark6428@yopmail.com<br>
+<b>Displayed Email:</b> ronivar.lindenmark6428@yopmail.com<br>
+<b>Result:</b> PASS (Email updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:00:38 pm</td>
+        <td>
+          <b>🏠 Address Verification</b><br>
+<b>Displayed Address:</b> 935 Gravier St, Apt 21B, New Orleans, 70112<br><br>
+
+<b>Expected Address Should Contain:</b><br>
+• Address Line 1: 935 Gravier St<br>
+• Address Line 2: Apt 21B<br>
+• City: New Orleans<br>
+• State: Louisiana<br>
+• Zip: 70112<br><br>
+
+<b>Result:</b> FAIL (Missing/Not updated: State)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:38 pm</td>
+        <td>
+          <b>🪪 SSN Verification</b><br>
+<b>Expected SSN:</b> 903-29-6428<br>
+<b>Displayed SSN:</b> 903-29-6428<br>
+<b>Result:</b> PASS (SSN updated correctly)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:00:38 pm</td>
         <td>
           Test passed
         </td>
@@ -131,30 +3107,86 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">java.lang.RuntimeException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.RuntimeException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>20:54:14 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>Plaintiff_edit_in_case</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>20:54:33 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>Plaintiff_edit_in_case</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 23, 2026 03:55:43 PM</h3>
+<h3>Jan 24, 2026 08:52:03 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 23, 2026 03:56:14 PM</h3>
+<h3>Jan 24, 2026 09:00:40 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>2</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>17</h3>
 </div></div>
 </div>
 </div>
@@ -170,12 +3202,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='10%'>
+<b>2</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='89%'><b>17</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -193,10 +3225,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> events passed</small></div>
+<div><small data-tooltip='45%'><b>106</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>0</b> others
+<small data-tooltip='7%'><b>17</b> events failed,
+<b data-tooltip='%'>110</b> others
 </small>
 </div>
 </div>
@@ -212,7 +3244,7 @@
 </div></div>
 <script>
 var timeline = {
-"PayOff_Lien_List":28.418
+"Plaintiff_edit_in_case":24.326,"Plaintiff_edit_in_case":24.279,"Plaintiff_edit_in_case":22.812,"Plaintiff_edit_in_case":23.098,"Plaintiff_edit_in_case":11.633,"Plaintiff_edit_in_case":11.244,"Plaintiff_edit_in_case":27.331,"Plaintiff_edit_in_case":23.398,"Plaintiff_edit_in_case":22.806,"Plaintiff_edit_in_case":21.758,"Plaintiff_edit_in_case":21.018,"Plaintiff_edit_in_case":22.517,"Plaintiff_edit_in_case":22.445,"Plaintiff_edit_in_case":22.226,"Plaintiff_edit_in_case":21.868,"Plaintiff_edit_in_case":22.514,"Plaintiff_edit_in_case":22.207,"Plaintiff_edit_in_case":21.831,"Plaintiff_edit_in_case":20.858
 };
 </script>
 <div class="row">
@@ -236,11 +3268,11 @@ var timeline = {
 </tr>
 <tr>
 <td>OS</td>
-<td>Windows 11</td>
+<td>Windows 8.1</td>
 </tr>
 <tr>
 <td>Java Version</td>
-<td>21.0.9</td>
+<td>23.0.1</td>
 </tr>
 </tbody>
 </table></div>
@@ -251,8 +3283,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 2,
+failParent: 17,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -268,11 +3300,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 2,
-failEvents: 0,
+passEvents: 106,
+failEvents: 17,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 110
 };
 </script>        </div>
       </div>

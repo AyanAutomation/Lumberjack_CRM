@@ -183,21 +183,21 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[text()='Payoff Details']/..")
 	private WebElement  Payoff_Button;
 	@FindBy(xpath="//*[text()='Payoff Table']")
-	private WebElement  Payoff_table;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Payoff_table;
+	@FindBy(xpath="//*[text()='Remove']/..")
+	private WebElement Remove_Button;
+	@FindBy(xpath="//*[text()='Edit']/..")
+	private WebElement Edit_button;
+	@FindBy(xpath="//*[contains(@class,'ant-descriptions-item-content')]")
+	private List <WebElement> Description_content_items;
+	@FindBy(xpath="//*[text()='Edit Details']")
+	private WebElement Edit_details_title_form;
+	@FindBy(xpath="//*[text()='LAW FIRM INFO']")
+	private WebElement Law_firm_info_title_text;
+	@FindBy(xpath="//*[contains(@class,'ant-descriptions-item-label ant-descriptions-item-no-colon')]")
+	private List <WebElement> Description_content_Labels; 
+	@FindBy(xpath="//h3")
+	private WebElement Title_plaintiff_name;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -258,7 +258,7 @@ public class Application_Locaters extends Repeat{
 	return State_of_incident_dropdown;} 
 	public List<WebElement> Plaintiff_options(){
 	plaintiff_dropdown_list();
-	List<WebElement> Plaintiff_option = plaintiff_dropdown_list().findElements(By.xpath(".//*[@aria-selected='false']"));
+	List<WebElement> Plaintiff_option = plaintiff_dropdown_list().findElements(By.xpath(".//*[@aria-selected='false' or @aria-selected='true']"));
 	wait_for_theElement(Plaintiff_option);
 	return Plaintiff_option;} 
 	public List<WebElement> Incident_options(){
@@ -383,8 +383,12 @@ public class Application_Locaters extends Repeat{
 	wait_for_theElement(Application_Details_Dropdown_Feild);
 	return Application_Details_Dropdown_Feild;}    
 	public WebElement lawFirm_AddButton_ContactTab(){
+	try{
 	wait_for_theElement(lawFirm_AddButton_ContactTab);
-	return lawFirm_AddButton_ContactTab;}   
+	return lawFirm_AddButton_ContactTab;}
+	catch(Exception Add_button_not_found){
+	wait_for_theElement(Remove_Button);
+	return Remove_Button;}}   
 	public WebElement Contact_AddButton_ContactTab(){
 	wait_for_theElement(Contact_AddButton_ContactTab);
 	return Contact_AddButton_ContactTab;}   
@@ -688,25 +692,25 @@ public class Application_Locaters extends Repeat{
 	public List <WebElement> modal_table_cells(){
 	List <WebElement> modal_table_cells = modal_table().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')]"));
 	wait_for_theElement(modal_table_cells);
-	return modal_table_cells;}  /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return modal_table_cells;}   
+	public WebElement Edit_button(){
+	wait_for_theElement(Edit_button);
+	return Edit_button;}   
+	public List <WebElement> Description_content_items(){
+	wait_for_theElement(Description_content_items);
+	return Description_content_items;}   
+	public WebElement Edit_details_title_form(){
+	wait_for_theElement(Edit_details_title_form);
+	return Edit_details_title_form;}   
+	public WebElement Law_firm_info_title_text(){
+	wait_for_theElement(Law_firm_info_title_text);
+	return Law_firm_info_title_text;}   
+	public List <WebElement> Description_content_Labels(){
+	wait_for_theElement(Description_content_Labels);
+	return Description_content_Labels;}    
+	public WebElement Title_plaintiff_name(){
+	wait_for_theElement(Title_plaintiff_name);
+	return Title_plaintiff_name;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

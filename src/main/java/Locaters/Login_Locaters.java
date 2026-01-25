@@ -29,9 +29,9 @@ public class Login_Locaters extends Repeat{
 	@FindBy(xpath="//*[@class='auth-right']")
 	private WebElement  Landed_in_login_page; 
 	@FindBy(xpath="//*[@class='ant-form-item-explain-error']")
-	private List<WebElement>  inline_errors; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private List<WebElement>  inline_errors; 
+	@FindBy(xpath="//*[contains(@class,'Toastify__close-button Toastify__close-button--light')]")
+	private WebElement  Toast_close_button;/*
 	@FindBy(xpath="")
 	private WebElement  ; */
 	
@@ -64,10 +64,10 @@ public class Login_Locaters extends Repeat{
 	return Landed_in_login_page;}
 	public List<WebElement> inline_errors(){
 	wait_for_theElement(inline_errors);
-	return inline_errors;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;} */ 
+	return inline_errors;} 
+	public WebElement Toast_close_button(){
+	wait_for_theElement(Toast_close_button);
+	return Toast_close_button;}  
 	
 	
 	
