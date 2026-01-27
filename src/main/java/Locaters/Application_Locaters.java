@@ -196,12 +196,12 @@ public class Application_Locaters extends Repeat{
 	private WebElement Law_firm_info_title_text;
 	@FindBy(xpath="//*[contains(@class,'ant-descriptions-item-label ant-descriptions-item-no-colon')]")
 	private List <WebElement> Description_content_Labels; 
-	@FindBy(xpath="//h3")
-	private WebElement Title_plaintiff_name;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	@FindBy(xpath="//h4")
+	private WebElement Title_plaintiff_name;
+	@FindBy(xpath="(//*[@class='ant-card-body']//*[contains(@class,'ant-typography css-')])[2]")
+	private WebElement Plaintiff_name_incard;
+	@FindBy(xpath="//*[text()='View All']/..")
+	private WebElement View_all_Button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -710,13 +710,13 @@ public class Application_Locaters extends Repeat{
 	return Description_content_Labels;}    
 	public WebElement Title_plaintiff_name(){
 	wait_for_theElement(Title_plaintiff_name);
-	return Title_plaintiff_name;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Title_plaintiff_name;}   
+	public WebElement Plaintiff_name_incard(){
+	wait_for_theElement(Plaintiff_name_incard);
+	return Plaintiff_name_incard;}   
+	public WebElement View_all_Button(){
+	wait_for_theElement(View_all_Button);
+	return View_all_Button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
