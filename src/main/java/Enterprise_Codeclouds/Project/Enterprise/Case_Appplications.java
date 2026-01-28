@@ -78,9 +78,9 @@ public class Case_Appplications extends Header_Manager{
 		  String Subject = data.get("Subject");
 		  String to = data.get("To");
 		  String Mail_Body = data.get("Message");
-		  String Plaintiff_name = Plaintiff.get("First Name");
+		  String Case_id = "AK2600378";
 		  
-		  System.out.println("Plaintiff Name is   "+Plaintiff_name);
+		  System.out.println("Case id is   "+Case_id);
 		  System.out.println();
 		  
 		   try{p.Send_button();}
@@ -89,7 +89,7 @@ public class Case_Appplications extends Header_Manager{
 		   p.landed_in_applicationList_confirmation();
 		   p.Filter_clear().click();
 		   WebElement Search = p.Application_search();
-		   Search.sendKeys(Plaintiff_name);
+		   Search.sendKeys(Case_id);
 		   Thread.sleep(1800);
 		   List<WebElement> result_rows;
 		  try {

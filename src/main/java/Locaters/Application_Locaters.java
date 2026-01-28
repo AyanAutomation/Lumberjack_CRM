@@ -120,7 +120,7 @@ public class Application_Locaters extends Repeat{
 	private WebElement Case_Action_Dropdown_list; 
 	@FindBy(xpath="//textArea")
 	private WebElement textArea; 
-	@FindBy(xpath="(//button[contains(@class,'ant-btn-color-primary ant-btn-variant-solid')])[3]")
+	@FindBy(xpath="//*[text()='Create Contact']/..")
 	private WebElement  Create_Contact_button; 
 	@FindBy(xpath="(//div[@class='ant-modal-body'])[2]")
 	private WebElement  second_pop_up_form; 
