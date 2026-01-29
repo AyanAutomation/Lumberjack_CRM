@@ -201,11 +201,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="(//*[@class='ant-card-body']//*[contains(@class,'ant-typography css-')])[2]")
 	private WebElement Plaintiff_name_incard;
 	@FindBy(xpath="//*[text()='View All']/..")
-	private WebElement View_all_Button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement View_all_Button; 
+	@FindBy(xpath="//*[contains(@class,'ant-modal-close-x')]/..")
+	private WebElement Close_Button; 
+	@FindBy(xpath="//*[contains(@class,'ant-tag ant-tag-geekblue')]")
+	private WebElement Case_ID_Tag;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -716,13 +716,13 @@ public class Application_Locaters extends Repeat{
 	return Plaintiff_name_incard;}   
 	public WebElement View_all_Button(){
 	wait_for_theElement(View_all_Button);
-	return View_all_Button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return View_all_Button;}  
+	public WebElement Close_Button(){
+	wait_for_theElement(Close_Button);
+	return Close_Button;}     
+	public WebElement Case_ID_Tag(){
+	wait_for_theElement(Case_ID_Tag);
+	return Case_ID_Tag;}    /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

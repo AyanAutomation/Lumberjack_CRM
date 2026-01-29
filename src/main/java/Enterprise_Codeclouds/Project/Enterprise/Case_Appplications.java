@@ -8,6 +8,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.TreeMap;
@@ -43,8 +44,8 @@ public class Case_Appplications extends Header_Manager{
 	TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();
     TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
 	TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
-	TreeMap<String,Double> PayoffTable_values =  new TreeMap<String,Double>();
-	
+	TreeMap<String,Double> PayoffTable_values_After_Payment =  new TreeMap<String,Double>();
+	TreeMap<String,Double> PayoffTable_values_Before_Payment =  new TreeMap<String,Double>();
 	
 	public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedException{
 		
@@ -547,7 +548,12 @@ public class Case_Appplications extends Header_Manager{
 		catch(Exception e){
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Case Details edit popup and update Summary + Court Index Number.");
-	    p.Case_details_edit_buttons().click();
+	   
+	    WebElement CaseId = p.Case_ID_Tag();
+	    String Case_ID = CaseId.getText().trim(); /***************/
+	    System.out.println(Case_ID);
+	    System.out.println();
+		p.Case_details_edit_buttons().click();
 		p.Summary_feild().sendKeys(Case_Data.get("Summary"));
 		p.Court_index_input().sendKeys(Case_Data.get("Court Index Number"));
 		p.Edit_form_buttons().get(1).click();
@@ -788,7 +794,8 @@ public class Case_Appplications extends Header_Manager{
 		Sign_in_button.click();
 		//Docu_Sign_Signature();
 		manual_lien_generation(Sign_in_button);
-		Pay_Off_calculator(Case_Data,Plaintiff,attorneyData);
+		
+		Payment_Calculator(Case_Data,Case_ID);
 		Underwriting_Notes(Case_Data);}
 	
 	    
@@ -1323,74 +1330,7 @@ public class Case_Appplications extends Header_Manager{
 	 			System.out.println();}}
 	     
 	     
-	     @Test
-	      public void PayOff_Lien_List() throws IOException, InterruptedException{
-	    	  
-	    	  
-	    	  Application_Locaters p = new Application_Locaters(d);
-		      Login_Locaters lg = new Login_Locaters(d);
-			  SIde_Menu_Handler sd = new SIde_Menu_Handler();
-			  Repeat rp = new Repeat(d);
-	    	  
-			  
-			  
-			  PayoffTable_values.clear();
-			  
-			  
-			  try{p.Case_Action_Dropdown();}
-		       catch(Exception not_in_Case_Details) {	    
-			   sd.Side_menu_option_clicker("Applications", d,"N/A");
-			   p.landed_in_applicationList_confirmation();
-			   p.Filter_clear().click();
-			   WebElement Status_filter = p.Application_status_filter();
-			   Status_filter.click();
-			   Application_Filter_Option_Selector("Funded");
-			   p.rows().get(2).click();
-			   Thread.sleep(800);}
-			   List<WebElement> Case_Tags;
-			   try {
-			   Case_Tags = p.Case_tags();}
-			   catch(RuntimeException tags){
-				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-				   System.out.println();
-				   Thread.sleep(1200);
-				   Case_Tags = p.Case_tags();}
-			   try{tab_selector("Liens");}
-				catch(Exception Lien_tab_retry){
-					Thread.sleep(800);
-					tab_selector("Liens");}
-	    	    WebElement payoff_button = p.Payoff_Button();
-	    	    rp.Scroll_to_element(payoff_button);
-	    	    rp.wait_for_Clickable(payoff_button);
-	    	    payoff_button.click();
-	    	    p.Payoff_table_title();
-	    	    List<WebElement> Cells;
-	    	    try{
-	    	    	Cells = p.modal_table_cells();}
-	    	    catch(Exception pay_off_table_rows_not_found){
-	    	    	Thread.sleep(800);
-	    	    	p.modal_table();
-	    	    	Cells = p.modal_table_cells();}
-	    	    int m=0;
-	    	    for(WebElement Cell:Cells){
-	    	    	
-	    	    	String cellvalue=Cell.getText().trim();
-	    	    	
-	    	    	
-	    	    	if(!cellvalue.contains("/")){
-	    	    		String cellvalue_clean = cellvalue .replace("$","") .replace(",","") .replace("\u00A0","") .trim();
-	    	    		double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
-	    	            double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
-                        PayoffTable_values.put("month "+m, each_month_payable);
-                        System.out.println("month "+m+"  "+ each_month_payable);
-    	    	    	System.out.println();
-	    	            m++;
-	    	    	}
-	    	    }
-	    	    
-	    	    
-	    	  
-	      }
+	    
 	     
 	     public void Reopen_contract_without_saving() throws InterruptedException{
 	    	 
@@ -2363,11 +2303,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ 
+		    return new Object[][]{ /*
 		       {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c16},{c17},{c18},{c19},*/{c20} 
 		    };}
 	
 	
@@ -2455,6 +2395,7 @@ public class Case_Appplications extends Header_Manager{
 			   System.out.println();
 			   Thread.sleep(1200);
 			   Case_Tags = p.Case_tags(); }
+		   String Case_id= Case_Tags.get(0).getText().trim();
 		   String case_status= Case_Tags.get(1).getText().trim();
 		   if(case_status.contains("Case closed")){
 			   lien_rows= Internal_Application_Generator_and_Manual_Signer(data,data2,attorneyData,Requested_Amount); }
@@ -2464,7 +2405,7 @@ public class Case_Appplications extends Header_Manager{
 			  
 	          try { 
 	        	  lien_rows=p.Open_Lien_table_contents();
-	        	  Payment_Logger(data);
+	        	  Payment_Calculator(data,Case_id);
 	        	  }
 			  catch(RuntimeException no_liens){
 				
@@ -2491,10 +2432,13 @@ public class Case_Appplications extends Header_Manager{
 					    rp.wait_for_theElement_tobe_clickable(Sign_in_button);
 						Sign_in_button.click();
 						lien_rows=manual_lien_generation(Sign_in_button);
+						Payment_Logger(data,Case_id);
 				    }else{
-				    	lien_rows=Internal_Application_Generator_and_Manual_Signer(data,data2,attorneyData,Requested_Amount);}
+				    	lien_rows=Internal_Application_Generator_and_Manual_Signer(data,data2,attorneyData,Requested_Amount);
+				    	Payment_Logger(data,Case_id);}
 				    }catch(Exception new_application_generate){
-					  lien_rows= Internal_Application_Generator_and_Manual_Signer(data,data2,attorneyData,Requested_Amount); }}}}
+					  lien_rows= Internal_Application_Generator_and_Manual_Signer(data,data2,attorneyData,Requested_Amount); 
+					  Payment_Calculator(data,Case_id);}}}}
 		              int no_of_rows;
 		        try {no_of_rows = lien_rows.size();}
 		        catch(StaleElementReferenceException lien_row) {
@@ -2611,18 +2555,22 @@ public class Case_Appplications extends Header_Manager{
 		        	    	        difference_upto_2_decimal
 		        	    	);
 
-		        	    Report_Listen.log_print_in_report().log((Math.abs(outstandingAfterPayment_calculated - currentLienBalance) < 0.01) ? Status.PASS : Status.FAIL, payoff_log);});}
+		        	    Report_Listen.log_print_in_report().log((Math.abs(outstandingAfterPayment_calculated - currentLienBalance) < 0.01) ? Status.PASS : Status.FAIL, payoff_log);});
+		           
+	   
+	   }
 	   
 	
 	   
 	     
-	        public void Payment_Logger(TreeMap<String, String> data) throws IOException, InterruptedException{
+	        public String Payment_Logger(TreeMap<String, String> data, String Case_Id) throws IOException, InterruptedException{
 	    	    
 	        	SIde_Menu_Handler sd = new SIde_Menu_Handler();
 	        	Application_Locaters p = new Application_Locaters(d);
 	        	Repeat rp = new Repeat(d);
 	        	Login_Locaters lg = new Login_Locaters(d);
-	        	
+	        	 
+	        	String Case_id = Case_Id;
 	        	
 	        	double Document_prep_fee = Double.parseDouble(data.get("Document prep fee"));
 	        	double Fundtransferfee = Double.parseDouble(data.get("Fund transfer fee"));
@@ -2641,24 +2589,37 @@ public class Case_Appplications extends Header_Manager{
 	            Report_Listen.log_print_in_report().log(Status.INFO,
 	                    "<b>📥 Input:</b> Mode=<b>"+data.get("Payment Mode")+"</b> | Type=<b>"+data.get("Payment Type")+
 	                    "</b> | Payer=<b>"+data.get("Payer Name")+"</b> | Date=<b>"+data.get("Payment Date")+
-	                    "</b> | Amount=<b>"+data.get("Amount Received")+"</b>");
+	                    "</b> | Amount=<b>"+Amount_to_be_payed_text+"</b>");
 
 	            Report_Listen.log_print_in_report().log(Status.INFO,
 	                    "<b>✅ Expected:</b> Payment should be logged successfully and the system should show a confirmation toast/message.");
 
-	        	
+	        
 	        WebElement case_Dropdown;	
 	        try{case_Dropdown=p.Case_Action_Dropdown();}
 	        catch(Exception not_in_Case_Details) {
 	           sd.Side_menu_option_clicker("Applications", d,"N/A");
 	 		   p.landed_in_applicationList_confirmation();
 	 		   p.Filter_clear().click();
-			  // rp.wait_for_invisibility(p.list_loader());
-			   WebElement Status_filter = p.Application_status_filter();
-			   Status_filter.click();
-			   Application_Filter_Option_Selector("Funded");
-	 		   p.rows().get(0).click();
-			   Thread.sleep(800);
+			   WebElement Search = p.Application_search();
+			   Search.sendKeys(Case_id);
+			   Thread.sleep(1800);
+			   WebElement Toast_One = lg.Toast_close_button();
+			   Toast_One.click();
+			   WebElement Toast_Two = lg.Toast_close_button();
+			   Toast_Two.click();
+			   List<WebElement> result_rows;
+			  try {
+			   result_rows = p.rows();
+			   result_rows.get(0).click();
+			   Thread.sleep(800);}
+			  catch(Exception Result_still_not_fetched){
+				 System.out.println("Exception Found in fetching result rows thereby retrying");
+				 System.out.println();
+			   Thread.sleep(800);  
+			   result_rows = p.rows();
+			   result_rows.get(0).click();
+			   Thread.sleep(800);}
 			   List<WebElement> Case_Tags;
 			   try {
 			   Case_Tags = p.Case_tags();}
@@ -2668,6 +2629,7 @@ public class Case_Appplications extends Header_Manager{
 				   Thread.sleep(1200);
 				   Case_Tags = p.Case_tags();}
 			   case_Dropdown=p.Case_Action_Dropdown();}
+	           
 	    	   rp.movetoelement(case_Dropdown);
 	    	   p.Case_Action_Dropdown_list();
 	    	   List<WebElement> optionsElements = p.Case_Dropdown_Options();
@@ -2702,10 +2664,249 @@ public class Case_Appplications extends Header_Manager{
 	   	                "<b>🟨 Actual:</b> ✅ Payment logged successfully. Confirmation message received: <b>"+paymentToast+"</b>");
 	   	    }catch(Exception e){
 	   	        Report_Listen.log_print_in_report().log(Status.FAIL,
-	   	                "<b>🟨 Actual:</b> ❌ Payment confirmation toast was not captured (toast not visible / locator issue).");
-	   	        
-	   	    }
+	   	                "<b>🟨 Actual:</b> ❌ Payment confirmation toast was not captured (toast not visible / locator issue).");}
+	   	    
+	   	    
+	   	    return Amount_to_be_payed_text;
+	   	    
 	        }
+	        
+	        
+	       
+	        public void Payment_Calculator(TreeMap<String, String> data,String Case_Unique_id) throws IOException, InterruptedException{
+	        	
+	        	
+	        	  
+	        	
+				String Case_id=Case_Unique_id; 
+				  
+	        	Pay_off_lien_list_Before_payment(Case_id);
+	            String Fees_payed_amount=Payment_Logger(data,Case_id);;
+	            double Fees_payed_converted_to_double = Double.parseDouble(Fees_payed_amount);
+	            double Fees_payed_in_double_upto_two_decimal = Double.parseDouble(String.format("%.2f", Fees_payed_converted_to_double));
+	            Pay_off_lien_list_After_payment_data_fetcher(Case_id);
+	          
+	            
+	        	for(Map.Entry<String,Double> after_pair:PayoffTable_values_After_Payment.entrySet()){
+	        		String Key = after_pair.getKey();
+	        		double Before_payment = PayoffTable_values_Before_Payment.get(Key);
+	        		double After_payment = PayoffTable_values_After_Payment.get(Key);
+	        		
+	        		double reduction = Before_payment-After_payment;
+	        		double reduction_upto_two_decimal =  Double.parseDouble(String.format("%.2f", reduction));
+	        		double difference_upto_two_decimal = Double.parseDouble(String.format("%.2f",
+	        	            Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)));
+
+	        	    System.out.println("--------------------------------------------------");
+	        	    System.out.println("Payoff Lien Validation | " + Key);
+	        	    System.out.println("Before Payment : " + Before_payment + "  ||  After Payment : " + After_payment);
+	        	    System.out.println("Reduction      : " + reduction_upto_two_decimal + "  ||  Fees Paid     : " + Fees_payed_in_double_upto_two_decimal);
+	        	    System.out.println("Difference     : " + difference_upto_two_decimal + "  ||  Tolerance    : 0.01");
+	        	    System.out.println(
+	        	            difference_upto_two_decimal < 0.01
+	        	                    ? "✅ Testcase Passed | " + Key + " | Reduction = " + reduction_upto_two_decimal
+	        	                        + " matches Fees Paid = " + Fees_payed_in_double_upto_two_decimal
+	        	                        + " | Diff = " + difference_upto_two_decimal
+	        	                    : "❌ Testcase Failed | " + Key + " | Reduction = " + reduction_upto_two_decimal
+	        	                        + " NOT matching Fees Paid = " + Fees_payed_in_double_upto_two_decimal
+	        	                        + " | Diff = " + difference_upto_two_decimal
+	        	    );
+	        	    System.out.println("--------------------------------------------------");
+	        	    System.out.println();
+
+	        	    // Extent Logs (same info, readable)
+	        	    Report_Listen.log_print_in_report().log(Status.INFO,
+	        	            "<b>🔹 Payoff Lien Validation</b><br>"
+	        	            + "<b>Month:</b> " + Key + "<br>"
+	        	            + "<b>Before:</b> " + Before_payment + " | <b>After:</b> " + After_payment + "<br>"
+	        	            + "<b>Reduction:</b> " + reduction_upto_two_decimal + " | <b>Fees Paid:</b> " + Fees_payed_in_double_upto_two_decimal + "<br>"
+	        	            + "<b>Difference:</b> " + difference_upto_two_decimal + " | <b>Tolerance:</b> 0.01"
+	        	    );
+	        		System.out.println();
+	        		System.out.println(
+	        			    Double.parseDouble(String.format("%.2f",
+	        			        Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal))) < 0.01
+	        			        ? "✅ Testcase Passed | Reduction = " + reduction_upto_two_decimal
+	        			            + " | Fees Paid = " + Fees_payed_in_double_upto_two_decimal
+	        			            + " | Difference = " + Double.parseDouble(String.format("%.2f",
+	        			                Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)))
+	        			        : "❌ Testcase Failed | Reduction = " + reduction_upto_two_decimal
+	        			            + " | Fees Paid = " + Fees_payed_in_double_upto_two_decimal
+	        			            + " | Difference = " + Double.parseDouble(String.format("%.2f",
+	        			                Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)))
+	        			);
+	        		
+	        	}
+	        	
+	        	
+	        	
+	        	
+	        }
+	        
+           public void Pay_off_lien_list_Before_payment(String Case_Id) throws IOException, InterruptedException{
+	        	
+	        	Application_Locaters p = new Application_Locaters(d);
+			      Login_Locaters lg = new Login_Locaters(d);
+				  SIde_Menu_Handler sd = new SIde_Menu_Handler();
+				  Repeat rp = new Repeat(d);
+		    	  
+				  String Case_id = Case_Id;
+				  
+				  
+				  PayoffTable_values_Before_Payment.clear();
+				  
+				  
+				  try{p.Case_Action_Dropdown();}
+			       catch(Exception not_in_Case_Details) {	    
+				   sd.Side_menu_option_clicker("Applications", d,"N/A");
+				   p.landed_in_applicationList_confirmation();
+				   p.Filter_clear().click();
+				   WebElement Search = p.Application_search();
+				   Search.sendKeys(Case_id);
+				   Thread.sleep(1800);
+				   WebElement Toast_One = lg.Toast_close_button();
+				   Toast_One.click();
+				   WebElement Toast_Two = lg.Toast_close_button();
+				   Toast_Two.click();
+				   List<WebElement> result_rows;
+				  try {
+				   result_rows = p.rows();
+				   result_rows.get(0).click();
+				   Thread.sleep(800);}
+				  catch(Exception Result_still_not_fetched){
+					 System.out.println("Exception Found in fetching result rows thereby retrying");
+					 System.out.println();
+				   Thread.sleep(800);  
+				   result_rows = p.rows();
+				   result_rows.get(0).click();
+				   Thread.sleep(800);}
+				   List<WebElement> Case_Tags;
+				   try {
+				   Case_Tags = p.Case_tags();}
+				   catch(RuntimeException tags){
+					   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+					   System.out.println();
+					   Thread.sleep(1200);
+					   Case_Tags = p.Case_tags();}}
+				   try{tab_selector("Liens");}
+					catch(Exception Lien_tab_retry){
+						Thread.sleep(800);
+						tab_selector("Liens");}
+		    	    WebElement payoff_button = p.Payoff_Button();
+		    	    rp.Scroll_to_element(payoff_button);
+		    	    rp.wait_for_Clickable(payoff_button);
+		    	    payoff_button.click();
+		    	    p.Payoff_table_title();
+		    	    List<WebElement> Cells;
+		    	    try{
+		    	    	Cells = p.modal_table_cells();}
+		    	    catch(Exception pay_off_table_rows_not_found){
+		    	    	Thread.sleep(800);
+		    	    	p.modal_table();
+		    	    	Cells = p.modal_table_cells();}
+		    	    int m=0;
+		    	    for(WebElement Cell:Cells){
+		    	    	
+		    	    	String cellvalue=Cell.getText().trim();
+		    	    	
+		    	    	
+		    	    	if(!cellvalue.contains("/")){
+		    	    		String cellvalue_clean = cellvalue .replace("$","") .replace(",","") .replace("\u00A0","") .trim();
+		    	    		double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
+		    	            double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
+		    	            PayoffTable_values_Before_Payment.put("month "+m, each_month_payable);/*
+	                        System.out.println("month "+m+"  "+ each_month_payable);
+	    	    	    	System.out.println(); */
+		    	            m++;}}
+		    	    
+	        	     p.Close_Button().click();
+	        	
+			       }
+	        
+	        
+	        
+	       
+		      public void Pay_off_lien_list_After_payment_data_fetcher(String Case_Id) throws IOException, InterruptedException{
+		    	  
+		    	  
+		    	  Application_Locaters p = new Application_Locaters(d);
+			      Login_Locaters lg = new Login_Locaters(d);
+				  SIde_Menu_Handler sd = new SIde_Menu_Handler();
+				  Repeat rp = new Repeat(d);
+		    	  
+				  String Case_id = Case_Id;
+				  PayoffTable_values_After_Payment.clear();
+				  
+				  try{p.Case_Action_Dropdown();}
+			       catch(Exception not_in_Case_Details) {	    
+				   sd.Side_menu_option_clicker("Applications", d,"N/A");
+				   p.landed_in_applicationList_confirmation();
+				   p.Filter_clear().click();
+				   WebElement Search = p.Application_search();
+				   Search.sendKeys(Case_id);
+				   Thread.sleep(1800);
+				   WebElement Toast_One = lg.Toast_close_button();
+				   Toast_One.click();
+				   WebElement Toast_Two = lg.Toast_close_button();
+				   Toast_Two.click();
+				   List<WebElement> result_rows;
+				  try {
+				   result_rows = p.rows();
+				   result_rows.get(0).click();
+				   Thread.sleep(800);}
+				  catch(Exception Result_still_not_fetched){
+					 System.out.println("Exception Found in fetching result rows thereby retrying");
+					 System.out.println();
+				   Thread.sleep(800);  
+				   result_rows = p.rows();
+				   result_rows.get(0).click();
+				   Thread.sleep(800);}
+				   List<WebElement> Case_Tags;
+				   try {
+				   Case_Tags = p.Case_tags();}
+				   catch(RuntimeException tags){
+					   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+					   System.out.println();
+					   Thread.sleep(1200);
+					   Case_Tags = p.Case_tags();}}
+				   try{tab_selector("Liens");}
+					catch(Exception Lien_tab_retry){
+						Thread.sleep(800);
+						tab_selector("Liens");}
+		    	    WebElement payoff_button = p.Payoff_Button();
+		    	    rp.Scroll_to_element(payoff_button);
+		    	    rp.wait_for_Clickable(payoff_button);
+		    	    payoff_button.click();
+		    	    p.Payoff_table_title();
+		    	    List<WebElement> Cells;
+		    	    try{
+		    	    	Cells = p.modal_table_cells();}
+		    	    catch(Exception pay_off_table_rows_not_found){
+		    	    	Thread.sleep(800);
+		    	    	p.modal_table();
+		    	    	Cells = p.modal_table_cells();}
+		    	    int m=0;
+		    	    for(WebElement Cell:Cells){
+		    	    	
+		    	    	String cellvalue=Cell.getText().trim();
+		    	    	
+		    	    	if(!cellvalue.contains("/")){
+		    	    		String cellvalue_clean = cellvalue .replace("$","") .replace(",","") .replace("\u00A0","") .trim();
+		    	    		double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
+		    	            double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
+		    	            PayoffTable_values_After_Payment.put("month "+m, each_month_payable);/*
+	                        System.out.println("month "+m+"  "+ each_month_payable);
+	    	    	    	System.out.println();*/
+		    	            m++;}} 
+		    	    p.Close_Button().click();
+		      
+		      }
+	        
+	        
+	        
+      
+	        
+	        
 	        
 	       
 

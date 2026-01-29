@@ -10,7 +10,7 @@ import Repeatative_codes.Repeat;
 public class Attorney_Locaters extends Repeat{
 
 	
-		@FindBy(xpath="//*[text()='RECENT REGISTERED ATTORNEYS']") 
+		@FindBy(xpath="//*[text()='RECENT REGISTERED ATTORNEYS / STAFF']") 
 		private WebElement  Landed_in_attorney_module;  /*
 		@FindBy(xpath="")
 		private List <WebElement>  ;

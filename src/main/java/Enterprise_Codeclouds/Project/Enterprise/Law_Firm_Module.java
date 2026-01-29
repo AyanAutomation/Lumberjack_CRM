@@ -43,13 +43,13 @@ public class Law_Firm_Module extends Attorney_module{
  
 		input_feilds.get(0).sendKeys(Firm_name);;
 	    input_feilds.get(1).sendKeys(data.get("Phone"));
-		input_feilds.get(2).sendKeys(data.get("State"));
+		input_feilds.get(5).sendKeys(data.get("State"));
 		ap.plaintiff_dropdown_list();
 		ap.Plaintiff_options().get(0).click();
-		input_feilds.get(3).sendKeys(data.get("City"));	
-		input_feilds.get(4).sendKeys(data.get("Zip code"));
-		input_feilds.get(5).sendKeys(data.get("Street Address 1"));
-		input_feilds.get(6).sendKeys(data.get("Street Address 2"));	
+		input_feilds.get(4).sendKeys(data.get("City"));	
+		input_feilds.get(6).sendKeys(data.get("Zip code"));
+		input_feilds.get(2).sendKeys(data.get("Street Address 1"));
+		input_feilds.get(3).sendKeys(data.get("Street Address 2"));	
 
 		WebElement Add_Law_Frim_Button=p.form_buttons().get(0);
 		rp.Scroll_to_element(Add_Law_Frim_Button);
