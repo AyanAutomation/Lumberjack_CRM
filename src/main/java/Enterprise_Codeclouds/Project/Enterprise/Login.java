@@ -36,7 +36,7 @@ public class Login extends Base{
 	Thread.sleep(500);
 	WebElement Toast = lg.toast();
 	String toast_message = Toast.getText();
-	Login_negative_testcases.Toast_printer(toast_message);
+	Login_negative_testcases.Toast_printer(toast_message,d);
 	System.out.println();
 	lg.Toast_close_button().click();
 	rp.wait_for_invisibility(Toast);

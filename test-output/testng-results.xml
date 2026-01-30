@@ -1,57 +1,427 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="24" passed="19" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-30T14:19:25 IST" name="Default suite" finished-at="2026-01-30T14:21:23 IST" duration-ms="118075">
+  <suite started-at="2026-01-30T19:49:21 IST" name="Default suite" finished-at="2026-01-30T19:57:18 IST" duration-ms="476575">
     <groups>
     </groups>
-    <test started-at="2026-01-30T14:19:25 IST" name="Default test" finished-at="2026-01-30T14:21:23 IST" duration-ms="118075">
+    <test started-at="2026-01-30T19:49:21 IST" name="Default test" finished-at="2026-01-30T19:57:18 IST" duration-ms="476575">
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-30T14:19:25 IST" name="setup" finished-at="2026-01-30T14:19:27 IST" duration-ms="1996" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:49:22 IST" name="setup" finished-at="2026-01-30T19:49:25 IST" duration-ms="2976" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-30T14:19:27 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-30T14:21:23 IST" duration-ms="115602" status="PASS">
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:49:25 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:49:47 IST" duration-ms="22060" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/30/2026, Amount Received=1, Application Status=In Review, Approved Amount=20500, Attorney Name=Attorney Sable Rennick, Buyout Amount=12400, Buyout Expiry Date=01/30/2030, Buyout Funder Name=Atlas Ridge Litigation Funding, Case #=540, Case Type=Civil Rights, Court Index Number=00CV-2412-CR-001990, Date of Incident=12/27/2024, Document prep fee=260, Fund transfer fee=95, Interest Start Date=01/30/2026, Law Firm Name=National Civil Liberties Counsel, Lead Source=Other, Notes / Remarks=Lost deal logged (system requires amount); placeholder used for validation; adjust if rule allows blank., Payer Name=N/A - Lost Deal, Payment Date=01/30/2026, Payment Mode=Bank Transfer, Payment Type=Lost Deal, Rate of Return=39, Recommended Max Funding=20500, Requested Amount=50500, Risk Level=Moderate, SMS Message Body=Your file is under review while we confirm venue and verify key records. – Lumberjack Legal Finance, SMS Message Title=File In Review, State=Unknown, Summary=Civil rights complaint in early intake; jurisdiction/venue being confirmed; request for records submitted; wage loss and emotional distress alleged., Underwriting Notes=Hold funding until venue/jurisdiction confirmed and core documents obtained. Verify statute/notice deadlines and whether claims are viable under applicable standards., Underwriting Tag=Venue Confirmation}]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[{Address Line 1=50 Fountain Plaza, Suite 1100, Address Line 2=50 Fountain Plaza, City=Buffalo, Date of Birth=03/09/1991, Email=tavish.mackinnondrury9104@yopmail.com, First Name=Tavish, Last Name=MacKinnon-Drury, Middle Name=Riel, Name Suffix=II, Phone number=4169079104, Social Security Number=903-11-9104, State=New York, Zip code=14202}]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[{Email=attorney.maelys.beausoleil01@yopmail.com, First Name=Attorney Maëlys, Last Name=Beausoleil, Middle Name=Rowan, Name Suffix=II, Office phone=9897418123, Phone=9897406123}]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[{City=Wilmington, Name=VerdictForge Litigation Atelier, Phone=3024389017, State=Delaware, Street Address 1=919 N Market St, Brandywine Commerce Center, Main Lobby, Street Address 2=Suite 1204, Intake: Desk 3, Elevator Bank A, Zip code=19801}]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[{Staff Email=staff.nivaren.thornwick25@mailto.plus, Staff First Name=Staff Nivaren, Staff Last Name=Thornwick, Staff Middle Name=Calix, Staff Name Suffix=II, Staff Office phone=9718821460, Staff Phone=9716043825}]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[{Bcc=qa.auditdesk@yopmail.com, Cc=intake.coordinator@yopmail.com, Message=Hello,
-
-Please upload the required documents at your earliest convenience so we can proceed without delay.
-
-Thank you., Subject=Document Request - Please Upload Required Files, Template=None, To=marcelline.briarcliff1874@yopmail.com}]]>
+                <![CDATA[Underwriting update: We verified the incident date against the intake form, claimant statement, and the initial email thread. The date appears consistent across all sources, however the police report has not yet been uploaded. Please request the incident report number, responding agency, and any dispatch/CAD reference so we can cross-check timeline accuracy and avoid downstream corrections in the case summary card.]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-30T14:21:23 IST" name="Kill" finished-at="2026-01-30T14:21:23 IST" duration-ms="383" status="PASS">
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:49:47 IST" name="Kill" finished-at="2026-01-30T19:49:48 IST" duration-ms="931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:49:48 IST" name="setup" finished-at="2026-01-30T19:49:49 IST" duration-ms="1009" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:49:49 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:50:11 IST" duration-ms="22457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Docs pending — please upload: (1) ER discharge summary, (2) itemized billing, (3) imaging results if available, and (4) proof of wage loss for the week following the incident. Until these are received, underwriting cannot finalize medical causation or damages sizing. Note: the current attachments include a partial PDF scan that cuts off the provider signature block on page 2.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:50:11 IST" name="Kill" finished-at="2026-01-30T19:50:11 IST" duration-ms="363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:50:11 IST" name="setup" finished-at="2026-01-30T19:50:12 IST" duration-ms="972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:50:12 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:50:35 IST" duration-ms="22628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Call summary: Spoke to plaintiff and confirmed preferred contact window is 2–5 PM local time. Plaintiff stated they can provide employer HR contact details, but requested that all communications be routed through attorney once representation letter is finalized. Plaintiff also mentioned prior treatment for a similar symptom; please flag this for potential medical causation discussion and document it carefully in underwriting notes.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:50:35 IST" name="Kill" finished-at="2026-01-30T19:50:35 IST" duration-ms="316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:50:35 IST" name="setup" finished-at="2026-01-30T19:50:36 IST" duration-ms="852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:50:36 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:51:01 IST" duration-ms="25076" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Risk check: Potential statutory notice deadlines may apply. Please confirm filing posture (complaint filed vs draft only), confirm county/venue, and ensure the court index number is accurate. If any dates change, the case timeline card may need a full refresh to prevent inconsistency between dashboard view, PDF exports, and email templates.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:01 IST" name="Kill" finished-at="2026-01-30T19:51:02 IST" duration-ms="335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:02 IST" name="setup" finished-at="2026-01-30T19:51:02 IST" duration-ms="882" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:02 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:51:24 IST" duration-ms="21751" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Evidence checklist: Photos received (8 images), witness list received (3 names), and a short written narrative was provided. Surveillance request has been sent but not acknowledged by property owner. If surveillance is unavailable, request maintenance logs, incident logbook entry, and any prior complaints that support notice/knowledge of hazard conditions.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:24 IST" name="Kill" finished-at="2026-01-30T19:51:25 IST" duration-ms="349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:25 IST" name="setup" finished-at="2026-01-30T19:51:25 IST" duration-ms="901" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:25 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:51:48 IST" duration-ms="22341" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Payment observation: Amount received appears partial relative to expected schedule. Please reconcile with remittance advice before posting, verify no duplicate capture in gateway, and ensure convenience fees are either included or explicitly excluded based on policy. After reconciliation, attach payment confirmation to the case record to keep audit trail complete.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:48 IST" name="Kill" finished-at="2026-01-30T19:51:48 IST" duration-ms="329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:48 IST" name="setup" finished-at="2026-01-30T19:51:49 IST" duration-ms="941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:51:49 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:52:12 IST" duration-ms="22976" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Formatting validation: Ensure special characters and punctuation remain consistent in all exports (e.g., O’Connor vs O'Connor, Montréal accents, hyphenated surnames, and suffix placement like 'Jr.' 'III'). We have seen downstream mismatches when the UI trims characters or the PDF generator normalizes unicode.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:12 IST" name="Kill" finished-at="2026-01-30T19:52:12 IST" duration-ms="345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:12 IST" name="setup" finished-at="2026-01-30T19:52:13 IST" duration-ms="891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:13 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:52:38 IST" duration-ms="24870" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Court index verification: The current court index number matches the screenshot but does not match the draft complaint header. Please re-check the source and confirm whether the docket search result includes a leading zero, an extra hyphen, or a revised case classification. If needed, update the case record and add a short note explaining the correction for audit.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:38 IST" name="Kill" finished-at="2026-01-30T19:52:38 IST" duration-ms="369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:38 IST" name="setup" finished-at="2026-01-30T19:52:39 IST" duration-ms="965" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:39 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:52:58 IST" duration-ms="18660" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Attorney follow-up required: Request the most recent demand package, settlement posture update, and any insurer correspondence. Also confirm whether medical lien holders exist and whether any subrogation claims have been asserted. This information directly impacts net recovery expectations and should be captured before recommending any increase to approved funding.]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Element list is null or empty. Check the locator or timing.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:47)
+at Locaters.Application_Locaters.Case_tags(Application_Locaters.java:510)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add(Case_Appplications.java:4073)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:58 IST" name="Kill" finished-at="2026-01-30T19:52:58 IST" duration-ms="368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:58 IST" name="setup" finished-at="2026-01-30T19:52:59 IST" duration-ms="870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:52:59 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:53:21 IST" duration-ms="21501" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Fee check: Confirm document prep fee and fund transfer fee are applied exactly once. On prior cases, edits caused fees to duplicate on the ledger card and created discrepancies between the UI and exported statements. Please verify fee fields, then validate the payment summary card renders correctly and does not wrap awkwardly on smaller viewports.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:53:21 IST" name="Kill" finished-at="2026-01-30T19:53:21 IST" duration-ms="351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:53:21 IST" name="setup" finished-at="2026-01-30T19:53:22 IST" duration-ms="897" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:53:22 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:53:44 IST" duration-ms="21821" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Status note: File moved to 'Pending Docs' because causation support is incomplete. Required items: full treatment chronology, imaging results, primary care notes, and any referral documentation. Once received, underwriting can re-evaluate risk level and recommended max funding. Please also verify the case owner and underwriter dropdown selections remain correct after status update.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:53:44 IST" name="Kill" finished-at="2026-01-30T19:53:45 IST" duration-ms="889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:53:45 IST" name="setup" finished-at="2026-01-30T19:53:46 IST" duration-ms="1083" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:53:46 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:54:08 IST" duration-ms="22462" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Address validation: ZIP/state combination verified; however, Address Line 2 may be missing a unit number. Please confirm whether the address is a suite, apartment, or floor designation so we avoid mail return. If the UI concatenates address in a single line card, confirm the separators and spacing remain readable when line 2 is long.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:08 IST" name="Kill" finished-at="2026-01-30T19:54:09 IST" duration-ms="350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:09 IST" name="setup" finished-at="2026-01-30T19:54:10 IST" duration-ms="879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:10 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:54:31 IST" duration-ms="21049" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Summary rewrite: Removed duplicated incident narrative and tightened the timeline section to avoid repeating facts. Also clarified damages categories (wage loss, medical costs, emotional distress) and removed speculative language. Please review for consistency with attorney-provided narrative; if attorney disagrees, store their version in notes and keep UI summary neutral.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:31 IST" name="Kill" finished-at="2026-01-30T19:54:31 IST" duration-ms="354" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:31 IST" name="setup" finished-at="2026-01-30T19:54:32 IST" duration-ms="869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:32 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:54:53 IST" duration-ms="21293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email log: Sent request for missing IDs and authorization forms for records retrieval. The email includes a clear checklist and deadline request, plus instructions for uploading via portal. If no response within 48 hours, send a follow-up and tag the case accordingly. Also verify that the 'Send Email' editor does not strip line breaks.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:53 IST" name="Kill" finished-at="2026-01-30T19:54:53 IST" duration-ms="327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:53 IST" name="setup" finished-at="2026-01-30T19:54:54 IST" duration-ms="876" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:54:54 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:55:16 IST" duration-ms="21354" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lien/third-party funding check: Plaintiff disclosed prior funding provider inquiry but did not confirm acceptance. Please confirm whether any contracts were signed or whether any UCC filings exist. If there is a prior funding agreement, capture details to prevent double-funding conflicts and update underwriting tag accordingly.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:55:16 IST" name="Kill" finished-at="2026-01-30T19:55:16 IST" duration-ms="356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:55:16 IST" name="setup" finished-at="2026-01-30T19:55:17 IST" duration-ms="848" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:55:17 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:55:39 IST" duration-ms="21603" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Underwriter comment: Staged funding recommended until video/bodycam is received and reviewed. If video confirms key facts, consider upgrading risk from Moderate-High to Moderate and revising max funding upward. If video contradicts narrative, keep current cap and request counsel’s written position before proceeding further.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:55:39 IST" name="Kill" finished-at="2026-01-30T19:55:39 IST" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:55:39 IST" name="setup" finished-at="2026-01-30T19:55:40 IST" duration-ms="941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:55:40 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:56:01 IST" duration-ms="20793" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Attachment audit: Most PDFs readable, but one scan is upside-down and another is cropped at margins. Please ask for a re-upload in high resolution. Also check whether the UI preview panel respects zoom/fit settings and whether long filenames overflow the attachment list card.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:01 IST" name="Kill" finished-at="2026-01-30T19:56:01 IST" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:01 IST" name="setup" finished-at="2026-01-30T19:56:02 IST" duration-ms="903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:02 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:56:23 IST" duration-ms="21379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Contact attempts: Left voicemail, no response yet. Schedule second attempt in 48 hours and send a short follow-up email in parallel. If still no response after third attempt, note 'Unresponsive' and keep the case status unchanged until contact is re-established.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:23 IST" name="Kill" finished-at="2026-01-30T19:56:24 IST" duration-ms="317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:24 IST" name="setup" finished-at="2026-01-30T19:56:24 IST" duration-ms="880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:24 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:56:46 IST" duration-ms="21739" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UI stress string: ThisIsAReallyLongUnbrokenTokenDesignedToTestOverflowAndCardWrappingBehavior_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_THIS_SHOULD_FORCE_HORIZONTAL_OVERFLOW_IF_NOT_HANDLED_PROPERLY_AND_BREAK_LAYOUT]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:46 IST" name="Kill" finished-at="2026-01-30T19:56:47 IST" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Kill -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:47 IST" name="setup" finished-at="2026-01-30T19:56:47 IST" duration-ms="899" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Notes_Add(java.lang.String)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:56:47 IST" name="Notes_Add" data-provider="notesData" finished-at="2026-01-30T19:57:18 IST" duration-ms="30280" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7]" started-at="2026-01-30T19:57:18 IST" name="Kill" finished-at="2026-01-30T19:57:18 IST" duration-ms="307" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->

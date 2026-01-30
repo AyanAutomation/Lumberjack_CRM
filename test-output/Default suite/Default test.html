@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>19/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jan 30 14:19:25 IST 2026</td>
+<td>Started on:</td><td>Fri Jan 30 19:49:21 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>118 seconds (118075 ms)</td>
+<tr><td>Total time:</td><td>476 seconds (476575 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,81 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Attorney follow-up required: Request the most recent demand package, settlement posture update, and any insurer correspondence. Also confirm whether medical lien holders exist and whether any subrogation claims have been asserted. This information directly impacts net recovery expectations and should be captured before recommending any increase to approved funding.</td>
+<td><div><pre>java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:47)
+	at Locaters.Application_Locaters.Case_tags(Application_Locaters.java:510)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add(Case_Appplications.java:4073)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1560587713", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1560587713'><pre>java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:47)
+	at Locaters.Application_Locaters.Case_tags(Application_Locaters.java:510)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add(Case_Appplications.java:4073)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>18</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,14 +151,100 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case()'><b>Add_case</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: {Agreement Date=01/30/2026, Amount Received=1, Application Status=In Review, Approved Amount=20500, Attorney Name=Attorney Sable Rennick, Buyout Amount=12400, Buyout Expiry Date=01/30/2030, Buyout Funder Name=Atlas Ridge Litigation Funding, Case #=540, Case Type=Civil Rights, Court Index Number=00CV-2412-CR-001990, Date of Incident=12/27/2024, Document prep fee=260, Fund transfer fee=95, Interest Start Date=01/30/2026, Law Firm Name=National Civil Liberties Counsel, Lead Source=Other, Notes / Remarks=Lost deal logged (system requires amount); placeholder used for validation; adjust if rule allows blank., Payer Name=N/A - Lost Deal, Payment Date=01/30/2026, Payment Mode=Bank Transfer, Payment Type=Lost Deal, Rate of Return=39, Recommended Max Funding=20500, Requested Amount=50500, Risk Level=Moderate, SMS Message Body=Your file is under review while we confirm venue and verify key records. – Lumberjack Legal Finance, SMS Message Title=File In Review, State=Unknown, Summary=Civil rights complaint in early intake; jurisdiction/venue being confirmed; request for records submitted; wage loss and emotional distress alleged., Underwriting Notes=Hold funding until venue/jurisdiction confirmed and core documents obtained. Verify statute/notice deadlines and whether claims are viable under applicable standards., Underwriting Tag=Venue Confirmation}, {Address Line 1=50 Fountain Plaza, Suite 1100, Address Line 2=50 Fountain Plaza, City=Buffalo, Date of Birth=03/09/1991, Email=tavish.mackinnondrury9104@yopmail.com, First Name=Tavish, Last Name=MacKinnon-Drury, Middle Name=Riel, Name Suffix=II, Phone number=4169079104, Social Security Number=903-11-9104, State=New York, Zip code=14202}, {Email=attorney.maelys.beausoleil01@yopmail.com, First Name=Attorney Maëlys, Last Name=Beausoleil, Middle Name=Rowan, Name Suffix=II, Office phone=9897418123, Phone=9897406123}, {City=Wilmington, Name=VerdictForge Litigation Atelier, Phone=3024389017, State=Delaware, Street Address 1=919 N Market St, Brandywine Commerce Center, Main Lobby, Street Address 2=Suite 1204, Intake: Desk 3, Elevator Bank A, Zip code=19801}, {Staff Email=staff.nivaren.thornwick25@mailto.plus, Staff First Name=Staff Nivaren, Staff Last Name=Thornwick, Staff Middle Name=Calix, Staff Name Suffix=II, Staff Office phone=9718821460, Staff Phone=9716043825}, {Bcc=qa.auditdesk@yopmail.com, Cc=intake.coordinator@yopmail.com, Message=Hello,
-
-Please upload the required documents at your earliest convenience so we can proceed without delay.
-
-Thank you., Subject=Document Request - Please Upload Required Files, Template=None, To=marcelline.briarcliff1874@yopmail.com}</td>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Email log: Sent request for missing IDs and authorization forms for records retrieval. The email includes a clear checklist and deadline request, plus instructions for uploading via portal. If no response within 48 hours, send a follow-up and tag the case accordingly. Also verify that the 'Send Email' editor does not strip line breaks.</td>
 <td></td>
-<td>115</td>
-<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968</td></tr>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Status note: File moved to 'Pending Docs' because causation support is incomplete. Required items: full treatment chronology, imaging results, primary care notes, and any referral documentation. Once received, underwriting can re-evaluate risk level and recommended max funding. Please also verify the case owner and underwriter dropdown selections remain correct after status update.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Attachment audit: Most PDFs readable, but one scan is upside-down and another is cropped at margins. Please ask for a re-upload in high resolution. Also check whether the UI preview panel respects zoom/fit settings and whether long filenames overflow the attachment list card.</td>
+<td></td>
+<td>20</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Risk check: Potential statutory notice deadlines may apply. Please confirm filing posture (complaint filed vs draft only), confirm county/venue, and ensure the court index number is accurate. If any dates change, the case timeline card may need a full refresh to prevent inconsistency between dashboard view, PDF exports, and email templates.</td>
+<td></td>
+<td>25</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: UI stress string: ThisIsAReallyLongUnbrokenTokenDesignedToTestOverflowAndCardWrappingBehavior_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_THIS_SHOULD_FORCE_HORIZONTAL_OVERFLOW_IF_NOT_HANDLED_PROPERLY_AND_BREAK_LAYOUT</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Formatting validation: Ensure special characters and punctuation remain consistent in all exports (e.g., O’Connor vs O'Connor, Montréal accents, hyphenated surnames, and suffix placement like 'Jr.' 'III'). We have seen downstream mismatches when the UI trims characters or the PDF generator normalizes unicode.</td>
+<td></td>
+<td>22</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Payment observation: Amount received appears partial relative to expected schedule. Please reconcile with remittance advice before posting, verify no duplicate capture in gateway, and ensure convenience fees are either included or explicitly excluded based on policy. After reconciliation, attach payment confirmation to the case record to keep audit trail complete.</td>
+<td></td>
+<td>22</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Court index verification: The current court index number matches the screenshot but does not match the draft complaint header. Please re-check the source and confirm whether the docket search result includes a leading zero, an extra hyphen, or a revised case classification. If needed, update the case record and add a short note explaining the correction for audit.</td>
+<td></td>
+<td>24</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Fee check: Confirm document prep fee and fund transfer fee are applied exactly once. On prior cases, edits caused fees to duplicate on the ledger card and created discrepancies between the UI and exported statements. Please verify fee fields, then validate the payment summary card renders correctly and does not wrap awkwardly on smaller viewports.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Evidence checklist: Photos received (8 images), witness list received (3 names), and a short written narrative was provided. Surveillance request has been sent but not acknowledged by property owner. If surveillance is unavailable, request maintenance logs, incident logbook entry, and any prior complaints that support notice/knowledge of hazard conditions.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Contact attempts: Left voicemail, no response yet. Schedule second attempt in 48 hours and send a short follow-up email in parallel. If still no response after third attempt, note 'Unresponsive' and keep the case status unchanged until contact is re-established.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Summary rewrite: Removed duplicated incident narrative and tightened the timeline section to avoid repeating facts. Also clarified damages categories (wage loss, medical costs, emotional distress) and removed speculative language. Please review for consistency with attorney-provided narrative; if attorney disagrees, store their version in notes and keep UI summary neutral.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Underwriting update: We verified the incident date against the intake form, claimant statement, and the initial email thread. The date appears consistent across all sources, however the police report has not yet been uploaded. Please request the incident report number, responding agency, and any dispatch/CAD reference so we can cross-check timeline accuracy and avoid downstream corrections in the case summary card.</td>
+<td></td>
+<td>22</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Underwriter comment: Staged funding recommended until video/bodycam is received and reviewed. If video confirms key facts, consider upgrading risk from Moderate-High to Moderate and revising max funding upward. If video contradicts narrative, keep current cap and request counsel’s written position before proceeding further.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Docs pending — please upload: (1) ER discharge summary, (2) itemized billing, (3) imaging results if available, and (4) proof of wage loss for the week following the incident. Until these are received, underwriting cannot finalize medical causation or damages sizing. Note: the current attachments include a partial PDF scan that cuts off the provider signature block on page 2.</td>
+<td></td>
+<td>22</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Call summary: Spoke to plaintiff and confirmed preferred contact window is 2–5 PM local time. Plaintiff stated they can provide employer HR contact details, but requested that all communications be routed through attorney once representation letter is finalized. Plaintiff also mentioned prior treatment for a similar symptom; please flag this for potential medical causation discussion and document it carefully in underwriting notes.</td>
+<td></td>
+<td>22</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Address validation: ZIP/state combination verified; however, Address Line 2 may be missing a unit number. Please confirm whether the address is a suite, apartment, or floor designation so we avoid mail return. If the UI concatenates address in a single line card, confirm the separators and spacing remain readable when line 2 is long.</td>
+<td></td>
+<td>22</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: </td>
+<td></td>
+<td>30</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add()'><b>Notes_Add</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Case_Appplications<br>Parameters: Lien/third-party funding check: Plaintiff disclosed prior funding provider inquiry but did not confirm acceptance. Please confirm whether any contracts were signed or whether any UCC filings exist. If there is a prior funding agreement, capture details to prevent double-funding conflicts and update underwriting tag accordingly.</td>
+<td></td>
+<td>21</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@d35dea7</td></tr>
 </table><p>
 </body>
 </html>

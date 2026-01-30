@@ -83,7 +83,7 @@ public class Attorney_module extends Plaintiff_Module{
 	Add_Attorney_Button.click();
 	Thread.sleep(800);	
 	String taost= lg.toast().getText().trim();
-	Login_negative_testcases.Toast_printer(taost);
+	Login_negative_testcases.Toast_printer(taost,d);
 	try{
         String toast_text = lg.toast().getText().trim();
         Report_Listen.log_print_in_report().log(Status.PASS,
@@ -131,7 +131,7 @@ public class Attorney_module extends Plaintiff_Module{
 			Thread.sleep(800);	
 			WebElement Local_Toast = lg.toast();
 			String taost= Local_Toast.getText().trim();
-			Login_negative_testcases.Toast_printer(taost);
+			Login_negative_testcases.Toast_printer(taost,d);
 		    Thread.sleep(600);}
 	
 	

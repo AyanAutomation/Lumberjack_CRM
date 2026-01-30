@@ -56,7 +56,7 @@ public class User_Module extends Header_Manager{
 		Thread.sleep(800);	
 		WebElement Toast= lg.toast();
 		String toast= Toast.getText().trim();
-		Login_negative_testcases.Toast_printer(toast);
+		Login_negative_testcases.Toast_printer(toast,d);
 		}
 	    
 	

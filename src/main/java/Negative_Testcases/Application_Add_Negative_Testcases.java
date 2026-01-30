@@ -202,7 +202,7 @@ public class Application_Add_Negative_Testcases extends Case_Appplications{
 			Requested_amount_field.sendKeys(data.get("Requested Amount"));
 			form_submit_button.click();
 			Thread.sleep(500);try {
-			Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+			Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 			catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}}}
   

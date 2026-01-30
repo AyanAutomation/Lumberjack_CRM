@@ -57,7 +57,7 @@ public class Law_Firm_Module extends Attorney_module{
 		Thread.sleep(800);	
 		WebElement Toast_cancel_button = lg.Toast_close_button();
 		String taost= lg.toast().getText().trim();
-		Login_negative_testcases.Toast_printer(taost);
+		Login_negative_testcases.Toast_printer(taost,d);
 		Toast_cancel_button.click();}
 		
 	
@@ -133,7 +133,7 @@ public class Law_Firm_Module extends Attorney_module{
 				Thread.sleep(800);	
 				WebElement Toast = lg.toast();
 				String taost= Toast.getText().trim();
-				Login_negative_testcases.Toast_printer(taost);}}
+				Login_negative_testcases.Toast_printer(taost,d);}}
 	
 	  @Test(dataProvider="lawFirmEditData")
 	  public void law_firm_Address_edit_and_its_reflection_in_case_contact_details(TreeMap<String,String> data) throws IOException, InterruptedException{
@@ -296,7 +296,7 @@ public class Law_Firm_Module extends Attorney_module{
 			Thread.sleep(800);	
 			WebElement Toast_cancel_button = lg.Toast_close_button();
 			String taost= lg.toast().getText().trim();
-			Login_negative_testcases.Toast_printer(taost);
+			Login_negative_testcases.Toast_printer(taost,d);
 			Toast_cancel_button.click();
 			Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step "+(step++)+":</b> Verify updated address is displayed in Law Firm list (Address column).");
 		    System.out.println("[Step] Verify updated address in Law Firm list (Address column)");

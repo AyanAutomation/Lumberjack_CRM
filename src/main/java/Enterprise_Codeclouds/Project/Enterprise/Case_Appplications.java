@@ -32,6 +32,7 @@ import com.microsoft.playwright.impl.Stream;
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
+import Locaters.Plaintiff_Locaters;
 import Locaters.temp_mail_Locaters;
 import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
@@ -67,104 +68,286 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	
-	  public void Email_sender(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> data) throws IOException, InterruptedException{
-		
-		
-		  Application_Locaters p = new Application_Locaters(d);
-		  SIde_Menu_Handler sd = new SIde_Menu_Handler();
-		  Login_Locaters lg = new Login_Locaters(d);
-		  Repeat rp = new Repeat(d);
-		  
-		  
-		  String Subject = data.get("Subject");
-		  String to = data.get("To");
-		  String Mail_Body = data.get("Message");
-		  String Case_id = "AK2600378";
-		  
-		  System.out.println("Case id is   "+Case_id);
-		  System.out.println();
-		  
-		   try{p.Send_button();}
-	       catch(Exception not_in_Case_Details) {	    
-		   sd.Side_menu_option_clicker("Applications", d,"N/A");
-		   p.landed_in_applicationList_confirmation();
-		   p.Filter_clear().click();
-		   WebElement Search = p.Application_search();
-		   Search.sendKeys(Case_id);
-		   Thread.sleep(1800);
-		   List<WebElement> result_rows;
-		  try {
-		   result_rows = p.rows();
-		   result_rows.get(0).click();
-		   Thread.sleep(800);}
-		  catch(Exception Result_still_not_fetched){
-			 System.out.println("Exception Found in fetching result rows thereby retrying");
-			 System.out.println();
-		   Thread.sleep(800);  
-		   result_rows = p.rows();
-		   result_rows.get(0).click();
-		   Thread.sleep(800);}}
-		   List<WebElement> Case_Tags;
-		   try {
-		   Case_Tags = p.Case_tags();}
-		   catch(RuntimeException tags){
-			   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-			   System.out.println();
-			   Thread.sleep(1200);
-			   Case_Tags = p.Case_tags(); }
-		  p.Send_button().click();
-		  p.Email_button().click();
-		  p.pop_up_contact_list();
-		  p.Subject_field().sendKeys(Subject);
-		  WebElement Email_To = p.Email_to_field();
-		  Email_To.sendKeys(to);
-		  WebElement CC_Button = p.CC_button();
-		  WebElement BCC_Button = p.Bcc_button();
-		  CC_Button.click();
-		  BCC_Button.click();
-		  WebElement CC_field = p.cc_field();
-		  WebElement BCC_field = p.bcc_field();
-		  CC_field.sendKeys(data.get("Cc"));
-		  rp.Scroll_to_element(BCC_field);
-		  BCC_field.sendKeys(data.get("Bcc"));
-		  WebElement Iframe = p.contract_doc_iframe();
-		  rp.Scroll_to_element(Iframe);
-		  d.switchTo().frame(Iframe);
-		  Thread.sleep(900);
-		  rp.Scroll_to_element(p.Email_Body());
-		  p.Email_Body().sendKeys(Mail_Body);
-		  d.switchTo().defaultContent();
-		  p.Submit_button().click();
-		  WebElement Toast = lg.toast();
-		  String toastText = Toast.getText().trim();
-		  Login_negative_testcases.Toast_printer(toastText);
-		  WebElement card= p.mail_card_in_feed();
-		  String mail_card_content = card.getText().trim();
-		  
-		  if(mail_card_content.contains(Subject)&&mail_card_content.contains(to)){
-			  System.out.println("Testcase Passed Mail Feed contains values and date send in mail");
-			  System.out.println();
-		  }else{
-			  System.out.println("Testcase Passed Mail Feed doesn't contains values and date send in mail");
-			  System.out.println();
-			  
-		  }
-		  
-		  /*
-		  List <WebElement> mail_feed_card_contents = p.mail_card_sections();
-		  for(WebElement mail_cont:mail_feed_card_contents){
-			  
-			 String card_text_contents =  mail_cont.getText().trim();
-			 if(card_text_contents.contains(Subject)&&){
-				 System.out.print
-				 
-			 }
-			  
-			  
-			  
-		  }*/
-		
+	public void Email_sender(
+	        TreeMap<String, String> Case_Data,
+	        TreeMap<String, String> Plaintiff,
+	        TreeMap<String, String> attorneyData,
+	        TreeMap<String, String> Law_Firm_Data,
+	        TreeMap<String, String> Staff_Data,
+	        TreeMap<String, String> data,String caseid) throws IOException, InterruptedException {
+
+	    Application_Locaters p = new Application_Locaters(d);
+	    SIde_Menu_Handler sd = new SIde_Menu_Handler();
+	    Login_Locaters lg = new Login_Locaters(d);
+	    Repeat rp = new Repeat(d);
+
+	    String Subject = data.get("Subject");
+	    String to = data.get("To");
+	    String Mail_Body = data.get("Message");
+	    String cc = data.get("Cc");
+	    String bcc = data.get("Bcc");
+
+	    String Case_id = caseid;
+
+	    int step = 1;
+
+	    // -------------------------------
+	    // 🔹 Scenario Header
+	    // -------------------------------
+	    String extentHeader =
+	            "<b>🔹 Email Sender — Case Feed Validation</b><br>" +
+	            "<b>📘 Description:</b> Send an email from Case Details using Send → Email, then verify it appears in Feed card.<br>" +
+	            "<b>📥 Input:</b> Case ID=" + Case_id + " | To=" + to + " | Subject=" + Subject + " | CC=" + cc + " | BCC=" + bcc + "<br>" +
+	            "<b>✅ Expected:</b> Email should send successfully (toast) and Feed card should contain To + Subject.";
+
+	    Report_Listen.log_print_in_report().log(Status.INFO, extentHeader);
+
+	    System.out.println("==================================================");
+	    System.out.println("EMAIL SENDER — CASE FEED VALIDATION");
+	    System.out.println("--------------------------------------------------");
+	    System.out.println("Case ID : " + Case_id);
+	    System.out.println("To      : " + to);
+	    System.out.println("Subject : " + Subject);
+	    System.out.println("CC      : " + cc);
+	    System.out.println("BCC     : " + bcc);
+	    System.out.println("Expected: Toast should confirm email sent, and feed card should contain To + Subject.");
+	    System.out.println("==================================================");
+	    System.out.println();
+
+	    // -------------------------------
+	    // Step 1: Ensure we are inside Case Details
+	    // -------------------------------
+	    try {
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>Step " + (step++) + ":</b> Check if we are already inside Case Details (Send button visible).");
+	        p.Send_button();
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Already inside Case Details page.");
+
+	        System.out.println("[Step 1] Send button found. Already in Case Details.");
+	        System.out.println();
+
+	    } catch (Exception not_in_Case_Details) {
+
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Not in Case Details. Navigating via Applications list using Case ID search.");
+
+	        System.out.println("[Step 1] Send button NOT found. Navigating to Case Details via Applications...");
+	        System.out.println();
+
+	        sd.Side_menu_option_clicker("Applications", d, "N/A");
+	        p.landed_in_applicationList_confirmation();
+	        p.Filter_clear().click();
+
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>Step " + (step++) + ":</b> Search Case ID in Applications list and open the first result.");
+	        WebElement Search = p.Application_search();
+	        Search.sendKeys(Case_id);
+	        Thread.sleep(1800);
+
+	        List<WebElement> result_rows;
+	        try {
+	            result_rows = p.rows();
+	            result_rows.get(0).click();
+	            Thread.sleep(800);
+
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> Opened Case Details from first search result row.");
+	            System.out.println("[Step 2] Case opened from first search result row.");
+	            System.out.println();
+
+	        } catch (Exception Result_still_not_fetched) {
+
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> Result rows not ready on first try. Retrying to fetch rows and open case.");
+
+	            System.out.println("[Step 2] Rows not fetched properly. Retrying...");
+	            Thread.sleep(800);
+
+	            result_rows = p.rows();
+	            result_rows.get(0).click();
+	            Thread.sleep(800);
+
+	            System.out.println("[Step 2] Case opened after retry.");
+	            System.out.println();
+	        }
+	    }
+
+	    // -------------------------------
+	    // Step 2: Case tags load confirmation (your existing retry behavior)
+	    // -------------------------------
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Wait for Case Tags to load (stability check).");
+
+	    List<WebElement> Case_Tags;
+	    try {
+	        Case_Tags = p.Case_tags();
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Case Tags fetched successfully (count=" + Case_Tags.size() + ").");
+
+	        System.out.println("[Step 3] Case Tags fetched successfully. Count = " + Case_Tags.size());
+	        System.out.println();
+
+	    } catch (RuntimeException tags) {
+
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> RuntimeException while fetching Case Tags. Retrying after wait.");
+
+	        System.out.println("[Step 3] RuntimeException while fetching Case Tags. Retrying...");
+	        System.out.println();
+
+	        Thread.sleep(1200);
+	        Case_Tags = p.Case_tags();
+
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Case Tags fetched successfully after retry (count=" + Case_Tags.size() + ").");
+
+	        System.out.println("[Step 3] Case Tags fetched after retry. Count = " + Case_Tags.size());
+	        System.out.println();
+	    }
+
+	    // -------------------------------
+	    // Step 3: Open Send → Email modal
+	    // -------------------------------
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Open Send menu and select Email option.");
+	    System.out.println("[Step 4] Opening Send → Email...");
+	    System.out.println();
+
+	    p.Send_button().click();
+	    p.Email_button().click();
+	    p.pop_up_contact_list();
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Email modal opened.");
+
+	    // -------------------------------
+	    // Step 4: Fill email fields (Subject, To, CC/BCC)
+	    // -------------------------------
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Fill Subject and To fields.");
+	    System.out.println("[Step 5] Filling Subject and To...");
+	    System.out.println();
+
+	    p.Subject_field().sendKeys(Subject);
+
+	    WebElement Email_To = p.Email_to_field();
+	    Email_To.sendKeys(to);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Subject and To entered.");
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Enable CC and BCC fields, then enter CC and BCC values.");
+	    System.out.println("[Step 6] Enabling CC/BCC and filling values...");
+	    System.out.println();
+
+	    WebElement CC_Button = p.CC_button();
+	    WebElement BCC_Button = p.Bcc_button();
+	    CC_Button.click();
+	    BCC_Button.click();
+
+	    WebElement CC_field = p.cc_field();
+	    WebElement BCC_field = p.bcc_field();
+	    CC_field.sendKeys(cc);
+
+	    rp.Scroll_to_element(BCC_field);
+	    BCC_field.sendKeys(bcc);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> CC and BCC values entered.");
+
+	    // -------------------------------
+	    // Step 5: Enter email body inside iframe
+	    // -------------------------------
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Switch to iframe and enter Email body.");
+	    System.out.println("[Step 7] Switching to iframe and typing email body...");
+	    System.out.println();
+
+	    WebElement Iframe = p.contract_doc_iframe();
+	    rp.Scroll_to_element(Iframe);
+	    d.switchTo().frame(Iframe);
+	    Thread.sleep(900);
+
+	    rp.Scroll_to_element(p.Email_Body());
+	    p.Email_Body().sendKeys(Mail_Body);
+
+	    d.switchTo().defaultContent();
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Email body entered successfully and switched back to main page.");
+
+	    // -------------------------------
+	    // Step 6: Submit email and capture toast
+	    // -------------------------------
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Click Submit and capture toast message.");
+	    System.out.println("[Step 8] Submitting email and capturing toast...");
+	    System.out.println();
+
+	    p.Submit_button().click();
+
+	    WebElement Toast = lg.toast();
+	    String toastText = Toast.getText().trim();
+	    Login_negative_testcases.Toast_printer(toastText,d);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Toast captured = <b>" + toastText + "</b>");
+
+	    System.out.println("[Step 8] Toast = " + toastText);
+	    System.out.println();
+
+	    // -------------------------------
+	    // Step 7: Verify mail card in feed contains Subject and To
+	    // -------------------------------
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Verify email entry appears in Feed card with Subject + To.");
+
+	    System.out.println("[Step 9] Verifying mail card in feed...");
+	    System.out.println();
+
+	    WebElement card = p.mail_card_in_feed();
+	    String mail_card_content = card.getText().trim();
+
+	    boolean subjectPresent = mail_card_content.contains(Subject);
+	    boolean toPresent = mail_card_content.contains(to);
+
+	    // Build reason-based result (no fancy boolean logic in logs)
+	    String subjectCheck = subjectPresent ? "PASS ✅ (Subject found)" : "FAIL ❌ (Subject NOT found)";
+	    String toCheck = toPresent ? "PASS ✅ (To found)" : "FAIL ❌ (To NOT found)";
+
+	    String extentFeedValidation =
+	            "<div style='background:#eaf4ff; padding:16px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33;'>" +
+	                    "<b>🔹 Email Feed Validation</b><br><br>" +
+	                    "<b>📌 Expected:</b> Feed card should show Subject + To.<br><br>" +
+	                    "<b>🔍 Checks:</b><br>" +
+	                    "<b>Subject Check:</b> " + subjectCheck + "<br>" +
+	                    "<b>To Check:</b> " + toCheck + "<br><br>" +
+	                    "<b>🧾 Feed Card Content (captured):</b><br>" +
+	                    "<span style='font-size:12px;'>" + mail_card_content.replace("\n", "<br>") + "</span>" +
+	            "</div>";
+
+	    if (subjectPresent && toPresent) {
+	        Report_Listen.log_print_in_report().log(Status.PASS, extentFeedValidation);
+
+	        System.out.println("✅ RESULT: PASS");
+	        System.out.println("Reason: Feed card contains both Subject and To.");
+	        System.out.println("Subject Check: " + subjectCheck);
+	        System.out.println("To Check     : " + toCheck);
+	        System.out.println();
+
+	    } else {
+	        Report_Listen.log_print_in_report().log(Status.FAIL, extentFeedValidation);
+
+	        System.out.println("❌ RESULT: FAIL");
+	        System.out.println("Reason: Feed card missing expected values.");
+	        System.out.println("Subject Check: " + subjectCheck);
+	        System.out.println("To Check     : " + toCheck);
+	        System.out.println();
+	    }
 	}
+
 	  
 	  
 	  
@@ -356,7 +539,7 @@ public class Case_Appplications extends Header_Manager{
 		p.second_popup_form_buttons().get(1).click();
 		WebElement Toast = lg.toast();
 		String toastText = Toast.getText().trim();
-		Login_negative_testcases.Toast_printer(toastText);
+		Login_negative_testcases.Toast_printer(toastText,d);
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🟨 Actual:</b> ✅ Template saved successfully. Toast = <b>"+toastText+"</b>");
 		rp.wait_for_invisibility(Toast);
@@ -544,7 +727,7 @@ public class Case_Appplications extends Header_Manager{
 		p.form_buttons().get(1).click();
 		Thread.sleep(500); 	
 		try {
-		Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+		Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 		catch(Exception e){
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Case Details edit popup and update Summary + Court Index Number.");
@@ -627,7 +810,7 @@ public class Case_Appplications extends Header_Manager{
 		p.calender_date_select().click();
 		p.modal_buttons().get(1).click();
 		Thread.sleep(800);
-		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 			catch(Exception e){
 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
@@ -787,8 +970,10 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(1800);
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
 		String contract_saved = "";
+		WebElement contract_saved_webelement;
 		try{
-			contract_saved = lg.toast().getText().trim();
+			contract_saved_webelement= lg.toast();
+			contract_saved = contract_saved_webelement.getText().trim();
 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract saved toast = "+contract_saved);
 			System.out.println(contract_saved);
 		}catch(Exception e){
@@ -805,7 +990,7 @@ public class Case_Appplications extends Header_Manager{
 		   String Contract_Generated = "";
 		    try {
 		        Contract_Generated = lg.toast().getText().trim();
-		        Login_negative_testcases.Toast_printer(Contract_Generated);
+		        Login_negative_testcases.Toast_printer(Contract_Generated,d);
 
 		        Report_Listen.log_print_in_report().log(Status.PASS,
 		                String.format("<b>🟨 Actual:</b> ✅ Contract generation toast captured = <b>%s</b>", Contract_Generated));
@@ -816,7 +1001,7 @@ public class Case_Appplications extends Header_Manager{
 		        System.out.println("Actual  : FAILED to capture contract generation toast");
 		        throw e;
 		    }
-		Login_negative_testcases.Toast_printer(Contract_Generated);
+		Login_negative_testcases.Toast_printer(Contract_Generated,d);
 		 try {
 		        rp.wait_for_invisibility(lg.toast());
 		    } catch (Exception invis) {
@@ -929,7 +1114,10 @@ public class Case_Appplications extends Header_Manager{
 	    	    System.out.println("[END] Add_case completed successfully");
 	    	    System.out.println("Case ID : " + Case_ID);
 	    	    System.out.println("==================================================");
-	    	    System.out.println();}
+	    	    System.out.println();
+	    	    
+	    	    Email_sender(Case_Data,Plaintiff,attorneyData,Law_Firm_Data,Staff_Data,Email_Send_Data,Case_ID);
+	}
 	
 	    
 	     @Test(dataProvider="case_plus_plaintiff")
@@ -1018,11 +1206,15 @@ public class Case_Appplications extends Header_Manager{
 	 		p.form_buttons().get(1).click();
 	 		Thread.sleep(500); 	
 	 		try {
-	 		Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+	 		Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 	 		catch(Exception e){
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Case Details edit popup and update Summary + Court Index Number.");
-	 	    p.Case_details_edit_buttons().click();
+	 		WebElement CaseId = p.Case_ID_Tag();
+		    String Case_ID = CaseId.getText().trim(); /***************/
+		    System.out.println(Case_ID);
+		    System.out.println();
+	 		p.Case_details_edit_buttons().click();
 	 		p.Summary_feild().sendKeys(Case_Data.get("Summary"));
 	 		p.Court_index_input().sendKeys(Case_Data.get("Court Index Number"));
 	 		p.Edit_form_buttons().get(1).click();
@@ -1064,8 +1256,30 @@ public class Case_Appplications extends Header_Manager{
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
 	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 	 		rp.Scroll_to_element(p.Application_tab_bar());
-	 		tab_selector("Applications");
-	 		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+	 		try {
+	 			tab_selector("Applications");
+	 			  Report_Listen.log_print_in_report().log(Status.PASS,
+	 		                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt."
+	 		        );
+
+	 		        System.out.println("Actual     : Applications tab clicked successfully (Retry Attempt)");
+	 		        System.out.println();}
+	 			catch(Exception tab_click){
+	 				
+	 				Thread.sleep(800);
+	 				tab_selector("Applications"); Report_Listen.log_print_in_report().log(Status.INFO,
+	 			            "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
+	 			                    + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName()
+	 			              );
+
+	 			              System.out.println("Actual     : First attempt FAILED to click Applications tab");
+	 			              System.out.println("Retry Plan : Wait 800ms and retry once");
+	 			              System.out.println("Exception  : " + tab_click.getClass().getSimpleName());
+	 			              System.out.println();
+
+	 			              Thread.sleep(800);
+	 			}
+	 		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 	 			catch(Exception e){
 	 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
@@ -1218,7 +1432,7 @@ public class Case_Appplications extends Header_Manager{
 
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
 	 		String Contract_Generated = lg.toast().getText().trim();
-	 		Login_negative_testcases.Toast_printer(Contract_Generated);
+	 		Login_negative_testcases.Toast_printer(Contract_Generated,d);
 	 		rp.wait_for_invisibility(lg.toast());
 	 		Thread.sleep(1000);
 	 		FluentWait<WebDriver> fwts = new FluentWait<WebDriver>(d)
@@ -1230,7 +1444,43 @@ public class Case_Appplications extends Header_Manager{
 	 		String new_toast_text = lg.toast().getText().trim();
 	 		System.out.println(new_toast_text);
 	 		Thread.sleep(800);
-	 		p.Application_amount_edit_buttons().get(1).click();
+	 	// -------------------------------
+	 	// Step X: Open Buyout modal (with retry + logs)
+	 	// -------------------------------
+	 	Report_Listen.log_print_in_report().log(Status.INFO,
+	 	        "<b>Step " + (step++) + ":</b> Open Buyout modal from Applications tab (Buyout edit button).");
+	 	System.out.println("[Step] Opening Buyout modal (Applications → Buyout edit button)...");
+	 	System.out.println();
+
+	 	try {
+	 	    List<WebElement> amountEditButtons = p.Application_amount_edit_buttons();
+	 	    amountEditButtons.get(1).click();
+
+	 	    Report_Listen.log_print_in_report().log(Status.INFO,
+	 	            "<b>🟨 Actual:</b> Buyout modal open click performed successfully (first attempt).");
+	 	    System.out.println("🟨 Actual: Buyout modal open click performed successfully (first attempt).");
+	 	    System.out.println();
+
+	 	} catch (Exception buyoutClickRetry) {
+
+	 	    Report_Listen.log_print_in_report().log(Status.INFO,
+	 	            "<b>🟨 Actual:</b> Exception while clicking Buyout edit button. Retrying once after wait. Error: "
+	 	                    + buyoutClickRetry.getClass().getSimpleName());
+	 	    System.out.println("🟨 Actual: Exception while clicking Buyout edit button. Retrying once after wait.");
+	 	    System.out.println("Error: " + buyoutClickRetry.getClass().getSimpleName());
+	 	    System.out.println();
+
+	 	    Thread.sleep(800);
+
+	 	    List<WebElement> amountEditButtonsRetry = p.Application_amount_edit_buttons();
+	 	    amountEditButtonsRetry.get(1).click();
+
+	 	    Report_Listen.log_print_in_report().log(Status.INFO,
+	 	            "<b>🟨 Actual:</b> Buyout modal open click performed successfully (after retry).");
+	 	    System.out.println("🟨 Actual: Buyout modal open click performed successfully (after retry).");
+	 	    System.out.println();
+	 	}
+
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
 	        List<WebElement> new_buyout_inputs = p.Modal_Input_Feilds();
@@ -1439,7 +1689,7 @@ public class Case_Appplications extends Header_Manager{
 
 				Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
 				String Contract_Generated_ = lg.toast().getText().trim();
-				Login_negative_testcases.Toast_printer(Contract_Generated_);
+				Login_negative_testcases.Toast_printer(Contract_Generated_,d);
 				rp.wait_for_invisibility(lg.toast());
 				Thread.sleep(1000);
 				WebElement new_toast_ =lg.toast();
@@ -1452,8 +1702,8 @@ public class Case_Appplications extends Header_Manager{
 			    Sign_in_button_.click();
 				//Docu_Sign_Signature();
 				manual_lien_generation(Sign_in_button_);
-			//	Pay_Off_calculator(Case_Data,Plaintiff,attorneyData);
-				Email_sender(Case_Data,Plaintiff,attorneyData,Law_Firm_Data,Staff_Data,Email_Send_Data);
+				Payment_Calculator(Case_Data,Case_ID);
+				Email_sender(Case_Data,Plaintiff,attorneyData,Law_Firm_Data,Staff_Data,Email_Send_Data,Case_ID);
 	 	    }}
 	 		
 	 		else{
@@ -1569,7 +1819,7 @@ public class Case_Appplications extends Header_Manager{
 			inputs.get(0).sendKeys(Case_Data.get("Underwriting Tag"));
 			p.Submit_Button().click();
 		try {WebElement Toast = lg.toast();
-			Login_negative_testcases.Toast_printer(Toast.getText().trim());
+			Login_negative_testcases.Toast_printer(Toast.getText().trim(),d);
 			 Report_Listen.log_print_in_report().log(Status.PASS,
 		                "<b>🟨 Actual:</b> ✅ Underwriting Notes saved successfully. Toast captured and confirms save.");}
 		catch(Exception Toast_Not_Found){
@@ -1760,7 +2010,7 @@ public class Case_Appplications extends Header_Manager{
 	    	footer_buttons.get(0).click();
 	    	WebElement Toast = lg.toast();
 	    	String Contract_Signed = Toast.getText().trim();
-			Login_negative_testcases.Toast_printer(Contract_Signed);
+			Login_negative_testcases.Toast_printer(Contract_Signed,d);
 			Report_Listen.log_print_in_report().log(Status.INFO,
 		            "<b>🟨 Actual:</b> System confirmed contract signing via toast message.");
 			try{tab_selector("Liens");}
@@ -2436,11 +2686,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ 
+		    return new Object[][]{ /*
 		        {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c11},{c12},{c13},{c14},{c15}, */
+		        {c16},/*{c17},{c18},{c19},{c20} */
 		    };}
 	
 	
@@ -2702,105 +2952,295 @@ public class Case_Appplications extends Header_Manager{
 	        	Application_Locaters p = new Application_Locaters(d);
 	        	Repeat rp = new Repeat(d);
 	        	Login_Locaters lg = new Login_Locaters(d);
+	        	
+	        	int step = 1;
 	        	 
 	        	String Case_id = Case_Id;
-	        	
 	        	double Document_prep_fee = Double.parseDouble(data.get("Document prep fee"));
-	        	double Fundtransferfee = Double.parseDouble(data.get("Fund transfer fee"));
-	        	double Amount_to_be_payed = (Document_prep_fee+Fundtransferfee)/2;
-	        	double Amount_to_be_payed_upto_2_decimal = Double.parseDouble(String.format("%.2f", Amount_to_be_payed));
-	        	String Amount_to_be_payed_text = String.format("%.2f", Amount_to_be_payed_upto_2_decimal);
-	        	
-	        	
-	        	
-	        	Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>🔹 Scenario Title:</b> Payment Log – Record a Payment and Verify System Confirmation");
+	            double Fundtransferfee = Double.parseDouble(data.get("Fund transfer fee"));
+
+	            double Total_Fees = Document_prep_fee + Fundtransferfee;
+	            double Amount_to_be_payed = Total_Fees / 2;
+
+	            double Amount_to_be_payed_upto_2_decimal = Double.parseDouble(String.format("%.2f", Amount_to_be_payed));
+	            String Amount_to_be_payed_text = String.format("%.2f", Amount_to_be_payed_upto_2_decimal);
+
+	            String Mode = data.get("Payment Mode");
+	            String Type = data.get("Payment Type");
+	            String Payer = data.get("Payer Name");
+	            String PayDate = data.get("Payment Date");
+	            String Notes = data.get("Notes / Remarks");
+
+	            // =========================
+	            // Scenario Header (Extent)
+	            // =========================
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'>"
+	                  + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario Title: Payment Logger – Record Payment (50% Fees)</div>"
+	                  + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Open <b>Log Payment</b> form from Case Action dropdown, enter payment details, submit, and capture confirmation toast.</div>"
+	                  + "<div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>" + Case_id + "</b></div>"
+	                  + "<div style='margin-top:10px; font-size:13px;'><b>🧮 Fee Rule:</b> Payment Amount = (Doc Prep + Fund Transfer) / 2</div>"
+	                  + "<div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> Payment should log successfully and system should show a confirmation toast.</div>"
+	                  + "</div>"
+	            );
+
+	            // =========================
+	            // Scenario Header (Console)
+	            // =========================
+	            System.out.println("\n==================================================");
+	            System.out.println("[SCENARIO] Payment Logger – Record Payment (50% Fees)");
+	            System.out.println("Case ID           : " + Case_id);
+	            System.out.println("Document Prep Fee : " + String.format("%.2f", Document_prep_fee));
+	            System.out.println("Fund Transfer Fee : " + String.format("%.2f", Fundtransferfee));
+	            System.out.println("Total Fees        : " + String.format("%.2f", Total_Fees));
+	            System.out.println("Payment Amount(50%): " + Amount_to_be_payed_text);
+	            System.out.println("==================================================\n");
+
+	            // =========================
+	            // Step 1: Ensure in Case Details
+	            // =========================
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>Step " + (step++) + ":</b> Ensure user is inside correct Case Details page for Case ID = <b>" + Case_id + "</b>."
+	            );
+	            System.out.println("[Step] Ensure user is inside correct Case Details page for Case ID = " + Case_id);
+
+	            WebElement case_Dropdown;
+
+	            try {
+	                case_Dropdown = p.Case_Action_Dropdown();
+	                Report_Listen.log_print_in_report().log(Status.INFO,
+	                        "<b>🟨 Actual:</b> Case Action dropdown is visible. Already inside Case Details."
+	                );
+	                System.out.println("Actual: Already inside Case Details (Case Action dropdown found).");
+	                System.out.println();
+	            }
+	            catch (Exception not_in_Case_Details) {
+
+	                Report_Listen.log_print_in_report().log(Status.INFO,
+	                        "<b>🟨 Actual:</b> Case Action dropdown not found. Navigating from Applications list using Case ID search."
+	                );
+	                System.out.println("Actual: Not inside Case Details. Navigating via Applications list search...");
+	                System.out.println();
+
+	                sd.Side_menu_option_clicker("Applications", d, "N/A");
+	                p.landed_in_applicationList_confirmation();
+	                p.Filter_clear().click();
+
+	                WebElement Search = p.Application_search();
+	                Search.sendKeys(Case_id);
+	                Thread.sleep(1800);
+
+	                // Close toasts if present (no assumption, just try safely)
+	                try { lg.Toast_close_button().click(); } catch (Exception ignore) {}
+	                try { lg.Toast_close_button().click(); } catch (Exception ignore) {}
+
+	                List<WebElement> result_rows;
+	                try {
+	                    result_rows = p.rows();
+	                    result_rows.get(0).click();
+	                    Thread.sleep(800);
+
+	                    Report_Listen.log_print_in_report().log(Status.INFO,
+	                            "<b>🟨 Actual:</b> Case row opened from Applications list for Case ID = <b>" + Case_id + "</b>."
+	                    );
+	                    System.out.println("Actual: Case opened from Applications list. Case ID = " + Case_id);
+	                    System.out.println();
+	                }
+	                catch (Exception Result_still_not_fetched) {
+
+	                    Report_Listen.log_print_in_report().log(Status.INFO,
+	                            "<b>🟨 Actual:</b> Rows not loaded in first attempt. Retrying row fetch and open."
+	                    );
+	                    System.out.println("Retry: Rows not fetched, retrying...");
+	                    System.out.println();
+
+	                    Thread.sleep(800);
+	                    result_rows = p.rows();
+	                    result_rows.get(0).click();
+	                    Thread.sleep(800);
+
+	                    Report_Listen.log_print_in_report().log(Status.INFO,
+	                            "<b>🟨 Actual:</b> Case opened successfully after retry."
+	                    );
+	                    System.out.println("Actual: Case opened successfully after retry.");
+	                    System.out.println();
+	                }
+
+	                // Case tags stabilization (your same behavior)
+	                try {
+	                    p.Case_tags();
+	                }
+	                catch (RuntimeException tags) {
+	                    System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+	                    System.out.println();
+	                    Thread.sleep(1200);
+	                    p.Case_tags();
+	                }
+
+	                case_Dropdown = p.Case_Action_Dropdown();
+	            }
+
+	            // =========================
+	            // Step 2: Open Log Payment form
+	            // =========================
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>Step " + (step++) + ":</b> Open <b>Log Payment</b> from Case Action dropdown."
+	            );
+	            System.out.println("[Step] Open Log Payment from Case Action dropdown");
+
+	            rp.movetoelement(case_Dropdown);
+
+	            try {
+	                p.Case_Action_Dropdown_list();
+	                List<WebElement> optionsElements = p.Case_Dropdown_Options();
+
+	                boolean found = false;
+	                for (WebElement Each_Option : optionsElements) {
+	                    String option_text = Each_Option.getText().trim();
+	                    if (option_text.contains("Log Payment")) {
+	                        Each_Option.click();
+	                        found = true;
+	                        break;
+	                    }
+	                }
+
+	                if (found) {
+	                    Report_Listen.log_print_in_report().log(Status.INFO,
+	                            "<b>🟨 Actual:</b> Log Payment option clicked. Payment form should open."
+	                    );
+	                    System.out.println("Actual: Log Payment option clicked. Payment form opening...");
+	                    System.out.println();
+	                } else {
+	                    Report_Listen.log_print_in_report().log(Status.FAIL,
+	                            "<b>🟨 Actual:</b> ❌ Log Payment option not found inside Case Action dropdown."
+	                    );
+	                    System.out.println("FAIL: Log Payment option not found in dropdown.");
+	                    System.out.println();
+	                    throw new RuntimeException("Log Payment option not found in Case Action dropdown.");
+	                }
+
+	            } catch (Exception e) {
+	                Report_Listen.log_print_in_report().log(Status.FAIL,
+	                        "<b>🟨 Actual:</b> ❌ Failed while opening Log Payment form. Error: " + e.getMessage()
+	                );
+	                System.out.println("FAIL: Could not open Log Payment form. Error: " + e.getMessage());
+	                System.out.println();
+	                throw e;
+	            }
+
+	            // =========================
+	            // Step 3: Fill payment form
+	            // =========================
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>Step " + (step++) + ":</b> Fill Payment details and submit."
+	            );
+	            System.out.println("[Step] Fill Payment details and submit");
 
 	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>📘 Description:</b> Validate that a user can log a payment against a funded case and the system accepts the entered payment details and confirms the save.");
+	                    "<div style='background:#eef9ff; padding:14px; border-radius:10px; border:1px solid #bfe6ff; color:#0b1b33; font-family:Arial;'>"
+	                  + "<b>📥 Input Values</b><br>"
+	                  + "<b>Mode:</b> " + Mode + "<br>"
+	                  + "<b>Type:</b> " + Type + "<br>"
+	                  + "<b>Payer:</b> " + Payer + "<br>"
+	                  + "<b>Date:</b> " + PayDate + "<br>"
+	                  + "<b>Total Fees:</b> " + String.format("%.2f", Total_Fees) + "<br>"
+	                  + "<b>Paid Amount (50%):</b> " + Amount_to_be_payed_text + "<br>"
+	                  + "</div>"
+	            );
 
+	            System.out.println("Inputs:");
+	            System.out.println("Mode            : " + Mode);
+	            System.out.println("Type            : " + Type);
+	            System.out.println("Payer           : " + Payer);
+	            System.out.println("Payment Date    : " + PayDate);
+	            System.out.println("Total Fees      : " + String.format("%.2f", Total_Fees));
+	            System.out.println("Paid Amount(50%): " + Amount_to_be_payed_text);
+	            System.out.println();
+
+	            try {
+	                List<WebElement> inputs = p.payment_logger_form_inputs();
+
+	                inputs.get(0).sendKeys(Mode);
+	                p.plaintiff_dropdown_list();
+	                p.Plaintiff_options().get(0).click();
+
+	                inputs.get(1).sendKeys(Type);
+	                p.Incident_type_dropdown();
+	                p.Incident_options().get(0).click();
+
+	                inputs.get(2).sendKeys(Payer);
+
+	                WebElement Calender_field = inputs.get(3);
+	                Calender_field.sendKeys(PayDate);
+	                Calender_field.click();
+	                p.calender_date_select().click();
+
+	                inputs.get(4).sendKeys(Amount_to_be_payed_text);
+
+	                p.textArea().sendKeys(Notes);
+
+	                List<WebElement> popup_modal_buttons = p.poup_up_form_buttons();
+	                popup_modal_buttons.get(0).click();
+
+	                Report_Listen.log_print_in_report().log(Status.INFO,
+	                        "<b>🟨 Actual:</b> Payment form submitted. Waiting for confirmation toast."
+	                );
+
+	                System.out.println("Actual: Payment form submitted. Waiting for toast...");
+	                System.out.println();
+
+	            } catch (Exception e) {
+	                Report_Listen.log_print_in_report().log(Status.FAIL,
+	                        "<b>🟨 Actual:</b> ❌ Error while filling/submitting payment form. Error: " + e.getMessage()
+	                );
+	                System.out.println("FAIL: Error while filling/submitting payment form. Error: " + e.getMessage());
+	                System.out.println();
+	                throw e;
+	            }
+
+	            // =========================
+	            // Step 4: Capture toast
+	            // =========================
 	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>📥 Input:</b> Mode=<b>"+data.get("Payment Mode")+"</b> | Type=<b>"+data.get("Payment Type")+
-	                    "</b> | Payer=<b>"+data.get("Payer Name")+"</b> | Date=<b>"+data.get("Payment Date")+
-	                    "</b> | Amount=<b>"+Amount_to_be_payed_text+"</b>");
+	                    "<b>Step " + (step++) + ":</b> Capture toast after payment save."
+	            );
+	            System.out.println("[Step] Capture toast after payment save");
 
-	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>✅ Expected:</b> Payment should be logged successfully and the system should show a confirmation toast/message.");
+	            String paymentToast = "";
 
-	        
-	        WebElement case_Dropdown;	
-	        try{case_Dropdown=p.Case_Action_Dropdown();}
-	        catch(Exception not_in_Case_Details) {
-	           sd.Side_menu_option_clicker("Applications", d,"N/A");
-	 		   p.landed_in_applicationList_confirmation();
-	 		   p.Filter_clear().click();
-			   WebElement Search = p.Application_search();
-			   Search.sendKeys(Case_id);
-			   Thread.sleep(1800);
-			   WebElement Toast_One = lg.Toast_close_button();
-			   Toast_One.click();
-			   WebElement Toast_Two = lg.Toast_close_button();
-			   Toast_Two.click();
-			   List<WebElement> result_rows;
-			  try {
-			   result_rows = p.rows();
-			   result_rows.get(0).click();
-			   Thread.sleep(800);}
-			  catch(Exception Result_still_not_fetched){
-				 System.out.println("Exception Found in fetching result rows thereby retrying");
-				 System.out.println();
-			   Thread.sleep(800);  
-			   result_rows = p.rows();
-			   result_rows.get(0).click();
-			   Thread.sleep(800);}
-			   List<WebElement> Case_Tags;
-			   try {
-			   Case_Tags = p.Case_tags();}
-			   catch(RuntimeException tags){
-				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-				   System.out.println();
-				   Thread.sleep(1200);
-				   Case_Tags = p.Case_tags();}
-			   case_Dropdown=p.Case_Action_Dropdown();}
-	           
-	    	   rp.movetoelement(case_Dropdown);
-	    	   p.Case_Action_Dropdown_list();
-	    	   List<WebElement> optionsElements = p.Case_Dropdown_Options();
-	    	   for(WebElement Each_Option:optionsElements){
-	    		   String option_text= Each_Option.getText();
-	    		   if(option_text.contains("Log Payment")){
-	    			   Each_Option.click();
-	    			   break;}}
-	    	   Report_Listen.log_print_in_report().log(Status.INFO,
-	    	            "<b>🟨 Actual:</b> Payment logging form opened and details are being submitted for verification.");
-	    	   List<WebElement> inputs=p.payment_logger_form_inputs();
-	    	   inputs.get(0).sendKeys(data.get("Payment Mode"));
-	    	   p.plaintiff_dropdown_list();
-	   		   p.Plaintiff_options().get(0).click();
-	   		   inputs.get(1).sendKeys(data.get("Payment Type"));
-	    	   p.Incident_type_dropdown();
-	   		   p.Incident_options().get(0).click();
-	   		   inputs.get(2).sendKeys(data.get("Payer Name"));
-	   		   WebElement Calender_field = inputs.get(3);
-	   		   Calender_field.sendKeys(data.get("Payment Date"));
-	   		   Calender_field.click();
-	   		   p.calender_date_select().click();
-	   		   inputs.get(4).sendKeys(Amount_to_be_payed_text);
-	   		   p.textArea().sendKeys(data.get("Notes / Remarks"));
-	   		   List<WebElement> popup_modal_buttons = p.poup_up_form_buttons();
-	   		   popup_modal_buttons.get(0).click();
-	   		   Login_negative_testcases.Toast_printer(lg.toast().getText().trim());
-	   		String paymentToast = "";
-	   	    try{
-	   	        paymentToast = lg.toast().getText().trim();
-	   	        Report_Listen.log_print_in_report().log(Status.PASS,
-	   	                "<b>🟨 Actual:</b> ✅ Payment logged successfully. Confirmation message received: <b>"+paymentToast+"</b>");
-	   	    }catch(Exception e){
-	   	        Report_Listen.log_print_in_report().log(Status.FAIL,
-	   	                "<b>🟨 Actual:</b> ❌ Payment confirmation toast was not captured (toast not visible / locator issue).");}
-	   	    
-	   	    
-	   	    return Amount_to_be_payed_text;
+	            try {
+	                paymentToast = lg.toast().getText().trim();
+
+	                Report_Listen.log_print_in_report().log(Status.PASS,
+	                        "<div style='background:#e9fbe9; padding:14px; border-radius:10px; border:1px solid #bde5bd; color:#0b3b0b; font-family:Arial;'>"
+	                      + "<b>🟨 Actual:</b> ✅ Payment logged successfully.<br>"
+	                      + "<b>Toast:</b> " + paymentToast + "<br>"
+	                      + "<b>Paid Amount:</b> " + Amount_to_be_payed_text
+	                      + "</div>"
+	                );
+
+	                System.out.println("PASS: Payment logged successfully.");
+	                System.out.println("Toast      : " + paymentToast);
+	                System.out.println("Paid Amount: " + Amount_to_be_payed_text);
+	                System.out.println();
+
+	                try { rp.wait_for_invisibility(lg.toast()); } catch (Exception ignore) {}
+
+	            } catch (Exception e) {
+
+	                Report_Listen.log_print_in_report().log(Status.FAIL,
+	                        "<div style='background:#ffecec; padding:14px; border-radius:10px; border:1px solid #ffbdbd; color:#5b0b0b; font-family:Arial;'>"
+	                      + "<b>🟨 Actual:</b> ❌ Payment submitted but confirmation toast not captured.<br>"
+	                      + "<b>Possible reason:</b> Toast not visible / locator issue / fast disappear."
+	                      + "</div>"
+	                );
+
+	                System.out.println("FAIL: Payment submitted but toast not captured (toast not visible / locator issue).");
+	                System.out.println();
+	            }
+
+	            // ✅ return amount paid text (this is used later by Payment_Calculator)
+	            return Amount_to_be_payed_text;
 	   	    
 	        }
 	        
@@ -2810,230 +3250,229 @@ public class Case_Appplications extends Header_Manager{
 	        	
 	        	
 	        		
-				String Case_id=Case_Unique_id; 
-				
-				 int step = 1;
+	        	String Case_id = Case_Unique_id;
 
-				    // =========================
-				    // Scenario Header
-				    // =========================
-				    Report_Listen.log_print_in_report().log(Status.INFO,
-				            "<b>🔹 Scenario Title:</b> Payment Payoff Validation (Before vs After Payment)<br>" +
-				            "<b>📘 Description:</b> Capture payoff table values BEFORE payment, log payment, capture payoff table values AFTER payment, and validate that the reduction equals Fees Paid (tolerance 0.01).<br>" +
-				            "<b>📥 Input:</b> Case ID = <b>" + Case_id + "</b><br>" +
-				            "<b>✅ Expected:</b> For each month row, (Before − After) should match Fees Paid within tolerance 0.01."
-				    );
+	        	int step = 1;
+	        	double tolerance = 0.01;
 
-				    System.out.println("\n==================================================");
-				    System.out.println("[SCENARIO] Payment Payoff Validation (Before vs After Payment)");
-				    System.out.println("Case ID   : " + Case_id);
-				    System.out.println("Expected  : (Before - After) should match Fees Paid within tolerance 0.01");
-				    System.out.println("==================================================\n");
-				    
-				    Report_Listen.log_print_in_report().log(Status.INFO,
-				            "<b>Step " + (step++) + ":</b> Fetch Payoff table values BEFORE payment."
-				    );
-				    System.out.println("[Step] Fetch Payoff table values BEFORE payment");
-				  
+	        	// =========================
+	        	// Scenario Header
+	        	// =========================
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'>"
+	        	      + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario Title: Payment Payoff Validation (Before vs After Payment)</div>"
+	        	      + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Capture Payoff table values BEFORE payment, log payment, capture Payoff table values AFTER payment, and validate that the reduction equals Fees Paid (tolerance 0.01).</div>"
+	        	      + "<div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>" + Case_id + "</b></div>"
+	        	      + "<div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> For each month row, (Before − After) should match Fees Paid within tolerance 0.01.</div>"
+	        	      + "</div>"
+	        	);
+
+	        	System.out.println("\n==================================================");
+	        	System.out.println("[SCENARIO] Payment Payoff Validation (Before vs After Payment)");
+	        	System.out.println("Case ID   : " + Case_id);
+	        	System.out.println("Expected  : (Before - After) should match Fees Paid within tolerance 0.01");
+	        	System.out.println("==================================================\n");
+
+	        	// =========================
+	        	// Step 1: Before Payment Payoff Capture
+	        	// =========================
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<b>Step " + (step++) + ":</b> Fetch Payoff table values BEFORE payment."
+	        	);
+
+	        	System.out.println("[Step] Fetch Payoff table values BEFORE payment");
 	        	Pay_off_lien_list_Before_payment(Case_id);
-	        	
-	        	 Report_Listen.log_print_in_report().log(Status.INFO,
-	        	            "<b>🟨 Actual:</b> Payoff table values captured BEFORE payment. Rows captured = <b>" + PayoffTable_values_Before_Payment.size() + "</b>"
-	        	    );
-	        	    System.out.println("Actual: Payoff values captured BEFORE payment. Rows = " + PayoffTable_values_Before_Payment.size());
+
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<b>🟨 Actual:</b> Payoff values captured BEFORE payment. Rows captured = <b>" + PayoffTable_values_Before_Payment.size() + "</b>"
+	        	);
+
+	        	System.out.println("Actual: Payoff values captured BEFORE payment. Rows = " + PayoffTable_values_Before_Payment.size());
+	        	System.out.println();
+
+	        	// =========================
+	        	// Step 2: Log Payment (Fees Paid)
+	        	// =========================
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<b>Step " + (step++) + ":</b> Log Payment and capture Fees Paid amount."
+	        	);
+
+	        	System.out.println("[Step] Log Payment and capture Fees Paid amount");
+
+	        	// ✅ Now Payment_Logger returns HALF of total fees (already formatted as String)
+	        	String Fees_payed_amount = Payment_Logger(data, Case_id);
+	        	double Fees_payed_in_double_upto_two_decimal = Double.parseDouble(String.format("%.2f", Double.parseDouble(Fees_payed_amount)));
+
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<div style='background:#eef9ff; padding:14px; border-radius:10px; border:1px solid #bfe6ff; color:#0b1b33;'>"
+	        	      + "<b>🟨 Actual:</b> Fees Paid captured from Payment Logger = <b>" + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</b><br>"
+	        	      + "<span style='font-size:12px;'>Note: Payment amount is HALF of (Document Prep Fee + Fund Transfer Fee).</span>"
+	        	      + "</div>"
+	        	);
+
+	        	System.out.println("Actual: Fees Paid = " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
+	        	System.out.println("Note  : Fees Paid is HALF of total fees (Doc Prep + Fund Transfer).");
+	        	System.out.println();
+
+	        	// =========================
+	        	// Step 3: After Payment Payoff Capture
+	        	// =========================
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<b>Step " + (step++) + ":</b> Fetch Payoff table values AFTER payment."
+	        	);
+
+	        	System.out.println("[Step] Fetch Payoff table values AFTER payment");
+	        	Pay_off_lien_list_After_payment_data_fetcher(Case_id);
+
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<b>🟨 Actual:</b> Payoff values captured AFTER payment. Rows captured = <b>" + PayoffTable_values_After_Payment.size() + "</b>"
+	        	);
+
+	        	System.out.println("Actual: Payoff values captured AFTER payment. Rows = " + PayoffTable_values_After_Payment.size());
+	        	System.out.println();
+
+	        	// =========================
+	        	// Step 4: Month-wise Validation
+	        	// =========================
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<b>Step " + (step++) + ":</b> Validate reduction (Before − After) equals Fees Paid for each month row (tolerance 0.01)."
+	        	);
+
+	        	System.out.println("[Step] Validate month-wise reduction equals Fees Paid (tolerance 0.01)");
+	        	System.out.println();
+
+	        	for (Map.Entry<String, Double> after_pair : PayoffTable_values_After_Payment.entrySet()) {
+
+	        	    String Key = after_pair.getKey();
+
+	        	    // Safety: BEFORE map missing Key
+	        	    if (!PayoffTable_values_Before_Payment.containsKey(Key)) {
+
+	        	        String extentMissing =
+	        	                "<div style='background:#fff3cd; padding:14px; border-radius:10px; border:1px solid #ffe08a; color:#4a3b00; font-family:Arial;'>"
+	        	              + "<b>⚠️ WARNING — Payoff Lien Validation</b><br><br>"
+	        	              + "<b>Month:</b> " + Key + "<br>"
+	        	              + "<b>Issue:</b> Month exists in AFTER map but not found in BEFORE map. Validation skipped for this month."
+	        	              + "</div>";
+
+	        	        Report_Listen.log_print_in_report().log(Status.WARNING, extentMissing);
+
+	        	        System.out.println("⚠️ WARNING | " + Key);
+	        	        System.out.println("Reason: Month exists AFTER payment but missing BEFORE payment values. Skipping validation.");
+	        	        System.out.println("--------------------------------------------------\n");
+
+	        	        continue;
+	        	    }
+
+	        	    double Before_payment = PayoffTable_values_Before_Payment.get(Key);
+	        	    double After_payment = PayoffTable_values_After_Payment.get(Key);
+
+	        	    double reduction = Before_payment - After_payment;
+	        	    double reduction_upto_two_decimal = Double.parseDouble(String.format("%.2f", reduction));
+
+	        	    double difference_upto_two_decimal = Double.parseDouble(String.format("%.2f",
+	        	            Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)));
+
+	        	    boolean isMatched = difference_upto_two_decimal < tolerance;
+
+	        	    // ---------------------------
+	        	    // ✅ Extent Calculation Table with Background (like your screenshot)
+	        	    // ---------------------------
+	        	    String resultTitle = isMatched
+	        	            ? "✅ PASS — " + Key + " Reduction Matched Fees Paid"
+	        	            : "❌ FAIL — " + Key + " Reduction Did NOT Match Fees Paid";
+
+	        	    String resultColorBox = isMatched
+	        	            ? "background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;"
+	        	            : "background:#ffecec; border:1px solid #ffbdbd; color:#5b0b0b;";
+
+	        	    String failReasonHtml = "";
+	        	    if (!isMatched) {
+	        	        failReasonHtml =
+	        	                "<div style='margin-top:12px; font-weight:700;'>🧾 Fail Reason:</div>"
+	        	              + "<div style='margin:4px 0; font-size:13px;'>Expected Reduction (Fees Paid) ≈ <b>" + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</b></div>"
+	        	              + "<div style='margin:4px 0; font-size:13px;'>Actual Reduction Observed = <b>" + String.format("%.2f", reduction_upto_two_decimal) + "</b></div>"
+	        	              + "<div style='margin:4px 0; font-size:13px;'>Mismatch (Difference) = <b>" + String.format("%.2f", difference_upto_two_decimal) + "</b> (Tolerance " + String.format("%.2f", tolerance) + ")</div>";
+	        	    }
+
+	        	    String payoffExtentCard =
+	        	            "<div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'>"
+	        	          + "<div style='font-size:16px; font-weight:700; margin-bottom:10px;'>" + resultTitle + "</div>"
+
+	        	          + "<div style='margin-top:10px; font-weight:700;'>📌 Values:</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'><b>Month:</b> " + Key + "</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> " + String.format("%.2f", Before_payment) + "</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> " + String.format("%.2f", After_payment) + "</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</div>"
+
+	        	          + "<div style='margin:12px 0; border-top:1px solid #c7ddff;'></div>"
+
+	        	          + "<div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div>"
+
+	        	          + "<div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'>Reduction = " + String.format("%.2f", Before_payment) + " − " + String.format("%.2f", After_payment)
+	        	          + " = <b>" + String.format("%.2f", reduction_upto_two_decimal) + "</b></div>"
+	        	          + "<div style='margin:4px 0; font-size:13px;'>Difference = |" + String.format("%.2f", reduction_upto_two_decimal) + " − "
+	        	          + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "| = <b>" + String.format("%.2f", difference_upto_two_decimal) + "</b></div>"
+
+	        	          + "<div style='margin-top:12px; padding:12px; border-radius:10px; " + resultColorBox + "'>"
+	        	          + "<b>✅ Check:</b> Difference (" + String.format("%.2f", difference_upto_two_decimal) + ") &lt; Tolerance (" + String.format("%.2f", tolerance) + ")"
+	        	          + " → <b>" + (isMatched ? "Matched ✅" : "Not Matched ❌") + "</b>"
+	        	          + "</div>"
+
+	        	          + failReasonHtml
+	        	          + "</div>";
+
+	        	    Report_Listen.log_print_in_report().log(isMatched ? Status.PASS : Status.FAIL, payoffExtentCard);
+
+	        	    // ---------------------------
+	        	    // ✅ Console printable version with fail reason
+	        	    // ---------------------------
+	        	    System.out.println("==================================================");
+	        	    System.out.println("PAYOFF LIEN VALIDATION  |  " + Key);
+	        	    System.out.println("--------------------------------------------------");
+	        	    System.out.println("Before Payment (Payoff table) : " + String.format("%.2f", Before_payment));
+	        	    System.out.println("After Payment  (Payoff table) : " + String.format("%.2f", After_payment));
+	        	    System.out.println("Fees Paid (Logger)            : " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
+	        	    System.out.println("--------------------------------------------------");
+	        	    System.out.println("Reduction  = Before - After   : " + String.format("%.2f", reduction_upto_two_decimal));
+	        	    System.out.println("Difference = |Reduction-Fees| : " + String.format("%.2f", difference_upto_two_decimal));
+	        	    System.out.println("Tolerance                     : " + String.format("%.2f", tolerance));
+	        	    System.out.println("--------------------------------------------------");
+
+	        	    if (isMatched) {
+	        	        System.out.println("RESULT : PASS ✅  (Reduction matched Fees Paid within tolerance)");
+	        	    } else {
+	        	        System.out.println("RESULT : FAIL ❌  (Reduction did NOT match Fees Paid within tolerance)");
+	        	        System.out.println("FAIL REASON:");
+	        	        System.out.println(" - Expected Reduction (Fees Paid) ≈ " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
+	        	        System.out.println(" - Actual Reduction Observed      = " + String.format("%.2f", reduction_upto_two_decimal));
+	        	        System.out.println(" - Mismatch (Difference)          = " + String.format("%.2f", difference_upto_two_decimal));
+	        	    }
+
+	        	    System.out.println("==================================================");
 	        	    System.out.println();
-	        	    // =========================
-	        	    // Step 2: Log payment
-	        	    // =========================
-	        	    Report_Listen.log_print_in_report().log(Status.INFO,
-	        	            "<b>Step " + (step++) + ":</b> Log Payment and capture Fees Paid amount."
-	        	    );
-	        	    System.out.println("[Step] Log Payment and capture Fees Paid amount");
-
-	            String Fees_payed_amount=Payment_Logger(data,Case_id);;
-	            double Fees_payed_converted_to_double = Double.parseDouble(Fees_payed_amount);
-	            double Fees_payed_in_double_upto_two_decimal = Double.parseDouble(String.format("%.2f", Fees_payed_converted_to_double));
-	           
-	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>🟨 Actual:</b> Fees Paid captured = <b>" + Fees_payed_in_double_upto_two_decimal + "</b>"
-	            );
-
-	            System.out.println("Actual: Fees Paid = " + Fees_payed_in_double_upto_two_decimal);
-	            System.out.println();
-
-	            // =========================
-	            // Step 3: After payment data fetch
-	            // =========================
-	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>Step " + (step++) + ":</b> Fetch Payoff table values AFTER payment."
-	            );
-	            System.out.println("[Step] Fetch Payoff table values AFTER payment");
-	            
-	            Pay_off_lien_list_After_payment_data_fetcher(Case_id);
-	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>🟨 Actual:</b> Payoff table values captured AFTER payment. Rows captured = <b>" + PayoffTable_values_After_Payment.size() + "</b>"
-	            );
-	            System.out.println("Actual: Payoff values captured AFTER payment. Rows = " + PayoffTable_values_After_Payment.size());
-	            System.out.println();
-	            
-	          
-	            	    // Step 4: Validate reduction vs Fees Paid for each month
-	            	    // =========================
-	            	    Report_Listen.log_print_in_report().log(Status.INFO,
-	            	            "<b>Step " + (step++) + ":</b> Validate reduction (Before − After) equals Fees Paid for each month row (tolerance 0.01)."
-	            	    );
-	            	    System.out.println("[Step] Validate month-wise reduction equals Fees Paid (tolerance 0.01)");
-	            	    System.out.println();
-	            
-	            	    double tolerance = 0.01;
-	        	for(Map.Entry<String,Double> after_pair:PayoffTable_values_After_Payment.entrySet()){
-	        		String Key = after_pair.getKey();
-
-	                // Safety: handle if before map doesn't contain key
-	                if (!PayoffTable_values_Before_Payment.containsKey(Key)) {
-
-	                    String extentMissing =
-	                            "<div style='background:#fff3cd; padding:14px; border-radius:10px; border:1px solid #ffe08a; color:#4a3b00;'>" +
-	                                    "<b>⚠️ WARNING — Payoff Lien Validation</b><br><br>" +
-	                                    "<b>Month:</b> " + Key + "<br>" +
-	                                    "<b>Issue:</b> Month exists in AFTER map but not found in BEFORE map. Validation skipped for this month.<br>" +
-	                                    "</div>";
-
-	                    Report_Listen.log_print_in_report().log(Status.WARNING, extentMissing);
-
-	                    System.out.println("⚠️ WARNING | " + Key);
-	                    System.out.println("Reason: Month exists AFTER payment but missing BEFORE payment values. Skipping validation.");
-	                    System.out.println("--------------------------------------------------");
-	                    System.out.println();
-	                    continue;
-	                }
-
-	                double Before_payment = PayoffTable_values_Before_Payment.get(Key);
-	                double After_payment = PayoffTable_values_After_Payment.get(Key);
-
-	                double reduction = Before_payment - After_payment;
-	                double reduction_upto_two_decimal = Double.parseDouble(String.format("%.2f", reduction));
-
-	                double difference_upto_two_decimal = Double.parseDouble(String.format("%.2f",
-	                        Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)));
-
-	                boolean isMatched = difference_upto_two_decimal < tolerance;
-
-	                // ---------------------------
-	                // ✅ Extent Card (same style as your calc table screenshot)
-	                // ---------------------------
-	                String cardStyle =
-	                        "background:#eaf4ff; padding:18px; border-radius:12px; " +
-	                        "border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;";
-
-	                String headerStyle = "font-size:16px; font-weight:700; margin-bottom:10px;";
-	                String sectionTitleStyle = "margin-top:14px; font-weight:700; font-size:14px;";
-	                String valueLineStyle = "margin:4px 0; font-size:13px;";
-	                String dividerStyle = "margin:10px 0; border-top:1px solid #c7ddff;";
-
-	                String passFailTitle = isMatched
-	                        ? "✅ PASS — " + Key + " Reduction Matched Fees Paid"
-	                        : "❌ FAIL — " + Key + " Reduction Did NOT Match Fees Paid";
-
-	                String meaningLine = isMatched
-	                        ? "System reduced the payoff amount by exactly the payment fees. No extra/less reduction happened."
-	                        : "Reduction does not match Fees Paid. Please review payoff update / fee application logic.";
-
-	                // Failure reason details (only if FAIL)
-	                String failReasonHtml = "";
-	                if (!isMatched) {
-	                    failReasonHtml =
-	                            "<div style='" + sectionTitleStyle + "'>🧾 Fail Reason:</div>" +
-	                            "<div style='" + valueLineStyle + "'>Expected Reduction (Fees Paid) ≈ <b>" + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</b></div>" +
-	                            "<div style='" + valueLineStyle + "'>Actual Reduction Observed = <b>" + String.format("%.2f", reduction_upto_two_decimal) + "</b></div>" +
-	                            "<div style='" + valueLineStyle + "'>Mismatch (Difference) = <b>" + String.format("%.2f", difference_upto_two_decimal) + "</b> (Tolerance " + String.format("%.2f", tolerance) + ")</div>";
-	                }
-
-	                String payoffExtentCard =
-	                        "<div style='" + cardStyle + "'>" +
-	                                "<div style='" + headerStyle + "'>" + passFailTitle + "</div>" +
-
-	                                "<div style='" + sectionTitleStyle + "'>🔍 What we are validating:</div>" +
-	                                "<div style='" + valueLineStyle + "'>After logging payment, Payoff table should reduce by <b>Fees Paid</b>.</div>" +
-
-	                                "<div style='" + sectionTitleStyle + "'>📌 Values:</div>" +
-	                                "<div style='" + valueLineStyle + "'><b>Month:</b> " + Key + "</div>" +
-	                                "<div style='" + valueLineStyle + "'><b>Before Payment (Payoff table):</b> " + String.format("%.2f", Before_payment) + "</div>" +
-	                                "<div style='" + valueLineStyle + "'><b>After Payment (Payoff table):</b> " + String.format("%.2f", After_payment) + "</div>" +
-	                                "<div style='" + valueLineStyle + "'><b>Fees Paid (Logger):</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</div>" +
-
-	                                "<div style='" + dividerStyle + "'></div>" +
-
-	                                "<div style='" + sectionTitleStyle + "'>🧮 Formula:</div>" +
-	                                "<div style='" + valueLineStyle + "'><b>Reduction</b> = Before − After</div>" +
-	                                "<div style='" + valueLineStyle + "'><b>Difference</b> = |Reduction − Fees Paid|</div>" +
-
-	                                "<div style='" + sectionTitleStyle + "'>🧾 Substitute values:</div>" +
-	                                "<div style='" + valueLineStyle + "'>Reduction = " + String.format("%.2f", Before_payment) + " − " + String.format("%.2f", After_payment) +
-	                                " = <b>" + String.format("%.2f", reduction_upto_two_decimal) + "</b></div>" +
-
-	                                "<div style='" + valueLineStyle + "'>Difference = |" + String.format("%.2f", reduction_upto_two_decimal) + " − " +
-	                                String.format("%.2f", Fees_payed_in_double_upto_two_decimal) +
-	                                "| = <b>" + String.format("%.2f", difference_upto_two_decimal) + "</b></div>" +
-
-	                                "<div style='" + sectionTitleStyle + "'>✅ Check:</div>" +
-	                                "<div style='" + valueLineStyle + "'>Difference (" + String.format("%.2f", difference_upto_two_decimal) + ") &lt; Tolerance (" +
-	                                String.format("%.2f", tolerance) + ") → <b>" + (isMatched ? "Matched ✅" : "Not Matched ❌") + "</b></div>" +
-
-	                                failReasonHtml +
-
-	                                "<div style='" + sectionTitleStyle + "'>🟩 Meaning (simple):</div>" +
-	                                "<div style='" + valueLineStyle + "'>" + meaningLine + "</div>" +
-
-	                                "<div style='" + sectionTitleStyle + "'>📌 Conclusion:</div>" +
-	                                "<div style='" + valueLineStyle + "'>Payoff reduction for <b>" + Key + "</b> is " +
-	                                (isMatched ? "<b>correct</b> ✅." : "<b>incorrect</b> ❌.") +
-	                                "</div>" +
-	                        "</div>";
-
-	                Report_Listen.log_print_in_report().log(isMatched ? Status.PASS : Status.FAIL, payoffExtentCard);
-
-	                // ---------------------------
-	                // ✅ Console Block (clean + reason)
-	                // ---------------------------
-	                System.out.println("==================================================");
-	                System.out.println("PAYOFF LIEN VALIDATION  |  " + Key);
-	                System.out.println("--------------------------------------------------");
-	                System.out.println("Before Payment (Payoff table) : " + String.format("%.2f", Before_payment));
-	                System.out.println("After Payment  (Payoff table) : " + String.format("%.2f", After_payment));
-	                System.out.println("Fees Paid (Logger)            : " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
-	                System.out.println("--------------------------------------------------");
-	                System.out.println("Reduction  = Before - After   : " + String.format("%.2f", reduction_upto_two_decimal));
-	                System.out.println("Difference = |Reduction-Fees| : " + String.format("%.2f", difference_upto_two_decimal));
-	                System.out.println("Tolerance                     : " + String.format("%.2f", tolerance));
-	                System.out.println("--------------------------------------------------");
-
-	                if (isMatched) {
-	                    System.out.println("RESULT : PASS ✅  (Reduction matched Fees Paid within tolerance)");
-	                } else {
-	                    System.out.println("RESULT : FAIL ❌  (Reduction did NOT match Fees Paid within tolerance)");
-	                    System.out.println("FAIL REASON:");
-	                    System.out.println(" - Expected Reduction (Fees Paid) ≈ " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
-	                    System.out.println(" - Actual Reduction Observed      = " + String.format("%.2f", reduction_upto_two_decimal));
-	                    System.out.println(" - Mismatch (Difference)          = " + String.format("%.2f", difference_upto_two_decimal));
-	                }
-
-	                System.out.println("==================================================");
-	                System.out.println();
-	        		
 	        	}
-	        	
-	        	// End summary logs (optional but helpful)
-	            Report_Listen.log_print_in_report().log(Status.INFO,
-	                    "<b>✅ Payment Calculator Completed</b><br>" +
-	                    "<b>Case ID:</b> " + Case_id + "<br>" +
-	                    "<b>Fees Paid:</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "<br>" +
-	                    "<b>Months Validated:</b> " + PayoffTable_values_After_Payment.size()
-	            );
 
-	            System.out.println("✅ Payment Calculator Completed for Case ID: " + Case_id);
-	            System.out.println("Months validated: " + PayoffTable_values_After_Payment.size());
-	            System.out.println();
+	        	// =========================
+	        	// End summary log
+	        	// =========================
+	        	Report_Listen.log_print_in_report().log(Status.INFO,
+	        	        "<div style='background:#f1fff2; padding:14px; border-radius:12px; border:1px solid #bde5bd; color:#0b3b0b; font-family:Arial;'>"
+	        	      + "<b>✅ Payment Payoff Validation Completed</b><br>"
+	        	      + "<b>Case ID:</b> " + Case_id + "<br>"
+	        	      + "<b>Fees Paid:</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "<br>"
+	        	      + "<b>Months Validated:</b> " + PayoffTable_values_After_Payment.size()
+	        	      + "</div>"
+	        	);
+
+	        	System.out.println("✅ Payment Payoff Validation Completed for Case ID: " + Case_id);
+	        	System.out.println("Fees Paid = " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
+	        	System.out.println("Months validated: " + PayoffTable_values_After_Payment.size());
+	        	System.out.println();
+
 	        	
 	        	
 	        }
@@ -3217,14 +3656,7 @@ public class Case_Appplications extends Header_Manager{
 		      
 		      }
 	        
-	        
-	        
-      
-	        
-	        
-	        
-	       
-
+	      
 	        @Test(dataProvider="case_plus_plaintiff")
 	     public void Multiple_Application_Generator(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> Email_Send_Data) throws InterruptedException, IOException{
 	    	 
@@ -3283,7 +3715,7 @@ public class Case_Appplications extends Header_Manager{
 				p.modal_buttons().get(1).click();
 				Thread.sleep(800);
 				try {
-					Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+					Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 					catch(Exception e){
 					Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
 				Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
@@ -3334,7 +3766,7 @@ public class Case_Appplications extends Header_Manager{
 			p.modal_buttons().get(1).click();
 			Thread.sleep(800);
 			try {
-				Login_negative_testcases.Toast_printer(lg.toast().getText().trim());}
+				Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 				catch(Exception e){
 				Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
@@ -3547,7 +3979,7 @@ public class Case_Appplications extends Header_Manager{
 
 				Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
 				String Contract_Generated = lg.toast().getText().trim();
-				Login_negative_testcases.Toast_printer(Contract_Generated);
+				Login_negative_testcases.Toast_printer(Contract_Generated,d);
 				Thread.sleep(800);
 				rp.wait_for_invisibility(lg.toast());}
 	   
@@ -3583,12 +4015,132 @@ public class Case_Appplications extends Header_Manager{
 		tabs.clear();}
 	
 
-
-
+     @Test(dataProvider="notesData")
+     public void Notes_Add(String value) throws IOException, InterruptedException{
+    	 
+    	 Application_Locaters p = new Application_Locaters(d);
+		 SIde_Menu_Handler sd = new SIde_Menu_Handler();
+		 Login_Locaters lg = new Login_Locaters(d);
+		 Repeat rp = new Repeat(d);
+		 Plaintiff_Locaters pp=new Plaintiff_Locaters(d);
+		 
+		// String tag_to_person =  "";
+		String Note_text = value;
+	    String Case_id = "OH2600127";
+    	 
+		  sd.Side_menu_option_clicker("Applications", d,"N/A");
+		   
+		   p.landed_in_applicationList_confirmation();
+		   p.Filter_clear().click();
+		   WebElement Search = p.Application_search();
+		   Search.sendKeys(Case_id);
+		   Thread.sleep(1800);
+		   WebElement Toast_One = lg.Toast_close_button();
+		   rp.movetoelement(Toast_One);
+		   Thread.sleep(800);
+		   Toast_One.click();
+		   rp.wait_for_invisibility(Toast_One);
+		   WebElement Toast_Two = lg.Toast_close_button();
+		   rp.movetoelement(Toast_Two);
+		   Toast_Two.click();
+		   rp.wait_for_invisibility(Toast_Two);
+		   List<WebElement> result_rows;
+		  try {
+		   result_rows = p.rows();
+		   result_rows.get(0).click();
+		   Thread.sleep(800);}
+		  catch(Exception Result_still_not_fetched){
+			 System.out.println("Exception Found in fetching result rows thereby retrying");
+			 System.out.println();
+		   Thread.sleep(800);  
+		   result_rows = p.rows();
+		   result_rows.get(0).click();
+		   Thread.sleep(800);}
+		   List<WebElement> Case_Tags;
+		   try {
+		   Case_Tags = p.Case_tags();}
+		   catch(RuntimeException tags){
+			   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+			   System.out.println();
+			   Thread.sleep(1200);
+			   Case_Tags = p.Case_tags();}
+		   tab_selector("Notes");
+		   Thread.sleep(800);
+		   WebElement Notes_Tab_Toast = lg.Toast_close_button();
+		   rp.movetoelement(Notes_Tab_Toast);
+		   Notes_Tab_Toast.click();
+		   rp.wait_for_invisibility(Notes_Tab_Toast);
+    	   WebElement Add_Note_Button = p.Create_note_button();
+    	   Add_Note_Button.click();
+    	   //List <WebElement> inputs =p.Edit_form_inputs();
+			p.textArea().sendKeys(Note_text);
+			//inputs.get(0).sendKeys(tag_to_person);
+			p.Submit_Button().click();
+			Thread.sleep(800);
+			WebElement Toast;
+		try { Toast = lg.toast();
+			 Login_negative_testcases.Toast_printer(Toast.getText().trim(),d);
+			 Report_Listen.log_print_in_report().log(Status.PASS,
+		                "<b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.");
+			 }
+		catch(Exception Toast_Not_Found){
+			System.out.println("Toast Not found after saving  Notes");
+			System.out.println();
+			Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>🟨 Actual:</b> ❌ Notes save confirmation toast was not found after clicking Submit.");
+			
+			 }
+     }
 
 	
 	
-	
+     @DataProvider
+     public Object[][] notesData() {
+
+    	 return new Object[][]{
+    	        {"Underwriting update: We verified the incident date against the intake form, claimant statement, and the initial email thread. The date appears consistent across all sources, however the police report has not yet been uploaded. Please request the incident report number, responding agency, and any dispatch/CAD reference so we can cross-check timeline accuracy and avoid downstream corrections in the case summary card."},
+
+    	        {"Docs pending — please upload: (1) ER discharge summary, (2) itemized billing, (3) imaging results if available, and (4) proof of wage loss for the week following the incident. Until these are received, underwriting cannot finalize medical causation or damages sizing. Note: the current attachments include a partial PDF scan that cuts off the provider signature block on page 2."},
+
+    	        {"Call summary: Spoke to plaintiff and confirmed preferred contact window is 2–5 PM local time. Plaintiff stated they can provide employer HR contact details, but requested that all communications be routed through attorney once representation letter is finalized. Plaintiff also mentioned prior treatment for a similar symptom; please flag this for potential medical causation discussion and document it carefully in underwriting notes."},
+
+    	        {"Risk check: Potential statutory notice deadlines may apply. Please confirm filing posture (complaint filed vs draft only), confirm county/venue, and ensure the court index number is accurate. If any dates change, the case timeline card may need a full refresh to prevent inconsistency between dashboard view, PDF exports, and email templates."},
+
+    	        {"Evidence checklist: Photos received (8 images), witness list received (3 names), and a short written narrative was provided. Surveillance request has been sent but not acknowledged by property owner. If surveillance is unavailable, request maintenance logs, incident logbook entry, and any prior complaints that support notice/knowledge of hazard conditions."},
+
+    	        {"Payment observation: Amount received appears partial relative to expected schedule. Please reconcile with remittance advice before posting, verify no duplicate capture in gateway, and ensure convenience fees are either included or explicitly excluded based on policy. After reconciliation, attach payment confirmation to the case record to keep audit trail complete."},
+
+    	        {"Formatting validation: Ensure special characters and punctuation remain consistent in all exports (e.g., O’Connor vs O'Connor, Montréal accents, hyphenated surnames, and suffix placement like 'Jr.' 'III'). We have seen downstream mismatches when the UI trims characters or the PDF generator normalizes unicode."},
+
+    	        {"Court index verification: The current court index number matches the screenshot but does not match the draft complaint header. Please re-check the source and confirm whether the docket search result includes a leading zero, an extra hyphen, or a revised case classification. If needed, update the case record and add a short note explaining the correction for audit."},
+
+    	        {"Attorney follow-up required: Request the most recent demand package, settlement posture update, and any insurer correspondence. Also confirm whether medical lien holders exist and whether any subrogation claims have been asserted. This information directly impacts net recovery expectations and should be captured before recommending any increase to approved funding."},
+
+    	        {"Fee check: Confirm document prep fee and fund transfer fee are applied exactly once. On prior cases, edits caused fees to duplicate on the ledger card and created discrepancies between the UI and exported statements. Please verify fee fields, then validate the payment summary card renders correctly and does not wrap awkwardly on smaller viewports."},
+
+    	        {"Status note: File moved to 'Pending Docs' because causation support is incomplete. Required items: full treatment chronology, imaging results, primary care notes, and any referral documentation. Once received, underwriting can re-evaluate risk level and recommended max funding. Please also verify the case owner and underwriter dropdown selections remain correct after status update."},
+
+    	        {"Address validation: ZIP/state combination verified; however, Address Line 2 may be missing a unit number. Please confirm whether the address is a suite, apartment, or floor designation so we avoid mail return. If the UI concatenates address in a single line card, confirm the separators and spacing remain readable when line 2 is long."},
+
+    	        {"Summary rewrite: Removed duplicated incident narrative and tightened the timeline section to avoid repeating facts. Also clarified damages categories (wage loss, medical costs, emotional distress) and removed speculative language. Please review for consistency with attorney-provided narrative; if attorney disagrees, store their version in notes and keep UI summary neutral."},
+
+    	        {"Email log: Sent request for missing IDs and authorization forms for records retrieval. The email includes a clear checklist and deadline request, plus instructions for uploading via portal. If no response within 48 hours, send a follow-up and tag the case accordingly. Also verify that the 'Send Email' editor does not strip line breaks."},
+
+    	        {"Lien/third-party funding check: Plaintiff disclosed prior funding provider inquiry but did not confirm acceptance. Please confirm whether any contracts were signed or whether any UCC filings exist. If there is a prior funding agreement, capture details to prevent double-funding conflicts and update underwriting tag accordingly."},
+
+    	        {"Underwriter comment: Staged funding recommended until video/bodycam is received and reviewed. If video confirms key facts, consider upgrading risk from Moderate-High to Moderate and revising max funding upward. If video contradicts narrative, keep current cap and request counsel’s written position before proceeding further."},
+
+    	        {"Attachment audit: Most PDFs readable, but one scan is upside-down and another is cropped at margins. Please ask for a re-upload in high resolution. Also check whether the UI preview panel respects zoom/fit settings and whether long filenames overflow the attachment list card."},
+
+    	        {"Contact attempts: Left voicemail, no response yet. Schedule second attempt in 48 hours and send a short follow-up email in parallel. If still no response after third attempt, note 'Unresponsive' and keep the case status unchanged until contact is re-established."},
+
+    	        {"UI stress string: ThisIsAReallyLongUnbrokenTokenDesignedToTestOverflowAndCardWrappingBehavior_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_THIS_SHOULD_FORCE_HORIZONTAL_OVERFLOW_IF_NOT_HANDLED_PROPERLY_AND_BREAK_LAYOUT"},
+
+    	        {""} // Negative: blank note (required field validation)
+
+         };
+     }
+
 	
 	
 

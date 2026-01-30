@@ -39,7 +39,7 @@ public class Access_Permissions extends Case_Appplications{
 		input_feilds.get(0).sendKeys(data.get("Role Name"));
 		pp.Submit_button().click();
 		try {WebElement Toast = lg.toast();
-		Login_negative_testcases.Toast_printer(Toast.getText().trim());}
+		Login_negative_testcases.Toast_printer(Toast.getText().trim(),d);}
 	    catch(Exception Toast_Not_Found){
 		System.out.println("Toast Not found after Role Add");
 		System.out.println();}}
@@ -79,7 +79,7 @@ public class Access_Permissions extends Case_Appplications{
     			break;}} 
     	pp.Submit_button().click();
 		try {WebElement Toast = lg.toast();
-		Login_negative_testcases.Toast_printer(Toast.getText().trim());}
+		Login_negative_testcases.Toast_printer(Toast.getText().trim(),d);}
 	    catch(Exception Toast_Not_Found){
 		System.out.println("Toast Not found after Group Add");
 		System.out.println();} }

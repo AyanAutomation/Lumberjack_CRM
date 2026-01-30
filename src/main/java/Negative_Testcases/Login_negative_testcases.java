@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -126,18 +127,27 @@ public class Login_negative_testcases extends Base{
 	    }
 	    errors.clear();}
 	
-	   public static void Toast_printer(String Toast){
+	   public static void Toast_printer(String Toast,WebDriver d){
+		   
+		   Login_Locaters l = new Login_Locaters(d);
+		   
+		   WebElement Toast_close_Button;
 		
 		   if (Toast.toLowerCase().contains("success")) {
 		        Report_Listen.log_print_in_report().log(Status.PASS, "✅ Toast: " + Toast);
 		        System.out.println("✅ Toast: " + Toast);
 		        System.out.println();
+		        Toast_close_Button=l.Toast_close_button();
+		        Toast_close_Button.click();
+		        
 		    } else {
 		        Report_Listen.log_print_in_report().log(Status.FAIL, "❌ Toast: " + Toast);
 		        System.out.println("❌ Toast: " + Toast);
 		        System.out.println();
 		    }
-		    System.out.println(Toast);}
+		    System.out.println(Toast);
+		    Toast_close_Button=l.Toast_close_button();
+	        Toast_close_Button.click();}
 	   
 	   
 	

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Repeatative_codes.Repeat;
 
-public class Application_Locaters extends Repeat{
+public class Application_Locaters extends Login_Locaters{
 	
 	
 	@FindBy(xpath="//div[@class='ant-modal-body']")
@@ -205,11 +205,11 @@ public class Application_Locaters extends Repeat{
 	@FindBy(xpath="//*[contains(@class,'ant-modal-close-x')]/..")
 	private WebElement Close_Button; 
 	@FindBy(xpath="//*[contains(@class,'ant-tag ant-tag-geekblue')]")
-	private WebElement Case_ID_Tag;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Case_ID_Tag;
+	@FindBy(xpath="//*[text()='Today']/..")
+	private WebElement Calender_today_date;
+	@FindBy(xpath="//*[text()='Create Note']/./..")
+	private WebElement  Create_note_button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -270,8 +270,8 @@ public class Application_Locaters extends Repeat{
 	List<WebElement> state_options=wait_for_nested(Droplist,By.xpath(".//div[contains(@class,'ant-select-item') and contains(@class,'ant-select-item-option') and @title]"));
 	return state_options;} 
 	public WebElement calender_date_select(){
-	try {wait_for_theElement(calender_date_select);
-	return calender_date_select;}
+	try {wait_for_theElement(Calender_today_date);
+	return Calender_today_date;}
 	catch(Exception switch_to_backup_locater){
 	try {Thread.sleep(800);
 	wait_for_theElement(Backup_calender_date_select);
@@ -319,6 +319,7 @@ public class Application_Locaters extends Repeat{
 	return status_field_clear_button;}
 	public WebElement landed_in_applicationList_confirmation(){
 	wait_for_theElement(landed_in_applicationList_confirmation);
+	Toast_close_button().click();
 	return landed_in_applicationList_confirmation;}
 	public WebElement table_body(){
 	wait_for_theElement(table_body);
@@ -722,10 +723,10 @@ public class Application_Locaters extends Repeat{
 	return Close_Button;}     
 	public WebElement Case_ID_Tag(){
 	wait_for_theElement(Case_ID_Tag);
-	return Case_ID_Tag;}    /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Case_ID_Tag;}    
+	public WebElement Create_note_button(){
+	wait_for_theElement(Create_note_button);
+	return Create_note_button;}  /* 
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
