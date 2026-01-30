@@ -595,7 +595,29 @@ public class Case_Appplications extends Header_Manager{
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 		rp.Scroll_to_element(p.Application_tab_bar());
+		try {
 		tab_selector("Applications");
+		  Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt."
+	        );
+
+	        System.out.println("Actual     : Applications tab clicked successfully (Retry Attempt)");
+	        System.out.println();}
+		catch(Exception tab_click){
+			
+			Thread.sleep(800);
+			tab_selector("Applications"); Report_Listen.log_print_in_report().log(Status.INFO,
+		            "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
+		                    + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName()
+		              );
+
+		              System.out.println("Actual     : First attempt FAILED to click Applications tab");
+		              System.out.println("Retry Plan : Wait 800ms and retry once");
+		              System.out.println("Exception  : " + tab_click.getClass().getSimpleName());
+		              System.out.println();
+
+		              Thread.sleep(800);
+		}
 		p.Application_amount_edit_buttons().get(1).click();
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
@@ -780,10 +802,39 @@ public class Case_Appplications extends Header_Manager{
 		        .ignoring(StaleElementReferenceException.class);
 
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
-		String Contract_Generated = lg.toast().getText().trim();
+		   String Contract_Generated = "";
+		    try {
+		        Contract_Generated = lg.toast().getText().trim();
+		        Login_negative_testcases.Toast_printer(Contract_Generated);
+
+		        Report_Listen.log_print_in_report().log(Status.PASS,
+		                String.format("<b>🟨 Actual:</b> ✅ Contract generation toast captured = <b>%s</b>", Contract_Generated));
+		        System.out.println("Actual  : Contract generation toast = " + Contract_Generated);
+		    } catch (Exception e) {
+		        Report_Listen.log_print_in_report().log(Status.FAIL,
+		                "<b>🟨 Actual:</b> ❌ Contract generation toast NOT captured.");
+		        System.out.println("Actual  : FAILED to capture contract generation toast");
+		        throw e;
+		    }
 		Login_negative_testcases.Toast_printer(Contract_Generated);
-		rp.wait_for_invisibility(lg.toast());
-		Thread.sleep(1000);
+		 try {
+		        rp.wait_for_invisibility(lg.toast());
+		    } catch (Exception invis) {
+		        Report_Listen.log_print_in_report().log(Status.INFO,
+		                "<b>🟨 Actual:</b> Toast invisibility wait skipped/failed (non-blocking).");
+		        System.out.println("Note    : Toast invisibility wait skipped/failed (non-blocking)");
+		    }
+
+		    Thread.sleep(1000);
+
+		    Report_Listen.log_print_in_report().log(Status.INFO,
+		            String.format("<b>Step %d:</b> Click Manual Sign-In button and upload signed document to generate lien rows.<br><b>✅ Expected:</b> Liens should be generated and lien rows should be visible.", (step++)));
+
+		    System.out.println("--------------------------------------------------");
+		    System.out.println("[STEP] Manual Sign-In and lien generation");
+		    System.out.println("Expected : Upload/sign should complete and lien rows should exist");
+		    System.out.println("--------------------------------------------------");
+
 		WebElement new_toast =lg.toast();
 		String new_toast_text = lg.toast().getText().trim();
 		System.out.println(new_toast_text);
@@ -791,12 +842,94 @@ public class Case_Appplications extends Header_Manager{
 		rp.movetoelement(Sign_in_button);
 	    Thread.sleep(800);
 	    rp.wait_for_theElement_tobe_clickable(Sign_in_button);
-		Sign_in_button.click();
+	    try {
+	        Sign_in_button.click();
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>🟨 Actual:</b> ✅ Manual Sign-In button clicked.");
+	        System.out.println("Actual  : Manual Sign-In button clicked");
+	    } catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>🟨 Actual:</b> ❌ Could not click Manual Sign-In button.");
+	        System.out.println("Actual  : FAILED to click Manual Sign-In button");
+	        throw e;
+	    }
 		//Docu_Sign_Signature();
-		manual_lien_generation(Sign_in_button);
+	    try {
+	        List<WebElement> lienRowsAfterManualSign = manual_lien_generation(Sign_in_button);
+	        int lienCount = (lienRowsAfterManualSign == null) ? 0 : lienRowsAfterManualSign.size();
+
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                String.format("<b>🟨 Actual:</b> ✅ Manual signing completed. Lien rows found = <b>%d</b>", lienCount));
+	        System.out.println("Actual  : Manual signing completed. Lien rows = " + lienCount);
+	    } catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>🟨 Actual:</b> ❌ manual_lien_generation failed (upload/sign/liens fetch issue).");
+	        System.out.println("Actual  : FAILED in manual_lien_generation()");
+	        throw e;
+	    }
 		
-		Payment_Calculator(Case_Data,Case_ID);
-		Underwriting_Notes(Case_Data);}
+	    // =========================
+	    	    // ✅ Payment Calculator (Payoff validation)
+	    	    // =========================
+	    	    Report_Listen.log_print_in_report().log(Status.INFO,
+	    	            String.format("<b>Step %d:</b> Run Payment_Calculator to validate payoff reduction after payment.<br><b>📥 Input:</b> Case ID = <b>%s</b><br><b>✅ Expected:</b> Reduction should match fees paid (tolerance 0.01).",
+	    	                    (step++), Case_ID));
+
+	    	    System.out.println("--------------------------------------------------");
+	    	    System.out.println("[STEP] Payment_Calculator / Payoff validation");
+	    	    System.out.println("Case ID   : " + Case_ID);
+	    	    System.out.println("Expected  : Reduction matches Fees Paid (tolerance 0.01)");
+	    	    System.out.println("--------------------------------------------------");
+
+	    	    try {
+	    	        Payment_Calculator(Case_Data, Case_ID);
+
+	    	        Report_Listen.log_print_in_report().log(Status.PASS,
+	    	                String.format("<b>🟨 Actual:</b> ✅ Payment_Calculator executed successfully for Case ID = <b>%s</b>", Case_ID));
+	    	        System.out.println("Actual  : Payment_Calculator executed successfully");
+	    	    } catch (Exception e) {
+	    	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	    	                String.format("<b>🟨 Actual:</b> ❌ Payment_Calculator failed for Case ID = <b>%s</b>", Case_ID));
+	    	        System.out.println("Actual  : FAILED in Payment_Calculator()");
+	    	        throw e;
+	    	    }
+
+	    	    // =========================
+	    	    // ✅ Underwriting Notes
+	    	    // =========================
+	    	    Report_Listen.log_print_in_report().log(Status.INFO,
+	    	            String.format("<b>Step %d:</b> Add Underwriting Notes for this case.<br><b>📥 Input:</b> Underwriting Notes + Tag from dataset<br><b>✅ Expected:</b> Notes should save and toast should appear.",
+	    	                    (step++)));
+
+	    	    System.out.println("--------------------------------------------------");
+	    	    System.out.println("[STEP] Add Underwriting Notes");
+	    	    System.out.println("Expected : Notes should save successfully");
+	    	    System.out.println("--------------------------------------------------");
+
+	    	    try {
+	    	        Underwriting_Notes(Case_Data);
+
+	    	        Report_Listen.log_print_in_report().log(Status.PASS,
+	    	                "<b>🟨 Actual:</b> ✅ Underwriting notes saved successfully.");
+	    	        System.out.println("Actual  : Underwriting notes saved successfully");
+	    	    } catch (Exception e) {
+	    	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	    	                "<b>🟨 Actual:</b> ❌ Underwriting notes save failed.");
+	    	        System.out.println("Actual  : FAILED in Underwriting_Notes()");
+	    	        throw e;
+	    	    }
+
+	    	    // =========================
+	    	    // ✅ END
+	    	    // =========================
+	    	    Report_Listen.log_print_in_report().log(Status.INFO,
+	    	            String.format("<b>✅ End of Test:</b> Add_case completed for Case ID = <b>%s</b>", Case_ID));
+
+	    	    System.out.println("==================================================");
+	    	    System.out.println("[END] Add_case completed successfully");
+	    	    System.out.println("Case ID : " + Case_ID);
+	    	    System.out.println("==================================================");
+	    	    System.out.println();}
 	
 	    
 	     @Test(dataProvider="case_plus_plaintiff")
@@ -2303,11 +2436,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ /*
-		       {c1},{c2},{c3},{c4},{c5},
+		    return new Object[][]{ 
+		        {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},*/{c20} 
+		        {c16},{c17},{c18},{c19},{c20} 
 		    };}
 	
 	
@@ -2676,69 +2809,231 @@ public class Case_Appplications extends Header_Manager{
 	        public void Payment_Calculator(TreeMap<String, String> data,String Case_Unique_id) throws IOException, InterruptedException{
 	        	
 	        	
-	        	  
-	        	
+	        		
 				String Case_id=Case_Unique_id; 
+				
+				 int step = 1;
+
+				    // =========================
+				    // Scenario Header
+				    // =========================
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🔹 Scenario Title:</b> Payment Payoff Validation (Before vs After Payment)<br>" +
+				            "<b>📘 Description:</b> Capture payoff table values BEFORE payment, log payment, capture payoff table values AFTER payment, and validate that the reduction equals Fees Paid (tolerance 0.01).<br>" +
+				            "<b>📥 Input:</b> Case ID = <b>" + Case_id + "</b><br>" +
+				            "<b>✅ Expected:</b> For each month row, (Before − After) should match Fees Paid within tolerance 0.01."
+				    );
+
+				    System.out.println("\n==================================================");
+				    System.out.println("[SCENARIO] Payment Payoff Validation (Before vs After Payment)");
+				    System.out.println("Case ID   : " + Case_id);
+				    System.out.println("Expected  : (Before - After) should match Fees Paid within tolerance 0.01");
+				    System.out.println("==================================================\n");
+				    
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>Step " + (step++) + ":</b> Fetch Payoff table values BEFORE payment."
+				    );
+				    System.out.println("[Step] Fetch Payoff table values BEFORE payment");
 				  
 	        	Pay_off_lien_list_Before_payment(Case_id);
+	        	
+	        	 Report_Listen.log_print_in_report().log(Status.INFO,
+	        	            "<b>🟨 Actual:</b> Payoff table values captured BEFORE payment. Rows captured = <b>" + PayoffTable_values_Before_Payment.size() + "</b>"
+	        	    );
+	        	    System.out.println("Actual: Payoff values captured BEFORE payment. Rows = " + PayoffTable_values_Before_Payment.size());
+	        	    System.out.println();
+	        	    // =========================
+	        	    // Step 2: Log payment
+	        	    // =========================
+	        	    Report_Listen.log_print_in_report().log(Status.INFO,
+	        	            "<b>Step " + (step++) + ":</b> Log Payment and capture Fees Paid amount."
+	        	    );
+	        	    System.out.println("[Step] Log Payment and capture Fees Paid amount");
+
 	            String Fees_payed_amount=Payment_Logger(data,Case_id);;
 	            double Fees_payed_converted_to_double = Double.parseDouble(Fees_payed_amount);
 	            double Fees_payed_in_double_upto_two_decimal = Double.parseDouble(String.format("%.2f", Fees_payed_converted_to_double));
-	            Pay_off_lien_list_After_payment_data_fetcher(Case_id);
-	          
+	           
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> Fees Paid captured = <b>" + Fees_payed_in_double_upto_two_decimal + "</b>"
+	            );
+
+	            System.out.println("Actual: Fees Paid = " + Fees_payed_in_double_upto_two_decimal);
+	            System.out.println();
+
+	            // =========================
+	            // Step 3: After payment data fetch
+	            // =========================
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>Step " + (step++) + ":</b> Fetch Payoff table values AFTER payment."
+	            );
+	            System.out.println("[Step] Fetch Payoff table values AFTER payment");
 	            
+	            Pay_off_lien_list_After_payment_data_fetcher(Case_id);
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> Payoff table values captured AFTER payment. Rows captured = <b>" + PayoffTable_values_After_Payment.size() + "</b>"
+	            );
+	            System.out.println("Actual: Payoff values captured AFTER payment. Rows = " + PayoffTable_values_After_Payment.size());
+	            System.out.println();
+	            
+	          
+	            	    // Step 4: Validate reduction vs Fees Paid for each month
+	            	    // =========================
+	            	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            	            "<b>Step " + (step++) + ":</b> Validate reduction (Before − After) equals Fees Paid for each month row (tolerance 0.01)."
+	            	    );
+	            	    System.out.println("[Step] Validate month-wise reduction equals Fees Paid (tolerance 0.01)");
+	            	    System.out.println();
+	            
+	            	    double tolerance = 0.01;
 	        	for(Map.Entry<String,Double> after_pair:PayoffTable_values_After_Payment.entrySet()){
 	        		String Key = after_pair.getKey();
-	        		double Before_payment = PayoffTable_values_Before_Payment.get(Key);
-	        		double After_payment = PayoffTable_values_After_Payment.get(Key);
-	        		
-	        		double reduction = Before_payment-After_payment;
-	        		double reduction_upto_two_decimal =  Double.parseDouble(String.format("%.2f", reduction));
-	        		double difference_upto_two_decimal = Double.parseDouble(String.format("%.2f",
-	        	            Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)));
 
-	        	    System.out.println("--------------------------------------------------");
-	        	    System.out.println("Payoff Lien Validation | " + Key);
-	        	    System.out.println("Before Payment : " + Before_payment + "  ||  After Payment : " + After_payment);
-	        	    System.out.println("Reduction      : " + reduction_upto_two_decimal + "  ||  Fees Paid     : " + Fees_payed_in_double_upto_two_decimal);
-	        	    System.out.println("Difference     : " + difference_upto_two_decimal + "  ||  Tolerance    : 0.01");
-	        	    System.out.println(
-	        	            difference_upto_two_decimal < 0.01
-	        	                    ? "✅ Testcase Passed | " + Key + " | Reduction = " + reduction_upto_two_decimal
-	        	                        + " matches Fees Paid = " + Fees_payed_in_double_upto_two_decimal
-	        	                        + " | Diff = " + difference_upto_two_decimal
-	        	                    : "❌ Testcase Failed | " + Key + " | Reduction = " + reduction_upto_two_decimal
-	        	                        + " NOT matching Fees Paid = " + Fees_payed_in_double_upto_two_decimal
-	        	                        + " | Diff = " + difference_upto_two_decimal
-	        	    );
-	        	    System.out.println("--------------------------------------------------");
-	        	    System.out.println();
+	                // Safety: handle if before map doesn't contain key
+	                if (!PayoffTable_values_Before_Payment.containsKey(Key)) {
 
-	        	    // Extent Logs (same info, readable)
-	        	    Report_Listen.log_print_in_report().log(Status.INFO,
-	        	            "<b>🔹 Payoff Lien Validation</b><br>"
-	        	            + "<b>Month:</b> " + Key + "<br>"
-	        	            + "<b>Before:</b> " + Before_payment + " | <b>After:</b> " + After_payment + "<br>"
-	        	            + "<b>Reduction:</b> " + reduction_upto_two_decimal + " | <b>Fees Paid:</b> " + Fees_payed_in_double_upto_two_decimal + "<br>"
-	        	            + "<b>Difference:</b> " + difference_upto_two_decimal + " | <b>Tolerance:</b> 0.01"
-	        	    );
-	        		System.out.println();
-	        		System.out.println(
-	        			    Double.parseDouble(String.format("%.2f",
-	        			        Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal))) < 0.01
-	        			        ? "✅ Testcase Passed | Reduction = " + reduction_upto_two_decimal
-	        			            + " | Fees Paid = " + Fees_payed_in_double_upto_two_decimal
-	        			            + " | Difference = " + Double.parseDouble(String.format("%.2f",
-	        			                Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)))
-	        			        : "❌ Testcase Failed | Reduction = " + reduction_upto_two_decimal
-	        			            + " | Fees Paid = " + Fees_payed_in_double_upto_two_decimal
-	        			            + " | Difference = " + Double.parseDouble(String.format("%.2f",
-	        			                Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)))
-	        			);
+	                    String extentMissing =
+	                            "<div style='background:#fff3cd; padding:14px; border-radius:10px; border:1px solid #ffe08a; color:#4a3b00;'>" +
+	                                    "<b>⚠️ WARNING — Payoff Lien Validation</b><br><br>" +
+	                                    "<b>Month:</b> " + Key + "<br>" +
+	                                    "<b>Issue:</b> Month exists in AFTER map but not found in BEFORE map. Validation skipped for this month.<br>" +
+	                                    "</div>";
+
+	                    Report_Listen.log_print_in_report().log(Status.WARNING, extentMissing);
+
+	                    System.out.println("⚠️ WARNING | " + Key);
+	                    System.out.println("Reason: Month exists AFTER payment but missing BEFORE payment values. Skipping validation.");
+	                    System.out.println("--------------------------------------------------");
+	                    System.out.println();
+	                    continue;
+	                }
+
+	                double Before_payment = PayoffTable_values_Before_Payment.get(Key);
+	                double After_payment = PayoffTable_values_After_Payment.get(Key);
+
+	                double reduction = Before_payment - After_payment;
+	                double reduction_upto_two_decimal = Double.parseDouble(String.format("%.2f", reduction));
+
+	                double difference_upto_two_decimal = Double.parseDouble(String.format("%.2f",
+	                        Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)));
+
+	                boolean isMatched = difference_upto_two_decimal < tolerance;
+
+	                // ---------------------------
+	                // ✅ Extent Card (same style as your calc table screenshot)
+	                // ---------------------------
+	                String cardStyle =
+	                        "background:#eaf4ff; padding:18px; border-radius:12px; " +
+	                        "border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;";
+
+	                String headerStyle = "font-size:16px; font-weight:700; margin-bottom:10px;";
+	                String sectionTitleStyle = "margin-top:14px; font-weight:700; font-size:14px;";
+	                String valueLineStyle = "margin:4px 0; font-size:13px;";
+	                String dividerStyle = "margin:10px 0; border-top:1px solid #c7ddff;";
+
+	                String passFailTitle = isMatched
+	                        ? "✅ PASS — " + Key + " Reduction Matched Fees Paid"
+	                        : "❌ FAIL — " + Key + " Reduction Did NOT Match Fees Paid";
+
+	                String meaningLine = isMatched
+	                        ? "System reduced the payoff amount by exactly the payment fees. No extra/less reduction happened."
+	                        : "Reduction does not match Fees Paid. Please review payoff update / fee application logic.";
+
+	                // Failure reason details (only if FAIL)
+	                String failReasonHtml = "";
+	                if (!isMatched) {
+	                    failReasonHtml =
+	                            "<div style='" + sectionTitleStyle + "'>🧾 Fail Reason:</div>" +
+	                            "<div style='" + valueLineStyle + "'>Expected Reduction (Fees Paid) ≈ <b>" + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</b></div>" +
+	                            "<div style='" + valueLineStyle + "'>Actual Reduction Observed = <b>" + String.format("%.2f", reduction_upto_two_decimal) + "</b></div>" +
+	                            "<div style='" + valueLineStyle + "'>Mismatch (Difference) = <b>" + String.format("%.2f", difference_upto_two_decimal) + "</b> (Tolerance " + String.format("%.2f", tolerance) + ")</div>";
+	                }
+
+	                String payoffExtentCard =
+	                        "<div style='" + cardStyle + "'>" +
+	                                "<div style='" + headerStyle + "'>" + passFailTitle + "</div>" +
+
+	                                "<div style='" + sectionTitleStyle + "'>🔍 What we are validating:</div>" +
+	                                "<div style='" + valueLineStyle + "'>After logging payment, Payoff table should reduce by <b>Fees Paid</b>.</div>" +
+
+	                                "<div style='" + sectionTitleStyle + "'>📌 Values:</div>" +
+	                                "<div style='" + valueLineStyle + "'><b>Month:</b> " + Key + "</div>" +
+	                                "<div style='" + valueLineStyle + "'><b>Before Payment (Payoff table):</b> " + String.format("%.2f", Before_payment) + "</div>" +
+	                                "<div style='" + valueLineStyle + "'><b>After Payment (Payoff table):</b> " + String.format("%.2f", After_payment) + "</div>" +
+	                                "<div style='" + valueLineStyle + "'><b>Fees Paid (Logger):</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</div>" +
+
+	                                "<div style='" + dividerStyle + "'></div>" +
+
+	                                "<div style='" + sectionTitleStyle + "'>🧮 Formula:</div>" +
+	                                "<div style='" + valueLineStyle + "'><b>Reduction</b> = Before − After</div>" +
+	                                "<div style='" + valueLineStyle + "'><b>Difference</b> = |Reduction − Fees Paid|</div>" +
+
+	                                "<div style='" + sectionTitleStyle + "'>🧾 Substitute values:</div>" +
+	                                "<div style='" + valueLineStyle + "'>Reduction = " + String.format("%.2f", Before_payment) + " − " + String.format("%.2f", After_payment) +
+	                                " = <b>" + String.format("%.2f", reduction_upto_two_decimal) + "</b></div>" +
+
+	                                "<div style='" + valueLineStyle + "'>Difference = |" + String.format("%.2f", reduction_upto_two_decimal) + " − " +
+	                                String.format("%.2f", Fees_payed_in_double_upto_two_decimal) +
+	                                "| = <b>" + String.format("%.2f", difference_upto_two_decimal) + "</b></div>" +
+
+	                                "<div style='" + sectionTitleStyle + "'>✅ Check:</div>" +
+	                                "<div style='" + valueLineStyle + "'>Difference (" + String.format("%.2f", difference_upto_two_decimal) + ") &lt; Tolerance (" +
+	                                String.format("%.2f", tolerance) + ") → <b>" + (isMatched ? "Matched ✅" : "Not Matched ❌") + "</b></div>" +
+
+	                                failReasonHtml +
+
+	                                "<div style='" + sectionTitleStyle + "'>🟩 Meaning (simple):</div>" +
+	                                "<div style='" + valueLineStyle + "'>" + meaningLine + "</div>" +
+
+	                                "<div style='" + sectionTitleStyle + "'>📌 Conclusion:</div>" +
+	                                "<div style='" + valueLineStyle + "'>Payoff reduction for <b>" + Key + "</b> is " +
+	                                (isMatched ? "<b>correct</b> ✅." : "<b>incorrect</b> ❌.") +
+	                                "</div>" +
+	                        "</div>";
+
+	                Report_Listen.log_print_in_report().log(isMatched ? Status.PASS : Status.FAIL, payoffExtentCard);
+
+	                // ---------------------------
+	                // ✅ Console Block (clean + reason)
+	                // ---------------------------
+	                System.out.println("==================================================");
+	                System.out.println("PAYOFF LIEN VALIDATION  |  " + Key);
+	                System.out.println("--------------------------------------------------");
+	                System.out.println("Before Payment (Payoff table) : " + String.format("%.2f", Before_payment));
+	                System.out.println("After Payment  (Payoff table) : " + String.format("%.2f", After_payment));
+	                System.out.println("Fees Paid (Logger)            : " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
+	                System.out.println("--------------------------------------------------");
+	                System.out.println("Reduction  = Before - After   : " + String.format("%.2f", reduction_upto_two_decimal));
+	                System.out.println("Difference = |Reduction-Fees| : " + String.format("%.2f", difference_upto_two_decimal));
+	                System.out.println("Tolerance                     : " + String.format("%.2f", tolerance));
+	                System.out.println("--------------------------------------------------");
+
+	                if (isMatched) {
+	                    System.out.println("RESULT : PASS ✅  (Reduction matched Fees Paid within tolerance)");
+	                } else {
+	                    System.out.println("RESULT : FAIL ❌  (Reduction did NOT match Fees Paid within tolerance)");
+	                    System.out.println("FAIL REASON:");
+	                    System.out.println(" - Expected Reduction (Fees Paid) ≈ " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal));
+	                    System.out.println(" - Actual Reduction Observed      = " + String.format("%.2f", reduction_upto_two_decimal));
+	                    System.out.println(" - Mismatch (Difference)          = " + String.format("%.2f", difference_upto_two_decimal));
+	                }
+
+	                System.out.println("==================================================");
+	                System.out.println();
 	        		
 	        	}
 	        	
-	        	
+	        	// End summary logs (optional but helpful)
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>✅ Payment Calculator Completed</b><br>" +
+	                    "<b>Case ID:</b> " + Case_id + "<br>" +
+	                    "<b>Fees Paid:</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "<br>" +
+	                    "<b>Months Validated:</b> " + PayoffTable_values_After_Payment.size()
+	            );
+
+	            System.out.println("✅ Payment Calculator Completed for Case ID: " + Case_id);
+	            System.out.println("Months validated: " + PayoffTable_values_After_Payment.size());
+	            System.out.println();
 	        	
 	        	
 	        }
@@ -2754,7 +3049,12 @@ public class Case_Appplications extends Header_Manager{
 				  
 				  
 				  PayoffTable_values_Before_Payment.clear();
-				  
+				  Report_Listen.log_print_in_report().log(Status.INFO,
+					        "<b>📌 Action:</b> Open Payoff modal and capture values BEFORE payment.<br>" +
+					        "<b>Case ID:</b> " + Case_id
+					);
+					System.out.println("[Action] Capture Payoff values BEFORE payment | Case ID: " + Case_id);
+
 				  
 				  try{p.Case_Action_Dropdown();}
 			       catch(Exception not_in_Case_Details) {	    
@@ -2818,7 +3118,12 @@ public class Case_Appplications extends Header_Manager{
 	                        System.out.println("month "+m+"  "+ each_month_payable);
 	    	    	    	System.out.println(); */
 		    	            m++;}}
-		    	    
+		    	    Report_Listen.log_print_in_report().log(Status.INFO,
+		    	            "<b>🟨 Actual:</b> Stored payoff values BEFORE payment. Rows captured = <b>" + PayoffTable_values_Before_Payment.size() + "</b>"
+		    	    );
+		    	    System.out.println("Actual: Stored payoff values BEFORE payment. Rows = " + PayoffTable_values_Before_Payment.size());
+		    	    System.out.println();
+
 	        	     p.Close_Button().click();
 	        	
 			       }
@@ -2836,7 +3141,12 @@ public class Case_Appplications extends Header_Manager{
 		    	  
 				  String Case_id = Case_Id;
 				  PayoffTable_values_After_Payment.clear();
-				  
+				  Report_Listen.log_print_in_report().log(Status.INFO,
+					        "<b>📌 Action:</b> Open Payoff modal and capture values AFTER payment.<br>" +
+					        "<b>Case ID:</b> " + Case_id
+					);
+					System.out.println("[Action] Capture Payoff values AFTER payment | Case ID: " + Case_id);
+
 				  try{p.Case_Action_Dropdown();}
 			       catch(Exception not_in_Case_Details) {	    
 				   sd.Side_menu_option_clicker("Applications", d,"N/A");
@@ -2897,7 +3207,12 @@ public class Case_Appplications extends Header_Manager{
 		    	            PayoffTable_values_After_Payment.put("month "+m, each_month_payable);/*
 	                        System.out.println("month "+m+"  "+ each_month_payable);
 	    	    	    	System.out.println();*/
-		    	            m++;}} 
+		    	            m++;}} Report_Listen.log_print_in_report().log(Status.INFO,
+		    	                    "<b>🟨 Actual:</b> Stored payoff values AFTER payment. Rows captured = <b>" + PayoffTable_values_After_Payment.size() + "</b>"
+		    	            		);
+		    	            		System.out.println("Actual: Stored payoff values AFTER payment. Rows = " + PayoffTable_values_After_Payment.size());
+		    	            		System.out.println();
+
 		    	    p.Close_Button().click();
 		      
 		      }

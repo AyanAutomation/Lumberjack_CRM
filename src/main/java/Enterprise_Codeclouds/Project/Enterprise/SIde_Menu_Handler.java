@@ -19,8 +19,11 @@ public class SIde_Menu_Handler extends Login{
     	Login_Locaters lg = new Login_Locaters(d);
     	Repeat rp = new Repeat(d);
     	
-    	try {p.Side_Menu();}catch(Exception not_logged_in){login(d);
-    	p.Side_Menu();}
+    //	try {p.Side_Menu();}
+    //	catch(Exception not_logged_in){
+    	login(d);
+    	p.Side_Menu();
+    	//}
     	
     	List<WebElement> menuoptions = p.Sidemenu_Options();
     	

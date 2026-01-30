@@ -2,25 +2,25 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-29T20:40:08 IST" name="Default suite" finished-at="2026-01-29T20:42:09 IST" duration-ms="121734">
+  <suite started-at="2026-01-30T14:19:25 IST" name="Default suite" finished-at="2026-01-30T14:21:23 IST" duration-ms="118075">
     <groups>
     </groups>
-    <test started-at="2026-01-29T20:40:08 IST" name="Default test" finished-at="2026-01-29T20:42:09 IST" duration-ms="121734">
+    <test started-at="2026-01-30T14:19:25 IST" name="Default test" finished-at="2026-01-30T14:21:23 IST" duration-ms="118075">
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-29T20:40:08 IST" name="setup" finished-at="2026-01-29T20:40:10 IST" duration-ms="1951" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-30T14:19:25 IST" name="setup" finished-at="2026-01-30T14:19:27 IST" duration-ms="1996" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-29T20:40:10 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-29T20:42:09 IST" duration-ms="119265" status="PASS">
+        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-30T14:19:27 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-01-30T14:21:23 IST" duration-ms="115602" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=01/29/2026, Amount Received=1, Application Status=In Review, Approved Amount=20500, Attorney Name=Attorney Sable Rennick, Buyout Amount=12400, Buyout Expiry Date=01/29/2030, Buyout Funder Name=Atlas Ridge Litigation Funding, Case #=540, Case Type=Civil Rights, Court Index Number=00CV-2412-CR-001990, Date of Incident=12/27/2024, Document prep fee=260, Fund transfer fee=95, Interest Start Date=01/29/2026, Law Firm Name=National Civil Liberties Counsel, Lead Source=Other, Notes / Remarks=Lost deal logged (system requires amount); placeholder used for validation; adjust if rule allows blank., Payer Name=N/A - Lost Deal, Payment Date=01/29/2026, Payment Mode=Bank Transfer, Payment Type=Lost Deal, Rate of Return=39, Recommended Max Funding=20500, Requested Amount=50500, Risk Level=Moderate, SMS Message Body=Your file is under review while we confirm venue and verify key records. – Lumberjack Legal Finance, SMS Message Title=File In Review, State=Unknown, Summary=Civil rights complaint in early intake; jurisdiction/venue being confirmed; request for records submitted; wage loss and emotional distress alleged., Underwriting Notes=Hold funding until venue/jurisdiction confirmed and core documents obtained. Verify statute/notice deadlines and whether claims are viable under applicable standards., Underwriting Tag=Venue Confirmation}]]>
+                <![CDATA[{Agreement Date=01/30/2026, Amount Received=1, Application Status=In Review, Approved Amount=20500, Attorney Name=Attorney Sable Rennick, Buyout Amount=12400, Buyout Expiry Date=01/30/2030, Buyout Funder Name=Atlas Ridge Litigation Funding, Case #=540, Case Type=Civil Rights, Court Index Number=00CV-2412-CR-001990, Date of Incident=12/27/2024, Document prep fee=260, Fund transfer fee=95, Interest Start Date=01/30/2026, Law Firm Name=National Civil Liberties Counsel, Lead Source=Other, Notes / Remarks=Lost deal logged (system requires amount); placeholder used for validation; adjust if rule allows blank., Payer Name=N/A - Lost Deal, Payment Date=01/30/2026, Payment Mode=Bank Transfer, Payment Type=Lost Deal, Rate of Return=39, Recommended Max Funding=20500, Requested Amount=50500, Risk Level=Moderate, SMS Message Body=Your file is under review while we confirm venue and verify key records. – Lumberjack Legal Finance, SMS Message Title=File In Review, State=Unknown, Summary=Civil rights complaint in early intake; jurisdiction/venue being confirmed; request for records submitted; wage loss and emotional distress alleged., Underwriting Notes=Hold funding until venue/jurisdiction confirmed and core documents obtained. Verify statute/notice deadlines and whether claims are viable under applicable standards., Underwriting Tag=Venue Confirmation}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=2001 Ross Ave, Suite 700, Address Line 2=Reception intake only; ask for Client Services, City=Dallas, Date of Birth=04/14/1992, Email=eirlys.vantrelle6187@yopmail.com, First Name=Eirlys, Last Name=Vantrelle, Middle Name=Quenra, Name Suffix=III, Phone number=2149086187, Social Security Number=902-11-6187, State=Texas, Zip code=75201}]]>
+                <![CDATA[{Address Line 1=50 Fountain Plaza, Suite 1100, Address Line 2=50 Fountain Plaza, City=Buffalo, Date of Birth=03/09/1991, Email=tavish.mackinnondrury9104@yopmail.com, First Name=Tavish, Last Name=MacKinnon-Drury, Middle Name=Riel, Name Suffix=II, Phone number=4169079104, Social Security Number=903-11-9104, State=New York, Zip code=14202}]]>
               </value>
             </param>
             <param index="2">
@@ -51,7 +51,7 @@ Thank you., Subject=Document Request - Please Upload Required Files, Template=No
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-29T20:42:09 IST" name="Kill" finished-at="2026-01-29T20:42:09 IST" duration-ms="426" status="PASS">
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@544fa968]" started-at="2026-01-30T14:21:23 IST" name="Kill" finished-at="2026-01-30T14:21:23 IST" duration-ms="383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->
