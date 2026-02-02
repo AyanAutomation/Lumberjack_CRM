@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 30, 2026 07:49:21 PM</span></a>
+<a href="#"><span class="badge badge-primary">Feb 2, 2026 08:48:45 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,11 +45,6 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
-</a>
-</li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -71,7 +66,6 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
@@ -80,25 +74,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Notes_Add</p>
+            <p class="name">Buyout_Add_After_Contract_Generation_through_Edit_Terms</p>
             <p class="text-sm">
-              <span>7:49:25 PM</span> / <span>00:00:22:060</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:48:48 PM</span> / <span>00:02:59:535</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:49:25 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:49:47 PM</span>
-<span class='badge badge-default'>00:00:22:060</span>
+<h5 class="test-status text-fail">Buyout_Add_After_Contract_Generation_through_Edit_Terms</h5>
+<span class='badge badge-success'>02.02.2026 8:48:48 PM</span>
+<span class='badge badge-danger'>02.02.2026 8:51:47 PM</span>
+<span class='badge badge-default'>00:02:59:535</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -110,1217 +104,1247 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:48 PM</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Buyout Details Added After Contract Generation – Verify Edit Terms shows correct Buyout details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:48 PM</td>
+        <td>
+          <b>📘 Description:</b> Create a case, link attorney contact, generate contract, save it, then add Buyout details after contract generation. Finally, open <b>Edit Terms</b> and verify the Buyout fields show the same values that were saved.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:48 PM</td>
+        <td>
+          <b>📥 Input:</b> Buyout Funder=<b>Juniper Vale Litigation Capital</b> | Buyout Amount=<b>19600</b> | Buyout Expiry=<b>02/02/2030</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:48 PM</td>
+        <td>
+          <b>✅ Expected:</b> After adding Buyout details post-contract generation, Edit Terms should display the same Buyout Funder/Amount/Expiry. Also, <b>Add Buyout</b> button should not appear inside Edit Terms if buyout is already present.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:48 PM</td>
+        <td>
+          <b>Step 1:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:49:30 PM</td>
+        <td>8:48:55 PM</td>
         <td>
           ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:49:46 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:56 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:56 PM</td>
+        <td>
+          <b>Step 2:</b> Verify New Case popup is opened<br><b>📘 Description:</b> System should display the case creation popup/form after header Case Add click<br><b>✅ Expected:</b> New Case Add popup form should be visible and ready for input
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:56 PM</td>
+        <td>
+          <b>🟨 Actual:</b> New Case form/popup opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:56 PM</td>
+        <td>
+          <b>Step 2:</b> Search and select existing Plaintiff from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:58 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Plaintiff selected = Nuala
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:58 PM</td>
+        <td>
+          <b>Step 3:</b> Select Incident/Case Type from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:58 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Incident/Case type selected from list for input = Premises Liability
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:48:58 PM</td>
+        <td>
+          <b>Step 4:</b> Select State of Incident from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:00 PM</td>
+        <td>
+          <b>🟨 Actual:</b> State selected from list for input = California
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:00 PM</td>
+        <td>
+          <b>Step 5:</b> Enter Date of Incident and confirm date selection.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:00 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Date of Incident entered/selected = 03/09/2024
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:00 PM</td>
+        <td>
+          <b>Step 6:</b> Select Lead Type and Lead Source.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:02 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = Advertising)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:02 PM</td>
+        <td>
+          <b>Step 7:</b> Enter Requested Amount and click Create/Save Case.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:49:47 PM</td>
+        <td>8:49:04 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          ✅ Toast: The Case has been successfully saved.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:04 PM</td>
+        <td>
+          <b>Step 8:</b> Open Case Details edit popup and update Summary + Court Index Number.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:07 PM</td>
+        <td>
+          <b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '19CV-2403-PR-004921' was entered and saved without visible UI errors.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:08 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = 19CV-2403-PR-004921)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:08 PM</td>
+        <td>
+          <b>Step 9:</b> Go to Contacts tab and link an Attorney contact from list.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:18 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Attorney contact selected and added to case contacts.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:18 PM</td>
+        <td>
+          <b>Step 10:</b> Go to Applications tab and open Buyout modal.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:49:47 PM</td>
+        <td>8:49:20 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="2"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:49:49 PM</span> / <span>00:00:22:457</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:49:49 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:50:11 PM</span>
-<span class='badge badge-default'>00:00:22:457</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:49:55 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:11 PM</td>
+        <td>8:49:20 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          ✅ Toast: Contact assigned successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:20 PM</td>
+        <td>
+          <b>Step 11:</b> Open Approved Amount edit and enter Approved Amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:21 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Approved Amount entered = 31000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:21 PM</td>
+        <td>
+          <b>Step 12:</b> Update Application Status to APPROVED from dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:22 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Application status set to APPROVED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:22 PM</td>
+        <td>
+          <b>Step 13:</b> Click Generate Contract and wait for Contract popup/modal.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:25 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Contract details modal opened.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:25 PM</td>
+        <td>
+          <b>Step 14:</b> Fill contract fee fields and Rate of Return.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:26 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=325, FundTransfer=120, RoR=44)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:26 PM</td>
+        <td>
+          <b>Step 15:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:11 PM</td>
+        <td>8:49:31 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:11 PM</td>
+        <td>8:49:31 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:50:12 PM</span> / <span>00:00:22:630</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:50:12 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:50:35 PM</span>
-<span class='badge badge-default'>00:00:22:630</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:18 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=null | CourtIndex=19CV-2403-PR-004921 | AgreementDate=02/02/2026
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:35 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:31 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <b>Step 16:</b> Switch back from Contract iframe to main page (default content).
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:35 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:31 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <b>🟨 Actual:</b> Driver focus returned to main page after reading Contract lien table.
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:35 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:32 PM</td>
         <td>
-          Test passed
+          <b>Step 17:</b> Click <i>Save Changes</i> to save contract edits.
         </td>
       </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:50:36 PM</span> / <span>00:00:25:076</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:50:36 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:51:01 PM</span>
-<span class='badge badge-default'>00:00:25:076</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:50:45 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:32 PM</td>
         <td>
-          ✅ Toast: Login successful!
+          <b>Step 18:</b> Reopen Contract preview before saving changes (verification step).<br><b>📘 Description:</b> Reopen the contract preview/editor to confirm the contract can be opened again without issues.<br><b>✅ Expected:</b> Contract preview/editor should open successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:32 PM</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Contract Reopen – Preview Contract after refresh (without saving changes)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:32 PM</td>
+        <td>
+          <b>📘 Description:</b> Validate that the Contract Preview opens correctly even after page refresh, without requiring any prior Save action.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:32 PM</td>
+        <td>
+          <b>📥 Input:</b> Preview Contract action triggered after refresh (no save performed)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:32 PM</td>
+        <td>
+          <b>✅ Expected:</b> Contract Editor should open successfully when user clicks Preview Contract after refresh.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:01 PM</td>
+        <td>8:49:47 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully after refresh using Preview Contract (no save required).
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:01 PM</td>
+        <td>8:49:47 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <b>🟨 Actual:</b> ✅ Contract preview/editor reopened successfully (no interruption before saving).
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:01 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:47 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="5"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:51:02 PM</span> / <span>00:00:21:752</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:51:02 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:51:24 PM</span>
-<span class='badge badge-default'>00:00:21:752</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:08 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>🟨 Actual:</b> Buyout modal opened.
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:24 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:47 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <b>Step 19:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:24 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:54 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep=325, FundTransfer=120, RoR=44)
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:24 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:49:54 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="6"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:51:25 PM</span> / <span>00:00:22:341</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:51:25 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:51:48 PM</span>
-<span class='badge badge-default'>00:00:22:341</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:31 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>Step 20:</b> Enter Agreement Date + Interest Start Date and confirm date selection.
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:48 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:01 PM</td>
         <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:48 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:48 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="7"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:51:49 PM</span> / <span>00:00:22:976</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:51:49 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:52:12 PM</span>
-<span class='badge badge-default'>00:00:22:976</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:51:55 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:12 PM</td>
-        <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:12 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:12 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="8"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:52:13 PM</span> / <span>00:00:24:871</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:52:13 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:52:38 PM</span>
-<span class='badge badge-default'>00:00:24:871</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:21 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:38 PM</td>
-        <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:38 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:38 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="9"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:52:39 PM</span> / <span>00:00:18:669</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:52:39 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:52:58 PM</span>
-<span class='badge badge-default'>00:00:18:669</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:52:49 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>Step 21:</b> Capture toast after saving contract.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>7:52:58 PM</td>
+        <td>8:50:11 PM</td>
         <td>
-          <textarea readonly class="code-block">java.lang.RuntimeException: Element list is null or empty. Check the locator or timing.
-	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:47)
-	at Locaters.Application_Locaters.Case_tags(Application_Locaters.java:510)
-	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Notes_Add(Case_Appplications.java:4073)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</textarea>
-          
+          <b>🟨 Actual:</b> ❌ Save toast not captured (toast not visible / locator issue) after clicking Save Changes.
         </td>
       </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="10"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:52:59 PM</span> / <span>00:00:21:501</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:52:59 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:53:21 PM</span>
-<span class='badge badge-default'>00:00:21:501</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:06 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:11 PM</td>
         <td>
-          ✅ Toast: Login successful!
+          <b>Step 22:</b> Click <i>Generate Contract</i> again to send contract for signing.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:21 PM</td>
+        <td>8:50:13 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          ✅ Toast: Contract saved successfully!
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:21 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:28 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <b>Step 23:</b> Open Buyout modal from Applications tab (Buyout edit button).
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:21 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:28 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="11"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:53:22 PM</span> / <span>00:00:21:821</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:53:22 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:53:44 PM</span>
-<span class='badge badge-default'>00:00:21:821</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:27 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>🟨 Actual:</b> Exception while clicking Buyout edit button. Retrying once after wait. Error: RuntimeException
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:44 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:29 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <b>🟨 Actual:</b> Buyout modal open click performed successfully (after retry).
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:44 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:29 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <b>🟨 Actual:</b> Buyout modal opened.
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:44 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:29 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="12"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:53:46 PM</span> / <span>00:00:22:463</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:53:46 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:54:08 PM</span>
-<span class='badge badge-default'>00:00:22:463</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:53:54 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>Step 24:</b> Fill Buyout details and save (Funder, Amount, Expiry Date).
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:08 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:50:32 PM</td>
         <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:08 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:08 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="13"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:54:10 PM</span> / <span>00:00:21:048</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:54:10 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:54:31 PM</span>
-<span class='badge badge-default'>00:00:21:048</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:14 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:30 PM</td>
-        <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:31 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:31 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="14"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:54:32 PM</span> / <span>00:00:21:293</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:54:32 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:54:53 PM</span>
-<span class='badge badge-default'>00:00:21:293</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:37 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:53 PM</td>
-        <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:53 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:54:53 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="15"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:54:54 PM</span> / <span>00:00:21:355</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:54:54 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:55:16 PM</span>
-<span class='badge badge-default'>00:00:21:355</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:00 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:15 PM</td>
-        <td>
-          ✅ Toast: Note created successfully
+          <b>🔹 Validation:</b> Edit Terms should show the saved Buyout details (Funder/Amount/Expiry) after contract generation.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>7:55:16 PM</td>
+        <td>8:51:04 PM</td>
         <td>
-          <b>🟨 Actual:</b> ❌ Notes save confirmation toast was not found after clicking Submit.
+          <b>❌ Result:</b> Buyout details do NOT match in Edit Terms.<br><br><b>📌 Buyout Details Shown in Edit Terms:</b><br><b>Funder:</b> Juniper Vale Litigation Capital<br><b>Amount:</b> 19600<br><b>Expiry Date:</b> 02/02/2026<br><br><b>✅ Expected Buyout Details:</b><br><b>Funder:</b> Juniper Vale Litigation Capital<br><b>Amount:</b> 19600<br><b>Expiry Date:</b> 02/02/2030<br><br><b>Final Check:</b> All 3 values should match exactly.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:16 PM</td>
+        <td>8:51:07 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="16"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:55:17 PM</span> / <span>00:00:21:604</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:55:17 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:55:39 PM</span>
-<span class='badge badge-default'>00:00:21:604</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:22 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:38 PM</td>
+        <td>8:51:07 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <b>✅ Final Result:</b> Case created successfully for Plaintiff=null | CourtIndex=19CV-2403-PR-004921 | AgreementDate=02/02/2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:08 PM</td>
+        <td>
+          <b>🧮 First Month Payable Calculation</b><br><b>Buyout Amount:</b> 19600.00<br><b>Approved Amount:</b> 31000.00<br><b>Funded Amount:</b> 50600.00  (Buyout + Approved)<br><br><b>Rate of Return (%):</b> 44.00<br><b>Annual Interest:</b> 22264.00  (Funded × RoR / 100)<br><b>Monthly Interest:</b> 1855.33  (Annual / 12)<br><br><b>Document Prep Fee:</b> 325.00<br><b>Fund Transfer Fee:</b> 120.00<br><b>Flat Fees Total:</b> 445.00<br><br><b>✅ First Month Payable:</b> 50600.00 + 1855.33 + 325.00 + 120.00 = <b>52900.33</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          Testcase passed First month payable 52900.33 is macthing contract text's first month payable 52900.33
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <b>Step 25:</b> Validate future months lien calculation from Contract Lien table.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <b>📘 Description:</b> Each month lien should increase only by Monthly Interest compared to previous month.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <b>✅ Expected:</b> For every month >= 1, (Current Month Payable - Previous Month Payable) should equal Monthly Interest = 1855.3333333333333.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:39 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 1 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 0) = <b>52900.33</b><br>Curr Month Payable (Month 1) = <b>54755.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 54755.67 − 52900.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 1.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:39 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="17"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:55:40 PM</span> / <span>00:00:20:793</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:55:40 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:56:01 PM</span>
-<span class='badge badge-default'>00:00:20:793</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:55:45 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 2 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 1) = <b>54755.67</b><br>Curr Month Payable (Month 2) = <b>56611.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 56611.0 − 54755.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 2.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:00 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 3 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 2) = <b>56611.0</b><br>Curr Month Payable (Month 3) = <b>58466.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 58466.33 − 56611.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 3.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:01 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 4 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 3) = <b>58466.33</b><br>Curr Month Payable (Month 4) = <b>60321.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 60321.67 − 58466.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 4.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:01 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="18"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:56:02 PM</span> / <span>00:00:21:380</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:56:02 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:56:23 PM</span>
-<span class='badge badge-default'>00:00:21:380</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:07 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 5 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 4) = <b>60321.67</b><br>Curr Month Payable (Month 5) = <b>62177.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 62177.0 − 60321.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 5.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:23 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          ✅ Toast: Note created successfully
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 6 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 5) = <b>62177.0</b><br>Curr Month Payable (Month 6) = <b>64032.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 64032.33 − 62177.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 6.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:23 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          <b>🟨 Actual:</b> ✅ Notes saved successfully. Toast captured and confirms save.
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 7 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 6) = <b>64032.33</b><br>Curr Month Payable (Month 7) = <b>65887.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 65887.67 − 64032.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 7.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:23 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="19"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:56:24 PM</span> / <span>00:00:21:740</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:56:24 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:56:46 PM</span>
-<span class='badge badge-default'>00:00:21:740</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:30 PM</td>
-        <td>
-          ✅ Toast: Login successful!
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 8 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 7) = <b>65887.67</b><br>Curr Month Payable (Month 8) = <b>67743.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 67743.0 − 65887.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 8.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:45 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          ✅ Toast: Note created successfully
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>7:56:46 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ❌ Notes save confirmation toast was not found after clicking Submit.
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 9 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 8) = <b>67743.0</b><br>Curr Month Payable (Month 9) = <b>69598.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 69598.33 − 67743.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 9.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:46 PM</td>
+        <td>8:51:09 PM</td>
         <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="20"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Notes_Add</p>
-            <p class="text-sm">
-              <span>7:56:47 PM</span> / <span>00:00:30:280</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Notes_Add</h5>
-<span class='badge badge-success'>01.30.2026 7:56:47 PM</span>
-<span class='badge badge-danger'>01.30.2026 7:57:18 PM</span>
-<span class='badge badge-default'>00:00:30:280</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:56:54 PM</td>
-        <td>
-          ✅ Toast: Login successful!
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>7:57:18 PM</td>
-        <td>
-          <b>🟨 Actual:</b> ❌ Notes save confirmation toast was not found after clicking Submit.
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 10 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 9) = <b>69598.33</b><br>Curr Month Payable (Month 10) = <b>71453.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 71453.67 − 69598.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 10.</div>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:57:18 PM</td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 11 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 10) = <b>71453.67</b><br>Curr Month Payable (Month 11) = <b>73309.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 73309.0 − 71453.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 11.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 12 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 11) = <b>73309.0</b><br>Curr Month Payable (Month 12) = <b>75164.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 75164.33 − 73309.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 12.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 13 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 12) = <b>75164.33</b><br>Curr Month Payable (Month 13) = <b>77019.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 77019.67 − 75164.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 13.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 14 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 13) = <b>77019.67</b><br>Curr Month Payable (Month 14) = <b>78875.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 78875.0 − 77019.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 14.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 15 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 14) = <b>78875.0</b><br>Curr Month Payable (Month 15) = <b>80730.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 80730.33 − 78875.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 15.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 16 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 15) = <b>80730.33</b><br>Curr Month Payable (Month 16) = <b>82585.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 82585.67 − 80730.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 16.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 17 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 16) = <b>82585.67</b><br>Curr Month Payable (Month 17) = <b>84441.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 84441.0 − 82585.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 17.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 18 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 17) = <b>84441.0</b><br>Curr Month Payable (Month 18) = <b>86296.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 86296.33 − 84441.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 18.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 19 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 18) = <b>86296.33</b><br>Curr Month Payable (Month 19) = <b>88151.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 88151.67 − 86296.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 19.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 20 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 19) = <b>88151.67</b><br>Curr Month Payable (Month 20) = <b>90007.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 90007.0 − 88151.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 20.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 21 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 20) = <b>90007.0</b><br>Curr Month Payable (Month 21) = <b>91862.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 91862.33 − 90007.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 21.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 22 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 21) = <b>91862.33</b><br>Curr Month Payable (Month 22) = <b>93717.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 93717.67 − 91862.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 22.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 23 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 22) = <b>93717.67</b><br>Curr Month Payable (Month 23) = <b>95573.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 95573.0 − 93717.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 23.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 24 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 23) = <b>95573.0</b><br>Curr Month Payable (Month 24) = <b>97428.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 97428.33 − 95573.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 24.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 25 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 24) = <b>97428.33</b><br>Curr Month Payable (Month 25) = <b>99283.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 99283.67 − 97428.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 25.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 26 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 25) = <b>99283.67</b><br>Curr Month Payable (Month 26) = <b>101139.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 101139.0 − 99283.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 26.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 27 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 26) = <b>101139.0</b><br>Curr Month Payable (Month 27) = <b>102994.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 102994.33 − 101139.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 27.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 28 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 27) = <b>102994.33</b><br>Curr Month Payable (Month 28) = <b>104849.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 104849.67 − 102994.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 28.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 29 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 28) = <b>104849.67</b><br>Curr Month Payable (Month 29) = <b>106705.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 106705.0 − 104849.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 29.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 30 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 29) = <b>106705.0</b><br>Curr Month Payable (Month 30) = <b>108560.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 108560.33 − 106705.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 30.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 31 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 30) = <b>108560.33</b><br>Curr Month Payable (Month 31) = <b>110415.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 110415.67 − 108560.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 31.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 32 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 31) = <b>110415.67</b><br>Curr Month Payable (Month 32) = <b>112271.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 112271.0 − 110415.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 32.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 33 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 32) = <b>112271.0</b><br>Curr Month Payable (Month 33) = <b>114126.33</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 114126.33 − 112271.0<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 33.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 34 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 33) = <b>114126.33</b><br>Curr Month Payable (Month 34) = <b>115981.67</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 115981.67 − 114126.33<br><br><b>✅ Result:</b><br>Increase = <b>1855.34</b><br><br><b>🔍 Check:</b><br>Increase (1855.34) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 34.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:09 PM</td>
+        <td>
+          <div style='background:#eaf5ff; padding:14px; border-radius:8px; border:1px solid #1e88e5; color:#0b3a63; font-weight:600;'><b>✅ PASS — Month 35 Increase Matched Monthly Interest</b><br><br><b>🔹 What we are validating:</b><br>Each month payable should increase only by <b>Monthly Interest</b>.<br><br><b>📌 Values:</b><br>Prev Month Payable (Month 34) = <b>115981.67</b><br>Curr Month Payable (Month 35) = <b>117837.0</b><br>Expected Monthly Interest = <b>1855.3333333333333</b><br><br><b>🧮 Formula:</b><br><b>Increase = Current Month Payable − Previous Month Payable</b><br><br><b>🧾 Substitute values:</b><br>Increase = 117837.0 − 115981.67<br><br><b>✅ Result:</b><br>Increase = <b>1855.33</b><br><br><b>🔍 Check:</b><br>Increase (1855.33) ≈ Monthly Interest (1855.3333333333333) → <b>Matched ✅</b><br><br><b>🟩 Meaning (simple):</b> System added only the correct monthly interest. No extra/less amount was added.<br><br><b>🟨 Conclusion:</b> Payable increase is correct for Month 35.</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:12 PM</td>
+        <td>
+          <b>Step 26:</b> Capture toast after saving contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:13 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Contract saved toast = Contract saved successfully!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:13 PM</td>
+        <td>
+          <b>Step 27:</b> Click <i>Generate Contract</i> again to send contract for signing.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:25 PM</td>
+        <td>
+          ✅ Toast: Contract generated successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:28 PM</td>
+        <td>
+          <b>🔹 Scenario Title:</b> Manual Contract Signing → Lien Generation Verification
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:28 PM</td>
+        <td>
+          <b>📘 Description:</b> Validate that after uploading a signed contract document and confirming, the system records the signing successfully and generates lien rows in the Liens tab.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:28 PM</td>
+        <td>
+          <b>📥 Input:</b> Upload file = <b>Manual Sign In image.pdf</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:28 PM</td>
+        <td>
+          <b>✅ Expected:</b> Contract should be marked as signed (toast confirmation) and Liens tab should show generated lien row(s).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:30 PM</td>
+        <td>
+          ✅ Toast: Successfully signed the contract.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:30 PM</td>
+        <td>
+          <b>🟨 Actual:</b> System confirmed contract signing via toast message.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:31 PM</td>
+        <td>
+          <b>🟨 Actual:</b> ✅ Lien rows generated successfully after manual signing. Total lien rows found = <b>1</b>.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:31 PM</td>
+        <td>
+          <div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700;'>🔹 Scenario Title: Payment Payoff Validation (Before vs After Payment)</div><div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Capture Payoff table values BEFORE payment, log payment, capture Payoff table values AFTER payment, and validate that the reduction equals Fees Paid (tolerance 0.01).</div><div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>CASE ID: CA2600475</b></div><div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> For each month row, (Before − After) should match Fees Paid within tolerance 0.01.</div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:31 PM</td>
+        <td>
+          <b>Step 1:</b> Fetch Payoff table values BEFORE payment.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:31 PM</td>
+        <td>
+          <b>📌 Action:</b> Open Payoff modal and capture values BEFORE payment.<br><b>Case ID:</b> CASE ID: CA2600475
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:34 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Stored payoff values BEFORE payment. Rows captured = <b>36</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Payoff values captured BEFORE payment. Rows captured = <b>36</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>Step 2:</b> Log Payment and capture Fees Paid amount.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700;'>🔹 Scenario Title: Payment Logger – Record Payment (50% Fees)</div><div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Open <b>Log Payment</b> form from Case Action dropdown, enter payment details, submit, and capture confirmation toast.</div><div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>CASE ID: CA2600475</b></div><div style='margin-top:10px; font-size:13px;'><b>🧮 Fee Rule:</b> Payment Amount = (Doc Prep + Fund Transfer) / 2</div><div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> Payment should log successfully and system should show a confirmation toast.</div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>Step 1:</b> Ensure user is inside correct Case Details page for Case ID = <b>CASE ID: CA2600475</b>.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Case Action dropdown is visible. Already inside Case Details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>Step 2:</b> Open <b>Log Payment</b> from Case Action dropdown.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Log Payment option clicked. Payment form should open.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <b>Step 3:</b> Fill Payment details and submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:35 PM</td>
+        <td>
+          <div style='background:#eef9ff; padding:14px; border-radius:10px; border:1px solid #bfe6ff; color:#0b1b33; font-family:Arial;'><b>📥 Input Values</b><br><b>Mode:</b> Credit Card<br><b>Type:</b> Payment by Plaintiff<br><b>Payer:</b> Plaintiff N/A<br><b>Date:</b> 02/02/2026<br><b>Total Fees:</b> 445.00<br><b>Paid Amount (50%):</b> 222.50<br></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:40 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Payment form submitted. Waiting for confirmation toast.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:40 PM</td>
+        <td>
+          <b>Step 4:</b> Capture toast after payment save.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:41 PM</td>
+        <td>
+          <div style='background:#e9fbe9; padding:14px; border-radius:10px; border:1px solid #bde5bd; color:#0b3b0b; font-family:Arial;'><b>🟨 Actual:</b> ✅ Payment logged successfully.<br><b>Toast:</b> The Payment has been successfully saved.<br><b>Paid Amount:</b> 222.50</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:44 PM</td>
+        <td>
+          <div style='background:#eef9ff; padding:14px; border-radius:10px; border:1px solid #bfe6ff; color:#0b1b33;'><b>🟨 Actual:</b> Fees Paid captured from Payment Logger = <b>222.50</b><br><span style='font-size:12px;'>Note: Payment amount is HALF of (Document Prep Fee + Fund Transfer Fee).</span></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:44 PM</td>
+        <td>
+          <b>Step 3:</b> Fetch Payoff table values AFTER payment.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:44 PM</td>
+        <td>
+          <b>📌 Action:</b> Open Payoff modal and capture values AFTER payment.<br><b>Case ID:</b> CASE ID: CA2600475
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Stored payoff values AFTER payment. Rows captured = <b>36</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Payoff values captured AFTER payment. Rows captured = <b>36</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <b>Step 4:</b> Validate reduction (Before − After) equals Fees Paid for each month row (tolerance 0.01).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 0 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 0</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 52900.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 52677.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 52900.33 − 52677.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 1 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 1</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 54755.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 54533.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 54755.67 − 54533.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 10 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 10</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 71453.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 71231.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 71453.67 − 71231.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 11 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 11</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 73309.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 73086.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 73309.00 − 73086.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 12 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 12</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 75164.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 74941.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 75164.33 − 74941.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 13 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 13</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 77019.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 76797.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 77019.67 − 76797.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 14 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 14</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 78875.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 78652.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 78875.00 − 78652.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 15 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 15</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 80730.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 80507.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 80730.33 − 80507.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 16 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 16</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 82585.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 82363.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 82585.67 − 82363.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 17 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 17</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 84441.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 84218.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 84441.00 − 84218.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 18 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 18</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 86296.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 86073.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 86296.33 − 86073.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 19 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 19</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 88151.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 87929.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 88151.67 − 87929.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 2 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 2</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 56611.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 56388.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 56611.00 − 56388.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 20 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 20</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 90007.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 89784.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 90007.00 − 89784.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 21 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 21</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 91862.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 91639.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 91862.33 − 91639.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 22 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 22</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 93717.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 93495.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 93717.67 − 93495.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 23 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 23</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 95573.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 95350.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 95573.00 − 95350.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 24 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 24</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 97428.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 97205.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 97428.33 − 97205.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 25 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 25</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 99283.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 99061.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 99283.67 − 99061.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 26 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 26</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 101139.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 100916.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 101139.00 − 100916.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 27 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 27</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 102994.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 102771.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 102994.33 − 102771.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 28 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 28</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 104849.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 104627.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 104849.67 − 104627.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 29 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 29</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 106705.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 106482.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 106705.00 − 106482.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 3 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 3</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 58466.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 58243.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 58466.33 − 58243.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 30 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 30</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 108560.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 108337.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 108560.33 − 108337.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 31 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 31</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 110415.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 110193.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 110415.67 − 110193.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 32 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 32</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 112271.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 112048.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 112271.00 − 112048.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 33 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 33</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 114126.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 113903.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 114126.33 − 113903.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 34 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 34</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 115981.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 115759.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 115981.67 − 115759.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 35 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 35</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 117837.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 117614.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 117837.00 − 117614.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 4 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 4</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 60321.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 60099.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 60321.67 − 60099.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 5 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 5</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 62177.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 61954.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 62177.00 − 61954.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 6 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 6</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 64032.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 63809.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 64032.33 − 63809.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 7 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 7</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 65887.67</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 65665.17</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 65887.67 − 65665.17 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 8 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 8</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 67743.00</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 67520.50</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 67743.00 − 67520.50 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'><div style='font-size:16px; font-weight:700; margin-bottom:10px;'>✅ PASS — month 9 Reduction Matched Fees Paid</div><div style='margin-top:10px; font-weight:700;'>📌 Values:</div><div style='margin:4px 0; font-size:13px;'><b>Month:</b> month 9</div><div style='margin:4px 0; font-size:13px;'><b>Before Payment (Payoff table):</b> 69598.33</div><div style='margin:4px 0; font-size:13px;'><b>After Payment (Payoff table):</b> 69375.83</div><div style='margin:4px 0; font-size:13px;'><b>Fees Paid (Logger):</b> 222.50</div><div style='margin:12px 0; border-top:1px solid #c7ddff;'></div><div style='margin-top:10px; font-weight:700;'>🧮 Formula:</div><div style='margin:4px 0; font-size:13px;'><b>Reduction</b> = Before − After</div><div style='margin:4px 0; font-size:13px;'><b>Difference</b> = |Reduction − Fees Paid|</div><div style='margin-top:10px; font-weight:700;'>🧾 Substitute values:</div><div style='margin:4px 0; font-size:13px;'>Reduction = 69598.33 − 69375.83 = <b>222.50</b></div><div style='margin:4px 0; font-size:13px;'>Difference = |222.50 − 222.50| = <b>0.00</b></div><div style='margin-top:12px; padding:12px; border-radius:10px; background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;'><b>✅ Check:</b> Difference (0.00) &lt; Tolerance (0.01) → <b>Matched ✅</b></div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:51:47 PM</td>
+        <td>
+          <div style='background:#f1fff2; padding:14px; border-radius:12px; border:1px solid #bde5bd; color:#0b3b0b; font-family:Arial;'><b>✅ Payment Payoff Validation Completed</b><br><b>Case ID:</b> CASE ID: CA2600475<br><b>Fees Paid:</b> 222.50<br><b>Months Validated:</b> 36</div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:51:47 PM</td>
         <td>
           Test passed
         </td>
@@ -1339,79 +1363,30 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">java.lang.RuntimeException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>java.lang.RuntimeException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>19:52:39 PM</td>
-<td>
-<a href="#" class="linked" test-id='9' id='9'>Notes_Add</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="container-fluid p-4 view dashboard-view">
+<div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 30, 2026 07:49:21 PM</h3>
+<h3>Feb 2, 2026 08:48:45 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 30, 2026 07:57:18 PM</h3>
+<h3>Feb 2, 2026 08:51:48 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>16</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>4</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -1427,12 +1402,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='80%'>
-<b>16</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='20%'><b>4</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -1450,10 +1425,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='94%'><b>73</b> events passed</small></div>
+<div><small data-tooltip='49%'><b>88</b> events passed</small></div>
 <div>
-<small data-tooltip='5%'><b>4</b> events failed,
-<b data-tooltip='%'>0</b> others
+<small data-tooltip='1%'><b>2</b> events failed,
+<b data-tooltip='%'>88</b> others
 </small>
 </div>
 </div>
@@ -1469,7 +1444,7 @@
 </div></div>
 <script>
 var timeline = {
-"Notes_Add":22.06,"Notes_Add":22.457,"Notes_Add":22.63,"Notes_Add":25.076,"Notes_Add":21.752,"Notes_Add":22.341,"Notes_Add":22.976,"Notes_Add":24.871,"Notes_Add":18.669,"Notes_Add":21.501,"Notes_Add":21.821,"Notes_Add":22.463,"Notes_Add":21.048,"Notes_Add":21.293,"Notes_Add":21.355,"Notes_Add":21.604,"Notes_Add":20.793,"Notes_Add":21.38,"Notes_Add":21.74,"Notes_Add":30.28
+"Buyout_Add_After_Contract_Generation_through_Edit_Terms":179.535
 };
 </script>
 <div class="row">
@@ -1508,8 +1483,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 16,
-failParent: 4,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -1525,11 +1500,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 73,
-failEvents: 4,
+passEvents: 88,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 88
 };
 </script>        </div>
       </div>

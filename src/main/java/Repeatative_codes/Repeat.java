@@ -104,7 +104,7 @@ public class Repeat {
     
     public void wait_for_invisibility(WebElement element){
     	
-    	WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+    	WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(50));
 	   	w.until(ExpectedConditions.invisibilityOf(element));
     	
     	

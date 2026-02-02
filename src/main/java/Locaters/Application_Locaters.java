@@ -209,7 +209,91 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//*[text()='Today']/..")
 	private WebElement Calender_today_date;
 	@FindBy(xpath="//*[text()='Create Note']/./..")
-	private WebElement  Create_note_button; /*
+	private WebElement  Create_note_button; 
+	@FindBy(xpath="//*[contains(@class,'ant-picker-clear')]")
+	private WebElement Calender_clear_button;
+	@FindBy(xpath="//*[@class='ant-picker-content']//td")
+	private List <WebElement>  Calender_cells;
+	@FindBy(xpath="//span[text()='Add Buyout']/..")
+	private WebElement  Add_Buyout_button;/*
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
+	@FindBy(xpath="")
+	private WebElement  ;
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -726,19 +810,20 @@ public class Application_Locaters extends Login_Locaters{
 	return Case_ID_Tag;}    
 	public WebElement Create_note_button(){
 	wait_for_theElement(Create_note_button);
-	return Create_note_button;}  /* 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Create_note_button;} 
+	public List <WebElement> pop_up_modal_inner_content_boxes(){
+	List <WebElement> pop_up_modal_inner_content_boxes = Popup_add_form().findElements(By.xpath(".//*[contains(@class,'box-section')]"));
+	wait_for_theElement(pop_up_modal_inner_content_boxes);
+	return pop_up_modal_inner_content_boxes;}   
+	public WebElement Calender_clear_button(){
+	wait_for_theElement(Calender_clear_button);
+	return Calender_clear_button;}  
+	public List <WebElement> Calender_cells(){
+	wait_for_theElement(Calender_cells);
+	return Calender_cells;}    
+	public WebElement Add_Buyout_button(){
+	wait_for_theElement(Add_Buyout_button);
+	return Add_Buyout_button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
