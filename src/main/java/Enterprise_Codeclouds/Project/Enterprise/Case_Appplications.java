@@ -825,7 +825,7 @@ public class Case_Appplications extends Header_Manager{
 		p.Modal_Input_Feilds().get(0).sendKeys(Case_Data.get("Buyout Funder Name"));
 		p.Modal_Input_Feilds().get(1).sendKeys(Case_Data.get("Buyout Amount"));
 		p.Modal_Input_Feilds().get(2).sendKeys(Case_Data.get("Buyout Expiry Date"));
-		p.calender_date_select().click();
+		p.Higlighted_calender_date().click();
 		p.modal_buttons().get(1).click();
 		Thread.sleep(800);
 		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
@@ -1621,7 +1621,11 @@ public class Case_Appplications extends Header_Manager{
 	 		p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
 	 		Thread.sleep(800);
 	 		WebElement toast = lg.toast();
+	 		WebElement toast_close = lg.Toast_close_button();
+	 		rp.movetoelement(toast_close);
+	 		toast_close.click();
 	 		rp.wait_for_invisibility(toast);
+	 		
 	 		try {
 	 		p.List_Checkboxes().get(0).click();}
 	 		catch(Exception attorney_searched_not_present){
@@ -1762,7 +1766,9 @@ public class Case_Appplications extends Header_Manager{
 	 		p.Modal_Input_Feilds().get(0).sendKeys(Buyout_Funder);
 	 		p.Modal_Input_Feilds().get(1).sendKeys(Buyout_price);
 	 		p.Modal_Input_Feilds().get(2).sendKeys(Buyout_date);
-	 		p.calender_date_select().click();
+	 		Thread.sleep(800);
+	 		WebElement date = p.Higlighted_calender_date();
+	 		date.click();
 	 		p.modal_buttons().get(1).click();
 	 		Thread.sleep(800);
 	        p.Generate_contract_button().click();
@@ -3078,10 +3084,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		        {c1},/*{c2},{c3},{c4},{c5},
+		        {c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} */
+		        {c16},{c17},{c18},{c19},{c20} 
 		    };}
 	
 	
@@ -3958,14 +3964,16 @@ public class Case_Appplications extends Header_Manager{
 	        	
 			       }
 	        
-           @Test
-           public void Pay_off_lien_list_After_Revise_contract(/*String Case_Id*/) throws IOException, InterruptedException{
+           @Test(dataProvider="caseData")
+           public void Pay_off_lien_list_After_Revise_contract(TreeMap<String, String> Case_Data) throws IOException, InterruptedException{
 	        	
-	        	Application_Locaters p = new Application_Locaters(d);
+	        	  Application_Locaters p = new Application_Locaters(d);
 			      Login_Locaters lg = new Login_Locaters(d);
 				  SIde_Menu_Handler sd = new SIde_Menu_Handler();
 				  Repeat rp = new Repeat(d);
 		    	  
+				  
+				  
 				//  String Case_id = Case_Id;
 				  String Case_id = "OH2600127";
 				  
@@ -4014,7 +4022,7 @@ public class Case_Appplications extends Header_Manager{
 						Thread.sleep(800);
 						tab_selector("Liens");}
 				   
-				   Revise_Contract();
+				   Revise_Contract(Case_Data);
 				   
 				   
 		    	    WebElement payoff_button = p.Payoff_Button();
@@ -4054,11 +4062,23 @@ public class Case_Appplications extends Header_Manager{
              
            
            
-              public void Revise_Contract() throws InterruptedException{
+              public void Revise_Contract(TreeMap<String, String> Case_Data) throws InterruptedException{
             	  
             	  Application_Locaters p = new Application_Locaters(d);
             	  Repeat rp = new Repeat(d);
-            	  JavascriptExecutor js = (JavascriptExecutor)d; 
+            	  JavascriptExecutor js = (JavascriptExecutor)d;
+            	  Login_Locaters lg = new Login_Locaters(d);
+            	  
+            	  int Initial_buyout_amount_from_data_provider = Integer.parseInt(Case_Data.get("Buyout Amount"));
+            	  double New_Buyout_Amount = Initial_buyout_amount_from_data_provider/3;
+            	  double New_Buyout_Amount_Upto_Two_Decimal = Double.parseDouble(String.format("%.2f", New_Buyout_Amount));
+            	  String New_Buyout_Amount_String= Double.toString(New_Buyout_Amount_Upto_Two_Decimal);
+            	  String Buyout_Funder = Case_Data.get("Buyout Funder Name");
+            	  String Buyout_date = Case_Data.get("Buyout Expiry Date");
+            	  
+            	  
+            	  
+            	  
             	  
             	  List<WebElement> rows = p.Open_Lien_table_contents();
             	  rows.get(0).click();
@@ -4071,14 +4091,51 @@ public class Case_Appplications extends Header_Manager{
       	 	      WebElement Buyout_Button = p.Add_Buyout_button();
       	 	      rp.movetoelement(Buyout_Button);
       	 	      Buyout_Button.click();
-      	 	      List<WebElement> buyout_inputs = p.Third_popup_form_inputs();/*
-      	 	      p.Modal_Input_Feilds().get(0).sendKeys(Buyout_Funder);
-   	 		      p.Modal_Input_Feilds().get(1).sendKeys(Buyout_price);
-   	 		      p.Modal_Input_Feilds().get(2).sendKeys(Buyout_date);*/
-   	 		      p.calender_date_select().click();
-   	 		      p.modal_buttons().get(1).click();
+      	 	      List<WebElement> buyout_inputs = p.Third_popup_form_inputs();
+      	 	      buyout_inputs.get(0).sendKeys(Buyout_Funder);
+   	 		      buyout_inputs.get(1).sendKeys(New_Buyout_Amount_String);
+   	 		      buyout_inputs.get(2).sendKeys(Buyout_date);
+   	 		      p.Higlighted_calender_date().click();
+   	 		      p.Third_popup_form_buttons().get(1).click();
+   	 		      WebElement toast = lg.toast();
+   	 		      String Toast_text = toast.getText().trim();
+   	 		      Login_negative_testcases.Toast_printer(Toast_text, d);
    	 		      Thread.sleep(800);
       	 	      Thread.sleep(800);
+      	 	   try{
+   	 	    	p.Add_buyout_button_inside_edit_contract_from();
+   	 	    	System.out.println("Testcase Failed added buyout not showing inside edit terms/contract Form");
+   	 	    	System.out.println();
+   	 	    	Report_Listen.log_print_in_report().log(Status.FAIL,
+   	 					"<b>🟨 Actual:</b> ❌ Edit Terms shows <b>Add Buyout</b> button (Buyout appears missing in Edit Terms).<br>"
+   	 							+ "<b>Expected:</b> Buyout should already be present, so <b>Add Buyout</b> should not appear.");}
+   	 	    catch(Exception kkm){
+   	 	    	System.out.println("Testcase Passed add buyout button not shown");
+   	 	        String Funder_name = p.Buyout_funder_name_inside_pop_up_modal_form().getAttribute("value").trim();
+   	 	        String Buyout_amount = p.Buyout_Amount_inside_pop_up_modal_form().getAttribute("value").trim();
+   	 	        String Buyout_Expiry_date = p.Buyout_Date_inside_pop_up_modal_form().getAttribute("value").trim();
+   	 	        System.out.println();
+   	 	        System.out.println(Funder_name.equalsIgnoreCase(Buyout_Funder)&&Buyout_amount.equalsIgnoreCase(New_Buyout_Amount_String)&&Buyout_Expiry_date.equalsIgnoreCase(Buyout_date)?"Testcase Passed All Buyout details matching with details in modal":"Testcase Failed All Buyout details not matching with details in modal");
+   	 	        System.out.println();
+   	 	    // ✅ CLIENT-FRIENDLY: ONLY show pass/fail + business values
+   	 			String match_log =
+   	 					"<b>📌 Buyout Details Shown in Edit Terms:</b><br>"
+   	 							+ "<b>Funder:</b> "+Funder_name+"<br>"
+   	 							+ "<b>Amount:</b> "+Buyout_amount+"<br>"
+   	 							+ "<b>Expiry Date:</b> "+Buyout_Expiry_date+"<br><br>"
+   	 							+ "<b>✅ Expected Buyout Details:</b><br>"
+   	 							+ "<b>Funder:</b> "+Buyout_Funder+"<br>"
+   	 							+ "<b>Amount:</b> "+New_Buyout_Amount_String+"<br>"
+   	 							+ "<b>Expiry Date:</b> "+Buyout_date+"<br><br>"
+   	 							+ "<b>Final Check:</b> All 3 values should match exactly.";
+
+   	 			Report_Listen.log_print_in_report().log(
+   	 					(Funder_name.equalsIgnoreCase(Buyout_Funder) && Buyout_amount.equalsIgnoreCase(New_Buyout_Amount_String) && Buyout_Expiry_date.equalsIgnoreCase(Buyout_date))
+   	 							? Status.PASS : Status.FAIL,
+   	 					((Funder_name.equalsIgnoreCase(Buyout_Funder) && Buyout_amount.equalsIgnoreCase(New_Buyout_Amount_String) && Buyout_Expiry_date.equalsIgnoreCase(Buyout_date))
+   	 							? "<b>✅ Result:</b> Buyout details match in Edit Terms.<br><br>"
+   	 							: "<b>❌ Result:</b> Buyout details do NOT match in Edit Terms.<br><br>")
+   	 							+ match_log);}
       	 	      WebElement Interest_start_date_field = p.Interest_Start_Date();
       	 	      rp.Scroll_to_element(Interest_start_date_field);
       	 	      rp.movetoelement(Interest_start_date_field);

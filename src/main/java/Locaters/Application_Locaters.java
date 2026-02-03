@@ -215,9 +215,9 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//*[@class='ant-picker-content']//td")
 	private List <WebElement>  Calender_cells;
 	@FindBy(xpath="//span[text()='Add Buyout']/..")
-	private WebElement  Add_Buyout_button;/*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  Add_Buyout_button;
+	@FindBy(xpath="//td[contains(@class,'ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view')]//div")
+	private WebElement Higlighted_calender_date;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -823,10 +823,10 @@ public class Application_Locaters extends Login_Locaters{
 	return Calender_cells;}    
 	public WebElement Add_Buyout_button(){
 	wait_for_theElement(Add_Buyout_button);
-	return Add_Buyout_button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Add_Buyout_button;}   
+	public WebElement Higlighted_calender_date(){
+	wait_for_theElement(Higlighted_calender_date);
+	return Higlighted_calender_date;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
