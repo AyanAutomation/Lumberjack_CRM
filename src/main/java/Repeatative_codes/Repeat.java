@@ -37,7 +37,7 @@ public class Repeat {
 	
 	 public void wait_for_theElement(WebElement element){
 		
-		WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(10));
+		WebDriverWait w = new WebDriverWait(d,Duration.ofSeconds(8));
 	    w.until(ExpectedConditions.visibilityOf(element));}
 	
 	

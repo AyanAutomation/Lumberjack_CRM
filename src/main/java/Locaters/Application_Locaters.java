@@ -217,11 +217,11 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//span[text()='Add Buyout']/..")
 	private WebElement  Add_Buyout_button;
 	@FindBy(xpath="//td[contains(@class,'ant-picker-cell ant-picker-cell-hover ant-picker-cell-selected ant-picker-cell-in-view')]//div")
-	private WebElement Higlighted_calender_date;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Higlighted_calender_date;
+	@FindBy(xpath="//*[contains(@class,'ant-typography label css')]")
+	private List <WebElement> Lien_Details_field_labels;
+	@FindBy(xpath="//*[contains(@class,'ant-typography value css')]")
+	private List <WebElement> Lien_Details_field_values;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -826,13 +826,13 @@ public class Application_Locaters extends Login_Locaters{
 	return Add_Buyout_button;}   
 	public WebElement Higlighted_calender_date(){
 	wait_for_theElement(Higlighted_calender_date);
-	return Higlighted_calender_date;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Higlighted_calender_date;}   
+	public List <WebElement> Lien_Details_field_labels(){
+	wait_for_theElement(Lien_Details_field_labels);
+	return Lien_Details_field_labels;}   
+	public List <WebElement> Lien_Details_field_values(){
+	wait_for_theElement(Lien_Details_field_values);
+	return Lien_Details_field_values;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

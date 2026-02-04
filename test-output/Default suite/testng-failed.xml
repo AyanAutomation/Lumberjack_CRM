@@ -5,8 +5,8 @@
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
         <methods>
-          <include name="Buyout_Add_After_Contract_Generation_through_Edit_Terms" invocation-numbers="3 4 5 7"/>
           <include name="setup"/>
+          <include name="Add_case" invocation-numbers="0"/>
           <include name="Kill"/>
         </methods>
       </class> <!-- Enterprise_Codeclouds.Project.Enterprise.Case_Appplications -->

@@ -67,6 +67,7 @@ public class Login_Locaters extends Repeat{
 	return inline_errors;} 
 	public WebElement Toast_close_button(){
 	wait_for_theElement(Toast_close_button);
+	//movetoelement(Toast_close_button);
 	return Toast_close_button;}  
 	
 	

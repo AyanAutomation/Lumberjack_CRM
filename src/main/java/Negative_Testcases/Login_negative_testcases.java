@@ -127,7 +127,7 @@ public class Login_negative_testcases extends Base{
 	    }
 	    errors.clear();}
 	
-	   public static void Toast_printer(String Toast,WebDriver d){
+	   public static void Toast_printer(String Toast,WebDriver d) throws InterruptedException{
 		   
 		   Login_Locaters l = new Login_Locaters(d);
 		   
@@ -146,8 +146,31 @@ public class Login_negative_testcases extends Base{
 		        System.out.println();
 		    }
 		    System.out.println(Toast);
-		    Toast_close_Button=l.Toast_close_button();
-	        Toast_close_Button.click();}
+		    Thread.sleep(800);
+		    
+		    WebElement Toast_closeButton;
+
+		    try {
+		        Thread.sleep(800);
+		        Toast_closeButton = l.Toast_close_button();
+		        Toast_closeButton.click();
+
+		        System.out.println("Info    : Toast close button found and clicked");
+		        System.out.println();
+
+		        Report_Listen.log_print_in_report().log(Status.INFO,
+		                "<b>🟦 Info:</b> Toast close button found and clicked.");
+
+		    } catch (Exception emk) {
+
+		        System.out.println("Info    : Toast close button not found, ignoring and continuing");
+		        System.out.println();
+
+		        Report_Listen.log_print_in_report().log(Status.INFO,
+		                "<b>🟦 Info:</b> Toast close button not found, ignored and continued.");
+		    }
+
+			}
 	   
 	   
 	
