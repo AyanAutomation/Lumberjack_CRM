@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-04T14:53:38 IST" name="Default suite" finished-at="2026-02-04T14:56:37 IST" duration-ms="179164">
+  <suite started-at="2026-02-05T19:53:54 IST" name="Default suite" finished-at="2026-02-05T19:55:54 IST" duration-ms="119924">
     <groups>
     </groups>
-    <test started-at="2026-02-04T14:53:38 IST" name="Default test" finished-at="2026-02-04T14:56:37 IST" duration-ms="179164">
+    <test started-at="2026-02-05T19:53:54 IST" name="Default test" finished-at="2026-02-05T19:55:54 IST" duration-ms="119924">
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24313fcc]" started-at="2026-02-04T14:53:38 IST" name="setup" finished-at="2026-02-04T14:53:40 IST" duration-ms="2109" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24313fcc]" started-at="2026-02-05T19:53:54 IST" name="setup" finished-at="2026-02-05T19:53:56 IST" duration-ms="2159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Add_case(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24313fcc]" started-at="2026-02-04T14:53:40 IST" name="Add_case" data-provider="case_plus_plaintiff" finished-at="2026-02-04T14:56:37 IST" duration-ms="176675" status="PASS">
+        <test-method signature="Buyout_Add_and_Fees_changed_in_Revised_Contract(java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap,java.util.TreeMap)[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24313fcc]" started-at="2026-02-05T19:53:56 IST" name="Buyout_Add_and_Fees_changed_in_Revised_Contract" data-provider="case_plus_plaintiff" finished-at="2026-02-05T19:55:53 IST" duration-ms="117139" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Agreement Date=02/04/2026, Amount Received=4200, Application Status=In Review, Approved Amount=31000, Attorney Name=Attorney Calista Renner, Buyout Amount=19600, Buyout Expiry Date=02/04/2030, Buyout Funder Name=Juniper Vale Litigation Capital, Case #=521, Case Type=Premises Liability, Court Index Number=19CV-2403-PR-004921, Date of Incident=03/09/2024, Document prep fee=325, Fund transfer fee=120, Interest Start Date=02/04/2026, Law Firm Name=Pacific Meridian Trial Advocates LLP, Lead Source=Advertising, Notes / Remarks=Card payment received; confirm gateway transaction ID and prevent duplicate posting in payment log., Payer Name=Plaintiff N/A, Payment Date=02/04/2026, Payment Mode=Credit Card, Payment Type=Payment by Plaintiff, Rate of Return=44, Recommended Max Funding=31000, Requested Amount=73500, Risk Level=Moderate, SMS Message Body=We’re reviewing your premises liability file and verifying key records. Updates will follow soon. – Lumberjack Legal Finance, SMS Message Title=Premises File Under Review, State=California, Summary=Slip on freshly mopped tile with no wet-floor signage; wrist fracture and lost shifts alleged; incident report and surveillance request sent to property manager., Underwriting Notes=Confirm footage retention window, maintenance logs, and prior slip complaints. Verify medical causation timeline and wage loss proof. Conservative staging until video response and ownership verification., Underwriting Tag=Surveillance Request Sent}]]>
+                <![CDATA[{Agreement Date=02/05/2026, Amount Received=3600, Application Status=In Review, Approved Amount=32000, Attorney Name=Attorney Nyla Harrow, Buyout Amount=19600, Buyout Expiry Date=02/05/2030, Buyout Funder Name=Harborline Counsel Finance, Case #=536, Case Type=Legal Malpractice, Court Index Number=04CV-2301-LM-004118, Date of Incident=01/19/2023, Document prep fee=330, Fund transfer fee=120, Interest Start Date=02/05/2026, Law Firm Name=Beacon Hill Professional Liability Counsel, Lead Source=Attorney Referral, Notes / Remarks=Cash logged for audit; receipt and compliance note attached; confirm permissible method per policy., Payer Name=IronGate Resolution Funding, Payment Date=02/05/2026, Payment Mode=Cash, Payment Type=Payment by Another Funder, Rate of Return=44, Recommended Max Funding=32000, Requested Amount=77000, Risk Level=Moderate-High, SMS Message Body=Your malpractice file is under review while records and causation are verified. – Lumberjack Legal Finance, SMS Message Title=Malpractice Review, State=Massachusetts, Summary=Alleged missed filing deadline in underlying claim; loss-of-chance damages asserted; case-within-a-case evaluation in progress., Underwriting Notes=Verify engagement scope, docket history, and malpractice policy limits. Requires negligence + causation + valuation of underlying claim. Stage pending expert review and carrier response., Underwriting Tag=Carrier Response Needed}]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[{Address Line 1=900 Elm St, Suite 600, Address Line 2=900 Elm St, City=Manchester, Date of Birth=07/19/1988, Email=nuala.mclachlan3897@yopmail.com, First Name=Nuala, Last Name=McLachlan, Middle Name=Faye, Name Suffix=II, Phone number=5067773897, Social Security Number=903-21-3897, State=New Hampshire, Zip code=03101}]]>
+                <![CDATA[{Address Line 1=233 S Wacker Dr, Address Line 2=Suite 4112, City=Chicago, Date of Birth=11/03/1988, Email=mathieu.tremblay.v8p6d3@yopmail.com, First Name=Mathieu, Last Name=Tremblay, Middle Name=Olivier, Name Suffix=Sr, Phone number=3128461907, Social Security Number=936-33-5901, State=Illinois, Zip code=60606}]]>
               </value>
             </param>
             <param index="2">
@@ -48,10 +48,48 @@ Thank you., Subject=Document Request - Please Upload Required Files, Template=No
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Lien Balance mismatch. Balance=47169.1, Calculated=38533.33, Diff=8635.77, Tolerance=0.25]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Lien Balance mismatch. Balance=47169.1, Calculated=38533.33, Diff=8635.77, Tolerance=0.25
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Revise_Contract(Case_Appplications.java:4433)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Pay_off_lien_list_After_Revise_contract(Case_Appplications.java:4111)
+at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Buyout_Add_and_Fees_changed_in_Revised_Contract(Case_Appplications.java:1569)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Add_case -->
-        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24313fcc]" started-at="2026-02-04T14:56:37 IST" name="Kill" finished-at="2026-02-04T14:56:37 IST" duration-ms="287" status="PASS">
+        </test-method> <!-- Buyout_Add_and_Fees_changed_in_Revised_Contract -->
+        <test-method is-config="true" signature="Kill()[pri:0, instance:Enterprise_Codeclouds.Project.Enterprise.Case_Appplications@24313fcc]" started-at="2026-02-05T19:55:53 IST" name="Kill" finished-at="2026-02-05T19:55:54 IST" duration-ms="516" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Kill -->

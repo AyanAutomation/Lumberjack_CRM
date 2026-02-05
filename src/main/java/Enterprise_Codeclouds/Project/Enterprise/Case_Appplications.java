@@ -1143,7 +1143,7 @@ public class Case_Appplications extends Header_Manager{
 		    System.out.println("Expected  : Reduction matches Fees Paid (tolerance 0.01)");
 		    System.out.println("--------------------------------------------------");
 
-		    try {
+		    try {Pay_off_lien_list_After_Revise_contract(Case_Data, Case_ID);
 		        Payment_Calculator(Case_Data, Case_ID);
 
 		        Report_Listen.log_print_in_report().log(Status.PASS,
@@ -3151,11 +3151,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ 
+		    return new Object[][]{ /*
 		        {c1},/*{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} */
+		        {c11},{c12},{c13},{c14},{c15}, */
+		        {c16},/*{c17},{c18},{c19},{c20} */
 		    };}
 	
 	
@@ -4045,17 +4045,26 @@ public class Case_Appplications extends Header_Manager{
 				  SIde_Menu_Handler sd = new SIde_Menu_Handler();
 				  Repeat rp = new Repeat(d);
 		    	  
+				  int step = 1;
 				  
-				  
-				//  String Case_id = Case_Id;
+				
 				  String Case_id = id;
 				  
 				  PayoffTable_values_Revise_contract.clear();
 				  Report_Listen.log_print_in_report().log(Status.INFO,
-					        "<b>📌 Action:</b> Open Payoff modal and capture values BEFORE payment.<br>" +
-					        "<b>Case ID:</b> " + Case_id
+					        "<div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'>"
+					      + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario: Payoff Values Capture AFTER Revise Contract</div>"
+					      + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Navigate to the case, revise contract (buyout + interest start date), then open Payoff modal and capture month-wise payoff values.</div>"
+					      + "<div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>" + Case_id + "</b></div>"
+					      + "<div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> After contract revision, Payoff modal should load and payoff rows should be captured into map.</div>"
+					      + "</div>"
 					);
-					System.out.println("[Action] Capture Payoff values BEFORE payment | Case ID: " + Case_id);
+
+					System.out.println("\n==================================================");
+					System.out.println("[SCENARIO] Payoff Values Capture AFTER Revise Contract");
+					System.out.println("Case ID   : " + Case_id);
+					System.out.println("Expected  : Payoff rows should be visible and stored after revise contract");
+					System.out.println("==================================================\n");
 
 				  
 				  try{p.Case_Action_Dropdown();}
@@ -4094,9 +4103,17 @@ public class Case_Appplications extends Header_Manager{
 					catch(Exception Lien_tab_retry){
 						Thread.sleep(800);
 						tab_selector("Liens");}
-				   
+				   Report_Listen.log_print_in_report().log(Status.INFO,
+					        "<b>Step " + (step++) + ":</b> Perform <b>Revise Contract</b> flow (Buyout update + Interest Start Date update + Generate Contract)."
+					);
+					System.out.println("[Step] Perform Revise Contract flow (Buyout + Interest Start Date + Generate)");
+					System.out.println();
 				   Revise_Contract(Case_Data);
-				   
+				   Report_Listen.log_print_in_report().log(Status.INFO,
+					        "<b>🟨 Actual:</b> Revise Contract flow executed. Proceeding to open Payoff modal and capture updated payoff values."
+					);
+					System.out.println("Actual: Revise Contract flow executed. Now capturing Payoff values...");
+					System.out.println();
 				   
 		    	    WebElement payoff_button = p.Payoff_Button();
 		    	    rp.Scroll_to_element(payoff_button);
@@ -4150,11 +4167,32 @@ public class Case_Appplications extends Header_Manager{
             	  String Buyout_date = Case_Data.get("Buyout Expiry Date");
             	  double Amount_to_Plaintiff;
             	  
-            	  
-            	  
+            	  double lienAmount_upto_2_decimal; 
+	    		  double principal_upto_2_decimal;  
+	    		  double lienBalance_upto_2_decimal;
+	    		  double paidAmount_upto_2_decimal;
+	    		  LIEN_AMOUNT_Values.clear();
+	   		      TOTAL_PRINCIPAL_Values.clear();
+	   		      CURRENT_LIEN_BALANCE_Values.clear();
+	   		      RETURNED_AMT_Values.clear();
+            	  int step = 1;
+
+            	  Report_Listen.log_print_in_report().log(Status.INFO,
+            	          "<div style='background:#f6ffed; padding:16px; border-radius:12px; border:1px solid #b7eb8f; color:#102a10; font-family:Arial;'>"
+            	        + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario: Revise Contract</div>"
+            	        + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Open a lien row, click Revise Contract, add Buyout with new amount, update Interest Start Date, generate contract, and validate buyout amount in Lien Details modal.</div>"
+            	        + "<div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> Buyout details should match what was entered and Buyout Amount in modal must equal the new calculated buyout amount.</div>"
+            	        + "</div>"
+            	  );
+
+            	  System.out.println("\n==================================================");
+            	  System.out.println("[SCENARIO] Revise Contract");
+            	  System.out.println("Description: Revise contract -> add buyout -> update date -> generate -> validate modal values");
+            	  System.out.println("==================================================\n");
+
             	  
             	  pop_up_modal_label_values.clear();
-            	  
+            	  List<WebElement> lien_rows = null;
             	  
             	  
             	  List<WebElement> rows = p.Open_Lien_table_contents();
@@ -4251,36 +4289,151 @@ public class Case_Appplications extends Header_Manager{
 
       		  String Buyout_Amount_from_modal = String.format("%.2f", pop_up_modal_label_values.get("BUYOUT AMOUNT:"));
 
-      		  if(!Buyout_Amount_from_modal.equalsIgnoreCase(New_Buyout_Amount_String)) {
+      		String expectedBuyout = New_Buyout_Amount_String;
+      		String actualBuyout   = Buyout_Amount_from_modal;
 
-      		      System.out.println();
-      		      System.out.println("❌ Buyout Amount MISMATCH - Stopping execution");
-      		      System.out.println("Expected Buyout Amount : " + New_Buyout_Amount_String);
-      		      System.out.println("Actual Buyout Amount   : " + Buyout_Amount_from_modal);
-      		      System.out.println();
+      		if (actualBuyout.equalsIgnoreCase(expectedBuyout)) {
 
-      		      // Extent log (won’t break your run if ExtentTest is null)
-      		      try {
-      		          Report_Listen.log_print_in_report().log(Status.FAIL,
-      		                  "<b>❌ Buyout Amount MISMATCH - Stopping execution</b><br>" +
-      		                  "<b>Expected:</b> " + New_Buyout_Amount_String + "<br>" +
-      		                  "<b>Actual:</b> " + Buyout_Amount_from_modal);
-      		      } catch(Exception ignore) {}
+      		    // ✅ PASS logs
+      		    Report_Listen.log_print_in_report().log(Status.PASS,
+      		            "<div style='background:#eaffea; padding:14px; border-radius:10px; border:1px solid #b7eb8f; color:#102a10; font-family:Arial;'>"
+      		          + "<b>✅ Buyout Amount MATCHED</b><br><br>"
+      		          + "<b>Expected Buyout Amount:</b> " + expectedBuyout + "<br>"
+      		          + "<b>Actual Buyout Amount:</b> " + actualBuyout + "<br>"
+      		          + "<b>Result:</b> Value is correct in Lien Details modal."
+      		          + "</div>"
+      		    );
 
-      		      // Stop execution immediately
-      		      throw new AssertionError("Buyout Amount mismatch. Expected=" + New_Buyout_Amount_String +
-      		              ", Actual=" + Buyout_Amount_from_modal);
-      		  }
+      		    System.out.println("✅ Buyout Amount MATCHED");
+      		    System.out.println("Expected Buyout Amount : " + expectedBuyout);
+      		    System.out.println("Actual Buyout Amount   : " + actualBuyout);
+      		    System.out.println();
 
-      		  double Buyout_Amount_in_lien_details = Double.parseDouble(Buyout_Amount_from_modal);
+      		} else {
 
-      		  double LIEN_AMOUNT_in_LIEN_Table_Calculated = Amount_to_Plaintiff + Buyout_Amount_in_lien_details;
-      		  double LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal = Double.parseDouble(String.format("%.2f", LIEN_AMOUNT_in_LIEN_Table_Calculated));
-      		  System.out.println("LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal "+LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal);
-	    	  System.out.println();
-	    	  WebElement Modal_close = p.Close_Button();
-	    	  Modal_close.click();
-              }
+      		    // ❌ FAIL logs + stop
+      		    Report_Listen.log_print_in_report().log(Status.FAIL,
+      		            "<div style='background:#ffecec; padding:14px; border-radius:10px; border:1px solid #ffbdbd; color:#5b0b0b; font-family:Arial;'>"
+      		          + "<b>❌ Buyout Amount MISMATCH - Stopping execution</b><br><br>"
+      		          + "<b>Expected Buyout Amount:</b> " + expectedBuyout + "<br>"
+      		          + "<b>Actual Buyout Amount:</b> " + actualBuyout + "<br>"
+      		          + "<b>Reason:</b> Modal value does not match revised buyout amount."
+      		          + "</div>"
+      		    );
+
+      		    System.out.println("❌ Buyout Amount MISMATCH - Stopping execution");
+      		    System.out.println("Expected Buyout Amount : " + expectedBuyout);
+      		    System.out.println("Actual Buyout Amount   : " + actualBuyout);
+      		    System.out.println();
+
+      		    throw new AssertionError("Buyout Amount mismatch. Expected=" + expectedBuyout + ", Actual=" + actualBuyout);
+      		}
+
+      		// Continue calculations only after PASS ✅
+      		double Buyout_Amount_in_lien_details = Double.parseDouble(actualBuyout);
+
+      		double LIEN_AMOUNT_in_LIEN_Table_Calculated = Amount_to_Plaintiff + Buyout_Amount_in_lien_details;
+      		double LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal =
+      		        Double.parseDouble(String.format("%.2f", LIEN_AMOUNT_in_LIEN_Table_Calculated));
+
+      		Report_Listen.log_print_in_report().log(Status.INFO,
+      		        "<div style='background:#eaf4ff; padding:14px; border-radius:10px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'>"
+      		      + "<b>🧮 Lien Amount Calculation</b><br><br>"
+      		      + "<b>Amount To Plaintiff:</b> " + String.format("%.2f", Amount_to_Plaintiff) + "<br>"
+      		      + "<b>Buyout Amount:</b> " + String.format("%.2f", Buyout_Amount_in_lien_details) + "<br>"
+      		      + "<b>Calculated Lien Amount:</b> <b>" + String.format("%.2f", LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal) + "</b>"
+      		      + "</div>"
+      		);
+
+      		System.out.println("LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal = "
+      		        + LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal);
+      		System.out.println();
+
+      		WebElement Modal_close = p.Close_Button();
+      		Modal_close.click();
+      		try {
+      		lien_rows =p.Open_Lien_table_contents();}
+      		catch(Exception lien_row_catch){
+      			Thread.sleep(800);
+      			lien_rows =p.Open_Lien_table_contents();
+      		}
+      		int no_of_rows;
+	        try {no_of_rows = lien_rows.size();}
+	        catch(StaleElementReferenceException lien_row) {
+	        	no_of_rows = lien_rows.size();}
+	           List<WebElement> fourth_cells = p.First_table_fourth_column_cellData();
+	           List<WebElement> Fifth_cells =  p.First_table_fifth_column_cellData();
+	           List<WebElement> Sixth_cells =  p.First_table_sixth_column_cellData();
+	           List<WebElement> Seventh_cells =p.First_table_seventh_column_cellData();
+	           
+	           
+	        // =========================
+	        // 1) INSERT into TreeMaps (one loop)
+	        // =========================
+	           
+	           for(int m=0; m<no_of_rows; m++){
+
+	        	    String fourth_cell_datas  = fourth_cells.get(m).getText().replace("$","").replace(",","").replace("\u00A0","").trim();
+	        	    String Fifth_cell_data    = Fifth_cells.get(m).getText().replace("$","").replace(",","").replace("\u00A0","").trim();
+	        	    String Sixth_cell_data    = Sixth_cells.get(m).getText().replace("$","").replace(",","").replace("\u00A0","").trim();
+	        	    String seventh_cell_data  = Seventh_cells.get(m).getText().replace("$","").replace(",","").replace("\u00A0","").trim();
+
+	        	    double lienAmount_raw     = Double.parseDouble(fourth_cell_datas);
+	        	    double principal_raw      = Double.parseDouble(Fifth_cell_data);
+	        	    double lienBalance_raw    = Double.parseDouble(Sixth_cell_data);
+	        	    double paidAmount_raw     = Double.parseDouble(seventh_cell_data);
+
+	        	    lienAmount_upto_2_decimal  = Double.parseDouble(String.format("%.2f", lienAmount_raw));
+	        	    principal_upto_2_decimal   = Double.parseDouble(String.format("%.2f", principal_raw));
+	        	    lienBalance_upto_2_decimal = Double.parseDouble(String.format("%.2f", lienBalance_raw));
+	        	    paidAmount_upto_2_decimal  = Double.parseDouble(String.format("%.2f", paidAmount_raw));
+	        	    
+	        	    LIEN_AMOUNT_Values.put("Lien Amounts"+m,  lienAmount_upto_2_decimal);
+	    		    TOTAL_PRINCIPAL_Values.put("Principal Amount"+m,  principal_upto_2_decimal);
+	    		    CURRENT_LIEN_BALANCE_Values.put("Lien Balance"+m,  lienBalance_upto_2_decimal);
+	    		    RETURNED_AMT_Values.put("Paid Amount"+m,  paidAmount_upto_2_decimal);}
+	           
+	           double Lien_Balance_From_Table = CURRENT_LIEN_BALANCE_Values.get("Lien Balance0");
+
+	           double Difference = Double.parseDouble(String.format("%.2f",
+	                   Math.abs(Lien_Balance_From_Table - LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal)));
+
+	           double tolerance = 0.25;  // keep it safe (case-to-case rounding difference)
+
+	           System.out.println(
+	                   Difference <= tolerance
+	                           ? "✅ Testcase Passed | Lien Balance matches Calculated Lien Amount"
+	                           + " | Lien Balance = " + Lien_Balance_From_Table
+	                           + " | Calculated = " + LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal
+	                           + " | Difference = " + Difference
+	                           + " | Tolerance = " + tolerance
+	                           : "❌ Testcase Failed | Lien Balance NOT matching Calculated Lien Amount (Stopping Execution)"
+	                           + " | Lien Balance = " + Lien_Balance_From_Table
+	                           + " | Calculated = " + LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal
+	                           + " | Difference = " + Difference
+	                           + " | Tolerance = " + tolerance
+	           );
+
+	           Report_Listen.log_print_in_report().log(
+	                   Difference <= tolerance ? Status.PASS : Status.FAIL,
+	                   Difference <= tolerance
+	                           ? "<b>✅ Lien Balance matched Calculated Lien Amount</b><br>"
+	                           + "<b>Lien Balance:</b> " + Lien_Balance_From_Table + "<br>"
+	                           + "<b>Calculated:</b> " + LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal + "<br>"
+	                           + "<b>Difference:</b> " + Difference + "<br>"
+	                           + "<b>Tolerance:</b> " + tolerance
+	                           : "<b>❌ Lien Balance mismatch with Calculated Lien Amount</b><br>"
+	                           + "<b>Lien Balance:</b> " + Lien_Balance_From_Table + "<br>"
+	                           + "<b>Calculated:</b> " + LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal + "<br>"
+	                           + "<b>Difference:</b> " + Difference + "<br>"
+	                           + "<b>Tolerance:</b> " + tolerance
+	           );
+
+	           if (Difference > tolerance) {
+	               throw new AssertionError("Lien Balance mismatch. Balance=" + Lien_Balance_From_Table
+	                       + ", Calculated=" + LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal
+	                       + ", Diff=" + Difference + ", Tolerance=" + tolerance);
+	           }}
 	        
 	       
 		      public void Pay_off_lien_list_After_payment_data_fetcher(String Case_Id) throws IOException, InterruptedException{

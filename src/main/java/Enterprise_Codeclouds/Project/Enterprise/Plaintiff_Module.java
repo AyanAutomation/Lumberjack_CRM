@@ -23,7 +23,7 @@ public class Plaintiff_Module extends Case_Appplications{
 	
 	
 	HashMap<String,String> plaintiff_label_contents = new HashMap<String,String>();
-	
+	TreeMap<String,String> plaintiff_Details_labels_and_contents = new TreeMap<String,String>();
 	
 	@Test(dataProvider="plaintiffData")
 	public void Plaintiff_Add(TreeMap<String,String> data) throws IOException, InterruptedException{
@@ -97,17 +97,76 @@ public class Plaintiff_Module extends Case_Appplications{
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Toast not captured after Add Plaintiff (toast not visible / locator issue).");
 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Form submitted but success confirmation was not captured for Email="+data.get("Email"));
 			throw e;}
-		rp.Scroll_to_element(ap.table_body());
-		Thread.sleep(1200);
-		List<WebElement> table_rows;
-		try {
-		table_rows = ap.rows();}
-		catch(Exception tabs) {
-			Thread.sleep(800);
-			table_rows = ap.rows();}
-			WebElement first_row = table_rows.get(0);
-			String First_row_contents = first_row.getText().trim();
-			System.out.println(First_row_contents.contains(Plaintiff_firstname)?"Testcase passed added plaintiff "+Plaintiff_firstname+ " shown in first row of above table":"Testcase failed added plaintiff "+Plaintiff_firstname+ " not shown in first row of above table");}
+		plaintiff_details_reader(data);
+	}
+	
+	
+	
+	  public void plaintiff_details_reader(TreeMap<String,String> Plaintiff_Add_Data) throws InterruptedException{
+		
+		    SIde_Menu_Handler sd=new SIde_Menu_Handler();
+			Plaintiff_Locaters p=new Plaintiff_Locaters(d);
+			Repeat rp=new Repeat(d);
+			Login_Locaters lg=new Login_Locaters(d);
+			Application_Locaters ap = new Application_Locaters(d);
+		  
+			String Plaintiff_firstname = Plaintiff_Add_Data.get("First Name");
+			String Plaintiff_Middle_Name = Plaintiff_Add_Data.get("Middle Name");
+			String Plaintiff_Last_Name = Plaintiff_Add_Data.get("Last Name");
+			String Plaintiff_Name_Suffix = Plaintiff_Add_Data.get("Name Suffix");
+			String Plaintiff_Email = Plaintiff_Add_Data.get("Email");
+			String Plaintiff_Social_Security_Number = Plaintiff_Add_Data.get("Social Security Number");
+			String Plaintiff_Phonenumber = Plaintiff_Add_Data.get("Phone number");
+			String Plaintiff_Date_of_Birth = Plaintiff_Add_Data.get("Date of Birth");
+			String Plaintiff_City = Plaintiff_Add_Data.get("City");
+			String Plaintiff_State = Plaintiff_Add_Data.get("State");
+			String Plaintiff_Address_Line_1 = Plaintiff_Add_Data.get("Address Line 1");
+			String Plaintiff_Address_Line_2 = Plaintiff_Add_Data.get("Address Line 2");
+			String Plaintiff_Zipcode = Plaintiff_Add_Data.get("Zip code");
+			
+			plaintiff_Details_labels_and_contents.clear();
+			
+			
+			rp.Scroll_to_element(ap.table_body());
+			Thread.sleep(1200);
+			 List<WebElement> table_rows;
+				try {
+				table_rows = ap.rows();}
+				catch(Exception tabs) {
+					Thread.sleep(800);
+					table_rows = ap.rows();}
+					WebElement first_row = table_rows.get(0);
+					String First_row_contents = first_row.getText().trim();
+					System.out.println(First_row_contents.contains(Plaintiff_firstname)?"Testcase passed added plaintiff "+Plaintiff_firstname+ " shown in first row of above table":"Testcase failed added plaintiff "+Plaintiff_firstname+ " not shown in first row of above table");
+					if(First_row_contents.contains(Plaintiff_firstname)){
+						
+						first_row.click();
+						p.Landed_in_Plaintiff_details_page();
+						Thread.sleep(950);
+						List<WebElement> Details_Labels = p.Labels();
+						List<WebElement> Details_Values = p.Values();
+						if(Details_Labels.size()==Details_Values.size()){
+						for(int mk=0; mk<Details_Labels.size();mk++){
+							String Label_text = Details_Labels.get(mk).getText().trim();
+							String Values_text = Details_Values.get(mk).getText().trim();
+							plaintiff_Details_labels_and_contents.put(Label_text, Values_text);}}}
+	  
+					for(var pair:plaintiff_Details_labels_and_contents.entrySet()){
+					
+						String key = pair.getKey();
+						String value = pair.getValue();
+						
+						if(key.contains("Address")){
+							
+							System.out.println(value.contains(Plaintiff_City)&&value.contains(Plaintiff_State)&&value.contains(Plaintiff_Address_Line_1)&&value.contains(Plaintiff_Address_Line_2)&&value.contains(Plaintiff_Zipcode)?"Testcase Passed Address contains "+Plaintiff_City+" "+Plaintiff_State+" "+Plaintiff_Address_Line_1+" "+Plaintiff_Address_Line_2+" "+Plaintiff_Zipcode:"Testcase Failed Address doesn't contains "+Plaintiff_City+" "+Plaintiff_State+" "+Plaintiff_Address_Line_1+" "+Plaintiff_Address_Line_2+" "+Plaintiff_Zipcode);
+							System.out.println();}}
+	  
+	  }
+		
+		
+		
+		
+	
 	
 	
 	@Test(dataProvider="Plaintiff_Add_Edit_Combined_data")
@@ -884,304 +943,304 @@ public class Plaintiff_Module extends Case_Appplications{
 	public Object[][] plaintiffData() {
 
 		TreeMap<String, String> p1 = new TreeMap<>();
-	    p1.put("First Name", "Tavish");
-	    p1.put("Middle Name", "Riel");
-	    p1.put("Last Name", "MacKinnon-Drury");
-	    p1.put("Name Suffix", "II");
-	    p1.put("Email", "tavish.mackinnondrury9104@yopmail.com");
-	    p1.put("Social Security Number", "903-11-9104");
-	    p1.put("Phone number", "4169079104");
-	    p1.put("Date of Birth", "03/09/1991");
+	    p1.put("First Name", "Émile");
+	    p1.put("Middle Name", "Raymond");
+	    p1.put("Last Name", "Bouchard");
+	    p1.put("Name Suffix", "Jr");
+	    p1.put("Email", "emile.bouchard.n7f4q2@yopmail.com");
+	    p1.put("Social Security Number", "934-11-7028");
+	    p1.put("Phone number", "2125957408");
+	    p1.put("Date of Birth", "02/19/1990");
 	    p1.put("State", "New York");
-	    p1.put("City", "Buffalo");
-	    p1.put("Zip code", "14202");
-	    p1.put("Address Line 1", "50 Fountain Plaza, Suite 1100");
-	    p1.put("Address Line 2", "50 Fountain Plaza");
+	    p1.put("City", "New York");
+	    p1.put("Zip code", "10001");
+	    p1.put("Address Line 1", "350 W 34th St");
+	    p1.put("Address Line 2", "Apt 12B");
 
 	    TreeMap<String, String> p2 = new TreeMap<>();
-	    p2.put("First Name", "Brigitte");
-	    p2.put("Middle Name", "Elowen");
-	    p2.put("Last Name", "Desrochers");
-	    p2.put("Name Suffix", "Sr");
-	    p2.put("Email", "brigitte.desrochers3726@yopmail.com");
-	    p2.put("Social Security Number", "903-12-3726");
-	    p2.put("Phone number", "5148833726");
-	    p2.put("Date of Birth", "08/17/1989");
-	    p2.put("State", "Vermont");
-	    p2.put("City", "Burlington");
-	    p2.put("Zip code", "05401");
-	    p2.put("Address Line 1", "128 Lakeside Ave, Suite 405");
-	    p2.put("Address Line 2", "128 Lakeside Ave");
+	    p2.put("First Name", "Camille");
+	    p2.put("Middle Name", "Noémie");
+	    p2.put("Last Name", "Gagné");
+	    p2.put("Name Suffix", "II");
+	    p2.put("Email", "camille.gagne.r3k9m1@yopmail.com");
+	    p2.put("Social Security Number", "935-22-4186");
+	    p2.put("Phone number", "2134708896");
+	    p2.put("Date of Birth", "07/08/1992");
+	    p2.put("State", "California");
+	    p2.put("City", "Los Angeles");
+	    p2.put("Zip code", "90017");
+	    p2.put("Address Line 1", "600 S Flower St");
+	    p2.put("Address Line 2", "Unit 2107");
 
 	    TreeMap<String, String> p3 = new TreeMap<>();
-	    p3.put("First Name", "Cormac");
-	    p3.put("Middle Name", "Benoit");
-	    p3.put("Last Name", "Lemieux-Caron");
-	    p3.put("Name Suffix", "III");
-	    p3.put("Email", "cormac.lemieuxcaron5381@yopmail.com");
-	    p3.put("Social Security Number", "903-13-5381");
-	    p3.put("Phone number", "6137725381");
-	    p3.put("Date of Birth", "11/02/1992");
-	    p3.put("State", "Michigan");
-	    p3.put("City", "Detroit");
-	    p3.put("Zip code", "48226");
-	    p3.put("Address Line 1", "600 Renaissance Center, Suite 2550");
-	    p3.put("Address Line 2", "600 Renaissance Center");
+	    p3.put("First Name", "Mathieu");
+	    p3.put("Middle Name", "Olivier");
+	    p3.put("Last Name", "Tremblay");
+	    p3.put("Name Suffix", "Sr");
+	    p3.put("Email", "mathieu.tremblay.v8p6d3@yopmail.com");
+	    p3.put("Social Security Number", "936-33-5901");
+	    p3.put("Phone number", "3128461907");
+	    p3.put("Date of Birth", "11/03/1988");
+	    p3.put("State", "Illinois");
+	    p3.put("City", "Chicago");
+	    p3.put("Zip code", "60606");
+	    p3.put("Address Line 1", "233 S Wacker Dr");
+	    p3.put("Address Line 2", "Suite 4112");
 
 	    TreeMap<String, String> p4 = new TreeMap<>();
-	    p4.put("First Name", "Mirella");
-	    p4.put("Middle Name", "Siobhan");
-	    p4.put("Last Name", "O'Rourke-Pelletier");
-	    p4.put("Name Suffix", "Jr");
-	    p4.put("Email", "mirella.orourkepelletier1047@yopmail.com");
-	    p4.put("Social Security Number", "903-14-1047");
-	    p4.put("Phone number", "7806421047");
-	    p4.put("Date of Birth", "01/26/1990");
-	    p4.put("State", "Washington");
-	    p4.put("City", "Seattle");
-	    p4.put("Zip code", "98104");
-	    p4.put("Address Line 1", "901 5th Ave, Suite 2900");
-	    p4.put("Address Line 2", "901 5th Ave");
+	    p4.put("First Name", "Anaïs");
+	    p4.put("Middle Name", "Clara");
+	    p4.put("Last Name", "Lefebvre");
+	    p4.put("Name Suffix", "III");
+	    p4.put("Email", "anais.lefebvre.h2x7t9@yopmail.com");
+	    p4.put("Social Security Number", "937-44-2637");
+	    p4.put("Phone number", "6179032667");
+	    p4.put("Date of Birth", "01/26/1994");
+	    p4.put("State", "Massachusetts");
+	    p4.put("City", "Boston");
+	    p4.put("Zip code", "02110");
+	    p4.put("Address Line 1", "125 Summer St");
+	    p4.put("Address Line 2", "Apt 9C");
 
 	    TreeMap<String, String> p5 = new TreeMap<>();
-	    p5.put("First Name", "Renfrew");
-	    p5.put("Middle Name", "Thierry");
-	    p5.put("Last Name", "Beaulac");
+	    p5.put("First Name", "Julien");
+	    p5.put("Middle Name", "Marc");
+	    p5.put("Last Name", "Roy");
 	    p5.put("Name Suffix", "IV");
-	    p5.put("Email", "renfrew.beaulac6689@yopmail.com");
-	    p5.put("Social Security Number", "903-15-6689");
-	    p5.put("Phone number", "9024196689");
-	    p5.put("Date of Birth", "05/11/1993");
-	    p5.put("State", "Massachusetts");
-	    p5.put("City", "Boston");
-	    p5.put("Zip code", "02110");
-	    p5.put("Address Line 1", "101 Federal St, Suite 1900");
-	    p5.put("Address Line 2", "101 Federal St");
+	    p5.put("Email", "julien.roy.c9m4q6@yopmail.com");
+	    p5.put("Social Security Number", "938-55-8402");
+	    p5.put("Phone number", "5127740836");
+	    p5.put("Date of Birth", "09/14/1989");
+	    p5.put("State", "Texas");
+	    p5.put("City", "Austin");
+	    p5.put("Zip code", "78701");
+	    p5.put("Address Line 1", "600 Congress Ave");
+	    p5.put("Address Line 2", "Unit 1504");
 
 	    TreeMap<String, String> p6 = new TreeMap<>();
-	    p6.put("First Name", "Ailbhe");
-	    p6.put("Middle Name", "Rowena");
-	    p6.put("Last Name", "Sinclair");
-	    p6.put("Name Suffix", "II");
-	    p6.put("Email", "ailbhe.sinclair2275@yopmail.com");
-	    p6.put("Social Security Number", "903-16-2275");
-	    p6.put("Phone number", "2047212275");
-	    p6.put("Date of Birth", "09/23/1988");
-	    p6.put("State", "North Dakota");
-	    p6.put("City", "Fargo");
-	    p6.put("Zip code", "58102");
-	    p6.put("Address Line 1", "51 Broadway N, Suite 300");
-	    p6.put("Address Line 2", "51 Broadway N");
+	    p6.put("First Name", "Élodie");
+	    p6.put("Middle Name", "Sophie");
+	    p6.put("Last Name", "Pelletier");
+	    p6.put("Name Suffix", "Jr");
+	    p6.put("Email", "elodie.pelletier.k5n8v2@yopmail.com");
+	    p6.put("Social Security Number", "939-66-5179");
+	    p6.put("Phone number", "3035589174");
+	    p6.put("Date of Birth", "04/10/1991");
+	    p6.put("State", "Colorado");
+	    p6.put("City", "Denver");
+	    p6.put("Zip code", "80202");
+	    p6.put("Address Line 1", "1801 California St");
+	    p6.put("Address Line 2", "Suite 2501");
 
 	    TreeMap<String, String> p7 = new TreeMap<>();
-	    p7.put("First Name", "Hannelore");
-	    p7.put("Middle Name", "Maëlle");
-	    p7.put("Last Name", "Vaillancourt");
-	    p7.put("Name Suffix", "Sr");
-	    p7.put("Email", "hannelore.vaillancourt8452@yopmail.com");
-	    p7.put("Social Security Number", "903-17-8452");
-	    p7.put("Phone number", "9056048452");
-	    p7.put("Date of Birth", "12/07/1994");
-	    p7.put("State", "Ohio");
-	    p7.put("City", "Cleveland");
-	    p7.put("Zip code", "44114");
-	    p7.put("Address Line 1", "200 Public Square, Suite 2300");
-	    p7.put("Address Line 2", "200 Public Square");
+	    p7.put("First Name", "Benoît");
+	    p7.put("Middle Name", "Alain");
+	    p7.put("Last Name", "Caron");
+	    p7.put("Name Suffix", "II");
+	    p7.put("Email", "benoit.caron.p6r1w8@yopmail.com");
+	    p7.put("Social Security Number", "940-77-3925");
+	    p7.put("Phone number", "2067043925");
+	    p7.put("Date of Birth", "08/22/1987");
+	    p7.put("State", "Washington");
+	    p7.put("City", "Seattle");
+	    p7.put("Zip code", "98101");
+	    p7.put("Address Line 1", "1201 3rd Ave");
+	    p7.put("Address Line 2", "Apt 18D");
 
 	    TreeMap<String, String> p8 = new TreeMap<>();
-	    p8.put("First Name", "Eamon");
-	    p8.put("Middle Name", "Lucien");
-	    p8.put("Last Name", "Gervais");
-	    p8.put("Name Suffix", "III");
-	    p8.put("Email", "eamon.gervais5930@yopmail.com");
-	    p8.put("Social Security Number", "903-18-5930");
-	    p8.put("Phone number", "2506135930");
-	    p8.put("Date of Birth", "02/15/1991");
-	    p8.put("State", "Washington");
-	    p8.put("City", "Spokane");
-	    p8.put("Zip code", "99201");
-	    p8.put("Address Line 1", "601 W Riverside Ave, Suite 1400");
-	    p8.put("Address Line 2", "601 W Riverside Ave");
+	    p8.put("First Name", "Rosalie");
+	    p8.put("Middle Name", "Isabelle");
+	    p8.put("Last Name", "Morin");
+	    p8.put("Name Suffix", "Sr");
+	    p8.put("Email", "rosalie.morin.t8d3h6@yopmail.com");
+	    p8.put("Social Security Number", "941-88-7640");
+	    p8.put("Phone number", "3056697640");
+	    p8.put("Date of Birth", "12/30/1992");
+	    p8.put("State", "Florida");
+	    p8.put("City", "Miami");
+	    p8.put("Zip code", "33131");
+	    p8.put("Address Line 1", "701 Brickell Ave");
+	    p8.put("Address Line 2", "Suite 1802");
 
 	    TreeMap<String, String> p9 = new TreeMap<>();
-	    p9.put("First Name", "Oriana");
-	    p9.put("Middle Name", "Céline");
-	    p9.put("Last Name", "Bouchard-Lavoie");
-	    p9.put("Name Suffix", "Jr");
-	    p9.put("Email", "oriana.bouchardlavoie7716@yopmail.com");
-	    p9.put("Social Security Number", "903-19-7716");
-	    p9.put("Phone number", "4387717716");
-	    p9.put("Date of Birth", "06/28/1989");
-	    p9.put("State", "Maine");
-	    p9.put("City", "Portland");
-	    p9.put("Zip code", "04101");
-	    p9.put("Address Line 1", "1 Monument Square, Suite 600");
-	    p9.put("Address Line 2", "1 Monument Square");
+	    p9.put("First Name", "Thierry");
+	    p9.put("Middle Name", "Luc");
+	    p9.put("Last Name", "Lavoie");
+	    p9.put("Name Suffix", "III");
+	    p9.put("Email", "thierry.lavoie.z1q9s5@yopmail.com");
+	    p9.put("Social Security Number", "942-99-1056");
+	    p9.put("Phone number", "4046131056");
+	    p9.put("Date of Birth", "03/05/1988");
+	    p9.put("State", "Georgia");
+	    p9.put("City", "Atlanta");
+	    p9.put("Zip code", "30303");
+	    p9.put("Address Line 1", "191 Peachtree St NE");
+	    p9.put("Address Line 2", "Unit 3206");
 
 	    TreeMap<String, String> p10 = new TreeMap<>();
-	    p10.put("First Name", "Bastien");
-	    p10.put("Middle Name", "Keir");
-	    p10.put("Last Name", "Couture");
+	    p10.put("First Name", "Maëlle");
+	    p10.put("Middle Name", "Élise");
+	    p10.put("Last Name", "Girard");
 	    p10.put("Name Suffix", "IV");
-	    p10.put("Email", "bastien.couture2049@yopmail.com");
-	    p10.put("Social Security Number", "903-20-2049");
-	    p10.put("Phone number", "7058482049");
-	    p10.put("Date of Birth", "10/04/1992");
-	    p10.put("State", "Illinois");
-	    p10.put("City", "Chicago");
-	    p10.put("Zip code", "60606");
-	    p10.put("Address Line 1", "233 S Wacker Dr, Suite 6500");
-	    p10.put("Address Line 2", "233 S Wacker Dr");
+	    p10.put("Email", "maelle.girard.f4y2n7@yopmail.com");
+	    p10.put("Social Security Number", "943-10-6843");
+	    p10.put("Phone number", "7028846843");
+	    p10.put("Date of Birth", "06/27/1993");
+	    p10.put("State", "Nevada");
+	    p10.put("City", "Las Vegas");
+	    p10.put("Zip code", "89101");
+	    p10.put("Address Line 1", "500 S Grand Central Pkwy");
+	    p10.put("Address Line 2", "Apt 7A");
 
 	    TreeMap<String, String> p11 = new TreeMap<>();
-	    p11.put("First Name", "Nuala");
-	    p11.put("Middle Name", "Faye");
-	    p11.put("Last Name", "McLachlan");
+	    p11.put("First Name", "Gabriel");
+	    p11.put("Middle Name", "Antoine");
+	    p11.put("Last Name", "Desjardins");
 	    p11.put("Name Suffix", "II");
-	    p11.put("Email", "nuala.mclachlan3897@yopmail.com");
-	    p11.put("Social Security Number", "903-21-3897");
-	    p11.put("Phone number", "5067773897");
-	    p11.put("Date of Birth", "07/19/1988");
-	    p11.put("State", "New Hampshire");
-	    p11.put("City", "Manchester");
-	    p11.put("Zip code", "03101");
-	    p11.put("Address Line 1", "900 Elm St, Suite 600");
-	    p11.put("Address Line 2", "900 Elm St");
+	    p11.put("Email", "gabriel.desjardins.m6x2c9@yopmail.com");
+	    p11.put("Social Security Number", "944-21-9374");
+	    p11.put("Phone number", "2157799374");
+	    p11.put("Date of Birth", "10/15/1989");
+	    p11.put("State", "Pennsylvania");
+	    p11.put("City", "Philadelphia");
+	    p11.put("Zip code", "19103");
+	    p11.put("Address Line 1", "1650 Market St");
+	    p11.put("Address Line 2", "Suite 321");
 
 	    TreeMap<String, String> p12 = new TreeMap<>();
-	    p12.put("First Name", "Lowell");
-	    p12.put("Middle Name", "Rémi");
-	    p12.put("Last Name", "Hébert");
+	    p12.put("First Name", "Céline");
+	    p12.put("Middle Name", "Ariane");
+	    p12.put("Last Name", "Beaulieu");
 	    p12.put("Name Suffix", "Jr");
-	    p12.put("Email", "lowell.hebert6128@yopmail.com");
-	    p12.put("Social Security Number", "903-22-6128");
-	    p12.put("Phone number", "7093306128");
-	    p12.put("Date of Birth", "02/06/1993");
-	    p12.put("State", "Rhode Island");
-	    p12.put("City", "Providence");
-	    p12.put("Zip code", "02903");
-	    p12.put("Address Line 1", "10 Dorrance St, Suite 700");
-	    p12.put("Address Line 2", "10 Dorrance St");
+	    p12.put("Email", "celine.beaulieu.r9v4k1@yopmail.com");
+	    p12.put("Social Security Number", "945-32-5108");
+	    p12.put("Phone number", "7045125108");
+	    p12.put("Date of Birth", "02/02/1991");
+	    p12.put("State", "North Carolina");
+	    p12.put("City", "Charlotte");
+	    p12.put("Zip code", "28202");
+	    p12.put("Address Line 1", "101 S Tryon St");
+	    p12.put("Address Line 2", "Floor 9, Suite 905");
 
 	    TreeMap<String, String> p13 = new TreeMap<>();
-	    p13.put("First Name", "Maris");
-	    p13.put("Middle Name", "Odette");
-	    p13.put("Last Name", "Fortier");
-	    p13.put("Name Suffix", "III");
-	    p13.put("Email", "maris.fortier9573@yopmail.com");
-	    p13.put("Social Security Number", "903-23-9573");
-	    p13.put("Phone number", "8196149573");
-	    p13.put("Date of Birth", "04/30/1991");
-	    p13.put("State", "Minnesota");
-	    p13.put("City", "Minneapolis");
-	    p13.put("Zip code", "55402");
-	    p13.put("Address Line 1", "80 S 8th St, Suite 4500");
-	    p13.put("Address Line 2", "80 S 8th St");
+	    p13.put("First Name", "Laurent");
+	    p13.put("Middle Name", "Jean");
+	    p13.put("Last Name", "Nadeau");
+	    p13.put("Name Suffix", "Sr");
+	    p13.put("Email", "laurent.nadeau.w5h8p3@yopmail.com");
+	    p13.put("Social Security Number", "946-43-7826");
+	    p13.put("Phone number", "6149157826");
+	    p13.put("Date of Birth", "09/01/1987");
+	    p13.put("State", "Ohio");
+	    p13.put("City", "Columbus");
+	    p13.put("Zip code", "43215");
+	    p13.put("Address Line 1", "200 E Broad St");
+	    p13.put("Address Line 2", "Apt 14F");
 
 	    TreeMap<String, String> p14 = new TreeMap<>();
-	    p14.put("First Name", "Saoirse");
-	    p14.put("Middle Name", "Geneva");
-	    p14.put("Last Name", "Proulx");
-	    p14.put("Name Suffix", "Sr");
-	    p14.put("Email", "saoirse.proulx4408@yopmail.com");
-	    p14.put("Social Security Number", "903-24-4408");
-	    p14.put("Phone number", "4036684408");
-	    p14.put("Date of Birth", "01/12/1994");
-	    p14.put("State", "Colorado");
-	    p14.put("City", "Denver");
-	    p14.put("Zip code", "80202");
-	    p14.put("Address Line 1", "1675 Broadway, Suite 2600");
-	    p14.put("Address Line 2", "1675 Broadway");
+	    p14.put("First Name", "Éva");
+	    p14.put("Middle Name", "Marion");
+	    p14.put("Last Name", "Côté");
+	    p14.put("Name Suffix", "III");
+	    p14.put("Email", "eva.cote.q1t6z8@yopmail.com");
+	    p14.put("Social Security Number", "947-54-2961");
+	    p14.put("Phone number", "3136062961");
+	    p14.put("Date of Birth", "05/09/1992");
+	    p14.put("State", "Michigan");
+	    p14.put("City", "Detroit");
+	    p14.put("Zip code", "48226");
+	    p14.put("Address Line 1", "1001 Woodward Ave");
+	    p14.put("Address Line 2", "Suite 1102");
 
 	    TreeMap<String, String> p15 = new TreeMap<>();
-	    p15.put("First Name", "Kestrel");
-	    p15.put("Middle Name", "Alain");
-	    p15.put("Last Name", "LaRocque");
+	    p15.put("First Name", "Nicolas");
+	    p15.put("Middle Name", "Pascal");
+	    p15.put("Last Name", "Bélanger");
 	    p15.put("Name Suffix", "IV");
-	    p15.put("Email", "kestrel.larocque7812@yopmail.com");
-	    p15.put("Social Security Number", "903-25-7812");
-	    p15.put("Phone number", "2896147812");
-	    p15.put("Date of Birth", "09/26/1989");
-	    p15.put("State", "Pennsylvania");
-	    p15.put("City", "Pittsburgh");
-	    p15.put("Zip code", "15219");
-	    p15.put("Address Line 1", "600 Grant St, Suite 4200");
-	    p15.put("Address Line 2", "600 Grant St");
+	    p15.put("Email", "nicolas.belanger.s7c2d4@yopmail.com");
+	    p15.put("Social Security Number", "948-65-6180");
+	    p15.put("Phone number", "3176806180");
+	    p15.put("Date of Birth", "01/28/1988");
+	    p15.put("State", "Indiana");
+	    p15.put("City", "Indianapolis");
+	    p15.put("Zip code", "46204");
+	    p15.put("Address Line 1", "151 N Delaware St");
+	    p15.put("Address Line 2", "Unit 1908");
 
 	    TreeMap<String, String> p16 = new TreeMap<>();
-	    p16.put("First Name", "Ivo");
-	    p16.put("Middle Name", "Cameron");
-	    p16.put("Last Name", "Bélisle");
+	    p16.put("First Name", "Mélissa");
+	    p16.put("Middle Name", "Jade");
+	    p16.put("Last Name", "Lemieux");
 	    p16.put("Name Suffix", "II");
-	    p16.put("Email", "ivo.belisle3327@yopmail.com");
-	    p16.put("Social Security Number", "903-26-3327");
-	    p16.put("Phone number", "5876053327");
-	    p16.put("Date of Birth", "12/14/1990");
-	    p16.put("State", "Oregon");
-	    p16.put("City", "Portland");
-	    p16.put("Zip code", "97204");
-	    p16.put("Address Line 1", "200 SW Market St, Suite 1900");
-	    p16.put("Address Line 2", "200 SW Market St");
+	    p16.put("Email", "melissa.lemieux.d8n1r5@yopmail.com");
+	    p16.put("Social Security Number", "949-76-4309");
+	    p16.put("Phone number", "6027744309");
+	    p16.put("Date of Birth", "08/06/1993");
+	    p16.put("State", "Arizona");
+	    p16.put("City", "Phoenix");
+	    p16.put("Zip code", "85004");
+	    p16.put("Address Line 1", "40 N Central Ave");
+	    p16.put("Address Line 2", "Suite 1901");
 
 	    TreeMap<String, String> p17 = new TreeMap<>();
-	    p17.put("First Name", "Clodagh");
-	    p17.put("Middle Name", "Noor");
-	    p17.put("Last Name", "Giroux");
+	    p17.put("First Name", "Frédéric");
+	    p17.put("Middle Name", "Louis");
+	    p17.put("Last Name", "Dion");
 	    p17.put("Name Suffix", "Jr");
-	    p17.put("Email", "clodagh.giroux1186@yopmail.com");
-	    p17.put("Social Security Number", "903-27-1186");
-	    p17.put("Phone number", "7786041186");
-	    p17.put("Date of Birth", "06/03/1992");
-	    p17.put("State", "California");
-	    p17.put("City", "San Diego");
-	    p17.put("Zip code", "92101");
-	    p17.put("Address Line 1", "600 B St, Suite 2200");
-	    p17.put("Address Line 2", "600 B St");
+	    p17.put("Email", "frederic.dion.h9v3m7@yopmail.com");
+	    p17.put("Social Security Number", "950-87-9052");
+	    p17.put("Phone number", "6125079052");
+	    p17.put("Date of Birth", "11/27/1987");
+	    p17.put("State", "Minnesota");
+	    p17.put("City", "Minneapolis");
+	    p17.put("Zip code", "55402");
+	    p17.put("Address Line 1", "120 S 6th St");
+	    p17.put("Address Line 2", "Apt 2407");
 
 	    TreeMap<String, String> p18 = new TreeMap<>();
-	    p18.put("First Name", "Roch");
-	    p18.put("Middle Name", "Étienne");
-	    p18.put("Last Name", "Marceau");
+	    p18.put("First Name", "Zoé");
+	    p18.put("Middle Name", "Aurore");
+	    p18.put("Last Name", "Poirier");
 	    p18.put("Name Suffix", "III");
-	    p18.put("Email", "roch.marceau7065@yopmail.com");
-	    p18.put("Social Security Number", "903-28-7065");
-	    p18.put("Phone number", "4386147065");
-	    p18.put("Date of Birth", "02/21/1989");
-	    p18.put("State", "New Jersey");
-	    p18.put("City", "Jersey City");
-	    p18.put("Zip code", "07302");
-	    p18.put("Address Line 1", "101 Hudson St, Suite 2100");
-	    p18.put("Address Line 2", "101 Hudson St");
+	    p18.put("Email", "zoe.poirier.k2p8f6@yopmail.com");
+	    p18.put("Social Security Number", "951-98-1743");
+	    p18.put("Phone number", "5034421743");
+	    p18.put("Date of Birth", "04/21/1991");
+	    p18.put("State", "Oregon");
+	    p18.put("City", "Portland");
+	    p18.put("Zip code", "97204");
+	    p18.put("Address Line 1", "111 SW 5th Ave");
+	    p18.put("Address Line 2", "Suite 1742");
 
 	    TreeMap<String, String> p19 = new TreeMap<>();
-	    p19.put("First Name", "Saskatoon"); // intentionally uncommon given your “never familiar” requirement
-	    p19.put("Middle Name", "Ronan");
-	    p19.put("Last Name", "Fairweather");
+	    p19.put("First Name", "Adrien");
+	    p19.put("Middle Name", "René");
+	    p19.put("Last Name", "Lambert");
 	    p19.put("Name Suffix", "Sr");
-	    p19.put("Email", "saskatoon.fairweather4902@yopmail.com");
-	    p19.put("Social Security Number", "903-29-4902");
-	    p19.put("Phone number", "3066044902");
-	    p19.put("Date of Birth", "08/08/1994");
-	    p19.put("State", "Montana");
-	    p19.put("City", "Missoula");
-	    p19.put("Zip code", "59802");
-	    p19.put("Address Line 1", "100 Madison St, Suite 900");
-	    p19.put("Address Line 2", "100 Madison St");
+	    p19.put("Email", "adrien.lambert.v4q1x8@yopmail.com");
+	    p19.put("Social Security Number", "952-09-4685");
+	    p19.put("Phone number", "5048934685");
+	    p19.put("Date of Birth", "03/13/1990");
+	    p19.put("State", "Louisiana");
+	    p19.put("City", "New Orleans");
+	    p19.put("Zip code", "70112");
+	    p19.put("Address Line 1", "400 Poydras St");
+	    p19.put("Address Line 2", "Suite 1412");
 
 	    TreeMap<String, String> p20 = new TreeMap<>();
-	    p20.put("First Name", "Rhéa");
-	    p20.put("Middle Name", "Marlowe");
-	    p20.put("Last Name", "Vandal");
+	    p20.put("First Name", "Érika");
+	    p20.put("Middle Name", "Suzanne");
+	    p20.put("Last Name", "Chartier");
 	    p20.put("Name Suffix", "IV");
-	    p20.put("Email", "rhea.vandal8831@yopmail.com");
-	    p20.put("Social Security Number", "903-30-8831");
-	    p20.put("Phone number", "9026048831");
-	    p20.put("Date of Birth", "11/27/1988");
+	    p20.put("Email", "erika.chartier.n1m7t2@yopmail.com");
+	    p20.put("Social Security Number", "953-10-7329");
+	    p20.put("Phone number", "2076157329");
+	    p20.put("Date of Birth", "09/24/1988");
 	    p20.put("State", "Maine");
-	    p20.put("City", "Bangor");
-	    p20.put("Zip code", "04401");
-	    p20.put("Address Line 1", "43 High St, Suite 300");
-	    p20.put("Address Line 2", "43 High St");
+	    p20.put("City", "Portland");
+	    p20.put("Zip code", "04101");
+	    p20.put("Address Line 1", "1 Monument Square");
+	    p20.put("Address Line 2", "Apt 6C");
 	    // ---- 21 to 50 (fresh new names + ids) ----
 
 	    TreeMap<String, String> p21 = new TreeMap<>();
@@ -1605,16 +1664,16 @@ public class Plaintiff_Module extends Case_Appplications{
 	    p50.put("Address Line 2", "Unit 7C");
 
 	    return new Object[][]{/*
-	        {p1},{p2},{p3},{p4},{p5},
-	        {p6},{p7},{p8},{p9},{p10},*/
+	        {p1},*{p2},*/{p3},{p4},{p5},
+	        {p6},{p7},{p8},{p9},{p10},
 	        {p11},{p12},{p13},{p14},{p15},
-	        {p16},{p17},{p18},{p19},{p20}, 
+	        {p16},{p17},{p18},{p19},{p20}, /*
 	        {p21},{p22},{p23},{p24},{p25},
 	        {p26},{p27},{p28},{p29},{p30}, 
 	        {p31},{p32},{p33},{p34},{p35},
 	        {p36},{p37},{p38},{p39},{p40},
 	        {p41},{p42},{p43},{p44},{p45},
-	        {p46},{p47},{p48},{p49},{p50} 
+	        {p46},{p47},{p48},{p49},{p50} */
 	    };
 	}
 
