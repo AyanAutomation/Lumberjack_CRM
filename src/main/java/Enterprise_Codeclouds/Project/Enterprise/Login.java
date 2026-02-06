@@ -44,14 +44,7 @@ public class Login extends Base{
 	String toast_message = Toast.getText();
 	Login_negative_testcases.Toast_printer(toast_message,d);
 	System.out.println();
-	WebElement close_button; 
-	try {
-	close_button= lg.Toast_close_button();
-	close_button.click();}
-	catch(Exception Close_Toast){
-		close_button= lg.Toast_close_button();
-		close_button.click();
-	}
+	
 	rp.wait_for_invisibility(Toast);
 	lg.login_confirmation();	
 	}

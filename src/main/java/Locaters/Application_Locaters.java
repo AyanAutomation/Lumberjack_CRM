@@ -221,9 +221,9 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//*[contains(@class,'ant-typography label css')]")
 	private List <WebElement> Lien_Details_field_labels;
 	@FindBy(xpath="//*[contains(@class,'ant-typography value css')]")
-	private List <WebElement> Lien_Details_field_values;/*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private List <WebElement> Lien_Details_field_values;
+	@FindBy(xpath="//*[text()='Plaintiff Funding Liens']")
+	private WebElement Landed_in_lien_List; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -600,35 +600,35 @@ public class Application_Locaters extends Login_Locaters{
 	wait_for_theElement(First_table_body);
 	return First_table_body;} 
 	public List <WebElement> First_table_first_column_cells(){
-	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[1]"));
+	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][1]//div"));
 	wait_for_theElement(First_table_first_column_cellData);
 	return First_table_first_column_cellData;}   
 	public List <WebElement> First_table_second_column_cells(){
-	List<WebElement> First_table_second_column_cells = First_table_body().findElements(By.xpath(".//td[2]"));
+	List<WebElement> First_table_second_column_cells = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][2]//div"));
 	wait_for_theElement(First_table_second_column_cells);
 	return First_table_second_column_cells;}
 	public List <WebElement> First_table_Third_column_cellData(){
-	List<WebElement> First_table_Third_column_cellData = First_table_body().findElements(By.xpath(".//td[3]"));
+	List<WebElement> First_table_Third_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][3]//div"));
 	wait_for_theElement(First_table_Third_column_cellData);
 	return First_table_Third_column_cellData;}
 	public List <WebElement> First_table_fourth_column_cellData(){
-	List<WebElement> First_table_fourth_column_cellData = First_table_body().findElements(By.xpath(".//td[4]"));
+	List<WebElement> First_table_fourth_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][4]//div"));
 	wait_for_theElement(First_table_fourth_column_cellData);
 	return First_table_fourth_column_cellData;}
 	public List <WebElement> First_table_fifth_column_cellData(){
-	List<WebElement> First_table_fifth_column_cellData = First_table_body().findElements(By.xpath(".//td[5]"));
+	List<WebElement> First_table_fifth_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][5]//div"));
 	wait_for_theElement(First_table_fifth_column_cellData);
 	return First_table_fifth_column_cellData;}
 	public List <WebElement> First_table_sixth_column_cellData(){
-	List<WebElement> First_table_sixth_column_cellData = First_table_body().findElements(By.xpath(".//td[6]"));
+	List<WebElement> First_table_sixth_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][6]//div"));
 	wait_for_theElement(First_table_sixth_column_cellData);
 	return First_table_sixth_column_cellData;}
 	public List <WebElement> First_table_seventh_column_cellData(){
-	List<WebElement> First_table_seventh_column_cellData = First_table_body().findElements(By.xpath(".//td[7]"));
+	List<WebElement> First_table_seventh_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][7]//div"));
 	wait_for_theElement(First_table_seventh_column_cellData);
 	return First_table_seventh_column_cellData;}
 	public List <WebElement> Action_column_cells(){
-	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[8]"));
+	List<WebElement> First_table_first_column_cellData = First_table_body().findElements(By.xpath(".//td[contains(@class,'ant-table-cell')][8]//div"));
 	wait_for_theElement(First_table_first_column_cellData);
 	return First_table_first_column_cellData;} 
 	public WebElement Case_Action_Dropdown(){
@@ -832,10 +832,10 @@ public class Application_Locaters extends Login_Locaters{
 	return Lien_Details_field_labels;}   
 	public List <WebElement> Lien_Details_field_values(){
 	wait_for_theElement(Lien_Details_field_values);
-	return Lien_Details_field_values;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Lien_Details_field_values;}   
+	public WebElement Landed_in_lien_List(){
+	wait_for_theElement(Landed_in_lien_List);
+	return Landed_in_lien_List;}    /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

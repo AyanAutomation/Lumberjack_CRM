@@ -34,6 +34,7 @@ import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
 import Locaters.Plaintiff_Locaters;
+import Locaters.Sidemenu_Locaters;
 import Locaters.temp_mail_Locaters;
 import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
@@ -1207,368 +1208,616 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 
-       @Test(dataProvider="case_plus_plaintiff")
-	   public void Buyout_Add_and_Fees_changed_in_Revised_Contract(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> Email_Send_Data) throws InterruptedException, IOException {
-		   
-		   Application_Locaters p = new Application_Locaters(d);
-	        Login_Locaters lg = new Login_Locaters(d);
-	 		Repeat rp = new Repeat(d);
-	 		JavascriptExecutor js = (JavascriptExecutor)d; 
-	 		Attorney_module at = new Attorney_module();
-	 		
-	 		monthly_emi.clear();
-	 		
-	 		int Buyout_Amount = Integer.parseInt(Case_Data.get("Buyout Amount"));
-	 		int Approved_Amount = Integer.parseInt(Case_Data.get("Approved Amount"));
-	 		int Document_prep_fee = Integer.parseInt(Case_Data.get("Document prep fee"));
-	 		int Fund_transfer_fee = Integer.parseInt(Case_Data.get("Fund transfer fee"));
-	 		int Rate_of_Return = Integer.parseInt(Case_Data.get("Rate of Return"));
-	 		
-	 		double Funded_amount = Buyout_Amount+Approved_Amount;
-	 		double Annual_Interest_Amount = (Funded_amount * Rate_of_Return) / 100;
-	 		double Monthly_Interest_Amount = Annual_Interest_Amount/12;
-	 		double Monthly_Payable_Amount = Funded_amount+Monthly_Interest_Amount+Document_prep_fee+Fund_transfer_fee;
-	 		double Monthly_Payable_Amount_upto_2_decimal = Double.parseDouble(String.format("%.2f", Monthly_Payable_Amount));
-	 		double Monthly_Interest_Amount_upto_2_decimal = Double.parseDouble(String.format("%.2f", Monthly_Interest_Amount));
-	 		
-	 		int step=1;
-           
-	 		String Buyout_Funder = Case_Data.get("Buyout Funder Name");
-	 		String Buyout_price = Case_Data.get("Buyout Amount");
-	 		String Buyout_date = Case_Data.get("Buyout Expiry Date");
-	 		
-	 		Add_New_Case_Form_Accessor(step++);
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
-	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
-	 		p.form_inputs().get(0).sendKeys(Plaintiff.get("First Name"));
-	 		p.plaintiff_dropdown_list();
-	 		p.Plaintiff_options().get(0).click();
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+Plaintiff.get("First Name"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
-	 		p.form_inputs().get(1).sendKeys(Case_Data.get("Case Type"));
-	 		p.form_inputs().get(1).click();
-	 		p.Incident_type_dropdown();
-	 		option_printers("Incident Options are ",p.Incident_options());
-	 		p.Incident_options().get(0).click();
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Incident/Case type selected from list for input = "+Case_Data.get("Case Type"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select State of Incident from dropdown.");
-	 		p.form_inputs().get(2).sendKeys(Case_Data.get("State"));
-	 		p.form_inputs().get(2).click();
-	 		p.State_of_incident_dropdown();
-	 		p.State_of_incident_options().get(0).click();
-	 		Thread.sleep(500);	
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> State selected from list for input = "+Case_Data.get("State"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Date of Incident and confirm date selection.");
-	 		WebElement calender_field = p.form_inputs().get(3);
-	 		calender_field.sendKeys(Case_Data.get("Date of Incident"));
-	 		calender_field.click();
-	 		p.calender_date_select().click();
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+Case_Data.get("Date of Incident"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
-	 		rp.Scroll_to_element(p.form_inputs().get(4));
-	 		//p.form_inputs().get(4).click();
-	 		p.form_inputs().get(4).sendKeys(Case_Data.get("Lead Source"));
-	 		p.Lead_Type_dropdown();
-	 		p.Lead_category_options().get(0).click();
-	 		p.form_inputs().get(5).click();
-	 		p.Lead_dropdown();
-	 		p.Leadoptions().get(0).click();
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = "+Case_Data.get("Lead Source")+")");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Requested Amount and click Create/Save Case.");
-	 		rp.Scroll_to_element(p.form_inputs().get(5));
-	 		p.form_inputs().get(6).sendKeys(Case_Data.get("Requested Amount"));
-	 		p.form_buttons().get(1).click();
-	 		Thread.sleep(800); 	
-	 		try {
-	 		Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
-	 		catch(Exception e){
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after creating case: "+"No toast captured / toast locator not visible. Error:");}
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Case Details edit popup and update Summary + Court Index Number.");
-	 		WebElement CaseId = p.Case_ID_Tag();
-		    String Case_ID = CaseId.getText().trim(); /***************/
-		    System.out.println(Case_ID);
-		    System.out.println();
-	 		p.Case_details_edit_buttons().click();
-	 		p.Summary_feild().sendKeys(Case_Data.get("Summary"));
-	 		p.Court_index_input().sendKeys(Case_Data.get("Court Index Number"));
-	 		p.Edit_form_buttons().get(1).click();
-	 		p.Case_details_edit_buttons(); 
-	 		Thread.sleep(500);
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+Case_Data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
-	 		Thread.sleep(800);
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+Case_Data.get("Court Index Number")+")");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
-	 		tab_selector("Contacts");
-	 		p.lawFirm_AddButton_ContactTab();
-	 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
-	 		p.Contact_AddButton_ContactTab().click();
-	 		p.Contact_type_dropdown_list();
-	 		List<WebElement> Contact_Options = p.Contact_type_Options();
-	 		for(WebElement Cn_opt:Contact_Options){
-	 		if(Cn_opt.getText().trim().equalsIgnoreCase("Attorney")){
-	 				Cn_opt.click();
-	 				break;}}
-	 		p.pop_up_contact_list();
-	 		WebElement Toast_close_A;
-	 		try {
-	 			Toast_close_A = lg.Toast_close_button();
-	 		    Toast_close_A.click();
-	 		} catch (Exception e) {
-	 			
-	 			Toast_close_A = lg.Toast_close_button();
-	 		    Toast_close_A.click();
-	 		    System.out.println("Retried Close Toast button ");
-	 		}
-	 		Thread.sleep(800);
-	 		p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
-	 		Thread.sleep(800);
-	 		WebElement toast = lg.toast();
-	 		WebElement Toast_close_B = lg.Toast_close_button();
-	 		Toast_close_B.click();
-	 		rp.wait_for_invisibility(toast);
-	 		try {
-	 		p.List_Checkboxes().get(0).click();}
-	 		catch(Exception attorney_searched_not_present){
-	 			at.Atttorney_Add_through_case(attorneyData,Law_Firm_Data,Staff_Data,d);
-	 			Thread.sleep(800);
-	 		    WebElement Newtoast = lg.toast();
-	 			rp.wait_for_invisibility(Newtoast);
-	 			p.List_Checkboxes().get(0).click();}
-	 		Thread.sleep(600);
-	        // rp.wait_for_invisibility(lg.toast());
-	 		WebElement Import_button = p.import_Button();
-	 		rp.Scroll_to_element(Import_button);
-	 		Import_button.click();
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
-	 		rp.Scroll_to_element(p.Application_tab_bar());
-	 		try {
-	 			tab_selector("Applications");
-	 			WebElement Toast_close_C = lg.Toast_close_button();
-	 			Toast_close_C.click();
-	 			  Report_Listen.log_print_in_report().log(Status.PASS,
-	 		                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt."
-	 		        );
+	@Test(dataProvider="case_plus_plaintiff")
+	public void Buyout_Add_and_Fees_changed_in_Revised_Contract(
+	        TreeMap<String, String> Case_Data,
+	        TreeMap<String, String> Plaintiff,
+	        TreeMap<String, String> attorneyData,
+	        TreeMap<String, String> Law_Firm_Data,
+	        TreeMap<String, String> Staff_Data,
+	        TreeMap<String, String> Email_Send_Data) throws InterruptedException, IOException {
 
-	 		        System.out.println("Actual     : Applications tab clicked successfully (Retry Attempt)");
-	 		        System.out.println();}
-	 			catch(Exception tab_click){
-	 				
-	 				Thread.sleep(800);
-	 				tab_selector("Applications");
-	 				WebElement Toast_close_C = lg.Toast_close_button();
-	 				Toast_close_C.click();
-	 				Report_Listen.log_print_in_report().log(Status.INFO,
-	 			            "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
-	 			                    + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName()
-	 			              );
+	    Application_Locaters p = new Application_Locaters(d);
+	    Login_Locaters lg = new Login_Locaters(d);
+	    Repeat rp = new Repeat(d);
+	    JavascriptExecutor js = (JavascriptExecutor) d;
+	    Attorney_module at = new Attorney_module();
 
-	 			              System.out.println("Actual     : First attempt FAILED to click Applications tab");
-	 			              System.out.println("Retry Plan : Wait 800ms and retry once");
-	 			              System.out.println("Exception  : " + tab_click.getClass().getSimpleName());
-	 			              System.out.println();
+	    monthly_emi.clear();
 
-	 			              Thread.sleep(800);
-	 			}
-	 		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
-	 			catch(Exception e){
-	 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
-	 		List<WebElement> Amount_edit_buttons;
-	 	try{Amount_edit_buttons= p.Application_amount_edit_buttons();
-	 	    Amount_edit_buttons.get(2).click(); }
-	 	catch(Exception em) {
-	 		Thread.sleep(800);
-	 		Amount_edit_buttons= p.Application_amount_edit_buttons();
-	 	    Amount_edit_buttons.get(2).click();
-	 		Thread.sleep(800);
-	 		Report_Listen.log_print_in_report().log(Status.INFO,"Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
-	 		System.out.println("Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
-	 		System.out.println();}
-	 		p.Application_Amount_input_Fields().get(0).sendKeys(Case_Data.get("Approved Amount"));
-	 	    p.table_body().click();
-	 	    Thread.sleep(800);
-	 	    WebElement status_dropdown = p.Application_Details_Dropdown_Feild();
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Approved Amount entered = "+Case_Data.get("Approved Amount"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Update Application Status to APPROVED from dropdown.");
-	 		rp.movetoelement(status_dropdown);
-	 		status_dropdown.click();
-	 	    p.plaintiff_dropdown_list();
-	 	    List<WebElement> Status_opts = p.Plaintiff_options();
-	 	    for(WebElement Stat_opt:Status_opts){
-	 	    	if(Stat_opt.getText().trim().contains("APPROVED")){
-	 	    		Stat_opt.click();
-	 	    		break;}}
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Application status set to APPROVED.");
-	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click Generate Contract and wait for Contract popup/modal.");
-	       
-	        p.Generate_contract_button().click();
-	 	    p.popup_modal();
-	 	    Thread.sleep(800);
-	 	    rp.movetoelement(p.Popup_add_form());
-	 	    Thread.sleep(800);
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Contract details modal opened.");
-	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill contract fee fields and Rate of Return.");
-	 		List<WebElement> Fee_feilds = p.fee_amount_feilds();
-	 	    rp.Scroll_to_element(Fee_feilds.get(0));
-	 	    rp.Feild_clear(Fee_feilds.get(0));
-	 	    Fee_feilds.get(0).sendKeys(Case_Data.get("Document prep fee"));
-	 	    rp.Feild_clear(Fee_feilds.get(1));
-	 	    Fee_feilds.get(1).sendKeys(Case_Data.get("Fund transfer fee"));
-	 	    rp.Scroll_to_element(p.rate_of_return_feild());
-	 	    rp.Feild_clear(p.rate_of_return_feild());
-	 	    p.rate_of_return_feild().sendKeys(Case_Data.get("Rate of Return"));
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Fees + Rate of Return filled (DocPrep="+Case_Data.get("Document prep fee")+", FundTransfer="+Case_Data.get("Fund transfer fee")+", RoR="+Case_Data.get("Rate of Return")+")");
-	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Agreement Date + Interest Start Date and confirm date selection.");
-	 		rp.Scroll_to_element(p.Agreement_Date_feild());
-	 	    p.Agreement_Date_feild().sendKeys(Case_Data.get("Agreement Date"));
-	 	    p.calender_date_select().click();
-	 	    p.Interest_Start_Date().sendKeys(Case_Data.get("Interest Start Date"));
-	 	    p.rate_of_return_feild().click();
-	 	    Thread.sleep(600);
-	 	    WebElement Generate_Contract_Button;
-	 	    Generate_Contract_Button= p.Submit_button();
-	 	    rp.movetoelement(Generate_Contract_Button);
-	 	    rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
-	 	    js.executeScript("arguments[0].click();", Generate_Contract_Button);
-	 	    Thread.sleep(800);
-	 	    try{p.Contract_editor();
-	 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract Editor opened successfully. End-to-end case + application + contract flow completed.");
-	 			Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Case created successfully for Plaintiff="+Case_Data.get("Plaintiff Name")+" | CourtIndex="+Case_Data.get("Court Index Number")+" | AgreementDate="+Case_Data.get("Agreement Date"));
-	 		}catch(Exception e){
-	 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Contract Editor did NOT open after Generate Contract. Flow failed at final step.");
-	 			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Case/Application created but contract generation verification failed for CourtIndex="+Case_Data.get("Court Index Number"));
-	 			WebElement new_Generate_Contract_Button= p.Submit_button();
-	 			rp.wait_for_theElement_tobe_clickable(new_Generate_Contract_Button);
-		 	    js.executeScript("arguments[0].click();", new_Generate_Contract_Button);}
-	 	    
-	 	    
-	 	   WebElement new_frame = p.contract_doc_iframe();
-	 	    d.switchTo().frame(new_frame);
-	 	    Thread.sleep(1000);
-	 	    
-			 // ---------- CALC LOG (2 decimals) ----------
-	 	    String Buyout_Amount_f = String.format("%.2f", (double) Buyout_Amount);
-	 	    String Approved_Amount_f = String.format("%.2f", (double) Approved_Amount);
-	 	    String Document_prep_fee_f = String.format("%.2f", (double) Document_prep_fee);
-	 	    String Fund_transfer_fee_f = String.format("%.2f", (double) Fund_transfer_fee);
-	 	    String Rate_of_Return_f = String.format("%.2f", (double) Rate_of_Return);
+	    // ==========================================================
+	    // ✅ FETCH ONCE & REUSE (NO REPEATED .get(...) EVERYWHERE)
+	    // ==========================================================
+	    final String plaintiffFirstName = Plaintiff.get("First Name");
 
-	 	    String Funded_amount_f = String.format("%.2f", Funded_amount);
-	 	    String Annual_Interest_Amount_f = String.format("%.2f", Annual_Interest_Amount);
-	 	    String Monthly_Interest_Amount_f = String.format("%.2f", Monthly_Interest_Amount);
-	 	    String Monthly_Payable_Amount_f = String.format("%.2f", Monthly_Payable_Amount);
-	 	    String Flat_Fees_f = String.format("%.2f", (double) (Document_prep_fee + Fund_transfer_fee));
+	    final String caseType           = Case_Data.get("Case Type");
+	    final String state              = Case_Data.get("State");
+	    final String incidentDate       = Case_Data.get("Date of Incident");
+	    final String leadSource         = Case_Data.get("Lead Source");
+	    final String requestedAmount    = Case_Data.get("Requested Amount");
+	    final String summary            = Case_Data.get("Summary");
+	    final String courtIndex         = Case_Data.get("Court Index Number");
 
-	 	    String calc_log =
-	 	            "<b>🧮 First Month Payable Calculation</b><br>"
-	 	          + "<b>Buyout Amount:</b> " + Buyout_Amount_f + "<br>"
-	 	          + "<b>Approved Amount:</b> " + Approved_Amount_f + "<br>"
-	 	          + "<b>Funded Amount:</b> " + Funded_amount_f + "  (Buyout + Approved)<br><br>"
-	 	          + "<b>Rate of Return (%):</b> " + Rate_of_Return_f + "<br>"
-	 	          + "<b>Annual Interest:</b> " + Annual_Interest_Amount_f + "  (Funded × RoR / 100)<br>"
-	 	          + "<b>Monthly Interest:</b> " + Monthly_Interest_Amount_f + "  (Annual / 12)<br><br>"
-	 	          + "<b>Document Prep Fee:</b> " + Document_prep_fee_f + "<br>"
-	 	          + "<b>Fund Transfer Fee:</b> " + Fund_transfer_fee_f + "<br>"
-	 	          + "<b>Flat Fees Total:</b> " + Flat_Fees_f + "<br><br>"
-	 	          + "<b>✅ First Month Payable:</b> "
-	 	          + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + " + Document_prep_fee_f + " + " + Fund_transfer_fee_f
-	 	          + " = <b>" + Monthly_Payable_Amount_f + "</b>";
+	    final String buyoutFunderName   = Case_Data.get("Buyout Funder Name");
+	    final String buyoutExpiryDate   = Case_Data.get("Buyout Expiry Date");
 
-	 	    Report_Listen.log_print_in_report().log(Status.INFO, calc_log);
+	    final int buyoutAmount          = Integer.parseInt(Case_Data.get("Buyout Amount"));
+	    final int approvedAmount        = Integer.parseInt(Case_Data.get("Approved Amount"));
+	    final int documentPrepFee       = Integer.parseInt(Case_Data.get("Document prep fee"));
+	    final int fundTransferFee       = Integer.parseInt(Case_Data.get("Fund transfer fee"));
+	    final int rateOfReturn          = Integer.parseInt(Case_Data.get("Rate of Return"));
 
-	 	    // Console output (same info, clean)
-	 	    System.out.println("\n===== First Month Payable Calculation =====");
-	 	    System.out.println("Buyout Amount        : " + Buyout_Amount_f);
-	 	    System.out.println("Approved Amount      : " + Approved_Amount_f);
-	 	    System.out.println("Funded Amount        : " + Funded_amount_f + "  (Buyout + Approved)");
-	 	    System.out.println("------------------------------------------");
-	 	    System.out.println("Rate of Return (%)   : " + Rate_of_Return_f);
-	 	    System.out.println("Annual Interest      : " + Annual_Interest_Amount_f + "  (Funded × RoR / 100)");
-	 	    System.out.println("Monthly Interest     : " + Monthly_Interest_Amount_f + "  (Annual / 12)");
-	 	    System.out.println("------------------------------------------");
-	 	    System.out.println("Document Prep Fee    : " + Document_prep_fee_f);
-	 	    System.out.println("Fund Transfer Fee    : " + Fund_transfer_fee_f);
-	 	    System.out.println("Flat Fees Total      : " + Flat_Fees_f);
-	 	    System.out.println("------------------------------------------");
-	 	    System.out.println("✅ First Month Payable: " + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + "
-	 	            + Document_prep_fee_f + " + " + Fund_transfer_fee_f + " = " + Monthly_Payable_Amount_f);
-	 	    System.out.println("==========================================\n");
-	         System.out.println();
-	 	    rp.Scroll_to_element(p.Contract_lien_table());
-	 	    
-	 	    List<WebElement> cells = p.Cell_datas();
-	 	    int i=0;
-	 	    for(WebElement cell:cells){
-	 	    	String cell_text = cell.getText().trim();
-	 	    	if(!cell_text.contains("/")) {
-	 	    	// ✅ Convert UI text like "$1,234.50" into pure number string "1234.50" before parsing
-	 	        // replace(",", "") removes thousand separators
-	 	        // replace("$", "") removes currency symbol
-	 	        // trim() removes extra spaces
-	 	    	double cell_value = Double.parseDouble(cell_text.replace(",", "").replace("$", "").trim());
-	 	    	// ✅ Round to 2 decimals in a safe UI-matching way:
-	 	    	// String.format("%.2f", cell_value) -> converts double to String with exactly 2 decimal places ("% = placeholder, .2 = 2 decimals, f = floating number")
-	 	    	// Double.parseDouble(...) -> converts that 2-decimal String back into a double for reliable numeric comparison (avoids floating precision noise like 10.1999999)
-	 	    	double cell_value_upto_2_decimal = Double.parseDouble(String.format("%.2f", cell_value));
-	 	    	// ✅ Compare doubles using tolerance instead of "==" (because doubles can be slightly off, e.g., 100.1 vs 100.0999998)
-	 	        // Math.abs(a-b) < 0.01 means "difference is less than 1 paisa/cent equivalent at 2-decimal level"
-	 	        // Here Monthly_Payable_Amount is already calculated, we check if this month cell matches it
-	 	    	if(Math.abs(Monthly_Payable_Amount_upto_2_decimal-cell_value) < 0.01) {
-	 	    		System.out.println("Testcase passed First month payable "+Monthly_Payable_Amount_upto_2_decimal+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
-	 	    		System.out.println();
-	 	    		Report_Listen.log_print_in_report().log(Status.INFO,"Testcase passed First month payable "+Monthly_Payable_Amount_upto_2_decimal+" is macthing contract text's first month payable "+cell_value_upto_2_decimal);
-	 	    		}monthly_emi.add(cell_value_upto_2_decimal);
-	 	    	i++;}}
-	 	 // ---------- FUTURE MONTH VALIDATION (Previous Month + Monthly Interest) ----------
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,
-	 	    		"<b>Step "+(step++)+":</b> Validate future months lien calculation from Contract Lien table.");
+	    // ---- Calculations (used later in Contract validations/logs) ----
+	    final double fundedAmount = buyoutAmount + approvedAmount;
+	    final double annualInterestAmount = (fundedAmount * rateOfReturn) / 100;
+	    final double monthlyInterestAmount = annualInterestAmount / 12;
+	    final double monthlyPayableAmount = fundedAmount + monthlyInterestAmount + documentPrepFee + fundTransferFee;
 
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,
-	 	    		"<b>📘 Description:</b> Each month lien should increase only by Monthly Interest compared to previous month.");
+	    final double monthlyPayableAmount_2d  = Double.parseDouble(String.format("%.2f", monthlyPayableAmount));
+	    final double monthlyInterestAmount_2d = Double.parseDouble(String.format("%.2f", monthlyInterestAmount));
 
-	 	    Report_Listen.log_print_in_report().log(Status.INFO,
-	 	    		"<b>✅ Expected:</b> For every month >= 1, (Current Month Payable - Previous Month Payable) should equal Monthly Interest = "+Monthly_Interest_Amount+".");
+	    // ==========================================================
+	    // Scenario Header Logs
+	    // ==========================================================
+	    int step = 1;
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🔹 Scenario Title:</b> Buyout Add + Fees Changed in Revised Contract<br>"
+	          + "<b>📘 Description:</b> Create case → generate contract → sign flow trigger → capture payoff before → revise contract → capture payoff after revise.<br>"
+	          + "<b>📥 Input:</b> Plaintiff=" + plaintiffFirstName + " | CourtIndex=" + courtIndex + " | CaseType=" + caseType + "<br>"
+	          + "<b>✅ Expected:</b> Contract editor opens, revised contract validations pass, payoff values are captured as expected."
+	    );
 
-	 	    future_months_calculations_check(monthly_emi, Monthly_Interest_Amount);
-	 	   d.switchTo().defaultContent();
-	 	  Thread.sleep(800);
-	 	  p.Save_changes_button().click();
-	 	  
-	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
-			String contract_saved_ = "";
-			try{
-				contract_saved_ = lg.toast().getText().trim();
-				Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Contract saved toast = "+contract_saved_);
-				System.out.println(contract_saved_);
-				WebElement Toast_close_E = lg.Toast_close_button();
-				Toast_close_E.click();
-			}catch(Exception e){
-				Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Save toast not captured (toast not visible / locator issue) after clicking Save Changes.");
-				throw e;}
-			
-			FluentWait<WebDriver> fwt = new FluentWait<WebDriver>(d)
-			        .withTimeout(Duration.ofSeconds(30))
-			        .pollingEvery(Duration.ofMillis(500))
-			        .ignoring(NoSuchElementException.class)
-			        .ignoring(StaleElementReferenceException.class);
-			WebElement Cancel_Contract = p.Cancel_Contract_Button();
-			Thread.sleep(1000);
-			rp.wait_for_invisibility(Cancel_Contract);
-			Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
-			
-			
-		
-			WebElement Sign_in_button_ = p.Manual_sign_in_button();
-			rp.movetoelement(Sign_in_button_);
-		    Thread.sleep(800);
-		    rp.wait_for_theElement_tobe_clickable(Sign_in_button_);
-		    Sign_in_button_.click();
-			//Docu_Sign_Signature();
-			manual_lien_generation(Sign_in_button_);
-			Pay_off_lien_list_After_Revise_contract(Case_Data,Case_ID);
-		   
-	   }
+	    System.out.println("\n==================================================");
+	    System.out.println("[SCENARIO] Buyout Add + Fees Changed in Revised Contract");
+	    System.out.println("Plaintiff First Name : " + plaintiffFirstName);
+	    System.out.println("Court Index Number   : " + courtIndex);
+	    System.out.println("Case Type            : " + caseType);
+	    System.out.println("==================================================\n");
+
+	    // ==========================================================
+	    // Step 1: Open New Case Form
+	    // ==========================================================
+	    Add_New_Case_Form_Accessor(step++);
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> New Case form/popup opened.");
+
+	    // ==========================================================
+	    // Step 2: Select Plaintiff
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Search and select existing Plaintiff from dropdown.<br>"
+	          + "<b>📥 Input:</b> Plaintiff First Name = <b>" + plaintiffFirstName + "</b><br>"
+	          + "<b>✅ Expected:</b> Plaintiff should be selected from dropdown."
+	    );
+	    p.form_inputs().get(0).sendKeys(plaintiffFirstName);
+	    p.plaintiff_dropdown_list();
+	    p.Plaintiff_options().get(0).click();
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Plaintiff selected = " + plaintiffFirstName);
+
+	    // ==========================================================
+	    // Step 3: Select Case Type
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Select Incident/Case Type from dropdown.<br>"
+	          + "<b>📥 Input:</b> Case Type = <b>" + caseType + "</b><br>"
+	          + "<b>✅ Expected:</b> Case Type should be selected from dropdown list."
+	    );
+	    p.form_inputs().get(1).sendKeys(caseType);
+	    p.form_inputs().get(1).click();
+	    p.Incident_type_dropdown();
+	    option_printers("Incident Options are ", p.Incident_options());
+	    p.Incident_options().get(0).click();
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Incident/Case type selected for input = " + caseType);
+
+	    // ==========================================================
+	    // Step 4: Select State
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Select State of Incident from dropdown.<br>"
+	          + "<b>📥 Input:</b> State = <b>" + state + "</b><br>"
+	          + "<b>✅ Expected:</b> State should be selected from dropdown list."
+	    );
+	    p.form_inputs().get(2).sendKeys(state);
+	    p.form_inputs().get(2).click();
+	    p.State_of_incident_dropdown();
+	    p.State_of_incident_options().get(0).click();
+	    Thread.sleep(500);
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> State selected = " + state);
+
+	    // ==========================================================
+	    // Step 5: Date of Incident
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Enter Date of Incident and confirm date selection.<br>"
+	          + "<b>📥 Input:</b> Date of Incident = <b>" + incidentDate + "</b><br>"
+	          + "<b>✅ Expected:</b> Date should be entered and calendar selection should be applied."
+	    );
+	    WebElement calender_field = p.form_inputs().get(3);
+	    calender_field.sendKeys(incidentDate);
+	    calender_field.click();
+	    p.calender_date_select().click();
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Date of Incident entered/selected = " + incidentDate);
+
+	    // ==========================================================
+	    // Step 6: Lead Type + Lead Source
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Select Lead Type and Lead Source.<br>"
+	          + "<b>📥 Input:</b> Lead Source = <b>" + leadSource + "</b><br>"
+	          + "<b>✅ Expected:</b> Lead Type & Lead Source should be selected."
+	    );
+	    rp.Scroll_to_element(p.form_inputs().get(4));
+	    p.form_inputs().get(4).sendKeys(leadSource);
+	    p.Lead_Type_dropdown();
+	    p.Lead_category_options().get(0).click();
+	    p.form_inputs().get(5).click();
+	    p.Lead_dropdown();
+	    p.Leadoptions().get(0).click();
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Lead type/source selected (Lead Source input = " + leadSource + ")");
+
+	    // ==========================================================
+	    // Step 7: Requested Amount + Create Case
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Enter Requested Amount and click Create/Save Case.<br>"
+	          + "<b>📥 Input:</b> Requested Amount = <b>" + requestedAmount + "</b><br>"
+	          + "<b>✅ Expected:</b> Case should be created and a toast may appear."
+	    );
+	    rp.Scroll_to_element(p.form_inputs().get(5));
+	    p.form_inputs().get(6).sendKeys(requestedAmount);
+	    p.form_buttons().get(1).click();
+	    Thread.sleep(800);
+	    try {
+	        Login_negative_testcases.Toast_printer(lg.toast().getText().trim(), d);
+	    } catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Toast after creating case was not captured (toast not visible / locator issue).");
+	    }
+
+	    // ==========================================================
+	    // Step 8: Capture Case ID + Update Summary/Court Index
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Open Case Details edit popup and update Summary + Court Index Number.<br>"
+	          + "<b>📥 Input:</b> Court Index = <b>" + courtIndex + "</b><br>"
+	          + "<b>✅ Expected:</b> Details should save without UI errors."
+	    );
+	    WebElement CaseId = p.Case_ID_Tag();
+	    String Case_ID = CaseId.getText().trim();
+	    System.out.println("Case ID : " + Case_ID + "\n");
+
+	    p.Case_details_edit_buttons().click();
+	    p.Summary_feild().sendKeys(summary);
+	    p.Court_index_input().sendKeys(courtIndex);
+	    p.Edit_form_buttons().get(1).click();
+	    p.Case_details_edit_buttons();
+	    Thread.sleep(500);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Case details saved (Summary updated, Court Index saved = " + courtIndex + ")");
+
+	    // ==========================================================
+	    // Step 9: Contacts tab → Add Attorney
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Go to Contacts tab and link an Attorney contact from list.<br>"
+	          + "<b>📥 Input:</b> Attorney First Name = <b>" + attorneyData.get("First Name") + "</b><br>"
+	          + "<b>✅ Expected:</b> Attorney should be added to case contacts."
+	    );
+	    tab_selector("Contacts");
+	    p.lawFirm_AddButton_ContactTab();
+	    WebElement Add_Contact_Button = p.Contact_AddButton_ContactTab();
+	    rp.Scroll_to_element(Add_Contact_Button);
+	  try { Add_Contact_Button.click();}
+	  catch(Exception Click_Fail){
+		  Thread.sleep(800);
+		  Add_Contact_Button.click();
+	  }
+	    p.Contact_type_dropdown_list();
+
+	    List<WebElement> Contact_Options = p.Contact_type_Options();
+	    for (WebElement Cn_opt : Contact_Options) {
+	        if (Cn_opt.getText().trim().equalsIgnoreCase("Attorney")) {
+	            Cn_opt.click();
+	            break;
+	        }
+	    }
+
+	    p.pop_up_contact_list();
+
+	    // close toast if present (your same logic)
+	    WebElement Toast_close_A;
+	    try {
+	        Toast_close_A = lg.Toast_close_button();
+	        Toast_close_A.click();
+	    } catch (Exception e) {
+	        Toast_close_A = lg.Toast_close_button();
+	        Toast_close_A.click();
+	        System.out.println("Retried Close Toast button\n");
+	    }
+
+	    Thread.sleep(800);
+	    p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
+	    Thread.sleep(800);
+
+	    WebElement toast = lg.toast();
+	    WebElement Toast_close_B = lg.Toast_close_button();
+	    Toast_close_B.click();
+	    rp.wait_for_invisibility(toast);
+
+	    try {
+	        p.List_Checkboxes().get(0).click();
+	    } catch (Exception attorney_searched_not_present) {
+	        at.Atttorney_Add_through_case(attorneyData, Law_Firm_Data, Staff_Data, d);
+	        Thread.sleep(800);
+	        WebElement Newtoast = lg.toast();
+	        rp.wait_for_invisibility(Newtoast);
+	        p.List_Checkboxes().get(0).click();
+	    }
+
+	    Thread.sleep(600);
+	    WebElement Import_button = p.import_Button();
+	    rp.Scroll_to_element(Import_button);
+	    Import_button.click();
+
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
+
+	    // ==========================================================
+	    // Step 10: Applications tab (with retry logs) + Close toast
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Go to Applications tab.<br>"
+	          + "<b>✅ Expected:</b> Applications tab should open."
+	    );
+
+	    rp.Scroll_to_element(p.Application_tab_bar());
+
+	    boolean applicationsTabClicked = false;
+	    try {
+	        tab_selector("Applications");
+	        applicationsTabClicked = true;
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully (1st attempt).");
+	        System.out.println("Actual: Applications tab clicked successfully (1st attempt)\n");
+	    } catch (Exception tab_click) {
+
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
+	              + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName());
+
+	        System.out.println("Actual     : First attempt FAILED to click Applications tab");
+	        System.out.println("Retry Plan : Wait 800ms and retry once");
+	        System.out.println("Exception  : " + tab_click.getClass().getSimpleName() + "\n");
+
+	        Thread.sleep(800);
+
+	        tab_selector("Applications");
+	        applicationsTabClicked = true;
+
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully (Retry Attempt).");
+
+	        System.out.println("Actual: Applications tab clicked successfully (Retry Attempt)\n");
+	    }
+
+	    // Close toast if present after tab switch
+	    if (applicationsTabClicked) {
+	        try {
+	            WebElement Toast_close_C = lg.Toast_close_button();
+	            Toast_close_C.click();
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> Toast close button clicked after switching to Applications tab.");
+	            System.out.println("Actual: Toast closed after Applications tab\n");
+	        } catch (Exception ignore) {
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> No toast close button found after Applications tab switch (ignored).");
+	            System.out.println("Actual: No toast close button after Applications tab (ignored)\n");
+	        }
+	    }
+
+	    // ==========================================================
+	    // IMPORTANT NOTE:
+	    // Your Buyout-modal open/click part is not present in the snippet you pasted here
+	    // (earlier you had: p.Application_amount_edit_buttons().get(1).click();)
+	    // I'm keeping your current flow exactly as pasted.
+	    // ==========================================================
+
+	    try {
+	        Login_negative_testcases.Toast_printer(lg.toast().getText().trim(), d);
+	    } catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Toast after Buyout Amount step not captured (toast not visible / locator issue).");
+	    }
+
+	    // ==========================================================
+	    // Step 11: Approved Amount edit + enter value
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Open Approved Amount edit and enter Approved Amount.<br>"
+	          + "<b>📥 Input:</b> Approved Amount = <b>" + approvedAmount + "</b><br>"
+	          + "<b>✅ Expected:</b> Approved Amount should be entered.");
+
+	    List<WebElement> Amount_edit_buttons;
+	    try {
+	        Amount_edit_buttons = p.Application_amount_edit_buttons();
+	        Amount_edit_buttons.get(2).click();} 
+	    catch (Exception em) {
+	        Thread.sleep(800);
+	        Amount_edit_buttons = p.Application_amount_edit_buttons();
+	        Amount_edit_buttons.get(2).click();
+	        Thread.sleep(800);
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟡 Retry:</b> Exception found while fetching amount edit buttons. Retried and continued.");
+	        System.out.println("Retry: Amount edit buttons fetching failed once, retried and continued.\n");}
+
+	    p.Application_Amount_input_Fields().get(0).sendKeys(String.valueOf(approvedAmount));
+	    p.table_body().click();
+	    Thread.sleep(800);
+
+	    WebElement status_dropdown = p.Application_Details_Dropdown_Feild();
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Approved Amount entered = " + approvedAmount);
+
+	    // ==========================================================
+	    // Step 12: Set status to APPROVED
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Update Application Status to APPROVED from dropdown.<br>"
+	          + "<b>✅ Expected:</b> Status should change to APPROVED."
+	    );
+	    rp.movetoelement(status_dropdown);
+	    status_dropdown.click();
+	    p.plaintiff_dropdown_list();
+
+	    List<WebElement> Status_opts = p.Plaintiff_options();
+	    for (WebElement Stat_opt : Status_opts) {
+	        if (Stat_opt.getText().trim().contains("APPROVED")) {
+	            Stat_opt.click();
+	            break;
+	        }
+	    }
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Application status set to APPROVED.");
+
+	    // ==========================================================
+	    // Step 13: Generate Contract modal
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Click Generate Contract and wait for Contract popup/modal.<br>"
+	          + "<b>✅ Expected:</b> Contract details modal should open.");
+
+	    p.Generate_contract_button().click();
+	    p.popup_modal();
+	    Thread.sleep(800);
+	    rp.movetoelement(p.Popup_add_form());
+	    Thread.sleep(800);
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Contract details modal opened.");
+
+	    // ==========================================================
+	    // Step 14: Fill Fees + RoR
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Fill contract fee fields and Rate of Return.<br>"
+	          + "<b>📥 Input:</b> DocPrep=" + documentPrepFee + " | FundTransfer=" + fundTransferFee + " | RoR=" + rateOfReturn + "<br>"
+	          + "<b>✅ Expected:</b> Values should be entered in contract modal.");
+
+	    List<WebElement> Fee_feilds = p.fee_amount_feilds();
+	    rp.Scroll_to_element(Fee_feilds.get(0));
+	    rp.Feild_clear(Fee_feilds.get(0));
+	    Fee_feilds.get(0).sendKeys(String.valueOf(documentPrepFee));
+
+	    rp.Feild_clear(Fee_feilds.get(1));
+	    Fee_feilds.get(1).sendKeys(String.valueOf(fundTransferFee));
+
+	    rp.Scroll_to_element(p.rate_of_return_feild());
+	    rp.Feild_clear(p.rate_of_return_feild());
+	    p.rate_of_return_feild().sendKeys(String.valueOf(rateOfReturn));
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Fees + Rate of Return filled.");
+
+	    // ==========================================================
+	    // Step 15: Agreement date + Interest start date + Submit (Generate)
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Enter Agreement Date + Interest Start Date and generate contract.<br>"
+	          + "<b>📥 Input:</b> Agreement Date=" + Case_Data.get("Agreement Date") + " | Interest Start Date=" + Case_Data.get("Interest Start Date") + "<br>"
+	          + "<b>✅ Expected:</b> Contract editor should open.");
+
+	    rp.Scroll_to_element(p.Agreement_Date_feild());
+	    p.Agreement_Date_feild().sendKeys(Case_Data.get("Agreement Date"));
+	    p.calender_date_select().click();
+
+	    p.Interest_Start_Date().sendKeys(Case_Data.get("Interest Start Date"));
+	    p.rate_of_return_feild().click();
+	    Thread.sleep(600);
+
+	    WebElement Generate_Contract_Button = p.Submit_button();
+	    rp.movetoelement(Generate_Contract_Button);
+	    rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
+	    js.executeScript("arguments[0].click();", Generate_Contract_Button);
+	    Thread.sleep(800);
+
+	    try {
+	        p.Contract_editor();
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>🟨 Actual:</b> ✅ Contract Editor opened successfully.");} 
+	    catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>🟨 Actual:</b> ❌ Contract Editor did NOT open after Generate Contract. Retrying click once.");
+	        WebElement new_Generate_Contract_Button = p.Submit_button();
+	        rp.wait_for_theElement_tobe_clickable(new_Generate_Contract_Button);
+	        js.executeScript("arguments[0].click();", new_Generate_Contract_Button);}
+
+	    // ==========================================================
+	    // Step 16: Enter iframe + log calculation table
+	    // ==========================================================
+	    WebElement new_frame = p.contract_doc_iframe();
+	    d.switchTo().frame(new_frame);
+	    Thread.sleep(1000);
+
+	    String Buyout_Amount_f = String.format("%.2f", (double) buyoutAmount);
+	    String Approved_Amount_f = String.format("%.2f", (double) approvedAmount);
+	    String Document_prep_fee_f = String.format("%.2f", (double) documentPrepFee);
+	    String Fund_transfer_fee_f = String.format("%.2f", (double) fundTransferFee);
+	    String Rate_of_Return_f = String.format("%.2f", (double) rateOfReturn);
+
+	    String Funded_amount_f = String.format("%.2f", fundedAmount);
+	    String Annual_Interest_Amount_f = String.format("%.2f", annualInterestAmount);
+	    String Monthly_Interest_Amount_f = String.format("%.2f", monthlyInterestAmount);
+	    String Monthly_Payable_Amount_f = String.format("%.2f", monthlyPayableAmount);
+	    String Flat_Fees_f = String.format("%.2f", (double) (documentPrepFee + fundTransferFee));
+
+	    String calc_log =
+	            "<b>🧮 First Month Payable Calculation</b><br>"
+	          + "<b>Buyout Amount:</b> " + Buyout_Amount_f + "<br>"
+	          + "<b>Approved Amount:</b> " + Approved_Amount_f + "<br>"
+	          + "<b>Funded Amount:</b> " + Funded_amount_f + "  (Buyout + Approved)<br><br>"
+	          + "<b>Rate of Return (%):</b> " + Rate_of_Return_f + "<br>"
+	          + "<b>Annual Interest:</b> " + Annual_Interest_Amount_f + "  (Funded × RoR / 100)<br>"
+	          + "<b>Monthly Interest:</b> " + Monthly_Interest_Amount_f + "  (Annual / 12)<br><br>"
+	          + "<b>Document Prep Fee:</b> " + Document_prep_fee_f + "<br>"
+	          + "<b>Fund Transfer Fee:</b> " + Fund_transfer_fee_f + "<br>"
+	          + "<b>Flat Fees Total:</b> " + Flat_Fees_f + "<br><br>"
+	          + "<b>✅ First Month Payable:</b> "
+	          + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + " + Document_prep_fee_f + " + " + Fund_transfer_fee_f
+	          + " = <b>" + Monthly_Payable_Amount_f + "</b>";
+
+	    Report_Listen.log_print_in_report().log(Status.INFO, calc_log);
+
+	    System.out.println("\n===== First Month Payable Calculation =====");
+	    System.out.println("Buyout Amount        : " + Buyout_Amount_f);
+	    System.out.println("Approved Amount      : " + Approved_Amount_f);
+	    System.out.println("Funded Amount        : " + Funded_amount_f + "  (Buyout + Approved)");
+	    System.out.println("------------------------------------------");
+	    System.out.println("Rate of Return (%)   : " + Rate_of_Return_f);
+	    System.out.println("Annual Interest      : " + Annual_Interest_Amount_f + "  (Funded × RoR / 100)");
+	    System.out.println("Monthly Interest     : " + Monthly_Interest_Amount_f + "  (Annual / 12)");
+	    System.out.println("------------------------------------------");
+	    System.out.println("Document Prep Fee    : " + Document_prep_fee_f);
+	    System.out.println("Fund Transfer Fee    : " + Fund_transfer_fee_f);
+	    System.out.println("Flat Fees Total      : " + Flat_Fees_f);
+	    System.out.println("------------------------------------------");
+	    System.out.println("✅ First Month Payable: " + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + "
+	            + Document_prep_fee_f + " + " + Fund_transfer_fee_f + " = " + Monthly_Payable_Amount_f);
+	    System.out.println("==========================================\n");
+
+	    // ==========================================================
+	    // Step 17: Read lien table cells into monthly_emi + validate first month
+	    // ==========================================================
+	    rp.Scroll_to_element(p.Contract_lien_table());
+
+	    List<WebElement> cells = p.Cell_datas();
+	    for (WebElement cell : cells) {
+	        String cell_text = cell.getText().trim();
+	        if (!cell_text.contains("/")) {
+
+	            double cell_value = Double.parseDouble(cell_text.replace(",", "").replace("$", "").trim());
+	            double cell_value_2d = Double.parseDouble(String.format("%.2f", cell_value));
+
+	            if (Math.abs(monthlyPayableAmount_2d - cell_value) < 0.01) {
+	                System.out.println("✅ PASS | First month payable " + monthlyPayableAmount_2d
+	                        + " matches contract first month payable " + cell_value_2d + "\n");
+	                Report_Listen.log_print_in_report().log(Status.PASS,
+	                        "<b>✅ PASS:</b> First month payable matched.<br>"
+	                      + "<b>Expected:</b> " + monthlyPayableAmount_2d + "<br>"
+	                      + "<b>Actual:</b> " + cell_value_2d);
+	            }
+
+	            monthly_emi.add(cell_value_2d);
+	        }
+	    }
+
+	    // ==========================================================
+	    // Step 18: Future months validation
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Validate future months lien calculation from Contract Lien table.<br>"
+	          + "<b>✅ Expected:</b> For every month >= 1, (Current - Previous) should equal Monthly Interest = "
+	          + String.format("%.2f", monthlyInterestAmount_2d)
+	    );
+	    future_months_calculations_check(monthly_emi, monthlyInterestAmount);
+
+	    // ==========================================================
+	    // Step 19: Save changes + toast
+	    // ==========================================================
+	    d.switchTo().defaultContent();
+	    Thread.sleep(800);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Click Save Changes and capture toast.");
+	    p.Save_changes_button().click();
+
+	    String contract_saved_;
+	    try {
+	        contract_saved_ = lg.toast().getText().trim();
+	        Report_Listen.log_print_in_report().log(Status.PASS, "<b>✅ Contract saved toast:</b> " + contract_saved_);
+	        System.out.println("✅ Contract saved toast: " + contract_saved_ + "\n");
+	        try {
+	            WebElement Toast_close_E = lg.Toast_close_button();
+	            Toast_close_E.click();
+	        } catch (Exception ignore) {}
+	    } catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>❌ Save toast not captured</b> (toast not visible / locator issue).");
+	        throw e;
+	    }
+
+	    // ==========================================================
+	    // Step 20: Wait for Cancel Contract invisibility (your current flow)
+	    // ==========================================================
+	    new FluentWait<WebDriver>(d)
+	            .withTimeout(Duration.ofSeconds(30))
+	            .pollingEvery(Duration.ofMillis(500))
+	            .ignoring(NoSuchElementException.class)
+	            .ignoring(StaleElementReferenceException.class);
+
+	    WebElement Cancel_Contract = p.Cancel_Contract_Button();
+	    Thread.sleep(1000);
+	    rp.wait_for_invisibility(Cancel_Contract);
+
+	    // ==========================================================
+	    // Step 21: Manual Sign in + send contract
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Click Manual Sign-in and continue lien generation flow.<br>"
+	          + "<b>✅ Expected:</b> Manual sign-in should be clickable and flow should proceed."
+	    );
+
+	    WebElement Sign_in_button_ = p.Manual_sign_in_button();
+	    rp.movetoelement(Sign_in_button_);
+	    Thread.sleep(800);
+	    rp.wait_for_theElement_tobe_clickable(Sign_in_button_);
+	    Sign_in_button_.click();
+
+	    manual_lien_generation(Sign_in_button_);
+
+	    // ==========================================================
+	    // Step 22: Capture payoff before → revise → capture payoff after revise
+	    // ==========================================================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Capture payoff values BEFORE revise contract.<br>"
+	          + "<b>📥 Input:</b> Case ID = <b>" + Case_ID + "</b>"
+	    );
+	    Pay_off_lien_list_Before_payment(Case_ID);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Revise Contract (Buyout reduced and validations in modal).<br>"
+	          + "<b>📥 Input:</b> Buyout Funder=" + buyoutFunderName + " | New Buyout based on logic inside method | Expiry=" + buyoutExpiryDate
+	    );
+	    Revise_Contract(Case_Data);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>Step " + (step++) + ":</b> Capture payoff values AFTER revise contract.<br>"
+	          + "<b>📥 Input:</b> Case ID = <b>" + Case_ID + "</b>"
+	    );
+	    Pay_off_lien_list_After_Revise_contract(Case_Data, Case_ID);
+
+	    Report_Listen.log_print_in_report().log(Status.PASS,
+	            "<b>✅ Scenario Completed:</b> Payoff before/after revise captured and revise contract validations executed.<br>"
+	          + "<b>Case ID:</b> " + Case_ID);
+
+	    System.out.println("✅ Scenario Completed for Case ID: " + Case_ID + "\n");
+	}
+
 	    
 	     @Test(dataProvider="case_plus_plaintiff")
 	     public void Buyout_Add_After_Contract_Generation_through_Edit_Terms(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> Email_Send_Data) throws InterruptedException, IOException{
@@ -1620,27 +1869,27 @@ public class Case_Appplications extends Header_Manager{
 	 		p.plaintiff_dropdown_list();
 	 		p.Plaintiff_options().get(0).click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+Plaintiff.get("First Name"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
 	 		p.form_inputs().get(1).sendKeys(Case_Data.get("Case Type"));
 	 		p.form_inputs().get(1).click();
 	 		p.Incident_type_dropdown();
 	 		option_printers("Incident Options are ",p.Incident_options());
 	 		p.Incident_options().get(0).click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Incident/Case type selected from list for input = "+Case_Data.get("Case Type"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select State of Incident from dropdown.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select State of Incident from dropdown.");
 	 		p.form_inputs().get(2).sendKeys(Case_Data.get("State"));
 	 		p.form_inputs().get(2).click();
 	 		p.State_of_incident_dropdown();
 	 		p.State_of_incident_options().get(0).click();
 	 		Thread.sleep(500);	
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> State selected from list for input = "+Case_Data.get("State"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Date of Incident and confirm date selection.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Date of Incident and confirm date selection.");
 	 		WebElement calender_field = p.form_inputs().get(3);
 	 		calender_field.sendKeys(Case_Data.get("Date of Incident"));
 	 		calender_field.click();
 	 		p.calender_date_select().click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Date of Incident entered/selected = "+Case_Data.get("Date of Incident"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
 	 		rp.Scroll_to_element(p.form_inputs().get(4));
 	 		//p.form_inputs().get(4).click();
 	 		p.form_inputs().get(4).sendKeys(Case_Data.get("Lead Source"));
@@ -1650,7 +1899,7 @@ public class Case_Appplications extends Header_Manager{
 	 		p.Lead_dropdown();
 	 		p.Leadoptions().get(0).click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = "+Case_Data.get("Lead Source")+")");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Requested Amount and click Create/Save Case.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Requested Amount and click Create/Save Case.");
 	 		rp.Scroll_to_element(p.form_inputs().get(5));
 	 		p.form_inputs().get(6).sendKeys(Case_Data.get("Requested Amount"));
 	 		p.form_buttons().get(1).click();
@@ -1673,7 +1922,7 @@ public class Case_Appplications extends Header_Manager{
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual </b> ✏️ Case Details edit popup opened, Court Index Number '"+Case_Data.get("Court Index Number")+"' was entered and saved without visible UI errors.");
 	 		Thread.sleep(800);
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+Case_Data.get("Court Index Number")+")");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
 	 		tab_selector("Contacts");
 	 		p.lawFirm_AddButton_ContactTab();
 	 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
@@ -1693,7 +1942,6 @@ public class Case_Appplications extends Header_Manager{
 	 		rp.movetoelement(toast_close);
 	 		toast_close.click();
 	 		rp.wait_for_invisibility(toast);
-	 		
 	 		try {
 	 		p.List_Checkboxes().get(0).click();}
 	 		catch(Exception attorney_searched_not_present){
@@ -1708,7 +1956,7 @@ public class Case_Appplications extends Header_Manager{
 	 		rp.Scroll_to_element(Import_button);
 	 		Import_button.click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Attorney contact selected and added to case contacts.");
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 	 		rp.Scroll_to_element(p.Application_tab_bar());
 	 		try {
 	 			tab_selector("Applications");
@@ -1735,7 +1983,7 @@ public class Case_Appplications extends Header_Manager{
 	 			}
 	 		try {Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
 	 			catch(Exception e){
-	 			Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
+	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
 	 		List<WebElement> Amount_edit_buttons;
 	 	try{Amount_edit_buttons= p.Application_amount_edit_buttons();
@@ -1752,7 +2000,7 @@ public class Case_Appplications extends Header_Manager{
 	 	    p.table_body().click();
 	 	    Thread.sleep(800);
 	 	    Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Approved Amount entered = "+Case_Data.get("Approved Amount"));
-	         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Update Application Status to APPROVED from dropdown.");
+	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Update Application Status to APPROVED from dropdown.");
 	 		rp.movetoelement(p.Application_Details_Dropdown_Feild());
 	 	    p.Application_Details_Dropdown_Feild().click();
 	 	    p.plaintiff_dropdown_list();
@@ -2091,7 +2339,7 @@ public class Case_Appplications extends Header_Manager{
 		 	    System.out.println("✅ First Month Payable: " + Funded_amount_f + " + " + Monthly_Interest_Amount_f + " + "
 		 	            + Document_prep_fee_f + " + " + Fund_transfer_fee_f + " = " + Monthly_Payable_Amount_f);
 		 	    System.out.println("==========================================\n");
-		         System.out.println();
+		        System.out.println();
 		 	    rp.Scroll_to_element(p.Contract_lien_table());
 		 	    
 		 	    List<WebElement> cells = p.Cell_datas();
@@ -2128,9 +2376,9 @@ public class Case_Appplications extends Header_Manager{
 		 	    		"<b>✅ Expected:</b> For every month >= 1, (Current Month Payable - Previous Month Payable) should equal Monthly Interest = "+Monthly_Interest_Amount+".");
 
 		 	    future_months_calculations_check(monthly_emi, Monthly_Interest_Amount);
-		 	   d.switchTo().defaultContent();
-		 	  Thread.sleep(800);
-		 	 p.Save_changes_button().click();
+		 	    d.switchTo().defaultContent();
+		 	    Thread.sleep(800);
+		 	    p.Save_changes_button().click();
 				Thread.sleep(1800);
 		        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast after saving contract.");
 				String contract_saved_ = "";
@@ -3151,11 +3399,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ /*
+		    return new Object[][]{ 
 		        {c1},/*{c2},{c3},{c4},{c5},
-		        {c6},{c7},{c8},{c9},{c10},
-		        {c11},{c12},{c13},{c14},{c15}, */
-		        {c16},/*{c17},{c18},{c19},{c20} */
+		        {c6},{c7},{c8},{c9},{c10},*/
+		        {c11},{c12},{c13},{c14},{c15}, 
+		        {c16},{c17},{c18},{c19},{c20} 
 		    };}
 	
 	
@@ -4108,8 +4356,7 @@ public class Case_Appplications extends Header_Manager{
 					);
 					System.out.println("[Step] Perform Revise Contract flow (Buyout + Interest Start Date + Generate)");
 					System.out.println();
-				   Revise_Contract(Case_Data);
-				   Report_Listen.log_print_in_report().log(Status.INFO,
+   				    Report_Listen.log_print_in_report().log(Status.INFO,
 					        "<b>🟨 Actual:</b> Revise Contract flow executed. Proceeding to open Payoff modal and capture updated payoff values."
 					);
 					System.out.println("Actual: Revise Contract flow executed. Now capturing Payoff values...");
@@ -4151,8 +4398,8 @@ public class Case_Appplications extends Header_Manager{
 			       }
              
            
-           
-              public void Revise_Contract(TreeMap<String, String> Case_Data) throws InterruptedException{
+              
+              public void Revise_Contract(TreeMap<String, String> Case_Data) throws InterruptedException, IOException{
             	  
             	  Application_Locaters p = new Application_Locaters(d);
             	  Repeat rp = new Repeat(d);
@@ -4162,11 +4409,10 @@ public class Case_Appplications extends Header_Manager{
             	  int Initial_buyout_amount_from_data_provider = Integer.parseInt(Case_Data.get("Buyout Amount"));
             	  double New_Buyout_Amount = Initial_buyout_amount_from_data_provider/3.0;
             	  double New_Buyout_Amount_Upto_Two_Decimal = Double.parseDouble(String.format("%.2f", New_Buyout_Amount));
-            	  String New_Buyout_Amount_String= Double.toString(New_Buyout_Amount_Upto_Two_Decimal);
-            	  String Buyout_Funder = Case_Data.get("Buyout Funder Name");
+            	  String New_Buyout_Amount_String = String.format("%.2f", New_Buyout_Amount_Upto_Two_Decimal);
+                  String Buyout_Funder = Case_Data.get("Buyout Funder Name");
             	  String Buyout_date = Case_Data.get("Buyout Expiry Date");
             	  double Amount_to_Plaintiff;
-            	  
             	  double lienAmount_upto_2_decimal; 
 	    		  double principal_upto_2_decimal;  
 	    		  double lienBalance_upto_2_decimal;
@@ -4175,6 +4421,12 @@ public class Case_Appplications extends Header_Manager{
 	   		      TOTAL_PRINCIPAL_Values.clear();
 	   		      CURRENT_LIEN_BALANCE_Values.clear();
 	   		      RETURNED_AMT_Values.clear();
+	   		      
+	   		     
+	   		      
+	   		      //Particular_Lien_Accessor("https://logbook.wechopfees.com/cases/details/840/Liens");
+	   		      
+	   		       
             	  int step = 1;
 
             	  Report_Listen.log_print_in_report().log(Status.INFO,
@@ -4204,7 +4456,32 @@ public class Case_Appplications extends Header_Manager{
             	  WebElement Revise_contract_form=  p.second_pop_up_form();
       	 	      Thread.sleep(800);
       	 	      rp.movetoelement(Revise_contract_form);
-      	 	      WebElement Buyout_Button = p.Add_Buyout_button();
+      	 	      WebElement Buyout_Button;
+      	 	      try{
+      	 	    	 Buyout_Button = p.Add_Buyout_button();}
+      	 	      catch(Exception buyouy_button_not_found){
+      	 	    // ✅ Extent log (catch + retry)
+      	 	       Report_Listen.log_print_in_report().log(Status.INFO,
+      	 	               "<b>🟡 Retry:</b> <b>Add Buyout</b> button was not found on first attempt. Waiting 800ms and retrying once.<br>"
+      	 	             + "<b>🟡 Exception:</b> " + buyouy_button_not_found.getClass().getSimpleName());
+
+      	 	       // ✅ Console log (catch + retry)
+      	 	       System.out.println("⚠️ First attempt FAILED to locate 'Add Buyout' button");
+      	 	       System.out.println("Retry Plan : Wait 800ms and retry once");
+      	 	       System.out.println("Exception  : " + buyouy_button_not_found.getClass().getSimpleName());
+      	 	       System.out.println();
+
+      	 	       Thread.sleep(800);
+      	 	       Buyout_Button = p.Add_Buyout_button();
+
+      	 	       // ✅ Extent log (retry success)
+      	 	       Report_Listen.log_print_in_report().log(Status.PASS,
+      	 	               "<b>🟨 Actual:</b> ✅ <b>Add Buyout</b> button found successfully after retry."
+      	 	       );
+
+      	 	       // ✅ Console log (retry success)
+      	 	       System.out.println("✅ Actual: 'Add Buyout' button found successfully after retry");
+      	 	       System.out.println();}
       	 	      rp.movetoelement(Buyout_Button);
       	 	      Buyout_Button.click();
       	 	      List<WebElement> buyout_inputs = p.Third_popup_form_inputs();
@@ -4252,6 +4529,10 @@ public class Case_Appplications extends Header_Manager{
    	 							? "<b>✅ Result:</b> Buyout details match in Edit Terms.<br><br>"
    	 							: "<b>❌ Result:</b> Buyout details do NOT match in Edit Terms.<br><br>")
    	 							+ match_log);}
+      	 	      Thread.sleep(800);
+      	 	      WebElement Rerendered_Revise_contract_form= p.second_pop_up_form();
+	 	          Thread.sleep(800);
+	 	          rp.movetoelement(Rerendered_Revise_contract_form);
       	 	      WebElement Interest_start_date_field = p.Interest_Start_Date();
       	 	      rp.Scroll_to_element(Interest_start_date_field);
       	 	      rp.movetoelement(Interest_start_date_field);
@@ -4269,8 +4550,20 @@ public class Case_Appplications extends Header_Manager{
       		      rp.wait_for_theElement_tobe_clickable(Generate_Contract_Button);
       		      js.executeScript("arguments[0].click();", Generate_Contract_Button);
       		      Thread.sleep(800);
+      		      Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);
+      		      Thread.sleep(800);
       		      WebElement Modal = p.popup_modal();
-      		      List<WebElement> Labels = p.Lien_Details_field_labels();
+      		      List<WebElement> Labels;
+      		      try {Labels= p.Lien_Details_field_labels();}
+      		      catch(Exception mmll){
+      		    	  Thread.sleep(800);
+      		    	Labels= p.Lien_Details_field_labels();
+      		    	System.out.println("⚠️ First attempt FAILED to fetch labels");
+      		    	System.out.println();
+      		        System.out.println("Retry Plan: Wait 800ms and retry once");
+      		        System.out.println();
+      		      }
+      		      
       		      List<WebElement> Values = p.Lien_Details_field_values();
       		      for(int v=0;v<Math.min(Labels.size(), Values.size());v++){
       		    	  String Label_text = Labels.get(v).getText().trim();
@@ -4286,11 +4579,11 @@ public class Case_Appplications extends Header_Manager{
       		      }
       		      
       		    Amount_to_Plaintiff = pop_up_modal_label_values.get("AMOUNT TO PLAINTIFF:");
-
-      		  String Buyout_Amount_from_modal = String.format("%.2f", pop_up_modal_label_values.get("BUYOUT AMOUNT:"));
+                double Buyout_Amount_from_modal = pop_up_modal_label_values.get("BUYOUT AMOUNT:");
+      		  String Buyout_Amount_from_modal_String = String.format("%.2f", Buyout_Amount_from_modal);
 
       		String expectedBuyout = New_Buyout_Amount_String;
-      		String actualBuyout   = Buyout_Amount_from_modal;
+      		String actualBuyout   = Buyout_Amount_from_modal_String;
 
       		if (actualBuyout.equalsIgnoreCase(expectedBuyout)) {
 
@@ -4351,6 +4644,7 @@ public class Case_Appplications extends Header_Manager{
 
       		WebElement Modal_close = p.Close_Button();
       		Modal_close.click();
+      		Thread.sleep(900);
       		try {
       		lien_rows =p.Open_Lien_table_contents();}
       		catch(Exception lien_row_catch){
@@ -4388,12 +4682,24 @@ public class Case_Appplications extends Header_Manager{
 	        	    lienBalance_upto_2_decimal = Double.parseDouble(String.format("%.2f", lienBalance_raw));
 	        	    paidAmount_upto_2_decimal  = Double.parseDouble(String.format("%.2f", paidAmount_raw));
 	        	    
+	        	    WebElement lien_amount_cell = fourth_cells.get(m);
+	        	    rp.Scroll_to_element(lien_amount_cell);
+	        	    Thread.sleep(500);
 	        	    LIEN_AMOUNT_Values.put("Lien Amounts"+m,  lienAmount_upto_2_decimal);
+	        	    WebElement Principal_cell = Fifth_cells.get(m);
+	        	    rp.Scroll_to_element(Principal_cell);
+	        	    Thread.sleep(500);
 	    		    TOTAL_PRINCIPAL_Values.put("Principal Amount"+m,  principal_upto_2_decimal);
+	    		    WebElement Current_lien_cell = Sixth_cells.get(m);
+	        	    rp.Scroll_to_element(Current_lien_cell);
+	        	    Thread.sleep(500);
 	    		    CURRENT_LIEN_BALANCE_Values.put("Lien Balance"+m,  lienBalance_upto_2_decimal);
+	    		    WebElement Return_amount_cell = Seventh_cells.get(m);
+	        	    rp.Scroll_to_element(Return_amount_cell);
+	        	    Thread.sleep(500);
 	    		    RETURNED_AMT_Values.put("Paid Amount"+m,  paidAmount_upto_2_decimal);}
 	           
-	           double Lien_Balance_From_Table = CURRENT_LIEN_BALANCE_Values.get("Lien Balance0");
+	           double Lien_Balance_From_Table = LIEN_AMOUNT_Values.get("Lien Amounts0");
 
 	           double Difference = Double.parseDouble(String.format("%.2f",
 	                   Math.abs(Lien_Balance_From_Table - LIEN_AMOUNT_in_LIEN_Table_Calculated_Upto_Two_Decimal)));
@@ -4435,6 +4741,25 @@ public class Case_Appplications extends Header_Manager{
 	                       + ", Diff=" + Difference + ", Tolerance=" + tolerance);
 	           }}
 	        
+              @Test
+              public void Particular_Lien_Accessor(String Url) throws IOException, InterruptedException{
+            	 
+            	Sidemenu_Locaters p = new Sidemenu_Locaters(d);
+              	Login_Locaters lg = new Login_Locaters(d);
+              	Repeat rp = new Repeat(d);  
+              	 Application_Locaters ap = new Application_Locaters(d);  
+            	  
+            	  
+            	 
+            	String lien_url = Url;
+            	login(d);
+            	p.Side_Menu();
+            	d.get(lien_url);
+            	ap.Landed_in_lien_List();
+            	Thread.sleep(800);
+            	  
+            	  
+              }
 	       
 		      public void Pay_off_lien_list_After_payment_data_fetcher(String Case_Id) throws IOException, InterruptedException{
 		    	  
