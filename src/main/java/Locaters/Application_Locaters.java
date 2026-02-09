@@ -114,7 +114,7 @@ public class Application_Locaters extends Login_Locaters{
 	private WebElement  Lien_table_empty; 
 	@FindBy(xpath="(//tbody[@class='ant-table-tbody'])[1]")
 	private WebElement First_table_body; 
-	@FindBy(xpath="//div[@class='ant-card-body']//button")
+	@FindBy(xpath="//*[text()='Case Actions']/..")
 	private WebElement Case_Action_Dropdown; 
 	@FindBy(xpath="//div[@class='ant-dropdown css-1egwh03 ant-dropdown-placement-bottomLeft']//*[@role='menu']")
 	private WebElement Case_Action_Dropdown_list; 
@@ -403,7 +403,7 @@ public class Application_Locaters extends Login_Locaters{
 	return status_field_clear_button;}
 	public WebElement landed_in_applicationList_confirmation(){
 	wait_for_theElement(landed_in_applicationList_confirmation);
-	Toast_close_button().click();
+	
 	return landed_in_applicationList_confirmation;}
 	public WebElement table_body(){
 	wait_for_theElement(table_body);

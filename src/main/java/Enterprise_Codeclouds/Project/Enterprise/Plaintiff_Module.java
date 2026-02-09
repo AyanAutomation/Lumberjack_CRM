@@ -26,142 +26,322 @@ public class Plaintiff_Module extends Case_Appplications{
 	TreeMap<String,String> plaintiff_Details_labels_and_contents = new TreeMap<String,String>();
 	
 	@Test(dataProvider="plaintiffData")
-	public void Plaintiff_Add(TreeMap<String,String> data) throws IOException, InterruptedException{
+	public void Plaintiff_Add(TreeMap<String,String> data) throws IOException, InterruptedException {
 
-		SIde_Menu_Handler sd=new SIde_Menu_Handler();
-		Plaintiff_Locaters p=new Plaintiff_Locaters(d);
-		Repeat rp=new Repeat(d);
-		Login_Locaters lg=new Login_Locaters(d);
-		Application_Locaters ap = new Application_Locaters(d);
+	    SIde_Menu_Handler sd = new SIde_Menu_Handler();
+	    Plaintiff_Locaters p = new Plaintiff_Locaters(d);
+	    Repeat rp = new Repeat(d);
+	    Login_Locaters lg = new Login_Locaters(d);
+	    Application_Locaters ap = new Application_Locaters(d);
 
-		int step=1;
-		
-		String Plaintiff_firstname = data.get("First Name");
+	    // ✅ Fetch once from map (reuse everywhere)
+	    String firstName  = data.get("First Name");
+	    String middleName = data.get("Middle Name");
+	    String lastName   = data.get("Last Name");
+	    String suffix     = data.get("Name Suffix");
 
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🔹 Scenario Title:</b> Add New Plaintiff with Valid Details");
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📘 Description:</b> User opens Plaintiffs module from side menu, fills all mandatory plaintiff details (name, contact, DOB, state/zip, address) and submits the form to create a new plaintiff profile.");
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>📥 Input:</b> FirstName="+data.get("First Name")+", MiddleName="+data.get("Middle Name")+", LastName="+data.get("Last Name")+", Suffix="+data.get("Name Suffix")+", Email="+data.get("Email")+", SSN="+data.get("Social Security Number")+", Phone="+data.get("Phone number")+", DOB="+data.get("Date of Birth")+", State="+data.get("State")+", Zip="+data.get("Zip code")+", Address1="+data.get("Address Line 1")+", Address2="+data.get("Address Line 2"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>✅ Expected:</b> System should create the plaintiff without validation errors and show a success toast. Newly created plaintiff should be visible in the plaintiff list or profile view.");
+	    String email      = data.get("Email");
+	    String ssn        = data.get("Social Security Number");
+	    String phone      = data.get("Phone number");
 
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Plaintiffs module from side menu.");
-		sd.Side_menu_option_clicker("Plaintiffs",d,"N/A");
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Clicked Plaintiffs option in side menu.");
+	    String dob        = data.get("Date of Birth");
+	    String city       = data.get("City");
+	    String state      = data.get("State");
+	    String zip        = data.get("Zip code");
 
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Verify user landed inside Plaintiffs module.");
-		p.landed_in_plaintiff_module();
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiffs module landing verification executed.");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Scroll to Add Plaintiff form.");
-		rp.Scroll_to_element(p.form());
-		Thread.sleep(800);
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Add Plaintiff form is in view.");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Name fields (First, Middle, Last, Suffix).");
-		List<WebElement> input_feilds=p.inputs();
-		input_feilds.get(0).sendKeys(Plaintiff_firstname);
-		input_feilds.get(1).sendKeys(data.get("Middle Name"));
-		input_feilds.get(2).sendKeys(data.get("Last Name"));
-		input_feilds.get(3).sendKeys(data.get("Name Suffix"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Name fields filled for plaintiff = "+data.get("First Name")+" "+data.get("Middle Name")+" "+data.get("Last Name")+" "+data.get("Name Suffix"));
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Contact + Identity details (Email, SSN, Phone).");
-		input_feilds.get(5).sendKeys(data.get("Email"));
-		input_feilds.get(7).sendKeys(data.get("Social Security Number"));
-		input_feilds.get(4).sendKeys(data.get("Phone number"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Email/SSN/Phone filled (Email="+data.get("Email")+", SSN="+data.get("Social Security Number")+", Phone="+data.get("Phone number")+")");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill DOB + Location details (DOB, State, Zip).");
-		input_feilds.get(6).sendKeys(data.get("Date of Birth"));
-		input_feilds.get(8).sendKeys(data.get("City"));
-		input_feilds.get(9).sendKeys(data.get("State"));
-		ap.plaintiff_dropdown_list();
-		ap.Plaintiff_options().get(0).click();
-		input_feilds.get(10).sendKeys(data.get("Zip code"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> DOB/State/Zip filled (DOB="+data.get("Date of Birth")+", State="+data.get("State")+", Zip="+data.get("Zip code")+")");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Address fields (Address Line 1 & 2).");
-		List<WebElement> textArea_areas=p.text_area_fields();
-		rp.Scroll_to_element(textArea_areas.get(0));
-		textArea_areas.get(0).sendKeys(data.get("Address Line 1"));
-		textArea_areas.get(1).sendKeys(data.get("Address Line 2"));
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Address fields filled (Address1="+data.get("Address Line 1")+", Address2="+data.get("Address Line 2")+")");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click Add Plaintiff button to submit the form.");
-		WebElement Add_plaintiff_Button=p.form_buttons().get(0);
-		rp.Scroll_to_element(Add_plaintiff_Button);
-		Add_plaintiff_Button.click();
-		Thread.sleep(800);
-		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Add Plaintiff button clicked.");
-        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Capture toast message after submission.");
-        WebElement Toast = lg.toast();
-		try{Toast = lg.toast();
-			String toast=Toast.getText().trim();
-			Report_Listen.log_print_in_report().log(Status.PASS,"<b>🟨 Actual:</b> ✅ Toast after adding plaintiff = "+toast);
-			Report_Listen.log_print_in_report().log(Status.PASS,"<b>✅ Final Result:</b> Plaintiff add flow executed for Email="+data.get("Email")+" | Phone="+data.get("Phone number"));
-			System.out.println(toast);
-			rp.wait_for_invisibility(Toast);}catch(Exception e){
-			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>🟨 Actual:</b> ❌ Toast not captured after Add Plaintiff (toast not visible / locator issue).");
-			Report_Listen.log_print_in_report().log(Status.FAIL,"<b>❌ Final Result:</b> Form submitted but success confirmation was not captured for Email="+data.get("Email"));
-			throw e;}
-		plaintiff_details_reader(data);
+	    String addr1      = data.get("Address Line 1");
+	    String addr2      = data.get("Address Line 2");
+
+	    int step = 1;
+
+	    // =========================
+	    // ✅ Scenario Header (Extent)
+	    // =========================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🔹 Scenario Title:</b> Add New Plaintiff (Create + Verify Details)<br>" +
+	            "<b>📘 Description:</b> Open Plaintiffs module, fill form with valid details, submit, capture toast, then verify details in profile.<br>" +
+	            "<b>📥 Input:</b> " +
+	            "Name=<b>" + firstName + " " + middleName + " " + lastName + " " + suffix + "</b> | " +
+	            "Email=<b>" + email + "</b> | Phone=<b>" + phone + "</b> | " +
+	            "DOB=<b>" + dob + "</b> | City=<b>" + city + "</b> | State=<b>" + state + "</b> | Zip=<b>" + zip + "</b><br>" +
+	            "<b>✅ Expected:</b> Plaintiff should be created successfully and success toast should appear. Newly created plaintiff should be visible and details should match."
+	    );
+
+	    // =========================
+	    // ✅ Console Header
+	    // =========================
+	    System.out.println("\n==================================================");
+	    System.out.println("[SCENARIO] Add New Plaintiff (Create + Verify Details)");
+	    System.out.println("Name   : " + firstName + " " + middleName + " " + lastName + " " + suffix);
+	    System.out.println("Email  : " + email);
+	    System.out.println("Phone  : " + phone);
+	    System.out.println("DOB    : " + dob);
+	    System.out.println("State  : " + state + " | Zip: " + zip);
+	    System.out.println("==================================================\n");
+
+	    // Step 1
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Open Plaintiffs module from side menu.");
+	    System.out.println("[Step] Open Plaintiffs module from side menu");
+	    sd.Side_menu_option_clicker("Plaintiffs", d, "N/A");
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Clicked Plaintiffs option in side menu.");
+	    System.out.println("Actual: Plaintiffs menu clicked\n");
+
+	    // Step 2
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Verify user landed inside Plaintiffs module.");
+	    System.out.println("[Step] Verify landing in Plaintiffs module");
+	    p.landed_in_plaintiff_module();
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Plaintiffs module landing verification executed.");
+	    System.out.println("Actual: Landing confirmed\n");
+
+	    // Step 3
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Scroll to Add Plaintiff form.");
+	    System.out.println("[Step] Scroll to Add Plaintiff form");
+	    rp.Scroll_to_element(p.form());
+	    Thread.sleep(800);
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Add Plaintiff form is in view.");
+	    System.out.println("Actual: Form visible\n");
+
+	    // Step 4
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Fill Name fields (First, Middle, Last, Suffix).");
+	    System.out.println("[Step] Fill Name fields");
+	    List<WebElement> input_fields = p.inputs();
+	    input_fields.get(0).sendKeys(firstName);
+	    input_fields.get(1).sendKeys(middleName);
+	    input_fields.get(2).sendKeys(lastName);
+	    input_fields.get(3).sendKeys(suffix);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Name entered = <b>" + firstName + " " + middleName + " " + lastName + " " + suffix + "</b>");
+	    System.out.println("Actual: Name filled\n");
+
+	    // Step 5
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Fill Contact + Identity details (Email, SSN, Phone).");
+	    System.out.println("[Step] Fill Email/SSN/Phone");
+	    input_fields.get(5).sendKeys(email);
+	    input_fields.get(7).sendKeys(ssn);
+	    input_fields.get(4).sendKeys(phone);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Contact entered = Email=<b>" + email + "</b> | SSN=<b>" + ssn + "</b> | Phone=<b>" + phone + "</b>");
+	    System.out.println("Actual: Contact details filled\n");
+
+	    // Step 6
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Fill DOB + Location details (DOB, City, State, Zip).");
+	    System.out.println("[Step] Fill DOB + City + State + Zip");
+	    input_fields.get(6).sendKeys(dob);
+	    input_fields.get(8).sendKeys(city);
+	    input_fields.get(9).sendKeys(state);
+
+	    ap.plaintiff_dropdown_list();
+	    ap.Plaintiff_options().get(0).click();
+
+	    input_fields.get(10).sendKeys(zip);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Location entered = DOB=<b>" + dob + "</b> | City=<b>" + city + "</b> | State=<b>" + state + "</b> | Zip=<b>" + zip + "</b>");
+	    System.out.println("Actual: DOB & location filled\n");
+
+	    // Step 7
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Fill Address fields (Address Line 1 & 2).");
+	    System.out.println("[Step] Fill Address fields");
+	    List<WebElement> textAreas = p.text_area_fields();
+	    rp.Scroll_to_element(textAreas.get(0));
+	    textAreas.get(0).sendKeys(addr1);
+	    textAreas.get(1).sendKeys(addr2);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🟨 Actual:</b> Address entered = <b>" + addr1 + "</b> | <b>" + addr2 + "</b>");
+	    System.out.println("Actual: Address filled\n");
+
+	    // Step 8
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Click Add Plaintiff button to submit the form.");
+	    System.out.println("[Step] Submit Add Plaintiff form");
+	    WebElement addPlaintiffBtn = p.form_buttons().get(0);
+	    rp.Scroll_to_element(addPlaintiffBtn);
+	    addPlaintiffBtn.click();
+	    Thread.sleep(800);
+
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>🟨 Actual:</b> Add Plaintiff button clicked.");
+	    System.out.println("Actual: Submit clicked\n");
+
+	    // Step 9
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Capture toast message after submission.");
+	    System.out.println("[Step] Capture toast after submission");
+
+	    WebElement toastElement = lg.toast();
+	    try {
+	        String toastText = toastElement.getText().trim();
+
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>🟨 Actual:</b> ✅ Toast captured = <b>" + toastText + "</b>");
+
+	        Report_Listen.log_print_in_report().log(Status.PASS,
+	                "<b>✅ Final Result:</b> Plaintiff created successfully for Email=<b>" + email + "</b> | Phone=<b>" + phone + "</b>");
+
+	        System.out.println("✅ Toast: " + toastText + "\n");
+	        rp.wait_for_invisibility(toastElement);
+
+	    } catch (Exception e) {
+	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>🟨 Actual:</b> ❌ Toast not captured after Add Plaintiff (toast not visible / locator issue).");
+
+	        Report_Listen.log_print_in_report().log(Status.FAIL,
+	                "<b>❌ Final Result:</b> Form submitted but success confirmation was not captured for Email=<b>" + email + "</b>");
+
+	        System.out.println("❌ FAIL: Toast not captured after submit\n");
+	        throw e;
+	    }
+
+	    // ✅ same call as your existing flow
+	    plaintiff_details_reader(data);
 	}
+
 	
 	
 	
-	  public void plaintiff_details_reader(TreeMap<String,String> Plaintiff_Add_Data) throws InterruptedException{
-		
-		    SIde_Menu_Handler sd=new SIde_Menu_Handler();
-			Plaintiff_Locaters p=new Plaintiff_Locaters(d);
-			Repeat rp=new Repeat(d);
-			Login_Locaters lg=new Login_Locaters(d);
-			Application_Locaters ap = new Application_Locaters(d);
-		  
-			String Plaintiff_firstname = Plaintiff_Add_Data.get("First Name");
-			String Plaintiff_Middle_Name = Plaintiff_Add_Data.get("Middle Name");
-			String Plaintiff_Last_Name = Plaintiff_Add_Data.get("Last Name");
-			String Plaintiff_Name_Suffix = Plaintiff_Add_Data.get("Name Suffix");
-			String Plaintiff_Email = Plaintiff_Add_Data.get("Email");
-			String Plaintiff_Social_Security_Number = Plaintiff_Add_Data.get("Social Security Number");
-			String Plaintiff_Phonenumber = Plaintiff_Add_Data.get("Phone number");
-			String Plaintiff_Date_of_Birth = Plaintiff_Add_Data.get("Date of Birth");
-			String Plaintiff_City = Plaintiff_Add_Data.get("City");
-			String Plaintiff_State = Plaintiff_Add_Data.get("State");
-			String Plaintiff_Address_Line_1 = Plaintiff_Add_Data.get("Address Line 1");
-			String Plaintiff_Address_Line_2 = Plaintiff_Add_Data.get("Address Line 2");
-			String Plaintiff_Zipcode = Plaintiff_Add_Data.get("Zip code");
-			
-			plaintiff_Details_labels_and_contents.clear();
-			
-			
-			rp.Scroll_to_element(ap.table_body());
-			Thread.sleep(1200);
-			 List<WebElement> table_rows;
-				try {
-				table_rows = ap.rows();}
-				catch(Exception tabs) {
-					Thread.sleep(800);
-					table_rows = ap.rows();}
-					WebElement first_row = table_rows.get(0);
-					String First_row_contents = first_row.getText().trim();
-					System.out.println(First_row_contents.contains(Plaintiff_firstname)?"Testcase passed added plaintiff "+Plaintiff_firstname+ " shown in first row of above table":"Testcase failed added plaintiff "+Plaintiff_firstname+ " not shown in first row of above table");
-					if(First_row_contents.contains(Plaintiff_firstname)){
-						
-						first_row.click();
-						p.Landed_in_Plaintiff_details_page();
-						Thread.sleep(950);
-						List<WebElement> Details_Labels = p.Labels();
-						List<WebElement> Details_Values = p.Values();
-						if(Details_Labels.size()==Details_Values.size()){
-						for(int mk=0; mk<Details_Labels.size();mk++){
-							String Label_text = Details_Labels.get(mk).getText().trim();
-							String Values_text = Details_Values.get(mk).getText().trim();
-							plaintiff_Details_labels_and_contents.put(Label_text, Values_text);}}}
-	  
-					for(var pair:plaintiff_Details_labels_and_contents.entrySet()){
-					
-						String key = pair.getKey();
-						String value = pair.getValue();
-						
-						if(key.contains("Address")){
-							
-							System.out.println(value.contains(Plaintiff_City)&&value.contains(Plaintiff_State)&&value.contains(Plaintiff_Address_Line_1)&&value.contains(Plaintiff_Address_Line_2)&&value.contains(Plaintiff_Zipcode)?"Testcase Passed Address contains "+Plaintiff_City+" "+Plaintiff_State+" "+Plaintiff_Address_Line_1+" "+Plaintiff_Address_Line_2+" "+Plaintiff_Zipcode:"Testcase Failed Address doesn't contains "+Plaintiff_City+" "+Plaintiff_State+" "+Plaintiff_Address_Line_1+" "+Plaintiff_Address_Line_2+" "+Plaintiff_Zipcode);
-							System.out.println();}}
-	  
-	  }
+	public void plaintiff_details_reader(TreeMap<String,String> Plaintiff_Add_Data) throws InterruptedException {
+
+	    Plaintiff_Locaters p = new Plaintiff_Locaters(d);
+	    Repeat rp = new Repeat(d);
+	    Application_Locaters ap = new Application_Locaters(d);
+
+	    // ✅ Fetch once from map (reuse everywhere)
+	    String firstName  = Plaintiff_Add_Data.get("First Name");
+	    String middleName = Plaintiff_Add_Data.get("Middle Name");
+	    String lastName   = Plaintiff_Add_Data.get("Last Name");
+	    String suffix     = Plaintiff_Add_Data.get("Name Suffix");
+
+	    String email      = Plaintiff_Add_Data.get("Email");
+	    String phone      = Plaintiff_Add_Data.get("Phone number");
+
+	    String dob        = Plaintiff_Add_Data.get("Date of Birth");
+	    String city       = Plaintiff_Add_Data.get("City");
+	    String state      = Plaintiff_Add_Data.get("State");
+	    String addr1      = Plaintiff_Add_Data.get("Address Line 1");
+	    String addr2      = Plaintiff_Add_Data.get("Address Line 2");
+	    String zip        = Plaintiff_Add_Data.get("Zip code");
+
+	    plaintiff_Details_labels_and_contents.clear();
+
+	    // =========================
+	    // Extent Header
+	    // =========================
+	    Report_Listen.log_print_in_report().log(Status.INFO,
+	            "<b>🔹 Scenario Title:</b> Plaintiff Details Verification<br>" +
+	            "<b>📘 Description:</b> From Plaintiffs list, open first row profile and capture Label-Value pairs, then validate Address contains expected fields.<br>" +
+	            "<b>📥 Input:</b> Plaintiff=<b>" + firstName + " " + middleName + " " + lastName + "</b> | Email=<b>" + email + "</b><br>" +
+	            "<b>✅ Expected:</b> Newly added plaintiff should appear in top row and Address section should contain city/state/address lines/zip."
+	    );
+
+	    // =========================
+	    // Console Header
+	    // =========================
+	    System.out.println("==================================================");
+	    System.out.println("[SCENARIO] Plaintiff Details Verification");
+	    System.out.println("Expected Plaintiff First Name : " + firstName);
+	    System.out.println("Expected Address Should Contain: " + city + ", " + state + ", " + addr1 + ", " + addr2 + ", " + zip);
+	    System.out.println("==================================================\n");
+
+	    Report_Listen.log_print_in_report().log(Status.INFO, "<b>📌 Action:</b> Read first row from table and verify plaintiff is present.");
+	    System.out.println("[Action] Read first row from table");
+
+	    rp.Scroll_to_element(ap.table_body());
+	    Thread.sleep(1200);
+
+	    List<WebElement> table_rows;
+	    try {
+	        table_rows = ap.rows();
+	    } catch (Exception tabs) {
+	        Thread.sleep(800);
+	        table_rows = ap.rows();
+	    }
+
+	    WebElement first_row = table_rows.get(0);
+	    String first_row_contents = first_row.getText().trim();
+
+	    boolean isPlaintiffPresent = first_row_contents.contains(firstName);
+
+	    Report_Listen.log_print_in_report().log(isPlaintiffPresent ? Status.PASS : Status.FAIL,
+	            isPlaintiffPresent
+	                    ? "<b>✅ Result:</b> Plaintiff <b>" + firstName + "</b> found in first table row."
+	                    : "<b>❌ Result:</b> Plaintiff <b>" + firstName + "</b> NOT found in first table row.");
+
+	    System.out.println(isPlaintiffPresent
+	            ? "✅ PASS: Added plaintiff '" + firstName + "' shown in first row."
+	            : "❌ FAIL: Added plaintiff '" + firstName + "' NOT shown in first row.");
+	    System.out.println();
+
+	    if (isPlaintiffPresent) {
+
+	        Report_Listen.log_print_in_report().log(Status.INFO, "<b>📌 Action:</b> Open plaintiff profile by clicking first row.");
+	        System.out.println("[Action] Open plaintiff profile");
+
+	        first_row.click();
+	        p.Landed_in_Plaintiff_details_page();
+	        Thread.sleep(950);
+
+	        List<WebElement> detailsLabels = p.Labels();
+	        List<WebElement> detailsValues = p.Values();
+
+	        Report_Listen.log_print_in_report().log(Status.INFO,
+	                "<b>🟨 Actual:</b> Labels found = <b>" + detailsLabels.size() + "</b> | Values found = <b>" + detailsValues.size() + "</b>");
+	        System.out.println("Actual: Labels=" + detailsLabels.size() + " | Values=" + detailsValues.size());
+	        System.out.println();
+
+	        if (detailsLabels.size() == detailsValues.size()) {
+
+	            for (int i = 0; i < detailsLabels.size(); i++) {
+	                String labelText = detailsLabels.get(i).getText().trim();
+	                String valueText = detailsValues.get(i).getText().trim();
+	                plaintiff_Details_labels_and_contents.put(labelText, valueText);
+	            }
+
+	            Report_Listen.log_print_in_report().log(Status.INFO,
+	                    "<b>🟨 Actual:</b> Stored Label-Value pairs = <b>" + plaintiff_Details_labels_and_contents.size() + "</b>");
+	            System.out.println("Actual: Stored label-value pairs = " + plaintiff_Details_labels_and_contents.size());
+	            System.out.println();
+
+	        } else {
+	            Report_Listen.log_print_in_report().log(Status.FAIL,
+	                    "<b>❌ Result:</b> Labels and Values count mismatch. Cannot build label-value map reliably.");
+	            System.out.println("❌ FAIL: Labels and values count mismatch.\n");
+	        }
+	    }
+
+	    // =========================
+	    // Address validation
+	    // =========================
+	    for (var pair : plaintiff_Details_labels_and_contents.entrySet()) {
+
+	        String key = pair.getKey();
+	        String value = pair.getValue();
+
+	        if (key.contains("Address")) {
+
+	            boolean addressMatched =
+	                    value.contains(city) &&
+	                    value.contains(state) &&
+	                    value.contains(addr1) &&
+	                    value.contains(addr2) &&
+	                    value.contains(zip);
+
+	            Report_Listen.log_print_in_report().log(addressMatched ? Status.PASS : Status.FAIL,
+	                    addressMatched
+	                            ? "<b>✅ Address Check:</b> Address contains expected fields.<br><b>Actual:</b> " + value
+	                            : "<b>❌ Address Check:</b> Address missing expected fields.<br><b>Actual:</b> " + value +
+	                              "<br><b>Expected to contain:</b> " + city + ", " + state + ", " + addr1 + ", " + addr2 + ", " + zip
+	            );
+
+	            System.out.println(addressMatched
+	                    ? "✅ PASS: Address contains expected details."
+	                    : "❌ FAIL: Address does NOT contain expected details.");
+	            System.out.println("Actual Address: " + value);
+	            System.out.println("Expected to contain: " + city + ", " + state + ", " + addr1 + ", " + addr2 + ", " + zip);
+	            System.out.println("--------------------------------------------------\n");
+	        }
+	    }
+	}
+
 		
 		
 		
@@ -943,304 +1123,306 @@ public class Plaintiff_Module extends Case_Appplications{
 	public Object[][] plaintiffData() {
 
 		TreeMap<String, String> p1 = new TreeMap<>();
-	    p1.put("First Name", "Émile");
-	    p1.put("Middle Name", "Raymond");
-	    p1.put("Last Name", "Bouchard");
-	    p1.put("Name Suffix", "Jr");
-	    p1.put("Email", "emile.bouchard.n7f4q2@yopmail.com");
-	    p1.put("Social Security Number", "934-11-7028");
-	    p1.put("Phone number", "2125957408");
-	    p1.put("Date of Birth", "02/19/1990");
-	    p1.put("State", "New York");
-	    p1.put("City", "New York");
-	    p1.put("Zip code", "10001");
-	    p1.put("Address Line 1", "350 W 34th St");
-	    p1.put("Address Line 2", "Apt 12B");
+	    p1.put("First Name", "Kateri");
+	    p1.put("Middle Name", "Noélie");
+	    p1.put("Last Name", "Wapistan");
+	    p1.put("Name Suffix", "II");
+	    p1.put("Email", "pltf.wapistan.kateri.r8v2qj.41p9@yopmail.com");
+	    p1.put("Social Security Number", "741-28-9061");
+	    p1.put("Phone number", "9196725038");
+	    p1.put("Date of Birth", "03/07/1991");
+	    p1.put("State", "North Carolina");
+	    p1.put("City", "Raleigh");
+	    p1.put("Zip code", "27601");
+	    p1.put("Address Line 1", "227 Fayetteville St");
+	    p1.put("Address Line 2", "Unit 1904");
 
 	    TreeMap<String, String> p2 = new TreeMap<>();
-	    p2.put("First Name", "Camille");
-	    p2.put("Middle Name", "Noémie");
-	    p2.put("Last Name", "Gagné");
-	    p2.put("Name Suffix", "II");
-	    p2.put("Email", "camille.gagne.r3k9m1@yopmail.com");
-	    p2.put("Social Security Number", "935-22-4186");
-	    p2.put("Phone number", "2134708896");
-	    p2.put("Date of Birth", "07/08/1992");
-	    p2.put("State", "California");
-	    p2.put("City", "Los Angeles");
-	    p2.put("Zip code", "90017");
-	    p2.put("Address Line 1", "600 S Flower St");
-	    p2.put("Address Line 2", "Unit 2107");
+	    p2.put("First Name", "Niska");
+	    p2.put("Middle Name", "Éloïse");
+	    p2.put("Last Name", "Kisikaw");
+	    p2.put("Name Suffix", "Jr");
+	    p2.put("Email", "pltf.kisikaw.niska.m3t7xk.0z6d@yopmail.com");
+	    p2.put("Social Security Number", "752-63-1148");
+	    p2.put("Phone number", "4109387716");
+	    p2.put("Date of Birth", "11/18/1993");
+	    p2.put("State", "Maryland");
+	    p2.put("City", "Baltimore");
+	    p2.put("Zip code", "21202");
+	    p2.put("Address Line 1", "10 Light St");
+	    p2.put("Address Line 2", "Suite 1408");
 
 	    TreeMap<String, String> p3 = new TreeMap<>();
-	    p3.put("First Name", "Mathieu");
-	    p3.put("Middle Name", "Olivier");
-	    p3.put("Last Name", "Tremblay");
-	    p3.put("Name Suffix", "Sr");
-	    p3.put("Email", "mathieu.tremblay.v8p6d3@yopmail.com");
-	    p3.put("Social Security Number", "936-33-5901");
-	    p3.put("Phone number", "3128461907");
-	    p3.put("Date of Birth", "11/03/1988");
-	    p3.put("State", "Illinois");
-	    p3.put("City", "Chicago");
-	    p3.put("Zip code", "60606");
-	    p3.put("Address Line 1", "233 S Wacker Dr");
-	    p3.put("Address Line 2", "Suite 4112");
+	    p3.put("First Name", "Siobhán");
+	    p3.put("Middle Name", "Mairéad");
+	    p3.put("Last Name", "O’Riellyne");
+	    p3.put("Name Suffix", "III");
+	    p3.put("Email", "pltf.oriellyne.siobhan.y7k1pn.6h2m@yopmail.com");
+	    p3.put("Social Security Number", "764-15-3802");
+	    p3.put("Phone number", "6172059843");
+	    p3.put("Date of Birth", "05/26/1989");
+	    p3.put("State", "Massachusetts");
+	    p3.put("City", "Cambridge");
+	    p3.put("Zip code", "02139");
+	    p3.put("Address Line 1", "1 Cambridge Center");
+	    p3.put("Address Line 2", "Apt 9F");
 
 	    TreeMap<String, String> p4 = new TreeMap<>();
-	    p4.put("First Name", "Anaïs");
-	    p4.put("Middle Name", "Clara");
-	    p4.put("Last Name", "Lefebvre");
-	    p4.put("Name Suffix", "III");
-	    p4.put("Email", "anais.lefebvre.h2x7t9@yopmail.com");
-	    p4.put("Social Security Number", "937-44-2637");
-	    p4.put("Phone number", "6179032667");
-	    p4.put("Date of Birth", "01/26/1994");
-	    p4.put("State", "Massachusetts");
-	    p4.put("City", "Boston");
-	    p4.put("Zip code", "02110");
-	    p4.put("Address Line 1", "125 Summer St");
-	    p4.put("Address Line 2", "Apt 9C");
+	    p4.put("First Name", "Émilien");
+	    p4.put("Middle Name", "Gervais");
+	    p4.put("Last Name", "Boisvertin");
+	    p4.put("Name Suffix", "Sr");
+	    p4.put("Email", "pltf.boisvertin.emilien.c4q8vs.9n1t@yopmail.com");
+	    p4.put("Social Security Number", "775-44-7209");
+	    p4.put("Phone number", "5037461189");
+	    p4.put("Date of Birth", "02/09/1990");
+	    p4.put("State", "Oregon");
+	    p4.put("City", "Portland");
+	    p4.put("Zip code", "97204");
+	    p4.put("Address Line 1", "111 SW 5th Ave");
+	    p4.put("Address Line 2", "Suite 1712");
 
 	    TreeMap<String, String> p5 = new TreeMap<>();
-	    p5.put("First Name", "Julien");
-	    p5.put("Middle Name", "Marc");
-	    p5.put("Last Name", "Roy");
+	    p5.put("First Name", "Bhavneet");
+	    p5.put("Middle Name", "Harleen");
+	    p5.put("Last Name", "Sandhupreux");
 	    p5.put("Name Suffix", "IV");
-	    p5.put("Email", "julien.roy.c9m4q6@yopmail.com");
-	    p5.put("Social Security Number", "938-55-8402");
-	    p5.put("Phone number", "5127740836");
-	    p5.put("Date of Birth", "09/14/1989");
+	    p5.put("Email", "pltf.sandhupreux.bhavneet.p9m3rd.2x7a@yopmail.com");
+	    p5.put("Social Security Number", "786-09-5537");
+	    p5.put("Phone number", "2817304462");
+	    p5.put("Date of Birth", "07/14/1992");
 	    p5.put("State", "Texas");
-	    p5.put("City", "Austin");
-	    p5.put("Zip code", "78701");
-	    p5.put("Address Line 1", "600 Congress Ave");
-	    p5.put("Address Line 2", "Unit 1504");
+	    p5.put("City", "Houston");
+	    p5.put("Zip code", "77002");
+	    p5.put("Address Line 1", "1001 McKinney St");
+	    p5.put("Address Line 2", "Unit 2406");
 
 	    TreeMap<String, String> p6 = new TreeMap<>();
-	    p6.put("First Name", "Élodie");
-	    p6.put("Middle Name", "Sophie");
-	    p6.put("Last Name", "Pelletier");
-	    p6.put("Name Suffix", "Jr");
-	    p6.put("Email", "elodie.pelletier.k5n8v2@yopmail.com");
-	    p6.put("Social Security Number", "939-66-5179");
-	    p6.put("Phone number", "3035589174");
-	    p6.put("Date of Birth", "04/10/1991");
-	    p6.put("State", "Colorado");
-	    p6.put("City", "Denver");
-	    p6.put("Zip code", "80202");
-	    p6.put("Address Line 1", "1801 California St");
-	    p6.put("Address Line 2", "Suite 2501");
+	    p6.put("First Name", "Tadhg");
+	    p6.put("Middle Name", "Alasdair");
+	    p6.put("Last Name", "MacLeannor");
+	    p6.put("Name Suffix", "II");
+	    p6.put("Email", "pltf.macleannor.tadhg.k2v6zu.8f0r@yopmail.com");
+	    p6.put("Social Security Number", "797-62-1405");
+	    p6.put("Phone number", "7029145837");
+	    p6.put("Date of Birth", "12/03/1988");
+	    p6.put("State", "Nevada");
+	    p6.put("City", "Las Vegas");
+	    p6.put("Zip code", "89101");
+	    p6.put("Address Line 1", "201 S Las Vegas Blvd");
+	    p6.put("Address Line 2", "Apt 1102");
 
 	    TreeMap<String, String> p7 = new TreeMap<>();
-	    p7.put("First Name", "Benoît");
-	    p7.put("Middle Name", "Alain");
-	    p7.put("Last Name", "Caron");
-	    p7.put("Name Suffix", "II");
-	    p7.put("Email", "benoit.caron.p6r1w8@yopmail.com");
-	    p7.put("Social Security Number", "940-77-3925");
-	    p7.put("Phone number", "2067043925");
-	    p7.put("Date of Birth", "08/22/1987");
-	    p7.put("State", "Washington");
-	    p7.put("City", "Seattle");
-	    p7.put("Zip code", "98101");
-	    p7.put("Address Line 1", "1201 3rd Ave");
-	    p7.put("Address Line 2", "Apt 18D");
+	    p7.put("First Name", "Aqsa");
+	    p7.put("Middle Name", "Zahra");
+	    p7.put("Last Name", "Rahmanique");
+	    p7.put("Name Suffix", "Jr");
+	    p7.put("Email", "pltf.rahmanique.aqsa.v6r1mc.3q9w@yopmail.com");
+	    p7.put("Social Security Number", "708-31-9924");
+	    p7.put("Phone number", "3135812096");
+	    p7.put("Date of Birth", "09/28/1994");
+	    p7.put("State", "Michigan");
+	    p7.put("City", "Detroit");
+	    p7.put("Zip code", "48226");
+	    p7.put("Address Line 1", "100 Renaissance Center");
+	    p7.put("Address Line 2", "Suite 2109");
 
 	    TreeMap<String, String> p8 = new TreeMap<>();
-	    p8.put("First Name", "Rosalie");
-	    p8.put("Middle Name", "Isabelle");
-	    p8.put("Last Name", "Morin");
-	    p8.put("Name Suffix", "Sr");
-	    p8.put("Email", "rosalie.morin.t8d3h6@yopmail.com");
-	    p8.put("Social Security Number", "941-88-7640");
-	    p8.put("Phone number", "3056697640");
-	    p8.put("Date of Birth", "12/30/1992");
-	    p8.put("State", "Florida");
-	    p8.put("City", "Miami");
-	    p8.put("Zip code", "33131");
-	    p8.put("Address Line 1", "701 Brickell Ave");
-	    p8.put("Address Line 2", "Suite 1802");
+	    p8.put("First Name", "Roseline");
+	    p8.put("Middle Name", "Océanne");
+	    p8.put("Last Name", "Desrochère");
+	    p8.put("Name Suffix", "III");
+	    p8.put("Email", "pltf.desrochere.roseline.h8d4ky.5u1p@yopmail.com");
+	    p8.put("Social Security Number", "719-54-2670");
+	    p8.put("Phone number", "6124598307");
+	    p8.put("Date of Birth", "01/21/1991");
+	    p8.put("State", "Minnesota");
+	    p8.put("City", "Minneapolis");
+	    p8.put("Zip code", "55402");
+	    p8.put("Address Line 1", "120 S 6th St");
+	    p8.put("Address Line 2", "Unit 1508");
 
 	    TreeMap<String, String> p9 = new TreeMap<>();
-	    p9.put("First Name", "Thierry");
-	    p9.put("Middle Name", "Luc");
-	    p9.put("Last Name", "Lavoie");
-	    p9.put("Name Suffix", "III");
-	    p9.put("Email", "thierry.lavoie.z1q9s5@yopmail.com");
-	    p9.put("Social Security Number", "942-99-1056");
-	    p9.put("Phone number", "4046131056");
-	    p9.put("Date of Birth", "03/05/1988");
-	    p9.put("State", "Georgia");
-	    p9.put("City", "Atlanta");
-	    p9.put("Zip code", "30303");
-	    p9.put("Address Line 1", "191 Peachtree St NE");
-	    p9.put("Address Line 2", "Unit 3206");
+	    p9.put("First Name", "Eoghan");
+	    p9.put("Middle Name", "Cormac");
+	    p9.put("Last Name", "Keelavane");
+	    p9.put("Name Suffix", "Sr");
+	    p9.put("Email", "pltf.keelavane.eoghan.s1x7bt.9c2n@yopmail.com");
+	    p9.put("Social Security Number", "723-18-6049");
+	    p9.put("Phone number", "4806629471");
+	    p9.put("Date of Birth", "06/05/1990");
+	    p9.put("State", "Arizona");
+	    p9.put("City", "Phoenix");
+	    p9.put("Zip code", "85004");
+	    p9.put("Address Line 1", "2 N Central Ave");
+	    p9.put("Address Line 2", "Suite 1806");
 
 	    TreeMap<String, String> p10 = new TreeMap<>();
 	    p10.put("First Name", "Maëlle");
-	    p10.put("Middle Name", "Élise");
-	    p10.put("Last Name", "Girard");
+	    p10.put("Middle Name", "Sabine");
+	    p10.put("Last Name", "Thériault");
 	    p10.put("Name Suffix", "IV");
-	    p10.put("Email", "maelle.girard.f4y2n7@yopmail.com");
-	    p10.put("Social Security Number", "943-10-6843");
-	    p10.put("Phone number", "7028846843");
-	    p10.put("Date of Birth", "06/27/1993");
-	    p10.put("State", "Nevada");
-	    p10.put("City", "Las Vegas");
-	    p10.put("Zip code", "89101");
-	    p10.put("Address Line 1", "500 S Grand Central Pkwy");
-	    p10.put("Address Line 2", "Apt 7A");
+	    p10.put("Email", "pltf.theriault.maelle.r6p8vn.1m4z@yopmail.com");
+	    p10.put("Social Security Number", "734-77-1903");
+	    p10.put("Phone number", "9047531886");
+	    p10.put("Date of Birth", "04/16/1992");
+	    p10.put("State", "Florida");
+	    p10.put("City", "Jacksonville");
+	    p10.put("Zip code", "32202");
+	    p10.put("Address Line 1", "50 N Laura St");
+	    p10.put("Address Line 2", "Apt 1710");
+
+	    // --- continuing same pattern but fully new values ---
 
 	    TreeMap<String, String> p11 = new TreeMap<>();
-	    p11.put("First Name", "Gabriel");
-	    p11.put("Middle Name", "Antoine");
-	    p11.put("Last Name", "Desjardins");
+	    p11.put("First Name", "Taïna");
+	    p11.put("Middle Name", "Geneviève");
+	    p11.put("Last Name", "Kâwapis");
 	    p11.put("Name Suffix", "II");
-	    p11.put("Email", "gabriel.desjardins.m6x2c9@yopmail.com");
-	    p11.put("Social Security Number", "944-21-9374");
-	    p11.put("Phone number", "2157799374");
-	    p11.put("Date of Birth", "10/15/1989");
-	    p11.put("State", "Pennsylvania");
-	    p11.put("City", "Philadelphia");
-	    p11.put("Zip code", "19103");
-	    p11.put("Address Line 1", "1650 Market St");
-	    p11.put("Address Line 2", "Suite 321");
+	    p11.put("Email", "pltf.kawapis.taina.q5n9rx.7j0v@yopmail.com");
+	    p11.put("Social Security Number", "745-36-8827");
+	    p11.put("Phone number", "7206189034");
+	    p11.put("Date of Birth", "08/11/1989");
+	    p11.put("State", "Colorado");
+	    p11.put("City", "Denver");
+	    p11.put("Zip code", "80202");
+	    p11.put("Address Line 1", "1700 Lincoln St");
+	    p11.put("Address Line 2", "Suite 2106");
 
 	    TreeMap<String, String> p12 = new TreeMap<>();
-	    p12.put("First Name", "Céline");
-	    p12.put("Middle Name", "Ariane");
-	    p12.put("Last Name", "Beaulieu");
+	    p12.put("First Name", "Jules-Antoine");
+	    p12.put("Middle Name", "Bastien");
+	    p12.put("Last Name", "Laframboise");
 	    p12.put("Name Suffix", "Jr");
-	    p12.put("Email", "celine.beaulieu.r9v4k1@yopmail.com");
-	    p12.put("Social Security Number", "945-32-5108");
-	    p12.put("Phone number", "7045125108");
-	    p12.put("Date of Birth", "02/02/1991");
-	    p12.put("State", "North Carolina");
-	    p12.put("City", "Charlotte");
-	    p12.put("Zip code", "28202");
-	    p12.put("Address Line 1", "101 S Tryon St");
-	    p12.put("Address Line 2", "Floor 9, Suite 905");
+	    p12.put("Email", "pltf.laframboise.julesantoine.m7c2qp.4v8a@yopmail.com");
+	    p12.put("Social Security Number", "756-40-5176");
+	    p12.put("Phone number", "4158792046");
+	    p12.put("Date of Birth", "10/30/1993");
+	    p12.put("State", "California");
+	    p12.put("City", "San Francisco");
+	    p12.put("Zip code", "94105");
+	    p12.put("Address Line 1", "1 Market St");
+	    p12.put("Address Line 2", "Suite 1200");
 
 	    TreeMap<String, String> p13 = new TreeMap<>();
-	    p13.put("First Name", "Laurent");
-	    p13.put("Middle Name", "Jean");
-	    p13.put("Last Name", "Nadeau");
-	    p13.put("Name Suffix", "Sr");
-	    p13.put("Email", "laurent.nadeau.w5h8p3@yopmail.com");
-	    p13.put("Social Security Number", "946-43-7826");
-	    p13.put("Phone number", "6149157826");
-	    p13.put("Date of Birth", "09/01/1987");
-	    p13.put("State", "Ohio");
-	    p13.put("City", "Columbus");
-	    p13.put("Zip code", "43215");
-	    p13.put("Address Line 1", "200 E Broad St");
-	    p13.put("Address Line 2", "Apt 14F");
+	    p13.put("First Name", "Mireille");
+	    p13.put("Middle Name", "Claudine");
+	    p13.put("Last Name", "Beausolex");
+	    p13.put("Name Suffix", "III");
+	    p13.put("Email", "pltf.beausolex.mireille.t4z1nh.6p3x@yopmail.com");
+	    p13.put("Social Security Number", "767-92-3308");
+	    p13.put("Phone number", "4016625190");
+	    p13.put("Date of Birth", "02/25/1991");
+	    p13.put("State", "Rhode Island");
+	    p13.put("City", "Providence");
+	    p13.put("Zip code", "02903");
+	    p13.put("Address Line 1", "10 Dorrance St");
+	    p13.put("Address Line 2", "Unit 907");
 
 	    TreeMap<String, String> p14 = new TreeMap<>();
-	    p14.put("First Name", "Éva");
-	    p14.put("Middle Name", "Marion");
-	    p14.put("Last Name", "Côté");
-	    p14.put("Name Suffix", "III");
-	    p14.put("Email", "eva.cote.q1t6z8@yopmail.com");
-	    p14.put("Social Security Number", "947-54-2961");
-	    p14.put("Phone number", "3136062961");
-	    p14.put("Date of Birth", "05/09/1992");
-	    p14.put("State", "Michigan");
-	    p14.put("City", "Detroit");
-	    p14.put("Zip code", "48226");
-	    p14.put("Address Line 1", "1001 Woodward Ave");
-	    p14.put("Address Line 2", "Suite 1102");
+	    p14.put("First Name", "Fionnuala");
+	    p14.put("Middle Name", "Éibhlín");
+	    p14.put("Last Name", "Carmichaël");
+	    p14.put("Name Suffix", "Sr");
+	    p14.put("Email", "pltf.carmichael.fionnuala.b8k3rs.2n9t@yopmail.com");
+	    p14.put("Social Security Number", "778-11-6402");
+	    p14.put("Phone number", "8039447128");
+	    p14.put("Date of Birth", "05/09/1990");
+	    p14.put("State", "South Carolina");
+	    p14.put("City", "Charleston");
+	    p14.put("Zip code", "29401");
+	    p14.put("Address Line 1", "24 Broad St");
+	    p14.put("Address Line 2", "Apt 6C");
 
 	    TreeMap<String, String> p15 = new TreeMap<>();
-	    p15.put("First Name", "Nicolas");
-	    p15.put("Middle Name", "Pascal");
-	    p15.put("Last Name", "Bélanger");
+	    p15.put("First Name", "Darpan");
+	    p15.put("Middle Name", "Navpreet");
+	    p15.put("Last Name", "Gillmoray");
 	    p15.put("Name Suffix", "IV");
-	    p15.put("Email", "nicolas.belanger.s7c2d4@yopmail.com");
-	    p15.put("Social Security Number", "948-65-6180");
-	    p15.put("Phone number", "3176806180");
-	    p15.put("Date of Birth", "01/28/1988");
-	    p15.put("State", "Indiana");
-	    p15.put("City", "Indianapolis");
-	    p15.put("Zip code", "46204");
-	    p15.put("Address Line 1", "151 N Delaware St");
-	    p15.put("Address Line 2", "Unit 1908");
+	    p15.put("Email", "pltf.gillmoray.darpan.r3m6vx.8q1k@yopmail.com");
+	    p15.put("Social Security Number", "789-25-9084");
+	    p15.put("Phone number", "9016823047");
+	    p15.put("Date of Birth", "09/17/1992");
+	    p15.put("State", "Tennessee");
+	    p15.put("City", "Nashville");
+	    p15.put("Zip code", "37219");
+	    p15.put("Address Line 1", "424 Church St");
+	    p15.put("Address Line 2", "Suite 700");
 
 	    TreeMap<String, String> p16 = new TreeMap<>();
-	    p16.put("First Name", "Mélissa");
-	    p16.put("Middle Name", "Jade");
-	    p16.put("Last Name", "Lemieux");
+	    p16.put("First Name", "Édith");
+	    p16.put("Middle Name", "Solène");
+	    p16.put("Last Name", "Chartreux");
 	    p16.put("Name Suffix", "II");
-	    p16.put("Email", "melissa.lemieux.d8n1r5@yopmail.com");
-	    p16.put("Social Security Number", "949-76-4309");
-	    p16.put("Phone number", "6027744309");
-	    p16.put("Date of Birth", "08/06/1993");
-	    p16.put("State", "Arizona");
-	    p16.put("City", "Phoenix");
-	    p16.put("Zip code", "85004");
-	    p16.put("Address Line 1", "40 N Central Ave");
-	    p16.put("Address Line 2", "Suite 1901");
+	    p16.put("Email", "pltf.chartreux.edith.k9x2mp.0r7d@yopmail.com");
+	    p16.put("Social Security Number", "790-63-1729");
+	    p16.put("Phone number", "6097418830");
+	    p16.put("Date of Birth", "01/06/1988");
+	    p16.put("State", "New Jersey");
+	    p16.put("City", "Jersey City");
+	    p16.put("Zip code", "07302");
+	    p16.put("Address Line 1", "26 Columbus Dr");
+	    p16.put("Address Line 2", "Apt 1405");
 
 	    TreeMap<String, String> p17 = new TreeMap<>();
-	    p17.put("First Name", "Frédéric");
-	    p17.put("Middle Name", "Louis");
-	    p17.put("Last Name", "Dion");
+	    p17.put("First Name", "Tshala");
+	    p17.put("Middle Name", "Inuinnaq");
+	    p17.put("Last Name", "Qitsualik");
 	    p17.put("Name Suffix", "Jr");
-	    p17.put("Email", "frederic.dion.h9v3m7@yopmail.com");
-	    p17.put("Social Security Number", "950-87-9052");
-	    p17.put("Phone number", "6125079052");
-	    p17.put("Date of Birth", "11/27/1987");
-	    p17.put("State", "Minnesota");
-	    p17.put("City", "Minneapolis");
-	    p17.put("Zip code", "55402");
-	    p17.put("Address Line 1", "120 S 6th St");
-	    p17.put("Address Line 2", "Apt 2407");
+	    p17.put("Email", "pltf.qitsualik.tshala.v2r8qk.5m9x@yopmail.com");
+	    p17.put("Social Security Number", "701-88-4305");
+	    p17.put("Phone number", "9076105294");
+	    p17.put("Date of Birth", "12/12/1994");
+	    p17.put("State", "Alaska");
+	    p17.put("City", "Anchorage");
+	    p17.put("Zip code", "99501");
+	    p17.put("Address Line 1", "701 W 8th Ave");
+	    p17.put("Address Line 2", "Suite 410");
 
 	    TreeMap<String, String> p18 = new TreeMap<>();
-	    p18.put("First Name", "Zoé");
-	    p18.put("Middle Name", "Aurore");
-	    p18.put("Last Name", "Poirier");
+	    p18.put("First Name", "Réjean");
+	    p18.put("Middle Name", "Laurier");
+	    p18.put("Last Name", "Vermette");
 	    p18.put("Name Suffix", "III");
-	    p18.put("Email", "zoe.poirier.k2p8f6@yopmail.com");
-	    p18.put("Social Security Number", "951-98-1743");
-	    p18.put("Phone number", "5034421743");
-	    p18.put("Date of Birth", "04/21/1991");
-	    p18.put("State", "Oregon");
-	    p18.put("City", "Portland");
-	    p18.put("Zip code", "97204");
-	    p18.put("Address Line 1", "111 SW 5th Ave");
-	    p18.put("Address Line 2", "Suite 1742");
+	    p18.put("Email", "pltf.vermette.rejean.n6k1pt.3z8v@yopmail.com");
+	    p18.put("Social Security Number", "712-39-5610");
+	    p18.put("Phone number", "8164079351");
+	    p18.put("Date of Birth", "07/31/1989");
+	    p18.put("State", "Missouri");
+	    p18.put("City", "Kansas City");
+	    p18.put("Zip code", "64106");
+	    p18.put("Address Line 1", "1100 Main St");
+	    p18.put("Address Line 2", "Unit 905");
 
 	    TreeMap<String, String> p19 = new TreeMap<>();
-	    p19.put("First Name", "Adrien");
-	    p19.put("Middle Name", "René");
-	    p19.put("Last Name", "Lambert");
+	    p19.put("First Name", "Róisín");
+	    p19.put("Middle Name", "Deirdre");
+	    p19.put("Last Name", "Quenneville");
 	    p19.put("Name Suffix", "Sr");
-	    p19.put("Email", "adrien.lambert.v4q1x8@yopmail.com");
-	    p19.put("Social Security Number", "952-09-4685");
-	    p19.put("Phone number", "5048934685");
-	    p19.put("Date of Birth", "03/13/1990");
+	    p19.put("Email", "pltf.quenneville.roisin.p5v2mh.1k4q@yopmail.com");
+	    p19.put("Social Security Number", "723-04-8872");
+	    p19.put("Phone number", "2256149308");
+	    p19.put("Date of Birth", "03/22/1990");
 	    p19.put("State", "Louisiana");
-	    p19.put("City", "New Orleans");
-	    p19.put("Zip code", "70112");
-	    p19.put("Address Line 1", "400 Poydras St");
-	    p19.put("Address Line 2", "Suite 1412");
+	    p19.put("City", "Baton Rouge");
+	    p19.put("Zip code", "70801");
+	    p19.put("Address Line 1", "200 Laurel St");
+	    p19.put("Address Line 2", "Suite 2100");
 
 	    TreeMap<String, String> p20 = new TreeMap<>();
-	    p20.put("First Name", "Érika");
-	    p20.put("Middle Name", "Suzanne");
-	    p20.put("Last Name", "Chartier");
+	    p20.put("First Name", "Maëlys");
+	    p20.put("Middle Name", "Anaëlle");
+	    p20.put("Last Name", "Gravelroux");
 	    p20.put("Name Suffix", "IV");
-	    p20.put("Email", "erika.chartier.n1m7t2@yopmail.com");
-	    p20.put("Social Security Number", "953-10-7329");
-	    p20.put("Phone number", "2076157329");
-	    p20.put("Date of Birth", "09/24/1988");
-	    p20.put("State", "Maine");
-	    p20.put("City", "Portland");
-	    p20.put("Zip code", "04101");
-	    p20.put("Address Line 1", "1 Monument Square");
-	    p20.put("Address Line 2", "Apt 6C");
+	    p20.put("Email", "pltf.gravelroux.maelys.x3r7qn.9p0m@yopmail.com");
+	    p20.put("Social Security Number", "734-66-2095");
+	    p20.put("Phone number", "6027394185");
+	    p20.put("Date of Birth", "10/08/1992");
+	    p20.put("State", "Arizona");
+	    p20.put("City", "Tempe");
+	    p20.put("Zip code", "85281");
+	    p20.put("Address Line 1", "60 E Rio Salado Pkwy");
+	    p20.put("Address Line 2", "Apt 2208");
 	    // ---- 21 to 50 (fresh new names + ids) ----
 
 	    TreeMap<String, String> p21 = new TreeMap<>();
@@ -1663,8 +1845,8 @@ public class Plaintiff_Module extends Case_Appplications{
 	    p50.put("Address Line 1", "3000 McKinney Ave");
 	    p50.put("Address Line 2", "Unit 7C");
 
-	    return new Object[][]{/*
-	        {p1},*{p2},*/{p3},{p4},{p5},
+	    return new Object[][]{
+	        {p1},{p2},{p3},{p4},{p5},
 	        {p6},{p7},{p8},{p9},{p10},
 	        {p11},{p12},{p13},{p14},{p15},
 	        {p16},{p17},{p18},{p19},{p20}, /*

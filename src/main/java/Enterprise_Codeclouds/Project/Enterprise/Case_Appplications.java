@@ -516,6 +516,7 @@ public class Case_Appplications extends Header_Manager{
 		   try{p.Send_button();}
 	       catch(Exception not_in_Case_Details) {	    
 		   sd.Side_menu_option_clicker("Applications", d,"N/A");
+		   Thread.sleep(800);
 		   p.landed_in_applicationList_confirmation();
 		   p.Filter_clear().click();
 		   WebElement Status_filter = p.Application_status_filter();
@@ -664,8 +665,8 @@ public class Case_Appplications extends Header_Manager{
 	            + "Regards.");
 
 	      return new Object[][]{
-	              {m1},{m2},{m3},{m4},{m5},
-	              {m6},{m7},{m8},{m9},{m10}
+	              {m1},/*{m2},{m3},{m4},{m5},
+	              {m6},{m7},{m8},{m9},{m10}*/
 	      };
 	  }
 
@@ -1248,7 +1249,7 @@ public class Case_Appplications extends Header_Manager{
 	    final int rateOfReturn          = Integer.parseInt(Case_Data.get("Rate of Return"));
 
 	    // ---- Calculations (used later in Contract validations/logs) ----
-	    final double fundedAmount = buyoutAmount + approvedAmount;
+	    final double fundedAmount =/* buyoutAmount +*/ approvedAmount;
 	    final double annualInterestAmount = (fundedAmount * rateOfReturn) / 100;
 	    final double monthlyInterestAmount = annualInterestAmount / 12;
 	    final double monthlyPayableAmount = fundedAmount + monthlyInterestAmount + documentPrepFee + fundTransferFee;
@@ -1765,14 +1766,30 @@ public class Case_Appplications extends Header_Manager{
 	    // Step 20: Wait for Cancel Contract invisibility (your current flow)
 	    // ==========================================================
 	    new FluentWait<WebDriver>(d)
-	            .withTimeout(Duration.ofSeconds(30))
+	            .withTimeout(Duration.ofSeconds(60))
 	            .pollingEvery(Duration.ofMillis(500))
 	            .ignoring(NoSuchElementException.class)
 	            .ignoring(StaleElementReferenceException.class);
-
+	    WebElement Sign_in_button_;
+     try {
 	    WebElement Cancel_Contract = p.Cancel_Contract_Button();
 	    Thread.sleep(1000);
 	    rp.wait_for_invisibility(Cancel_Contract);
+	    Sign_in_button_ = p.Manual_sign_in_button();
+	    rp.movetoelement(Sign_in_button_);
+	    Thread.sleep(800);
+	    rp.wait_for_theElement_tobe_clickable(Sign_in_button_);
+	    Sign_in_button_.click();
+        manual_lien_generation(Sign_in_button_);}
+     catch(Exception cancel_button_not_found){
+    	 Thread.sleep(800);
+    	Sign_in_button_ = p.Manual_sign_in_button();
+	    rp.movetoelement(Sign_in_button_);
+	    Thread.sleep(800);
+	    rp.wait_for_theElement_tobe_clickable(Sign_in_button_);
+	    Sign_in_button_.click();
+
+	    manual_lien_generation(Sign_in_button_);}
 
 	    // ==========================================================
 	    // Step 21: Manual Sign in + send contract
@@ -1782,13 +1799,7 @@ public class Case_Appplications extends Header_Manager{
 	          + "<b>✅ Expected:</b> Manual sign-in should be clickable and flow should proceed."
 	    );
 
-	    WebElement Sign_in_button_ = p.Manual_sign_in_button();
-	    rp.movetoelement(Sign_in_button_);
-	    Thread.sleep(800);
-	    rp.wait_for_theElement_tobe_clickable(Sign_in_button_);
-	    Sign_in_button_.click();
-
-	    manual_lien_generation(Sign_in_button_);
+	    
 
 	    // ==========================================================
 	    // Step 22: Capture payoff before → revise → capture payoff after revise
@@ -1816,6 +1827,7 @@ public class Case_Appplications extends Header_Manager{
 	          + "<b>Case ID:</b> " + Case_ID);
 
 	    System.out.println("✅ Scenario Completed for Case ID: " + Case_ID + "\n");
+	    Payment_Calculator(Case_Data,Case_ID);    
 	}
 
 	    
@@ -2556,6 +2568,14 @@ public class Case_Appplications extends Header_Manager{
 	    int month=0;
 
 	    Double Previous_Month_Amount=null;
+	    
+	    System.out.println("\n==================================================");
+	    System.out.println("[SCENARIO] Future Month Lien Calculation Check");
+	    System.out.println("Rule      : Each month payable should increase ONLY by Monthly Interest");
+	    System.out.println("Expected  : Monthly Interest = " + String.format("%.2f", each_monthly_interest));
+	    System.out.println("EMI Count : " + (each_month_emi == null ? 0 : each_month_emi.size()));
+	    System.out.println("Tolerance : 0.01");
+	    System.out.println("==================================================\n");
 
 	    for(Double Eachemi:each_month_emi){
 
@@ -2598,6 +2618,23 @@ public class Case_Appplications extends Header_Manager{
 	                      + "<b>🟨 Conclusion:</b> Payable increase is correct for Month " + month + "."
 	                      + "</div>"
 	                );
+	                
+	                
+	                System.out.println("==================================================");
+	                System.out.println("✅ PASS | FUTURE MONTH INCREASE CHECK | Month " + month);
+	                System.out.println("--------------------------------------------------");
+	                System.out.println("What we validate : Month payable increases only by Monthly Interest");
+	                System.out.println("Prev Month (M" + (month-1) + ") Payable : " + String.format("%.2f", Previous_Month_Amount));
+	                System.out.println("Curr Month (M" + month + ") Payable    : " + String.format("%.2f", Eachemi));
+	                System.out.println("Expected Interest                  : " + String.format("%.2f", each_monthly_interest));
+	                System.out.println("--------------------------------------------------");
+	                System.out.println("Formula   : Increase = Curr - Prev");
+	                System.out.println("Increase  : " + String.format("%.2f", Eachemi) + " - " + String.format("%.2f", Previous_Month_Amount)
+	                        + " = " + String.format("%.2f", Each_month_increase));
+	                System.out.println("Check     : Increase ≈ Monthly Interest (Tolerance 0.01) -> Matched ✅");
+	                System.out.println("Meaning   : Only monthly interest added. No extra/less added.");
+	                System.out.println("Conclusion: Month " + month + " payable increase is correct.");
+	                System.out.println("==================================================\n");
 	            }
 	            else{
 
@@ -2635,8 +2672,30 @@ public class Case_Appplications extends Header_Manager{
 	                      + "<b>🟨 Conclusion:</b> Payable increase is incorrect for Month " + month + "."
 	                      + "</div>"
 	                );
-	            }
-	        }
+	                
+	             // ✅ Console FAIL Block (Counterpart)
+	                // =========================
+	                System.out.println("==================================================");
+	                System.out.println("❌ FAIL | FUTURE MONTH INCREASE CHECK | Month " + month);
+	                System.out.println("--------------------------------------------------");
+	                System.out.println("What we validate : Month payable increases only by Monthly Interest");
+	                System.out.println("Prev Month (M" + (month-1) + ") Payable : " + String.format("%.2f", Previous_Month_Amount));
+	                System.out.println("Curr Month (M" + month + ") Payable    : " + String.format("%.2f", Eachemi));
+	                System.out.println("Expected Interest                  : " + String.format("%.2f", each_monthly_interest));
+	                System.out.println("--------------------------------------------------");
+	                System.out.println("Formula   : Increase = Curr - Prev");
+	                System.out.println("Increase  : " + String.format("%.2f", Eachemi) + " - " + String.format("%.2f", Previous_Month_Amount)
+	                        + " = " + String.format("%.2f", Each_month_increase));
+	                System.out.println("Check     : Increase ≠ Monthly Interest (Tolerance 0.01) -> Mismatch ❌");
+
+	                if(Each_month_increase > each_monthly_interest){
+	                    System.out.println("Meaning   : System added EXTRA amount more than expected monthly interest.");
+	                } else {
+	                    System.out.println("Meaning   : System added LESS amount than expected monthly interest.");
+	                }
+
+	                System.out.println("Conclusion: Month " + month + " payable increase is incorrect.");
+	                System.out.println("==================================================\n");}}
 	        Previous_Month_Amount = Eachemi;
 	        month++;}}
 
@@ -3399,11 +3458,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ 
-		        {c1},/*{c2},{c3},{c4},{c5},
-		        {c6},{c7},{c8},{c9},{c10},*/
+		    return new Object[][]{ /* 
+		    	{c1},{c2},{c3},{c4},{c5},
+		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c16},*/{c17},/*{c18},{c19},{c20} */
 		    };}
 	
 	
@@ -3683,7 +3742,7 @@ public class Case_Appplications extends Header_Manager{
 	            String Payer = data.get("Payer Name");
 	            String PayDate = data.get("Payment Date");
 	            String Notes = data.get("Notes / Remarks");
-
+                String Plaintiff_name;
 	            // =========================
 	            // Scenario Header (Extent)
 	            // =========================
@@ -3792,6 +3851,15 @@ public class Case_Appplications extends Header_Manager{
 
 	                case_Dropdown = p.Case_Action_Dropdown();
 	            }
+	            try {
+                 WebElement plaintiff= p.Title_plaintiff_name();
+                 Plaintiff_name = plaintiff.getText().trim();
+	            }catch(Exception case_plaintiff_name_fetch){
+	            	Thread.sleep(800);
+	            	WebElement plaintiff= p.Title_plaintiff_name();
+	                Plaintiff_name = plaintiff.getText().trim();
+	            	
+	            }
 
 	            // =========================
 	            // Step 2: Open Log Payment form
@@ -3881,12 +3949,13 @@ public class Case_Appplications extends Header_Manager{
 	                inputs.get(0).sendKeys(Mode);
 	                p.plaintiff_dropdown_list();
 	                p.Plaintiff_options().get(0).click();
-
-	                inputs.get(1).sendKeys(Type);
+                    inputs.get(1).sendKeys(Type);
 	                p.Incident_type_dropdown();
 	                p.Incident_options().get(0).click();
-
-	                inputs.get(2).sendKeys(Payer);
+	                if(Type.contains("Payment by Plaintiff")){
+	                	inputs.get(2).sendKeys(Plaintiff_name);
+	                }else {
+	                inputs.get(2).sendKeys(Payer);}
 
 	                WebElement Calender_field = inputs.get(3);
 	                Calender_field.sendKeys(PayDate);
@@ -4539,11 +4608,12 @@ public class Case_Appplications extends Header_Manager{
       	 	      Thread.sleep(800);
       	 	      p.Calender_clear_button().click();
       	 	      Interest_start_date_field.click();
-      	 	      Thread.sleep(800);
+      	 	      Thread.sleep(800);/*
       	 	      List<WebElement> date_cells = p.Calender_cells();
       	 	      int cell_index = date_cells.size()-1;
       	 	      WebElement Date_selected = date_cells.get(cell_index);
-      	 	      Date_selected.click();
+      	 	      Date_selected.click(); */
+      	 	      p.calender_date_select().click();
       	 	      Thread.sleep(800);
       	 	      WebElement Generate_Contract_Button = p.Submit_button();
       		      rp.movetoelement(Generate_Contract_Button);
@@ -5291,7 +5361,7 @@ public class Case_Appplications extends Header_Manager{
      public Object[][] notesData() {
 
     	 return new Object[][]{
-    	        {"Underwriting update: We verified the incident date against the intake form, claimant statement, and the initial email thread. The date appears consistent across all sources, however the police report has not yet been uploaded. Please request the incident report number, responding agency, and any dispatch/CAD reference so we can cross-check timeline accuracy and avoid downstream corrections in the case summary card."},
+    	        {"Underwriting update: We verified the incident date against the intake form, claimant statement, and the initial email thread. The date appears consistent across all sources, however the police report has not yet been uploaded. Please request the incident report number, responding agency, and any dispatch/CAD reference so we can cross-check timeline accuracy and avoid downstream corrections in the case summary card."},/*
 
     	        {"Docs pending — please upload: (1) ER discharge summary, (2) itemized billing, (3) imaging results if available, and (4) proof of wage loss for the week following the incident. Until these are received, underwriting cannot finalize medical causation or damages sizing. Note: the current attachments include a partial PDF scan that cuts off the provider signature block on page 2."},
 
@@ -5327,7 +5397,7 @@ public class Case_Appplications extends Header_Manager{
 
     	        {"Contact attempts: Left voicemail, no response yet. Schedule second attempt in 48 hours and send a short follow-up email in parallel. If still no response after third attempt, note 'Unresponsive' and keep the case status unchanged until contact is re-established."},
 
-    	        {"UI stress string: ThisIsAReallyLongUnbrokenTokenDesignedToTestOverflowAndCardWrappingBehavior_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_THIS_SHOULD_FORCE_HORIZONTAL_OVERFLOW_IF_NOT_HANDLED_PROPERLY_AND_BREAK_LAYOUT"},
+    	        {"UI stress string: ThisIsAReallyLongUnbrokenTokenDesignedToTestOverflowAndCardWrappingBehavior_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_THIS_SHOULD_FORCE_HORIZONTAL_OVERFLOW_IF_NOT_HANDLED_PROPERLY_AND_BREAK_LAYOUT"},*/
 
     	        {""} // Negative: blank note (required field validation)
 

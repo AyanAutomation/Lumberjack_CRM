@@ -1,3 +1,4 @@
+C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\Access_Permissions.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\Attorney_module.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\Base.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\Case_Appplications.java
@@ -8,6 +9,7 @@ C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterpri
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\Logout.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\Plaintiff_Module.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\SIde_Menu_Handler.java
+C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Enterprise_Codeclouds\Project\Enterprise\User_Module.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Listerners\Report_Listen.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Application_Locaters.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Attorney_Locaters.java
@@ -16,8 +18,10 @@ C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterpri
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Login_Locaters.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Logout_locaters.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Plaintiff_Locaters.java
+C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Roles_Permission_Locaters.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\Sidemenu_Locaters.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\temp_mail_Locaters.java
+C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Locaters\User_Module_Locaters.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Negative_Testcases\Application_Add_Negative_Testcases.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Negative_Testcases\Login_negative_testcases.java
 C:\Users\CODECLOUDS-AYAN\OneDrive\Documents\Automation Projects\Project.Enterprise\src\main\java\Repeatative_codes\Repeat.java
