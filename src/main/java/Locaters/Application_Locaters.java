@@ -174,7 +174,7 @@ public class Application_Locaters extends Login_Locaters{
 	private WebElement bcc_field;
 	@FindBy(xpath="//*[text()='Bcc']/..")
 	private WebElement Bcc_button;
-	@FindBy(xpath="//*[contains(@class,'ant-descriptions ant-descriptions-small')]")
+	@FindBy(xpath="(//*[contains(@class,'ant-descriptions ant-descriptions-small')])[1]")
 	private WebElement  Application_Card_Body; 
 	@FindBy(xpath="//*[@class='case-feed-container']")
 	private WebElement  Case_Feed_Section; 
@@ -223,11 +223,11 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//*[contains(@class,'ant-typography value css')]")
 	private List <WebElement> Lien_Details_field_values;
 	@FindBy(xpath="//*[text()='Plaintiff Funding Liens']")
-	private WebElement Landed_in_lien_List; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Landed_in_lien_List; 
+	@FindBy(xpath="(//*[text()='APPROVED AMOUNT']/..//*[@aria-label='edit'])[1]")
+	private WebElement First_Application_Approved_amount_edit_button;
+	@FindBy(xpath="(//*[text()='BUYOUT AMOUNT']/..//*[@aria-label='edit'])[1]")
+	private WebElement  First_Application_Buyout_amount_edit_button;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -835,13 +835,13 @@ public class Application_Locaters extends Login_Locaters{
 	return Lien_Details_field_values;}   
 	public WebElement Landed_in_lien_List(){
 	wait_for_theElement(Landed_in_lien_List);
-	return Landed_in_lien_List;}    /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Landed_in_lien_List;}    
+	public WebElement First_Application_Approved_amount_edit_button(){
+	wait_for_theElement(First_Application_Approved_amount_edit_button);
+	return First_Application_Approved_amount_edit_button;}   
+	public WebElement First_Application_Buyout_amount_edit_button(){
+	wait_for_theElement(First_Application_Buyout_amount_edit_button);
+	return First_Application_Buyout_amount_edit_button;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

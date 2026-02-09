@@ -3458,11 +3458,11 @@ public class Case_Appplications extends Header_Manager{
 		    }
 
 		    // ===== DataProvider return =====
-		    return new Object[][]{ /* 
+		    return new Object[][]{ 
 		    	{c1},{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},*/{c17},/*{c18},{c19},{c20} */
+		        {c16},{c17},{c18},{c19},{c20} 
 		    };}
 	
 	
@@ -4918,7 +4918,7 @@ public class Case_Appplications extends Header_Manager{
 		      }
 	        
 	      
-	        @Test(dataProvider="case_plus_plaintiff")
+	     @Test(dataProvider="case_plus_plaintiff")
 	     public void Multiple_Application_Generator(TreeMap<String, String> Case_Data, TreeMap<String, String> Plaintiff ,TreeMap<String,String> attorneyData,TreeMap<String,String> Law_Firm_Data,TreeMap<String,String> Staff_Data,TreeMap<String,String> Email_Send_Data) throws InterruptedException, IOException{
 	    	 
 	    	   Application_Locaters p = new Application_Locaters(d);
@@ -4928,80 +4928,318 @@ public class Case_Appplications extends Header_Manager{
 			   SIde_Menu_Handler sd = new SIde_Menu_Handler();
 			   
 			  // Collections_Clear();
-			   
+			    String Case_id = "MA2600545";
 				String Requested_Amount= Case_Data.get("Requested Amount");
-				
-			int step=1;
-			try{p.Send_button();}
-		       catch(Exception not_in_Case_Details) {	    
-			   sd.Side_menu_option_clicker("Applications", d,"N/A");
-			   p.landed_in_applicationList_confirmation();
-			   p.Filter_clear().click();
-			   WebElement Status_filter = p.Application_status_filter();
-			   Status_filter.click();
-			   Application_Filter_Option_Selector("Funded");
-			   List<WebElement> result_rows;
-			   try {
-				   result_rows = p.rows();
-				   result_rows.get(0).click();
-				   Thread.sleep(800);}
-				  catch(Exception Result_still_not_fetched){
-					 System.out.println("Exception Found in fetching result rows thereby retrying");
-					 System.out.println();
-				   Thread.sleep(800);  
-				   result_rows = p.rows();
-				   result_rows.get(0).click();
-				   Thread.sleep(800);}}
-			List<WebElement> Case_Tags;
-			try {
-				   Case_Tags = p.Case_tags();}
-				   catch(RuntimeException tags){
-					   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-					   System.out.println();
-					   Thread.sleep(1200);
-					   Case_Tags = p.Case_tags(); }
-			   tab_selector("Applications");
+				int step = 1;
 
-			   p.Requested_amount_input_field_in_Applications_tab().sendKeys(Requested_Amount);
-			   p.Appilcation_Add_button().click();
-			   p.Application_Card_Body();
-			   List<WebElement> Edit_Buttons= p.Application_amount_edit_buttons();
-			   Edit_Buttons.get(1).click();
-				Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Buyout modal opened.");
-		        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).");
+				// =========================
+				// Case Context Header (Extent + Console)
+				// =========================
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>🔹 Scenario Title:</b> Add Application + Add Buyout + Generate Contract<br>"
+				      + "<b>📥 Input:</b> Case ID = <b>" + Case_id + "</b> | Requested Amount = <b>" + Requested_Amount + "</b><br>"
+				      + "<b>✅ Expected:</b> Application should be created, Buyout should be saved, and contract flow should proceed without navigation issues."
+				);
+				System.out.println("\n==================================================");
+				System.out.println("[SCENARIO] Add Application + Buyout + Contract");
+				System.out.println("Case ID         : " + Case_id);
+				System.out.println("Requested Amount: " + Requested_Amount);
+				System.out.println("==================================================\n");
+
+				// =========================
+				// Navigation Guard (try/catch) with Case ID logs
+				// =========================
+				try {
+				    p.Send_button();
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>Step " + (step++) + ":</b> Confirm we are already inside Case Details screen.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+				    System.out.println("[Step] Already in Case Details (Send button found) | Case ID: " + Case_id);
+
+				} catch (Exception not_in_Case_Details) {
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>Step " + (step++) + ":</b> Not in Case Details. Navigating via Applications list and opening case row.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b><br>"
+				          + "<b>Reason:</b> Send button not found on current screen."
+				    );
+
+				    System.out.println("[Step] Not in Case Details -> Navigate via Applications list | Case ID: " + Case_id);
+				    System.out.println("Reason: Send button not found. Going to Applications, searching Case ID, opening first row.");
+				    System.out.println();
+
+				    sd.Side_menu_option_clicker("Applications", d, "N/A");
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Applications module opened from side menu.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+				    System.out.println("Actual: Applications module opened | Case ID: " + Case_id);
+
+				    p.landed_in_applicationList_confirmation();
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Landed inside Applications list screen (confirmation done).<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+				    System.out.println("Actual: Landed in Applications list | Case ID: " + Case_id);
+
+				    p.Filter_clear().click();
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Filters cleared before searching Case ID.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+				    System.out.println("Actual: Filters cleared | Case ID: " + Case_id);
+
+				    WebElement Search = p.Application_search();
+				    Search.sendKeys(Case_id);
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>Step " + (step++) + ":</b> Search Case ID in Applications list.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+				    System.out.println("[Step] Searching Case ID in Applications list | Case ID: " + Case_id);
+
+				    Thread.sleep(1800);
+
+				    List<WebElement> result_rows;
+				    try {
+				        result_rows = p.rows();
+				        result_rows.get(0).click();
+				        Thread.sleep(800);
+
+				        Report_Listen.log_print_in_report().log(Status.INFO,
+				                "<b>🟨 Actual:</b> Opened first search result row for Case ID.<br>"
+				              + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				        );
+				        System.out.println("Actual: Opened first result row | Case ID: " + Case_id);
+
+				    } catch (Exception Result_still_not_fetched) {
+
+				        Report_Listen.log_print_in_report().log(Status.INFO,
+				                "<b>🟨 Actual:</b> First attempt to fetch result rows failed. Retrying once after 800ms.<br>"
+				              + "<b>Case ID:</b> <b>" + Case_id + "</b><br>"
+				              + "<b>Exception:</b> " + Result_still_not_fetched.getClass().getSimpleName()
+				        );
+
+				        System.out.println("Exception Found in fetching result rows thereby retrying");
+				        System.out.println("Case ID   : " + Case_id);
+				        System.out.println("Exception : " + Result_still_not_fetched.getClass().getSimpleName());
+				        System.out.println();
+
+				        Thread.sleep(800);
+
+				        result_rows = p.rows();
+				        result_rows.get(0).click();
+				        Thread.sleep(800);
+
+				        Report_Listen.log_print_in_report().log(Status.INFO,
+				                "<b>🟨 Actual:</b> Result rows fetched successfully on retry and first row opened.<br>"
+				              + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				        );
+				        System.out.println("Actual: Result row opened successfully on retry | Case ID: " + Case_id);
+				    }
+				}
+
+				// =========================
+				// Case Tags Fetch (with retry) + Case ID logs
+				// =========================
+				List<WebElement> Case_Tags;
+				try {
+				    Case_Tags = p.Case_tags();
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>Step " + (step++) + ":</b> Fetch Case Tags for validation/context.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b><br>"
+				          + "<b>🟨 Actual:</b> Case tags fetched successfully."
+				    );
+				    System.out.println("[Step] Case tags fetched successfully | Case ID: " + Case_id);
+
+				} catch (RuntimeException tags) {
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Case tags fetch failed. Retrying once after 1200ms.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b><br>"
+				          + "<b>Exception:</b> " + tags.getClass().getSimpleName()
+				    );
+
+				    System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+				    System.out.println("Case ID   : " + Case_id);
+				    System.out.println("Exception : " + tags.getClass().getSimpleName());
+				    System.out.println();
+
+				    Thread.sleep(1200);
+
+				    Case_Tags = p.Case_tags();
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Case tags fetched successfully on retry.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+				    System.out.println("Actual: Case tags fetched on retry | Case ID: " + Case_id);
+				}
+
+				// =========================
+				// Applications tab + create application (Case ID logs)
+				// =========================
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>Step " + (step++) + ":</b> Open Applications tab inside Case Details.<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				);
+				System.out.println("[Step] Open Applications tab | Case ID: " + Case_id);
+
+				tab_selector("Applications");
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>🟨 Actual:</b> Applications tab opened.<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				);
+				System.out.println("Actual: Applications tab opened | Case ID: " + Case_id);
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>Step " + (step++) + ":</b> Enter Requested Amount and click Add to create Application card.<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b> | Requested Amount = <b>" + Requested_Amount + "</b>"
+				);
+				System.out.println("[Step] Create application card | Case ID: " + Case_id + " | Requested Amount: " + Requested_Amount);
+
+				p.Requested_amount_input_field_in_Applications_tab().sendKeys(Requested_Amount);
+				p.Appilcation_Add_button().click();
+				p.Application_Card_Body();
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>🟨 Actual:</b> Application card created and visible.<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				);
+				System.out.println("Actual: Application card created | Case ID: " + Case_id);
+
+				// =========================
+				// Buyout edit open + Buyout save (Case ID logs)
+				// =========================
+				WebElement Buyout_Buttons = p.First_Application_Buyout_amount_edit_button();
+				Buyout_Buttons.click();
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>🟨 Actual:</b> Buyout modal opened.<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				);
+				System.out.println("Actual: Buyout modal opened | Case ID: " + Case_id);
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>Step " + (step++) + ":</b> Fill Buyout details and save (Funder, Amount, Expiry Date).<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				);
+				System.out.println("[Step] Fill & save Buyout details | Case ID: " + Case_id);
+
 				p.Modal_Input_Feilds().get(0).sendKeys(Case_Data.get("Buyout Funder Name"));
 				p.Modal_Input_Feilds().get(1).sendKeys(Case_Data.get("Buyout Amount"));
 				p.Modal_Input_Feilds().get(2).sendKeys(Case_Data.get("Buyout Expiry Date"));
 				p.calender_date_select().click();
+				Thread.sleep(500);
 				p.modal_buttons().get(1).click();
-				Thread.sleep(800);
+				Thread.sleep(500);
+                WebElement Toast_after_buyout=lg.toast();
+                String text_toast = Toast_after_buyout.getText().trim();
+				// Toast after buyout (keep your existing toast printer, but add console context)
 				try {
-					Login_negative_testcases.Toast_printer(lg.toast().getText().trim(),d);}
-					catch(Exception e){
-					Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: "+"No toast captured / toast locator not visible. Error:");}
-				Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Open Approved Amount edit and enter Approved Amount.");
-				List<WebElement> Amount_edit_buttons;
-			try{Amount_edit_buttons= p.Application_amount_edit_buttons();
-			    Amount_edit_buttons.get(2).click(); }
-			catch(Exception em) {
+				    Login_negative_testcases.Toast_printer(text_toast, d);
+
+				    System.out.println("Toast after Buyout save | Case ID: " + Case_id + " | Toast: " + lg.toast().getText().trim());
+				} catch (Exception e) {
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual →** 📢,</b> Toast after Buyout Amount: " + "No toast captured / toast locator not visible. Error:"
+				          + "<br><b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+
+				    System.out.println("Toast after Buyout save NOT captured | Case ID: " + Case_id);
+				    System.out.println();
+				}
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+				        "<b>Step " + (step++) + ":</b> Open Approved Amount edit and enter Approved Amount.<br>"
+				      + "<b>Case ID:</b> <b>" + Case_id + "</b>"
+				);
+				System.out.println("[Step] Open Approved Amount edit | Case ID: " + Case_id);
 				Thread.sleep(800);
-				Amount_edit_buttons= 	p.Application_amount_edit_buttons();
-			    Amount_edit_buttons.get(2).click();
+				// Approved amount edit with retry (keep your logic + add Case ID to logs)
+				WebElement Approve_Amount_edit_buttons;
+				try {
+					Approve_Amount_edit_buttons = p.First_Application_Approved_amount_edit_button();
+					Approve_Amount_edit_buttons.click();
+
+				    System.out.println("Actual: Approved Amount edit opened | Case ID: " + Case_id);
+
+				} catch (Exception em) {
+
+				    Thread.sleep(800);
+				    Approve_Amount_edit_buttons = p.First_Application_Approved_amount_edit_button();
+					Approve_Amount_edit_buttons.click();
+				    Thread.sleep(800);
+
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "Exception found in fetching Ammount edit buttons after filling buyout form retried and found"
+				          + "<br><b>Case ID:</b> <b>" + Case_id + "</b>"
+				    );
+
+				    System.out.println("Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
+				    System.out.println("Case ID   : " + Case_id);
+				    System.out.println("Exception : " + em.getClass().getSimpleName());
+				    System.out.println();
+				}
+
+				// Continue as-is (no logic change) + add minimal console context
+				Contract_Generator(Case_Data, Plaintiff, attorneyData, step);
+
+				try {
+				    WebElement new_toast = lg.toast();
+				    String new_toast_text = new_toast.getText().trim();
+
+				    // Console
+				    System.out.println("Toast after contract generator | Case ID: " + Case_id + " | Toast: " + new_toast_text);
+				    System.out.println();
+
+				    // Extent (optional but helpful)
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Toast after Contract Generator captured.<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b><br>"
+				          + "<b>Toast:</b> " + new_toast_text
+				    );
+
+				} catch (Exception toast_not_found) {
+
+				    // Console
+				    System.out.println("Toast after contract generator NOT captured | Case ID: " + Case_id);
+				    System.out.println("Reason     : Toast not visible / locator issue");
+				    System.out.println("Exception  : " + toast_not_found.getClass().getSimpleName());
+				    System.out.println();
+
+				    // Extent
+				    Report_Listen.log_print_in_report().log(Status.INFO,
+				            "<b>🟨 Actual:</b> Toast after Contract Generator NOT captured (toast not visible / locator issue).<br>"
+				          + "<b>Case ID:</b> <b>" + Case_id + "</b><br>"
+				          + "<b>Exception:</b> " + toast_not_found.getClass().getSimpleName()
+				    );
+				}
+
+
+				WebElement Sign_in_button = p.Manual_sign_in_button();
+				rp.movetoelement(Sign_in_button);
 				Thread.sleep(800);
-				Report_Listen.log_print_in_report().log(Status.INFO,"Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
-				System.out.println("Exception found in fetching Ammount edit buttons after filling buyout form retried and found");
-				System.out.println();}
-			   Contract_Generator(Case_Data,Plaintiff,attorneyData,step);
-			   WebElement new_toast =lg.toast();
-			   String new_toast_text = lg.toast().getText().trim();
-			   System.out.println(new_toast_text);
-			   WebElement Sign_in_button = p.Manual_sign_in_button();
-			   rp.movetoelement(Sign_in_button);
-		       Thread.sleep(800);
-		       rp.wait_for_theElement_tobe_clickable(Sign_in_button);
-			/*   Sign_in_button.click();
-			   List<WebElement> Open_lien_table_row=manual_lien_generation(Sign_in_button); */}
+				rp.wait_for_theElement_tobe_clickable(Sign_in_button);
+				Sign_in_button.click();
+
+				System.out.println("Clicked Manual Sign In button | Case ID: " + Case_id);
+
+				List<WebElement> Open_lien_table_row = manual_lien_generation(Sign_in_button);
+
+				System.out.println("Manual lien generation triggered | Case ID: " + Case_id);
+}
 	   
+	        
+	        
+	     
 	     public List<WebElement> Internal_Application_Generator_and_Manual_Signer(TreeMap<String, String> data, TreeMap<String, String> data2 ,TreeMap<String,String> attorneyData, String Requested_Amount) throws InterruptedException{
 		   
 		   
@@ -5064,6 +5302,8 @@ public class Case_Appplications extends Header_Manager{
 			   Repeat rp = new Repeat(d);
 			   JavascriptExecutor js = (JavascriptExecutor)d; 
 	    	 
+			   monthly_emi.clear();
+			   
 	    	    int Buyout_Amount = Integer.parseInt(data.get("Buyout Amount"));
 				int Approved_Amount = Integer.parseInt(data.get("Approved Amount"));
 				int Document_prep_fee = Integer.parseInt(data.get("Document prep fee"));
@@ -5238,12 +5478,35 @@ public class Case_Appplications extends Header_Manager{
 				        .pollingEvery(Duration.ofMillis(500))
 				        .ignoring(NoSuchElementException.class)
 				        .ignoring(StaleElementReferenceException.class);
+				WebElement Cancel_Contract;
+			  try {
+			        // If Cancel button exists, wait until it disappears
+			        Cancel_Contract = p.Cancel_Contract_Button();
+
+			        System.out.println("Info    : Cancel Contract button found. Waiting for it to disappear...");
+			        System.out.println();
+
+			        Report_Listen.log_print_in_report().log(Status.INFO,
+			                "<b>🟦 Info:</b> Cancel Contract button detected. Waiting until it disappears before Manual Sign-In.");
+
+			        rp.wait_for_invisibility(Cancel_Contract);
+
+			    } catch (Exception cancel_contract_not_found) {
+
+			        // If Cancel button is not present, assume Sign-In is ready
+			        System.out.println("Info    : Cancel Contract button NOT found. Assuming contract generation completed. Proceeding to Manual Sign-In...");
+			        System.out.println();
+
+			        Report_Listen.log_print_in_report().log(Status.INFO,
+			                "<b>🟦 Info:</b> Cancel Contract button not found. Proceeding directly to Manual Sign-In.");
+			    }
 
 				Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Click <i>Generate Contract</i> again to send contract for signing.");
-				String Contract_Generated = lg.toast().getText().trim();
+				WebElement Generated_Toast = lg.toast();
+				String Contract_Generated = Generated_Toast.getText().trim();
 				Login_negative_testcases.Toast_printer(Contract_Generated,d);
 				Thread.sleep(800);
-				rp.wait_for_invisibility(lg.toast());}
+				rp.wait_for_invisibility(Generated_Toast);}
 	   
 	  
 	   public void Application_Filter_Option_Selector(String Option){
