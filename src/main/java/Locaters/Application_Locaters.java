@@ -227,11 +227,11 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="(//*[text()='APPROVED AMOUNT']/..//*[@aria-label='edit'])[1]")
 	private WebElement First_Application_Approved_amount_edit_button;
 	@FindBy(xpath="(//*[text()='BUYOUT AMOUNT']/..//*[@aria-label='edit'])[1]")
-	private WebElement  First_Application_Buyout_amount_edit_button;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement  First_Application_Buyout_amount_edit_button;
+	@FindBy(xpath="//*[@class='ant-descriptions-view']//*[contains(@class,'ant-descriptions-item-content')]")
+	private List<WebElement> Case_details_values; 
+	@FindBy(xpath="//*[@aria-label='edit']/../../../../../..//span[contains(@style,'min-width: 70px')]")
+	private List<WebElement> Application_Amount_values;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -841,13 +841,13 @@ public class Application_Locaters extends Login_Locaters{
 	return First_Application_Approved_amount_edit_button;}   
 	public WebElement First_Application_Buyout_amount_edit_button(){
 	wait_for_theElement(First_Application_Buyout_amount_edit_button);
-	return First_Application_Buyout_amount_edit_button;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return First_Application_Buyout_amount_edit_button;}   
+	public List<WebElement> Case_details_values(){
+	wait_for_theElement(Case_details_values);
+	return Case_details_values;}   
+	public List<WebElement> Application_Amount_values(){
+	wait_for_theElement(Application_Amount_values);
+	return Application_Amount_values;} /*  
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

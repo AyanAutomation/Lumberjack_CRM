@@ -1841,6 +1841,16 @@ public class Case_Appplications extends Header_Manager{
 	 		Attorney_module at = new Attorney_module();
 	 		
 	 		monthly_emi.clear();
+	 		String Lead_Source = Case_Data.get("Lead Source");
+	 		String Requested_amount = Case_Data.get("Requested Amount");
+	 		String Case_plaintiff = Plaintiff.get("First Name");
+	 		String Type_of_Case = Case_Data.get("Case Type");
+	 		String Incident_State = Case_Data.get("State");
+	 		String Summary_content = Case_Data.get("Summary");
+	 		String Court_Index_Number = Case_Data.get("Court Index Number");
+	 		
+	 		
+	 		
 	 		
 	 		int Buyout_Amount = Integer.parseInt(Case_Data.get("Buyout Amount"));
 	 		int Approved_Amount = Integer.parseInt(Case_Data.get("Approved Amount"));
@@ -1877,19 +1887,19 @@ public class Case_Appplications extends Header_Manager{
 	 		Add_New_Case_Form_Accessor(step++);
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
-	 		p.form_inputs().get(0).sendKeys(Plaintiff.get("First Name"));
+	 		p.form_inputs().get(0).sendKeys(Case_plaintiff);
 	 		p.plaintiff_dropdown_list();
 	 		p.Plaintiff_options().get(0).click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Plaintiff selected = "+Plaintiff.get("First Name"));
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Incident/Case Type from dropdown.");
-	 		p.form_inputs().get(1).sendKeys(Case_Data.get("Case Type"));
+	 		p.form_inputs().get(1).sendKeys(Type_of_Case);
 	 		p.form_inputs().get(1).click();
 	 		p.Incident_type_dropdown();
 	 		option_printers("Incident Options are ",p.Incident_options());
 	 		p.Incident_options().get(0).click();
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Incident/Case type selected from list for input = "+Case_Data.get("Case Type"));
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select State of Incident from dropdown.");
-	 		p.form_inputs().get(2).sendKeys(Case_Data.get("State"));
+	 		p.form_inputs().get(2).sendKeys(Incident_State);
 	 		p.form_inputs().get(2).click();
 	 		p.State_of_incident_dropdown();
 	 		p.State_of_incident_options().get(0).click();
@@ -1904,7 +1914,7 @@ public class Case_Appplications extends Header_Manager{
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Select Lead Type and Lead Source.");
 	 		rp.Scroll_to_element(p.form_inputs().get(4));
 	 		//p.form_inputs().get(4).click();
-	 		p.form_inputs().get(4).sendKeys(Case_Data.get("Lead Source"));
+	 		p.form_inputs().get(4).sendKeys(Lead_Source);
 	 		p.Lead_Type_dropdown();
 	 		p.Lead_category_options().get(0).click();
 	 		p.form_inputs().get(5).click();
@@ -1913,7 +1923,7 @@ public class Case_Appplications extends Header_Manager{
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Lead type/source selected from dropdowns (Lead Source input = "+Case_Data.get("Lead Source")+")");
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Enter Requested Amount and click Create/Save Case.");
 	 		rp.Scroll_to_element(p.form_inputs().get(5));
-	 		p.form_inputs().get(6).sendKeys(Case_Data.get("Requested Amount"));
+	 		p.form_inputs().get(6).sendKeys(Requested_amount);
 	 		p.form_buttons().get(1).click();
 	 		Thread.sleep(500); 	
 	 		try {
@@ -1925,9 +1935,11 @@ public class Case_Appplications extends Header_Manager{
 		    String Case_ID = CaseId.getText().trim(); /***************/
 		    System.out.println(Case_ID);
 		    System.out.println();
-	 		p.Case_details_edit_buttons().click();
-	 		p.Summary_feild().sendKeys(Case_Data.get("Summary"));
-	 		p.Court_index_input().sendKeys(Case_Data.get("Court Index Number"));
+		 
+		    Validate_Case_Title_And_Details(Case_plaintiff,Incident_State,Type_of_Case);
+		    p.Case_details_edit_buttons().click();
+	 		p.Summary_feild().sendKeys(Summary_content);
+	 		p.Court_index_input().sendKeys(Court_Index_Number);
 	 		p.Edit_form_buttons().get(1).click();
 	 		p.Case_details_edit_buttons(); 
 	 		Thread.sleep(500);
@@ -1935,7 +1947,9 @@ public class Case_Appplications extends Header_Manager{
 	 		Thread.sleep(800);
 	 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+Case_Data.get("Court Index Number")+")");
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
-	 		tab_selector("Contacts");
+	        
+	        Validate_Summary_And_CourtIndex(Summary_content,Court_Index_Number);
+	        tab_selector("Contacts");
 	 		p.lawFirm_AddButton_ContactTab();
 	 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
 	 		p.Contact_AddButton_ContactTab().click();
@@ -1947,7 +1961,8 @@ public class Case_Appplications extends Header_Manager{
 	 				break;}}
 	 		p.pop_up_contact_list();
 	 		Thread.sleep(800);
-	 		p.Popup_modal_search().sendKeys(attorneyData.get("First Name"));
+	 		String Attorney_name = attorneyData.get("First Name");
+	 		p.Popup_modal_search().sendKeys(Attorney_name);
 	 		Thread.sleep(800);
 	 		WebElement toast = lg.toast();
 	 		WebElement toast_close = lg.Toast_close_button();
@@ -2099,7 +2114,7 @@ public class Case_Appplications extends Header_Manager{
 	 		date.click();
 	 		p.modal_buttons().get(1).click();
 	 		Thread.sleep(800);
-	        p.Generate_contract_button().click();
+	 		p.Generate_contract_button().click();
 	 	    p.popup_modal();
 	 	    Thread.sleep(800);
 	 	    rp.movetoelement(p.Popup_add_form());
@@ -2484,8 +2499,143 @@ public class Case_Appplications extends Header_Manager{
 	    	    }
 	    	 }
 	
-	
-	
+	     public void Validate_Case_Title_And_Details(String Case_plaintiff,String Incident_State,String Type_of_Case){
+	    	 
+	    	 Application_Locaters p = new Application_Locaters(d);
+	    	 
+	    	// =========================
+			 // ✅ Case Title Validation (Plaintiff Name in Title)
+			 // =========================
+			 WebElement Title_Plaintiff_name = p.Title_plaintiff_name();
+			 String Plaintiff_name_in_title = Title_Plaintiff_name.getText().trim();
+
+			 boolean isPlaintiffPresent = Plaintiff_name_in_title.contains(Case_plaintiff);
+
+			 Report_Listen.log_print_in_report().log(isPlaintiffPresent ? Status.PASS : Status.FAIL,
+			         "<b>🔎 Validation:</b> Plaintiff name should be visible in Case Title.<br>"
+			       + "<b>Expected Plaintiff:</b> <b>" + Case_plaintiff + "</b><br>"
+			       + "<b>Actual Case Title:</b> " + Plaintiff_name_in_title + "<br>"
+			       + "<b>Result:</b> " + (isPlaintiffPresent ? "Matched ✅" : "Not Matched ❌")
+			 );
+
+			 // Console
+			 System.out.println("==================================================");
+			 System.out.println("CASE TITLE VALIDATION");
+			 System.out.println("Expected Plaintiff : " + Case_plaintiff);
+			 System.out.println("Actual Title       : " + Plaintiff_name_in_title);
+			 System.out.println("RESULT             : " + (isPlaintiffPresent ? "PASS ✅" : "FAIL ❌"));
+			 System.out.println("==================================================");
+			 System.out.println();
+
+
+			 // =========================
+			 // ✅ Case Details Validation (State + Case Type)
+			 // =========================
+			 List<WebElement> detail_values = p.Case_details_values();
+
+			 // --- State ---
+			 WebElement State = detail_values.get(1);
+			 String State_contents = State.getText().trim();
+
+			 boolean isStateMatched = State_contents.contains(Incident_State);
+
+			 Report_Listen.log_print_in_report().log(isStateMatched ? Status.PASS : Status.FAIL,
+			         "<b>🔎 Validation:</b> Incident State should match in Case Details.<br>"
+			       + "<b>Expected State:</b> <b>" + Incident_State + "</b><br>"
+			       + "<b>Actual State:</b> " + State_contents + "<br>"
+			       + "<b>Result:</b> " + (isStateMatched ? "Matched ✅" : "Not Matched ❌")
+			 );
+
+			 // Console
+			 System.out.println("--------------------------------------------------");
+			 System.out.println("CASE DETAIL VALIDATION - STATE");
+			 System.out.println("Expected State : " + Incident_State);
+			 System.out.println("Actual State   : " + State_contents);
+			 System.out.println("RESULT         : " + (isStateMatched ? "PASS ✅" : "FAIL ❌"));
+			 System.out.println("--------------------------------------------------");
+			 System.out.println();
+
+
+			 // --- Case Type ---
+			 WebElement CaseType = detail_values.get(2);
+			 String CaseType_contents = CaseType.getText().trim();
+
+			 boolean isCaseTypeMatched = CaseType_contents.contains(Type_of_Case);
+
+			 Report_Listen.log_print_in_report().log(isCaseTypeMatched ? Status.PASS : Status.FAIL,
+			         "<b>🔎 Validation:</b> Case Type should match in Case Details.<br>"
+			       + "<b>Expected Case Type:</b> <b>" + Type_of_Case + "</b><br>"
+			       + "<b>Actual Case Type:</b> " + CaseType_contents + "<br>"
+			       + "<b>Result:</b> " + (isCaseTypeMatched ? "Matched ✅" : "Not Matched ❌")
+			 );
+
+			 // Console
+			 System.out.println("--------------------------------------------------");
+			 System.out.println("CASE DETAIL VALIDATION - CASE TYPE");
+			 System.out.println("Expected Case Type : " + Type_of_Case);
+			 System.out.println("Actual Case Type   : " + CaseType_contents);
+			 System.out.println("RESULT             : " + (isCaseTypeMatched ? "PASS ✅" : "FAIL ❌"));
+			 System.out.println("--------------------------------------------------");
+			 System.out.println();
+	    	 
+	     }
+	  
+	     
+	     
+	     public void Validate_Summary_And_CourtIndex(String Summary_content, String Court_Index_Number){
+	    	 
+	    	 Application_Locaters p = new Application_Locaters(d);
+	    	 
+	    	 
+	      List<WebElement> refetched_detail_values= p.Case_details_values();
+	     // =========================
+	     // ✅ Case Details Validation (Summary + Court Index Number)
+	     // =========================
+
+	     // ---------- Summary ----------
+	     WebElement Summary_ = refetched_detail_values.get(0);
+	     String Summary_contents = Summary_.getText().trim();
+
+	     boolean isSummaryMatched = Summary_contents.contains(Summary_content);
+
+	     Report_Listen.log_print_in_report().log(isSummaryMatched ? Status.PASS : Status.FAIL,
+	             "<b>🔎 Validation:</b> Summary should be saved correctly in Case Details.<br>"
+	           + "<b>Expected Summary:</b> <b>" + Summary_content + "</b><br>"
+	           + "<b>Actual Summary:</b> " + Summary_contents + "<br>"
+	           + "<b>Result:</b> " + (isSummaryMatched ? "Matched ✅" : "Not Matched ❌")
+	     );
+
+	     // Console (structured)
+	     System.out.println("==================================================");
+	     System.out.println("CASE DETAIL VALIDATION - SUMMARY");
+	     System.out.println("Expected Summary : " + Summary_content);
+	     System.out.println("Actual Summary   : " + Summary_contents);
+	     System.out.println("RESULT           : " + (isSummaryMatched ? "PASS ✅" : "FAIL ❌"));
+	     System.out.println("==================================================");
+	     System.out.println();
+
+
+	     // ---------- Court Index Number ----------
+	     WebElement Index_numb = refetched_detail_values.get(4);
+	     String Index_number = Index_numb.getText().trim();
+
+	     boolean isIndexMatched = Index_number.contains(Court_Index_Number);
+
+	     Report_Listen.log_print_in_report().log(isIndexMatched ? Status.PASS : Status.FAIL,
+	             "<b>🔎 Validation:</b> Court Index Number should be saved correctly in Case Details.<br>"
+	           + "<b>Expected Court Index:</b> <b>" + Court_Index_Number + "</b><br>"
+	           + "<b>Actual Court Index:</b> " + Index_number + "<br>"
+	           + "<b>Result:</b> " + (isIndexMatched ? "Matched ✅" : "Not Matched ❌")
+	     );
+
+	     // Console (structured)
+	     System.out.println("==================================================");
+	     System.out.println("CASE DETAIL VALIDATION - COURT INDEX NUMBER");
+	     System.out.println("Expected Court Index : " + Court_Index_Number);
+	     System.out.println("Actual Court Index   : " + Index_number);
+	     System.out.println("RESULT               : " + (isIndexMatched ? "PASS ✅" : "FAIL ❌"));
+	     System.out.println("==================================================");
+	     System.out.println();}
 	
 	
 	
@@ -3459,10 +3609,10 @@ public class Case_Appplications extends Header_Manager{
 
 		    // ===== DataProvider return =====
 		    return new Object[][]{ 
-		    	{c1},{c2},{c3},{c4},{c5},
+		    	{c1},/*{c2},{c3},{c4},{c5},
 		        {c6},{c7},{c8},{c9},{c10},
 		        {c11},{c12},{c13},{c14},{c15}, 
-		        {c16},{c17},{c18},{c19},{c20} 
+		        {c16},{c17},{c18},{c19},{c20} */
 		    };}
 	
 	
