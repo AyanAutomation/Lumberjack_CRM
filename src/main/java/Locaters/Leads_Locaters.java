@@ -70,9 +70,9 @@ public class Leads_Locaters extends Repeat{
 	@FindBy(name="others_injured_explain")
 	private WebElement others_injured_explain;
 	@FindBy(name="child_support_explain")
-	private WebElement child_support_explain; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement child_support_explain; 
+	@FindBy(xpath="//*[contains(@class,'success_message')]")
+	private WebElement form_submit_success;/*
 	@FindBy(xpath="")
 	private WebElement  ; 
 	@FindBy(xpath="")
@@ -220,10 +220,10 @@ public class Leads_Locaters extends Repeat{
 	return others_injured_explain;}
 	public WebElement child_support_explain(){
 	wait_for_theElement(child_support_explain);
-	return child_support_explain;}/*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return child_support_explain;}
+	public WebElement form_submit_success(){
+	wait_for_theElement(form_submit_success);
+	return form_submit_success;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}

@@ -5,7 +5,7 @@
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Leads">
         <methods>
-          <include name="frontend_form_filler" invocation-numbers="0"/>
+          <include name="frontend_form_filler" invocation-numbers="5 9"/>
           <include name="setup"/>
           <include name="Kill"/>
         </methods>

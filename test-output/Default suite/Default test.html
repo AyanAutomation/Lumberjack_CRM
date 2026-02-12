@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>8/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 10 23:09:11 IST 2026</td>
+<td>Started on:</td><td>Thu Feb 12 14:41:24 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>11 seconds (11226 ms)</td>
+<tr><td>Total time:</td><td>135 seconds (135574 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,221 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=NO, Are you currently behind on child support?=I DON'T KNOW, City=Québec City, Date of Birth=09/03/1991, Describe the accident=Test scenario: Trip-and-fall on uneven pavement outside a retail complex. Cracked concrete with no warning. Fell forward, struck knee and palms, swelling started quickly. Added length to test UI behavior: wrapping, saved preview, and no clipping when navigating back and forth., Describe the injuries you sustained during the accident=Knee swelling and pain, abrasions, and wrist tenderness. Imaging ruled out fracture; ortho follow-up suggested if pain persists., Email=test.roseline.desrocherre.v1p6r2@yopmail.com, Explain (Behind on Child Support)=Not sure how the system defines it; selecting for branch coverage and validation behavior., Explain (Governmental Health Coverage)=, Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=, Explain (Other Traumatic Incidents)=Minor shoulder strain while lifting groceries weeks later; no formal visit. Included for YES-path testing., Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=18200, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=Sonoran Docketwright Offices, Lawyer's Name=Test Laurent Nadeaux, Lawyer's Phone Number=6026616634, Mailing Street Address=2400 E Camelback Road, Suite 550, Phone Number=6026631159, Since your accident, have you been injured in any other traumatic incidents?=YES, State=Arizona, Were other people injured in this accident?=NO, When did the accident happen?=06/22/2024, Where did the accident happen?=Phoenix, AZ, Your Full Name=Test Roseline Océanne Desrochèrre}</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label class=&quot;radio&quot;&gt;...&lt;/label&gt; is not clickable at point (250, 668). Other element would receive the click: &lt;div class=&quot;freeform-row field-insurance_violation radio-group&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=144.0.7559.133)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [851f014e6543f19fc49f482aaa736c39, clickElement {id=f.4C73362E5AEED3B07DF5C49C188650B5.d.FBE07D43106A177A57F919BD1B7B91C1.e.114}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53410}, goog:processID: 6284, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53410/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (851f014e6543f19fc49f482aaa736c39)] -&gt; xpath: //label[text()=&apos;In the 5 years before the accident, did you have a violation for no auto insurance?&apos;]/..//label[@class=&apos;radio&apos;]]
+Session ID: 851f014e6543f19fc49f482aaa736c39
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:126)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1938741493", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1938741493'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label class=&quot;radio&quot;&gt;...&lt;/label&gt; is not clickable at point (250, 668). Other element would receive the click: &lt;div class=&quot;freeform-row field-insurance_violation radio-group&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=144.0.7559.133)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [851f014e6543f19fc49f482aaa736c39, clickElement {id=f.4C73362E5AEED3B07DF5C49C188650B5.d.FBE07D43106A177A57F919BD1B7B91C1.e.114}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53410}, goog:processID: 6284, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53410/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (851f014e6543f19fc49f482aaa736c39)] -&gt; xpath: //label[text()=&apos;In the 5 years before the accident, did you have a violation for no auto insurance?&apos;]/..//label[@class=&apos;radio&apos;]]
+Session ID: 851f014e6543f19fc49f482aaa736c39
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:126)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>8</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=I DON'T KNOW, Are you currently behind on child support?=NO, City=Edmonton, Date of Birth=06/25/1992, Describe the accident=Test scenario: Parking lot collision while reversing. Other vehicle backed out at the same time; impact to the rear quarter panel. Photos taken; security cameras may exist. Using a long description to stress the UI, including multiple sentences and deliberate formatting.
+
+Goal: verify no overflow, no broken borders, consistent spacing, and proper truncation on summary cards., Describe the injuries you sustained during the accident=Neck stiffness and headache later that day, plus mild nausea. Clinic visit recorded; conservative treatment with rest and anti-inflammatories., Email=test.zoe.poirierx.p7v8k2@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=Not sure whether prior enrollment is still active; pending confirmation from the agency. Included to test optional explain persistence and UI wrapping., Explain (No Auto Insurance Violation)=Not sure; policy history split across provinces/insurers. Selecting for branch coverage., Explain (Other People Injured)=, Explain (Other Traumatic Incidents)=Minor fall while climbing stairs post-accident; no ER visit. Included to validate YES + long explain retention., Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=17650, In the 5 years before the accident, did you have a violation for no auto insurance?=I DON'T KNOW, Law Firm Name=VerdictForge Litigation Atelierr, Lawyer's Name=Test Édith Chartreuxx, Lawyer's Phone Number=7026617701, Mailing Street Address=777 S Grand Central Parkway, Unit 1903, Phone Number=7026609305, Since your accident, have you been injured in any other traumatic incidents?=YES, State=Nevada, Were other people injured in this accident?=NO, When did the accident happen?=07/29/2024, Where did the accident happen?=Las Vegas, NV, Your Full Name=Test Zoé Aurore Poirierx}</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label class=&quot;radio&quot;&gt;...&lt;/label&gt; is not clickable at point (250, 667). Other element would receive the click: &lt;div class=&quot;freeform-row field-insurance_violation radio-group&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=144.0.7559.133)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7094e6671883aa144ab4e1b010420c4e, clickElement {id=f.61FD2DAC335A553D74C1F09028421993.d.BA118F8A6A22409D2C12FC180DCCA54E.e.120}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, goog:processID: 5904, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7094e6671883aa144ab4e1b010420c4e)] -&gt; xpath: //label[text()=&apos;In the 5 years before the accident, did you have a violation for no auto insurance?&apos;]/..//label[@class=&apos;radio&apos;]]
+Session ID: 7094e6671883aa144ab4e1b010420c4e
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:126)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace599060649", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace599060649'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label class=&quot;radio&quot;&gt;...&lt;/label&gt; is not clickable at point (250, 667). Other element would receive the click: &lt;div class=&quot;freeform-row field-insurance_violation radio-group&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=144.0.7559.133)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7094e6671883aa144ab4e1b010420c4e, clickElement {id=f.61FD2DAC335A553D74C1F09028421993.d.BA118F8A6A22409D2C12FC180DCCA54E.e.120}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, goog:processID: 5904, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7094e6671883aa144ab4e1b010420c4e)] -&gt; xpath: //label[text()=&apos;In the 5 years before the accident, did you have a violation for no auto insurance?&apos;]/..//label[@class=&apos;radio&apos;]]
+Session ID: 7094e6671883aa144ab4e1b010420c4e
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:126)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,12 +291,52 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you currently behind on child support?=I DON'T KNOW, City=Toronto, Date of Birth=02/14/1992, Describe the accident=Test scenario: Rear-end collision in slow traffic during light rain. The vehicle behind failed to stop and pushed my car into the vehicle ahead. Airbags did not deploy, but the impact caused a sharp forward jerk. Police attended, a report number was provided, and photos were taken from multiple angles. There were passengers in my car; everyone was shaken. The other driver admitted distraction, but later claimed I stopped abruptly. This description is intentionally long to test wrapping, card height expansion, and whether the UI breaks or overlaps adjacent components.
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=I DON'T KNOW, Are you currently behind on child support?=NO, City=Hamilton, Date of Birth=09/17/1991, Describe the accident=Test scenario: Side-swipe on a multi-lane road during evening traffic. A vehicle in the adjacent lane drifted left while changing lanes and clipped my front quarter panel, forcing me to correct sharply to avoid the curb. The impact felt minor at first, but the steering immediately pulled and a warning light appeared on the dash. We pulled into a nearby lot; I took wide-angle and close-up photos, captured the other vehicle’s plate, and noted the exact intersection, lane position, and weather conditions. The other driver initially apologized and offered to exchange info, then suddenly claimed I “sped up” and caused the contact. Police were called; it took time for an officer to arrive. This paragraph is intentionally long to stress UI behavior: wrapping, card height expansion, scrollbar appearance, and whether any text overlaps buttons or breaks spacing.
 
-Extra details: timestamps, lane notes, weather notes, and quote-style paragraphs to test rendering across devices., Describe the injuries you sustained during the accident=Neck pain (whiplash), headache, mild lower back strain, and intermittent shoulder tingling. Urgent care visit documented. Physio recommended. Testing long text + line breaks.
-Follow-up may require MRI if symptoms persist., Email=test.aiden.macleod.7q4m1@yopmail.com, Explain (Behind on Child Support)=Selecting 'I DON'T KNOW' for test coverage of conditional logic and server-side validation., Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=Passenger reported wrist pain and was evaluated at a walk-in clinic. No fractures, but follow-up imaging was suggested., Explain (Other Traumatic Incidents)=, Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=15000, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=Test Northlake Counsel Group, Lawyer's Name=Test Claire Ouellet, Lawyer's Phone Number=6469031184, Mailing Street Address=88 Bloor Street West, Unit 1206, Phone Number=6469013728, Since your accident, have you been injured in any other traumatic incidents?=NO, State=New York, Were other people injured in this accident?=YES, When did the accident happen?=10/12/2024, Where did the accident happen?=Buffalo, NY, Your Full Name=Test Aiden MacLeod}</td>
+Extra stress lines: multiple sentences, punctuation, parentheses (like this), and a forced line break to validate consistent rendering across steps and after back/next navigation., Describe the injuries you sustained during the accident=Neck stiffness starting later that night, upper back tightness between the shoulder blades, and intermittent tingling down the left arm when lifting or turning quickly. Visited urgent care; advised rest, heat/ice rotation, and follow-up with physiotherapy. Added length + a line break to test the textarea and any saved preview card.
+If symptoms persist, provider mentioned imaging may be recommended., Email=test.adrien.lambertt.z9r2k7@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=Coverage status is unclear due to recent plan changes and pending eligibility confirmation. Included to verify optional explain text wrapping, save behavior, and step-to-step persistence., Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=, Explain (Other Traumatic Incidents)=Minor slip on stairs about 6 weeks later caused a bruised knee; no ER visit. Included only to test YES-path + explain persistence and long-text storage., Explain (Previous Settlement Advance)=Not sure if a prior discussion with a different provider counts as an 'advance'; no signed paperwork available right now. Selecting for coverage of I DON'T KNOW + explain., Have you previously received a settlement advance for this case?=I DON'T KNOW, I am seeking an advance of=19500, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=BayState CaseBuilders, PLLC, Lawyer's Name=Test Mireille Dagenais, Lawyer's Phone Number=9176407716, Mailing Street Address=315 King Street East, Unit 907, Phone Number=9176384209, Since your accident, have you been injured in any other traumatic incidents?=YES, State=New York, Were other people injured in this accident?=NO, When did the accident happen?=11/21/2024, Where did the accident happen?=Rochester, NY, Your Full Name=Test Adrien René Lambertt}</td>
 <td></td>
-<td>7</td>
+<td>18</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=YES, Are you currently behind on child support?=NO, City=Ottawa, Date of Birth=07/28/1991, Describe the accident=Test scenario: Pedestrian incident at a marked crosswalk. The walk signal was on, and a turning vehicle rolled forward, then accelerated unexpectedly. I stepped back but was still clipped on the side, causing me to stumble and fall. Police and EMS responded; I documented witness names and took photos of the intersection. This is intentionally long so the UI gets stressed (wrapping, card height, button spacing, and preview layout after save).
+
+Extra formatting included to test line breaks and consistent rendering., Describe the injuries you sustained during the accident=Ankle sprain, bruised knee, and recurring lower-back pain that worsens after walking. PT started; prolonged standing is difficult., Email=test.maelle.girarnd.c8t4n2@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=Currently enrolled under a government coverage program; coordination of benefits is in progress. Added to test YES + long explain wrapping and persistence., Explain (No Auto Insurance Violation)=Uncertain due to being listed as an occasional driver under a family policy previously; selecting to cover I DON'T KNOW branch., Explain (Other People Injured)=A cyclist braked hard to avoid the vehicle and fell; they reported minor abrasions and left after being checked., Explain (Other Traumatic Incidents)=Minor sports strain (hamstring) several months later; no emergency visit. Included to validate YES + explain flow., Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=24500, In the 5 years before the accident, did you have a violation for no auto insurance?=I DON'T KNOW, Law Firm Name=Capitol Briefworks LLP, Lawyer's Name=Test Thierry Beauchêne, Lawyer's Phone Number=2026112407, Mailing Street Address=180 Wellington Street, Unit 1204, Phone Number=2026139574, Since your accident, have you been injured in any other traumatic incidents?=YES, State=District of Columbia, Were other people injured in this accident?=YES, When did the accident happen?=08/04/2024, Where did the accident happen?=Washington, DC, Your Full Name=Test Maëlle Élise Girarnd}</td>
+<td></td>
+<td>11</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=NO, Are you currently behind on child support?=NO, City=Saskatoon, Date of Birth=08/08/1990, Describe the accident=Test scenario: Public transit sudden stop caused me to lose balance and fall into a pole. No warning announcement. Transit report requested. Intentionally long text to test textarea resizing, saved summary display, and no clipping on tight UI., Describe the injuries you sustained during the accident=Wrist sprain, bruised ribs, and shoulder pain with lifting. Follow-up noted limited range of motion., Email=test.frederic.diohn.n9m4b2@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=, Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=Another passenger fell near the rear door and mentioned shoulder pain. Included to validate long explain persistence., Explain (Other Traumatic Incidents)=, Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=11400, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=BayState Casebuilderz, Lawyer's Name=Test Céline Beaulieuu, Lawyer's Phone Number=6177707729, Mailing Street Address=200 Clarendon Street, Suite 1800, Phone Number=6177712389, Since your accident, have you been injured in any other traumatic incidents?=NO, State=Massachusetts, Were other people injured in this accident?=YES, When did the accident happen?=04/03/2024, Where did the accident happen?=Boston, MA, Your Full Name=Test Frédéric Louis Diohn}</td>
+<td></td>
+<td>9</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=NO, Are you currently behind on child support?=NO, City=Montréal, Date of Birth=10/03/1989, Describe the accident=Test scenario: Slip-and-fall in a lobby where the floor looked dry but had a thin film of water near the entrance. I stepped in, turned toward the elevator, and my foot slid out. I fell onto my left side and hit my elbow and hip. A nearby tenant helped me up; building staff later said they had been cleaning but the warning sign was placed too far away. I requested incident documentation and noted the time, lighting, and exact tile area. This text is intentionally long to stress card layout, wrapping, and saved preview truncation.
+
+Extra UI stress: multiple clauses, long sentences, and line breaks to ensure the container doesn’t overflow or clip., Describe the injuries you sustained during the accident=Bruised hip, elbow pain with swelling, and mild dizziness for several hours afterward. Walk-in clinic documented tenderness. Advised rest and follow-up if headaches recur.
+Added extra length to test multi-line persistence., Email=test.anais.lefebvree.u6k3p1@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=, Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=No confirmed injuries reported to me; I saw another person nearly slip, but I cannot verify whether they were hurt., Explain (Other Traumatic Incidents)=, Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=8700, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=HarborLedger Trial Offices, Lawyer's Name=Test Gabriel Deslauriers, Lawyer's Phone Number=2017791108, Mailing Street Address=155 Rue Saint-Jacques, Apt 14B, Phone Number=2017786432, Since your accident, have you been injured in any other traumatic incidents?=NO, State=New Jersey, Were other people injured in this accident?=I DON'T KNOW, When did the accident happen?=03/12/2025, Where did the accident happen?=Jersey City, NJ, Your Full Name=Test Anaïs Clara Lefebvree}</td>
+<td></td>
+<td>12</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=YES, Are you currently behind on child support?=NO, City=Vancouver, Date of Birth=03/11/1993, Describe the accident=Test scenario: Worksite trip caused by a loose cable near a loading area. I fell and struck elbow and hip. Incident reported immediately; log created. This text is long to test layout stability across steps, saved preview behavior, and card boundaries., Describe the injuries you sustained during the accident=Elbow swelling, bruised hip, and lower back stiffness. Imaging pending; follow-up scheduled., Email=test.kateri.wapistann.r4x8q2@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=Enrolled in a government coverage program; benefits coordination is being reviewed. Included to test YES + long explain render and persistence., Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=, Explain (Other Traumatic Incidents)=Not sure if a prior minor fall counts; selecting to validate I DON'T KNOW logic and UI state., Explain (Previous Settlement Advance)=Prior advance received; verifying the form stores long explanation and preserves it after navigation and refresh., Have you previously received a settlement advance for this case?=YES, I am seeking an advance of=22300, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=FrontRange Trial Mechanix, Lawyer's Name=Test Réjean Vermettte, Lawyer's Phone Number=3036611188, Mailing Street Address=1700 Lincoln Street, Suite 2100, Phone Number=3036604428, Since your accident, have you been injured in any other traumatic incidents?=I DON'T KNOW, State=Colorado, Were other people injured in this accident?=NO, When did the accident happen?=01/18/2025, Where did the accident happen?=Denver, CO, Your Full Name=Test Kateri Noélie Wapistann}</td>
+<td></td>
+<td>11</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=I DON'T KNOW, Are you currently behind on child support?=NO, City=Calgary, Date of Birth=12/27/1988, Describe the accident=Test scenario: Bicycle lane incident where a parked car door opened into my path. Limited reaction time. I fell and scraped arms and shoulder. Long description to validate card design, truncation behavior, and whether spacing remains consistent on mobile widths., Describe the injuries you sustained during the accident=Shoulder strain, abrasions, and wrist pain when lifting objects. Clinic visit documented; PT recommended., Email=test.siobhan.oriellynee.h6t5s1@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=Not certain whether current plan qualifies as government coverage; included to test I DON'T KNOW + optional explanation handling., Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=, Explain (Other Traumatic Incidents)=, Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=9900, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=Cascade Claimcraft Legal Studios, Lawyer's Name=Test Érika Chartierr, Lawyer's Phone Number=2065429016, Mailing Street Address=701 5th Avenue, Floor 44, Phone Number=2065407811, Since your accident, have you been injured in any other traumatic incidents?=NO, State=Washington, Were other people injured in this accident?=NO, When did the accident happen?=09/09/2024, Where did the accident happen?=Seattle, WA, Your Full Name=Test Siobhán Mairéad O’Riellynee}</td>
+<td></td>
+<td>11</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=NO, Are you currently behind on child support?=NO, City=Halifax, Date of Birth=01/19/1990, Describe the accident=Test scenario: Multi-car chain reaction on an expressway exit ramp during stop-and-go traffic. My vehicle was struck from behind and pushed forward. The impact happened quickly, and I felt a sharp jolt. Police report filed; tow receipt available. Long text inserted to check if the UI preserves spacing, wraps properly, and doesn’t overlap any buttons in the confirmation card., Describe the injuries you sustained during the accident=Upper back spasm, neck stiffness, and jaw soreness. Symptoms worsened next morning; prescribed anti-inflammatory meds and PT referral., Email=test.jules.laframboisee.f3q7v9@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=, Explain (No Auto Insurance Violation)=, Explain (Other People Injured)=I saw one driver holding their shoulder, but I did not get a confirmed EMS report regarding others., Explain (Other Traumatic Incidents)=, Explain (Previous Settlement Advance)=Small early-stage advance with another provider; included to validate YES path + long explain persistence in saved preview., Have you previously received a settlement advance for this case?=YES, I am seeking an advance of=13250, In the 5 years before the accident, did you have a violation for no auto insurance?=NO, Law Firm Name=Keystone Dispute Lab, P.C., Lawyer's Name=Test Rosalie Beaulac, Lawyer's Phone Number=3129847712, Mailing Street Address=500 Rue de la Gauchetière Ouest, Suite 2600, Phone Number=3129814406, Since your accident, have you been injured in any other traumatic incidents?=NO, State=Illinois, Were other people injured in this accident?=I DON'T KNOW, When did the accident happen?=02/15/2025, Where did the accident happen?=Chicago, IL, Your Full Name=Test Jules-Antoine Bastien Laframboisee}</td>
+<td></td>
+<td>13</td>
+<td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
+<tr>
+<td title='Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler()'><b>frontend_form_filler</b><br>Test class: Enterprise_Codeclouds.Project.Enterprise.Leads<br>Parameters: {Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?=I DON'T KNOW, Are you currently behind on child support?=NO, City=Winnipeg, Date of Birth=05/18/1994, Describe the accident=Test scenario: Side-impact at an intersection after the other driver ran a red light. My car spun and hit a curb. Witness contact info recorded, photos taken, and an incident number requested. Long narrative used to test wrapping and whether the UI truncates cleanly or clips content., Describe the injuries you sustained during the accident=Bruised ribs, shoulder strain, and sleep disruption due to pain. Follow-up visits documented; PT recommended., Email=test.emile.boucharrd.m8y2h6@yopmail.com, Explain (Behind on Child Support)=, Explain (Governmental Health Coverage)=Coverage status unclear due to recent plan updates and pending confirmation documents. Included to test I DON'T KNOW selection + optional explain persistence., Explain (No Auto Insurance Violation)=Old lapse during a move; policy reinstated same week. Included to validate YES path + long explanation rendering., Explain (Other People Injured)=Other driver reported neck pain; ambulance arrived. Included to validate long explain save., Explain (Other Traumatic Incidents)=, Explain (Previous Settlement Advance)=, Have you previously received a settlement advance for this case?=NO, I am seeking an advance of=6400, In the 5 years before the accident, did you have a violation for no auto insurance?=YES, Law Firm Name=SunCoast Liability Ateliér, Lawyer's Name=Test Mélissa Lemieaux, Lawyer's Phone Number=3057713302, Mailing Street Address=1010 Brickell Avenue, Unit 2912, Phone Number=3057728164, Since your accident, have you been injured in any other traumatic incidents?=NO, State=Florida, Were other people injured in this accident?=YES, When did the accident happen?=12/06/2024, Where did the accident happen?=Miami, FL, Your Full Name=Test Émile Raymond Boucharrd}</td>
+<td></td>
+<td>11</td>
 <td>Enterprise_Codeclouds.Project.Enterprise.Leads@131ef10</td></tr>
 </table><p>
 </body>
