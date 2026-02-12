@@ -72,25 +72,25 @@ public class Leads_Locaters extends Repeat{
 	@FindBy(name="child_support_explain")
 	private WebElement child_support_explain; 
 	@FindBy(xpath="//*[contains(@class,'success_message')]")
-	private WebElement form_submit_success;/*
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
+	private WebElement form_submit_success;
+	@FindBy(name="healthcare_enrollment_which")
+	private WebElement healthcare_enrollment_which; 
+	@FindBy(name="other_incidents_description")
+	private WebElement other_incidents_description;
+	@FindBy(name="previous_advance_company")
+	private WebElement previous_advance_company; 
+	@FindBy(name="previous_advance_receive")
+	private WebElement previous_advance_receive;
+	@FindBy(name="child_support_state")
+	private WebElement child_support_state; 
+	@FindBy(name="child_support_county")
+	private WebElement child_support_county;
+	@FindBy(name="child_support_owe")
+	private WebElement child_support_owe; 
+	@FindBy(xpath="//label[text()='In the PRESENT accident, were you in a vehicle owned by you?']/..//label[@class='radio']")
+	private List<WebElement> Third_subquestions_one_buttons;
+	@FindBy(xpath="//label[text()='Was that vehicle covered by insurance?']/..//label[@class='radio']")
+	private List<WebElement> Third_subquestions_two_buttons;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -223,34 +223,34 @@ public class Leads_Locaters extends Repeat{
 	return child_support_explain;}
 	public WebElement form_submit_success(){
 	wait_for_theElement(form_submit_success);
-	return form_submit_success;}/*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;} 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return form_submit_success;}
+	public WebElement healthcare_enrollment_which(){
+	wait_for_theElement(healthcare_enrollment_which);
+	return healthcare_enrollment_which;}
+	public WebElement other_incidents_description(){
+	wait_for_theElement(other_incidents_description);
+	return other_incidents_description;}
+	public WebElement previous_advance_company(){
+	wait_for_theElement(previous_advance_company);
+	return previous_advance_company;}
+	public WebElement previous_advance_receive(){
+	wait_for_theElement(previous_advance_receive);
+	return previous_advance_receive;} 
+	public WebElement child_support_state(){
+	wait_for_theElement(child_support_state);
+	return child_support_state;}
+	public WebElement child_support_county(){
+	wait_for_theElement(child_support_county);
+	return child_support_county;}
+	public WebElement child_support_owe(){
+	wait_for_theElement(child_support_owe);
+	return child_support_owe;}
+	public List<WebElement> Third_subquestions_one_buttons(){
+	wait_for_theElement(Third_subquestions_one_buttons);
+	return Third_subquestions_one_buttons;}
+	public List<WebElement> Third_subquestions_two_buttons(){
+	wait_for_theElement(Third_subquestions_two_buttons);
+	return Third_subquestions_two_buttons;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}

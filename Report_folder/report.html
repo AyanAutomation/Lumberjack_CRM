@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 12, 2026 02:41:24 PM</span></a>
+<a href="#"><span class="badge badge-primary">Feb 12, 2026 08:03:48 PM</span></a>
 </li>
 </ul>
 </div>
@@ -87,7 +87,7 @@
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:41:27 PM</span> / <span>00:00:18:928</span>
+              <span>8:03:51 PM</span> / <span>00:00:15:217</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -96,9 +96,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:41:27 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:41:46 PM</span>
-<span class='badge badge-default'>00:00:18:928</span>
+<span class='badge badge-success'>02.12.2026 8:03:51 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:04:06 PM</span>
+<span class='badge badge-default'>00:00:15:217</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -110,8 +110,169 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:51 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=19500 | Name=Pete Rose | DOB=09/17/1991 | Phone=+19874563211 | Email=pete@rose.com | City=Hamilton | State=New York | Lawyer=Mireille Dagenais | LawFirm=BayState Casebuilders | GovtCoverage=YES | OtherTrauma=YES | NoInsuranceViolation=YES | PrevAdvance=NO | OthersInjured=NO | ChildSupportBehind=NO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:51 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:41:46 PM</td>
+        <td>8:03:54 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:54 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=19500 | Name=Pete Rose | DOB=09/17/1991 | Phone=+19874563211 | Email=pete@rose.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:03:55 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 315 King Street East, Unit 907 | Hamilton | New York<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:55 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Mireille Dagenais | Phone=9176407716 | Firm=BayState Casebuilders<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:56 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:57 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=11/21/2024 | Location=Rochester, NY<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:58 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:03:59 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:00 PM</td>
+        <td>
+          <b>🔹 Q1 = YES</b><br><b>📥 Input:</b> Which=Medicaid (pending renewal confirmation)<br><b>✅ Expected:</b> 'Which one(s)?' should be visible & accept input.<br><b>🟨 Actual:</b> Filled 'Which one(s)?'.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:00 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:02 PM</td>
+        <td>
+          <b>🔹 Q2 = YES</b><br><b>📥 Input:</b> Explain=Minor slip on stairs ~6 weeks later; bruised knee; no ER visit.<br><b>🟨 Actual:</b> Filled description.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:02 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> YES | OwnedByYou=YES | Covered=YES<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q3 = YES</b><br><b>🟨 Actual:</b> YES selected and sub-question buttons clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q4 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:03 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:04 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:06 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:06 PM</td>
         <td>
           Test passed
         </td>
@@ -128,7 +289,7 @@
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:41:47 PM</span> / <span>00:00:12:323</span>
+              <span>8:04:07 PM</span> / <span>00:00:15:051</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -137,9 +298,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:41:47 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:42:00 PM</span>
-<span class='badge badge-default'>00:00:12:323</span>
+<span class='badge badge-success'>02.12.2026 8:04:07 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:04:22 PM</span>
+<span class='badge badge-default'>00:00:15:051</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -151,8 +312,176 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:07 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=8700 | Name=Al Kaline | DOB=10/03/1989 | Phone=+12604835653 | Email=al@kaline.com | City=Montréal | State=New Jersey | Lawyer=Gabriel Deslauriers | LawFirm=HarborLedger Trial Office | GovtCoverage=NO | OtherTrauma=NO | NoInsuranceViolation=NO | PrevAdvance=YES | OthersInjured=I DON'T KNOW | ChildSupportBehind=NO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:07 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:42:00 PM</td>
+        <td>8:04:11 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:11 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=8700 | Name=Al Kaline | DOB=10/03/1989 | Phone=+12604835653 | Email=al@kaline.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:12 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 155 Rue Saint-Jacques, Apt 14B | Montréal | New Jersey<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:12 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Gabriel Deslauriers | Phone=2017791108 | Firm=HarborLedger Trial Office<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:12 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:13 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=03/12/2025 | Location=Jersey City, NJ<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:14 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q1 = NO</b><br><b>✅ Expected:</b> No extra fields should appear.<br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q2 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> NO | OwnedByYou= | Covered=<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q3 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:15 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:18 PM</td>
+        <td>
+          <b>🔹 Q4 = YES</b><br><b>📥 Input:</b> Company=PrimeMotion Claims Studio | Amount=2500<br><b>🟨 Actual:</b> Company & amount filled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:18 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:18 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:20 PM</td>
+        <td>
+          <b>🔹 Q5 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=No confirmed injuries were reported to me at the time.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:20 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:20 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:20 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:22 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:22 PM</td>
         <td>
           Test passed
         </td>
@@ -169,7 +498,7 @@
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:42:01 PM</span> / <span>00:00:11:987</span>
+              <span>8:04:24 PM</span> / <span>00:00:15:215</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -178,9 +507,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:42:01 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:42:13 PM</span>
-<span class='badge badge-default'>00:00:11:987</span>
+<span class='badge badge-success'>02.12.2026 8:04:24 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:04:39 PM</span>
+<span class='badge badge-default'>00:00:15:215</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -192,8 +521,176 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:24 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=24500 | Name=Maëlys Anaëlle Gravelroux | DOB=07/28/1991 | Phone=+16027394185 | Email=pltf.gravelroux.maelys.x3r7qn.9p0m@yopmail.com | City=Ottawa | State=District of Columbia | Lawyer=Thierry Beauchêne | LawFirm=Capitol Briefworks | GovtCoverage=I DON'T KNOW | OtherTrauma=YES | NoInsuranceViolation=YES | PrevAdvance=NO | OthersInjured=YES | ChildSupportBehind=NO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:24 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:42:13 PM</td>
+        <td>8:04:27 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:27 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=24500 | Name=Maëlys Anaëlle Gravelroux | DOB=07/28/1991 | Phone=+16027394185 | Email=pltf.gravelroux.maelys.x3r7qn.9p0m@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:28 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 180 Wellington Street, Unit 1204 | Ottawa | District of Columbia<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:28 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Thierry Beauchêne | Phone=2026112407 | Firm=Capitol Briefworks<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:28 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:29 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=08/04/2024 | Location=Washington, DC<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:30 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:31 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:31 PM</td>
+        <td>
+          <b>🔹 Q1 = NO</b><br><b>✅ Expected:</b> No extra fields should appear.<br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:33 PM</td>
+        <td>
+          <b>🔹 Q1 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=Unsure; using I DON'T KNOW for branch coverage.<br><b>✅ Expected:</b> Explain field should accept input.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:33 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:35 PM</td>
+        <td>
+          <b>🔹 Q2 = YES</b><br><b>📥 Input:</b> Explain=Minor sports strain months later; no emergency visit.<br><b>🟨 Actual:</b> Filled description.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:35 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> YES | OwnedByYou=I DON'T KNOW | Covered=I DON'T KNOW<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q3 = YES</b><br><b>🟨 Actual:</b> YES selected and sub-question buttons clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q4 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q5 = YES</b><br><b>🟨 Actual:</b> Selected YES.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:36 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:39 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:39 PM</td>
         <td>
           Test passed
         </td>
@@ -210,7 +707,7 @@
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:42:15 PM</span> / <span>00:00:13:157</span>
+              <span>8:04:40 PM</span> / <span>00:00:19:338</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -219,9 +716,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:42:15 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:42:28 PM</span>
-<span class='badge badge-default'>00:00:13:157</span>
+<span class='badge badge-success'>02.12.2026 8:04:40 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:05:00 PM</span>
+<span class='badge badge-default'>00:00:19:338</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -233,8 +730,176 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:40 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=13250 | Name=Róisín Deirdre Quenneville | DOB=01/19/1990 | Phone=+12256149308 | Email=pltf.quenneville.roisin.p5v2mh.1k4q@yopmail.com | City=Halifax | State=Illinois | Lawyer=Rosalie Beaulac | LawFirm=Keystone Dispute Lab | GovtCoverage=NO | OtherTrauma=NO | NoInsuranceViolation=NO | PrevAdvance=YES | OthersInjured=I DON'T KNOW | ChildSupportBehind=YES
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:40 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:42:28 PM</td>
+        <td>8:04:44 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:44 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=13250 | Name=Róisín Deirdre Quenneville | DOB=01/19/1990 | Phone=+12256149308 | Email=pltf.quenneville.roisin.p5v2mh.1k4q@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:45 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 500 Rue de la Gauchetière Ouest, Suite 2600 | Halifax | Illinois<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:45 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Rosalie Beaulac | Phone=3129847712 | Firm=Keystone Dispute Lab<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:45 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:46 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=02/15/2025 | Location=Chicago, IL<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:47 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q1 = NO</b><br><b>✅ Expected:</b> No extra fields should appear.<br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q2 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> NO | OwnedByYou= | Covered=<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q3 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:48 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:51 PM</td>
+        <td>
+          <b>🔹 Q4 = YES</b><br><b>📥 Input:</b> Company=Gateway Pleading House | Amount=3000<br><b>🟨 Actual:</b> Company & amount filled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:51 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:51 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:53 PM</td>
+        <td>
+          <b>🔹 Q5 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=Saw one driver holding shoulder; no confirmed EMS report received.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:53 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:04:57 PM</td>
+        <td>
+          <b>🔹 Q6 = YES</b><br><b>📥 Input:</b> State=Illinois | County=Cook | Amount=4200<br><b>🟨 Actual:</b> Child support fields filled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:04:57 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:00 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:00 PM</td>
         <td>
           Test passed
         </td>
@@ -251,7 +916,7 @@
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:42:29 PM</span> / <span>00:00:11:558</span>
+              <span>8:05:01 PM</span> / <span>00:00:13:203</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -260,9 +925,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:42:29 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:42:41 PM</span>
-<span class='badge badge-default'>00:00:11:558</span>
+<span class='badge badge-success'>02.12.2026 8:05:01 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:05:14 PM</span>
+<span class='badge badge-default'>00:00:13:203</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -274,8 +939,169 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:01 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=6400 | Name=Réjean Laurier Vermette | DOB=05/18/1994 | Phone=+18164079351 | Email=pltf.vermette.rejean.n6k1pt.3z8v@yopmail.com | City=Winnipeg | State=Florida | Lawyer=Mélissa Jade Lemieux | LawFirm=SunCoast Liability Atelier | GovtCoverage=YES | OtherTrauma=NO | NoInsuranceViolation=YES | PrevAdvance=NO | OthersInjured=YES | ChildSupportBehind=NO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:01 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:42:41 PM</td>
+        <td>8:05:04 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:04 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=6400 | Name=Réjean Laurier Vermette | DOB=05/18/1994 | Phone=+18164079351 | Email=pltf.vermette.rejean.n6k1pt.3z8v@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:05 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 1010 Brickell Avenue, Unit 2912 | Winnipeg | Florida<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:05 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Mélissa Jade Lemieux | Phone=3057713302 | Firm=SunCoast Liability Atelier<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:05 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:06 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=12/06/2024 | Location=Miami, FL<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:07 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:08 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:09 PM</td>
+        <td>
+          <b>🔹 Q1 = YES</b><br><b>📥 Input:</b> Which=Medicare (Part A & B)<br><b>✅ Expected:</b> 'Which one(s)?' should be visible & accept input.<br><b>🟨 Actual:</b> Filled 'Which one(s)?'.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:09 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:09 PM</td>
+        <td>
+          <b>🔹 Q2 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:09 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> YES | OwnedByYou=NO | Covered=I DON'T KNOW<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:10 PM</td>
+        <td>
+          <b>🔹 Q3 = YES</b><br><b>🟨 Actual:</b> YES selected and sub-question buttons clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Q4 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Q5 = YES</b><br><b>🟨 Actual:</b> Selected YES.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:11 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:14 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:14 PM</td>
         <td>
           Test passed
         </td>
@@ -285,25 +1111,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="6"
+        <li class="test-item"  status="pass" test-id="6"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:42:42 PM</span> / <span>00:00:08:630</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>8:05:15 PM</span> / <span>00:00:13:599</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:42:42 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:42:50 PM</span>
-<span class='badge badge-default'>00:00:08:630</span>
+<h5 class="test-status text-pass">frontend_form_filler</h5>
+<span class='badge badge-success'>02.12.2026 8:05:15 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:05:29 PM</span>
+<span class='badge badge-default'>00:00:13:599</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -315,59 +1141,178 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>2:42:50 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:15 PM</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label class="radio">...</label> is not clickable at point (250, 668). Other element would receive the click: <div class="freeform-row field-insurance_violation radio-group">...</div>
-  (Session info: chrome=144.0.7559.133)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [851f014e6543f19fc49f482aaa736c39, clickElement {id=f.4C73362E5AEED3B07DF5C49C188650B5.d.FBE07D43106A177A57F919BD1B7B91C1.e.114}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53410}, goog:processID: 6284, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53410/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (851f014e6543f19fc49f482aaa736c39)] -> xpath: //label[text()='In the 5 years before the accident, did you have a violation for no auto insurance?']/..//label[@class='radio']]
-Session ID: 851f014e6543f19fc49f482aaa736c39
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:126)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</textarea>
-          
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=18200 | Name=Tshala Inuinnaq Qitsualik | DOB=09/03/1991 | Phone=+19076105294 | Email=pltf.qitsualik.tshala.v2r8qk.5m9x@yopmail.com | City=Québec City | State=Arizona | Lawyer=Laurent Jean Nadeau | LawFirm=Sonoran Docketwright Office | GovtCoverage=NO | OtherTrauma=YES | NoInsuranceViolation=NO | PrevAdvance=NO | OthersInjured=NO | ChildSupportBehind=I DON'T KNOW
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:15 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:18 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:18 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=18200 | Name=Tshala Inuinnaq Qitsualik | DOB=09/03/1991 | Phone=+19076105294 | Email=pltf.qitsualik.tshala.v2r8qk.5m9x@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:19 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 2400 E Camelback Road, Suite 550 | Québec City | Arizona<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:19 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Laurent Jean Nadeau | Phone=6026616634 | Firm=Sonoran Docketwright Office<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:20 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:21 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=06/22/2024 | Location=Phoenix, AZ<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:21 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:22 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:22 PM</td>
+        <td>
+          <b>🔹 Q1 = NO</b><br><b>✅ Expected:</b> No extra fields should appear.<br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:22 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:24 PM</td>
+        <td>
+          <b>🔹 Q2 = YES</b><br><b>📥 Input:</b> Explain=Minor shoulder strain lifting groceries weeks later; no formal visit.<br><b>🟨 Actual:</b> Filled description.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:24 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> NO | OwnedByYou= | Covered=<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:24 PM</td>
+        <td>
+          <b>🔹 Q3 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:24 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:24 PM</td>
+        <td>
+          <b>🔹 Q4 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:25 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:25 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:25 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:25 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:26 PM</td>
+        <td>
+          <b>🔹 Q6 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=Choosing I DON'T KNOW for branch coverage.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:27 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:29 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:29 PM</td>
+        <td>
+          Test passed
         </td>
       </tr>
   </tbody>
@@ -382,7 +1327,7 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:42:52 PM</span> / <span>00:00:11:323</span>
+              <span>8:05:30 PM</span> / <span>00:00:14:104</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -391,9 +1336,9 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:42:52 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:43:03 PM</span>
-<span class='badge badge-default'>00:00:11:323</span>
+<span class='badge badge-success'>02.12.2026 8:05:30 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:05:44 PM</span>
+<span class='badge badge-default'>00:00:14:104</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -405,8 +1350,176 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:30 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=9900 | Name=Édith Solène Chartreux | DOB=12/27/1988 | Phone=+16097418830 | Email=pltf.chartreux.edith.k9x2mp.0r7d@yopmail.com | City=Calgary | State=Washington | Lawyer=Érika Suzanne Chartier | LawFirm=Cascade Claimcraft Legal Studio | GovtCoverage=I DON'T KNOW | OtherTrauma=NO | NoInsuranceViolation=YES | PrevAdvance=NO | OthersInjured=NO | ChildSupportBehind=NO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:30 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:43:03 PM</td>
+        <td>8:05:34 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:34 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=9900 | Name=Édith Solène Chartreux | DOB=12/27/1988 | Phone=+16097418830 | Email=pltf.chartreux.edith.k9x2mp.0r7d@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:34 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 701 5th Avenue, Floor 44 | Calgary | Washington<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:34 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Érika Suzanne Chartier | Phone=2065429016 | Firm=Cascade Claimcraft Legal Studio<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:35 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:36 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=09/09/2024 | Location=Seattle, WA<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:37 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:38 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:38 PM</td>
+        <td>
+          <b>🔹 Q1 = NO</b><br><b>✅ Expected:</b> No extra fields should appear.<br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:40 PM</td>
+        <td>
+          <b>🔹 Q1 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=Not sure if current plan qualifies; selecting I DON'T KNOW for coverage.<br><b>✅ Expected:</b> Explain field should accept input.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:40 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> NO<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:40 PM</td>
+        <td>
+          <b>🔹 Q2 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:40 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> YES | OwnedByYou=NO | Covered=YES<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:41 PM</td>
+        <td>
+          <b>🔹 Q3 = YES</b><br><b>🟨 Actual:</b> YES selected and sub-question buttons clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:41 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:41 PM</td>
+        <td>
+          <b>🔹 Q4 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:42 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:42 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:42 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:42 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:42 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:44 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:44 PM</td>
         <td>
           Test passed
         </td>
@@ -423,7 +1536,7 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:43:04 PM</span> / <span>00:00:11:388</span>
+              <span>8:05:46 PM</span> / <span>00:00:17:162</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -432,9 +1545,9 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:43:04 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:43:16 PM</span>
-<span class='badge badge-default'>00:00:11:388</span>
+<span class='badge badge-success'>02.12.2026 8:05:46 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:06:03 PM</span>
+<span class='badge badge-default'>00:00:17:162</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -446,8 +1559,176 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:46 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=22300 | Name=Darpan Navpreet Gillmoray | DOB=03/11/1993 | Phone=+19016823047 | Email= | City=Vancouver | State=Colorado | Lawyer=Réjean Laurier Vermette | LawFirm=FrontRange Trial Mechanics | GovtCoverage=YES | OtherTrauma=I DON'T KNOW | NoInsuranceViolation=NO | PrevAdvance=YES | OthersInjured=NO | ChildSupportBehind=NO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:46 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:43:16 PM</td>
+        <td>8:05:49 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:49 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=22300 | Name=Darpan Navpreet Gillmoray | DOB=03/11/1993 | Phone=+19016823047 | Email=<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:50 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 1700 Lincoln Street, Suite 2100 | Vancouver | Colorado<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:50 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Réjean Laurier Vermette | Phone=3036611188 | Firm=FrontRange Trial Mechanics<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:50 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:51 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=01/18/2025 | Location=Denver, CO<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:52 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:53 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:55 PM</td>
+        <td>
+          <b>🔹 Q1 = YES</b><br><b>📥 Input:</b> Which=Medicaid (state plan), Medicare eligibility under review<br><b>✅ Expected:</b> 'Which one(s)?' should be visible & accept input.<br><b>🟨 Actual:</b> Filled 'Which one(s)?'.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:55 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:55 PM</td>
+        <td>
+          <b>🔹 Q2 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:57 PM</td>
+        <td>
+          <b>🔹 Q2 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=Not sure if a prior minor fall qualifies; using I DON'T KNOW for UI state validation.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:57 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> NO | OwnedByYou= | Covered=<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:05:57 PM</td>
+        <td>
+          <b>🔹 Q3 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:05:57 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:00 PM</td>
+        <td>
+          <b>🔹 Q4 = YES</b><br><b>📥 Input:</b> Company=SummitCourt Litigation Desk | Amount=4000<br><b>🟨 Actual:</b> Company & amount filled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:00 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:00 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:00 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:00 PM</td>
+        <td>
+          <b>🔹 Q6 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:00 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:03 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:03 PM</td>
         <td>
           Test passed
         </td>
@@ -457,25 +1738,25 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="9"
+        <li class="test-item"  status="fail" test-id="9"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">frontend_form_filler</p>
             <p class="text-sm">
-              <span>2:43:17 PM</span> / <span>00:00:09:647</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>8:06:04 PM</span> / <span>00:00:13:341</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:43:17 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:43:27 PM</span>
-<span class='badge badge-default'>00:00:09:647</span>
+<h5 class="test-status text-fail">frontend_form_filler</h5>
+<span class='badge badge-success'>02.12.2026 8:06:04 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:06:17 PM</span>
+<span class='badge badge-default'>00:00:13:341</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -487,72 +1768,71 @@ Session ID: 851f014e6543f19fc49f482aaa736c39
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>2:43:27 PM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:04 PM</td>
         <td>
-          Test passed
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=11400 | Name=Fionnuala Éibhlín Carmichaël | DOB=08/08/1990 | Phone= | Email=pltf.carmichael.fionnuala.b8k3rs.2n9t@yopmail.com | City=Saskatoon | State=Massachusetts | Lawyer=Céline Ariane Beaulieu | LawFirm=VerdictForge Litigation Atelier | GovtCoverage=NO | OtherTrauma=NO | NoInsuranceViolation=YES | PrevAdvance=NO | OthersInjured=YES | ChildSupportBehind=NO
         </td>
       </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="10"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">frontend_form_filler</p>
-            <p class="text-sm">
-              <span>2:43:28 PM</span> / <span>00:00:11:681</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">frontend_form_filler</h5>
-<span class='badge badge-success'>02.12.2026 2:43:28 PM</span>
-<span class='badge badge-danger'>02.12.2026 2:43:39 PM</span>
-<span class='badge badge-default'>00:00:11:681</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:04 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:07 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:07 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=11400 | Name=Fionnuala Éibhlín Carmichaël | DOB=08/08/1990 | Phone= | Email=pltf.carmichael.fionnuala.b8k3rs.2n9t@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:07 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 200 Clarendon Street, Suite 1800 | Saskatoon | Massachusetts<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:07 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Céline Ariane Beaulieu | Phone=6177707729 | Firm=VerdictForge Litigation Atelier<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:08 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:09 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=04/03/2024 | Location=Boston, MA<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>2:43:39 PM</td>
+        <td>8:06:17 PM</td>
         <td>
-          <textarea readonly class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label class="radio">...</label> is not clickable at point (250, 667). Other element would receive the click: <div class="freeform-row field-insurance_violation radio-group">...</div>
-  (Session info: chrome=144.0.7559.133)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7094e6671883aa144ab4e1b010420c4e, clickElement {id=f.61FD2DAC335A553D74C1F09028421993.d.BA118F8A6A22409D2C12FC180DCCA54E.e.120}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, goog:processID: 5904, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (7094e6671883aa144ab4e1b010420c4e)] -> xpath: //label[text()='In the 5 years before the accident, did you have a violation for no auto insurance?']/..//label[@class='radio']]
-Session ID: 7094e6671883aa144ab4e1b010420c4e
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:126)
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.name: accident_date' (tried for 8 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+	at Locaters.Leads_Locaters.accident_date(Leads_Locaters.java:174)
+	at Enterprise_Codeclouds.Project.Enterprise.Leads.frontend_form_filler(Leads.java:261)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -579,8 +1859,248 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='accident_date']"}
+  (Session info: chrome=144.0.7559.133)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7af3ad17ee6bd3ebec2c956712fd76f1, findElement {value=accident_date, using=name}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51011}, goog:processID: 11096, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51011/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7af3ad17ee6bd3ebec2c956712fd76f1
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 29 more
 </textarea>
           
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">frontend_form_filler</p>
+            <p class="text-sm">
+              <span>8:06:19 PM</span> / <span>00:00:20:006</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">frontend_form_filler</h5>
+<span class='badge badge-success'>02.12.2026 8:06:19 PM</span>
+<span class='badge badge-danger'>02.12.2026 8:06:39 PM</span>
+<span class='badge badge-default'>00:00:20:006</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:19 PM</td>
+        <td>
+          <b>🔹 Dataset Loaded</b><br><b>📥 Input:</b> Advance=17650 | Name=Mireille Claudine Beausolex | DOB=06/25/1992 | Phone=+14016625190 | Email=pltf.beausolex.mireille.t4z1nh.6p3x@yopmail.com | City=Edmonton | State=Nevada | Lawyer=Jules-Antoine Bastien Laframboise | LawFirm=Harbourstone Legal Group Test Law Firm | GovtCoverage=I DON'T KNOW | OtherTrauma=YES | NoInsuranceViolation=NO | PrevAdvance=YES | OthersInjured=NO | ChildSupportBehind=YES
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:19 PM</td>
+        <td>
+          <b>🔹 Open Frontend URL</b><br><b>📥 Input:</b> https://wechopfees.com/apply-now<br><b>✅ Expected:</b> Frontend page should load and form should be visible.<br><b>🟨 Actual:</b> Navigating to URL.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:22 PM</td>
+        <td>
+          <b>🔹 Form Visible</b><br><b>✅ Expected:</b> Form should be in viewport and interactable.<br><b>🟨 Actual:</b> Scrolled to form successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:22 PM</td>
+        <td>
+          <b>🔹 Fill Applicant Details</b><br><b>📥 Input:</b> Advance=17650 | Name=Mireille Claudine Beausolex | DOB=06/25/1992 | Phone=+14016625190 | Email=pltf.beausolex.mireille.t4z1nh.6p3x@yopmail.com<br><b>✅ Expected:</b> Fields should accept input without errors.<br><b>🟨 Actual:</b> Sending values to fields.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:22 PM</td>
+        <td>
+          <b>🔹 Address Filled</b><br><b>📥 Input:</b> 777 S Grand Central Parkway, Unit 1903 | Edmonton | Nevada<br><b>✅ Expected:</b> Address fields should keep values on scroll.<br><b>🟨 Actual:</b> Address entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:22 PM</td>
+        <td>
+          <b>🔹 Fill Lawyer Details</b><br><b>📥 Input:</b> Lawyer=Jules-Antoine Bastien Laframboise | Phone=7026617701 | Firm=Harbourstone Legal Group Test Law Firm<br><b>✅ Expected:</b> Lawyer fields should accept input correctly.<br><b>🟨 Actual:</b> Entering lawyer details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:23 PM</td>
+        <td>
+          <b>🔹 Submit Application (Page 1)</b><br><b>✅ Expected:</b> Should proceed to accident details page.<br><b>🟨 Actual:</b> Clicking Submit.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:24 PM</td>
+        <td>
+          <b>🔹 Fill Accident Details</b><br><b>📥 Input:</b> Date=07/29/2024 | Location=Las Vegas, NV<br><b>✅ Expected:</b> All accident fields should accept input.<br><b>🟨 Actual:</b> Entering accident details.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:25 PM</td>
+        <td>
+          <b>🔹 Proceed to Questionnaire</b><br><b>✅ Expected:</b> Questionnaire blocks should load with buttons.<br><b>🟨 Actual:</b> Clicking Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:26 PM</td>
+        <td>
+          <b>🔹 Q1: Government Health Coverage</b><br><b>📥 Input:</b> I DON'T KNOW<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:26 PM</td>
+        <td>
+          <b>🔹 Q1 = NO</b><br><b>✅ Expected:</b> No extra fields should appear.<br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:27 PM</td>
+        <td>
+          <b>🔹 Q1 = I DON'T KNOW</b><br><b>📥 Input:</b> Explain=Not sure whether prior enrollment is still active; pending confirmation.<br><b>✅ Expected:</b> Explain field should accept input.<br><b>🟨 Actual:</b> Explanation entered.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:27 PM</td>
+        <td>
+          <b>🔹 Q2: Other Traumatic Incidents</b><br><b>📥 Input:</b> YES<br><b>✅ Expected:</b> Correct branch should trigger correct fields.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:29 PM</td>
+        <td>
+          <b>🔹 Q2 = YES</b><br><b>📥 Input:</b> Explain=Minor fall while climbing stairs post-accident; no ER visit.<br><b>🟨 Actual:</b> Filled description.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:29 PM</td>
+        <td>
+          <b>🔹 Q3: No Auto Insurance Violation</b><br><b>📥 Input:</b> NO | OwnedByYou= | Covered=<br><b>✅ Expected:</b> YES should show 2 sub-question blocks.<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:29 PM</td>
+        <td>
+          <b>🔹 Q3 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:29 PM</td>
+        <td>
+          <b>🔹 Q4: Previous Settlement Advance</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:32 PM</td>
+        <td>
+          <b>🔹 Q4 = YES</b><br><b>📥 Input:</b> Company=Spisak Law Firm | Amount=1500<br><b>🟨 Actual:</b> Company & amount filled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:32 PM</td>
+        <td>
+          <b>🔹 Q5: Other People Injured</b><br><b>📥 Input:</b> NO<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:32 PM</td>
+        <td>
+          <b>🔹 Q5 = NO</b><br><b>🟨 Actual:</b> Selected NO.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:32 PM</td>
+        <td>
+          <b>🔹 Q6: Behind on Child Support</b><br><b>📥 Input:</b> YES<br><b>🟨 Actual:</b> Selecting option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:36 PM</td>
+        <td>
+          <b>🔹 Q6 = YES</b><br><b>📥 Input:</b> State=Nevada | County=Clark | Amount=9800<br><b>🟨 Actual:</b> Child support fields filled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>8:06:36 PM</td>
+        <td>
+          <b>🔹 Final Submit</b><br><b>✅ Expected:</b> Form should submit successfully and show success confirmation.<br><b>🟨 Actual:</b> Clicking final Next.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:39 PM</td>
+        <td>
+          <b>🔹 Submission Success</b><br><b>✅ Expected:</b> Success confirmation displayed.<br><b>🟨 Actual:</b> Success element validated.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>8:06:39 PM</td>
+        <td>
+          Test passed
         </td>
       </tr>
   </tbody>
@@ -608,15 +2128,15 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>2</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
-<p class="duration text-sm">2 tests</p>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -629,16 +2149,9 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:42:42 PM</td>
+<td>20:06:04 PM</td>
 <td>
-<a href="#" class="linked" test-id='6' id='6'>frontend_form_filler</a>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:43:28 PM</td>
-<td>
-<a href="#" class="linked" test-id='10' id='10'>frontend_form_filler</a>
+<a href="#" class="linked" test-id='9' id='9'>frontend_form_filler</a>
 </td>
 </tr>
 </tbody>
@@ -658,25 +2171,25 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 12, 2026 02:41:24 PM</h3>
+<h3>Feb 12, 2026 08:03:48 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 12, 2026 02:43:40 PM</h3>
+<h3>Feb 12, 2026 08:06:39 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>8</h3>
+<h3>9</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>2</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -692,12 +2205,12 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='80%'>
-<b>8</b> tests passed
+<div><small data-tooltip='90%'>
+<b>9</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='20%'><b>2</b> tests failed,
+<small data-tooltip='10%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -715,10 +2228,10 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='80%'><b>8</b> events passed</small></div>
+<div><small data-tooltip='42%'><b>99</b> events passed</small></div>
 <div>
-<small data-tooltip='20%'><b>2</b> events failed,
-<b data-tooltip='%'>0</b> others
+<small data-tooltip='0%'><b>1</b> events failed,
+<b data-tooltip='%'>132</b> others
 </small>
 </div>
 </div>
@@ -734,7 +2247,7 @@ Session ID: 7094e6671883aa144ab4e1b010420c4e
 </div></div>
 <script>
 var timeline = {
-"frontend_form_filler":18.928,"frontend_form_filler":12.323,"frontend_form_filler":11.987,"frontend_form_filler":13.157,"frontend_form_filler":11.558,"frontend_form_filler":8.63,"frontend_form_filler":11.323,"frontend_form_filler":11.388,"frontend_form_filler":9.647,"frontend_form_filler":11.681
+"frontend_form_filler":15.217,"frontend_form_filler":15.051,"frontend_form_filler":15.215,"frontend_form_filler":19.338,"frontend_form_filler":13.203,"frontend_form_filler":13.599,"frontend_form_filler":14.104,"frontend_form_filler":17.162,"frontend_form_filler":13.341,"frontend_form_filler":20.006
 };
 </script>
 <div class="row">
@@ -773,8 +2286,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 8,
-failParent: 2,
+passParent: 9,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -790,11 +2303,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 8,
-failEvents: 2,
+passEvents: 99,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 0
+infoEvents: 132
 };
 </script>        </div>
       </div>
