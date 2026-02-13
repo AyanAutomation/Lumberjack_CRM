@@ -90,11 +90,11 @@ public class Leads_Locaters extends Repeat{
 	@FindBy(xpath="//label[text()='In the PRESENT accident, were you in a vehicle owned by you?']/..//label[@class='radio']")
 	private List<WebElement> Third_subquestions_one_buttons;
 	@FindBy(xpath="//label[text()='Was that vehicle covered by insurance?']/..//label[@class='radio']")
-	private List<WebElement> Third_subquestions_two_buttons;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
+	private List<WebElement> Third_subquestions_two_buttons;
+	@FindBy(xpath="//*[contains(@class,'freeform-form-has-errors')]")
+	private List<WebElement> error_in_form;
+	@FindBy(xpath="//select")
+	private WebElement State_select_dropdown; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -250,13 +250,13 @@ public class Leads_Locaters extends Repeat{
 	return Third_subquestions_one_buttons;}
 	public List<WebElement> Third_subquestions_two_buttons(){
 	wait_for_theElement(Third_subquestions_two_buttons);
-	return Third_subquestions_two_buttons;}/*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return Third_subquestions_two_buttons;}
+	public List<WebElement> error_in_form(){
+	wait_for_theElement(error_in_form);
+	return error_in_form;}
+	public WebElement State_select_dropdown(){
+	wait_for_theElement(State_select_dropdown);
+	return State_select_dropdown;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}
