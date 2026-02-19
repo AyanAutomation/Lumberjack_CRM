@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 19, 2026 04:07:22 PM</span></a>
+<a href="#"><span class="badge badge-primary">Feb 19, 2026 06:46:47 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -81,7 +86,7 @@
           <div class="test-detail">
             <p class="name">runScenario</p>
             <p class="text-sm">
-              <span>4:07:23 PM</span> / <span>00:00:10:942</span>
+              <span>6:46:48 PM</span> / <span>00:00:18:194</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -90,9 +95,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">runScenario</h5>
-<span class='badge badge-success'>02.19.2026 4:07:23 PM</span>
-<span class='badge badge-danger'>02.19.2026 4:07:34 PM</span>
-<span class='badge badge-default'>00:00:10:942</span>
+<span class='badge badge-success'>02.19.2026 6:46:48 PM</span>
+<span class='badge badge-danger'>02.19.2026 6:47:07 PM</span>
+<span class='badge badge-default'>00:00:18:194</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -105,595 +110,71 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
+        <td>6:46:51 PM</td>
         <td>
-          <b>🔹Scenario 1:</b> User attempts login without entering Email or Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>📘 Description →</b> The user clicks the Login button without providing any credentials. The purpose is to verify that the system prevents login and highlights both fields as mandatory.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>📥 Input →</b>  <b>Email:</b>  [BLANK], <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should show inline validation errors for both fields: 'Email is required' and 'Password is required'.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>🔹 Scenario 2:</b> User enters only Email and attempts login (Password left blank)**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>📘 Description →</b> The user provides a valid Email but leaves the Password field empty. The test checks whether the system identifies the missing password and prevents login.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> ayan.sengupta@codeclouds.com, <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:29 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Password field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:30 PM</td>
-        <td>
-          **🟨 Actual →** ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:30 PM</td>
-        <td>
-          *<b>🔹 Scenario 3:</b> User enters Password but keeps Email field blank**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:30 PM</td>
-        <td>
-          <b>📘 Description →</b> The user enters a Password but leaves the Email empty. This scenario validates that the system detects the missing Email and shows the appropriate validation message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:30 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> [BLANK], <b>Password:</b> 22355
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:30 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Email field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:31 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:31 PM</td>
-        <td>
-          <b>🔹 Scenario 4:</b> User attempts login using invalid Email and Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:31 PM</td>
-        <td>
-          <b>📘 Description →</b>The user enters invalid credentials that do not exist in the system. The purpose is to verify that the system rejects unauthorized login and shows a clear error notification.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:31 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> ayan.sengupta@codeclouds.com, <b>Password:</b> 22355
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:31 PM</td>
-        <td>
-          <b>✅ Expected →</b> A toast message should appear stating: 'Invalid Email or Password' or a similar rejection message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:34 PM</td>
-        <td>
-          **🟨 Actual →** 📢 Toast Message: Login failed. Invalid Email or Password.
+          <b>Step 0:</b> Click <b>Case Add</b> button from Header<br><b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br><b>✅ Expected:</b> New Case popup should open
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>4:07:34 PM</td>
+        <td>6:46:56 PM</td>
         <td>
-          <b>❌ Toast:</b> Login failed. Invalid Email Or Password.
+          ❌ Toast: Login failed. Invalid Email or Password.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:34 PM</td>
+        <td>6:46:58 PM</td>
         <td>
-          -------------------------------------------------------------------------
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:07:34 PM</td>
-        <td>
-          <b>✅ All negative login validations executed successfully for Email:</b> ayan.sengupta@codeclouds.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:07:34 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="2"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">runScenario</p>
-            <p class="text-sm">
-              <span>4:07:34 PM</span> / <span>00:00:09:504</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">runScenario</h5>
-<span class='badge badge-success'>02.19.2026 4:07:34 PM</span>
-<span class='badge badge-danger'>02.19.2026 4:07:43 PM</span>
-<span class='badge badge-default'>00:00:09:504</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:38 PM</td>
-        <td>
-          <b>🔹Scenario 1:</b> User attempts login without entering Email or Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:38 PM</td>
-        <td>
-          <b>📘 Description →</b> The user clicks the Login button without providing any credentials. The purpose is to verify that the system prevents login and highlights both fields as mandatory.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:38 PM</td>
-        <td>
-          <b>📥 Input →</b>  <b>Email:</b>  [BLANK], <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:38 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should show inline validation errors for both fields: 'Email is required' and 'Password is required'.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:38 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:38 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:39 PM</td>
-        <td>
-          <b>🔹 Scenario 2:</b> User enters only Email and attempts login (Password left blank)**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:39 PM</td>
-        <td>
-          <b>📘 Description →</b> The user provides a valid Email but leaves the Password field empty. The test checks whether the system identifies the missing password and prevents login.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:39 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:39 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Password field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:39 PM</td>
-        <td>
-          **🟨 Actual →** ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:40 PM</td>
-        <td>
-          *<b>🔹 Scenario 3:</b> User enters Password but keeps Email field blank**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:40 PM</td>
-        <td>
-          <b>📘 Description →</b> The user enters a Password but leaves the Email empty. This scenario validates that the system detects the missing Email and shows the appropriate validation message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:40 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> [BLANK], <b>Password:</b> Pass@123
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:40 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Email field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:40 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:41 PM</td>
-        <td>
-          <b>🔹 Scenario 4:</b> User attempts login using invalid Email and Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:41 PM</td>
-        <td>
-          <b>📘 Description →</b>The user enters invalid credentials that do not exist in the system. The purpose is to verify that the system rejects unauthorized login and shows a clear error notification.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:41 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> Pass@123
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:41 PM</td>
-        <td>
-          <b>✅ Expected →</b> A toast message should appear stating: 'Invalid Email or Password' or a similar rejection message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:43 PM</td>
-        <td>
-          **🟨 Actual →** 📢 Toast Message: Login failed. Invalid Email or Password.
+          <b>🟦 Info:</b> Toast close button found and clicked.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>4:07:43 PM</td>
+        <td>6:47:07 PM</td>
         <td>
-          <b>❌ Toast:</b> Login failed. Invalid Email Or Password.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:43 PM</td>
-        <td>
-          -------------------------------------------------------------------------
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:07:43 PM</td>
-        <td>
-          <b>✅ All negative login validations executed successfully for Email:</b> aknnnb202@bm.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:07:43 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">runScenario</p>
-            <p class="text-sm">
-              <span>4:07:43 PM</span> / <span>00:00:09:588</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">runScenario</h5>
-<span class='badge badge-success'>02.19.2026 4:07:43 PM</span>
-<span class='badge badge-danger'>02.19.2026 4:07:53 PM</span>
-<span class='badge badge-default'>00:00:09:588</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>🔹Scenario 1:</b> User attempts login without entering Email or Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>📘 Description →</b> The user clicks the Login button without providing any credentials. The purpose is to verify that the system prevents login and highlights both fields as mandatory.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>📥 Input →</b>  <b>Email:</b>  [BLANK], <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should show inline validation errors for both fields: 'Email is required' and 'Password is required'.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>🔹 Scenario 2:</b> User enters only Email and attempts login (Password left blank)**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>📘 Description →</b> The user provides a valid Email but leaves the Password field empty. The test checks whether the system identifies the missing password and prevents login.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> [BLANK]
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:48 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Password field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:49 PM</td>
-        <td>
-          **🟨 Actual →** ❌ Error Message: Password is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:49 PM</td>
-        <td>
-          *<b>🔹 Scenario 3:</b> User enters Password but keeps Email field blank**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:49 PM</td>
-        <td>
-          <b>📘 Description →</b> The user enters a Password but leaves the Email empty. This scenario validates that the system detects the missing Email and shows the appropriate validation message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:49 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> [BLANK], <b>Password:</b> 4455m235
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:49 PM</td>
-        <td>
-          <b>✅ Expected →</b> The system should display a validation message indicating the Email field is required.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:50 PM</td>
-        <td>
-          <b>🟨 Actual →</b> ❌ Error Message: Email is required
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:50 PM</td>
-        <td>
-          <b>🔹 Scenario 4:</b> User attempts login using invalid Email and Password**
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:50 PM</td>
-        <td>
-          <b>📘 Description →</b>The user enters invalid credentials that do not exist in the system. The purpose is to verify that the system rejects unauthorized login and shows a clear error notification.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:50 PM</td>
-        <td>
-          <b>📥 Input →</b> <b>Email:</b> aknnnb202@bm.com, <b>Password:</b> 4455m235
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:50 PM</td>
-        <td>
-          <b>✅ Expected →</b> A toast message should appear stating: 'Invalid Email or Password' or a similar rejection message.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:53 PM</td>
-        <td>
-          **🟨 Actual →** 📢 Toast Message: Login failed. Invalid Email or Password.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>4:07:53 PM</td>
-        <td>
-          <b>❌ Toast:</b> Login failed. Invalid Email Or Password.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>4:07:53 PM</td>
-        <td>
-          -------------------------------------------------------------------------
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:07:53 PM</td>
-        <td>
-          <b>✅ All negative login validations executed successfully for Email:</b> aknnnb202@bm.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:07:53 PM</td>
-        <td>
-          Test passed
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 8 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
+	at Locaters.Login_Locaters.login_confirmation(Login_Locaters.java:60)
+	at cucumber.java.stepdefinitionclasses.Login_cucumber.login_through_cucumber(Login_cucumber.java:43)
+	at cucumber.java.stepdefinitionclasses.Header_functionality_manager.header_buttons_clicker(Header_functionality_manager.java:24)
+	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_New_Case_Form_Accessor(Cucumber_Case_Module_Testcases.java:32)
+	at ✽.Add form Accessor 0(file:///C:/Users/CODECLOUDS-AYAN/OneDrive/Documents/Automation%20Projects/Lumberjack_CRM/src/main/java/cucumber/feature/files/Case_Add.feature:4)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@role='menu']"}
+  (Session info: chrome=145.0.7632.75)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [419e0e584eb0a5704f9a2b893f295fc5, findElement {value=//*[@role='menu'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.75, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59398}, goog:processID: 8848, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59398/devtoo..., se:cdpVersion: 145.0.7632.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 419e0e584eb0a5704f9a2b893f295fc5
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 6 more
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -710,18 +191,67 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:46:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>runScenario</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 19, 2026 04:07:22 PM</h3>
+<h3>Feb 19, 2026 06:46:47 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 19, 2026 04:07:53 PM</h3>
+<h3>Feb 19, 2026 06:47:07 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -733,7 +263,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>3</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -754,7 +284,7 @@
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>3</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -772,10 +302,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='8%'><b>6</b> events passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 <div>
-<small data-tooltip='4%'><b>3</b> events failed,
-<b data-tooltip='%'>66</b> others
+<small data-tooltip='50%'><b>2</b> events failed,
+<b data-tooltip='%'>2</b> others
 </small>
 </div>
 </div>
@@ -791,7 +321,7 @@
 </div></div>
 <script>
 var timeline = {
-"runScenario":10.942,"runScenario":9.504,"runScenario":9.588
+"runScenario":18.194
 };
 </script>
 <div class="row">
@@ -831,7 +361,7 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 0,
-failParent: 3,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -847,11 +377,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 6,
-failEvents: 3,
+passEvents: 0,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 66
+infoEvents: 2
 };
 </script>        </div>
       </div>
