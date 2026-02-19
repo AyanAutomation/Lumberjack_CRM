@@ -9,13 +9,14 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		
 		features ="src\\main\\java\\cucumber\\feature\\files",
-		glue={"cucumber.java.stepdefinitionclasses"},
+		glue={"cucumber.java.stepdefinitionclasses", "Cumcumber_Negative_Testcases"},
+		tags = "@neg_login",
 		monochrome = true,
 		plugin = {"pretty", "html:target/cucumber.html"}
 		
 		)
 
-public class Cucumber_Runner extends AbstractTestNGCucumberTests {
+public class Cucumber_Login_Runner extends AbstractTestNGCucumberTests {
 
 	
 	

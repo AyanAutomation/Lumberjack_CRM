@@ -14,7 +14,7 @@ import io.cucumber.java.en.Given;
 public class Login_cucumber {
 
 	
-	@Given("login_through_cucumber")
+	@Given("Postive Login Testcase")
 	public void login_through_cucumber() throws InterruptedException, IOException{
 		
 		WebDriver d = Base_cucumber.d;

@@ -47,6 +47,9 @@ public class Base_cucumber {
 
     @After
     public void tearDown() {
-        if (d != null) d.quit();
+        if (d != null) {
+        	
+        	d.quit();}
+        
     }
 }
