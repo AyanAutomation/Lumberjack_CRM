@@ -8,10 +8,10 @@ import io.cucumber.testng.CucumberOptions;
 @Listeners(Report_Listen.class)
 @CucumberOptions(
 		
-		features ={"src\\main\\java\\cucumber\\feature\\files\\cumcumber_login_.feature",
-				"src\\main\\java\\cucumber\\feature\\files\\Negative_Login.feature"},
-		glue={"cucumber.java.stepdefinitionclasses", "Cumcumber_Negative_Testcases"},
+		features ="src\\main\\java\\cucumber\\feature\\files",
+		glue={ "cucumber.java.stepdefinitionclasses", "Cumcumber_Negative_Testcases" },
 		monochrome = true,
+		tags = "@negative_Validation or @positve_login",
 		plugin = {"pretty", "html:target/cucumber.html"}
 		)
 

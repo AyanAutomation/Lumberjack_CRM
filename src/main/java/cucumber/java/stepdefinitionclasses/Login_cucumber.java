@@ -14,10 +14,10 @@ import io.cucumber.java.en.Given;
 public class Login_cucumber {
 
 	
-/*	@Given("Postive Login Testcase") */
-	public void login_through_cucumber(WebDriver d) throws InterruptedException, IOException{
+	@Given("Postive Login Testcase") 
+	public static void login_through_cucumber(WebDriver driver) throws InterruptedException, IOException{
 		
-		 
+		 WebDriver d = driver==null ? Base_cucumber.d: driver ;
         String Target_url = Base_cucumber.Target_url;
 		
         Login_Locaters lg = new Login_Locaters(d);

@@ -42,15 +42,15 @@ import freemarker.cache.StrongCacheStorage;
 @Listeners(Listerners.Report_Listen.class)
 public class Case_Appplications extends Header_Manager{
 	
-	TreeSet<Double> monthly_emi = new TreeSet<Double>();
-	TreeMap<String,Double> LIEN_AMOUNT_Values = new TreeMap<String,Double>();
-	TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();
-    TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
-	TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
-	TreeMap<String,Double> PayoffTable_values_After_Payment =  new TreeMap<String,Double>();
-	TreeMap<String,Double> PayoffTable_values_Before_Payment =  new TreeMap<String,Double>();
-	TreeMap<String,Double> PayoffTable_values_Revise_contract =  new TreeMap<String,Double>();
-	TreeMap<String,Double> pop_up_modal_label_values =  new TreeMap<String,Double>();
+ public TreeSet<Double> monthly_emi = new TreeSet<Double>();
+ public TreeMap<String,Double> LIEN_AMOUNT_Values = new TreeMap<String,Double>();  
+ public TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();
+ public TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
+ public TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
+ public TreeMap<String,Double> PayoffTable_values_After_Payment =  new TreeMap<String,Double>();
+ public TreeMap<String,Double> PayoffTable_values_Before_Payment =  new TreeMap<String,Double>();
+ public TreeMap<String,Double> PayoffTable_values_Revise_contract =  new TreeMap<String,Double>();
+ public TreeMap<String,Double> pop_up_modal_label_values =  new TreeMap<String,Double>();
 	
 	public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedException{
 		

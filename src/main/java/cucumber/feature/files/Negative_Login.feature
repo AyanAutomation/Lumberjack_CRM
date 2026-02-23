@@ -1,5 +1,7 @@
+@negative_Validation
 Feature: Testcase of of negaticve login scenarios
 
+@negative_Validation
 Scenario Outline: Testing negative login scenario with a combination of incorrect Credentials
 Given Logging in with username <user id> and password <pass>
 

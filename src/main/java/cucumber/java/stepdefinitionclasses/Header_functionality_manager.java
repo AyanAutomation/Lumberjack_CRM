@@ -10,7 +10,7 @@ import Locaters.Header_locaters;
 import Locaters.Login_Locaters;
 import Repeatative_codes.Repeat;
 
-public class Header_functionality_manager extends Login_cucumber{
+public class Header_functionality_manager /*extends Login_cucumber*/{
 	
 	
 public	WebDriver d= Base_cucumber.d;
@@ -21,7 +21,7 @@ public	WebDriver d= Base_cucumber.d;
 		Header_locaters p = new Header_locaters(d);
 		
 		
-		login_through_cucumber(d);
+		Login_cucumber.login_through_cucumber(d);
 		p.Header_buttons().get(button_index).click();}
 	
 	
@@ -30,7 +30,7 @@ public	WebDriver d= Base_cucumber.d;
 		Header_locaters p = new Header_locaters(d);
 		
 		
-		login_through_cucumber(d);
+		Login_cucumber.login_through_cucumber(d);
 		p.Header_search().sendKeys(Keyword);
 		p.search_dropdown();}
       
@@ -41,7 +41,7 @@ public	WebDriver d= Base_cucumber.d;
     	  Repeat rp = new Repeat(d);
     	  
     	  
-    	  login_through_cucumber(d);
+    	  Login_cucumber.login_through_cucumber(d);
     	 // rp.wait_for_invisibility(lg.toast());
           p.header_profile_section().click();
           List<WebElement> Header_Dropdown_Options = p.Header_dropdown_options();
