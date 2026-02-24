@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 		features = "src\\main\\java\\cucumber\\feature\\files\\Case_Add.feature",
 		glue = "cucumber.java.stepdefinitionclasses",
 		monochrome=true,
-		tags="@case_plus_plaintiff",plugin = {"pretty", "html:target/cucumber.html"}
+		tags="@case_plus_plaintiff or @revise_contract",plugin = {"pretty", "html:target/cucumber.html"}
 		
 		)
 @Listeners(Listerners.Report_Listen.class)
