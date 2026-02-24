@@ -32,7 +32,9 @@ import io.cucumber.java.en.Given;
 
 public class Cucumber_Case_Module_Testcases extends Case_Appplications{
 	
-	public WebDriver d = Base_cucumber.d;
+	   private void bindDriver() {
+	        super.d = Base_cucumber.d;
+	    }
 	
 
 public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedException{
@@ -63,7 +65,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
      @Given("Add_case_cucumber with data:")
      public void Add_case_cucumber(DataTable table) throws IOException, InterruptedException{ 
 	 
-    	 d = Base_cucumber.d;
+    	 bindDriver();
 
          // ✅ One map only (no TreeMap objects)
     	 Map<String, String> data = new TreeMap<>(table.asMap(String.class, String.class));
@@ -599,7 +601,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
    public void Buyout_Add_and_Fees_changed_in_Revised_Contract(DataTable table)
         throws InterruptedException, IOException {
 
-    d = Base_cucumber.d;
+	bindDriver();
 
     // ✅ One map only
     Map<String, String> data = new TreeMap<>(table.asMap(String.class, String.class));
@@ -1145,7 +1147,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
 	    Case_Data.put("Buyout Expiry Date", data.get("Case.Buyout Expiry Date"));
 
 	    // Reuse your already-tested TestNG logic
-	    Revise_Contract(Case_Data);
+	    super.Revise_Contract(Case_Data);
 	}
   
    
@@ -1153,403 +1155,64 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
 	    TreeMap<String,String> tm = new TreeMap<>();
 	    tm.put("Title", data.get("Case.SMS Message Title"));          // or Email.Subject if you prefer
 	    tm.put("Message body", data.get("Case.SMS Message Body"));    // or Email.Message
-	    Message_Template_Creator(tm);
+	    super.Message_Template_Creator(tm);
 	}
    
-     public void Pay_off_lien_list_After_Revise_contract(Map<String, String> Case_Data, String id) throws IOException, InterruptedException {
-         
-         Application_Locaters p = new Application_Locaters(d);
-         Login_Locaters lg = new Login_Locaters(d);
-         SIde_Menu_Handler sd = new SIde_Menu_Handler();
-         Repeat rp = new Repeat(d);
-         
-         int step = 1;
-         String Case_id = id;
-         
-         PayoffTable_values_Revise_contract.clear();
-         
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'>"
-               + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario: Payoff Values Capture AFTER Revise Contract</div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Navigate to the case, revise contract (buyout + interest start date), then open Payoff modal and capture month-wise payoff values.</div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>" + Case_id + "</b></div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> After contract revision, Payoff modal should load and payoff rows should be captured into map.</div>"
-               + "</div>"
-         );
+   public void Pay_off_lien_list_After_Revise_contract(Map<String, String> data, String id)
+        throws IOException, InterruptedException {
 
-         System.out.println("\n==================================================");
-         System.out.println("[SCENARIO] Payoff Values Capture AFTER Revise Contract");
-         System.out.println("Case ID   : " + Case_id);
-         System.out.println("Expected  : Payoff rows should be visible and stored after revise contract");
-         System.out.println("==================================================\n");
+    // Build minimal TreeMap for compatibility (even empty is ok since your logic doesn’t use it)
+    TreeMap<String, String> Case_Data = new TreeMap<>();
 
-         try {
-             p.Case_Action_Dropdown();
-         } catch (Exception not_in_Case_Details) {	    
-             sd.Side_menu_option_clicker("Applications", d, "N/A");
-             p.landed_in_applicationList_confirmation();
-             p.Filter_clear().click();
-             WebElement Search = p.Application_search();
-             Search.sendKeys(Case_id);
-             Thread.sleep(1800);
-             
-             // Handle potential toasts overlapping search results
-             try { lg.Toast_close_button().click(); } catch(Exception e) {}
-             try { lg.Toast_close_button().click(); } catch(Exception e) {}
-             
-             List<WebElement> result_rows;
-             try {
-                 result_rows = p.rows();
-                 result_rows.get(0).click();
-                 Thread.sleep(800);
-             } catch (Exception Result_still_not_fetched) {
-                 System.out.println("Exception Found in fetching result rows thereby retrying");
-                 Thread.sleep(800);  
-                 result_rows = p.rows();
-                 result_rows.get(0).click();
-                 Thread.sleep(800);
-             }
-             
-             try {
-                 p.Case_tags();
-             } catch (RuntimeException tags) {
-                 System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-                 Thread.sleep(1200);
-                 p.Case_tags(); 
-             }
-         }
-         
-         try {
-             tab_selector("Liens",d);
-         } catch (Exception Lien_tab_retry) {
-             Thread.sleep(800);
-             tab_selector("Liens",d);
-         }
-         
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>Step " + (step++) + ":</b> Perform <b>Revise Contract</b> flow (Buyout update + Interest Start Date update + Generate Contract)."
-         );
-         
-         WebElement payoff_button = p.Payoff_Button();
-         rp.Scroll_to_element(payoff_button);
-         rp.wait_for_Clickable(payoff_button);
-         payoff_button.click();
-         p.Payoff_table_title();
-         
-         List<WebElement> Cells;
-         try {
-             Cells = p.modal_table_cells();
-         } catch (Exception pay_off_table_rows_not_found) {
-             Thread.sleep(800);
-             p.modal_table();
-             Cells = p.modal_table_cells();
-         }
-         
-         int m = 0;
-         for (WebElement Cell : Cells) {
-             String cellvalue = Cell.getText().trim();
-             if (!cellvalue.contains("/")) {
-                 String cellvalue_clean = cellvalue.replace("$", "").replace(",", "").replace("\u00A0", "").trim();
-                 double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
-                 double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
-                 PayoffTable_values_Revise_contract.put("month " + m, each_month_payable);
-                 m++;
-             }
-         }
-         
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>🟨 Actual:</b> Stored payoff values After Contract Revised. Rows captured = <b>" + PayoffTable_values_Revise_contract.size() + "</b>"
-         );
-         
-         p.Close_Button().click(); 
-     }
+    // Optional: only if TestNG version expects these keys (safe to include)
+    Case_Data.put("Buyout Amount", data.get("Case.Buyout Amount"));
+    Case_Data.put("Buyout Funder Name", data.get("Case.Buyout Funder Name"));
+    Case_Data.put("Buyout Expiry Date", data.get("Case.Buyout Expiry Date"));
+
+    super.Pay_off_lien_list_After_Revise_contract(Case_Data, id);
+}
 
 
   // Overloaded version for Cucumber parameter acceptance
-     public void Payment_Calculator(Map<String, String> data, String Case_Unique_id) throws IOException, InterruptedException {
-         
-         String Case_id = Case_Unique_id;
-         int step = 1;
-         double tolerance = 0.01;
+     public void Payment_Calculator(Map<String, String> data, String caseId) throws IOException, InterruptedException {
 
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'>"
-               + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario Title: Payment Payoff Validation (Before vs After Payment)</div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Capture Payoff table values BEFORE payment, log payment, capture Payoff table values AFTER payment, and validate reduction.</div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>" + Case_id + "</b></div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>✅ Expected:</b> (Before − After) should match Fees Paid within tolerance 0.01.</div>"
-               + "</div>"
-         );
+    	    TreeMap<String, String> t = new TreeMap<>();
+    	    t.put("Payment Mode",        data.get("Case.Payment Mode"));
+    	    t.put("Payment Type",        data.get("Case.Payment Type"));
+    	    t.put("Payer Name",          data.get("Case.Payer Name"));
+    	    t.put("Payment Date",        data.get("Case.Payment Date"));
+    	    t.put("Notes / Remarks",     data.get("Case.Notes / Remarks"));
+    	    t.put("Document prep fee",   data.get("Case.Document prep fee"));
+    	    t.put("Fund transfer fee",   data.get("Case.Fund transfer fee"));
 
-         System.out.println("[Step] Fetch Payoff table values BEFORE payment");
-         Pay_off_lien_list_Before_payment(Case_id);
-
-         System.out.println("[Step] Log Payment and capture Fees Paid amount");
-         
-         // Call your payment logger which returns the formatted string of the amount paid
-         String Fees_payed_amount = Payment_Logger(data, Case_id);
-         double Fees_payed_in_double_upto_two_decimal = Double.parseDouble(String.format("%.2f", Double.parseDouble(Fees_payed_amount)));
-
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<div style='background:#eef9ff; padding:14px; border-radius:10px; border:1px solid #bfe6ff; color:#0b1b33;'>"
-               + "<b>🟨 Actual:</b> Fees Paid captured from Payment Logger = <b>" + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "</b><br>"
-               + "</div>"
-         );
-
-         System.out.println("[Step] Fetch Payoff table values AFTER payment");
-         Pay_off_lien_list_After_payment_data_fetcher(Case_id);
-
-         for (var after_pair : PayoffTable_values_After_Payment.entrySet()) {
-             String Key = after_pair.getKey();
-
-             if (!PayoffTable_values_Before_Payment.containsKey(Key)) {
-                 continue;
-             }
-
-             double Before_payment = PayoffTable_values_Before_Payment.get(Key);
-             double After_payment = PayoffTable_values_After_Payment.get(Key);
-
-             double reduction = Before_payment - After_payment;
-             double reduction_upto_two_decimal = Double.parseDouble(String.format("%.2f", reduction));
-             double difference = Double.parseDouble(String.format("%.2f", Math.abs(reduction_upto_two_decimal - Fees_payed_in_double_upto_two_decimal)));
-
-             boolean isMatched = difference < tolerance;
-
-             String resultColorBox = isMatched ? "background:#e9fbe9; border:1px solid #bde5bd; color:#0b3b0b;" : "background:#ffecec; border:1px solid #ffbdbd; color:#5b0b0b;";
-
-             String payoffExtentCard =
-                     "<div style='background:#f7fbff; padding:18px; border-radius:12px; border:1px solid #c7ddff; color:#0b1b33; font-family:Arial;'>"
-                   + "<div style='font-size:16px; font-weight:700; margin-bottom:10px;'>" + (isMatched ? "✅ PASS" : "❌ FAIL") + " — " + Key + "</div>"
-                   + "<b>Before:</b> " + String.format("%.2f", Before_payment) + "<br>"
-                   + "<b>After:</b> " + String.format("%.2f", After_payment) + "<br>"
-                   + "<b>Reduction:</b> " + String.format("%.2f", reduction_upto_two_decimal) + "<br>"
-                   + "<b>Fees Paid:</b> " + String.format("%.2f", Fees_payed_in_double_upto_two_decimal) + "<br>"
-                   + "<div style='margin-top:12px; padding:12px; border-radius:10px; " + resultColorBox + "'>"
-                   + "<b>Difference:</b> " + String.format("%.2f", difference) + " (Tolerance: " + tolerance + ")"
-                   + "</div>"
-                   + "</div>";
-
-             Report_Listen.log_print_in_report().log(isMatched ? Status.PASS : Status.FAIL, payoffExtentCard);
-         }
-     }
+    	    // Call TestNG version (this will automatically call TestNG Payment_Logger)
+    	    super.Payment_Calculator(t, caseId);
+    	}
      
-  // Overloaded version for Cucumber parameter acceptance
-     public String Payment_Logger(Map<String, String> data, String Case_Id) throws IOException, InterruptedException {
-         
-         SIde_Menu_Handler sd = new SIde_Menu_Handler();
-         Application_Locaters p = new Application_Locaters(d);
-         Repeat rp = new Repeat(d);
-         Login_Locaters lg = new Login_Locaters(d);
-         
-         int step = 1;
-         String Case_id = Case_Id;
+     public String Payment_Logger(Map<String, String> data, String caseId) throws IOException, InterruptedException {
 
-         // Use keys matching your Cucumber Map format
-         double Document_prep_fee = Double.parseDouble(data.get("Case.Document prep fee"));
-         double Fundtransferfee = Double.parseDouble(data.get("Case.Fund transfer fee"));
+    	    // Build the TreeMap shape expected by TestNG zone
+    	    TreeMap<String, String> t = new TreeMap<>();
+    	    t.put("Payment Mode",        data.get("Case.Payment Mode"));
+    	    t.put("Payment Type",        data.get("Case.Payment Type"));
+    	    t.put("Payer Name",          data.get("Case.Payer Name"));
+    	    t.put("Payment Date",        data.get("Case.Payment Date"));
+    	    t.put("Notes / Remarks",     data.get("Case.Notes / Remarks"));
+    	    t.put("Document prep fee",   data.get("Case.Document prep fee"));
+    	    t.put("Fund transfer fee",   data.get("Case.Fund transfer fee"));
 
-         double Total_Fees = Document_prep_fee + Fundtransferfee;
-         double Amount_to_be_payed = Total_Fees / 2;
-
-         double Amount_to_be_payed_upto_2_decimal = Double.parseDouble(String.format("%.2f", Amount_to_be_payed));
-         String Amount_to_be_payed_text = String.format("%.2f", Amount_to_be_payed_upto_2_decimal);
-
-         String Mode = data.get("Case.Payment Mode");
-         String Type = data.get("Case.Payment Type");
-         String Payer = data.get("Case.Payer Name");
-         String PayDate = data.get("Case.Payment Date");
-         String Notes = data.get("Case.Notes / Remarks");
-         String Plaintiff_name;
-
-         // =========================
-         // Scenario Header (Extent)
-         // =========================
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<div style='background:#f1f5ff; padding:16px; border-radius:12px; border:1px solid #cbd5ff; color:#0b1b33; font-family:Arial;'>"
-               + "<div style='font-size:16px; font-weight:700;'>🔹 Scenario Title: Payment Logger – Record Payment (50% Fees)</div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>📘 Description:</b> Open <b>Log Payment</b> form, enter payment details, and verify success.</div>"
-               + "<div style='margin-top:10px; font-size:13px;'><b>📥 Input:</b> Case ID = <b>" + Case_id + "</b></div>"
-               + "</div>"
-         );
-
-         // =========================
-         // Step 1: Ensure in Case Details
-         // =========================
-         WebElement case_Dropdown;
-         try {
-             case_Dropdown = p.Case_Action_Dropdown();
-         } catch (Exception not_in_Case_Details) {
-             sd.Side_menu_option_clicker("Applications", d, "N/A");
-             p.landed_in_applicationList_confirmation();
-             p.Filter_clear().click();
-
-             WebElement Search = p.Application_search();
-             Search.sendKeys(Case_id);
-             Thread.sleep(1800);
-
-             try { lg.Toast_close_button().click(); } catch (Exception ignore) {}
-
-             List<WebElement> result_rows = p.rows();
-             result_rows.get(0).click();
-             Thread.sleep(800);
-
-             try { p.Case_tags(); } catch (RuntimeException tags) { Thread.sleep(1200); p.Case_tags(); }
-             case_Dropdown = p.Case_Action_Dropdown();
-         }
-
-         try {
-             WebElement plaintiff = p.Title_plaintiff_name();
-             Plaintiff_name = plaintiff.getText().trim();
-         } catch (Exception e) {
-             Thread.sleep(800);
-             Plaintiff_name = p.Title_plaintiff_name().getText().trim();
-         }
-
-         // =========================
-         // Step 2: Open Log Payment form
-         // =========================
-         rp.movetoelement(case_Dropdown);
-         try {
-             p.Case_Action_Dropdown_list();
-         } catch (Exception e) {
-             rp.movetoelement(case_Dropdown);
-             Thread.sleep(800);
-             p.Case_Action_Dropdown_list();
-         }
-
-         List<WebElement> optionsElements = p.Case_Dropdown_Options();
-         boolean found = false;
-         for (WebElement Each_Option : optionsElements) {
-             if (Each_Option.getText().trim().contains("Log Payment")) {
-                 Each_Option.click();
-                 found = true;
-                 break;
-             }
-         }
-
-         if (!found) throw new RuntimeException("Log Payment option not found in Case Action dropdown.");
-
-         // =========================
-         // Step 3: Fill payment form
-         // =========================
-         List<WebElement> inputs = p.payment_logger_form_inputs();
-         inputs.get(0).sendKeys(Mode);
-         p.plaintiff_dropdown_list();
-         p.Plaintiff_options().get(0).click();
-
-         inputs.get(1).sendKeys(Type);
-         p.Incident_type_dropdown();
-         p.Incident_options().get(0).click();
-
-         if (Type.contains("Payment by Plaintiff")) {
-             inputs.get(2).sendKeys(Plaintiff_name);
-         } else {
-             inputs.get(2).sendKeys(Payer);
-         }
-
-         WebElement Calender_field = inputs.get(3);
-         Calender_field.sendKeys(PayDate);
-         Calender_field.click();
-         p.calender_date_select().click();
-
-         inputs.get(4).sendKeys(Amount_to_be_payed_text);
-         p.textArea().sendKeys(Notes);
-
-         p.poup_up_form_buttons().get(0).click();
-
-         // =========================
-         // Step 4: Capture toast
-         // =========================
-         try {
-             String paymentToast = lg.toast().getText().trim();
-             Report_Listen.log_print_in_report().log(Status.PASS, "✅ Payment logged successfully. Toast: " + paymentToast);
-             try { rp.wait_for_invisibility(lg.toast()); } catch (Exception ignore) {}
-         } catch (Exception e) {
-             Report_Listen.log_print_in_report().log(Status.FAIL, "❌ Payment confirmation toast not captured.");
-         }
-
-         return Amount_to_be_payed_text;
-     }
+    	    // Call TestNG version (in Case_Appplications)
+    	    return super.Payment_Logger(t, caseId);
+    	}
 
 
+     public void Underwriting_Notes(Map<String, String> data) throws InterruptedException, IOException {
 
+    	    // Build the TreeMap shape expected by TestNG
+    	    TreeMap<String, String> Case_Data = new TreeMap<>();
+    	    Case_Data.put("Underwriting Notes", data.get("Case.Underwriting Notes"));
+    	    Case_Data.put("Underwriting Tag",   data.get("Case.Underwriting Tag"));
 
-
-  // Overloaded version for Cucumber parameter acceptance
-     public void Underwriting_Notes(Map<String, String> Case_Data) throws InterruptedException, IOException {
-         
-         Application_Locaters p = new Application_Locaters(d);
-         Login_Locaters lg = new Login_Locaters(d);
-         SIde_Menu_Handler sd = new SIde_Menu_Handler();
-
-         // Note: We use keys matching the Cucumber Map format (e.g., "Case.Underwriting Notes")
-         String notesContent = Case_Data.get("Case.Underwriting Notes");
-         String tagContent = Case_Data.get("Case.Underwriting Tag");
-
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>🔹 Scenario Title:</b> Underwriting – Add Underwriting Notes and Tag");
-
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>📘 Description:</b> Validate that a user can open the Underwriting tab and add Underwriting Notes + Underwriting Tag, then save successfully.");
-
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>📥 Input:</b> Underwriting Notes = <b>" + notesContent + "</b> | Underwriting Tag = <b>" + tagContent + "</b>");
-
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>✅ Expected:</b> Underwriting Notes should be saved successfully and confirmation toast should appear.");
-
-         try {
-             p.Case_Action_Dropdown();
-             tab_selector("Underwriting",d);
-             p.Notes_Add_Button();
-             Report_Listen.log_print_in_report().log(Status.INFO,
-                     "<b>🟨 Actual:</b> User is already inside Case → Underwriting tab context.");
-         } catch (Exception Not_Inside_Case_UnderWriting_Tab) {
-             Report_Listen.log_print_in_report().log(Status.INFO,
-                     "<b>🟨 Actual:</b> User was not inside Case Underwriting Tab. Navigating via Applications → Funded → First record.");
-             sd.Side_menu_option_clicker("Applications", d, "N/A");
-             p.landed_in_applicationList_confirmation();
-             p.Filter_clear().click();
-             
-             WebElement Status_filter = p.Application_status_filter();
-             Status_filter.click();
-             Application_Filter_Option_Selector("Funded");
-             p.rows().get(0).click();
-             Thread.sleep(800);
-         }
-
-         List<WebElement> Case_Tags;
-         try {
-             Case_Tags = p.Case_tags();
-         } catch (RuntimeException tags) {
-             System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-             Thread.sleep(1200);
-             Case_Tags = p.Case_tags();
-         }
-
-         Report_Listen.log_print_in_report().log(Status.INFO,
-                 "<b>🟨 Actual:</b> Case opened successfully and Underwriting tab is accessible.");
-         
-         p.Case_Action_Dropdown();
-         tab_selector("Underwriting",d);
-         
-         WebElement Notes_Add_Button = p.Notes_Add_Button();	
-         Notes_Add_Button.click();
-         
-         List<WebElement> inputs = p.Edit_form_inputs();
-         p.textArea().sendKeys(notesContent);
-         inputs.get(0).sendKeys(tagContent);
-         p.Submit_Button().click();
-
-         try {
-             WebElement Toast = lg.toast();
-             Login_negative_testcases.Toast_printer(Toast.getText().trim(), d);
-             Report_Listen.log_print_in_report().log(Status.PASS,
-                     "<b>🟨 Actual:</b> ✅ Underwriting Notes saved successfully. Toast captured and confirms save.");
-         } catch (Exception Toast_Not_Found) {
-             System.out.println("Toast Not found after saving Underwriting Notes");
-             Report_Listen.log_print_in_report().log(Status.FAIL,
-                     "<b>🟨 Actual:</b> ❌ Underwriting Notes save confirmation toast was not found after clicking Submit.");
-             throw Toast_Not_Found;
-         }
-     }}
+    	    // Call the TestNG implementation
+    	    super.Underwriting_Notes(Case_Data);
+    	}}
