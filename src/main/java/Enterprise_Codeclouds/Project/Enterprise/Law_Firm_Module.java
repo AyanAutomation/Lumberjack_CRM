@@ -87,7 +87,7 @@ public class Law_Firm_Module extends Attorney_module{
 			   System.out.println();
 			   Thread.sleep(1200);
 			   Case_Tags = p.Case_tags(); }
-		    tab_selector("Contacts");
+		    tab_selector("Contacts",d);
 			p.lawFirm_AddButton_ContactTab();
 			rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
 			p.Contact_AddButton_ContactTab().click();
@@ -236,7 +236,7 @@ public class Law_Firm_Module extends Attorney_module{
 			   System.out.println();
 			   Thread.sleep(1200);
 			   Case_Tags = p.Case_tags();}
-		   tab_selector("Contacts");
+		   tab_selector("Contacts",d);
 		   p.Law_firm_info_title_text();
 		   String Law_firm_name = pp.Law_firm_name_incard().getText().trim();
 		   //System.out.println(Law_firm_name);
@@ -425,7 +425,7 @@ public class Law_Firm_Module extends Attorney_module{
 			        Case_Tags_One = p.Case_tags();
 			    }
 
-			    tab_selector("Contacts");
+			    tab_selector("Contacts",d);
 			    p.Law_firm_info_title_text();
 
 			    WebElement Address_element_incase_contact = pp.Case_contact_law_firm_address();

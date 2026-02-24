@@ -440,7 +440,7 @@ public class Plaintiff_Module extends Case_Appplications{
 			   System.out.println();
 			   Thread.sleep(1200);
 			   Case_Tags = p.Case_tags();}
-		   tab_selector("Contacts");
+		   tab_selector("Contacts",d);
 		   p.Law_firm_info_title_text();
 		   p.Edit_button().click();
 		   p.Edit_details_title_form();

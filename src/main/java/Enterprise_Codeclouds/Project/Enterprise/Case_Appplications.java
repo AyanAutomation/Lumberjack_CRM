@@ -763,7 +763,7 @@ public class Case_Appplications extends Header_Manager{
 		Thread.sleep(800);
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Case Details saved (Summary updated, Court Index saved = "+Case_Data.get("Court Index Number")+")");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
-		tab_selector("Contacts");
+		tab_selector("Contacts",d);
 		p.lawFirm_AddButton_ContactTab();
 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
 		p.Contact_AddButton_ContactTab().click();
@@ -801,7 +801,7 @@ public class Case_Appplications extends Header_Manager{
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 		rp.Scroll_to_element(p.Application_tab_bar());
 		try {
-		tab_selector("Applications");
+		tab_selector("Applications",d);
 		  Report_Listen.log_print_in_report().log(Status.PASS,
 	                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt."
 	        );
@@ -811,7 +811,7 @@ public class Case_Appplications extends Header_Manager{
 		catch(Exception tab_click){
 			
 			Thread.sleep(800);
-			tab_selector("Applications"); Report_Listen.log_print_in_report().log(Status.INFO,
+			tab_selector("Applications",d); Report_Listen.log_print_in_report().log(Status.INFO,
 		            "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
 		                    + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName()
 		              );
@@ -1404,7 +1404,7 @@ public class Case_Appplications extends Header_Manager{
 	          + "<b>📥 Input:</b> Attorney First Name = <b>" + attorneyData.get("First Name") + "</b><br>"
 	          + "<b>✅ Expected:</b> Attorney should be added to case contacts."
 	    );
-	    tab_selector("Contacts");
+	    tab_selector("Contacts",d);
 	    p.lawFirm_AddButton_ContactTab();
 	    WebElement Add_Contact_Button = p.Contact_AddButton_ContactTab();
 	    rp.Scroll_to_element(Add_Contact_Button);
@@ -1474,7 +1474,7 @@ public class Case_Appplications extends Header_Manager{
 
 	    boolean applicationsTabClicked = false;
 	    try {
-	        tab_selector("Applications");
+	        tab_selector("Applications",d);
 	        applicationsTabClicked = true;
 	        Report_Listen.log_print_in_report().log(Status.PASS,
 	                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully (1st attempt).");
@@ -1491,7 +1491,7 @@ public class Case_Appplications extends Header_Manager{
 
 	        Thread.sleep(800);
 
-	        tab_selector("Applications");
+	        tab_selector("Applications",d);
 	        applicationsTabClicked = true;
 
 	        Report_Listen.log_print_in_report().log(Status.PASS,
@@ -1949,7 +1949,7 @@ public class Case_Appplications extends Header_Manager{
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Contacts tab and link an Attorney contact from list.");
 	        
 	        Validate_Summary_And_CourtIndex(Summary_content,Court_Index_Number);
-	        tab_selector("Contacts");
+	        tab_selector("Contacts",d);
 	 		p.lawFirm_AddButton_ContactTab();
 	 		rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
 	 		p.Contact_AddButton_ContactTab().click();
@@ -1986,7 +1986,7 @@ public class Case_Appplications extends Header_Manager{
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Go to Applications tab and open Buyout modal.");
 	 		rp.Scroll_to_element(p.Application_tab_bar());
 	 		try {
-	 			tab_selector("Applications");
+	 			tab_selector("Applications",d);
 	 			  Report_Listen.log_print_in_report().log(Status.PASS,
 	 		                "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt."
 	 		        );
@@ -1996,7 +1996,7 @@ public class Case_Appplications extends Header_Manager{
 	 			catch(Exception tab_click){
 	 				
 	 				Thread.sleep(800);
-	 				tab_selector("Applications"); Report_Listen.log_print_in_report().log(Status.INFO,
+	 				tab_selector("Applications",d); Report_Listen.log_print_in_report().log(Status.INFO,
 	 			            "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
 	 			                    + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName()
 	 			              );
@@ -2659,7 +2659,7 @@ public class Case_Appplications extends Header_Manager{
 		            "<b>✅ Expected:</b> Underwriting Notes should be saved successfully and confirmation toast should appear.");
 
 			try {p.Case_Action_Dropdown();
-			tab_selector("Underwriting");
+			tab_selector("Underwriting",d);
 			p.Notes_Add_Button();
 			Report_Listen.log_print_in_report().log(Status.INFO,
 	                "<b>🟨 Actual:</b> User is already inside Case → Underwriting tab context.");}
@@ -2686,7 +2686,7 @@ public class Case_Appplications extends Header_Manager{
 			Report_Listen.log_print_in_report().log(Status.INFO,
 		            "<b>🟨 Actual:</b> Case opened successfully and Underwriting tab is accessible.");
 			p.Case_Action_Dropdown();
-			tab_selector("Underwriting");
+			tab_selector("Underwriting",d);
 			WebElement Notes_Add_Button= p.Notes_Add_Button();	
 			Notes_Add_Button.click();
 			List <WebElement> inputs =p.Edit_form_inputs();
@@ -2857,7 +2857,7 @@ public class Case_Appplications extends Header_Manager{
 		
 	    	Application_Locaters p = new Application_Locaters(d);
 	    	
-	    	tab_selector("Contacts");
+	    	tab_selector("Contacts",d);
 	    	//p.lawFirm_AddButton_ContactTab();
 	    	List <WebElement> Plaintiff_datas = p.Plaintiff_feild_labels_and_values();
 		    String Mailid = Plaintiff_datas.get(7).getText().trim();
@@ -2935,10 +2935,10 @@ public class Case_Appplications extends Header_Manager{
 			Login_negative_testcases.Toast_printer(Contract_Signed,d);
 			Report_Listen.log_print_in_report().log(Status.INFO,
 		            "<b>🟨 Actual:</b> System confirmed contract signing via toast message.");
-			try{tab_selector("Liens");}
+			try{tab_selector("Liens",d);}
 			catch(Exception Lien_tab_retry){
 				Thread.sleep(800);
-				tab_selector("Liens");
+				tab_selector("Liens",d);
 			}
 			List<WebElement> rows = p.Open_Lien_table_contents();
 			Report_Listen.log_print_in_report().log(
@@ -3636,13 +3636,15 @@ public class Case_Appplications extends Header_Manager{
 	    // ✅ 3 columns now: case, plaintiff, attorney
 	    Object[][] final_set = new Object[n][6];
 
-	    for(int i = 0; i < n; i++){
+	    int i=0;
+	    while(i<n){
 	        final_set[i][0] = case_datas[i][0];       // case map
 	        final_set[i][1] = plaintiff_datas[i][0];  // plaintiff map
 	        final_set[i][2] = attorney_datas[i][0];   // attorney map
 	        final_set[i][3] = law_firm_datas[i][0];   // law firm map
 	        final_set[i][4] = Staff_datas[i][0];      // Staff map
-	        final_set[i][5] = Email_datas[i][0];      // Email data
+	        final_set[i][5] = Email_datas[i][0];  
+	        i++;// Email data
 	    }
 	    return final_set;}
 	
@@ -3706,7 +3708,7 @@ public class Case_Appplications extends Header_Manager{
 			   lien_rows= Internal_Application_Generator_and_Manual_Signer(data,data2,attorneyData,Requested_Amount); }
 		   else{
 			  
-			  tab_selector("Liens");
+			  tab_selector("Liens",d);
 			  
 	          try { 
 	        	  lien_rows=p.Open_Lien_table_contents();
@@ -3717,7 +3719,7 @@ public class Case_Appplications extends Header_Manager{
 				 WebElement Empty_lien_Table = p.Lien_table_empty();
 		  if(Empty_lien_Table.isDisplayed()){
 				
-				  tab_selector("Applications");
+				  tab_selector("Applications",d);
 				  try{
 					List<WebElement> Amount_edit_buttons= p.Application_amount_edit_buttons();
 					WebElement Dropdown_status = p.Application_Details_Dropdown_Feild();
@@ -4464,10 +4466,10 @@ public class Case_Appplications extends Header_Manager{
 					   System.out.println();
 					   Thread.sleep(1200);
 					   Case_Tags = p.Case_tags();}}
-				   try{tab_selector("Liens");}
+				   try{tab_selector("Liens",d);}
 					catch(Exception Lien_tab_retry){
 						Thread.sleep(800);
-						tab_selector("Liens");}
+						tab_selector("Liens",d);}
 		    	    WebElement payoff_button = p.Payoff_Button();
 		    	    rp.Scroll_to_element(payoff_button);
 		    	    rp.wait_for_Clickable(payoff_button);
@@ -4566,10 +4568,10 @@ public class Case_Appplications extends Header_Manager{
 					   System.out.println();
 					   Thread.sleep(1200);
 					   Case_Tags = p.Case_tags();}}
-				   try{tab_selector("Liens");}
+				   try{tab_selector("Liens",d);}
 					catch(Exception Lien_tab_retry){
 						Thread.sleep(800);
-						tab_selector("Liens");}
+						tab_selector("Liens",d);}
 				   Report_Listen.log_print_in_report().log(Status.INFO,
 					        "<b>Step " + (step++) + ":</b> Perform <b>Revise Contract</b> flow (Buyout update + Interest Start Date update + Generate Contract)."
 					);
@@ -4884,8 +4886,9 @@ public class Case_Appplications extends Header_Manager{
 	        // =========================
 	        // 1) INSERT into TreeMaps (one loop)
 	        // =========================
+	           int m=0;
 	           
-	           for(int m=0; m<no_of_rows; m++){
+	           while(m<no_of_rows){
 
 	        	    String fourth_cell_datas  = fourth_cells.get(m).getText().replace("$","").replace(",","").replace("\u00A0","").trim();
 	        	    String Fifth_cell_data    = Fifth_cells.get(m).getText().replace("$","").replace(",","").replace("\u00A0","").trim();
@@ -4917,7 +4920,8 @@ public class Case_Appplications extends Header_Manager{
 	    		    WebElement Return_amount_cell = Seventh_cells.get(m);
 	        	    rp.Scroll_to_element(Return_amount_cell);
 	        	    Thread.sleep(500);
-	    		    RETURNED_AMT_Values.put("Paid Amount"+m,  paidAmount_upto_2_decimal);}
+	    		    RETURNED_AMT_Values.put("Paid Amount"+m,  paidAmount_upto_2_decimal);
+	    		    m++;}
 	           
 	           double Lien_Balance_From_Table = LIEN_AMOUNT_Values.get("Lien Amounts0");
 
@@ -5029,10 +5033,10 @@ public class Case_Appplications extends Header_Manager{
 					   System.out.println();
 					   Thread.sleep(1200);
 					   Case_Tags = p.Case_tags();}}
-				   try{tab_selector("Liens");}
+				   try{tab_selector("Liens",d);}
 					catch(Exception Lien_tab_retry){
 						Thread.sleep(800);
-						tab_selector("Liens");}
+						tab_selector("Liens",d);}
 		    	    WebElement payoff_button = p.Payoff_Button();
 		    	    rp.Scroll_to_element(payoff_button);
 		    	    rp.wait_for_Clickable(payoff_button);
@@ -5241,7 +5245,7 @@ public class Case_Appplications extends Header_Manager{
 				);
 				System.out.println("[Step] Open Applications tab | Case ID: " + Case_id);
 
-				tab_selector("Applications");
+				tab_selector("Applications",d);
 
 				Report_Listen.log_print_in_report().log(Status.INFO,
 				        "<b>🟨 Actual:</b> Applications tab opened.<br>"
@@ -5402,7 +5406,7 @@ public class Case_Appplications extends Header_Manager{
 		   
 		  
 		int step=1;
-		   tab_selector("Applications");
+		   tab_selector("Applications",d);
 		   p.Requested_amount_input_field_in_Applications_tab().sendKeys(Requested_Amount);
 		   p.Appilcation_Add_button().click();
 		   p.Application_amount_edit_buttons().get(1).click();
@@ -5674,7 +5678,7 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	
-	public void tab_selector(String tabname) throws InterruptedException{
+	public void tab_selector(String tabname,WebDriver d) throws InterruptedException{
 		
 		Application_Locaters p = new Application_Locaters(d);
 		Repeat rp = new Repeat(d);
@@ -5740,7 +5744,7 @@ public class Case_Appplications extends Header_Manager{
 			   System.out.println();
 			   Thread.sleep(1200);
 			   Case_Tags = p.Case_tags();}
-		   tab_selector("Notes");
+		   tab_selector("Notes",d);
 		   Thread.sleep(800);
 		   WebElement Notes_Tab_Toast = lg.Toast_close_button();
 		   rp.movetoelement(Notes_Tab_Toast);

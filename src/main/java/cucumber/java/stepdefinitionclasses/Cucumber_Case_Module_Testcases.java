@@ -47,7 +47,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
 			    "<b>Step "+(step++)+":</b> Click <b>Case Add</b> button from Header<br>"
 			  + "<b>📘 Description:</b> User uses header Case Add button to directly open the New Case Add popup<br>"
 			  + "<b>✅ Expected:</b> New Case popup should open");
-	        hd.header_buttons_clicker(s);
+	        hd.header_buttons_clicker(s,d);
 	        Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> Header <b>Case Add</b> button clicked.");
 	        Report_Listen.log_print_in_report().log(Status.INFO,
 	         "<b>Step "+(step++)+":</b> Verify New Case popup is opened<br>"
@@ -63,7 +63,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
      @Given("Add_case_cucumber with data:")
      public void Add_case_cucumber(DataTable table) throws IOException, InterruptedException{ 
 	 
-    	 WebDriver d = Base_cucumber.d;
+    	 d = Base_cucumber.d;
 
          // ✅ One map only (no TreeMap objects)
     	 Map<String, String> data = new TreeMap<>(table.asMap(String.class, String.class));
@@ -185,7 +185,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
          // ========== Contacts Tab (Attorney import) ==========
          Report_Listen.log_print_in_report().log(Status.INFO, "<b>Step " + (step++) + ":</b> Go to Contacts tab and link an Attorney contact from list.");
 
-         tab_selector("Contacts");
+         tab_selector("Contacts",d);
          p.lawFirm_AddButton_ContactTab();
          rp.Scroll_to_element(p.Contact_AddButton_ContactTab());
          p.Contact_AddButton_ContactTab().click();
@@ -240,11 +240,11 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
          rp.Scroll_to_element(p.Application_tab_bar());
 
          try {
-             tab_selector("Applications");
+             tab_selector("Applications",d);
              Report_Listen.log_print_in_report().log(Status.PASS, "<b>🟨 Actual:</b> ✅ Applications tab clicked successfully on retry attempt.");
          } catch (Exception tab_click) {
              Thread.sleep(800);
-             tab_selector("Applications");
+             tab_selector("Applications",d);
              Report_Listen.log_print_in_report().log(Status.INFO,
                      "<b>🟨 Actual:</b> First attempt to click Applications tab failed. Waiting 800ms and retrying once.<br>"
                              + "<b>🟡 Exception:</b> " + tab_click.getClass().getSimpleName());
@@ -591,18 +591,14 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
          System.out.println("[END] Add_case completed successfully");
          System.out.println("Case ID : " + Case_ID);
          System.out.println("==================================================");
-         System.out.println();
- 		
- 		
-	
-                          }
+         System.out.println();}
 
 
 
 
 
 
-  // Overloaded version for Cucumber parameter acceptance
+  
      public void Pay_off_lien_list_After_Revise_contract(Map<String, String> Case_Data, String id) throws IOException, InterruptedException {
          
          Application_Locaters p = new Application_Locaters(d);
@@ -667,10 +663,10 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
          }
          
          try {
-             tab_selector("Liens");
+             tab_selector("Liens",d);
          } catch (Exception Lien_tab_retry) {
              Thread.sleep(800);
-             tab_selector("Liens");
+             tab_selector("Liens",d);
          }
          
          Report_Listen.log_print_in_report().log(Status.INFO,
@@ -746,7 +742,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
          System.out.println("[Step] Fetch Payoff table values AFTER payment");
          Pay_off_lien_list_After_payment_data_fetcher(Case_id);
 
-         for (Map.Entry<String, Double> after_pair : PayoffTable_values_After_Payment.entrySet()) {
+         for (var after_pair : PayoffTable_values_After_Payment.entrySet()) {
              String Key = after_pair.getKey();
 
              if (!PayoffTable_values_Before_Payment.containsKey(Key)) {
@@ -947,7 +943,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
 
          try {
              p.Case_Action_Dropdown();
-             tab_selector("Underwriting");
+             tab_selector("Underwriting",d);
              p.Notes_Add_Button();
              Report_Listen.log_print_in_report().log(Status.INFO,
                      "<b>🟨 Actual:</b> User is already inside Case → Underwriting tab context.");
@@ -978,7 +974,7 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
                  "<b>🟨 Actual:</b> Case opened successfully and Underwriting tab is accessible.");
          
          p.Case_Action_Dropdown();
-         tab_selector("Underwriting");
+         tab_selector("Underwriting",d);
          
          WebElement Notes_Add_Button = p.Notes_Add_Button();	
          Notes_Add_Button.click();
