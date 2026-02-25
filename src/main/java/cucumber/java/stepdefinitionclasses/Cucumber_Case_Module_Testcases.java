@@ -32,6 +32,9 @@ import io.cucumber.java.en.Given;
 
 public class Cucumber_Case_Module_Testcases extends Case_Appplications{
 	
+	
+
+	
 	   private void bindDriver() {
 	        super.d = Base_cucumber.d;
 	    }
@@ -57,9 +60,6 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
 	         + "<b>✅ Expected:</b> New Case Add popup form should be visible and ready for input");
 			p.Popup_add_form();}
 	
-  
-
-     
      
 
      @Given("Add_case_cucumber with data:")
@@ -1137,6 +1137,173 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
     System.out.println("✅ Scenario Completed for Case ID: " + Case_ID + "\n");
 }
 
+   @Given("Buyout_Add_After_Contract_Generation_through_Edit_Terms with data:")
+   public void Buyout_Add_After_Contract_Generation_through_Edit_Terms(DataTable data) throws Exception {
+
+       bindDriver();
+
+       TreeMap<String, String> editTermsDataset = new TreeMap<>(data.asMap(String.class, String.class));
+       editTermsDataset.remove("Key");
+
+       // Always overwrite these dates (table contains them as AUTO, so no checks needed)
+       DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+       String today  = LocalDate.now().format(fmt);
+       String expiry = LocalDate.now().plusYears(4).format(fmt);
+
+       editTermsDataset.put("Case.Agreement Date", today);
+       editTermsDataset.put("Case.Interest Start Date", today);
+       editTermsDataset.put("Case.Buyout Expiry Date", expiry);
+
+       // ===== Map-1: Case_Data (exact keys used in TestNG method) =====
+       TreeMap<String, String> caseContractData = new TreeMap<>();
+       caseContractData.put("Lead Source", editTermsDataset.get("Case.Lead Source"));
+       caseContractData.put("Requested Amount", editTermsDataset.get("Case.Requested Amount"));
+       caseContractData.put("Case Type", editTermsDataset.get("Case.Case Type"));
+       caseContractData.put("State", editTermsDataset.get("Case.State"));
+       caseContractData.put("Summary", editTermsDataset.get("Case.Summary"));
+       caseContractData.put("Court Index Number", editTermsDataset.get("Case.Court Index Number"));
+       caseContractData.put("Date of Incident", editTermsDataset.get("Case.Date of Incident"));
+
+       caseContractData.put("Buyout Funder Name", editTermsDataset.get("Case.Buyout Funder Name"));
+       caseContractData.put("Buyout Amount", editTermsDataset.get("Case.Buyout Amount"));
+       caseContractData.put("Buyout Expiry Date", editTermsDataset.get("Case.Buyout Expiry Date"));
+
+       caseContractData.put("Approved Amount", editTermsDataset.get("Case.Approved Amount"));
+       caseContractData.put("Document prep fee", editTermsDataset.get("Case.Document prep fee"));
+       caseContractData.put("Fund transfer fee", editTermsDataset.get("Case.Fund transfer fee"));
+       caseContractData.put("Rate of Return", editTermsDataset.get("Case.Rate of Return"));
+
+       caseContractData.put("Agreement Date", editTermsDataset.get("Case.Agreement Date"));
+       caseContractData.put("Interest Start Date", editTermsDataset.get("Case.Interest Start Date"));
+
+       // This key is referenced in your TestNG logs, so populate it too (prevents "null" in reports)
+       caseContractData.put("Plaintiff Name",
+               editTermsDataset.get("Plaintiff.First Name") + " " + editTermsDataset.get("Plaintiff.Last Name"));
+
+       // ===== Map-2: Plaintiff =====
+       TreeMap<String, String> plaintiffCard = new TreeMap<>();
+       plaintiffCard.put("First Name", editTermsDataset.get("Plaintiff.First Name"));
+       plaintiffCard.put("Last Name", editTermsDataset.get("Plaintiff.Last Name"));
+
+       // ===== Map-3: Attorney =====
+       TreeMap<String, String> attorneyCard = new TreeMap<>();
+       attorneyCard.put("First Name", editTermsDataset.get("Attorney.First Name"));
+       attorneyCard.put("Email", editTermsDataset.get("Attorney.Email"));
+
+       // ===== Map-4: Law Firm =====
+       TreeMap<String, String> lawFirmCard = new TreeMap<>();
+       lawFirmCard.put("Name", editTermsDataset.get("LawFirm.Name"));
+       lawFirmCard.put("Law Firm Name", editTermsDataset.get("LawFirm.Name"));
+
+       // ===== Map-5: Staff =====
+       TreeMap<String, String> staffOwner = new TreeMap<>();
+       staffOwner.put("Staff First Name", editTermsDataset.get("Staff.Staff First Name"));
+       staffOwner.put("Staff Email", editTermsDataset.get("Staff.Staff Email"));
+
+       // ===== Map-6: Email (not used in this TestNG method but required by signature) =====
+       TreeMap<String, String> emailPacket = new TreeMap<>();
+       emailPacket.put("Template", editTermsDataset.get("Email.Template"));
+       emailPacket.put("Subject", editTermsDataset.get("Email.Subject"));
+       emailPacket.put("To", editTermsDataset.get("Email.To"));
+       emailPacket.put("Cc", editTermsDataset.get("Email.Cc"));
+       emailPacket.put("Bcc", editTermsDataset.get("Email.Bcc"));
+       emailPacket.put("Message", editTermsDataset.get("Email.Message").replace("\\n", "\n"));
+
+       super.Buyout_Add_After_Contract_Generation_through_Edit_Terms(
+               caseContractData, plaintiffCard, attorneyCard, lawFirmCard, staffOwner, emailPacket
+       );
+   }
+   
+   
+   @Given("Multiple_Application_Generator with data:")
+   public void Multiple_Application_Generator(DataTable data) throws Exception {
+
+       bindDriver();
+
+       TreeMap<String, String> generatorDataset = new TreeMap<>(data.asMap(String.class, String.class));
+       generatorDataset.remove("Key");
+
+       // Always overwrite dates (table contains these keys as AUTO, so no checks needed)
+       DateTimeFormatter fmt = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+       String today  = LocalDate.now().format(fmt);
+       String expiry = LocalDate.now().plusYears(4).format(fmt);
+
+       generatorDataset.put("Case.Payment Date", today);
+       generatorDataset.put("Case.Agreement Date", today);
+       generatorDataset.put("Case.Interest Start Date", today);
+       generatorDataset.put("Case.Buyout Expiry Date", expiry);
+
+       // ===== Build 6 payload maps exactly like TestNG signature =====
+
+       TreeMap<String, String> casePayload = new TreeMap<>();
+       casePayload.put("Case #", generatorDataset.get("Case.Case #"));
+       casePayload.put("Case Type", generatorDataset.get("Case.Case Type"));
+       casePayload.put("State", generatorDataset.get("Case.State"));
+       casePayload.put("Date of Incident", generatorDataset.get("Case.Date of Incident"));
+       casePayload.put("Lead Source", generatorDataset.get("Case.Lead Source"));
+       casePayload.put("Requested Amount", generatorDataset.get("Case.Requested Amount"));
+       casePayload.put("Court Index Number", generatorDataset.get("Case.Court Index Number"));
+       casePayload.put("Summary", generatorDataset.get("Case.Summary"));
+
+       casePayload.put("Application Status", generatorDataset.get("Case.Application Status"));
+       casePayload.put("Risk Level", generatorDataset.get("Case.Risk Level"));
+       casePayload.put("Recommended Max Funding", generatorDataset.get("Case.Recommended Max Funding"));
+       casePayload.put("Underwriting Notes", generatorDataset.get("Case.Underwriting Notes"));
+       casePayload.put("Underwriting Tag", generatorDataset.get("Case.Underwriting Tag"));
+
+       casePayload.put("Buyout Funder Name", generatorDataset.get("Case.Buyout Funder Name"));
+       casePayload.put("Buyout Amount", generatorDataset.get("Case.Buyout Amount"));
+       casePayload.put("Approved Amount", generatorDataset.get("Case.Approved Amount"));
+       casePayload.put("Document prep fee", generatorDataset.get("Case.Document prep fee"));
+       casePayload.put("Fund transfer fee", generatorDataset.get("Case.Fund transfer fee"));
+       casePayload.put("Rate of Return", generatorDataset.get("Case.Rate of Return"));
+
+       casePayload.put("Payment Date", generatorDataset.get("Case.Payment Date"));
+       casePayload.put("Agreement Date", generatorDataset.get("Case.Agreement Date"));
+       casePayload.put("Interest Start Date", generatorDataset.get("Case.Interest Start Date"));
+       casePayload.put("Buyout Expiry Date", generatorDataset.get("Case.Buyout Expiry Date"));
+
+       casePayload.put("Payment Mode", generatorDataset.get("Case.Payment Mode"));
+       casePayload.put("Payment Type", generatorDataset.get("Case.Payment Type"));
+       casePayload.put("Payer Name", generatorDataset.get("Case.Payer Name"));
+       casePayload.put("Notes / Remarks", generatorDataset.get("Case.Notes / Remarks"));
+
+       casePayload.put("SMS Message Title", generatorDataset.get("Case.SMS Message Title"));
+       casePayload.put("SMS Message Body", generatorDataset.get("Case.SMS Message Body"));
+
+       TreeMap<String, String> plaintiffProfile = new TreeMap<>();
+       plaintiffProfile.put("First Name", generatorDataset.get("Plaintiff.First Name"));
+       plaintiffProfile.put("Last Name", generatorDataset.get("Plaintiff.Last Name"));
+       plaintiffProfile.put("Plaintiff Name",
+               (generatorDataset.get("Plaintiff.First Name") + " " + generatorDataset.get("Plaintiff.Last Name")).trim()
+       );
+
+       TreeMap<String, String> attorneyProfile = new TreeMap<>();
+       attorneyProfile.put("First Name", generatorDataset.get("Attorney.First Name"));
+       attorneyProfile.put("Email", generatorDataset.get("Attorney.Email"));
+
+       TreeMap<String, String> lawFirmProfile = new TreeMap<>();
+       lawFirmProfile.put("Name", generatorDataset.get("LawFirm.Name"));
+       lawFirmProfile.put("Law Firm Name", generatorDataset.get("LawFirm.Name"));
+
+       TreeMap<String, String> staffProfile = new TreeMap<>();
+       staffProfile.put("Staff First Name", generatorDataset.get("Staff.Staff First Name"));
+       staffProfile.put("Staff Email", generatorDataset.get("Staff.Staff Email"));
+
+       TreeMap<String, String> emailDraft = new TreeMap<>();
+       emailDraft.put("Template", generatorDataset.get("Email.Template"));
+       emailDraft.put("Subject", generatorDataset.get("Email.Subject"));
+       emailDraft.put("To", generatorDataset.get("Email.To"));
+       emailDraft.put("Cc", generatorDataset.get("Email.Cc"));
+       emailDraft.put("Bcc", generatorDataset.get("Email.Bcc"));
+       emailDraft.put("Message", generatorDataset.get("Email.Message").replace("\\n", "\n"));
+
+       super.Multiple_Application_Generator(
+               casePayload, plaintiffProfile, attorneyProfile, lawFirmProfile, staffProfile, emailDraft
+       );
+   }
+   
+   
    public void Revise_Contract(Map<String, String> data) throws InterruptedException, IOException {
 
 	    TreeMap<String, String> Case_Data = new TreeMap<>();
@@ -1150,13 +1317,48 @@ public void Add_New_Case_Form_Accessor(int s) throws IOException, InterruptedExc
 	    super.Revise_Contract(Case_Data);
 	}
   
-   
-   public void Message_Template_Creator(Map<String,String> data) throws Exception {
-	    TreeMap<String,String> tm = new TreeMap<>();
-	    tm.put("Title", data.get("Case.SMS Message Title"));          // or Email.Subject if you prefer
-	    tm.put("Message body", data.get("Case.SMS Message Body"));    // or Email.Message
-	    super.Message_Template_Creator(tm);
+   @Given("Message_Template_Creator with data:")
+   public void Message_Template_Creator(DataTable data) throws Exception {
+	   
+	    bindDriver();
+	    TreeMap<String,String> templateData = new TreeMap<>(data.asMap(String.class,String.class));
+	    templateData.remove("Key");
+	    templateData.put("Title", templateData.get("Case.SMS Message Title"));          
+	    templateData.put("Message body", templateData.get("Case.SMS Message Body"));    
+	    super.Message_Template_Creator(templateData);
 	}
+   
+   @Given("Notes_Add with data:")
+   public void Notes_Add(DataTable data) throws Exception {
+
+       bindDriver();
+
+       TreeMap<String, String> notesData = new TreeMap<>(data.asMap(String.class, String.class));
+       notesData.remove("Key");
+
+       String noteText = notesData.get("Case.Note Text");
+
+       // TestNG method expects only ONE parameter = note content
+       super.Notes_Add(noteText.trim());
+   }
+   
+   
+   @Given("Particular_Lien_Accessor with data:")
+   public void Particular_Lien_Accessor(DataTable data) throws Exception {
+
+       bindDriver();
+
+       TreeMap<String, String> lienAccessInput = new TreeMap<>(data.asMap(String.class, String.class));
+       lienAccessInput.remove("Key");
+
+       String lienUrl = lienAccessInput.get("Lien.Url");
+
+       // TestNG method signature: Particular_Lien_Accessor(String Url)
+       super.Particular_Lien_Accessor(lienUrl);
+   }
+   
+   
+   
    
    public void Pay_off_lien_list_After_Revise_contract(Map<String, String> data, String id)
         throws IOException, InterruptedException {
