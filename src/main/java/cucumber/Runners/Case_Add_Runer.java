@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-		features = "src\\main\\java\\cucumber\\feature\\files\\Case_Add.feature",
+		features = "src\\main\\java\\cucumber\\feature\\files\\Case_Module.feature",
 		glue = "cucumber.java.stepdefinitionclasses",
 		monochrome=true,
 		tags="@case_plus_plaintiff or @revise_contract",plugin = {"pretty", "html:target/cucumber.html"}
