@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.aventstack.extentreports.gherkin.model.Scenario;
+
 import Enterprise_Codeclouds.Project.Enterprise.Data_Reader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -16,7 +18,7 @@ public class Base_cucumber {
 
 	public static WebDriver d;
     public static String Target_url;
-
+   
     @Before
     public void setup() throws IOException {
 
