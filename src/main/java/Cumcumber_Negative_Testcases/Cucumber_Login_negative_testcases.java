@@ -24,7 +24,7 @@ public class Cucumber_Login_negative_testcases {
 	@Given("^Logging in with username (.+) and password (.+)$")
 	public void login_validation_cucumber(String user, String pass) throws IOException, InterruptedException {
 		
-		WebDriver d = Base_cucumber.d;
+		WebDriver d = Base_cucumber.D.get();
 		String url = Base_cucumber.Target_url;
 		
 		Login_Locaters l = new Login_Locaters(d);

@@ -17,7 +17,7 @@ public class Login_cucumber {
 	@Given("Postive Login Testcase") 
 	public static void login_through_cucumber(WebDriver driver) throws InterruptedException, IOException{
 		
-		 WebDriver d = driver==null ? Base_cucumber.d: driver ;
+		 WebDriver d = driver==null ? Base_cucumber.D.get(): driver ;
         String Target_url = Base_cucumber.Target_url;
 		
         Login_Locaters lg = new Login_Locaters(d);

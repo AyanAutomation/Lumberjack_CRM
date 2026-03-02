@@ -2,6 +2,8 @@ package playwright.zone;
 
 import java.io.IOException;
 
+import org.testng.annotations.AfterMethod;
+
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
@@ -25,17 +27,33 @@ public class Playwright_Base {
 		pw = Playwright.create();
 		
 		BrowserType.LaunchOptions options = new BrowserType.LaunchOptions();
-		
-		if(Browser.contentEquals("Chrome")){
-			
-			
+		if (Browser.toLowerCase().contains("headless")) {
+			options.setHeadless(true);
+		} else {
+			options.setHeadless(false);
 		}
-		if(Browser.contentEquals("Firefox")){
+		if(Browser.equalsIgnoreCase("Chrome")){
 			
-		}
-		
+			browser = pw.chromium().launch(options);}
+		if(Browser.equalsIgnoreCase("Firefox")){
+			
+			browser=pw.firefox().launch(options);}
+		page = browser.newPage();
+		page.setViewportSize(1536, 864);
 	}
 	
-	
+	@AfterMethod
+	public void Kill() {
+
+		if (page != null) {
+			page.close();
+		}
+		if (browser != null) {
+			browser.close();
+		}
+		if (pw != null) {
+			pw.close();
+		}
+	}
 
 }

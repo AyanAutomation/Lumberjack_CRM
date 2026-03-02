@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
+<suite name="Suite" parallel="tests" thread-count="2">
+
+  <test name="Plaintiff_Edit_In_Case_Test">
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Plaintiff_Module">
-      <methods>
-      <include name="Plaintiff_edit_in_case"></include>
-      </methods>
+        <methods>
+          <include name="Plaintiff_edit_in_case"/>
+        </methods>
       </class>
+    </classes>
+  </test>
+
+  <test name="Law_Firm_Address_Reflection_Test">
+    <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Law_Firm_Module">
-       <methods>
-       <include name="law_firm_Address_edit_and_its_reflection_in_case_contact_details"></include>
-       </methods>
+        <methods>
+          <include name="law_firm_Address_edit_and_its_reflection_in_case_contact_details"/>
+        </methods>
       </class>
-     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </classes>
+  </test>
+</suite>

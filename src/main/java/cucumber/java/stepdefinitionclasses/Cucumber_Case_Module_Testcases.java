@@ -36,7 +36,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications{
 
 	
 	   private void bindDriver() {
-	        super.d = Base_cucumber.d;
+	        super.d = Base_cucumber.D.get();
 	    }
 	
 

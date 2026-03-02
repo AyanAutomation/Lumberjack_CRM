@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
+<suite name="Suite" parallel="tests" thread-count="2">
+
+  <test name="Buyout_Add_After_Contract_Generation_through_Edit_Terms_Test">
     <classes>
       <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
-      <methods>
-      <include name="Buyout_Add_After_Contract_Generation_through_Edit_Terms"></include>
-      <include name="Buyout_Add_and_Fees_changed_in_Revised_Contract"></include>
-      </methods>
+        <methods>
+          <include name="Buyout_Add_After_Contract_Generation_through_Edit_Terms"/>
+        </methods>
       </class>
-     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </classes>
+  </test>
+
+  <test name="Buyout_Add_and_Fees_changed_in_Revised_Contract_Test">
+    <classes>
+      <class name="Enterprise_Codeclouds.Project.Enterprise.Case_Appplications">
+        <methods>
+          <include name="Buyout_Add_and_Fees_changed_in_Revised_Contract"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+</suite>

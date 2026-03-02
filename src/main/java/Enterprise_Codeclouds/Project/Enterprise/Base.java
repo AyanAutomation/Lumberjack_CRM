@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Base {
 	
 	 public WebDriver d;
-	public static String Target_url;
+	public  String Target_url;
 	
 	
 	@BeforeMethod

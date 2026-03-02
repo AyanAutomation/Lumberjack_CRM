@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base_cucumber {
 
-	public static WebDriver d;
+	public static ThreadLocal<WebDriver> D = new ThreadLocal<>();
     public static String Target_url;
    
     @Before
@@ -32,26 +32,32 @@ public class Base_cucumber {
                 ? System.getProperty("url")
                 : f.Data_Fetcher("Url");
 
+        WebDriver d;
+        
         if (browser.toLowerCase().contains("chrome")) {
             ChromeOptions options = new ChromeOptions();
             WebDriverManager.chromedriver().setup();
             if (browser.toLowerCase().contains("headless")) {
-                options.addArguments("headless");
-            }
-            d = new ChromeDriver(options);
-        } else {
+                options.addArguments("headless");}
+            d = new ChromeDriver(options);} 
+        
+        else {
             WebDriverManager.firefoxdriver().setup();
-            d = new FirefoxDriver();
-        }
+            d = new FirefoxDriver();}
 
         d.manage().window().maximize();
+        D.set(d);
     }
 
     @After
     public void tearDown() {
+    	WebDriver d = D.get();
+    	
         if (d != null) {
         	
-        	d.quit();}
+        	d.quit();
+        	D.remove();
+        }
         
     }
 }
