@@ -42,6 +42,8 @@ import freemarker.cache.StrongCacheStorage;
 @Listeners(Listerners.Report_Listen.class)
 public class Case_Appplications extends Header_Manager{
 	
+	
+	
  public TreeSet<Double> monthly_emi = new TreeSet<Double>();
  public TreeMap<String,Double> LIEN_AMOUNT_Values = new TreeMap<String,Double>();  
  public TreeMap<String,Double> TOTAL_PRINCIPAL_Values = new TreeMap<String,Double>();

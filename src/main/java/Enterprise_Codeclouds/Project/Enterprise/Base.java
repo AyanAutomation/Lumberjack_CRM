@@ -13,9 +13,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 	
-	 public WebDriver d;
-	public  String Target_url;
-	
+	protected static ThreadLocal<WebDriver> D = new ThreadLocal<WebDriver>();
+	public String Target_url;
+	protected WebDriver d;
 	
 	@BeforeMethod
 	public void setup() throws IOException{
@@ -26,35 +26,39 @@ public class Base {
 	String Browser = System.getProperty("Browsername")!=null ? System.getProperty("Browsername") : f.Data_Fetcher("Browser");	
 	Target_url = System.getProperty("url")!=null ? System.getProperty("url"):f.Data_Fetcher("Url");
 	
+	WebDriver local_d;
+	
 	if(Browser.contains("Chrome")){
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		if(Browser.contains("headless")) {
 		options.addArguments("headless");}
-        d = new ChromeDriver(options);
-        d.manage().window().maximize();}
+		local_d = new ChromeDriver(options);
+        d.manage().window().maximize();
+        D.set(local_d);}
 	
 	if(Browser.equalsIgnoreCase("Firefox")){
 		
 		 WebDriverManager.firefoxdriver().setup();
-         d = new FirefoxDriver();
-         d.manage().window().maximize();}}
+		 local_d = new FirefoxDriver();
+         d.manage().window().maximize();
+         D.set(local_d);}
+	
+	d= D.get();
+	
+	  
+	}
 	
 	
 	
 	@AfterMethod
 	public void Kill(){
-		
+	WebDriver d=D.get();
 		if(d!=null){
 			
        d.quit();
-			}
-		
-		
-		
-		
-	}
+       D.remove();}
 	
 	
 
-}
+}}
