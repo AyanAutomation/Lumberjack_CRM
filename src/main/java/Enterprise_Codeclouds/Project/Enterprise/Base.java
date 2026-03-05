@@ -34,26 +34,23 @@ public class Base {
 		if(Browser.contains("headless")) {
 		options.addArguments("headless");}
 		local_d = new ChromeDriver(options);
-        d.manage().window().maximize();
+        
         D.set(local_d);}
-	
 	if(Browser.equalsIgnoreCase("Firefox")){
 		
 		 WebDriverManager.firefoxdriver().setup();
 		 local_d = new FirefoxDriver();
-         d.manage().window().maximize();
+         
          D.set(local_d);}
-	
 	d= D.get();
-	
-	  
+	d.manage().window().maximize();
 	}
 	
 	
 	
 	@AfterMethod
 	public void Kill(){
-	WebDriver d=D.get();
+ 
 		if(d!=null){
 			
        d.quit();

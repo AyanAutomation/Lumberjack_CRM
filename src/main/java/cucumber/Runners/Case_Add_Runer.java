@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @Listeners(Listerners.Report_Listen.class)
 @CucumberOptions(
-    features = "src/main/java/cucumber/feature/files",
-    glue = {"cucumber.java.stepdefinitionclasses", "Cumcumber_Negative_Testcases"},
+    features = "src\\main\\java\\cucumber\\feature\\files\\Case_Module.feature",
+    glue = "cucumber.java.stepdefinitionclasses",
     monochrome = true,
     tags = "@case_plus_plaintiff or @revise_contract",
     plugin = {

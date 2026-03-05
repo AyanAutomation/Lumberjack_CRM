@@ -701,7 +701,7 @@ public class Case_Appplications extends Header_Manager{
 		
 		int step=1;
 
-		Add_New_Case_Form_Accessor(step++);
+		Add_New_Case_Form_Accessor(0);
 		Report_Listen.log_print_in_report().log(Status.INFO,"<b>🟨 Actual:</b> New Case form/popup opened.");
         Report_Listen.log_print_in_report().log(Status.INFO,"<b>Step "+(step++)+":</b> Search and select existing Plaintiff from dropdown.");
 		p.form_inputs().get(0).sendKeys(Plaintiff.get("First Name"));

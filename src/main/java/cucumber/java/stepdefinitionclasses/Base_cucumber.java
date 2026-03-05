@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import com.aventstack.extentreports.gherkin.model.Scenario;
-
 import Enterprise_Codeclouds.Project.Enterprise.Data_Reader;
+import Listerners.Report_Listen;
+import Report.Reports;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base_cucumber {
@@ -20,7 +20,7 @@ public class Base_cucumber {
     public static String Target_url;
    
     @Before
-    public void setup() throws IOException {
+    public void setup(Scenario scenario) throws IOException {
 
         Data_Reader f = new Data_Reader();
 
@@ -47,6 +47,8 @@ public class Base_cucumber {
 
         d.manage().window().maximize();
         D.set(d);
+        
+        Report_Listen.log_report.set(new Reports().Get_reports().createTest(scenario.getName()));
     }
 
     @After
@@ -58,6 +60,6 @@ public class Base_cucumber {
         	d.quit();
         	D.remove();
         }
-        
+        Report_Listen.log_report.remove();
     }
 }

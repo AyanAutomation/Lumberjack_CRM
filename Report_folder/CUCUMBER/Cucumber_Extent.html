@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 26, 2026 03:42:21 PM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 5, 2026 06:22:45 PM</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@case_plus_plaintiff</a><a class="dropdown-item" href="#">@revise_contract</a>
+<a class="dropdown-item" href="#">@revise_contract</a><a class="dropdown-item" href="#">@case_plus_plaintiff</a>
 </ul>
 </li>
 </ul>
@@ -97,7 +97,7 @@
           <div class="test-detail">
             <p class="name">Case Module (Add Case + Revised Contract + Message Template)</p>
             <p class="text-sm">
-              <span>3:42:22 PM</span> / <span>00:00:38:174</span>
+              <span>6:22:46 PM</span> / <span>00:00:37:936</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -106,9 +106,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Case Module (Add Case + Revised Contract + Message Template)</h5>
-<span class='badge badge-success'>02.26.2026 3:42:22 PM</span>
-<span class='badge badge-danger'>02.26.2026 3:43:00 PM</span>
-<span class='badge badge-default'>00:00:38:174</span>
+<span class='badge badge-success'>03.05.2026 6:22:46 PM</span>
+<span class='badge badge-danger'>03.05.2026 6:23:24 PM</span>
+<span class='badge badge-default'>00:00:37:936</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -141,25 +141,24 @@ Please upload required documents.
 Thank you.</td></tr></table>
       </div>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 8 second(s) with 500 milliseconds interval)
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='ant-modal-body']' (tried for 8 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-	at Locaters.Login_Locaters.login_confirmation(Login_Locaters.java:60)
-	at cucumber.java.stepdefinitionclasses.Login_cucumber.login_through_cucumber(Login_cucumber.java:43)
-	at cucumber.java.stepdefinitionclasses.Header_functionality_manager.header_buttons_clicker(Header_functionality_manager.java:24)
-	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_New_Case_Form_Accessor(Cucumber_Case_Module_Testcases.java:55)
-	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_case_cucumber(Cucumber_Case_Module_Testcases.java:109)
+	at Locaters.Application_Locaters.Popup_add_form(Application_Locaters.java:313)
+	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_New_Case_Form_Accessor(Cucumber_Case_Module_Testcases.java:50)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Add_case(Case_Appplications.java:704)
+	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_case_cucumber(Cucumber_Case_Module_Testcases.java:164)
 	at ✽.Add_case_cucumber with data:(file:///C:/Users/CODECLOUDS-AYAN/OneDrive/Documents/Automation%20Projects/Lumberjack_CRM/src/main/java/cucumber/feature/files/Case_Module.feature:5)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@role='menu']"}
-  (Session info: chrome=145.0.7632.111)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='ant-modal-body']"}
+  (Session info: chrome=145.0.7632.117)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3ba917bf64aa930b0458c9f352731b99, findElement {using=xpath, value=//*[@role='menu']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.111, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61371}, goog:processID: 764, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61371/devtoo..., se:cdpVersion: 145.0.7632.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ba917bf64aa930b0458c9f352731b99
+Command: [e5c3d475b67030daf978fa69623ad9ce, findElement {using=xpath, value=//div[@class='ant-modal-body']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.117, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53417}, goog:processID: 2800, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53417/devtoo..., se:cdpVersion: 145.0.7632.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5c3d475b67030daf978fa69623ad9ce
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -181,7 +180,7 @@ Session ID: 3ba917bf64aa930b0458c9f352731b99
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 7 more
+	... 6 more
 </textarea>
       
       </div>
@@ -213,25 +212,24 @@ Please upload required documents.
 Thank you.</td></tr></table>
       </div>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //*[@role='menu']' (tried for 8 second(s) with 500 milliseconds interval)
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='ant-modal-body']' (tried for 8 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at Repeatative_codes.Repeat.wait_for_theElement(Repeat.java:41)
-	at Locaters.Login_Locaters.login_confirmation(Login_Locaters.java:60)
-	at cucumber.java.stepdefinitionclasses.Login_cucumber.login_through_cucumber(Login_cucumber.java:43)
-	at cucumber.java.stepdefinitionclasses.Header_functionality_manager.header_buttons_clicker(Header_functionality_manager.java:24)
-	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_New_Case_Form_Accessor(Cucumber_Case_Module_Testcases.java:55)
-	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Buyout_Add_and_Fees_changed_in_Revised_Contract(Cucumber_Case_Module_Testcases.java:683)
+	at Locaters.Application_Locaters.Popup_add_form(Application_Locaters.java:313)
+	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Add_New_Case_Form_Accessor(Cucumber_Case_Module_Testcases.java:50)
+	at Enterprise_Codeclouds.Project.Enterprise.Case_Appplications.Buyout_Add_and_Fees_changed_in_Revised_Contract(Case_Appplications.java:1283)
+	at cucumber.java.stepdefinitionclasses.Cucumber_Case_Module_Testcases.Buyout_Add_and_Fees_changed_in_Revised_Contract(Cucumber_Case_Module_Testcases.java:227)
 	at ✽.Buyout_Add_and_Fees_changed_in_Revised_Contract with data:(file:///C:/Users/CODECLOUDS-AYAN/OneDrive/Documents/Automation%20Projects/Lumberjack_CRM/src/main/java/cucumber/feature/files/Case_Module.feature:71)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@role='menu']"}
-  (Session info: chrome=145.0.7632.111)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='ant-modal-body']"}
+  (Session info: chrome=145.0.7632.117)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.33.0', revision: '2c6aaad03a'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [58a1ea3ce17488bb7da0eb848af9a6f4, findElement {using=xpath, value=//*[@role='menu']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.111, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61980}, goog:processID: 8524, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61980/devtoo..., se:cdpVersion: 145.0.7632.111, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
+Command: [2699c9887819aed0372c4a18b967d68a, findElement {using=xpath, value=//div[@class='ant-modal-body']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.117, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\CODECL~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50758}, goog:processID: 14304, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50758/devtoo..., se:cdpVersion: 145.0.7632.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2699c9887819aed0372c4a18b967d68a
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -253,7 +251,7 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 7 more
+	... 6 more
 </textarea>
       
       </div>
@@ -306,7 +304,7 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>15:42:25 PM</td>
+<td>18:22:48 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='6'>Given Add_case_cucumber with data:</a>
 <div class="">
@@ -316,7 +314,7 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>15:42:43 PM</td>
+<td>18:23:06 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='12'>Given Buyout_Add_and_Fees_changed_in_Revised_Contract with data:</a>
 <div class="">
@@ -349,42 +347,6 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@case_plus_plaintiff</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@case_plus_plaintiff</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>15:42:22 PM</td>
-<td>
-<a href="#" class="linked" test-id='2' id='4'>Add case using combined dataset</a>
-<div class="">
-<span class="badge badge-default">Case Module (Add Case + Revised Contract + Message Template).Add case using combined dataset</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
 <p class="name">@revise_contract</p>
 <p class="duration text-sm">1 tests</p>
 </div>
@@ -404,11 +366,47 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>15:42:42 PM</td>
+<td>18:23:06 PM</td>
 <td>
 <a href="#" class="linked" test-id='2' id='10'>Buyout Add + Fees Changed in Revised Contract (reuse same dataset)</a>
 <div class="">
 <span class="badge badge-default">Case Module (Add Case + Revised Contract + Message Template).Buyout Add + Fees Changed in Revised Contract (reuse same dataset)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@case_plus_plaintiff</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@case_plus_plaintiff</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:22:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='4'>Add case using combined dataset</a>
+<div class="">
+<span class="badge badge-default">Case Module (Add Case + Revised Contract + Message Template).Add case using combined dataset</span>
 </div>
 </td>
 </tr>
@@ -429,13 +427,13 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 26, 2026 03:42:21 PM</h3>
+<h3>Mar 5, 2026 06:22:45 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 26, 2026 03:43:00 PM</h3>
+<h3>Mar 5, 2026 06:23:24 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -525,7 +523,7 @@ Session ID: 58a1ea3ce17488bb7da0eb848af9a6f4
 </div></div>
 <script>
 var timeline = {
-"Case Module (Add Case + Revised Contract + Message Template)":38.174
+"Case Module (Add Case + Revised Contract + Message Template)":37.936
 };
 </script>
 <div class="row">
@@ -535,7 +533,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@case_plus_plaintiff</td>
+<td>@revise_contract</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -543,7 +541,7 @@ var timeline = {
 <td>0%</td>
 </tr>
 <tr>
-<td>@revise_contract</td>
+<td>@case_plus_plaintiff</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
