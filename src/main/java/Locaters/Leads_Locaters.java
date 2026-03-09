@@ -1,7 +1,9 @@
 package Locaters;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -94,15 +96,15 @@ public class Leads_Locaters extends Repeat{
 	@FindBy(xpath="//*[contains(@class,'freeform-form-has-errors')]")
 	private List<WebElement> error_in_form;
 	@FindBy(xpath="//select")
-	private WebElement State_select_dropdown; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
+	private WebElement State_select_dropdown; 
+	@FindBy(xpath="//*[text()='ALL LEADS']")
+	private WebElement  Lead_List;
+	@FindBy(xpath="//table")
+	private WebElement Table; 
+	@FindBy(xpath="//tr[contains(@class,'ant-table-row ant-table-row-level')]")
+	private List<WebElement> rows;
+	@FindBy(xpath="//*[text()='Accept & Create Case']/..")
+	private WebElement Accept_and_Create_Case_Button; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -256,43 +258,71 @@ public class Leads_Locaters extends Repeat{
 	return error_in_form;}
 	public WebElement State_select_dropdown(){
 	wait_for_theElement(State_select_dropdown);
-	return State_select_dropdown;}/*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;} 
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return State_select_dropdown;}
+	public WebElement Lead_List(){
+	wait_for_theElement(Lead_List);
+	return Lead_List;}
+	public WebElement Table(){
+	wait_for_theElement(Table);
+	return Table;} 
+	public List<WebElement> Table_Top_labels(){
+	List<WebElement> Table_Top_labels = Table().findElements(By.xpath(".//th[contains(@aria-label,'A') or contains(@class,'ant-table-cell')]"));
+	wait_for_theElement(Table_Top_labels);
+	return Table_Top_labels;}
+	public List<WebElement> rows(){
+	wait_for_theElement(rows);
+	return rows;} 
+	public List<WebElement> first_columns_cells(){
+	List<WebElement> first_columns_cells = new ArrayList<>();
+	List<WebElement> rows = rows();
+	for(WebElement each_row:rows){
+	WebElement each_cell = each_row.findElement(By.xpath(".//td[1]"));
+	first_columns_cells.add(each_cell);}
+	wait_for_theElement(first_columns_cells);
+	return first_columns_cells;}
+	public List<WebElement> second_columns_cells(){
+	List<WebElement> second_columns_cells = new ArrayList<>();
+	List<WebElement> rows = rows();
+	for(WebElement each_row:rows){
+	WebElement each_cell = each_row.findElement(By.xpath(".//td[2]"));
+	second_columns_cells.add(each_cell);}
+	wait_for_theElement(second_columns_cells);
+	return second_columns_cells;}
+	public List<WebElement> Third_columns_cells(){
+	List<WebElement> Third_columns_cells = new ArrayList<>();
+	List<WebElement> rows = rows();
+	for(WebElement each_row:rows){
+	WebElement each_cell = each_row.findElement(By.xpath(".//td[3]"));
+	Third_columns_cells.add(each_cell);}
+	wait_for_theElement(Third_columns_cells);
+	return Third_columns_cells;}
+	public List<WebElement> fourth_columns_cells(){
+	List<WebElement> fourth_columns_cells = new ArrayList<>();
+	List<WebElement> rows = rows();
+	for(WebElement each_row:rows){
+	WebElement each_cell = each_row.findElement(By.xpath(".//td[4]"));
+	fourth_columns_cells.add(each_cell);}
+	wait_for_theElement(fourth_columns_cells);
+	return fourth_columns_cells;}
+	public List<WebElement> fifth_columns_cells(){
+	List<WebElement> fifth_columns_cells = new ArrayList<>();
+	List<WebElement> rows = rows();
+	for(WebElement each_row:rows){
+	WebElement each_cell = each_row.findElement(By.xpath(".//td[5]"));
+	fifth_columns_cells.add(each_cell);}
+	wait_for_theElement(fifth_columns_cells);
+	return fifth_columns_cells;}
+	public List<WebElement> sixth_columns_cells(){
+	List<WebElement> sixth_columns_cells = new ArrayList<>();
+	List<WebElement> rows = rows();
+	for(WebElement each_row:rows){
+	WebElement each_cell = each_row.findElement(By.xpath(".//td[6]"));
+	sixth_columns_cells.add(each_cell);}
+	wait_for_theElement(sixth_columns_cells);
+	return sixth_columns_cells;}
+	public WebElement Accept_and_Create_Case_Button(){
+	wait_for_theElement(Accept_and_Create_Case_Button);
+	return Accept_and_Create_Case_Button;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;} */

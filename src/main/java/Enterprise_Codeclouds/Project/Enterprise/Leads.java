@@ -1,9 +1,9 @@
 package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.DataProvider;
@@ -17,7 +17,80 @@ import Locaters.Application_Locaters;
 import Locaters.Leads_Locaters;
 import Repeatative_codes.Repeat;
 
-public class Leads extends Case_Appplications{
+public class Leads extends SIde_Menu_Handler{
+	
+	TreeMap<String,List<String>> lead_name_and_details = new TreeMap<String,List<String>>();
+	List<String> Plaintiff_names = new ArrayList<String>();
+	List<String> Lead_details = new ArrayList<String>();
+	
+
+	public void Lead_module_accessor() throws IOException, InterruptedException{
+		
+		Leads_Locaters p = new Leads_Locaters(d);
+		
+		Side_menu_option_clicker("Leads", d, "N/A");
+	    p.Lead_List();
+	    
+	}
+	
+	
+	
+	@Test
+	public void Lead_List_Data_Reader_and_clicker() throws IOException, InterruptedException{
+		
+		
+		String Lead_to_be_clicked = "Richardson charles";
+		
+		Leads_Locaters p = new Leads_Locaters(d);
+		
+		
+		Plaintiff_names.clear();
+		Lead_details.clear();
+		lead_name_and_details.clear();
+		
+		Lead_module_accessor();
+	    
+		
+		List<WebElement> id_column= p.first_columns_cells();
+		List<WebElement> request_amount_column= p.second_columns_cells();
+		List<WebElement> Lead_columns= p.Third_columns_cells();
+		List<WebElement> Lead_mail_column= p.fourth_columns_cells();
+		List<WebElement> Lead_state_column= p.fifth_columns_cells();
+		int i=0;
+		while(i<id_column.size()){
+			    WebElement Leadname=Lead_columns.get(i);
+			    String leadName = Leadname.getText().trim();
+			    String amount   = request_amount_column.get(i).getText().trim();
+			    String email    = Lead_mail_column.get(i).getText().trim();
+			    String state    = Lead_state_column.get(i).getText().trim();
+
+			    List<String> details = new ArrayList<>();
+			    details.add(amount);
+			    details.add(email);
+			    details.add(state);
+
+			    lead_name_and_details.put(leadName, details);
+		i++;}
+		
+	   for(var pair:lead_name_and_details.entrySet()){
+			
+			String Key = pair.getKey();
+			System.out.println(Key+" "+pair.getValue());
+			System.out.println();}
+	   
+	    for(WebElement Lead:Lead_columns){
+	    	String Lead_name=Lead.getText().trim();
+	    	if(Lead_name.contains(Lead_to_be_clicked))
+	    	{
+	    		Lead.click();
+	    		break;
+	    	}}
+	     p.Accept_and_Create_Case_Button();
+		 Thread.sleep(800);
+		
+	}
+	
+	
 	
 	@Test(dataProvider="applyNowData")
 	public void frontend_form_filler(TreeMap<String, String> form_data) throws IOException, InterruptedException{
@@ -901,7 +974,7 @@ public class Leads extends Case_Appplications{
 
 		    // -------------------- App 1 --------------------
 		    TreeMap<String, String> d1 = new TreeMap<>();
-		    d1.put("I am seeking an advance of", "16250");
+		    d1.put("I am seeking an advance of", "16,250.65");
 		    d1.put("Your Full Name", "@Test_Kieran Holt");
 		    d1.put("Date of Birth", "03/19/1992");
 		    d1.put("Phone Number", "9176614028");
@@ -1852,8 +1925,8 @@ public class Leads extends Case_Appplications{
 		    d20.put("Explain (Governmental Health Coverage)", "");
 
 	        return new Object[][]{
-	                { d1 }, { d2 }, { d3 }, { d4 }, { d5 },
-	                { d6 }, { d7 }, { d8 }, { d9 }, { d10 } 
+	                { d1 },/* { d2 }, { d3 }, { d4 }, { d5 },
+	                { d6 }, { d7 }, { d8 }, { d9 }, { d10 } */
 	        };
 	    }
 		
