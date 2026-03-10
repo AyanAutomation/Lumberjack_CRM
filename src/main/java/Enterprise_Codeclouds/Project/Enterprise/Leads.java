@@ -2,6 +2,8 @@ package Enterprise_Codeclouds.Project.Enterprise;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.TreeMap;
 import org.openqa.selenium.WebElement;
@@ -15,6 +17,8 @@ import com.aventstack.extentreports.Status;
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Leads_Locaters;
+import Locaters.Login_Locaters;
+import Negative_Testcases.Login_negative_testcases;
 import Repeatative_codes.Repeat;
 
 public class Leads extends SIde_Menu_Handler{
@@ -24,14 +28,41 @@ public class Leads extends SIde_Menu_Handler{
 	List<String> Lead_details = new ArrayList<String>();
 	
 
-	public void Lead_module_accessor() throws IOException, InterruptedException{
-		
+	public void Lead_module_accessor() throws IOException, InterruptedException {
+
 		Leads_Locaters p = new Leads_Locaters(d);
-		
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Open Lead Module</b><br>"
+				+ "<b>✅ Expected:</b> Lead listing page should open successfully.<br>"
+				+ "<b>🟨 Actual:</b> Clicking side menu option Leads."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("OPEN LEAD MODULE");
+		System.out.println("EXPECTED : Lead listing page should open");
+		System.out.println("ACTUAL   : Clicking Leads from side menu");
+		System.out.println("==================================================");
+		System.out.println();
+
 		Side_menu_option_clicker("Leads", d, "N/A");
-	    p.Lead_List();
-	    
+		p.Lead_List();
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Lead Module Opened</b><br>"
+				+ "<b>✅ Expected:</b> Lead list should be visible.<br>"
+				+ "<b>🟨 Actual:</b> Lead list page loaded."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("LEAD MODULE OPENED");
+		System.out.println("EXPECTED : Lead list visible");
+		System.out.println("ACTUAL   : Lead list page loaded");
+		System.out.println("RESULT   : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
 	}
+
 	
 	
 	
@@ -42,12 +73,26 @@ public class Leads extends SIde_Menu_Handler{
 		String Lead_to_be_clicked = "Richardson charles";
 		
 		Leads_Locaters p = new Leads_Locaters(d);
-		
+		Login_Locaters l = new Login_Locaters(d);
+		Repeat rp = new Repeat(d);
 		
 		Plaintiff_names.clear();
 		Lead_details.clear();
 		lead_name_and_details.clear();
-		
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Start Lead List Data Reader and Clicker</b><br>"
+				+ "<b>📥 Input:</b> Target Lead Name = <b>" + Lead_to_be_clicked + "</b><br>"
+				+ "<b>✅ Expected:</b> Lead list data should be read, target lead should be clicked, and details should be captured.<br>"
+				+ "<b>🟨 Actual:</b> Test execution started."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("START LEAD LIST DATA READER AND CLICKER");
+		System.out.println("Target Lead : " + Lead_to_be_clicked);
+		System.out.println("EXPECTED    : Read lead list, click target lead, capture details");
+		System.out.println("ACTUAL      : Test execution started");
+		System.out.println("==================================================");
+		System.out.println();
 		Lead_module_accessor();
 	    
 		
@@ -56,6 +101,20 @@ public class Leads extends SIde_Menu_Handler{
 		List<WebElement> Lead_columns= p.Third_columns_cells();
 		List<WebElement> Lead_mail_column= p.fourth_columns_cells();
 		List<WebElement> Lead_state_column= p.fifth_columns_cells();
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Read Lead Grid Data</b><br>"
+				+ "<b>✅ Expected:</b> All visible lead row data should be captured correctly into map.<br>"
+				+ "<b>🟨 Actual:</b> Reading lead name, amount, email, and state from listing."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("READ LEAD GRID DATA");
+		System.out.println("EXPECTED : Lead rows should be read correctly");
+		System.out.println("ACTUAL   : Reading lead name, amount, email, state");
+		System.out.println("==================================================");
+		System.out.println();
+		
+		
 		int i=0;
 		while(i<id_column.size()){
 			    WebElement Leadname=Lead_columns.get(i);
@@ -70,28 +129,237 @@ public class Leads extends SIde_Menu_Handler{
 			    details.add(state);
 
 			    lead_name_and_details.put(leadName, details);
+			    Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>✅ Lead Row Captured</b><br>"
+						+ "<b>Lead Name:</b> " + leadName + "<br>"
+						+ "<b>Requested Amount:</b> " + amount + "<br>"
+						+ "<b>Email:</b> " + email + "<br>"
+						+ "<b>State:</b> " + state
+				);
+
+				System.out.println("------------- LEAD ROW CAPTURED -------------");
+				System.out.println("Lead Name         -> " + leadName);
+				System.out.println("Requested Amount  -> " + amount);
+				System.out.println("Email             -> " + email);
+				System.out.println("State             -> " + state);
+				System.out.println("---------------------------------------------");
+				System.out.println();
 		i++;}
-		
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Print Lead Map Data</b><br>"
+				+ "<b>✅ Expected:</b> Captured lead map should be printable for verification.<br>"
+				+ "<b>🟨 Actual:</b> Printing all map entries."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("PRINTING LEAD MAP DATA");
+		System.out.println("==================================================");
+		System.out.println();
 	   for(var pair:lead_name_and_details.entrySet()){
 			
 			String Key = pair.getKey();
-			System.out.println(Key+" "+pair.getValue());
+			System.out.println("Lead Name -> " + Key);
+			System.out.println("Details   -> " + pair.getValue());
+			System.out.println();
+			System.out.println("------------------------------------------------------------------");
 			System.out.println();}
 	   
-	    for(WebElement Lead:Lead_columns){
-	    	String Lead_name=Lead.getText().trim();
-	    	if(Lead_name.contains(Lead_to_be_clicked))
-	    	{
-	    		Lead.click();
-	    		break;
-	    	}}
+	   boolean leadFoundAndClicked = false;
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Search and Click Target Lead</b><br>"
+				+ "<b>📥 Input:</b> Target Lead = <b>" + Lead_to_be_clicked + "</b><br>"
+				+ "<b>✅ Expected:</b> Matching lead should be found in listing and clicked.<br>"
+				+ "<b>🟨 Actual:</b> Searching through lead names."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("SEARCH AND CLICK TARGET LEAD");
+		System.out.println("Target Lead : " + Lead_to_be_clicked);
+		System.out.println("==================================================");
+		System.out.println();
+
+		for (WebElement Lead : Lead_columns) {
+			String Lead_name = Lead.getText().trim();
+
+			System.out.println("Checking Lead -> " + Lead_name);
+
+			if (Lead_name.contains(Lead_to_be_clicked)) {
+
+				Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>✅ Matching Lead Found</b><br>"
+						+ "<b>Lead Name:</b> " + Lead_name + "<br>"
+						+ "<b>🟨 Actual:</b> Clicking matching lead."
+				);
+
+				System.out.println("MATCH FOUND -> " + Lead_name);
+				System.out.println("ACTION      -> Clicking lead");
+				System.out.println();
+
+				Lead.click();
+				leadFoundAndClicked = true;
+				break;
+			}
+		}
+
+		if (!leadFoundAndClicked) {
+			Report_Listen.log_print_in_report().log(Status.FAIL,
+					"<b>❌ Target Lead Not Found</b><br>"
+					+ "<b>Expected Lead:</b> " + Lead_to_be_clicked + "<br>"
+					+ "<b>🟨 Actual:</b> No matching lead was found in visible listing."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("TARGET LEAD NOT FOUND");
+			System.out.println("Expected Lead : " + Lead_to_be_clicked);
+			System.out.println("ACTUAL        : No matching lead found");
+			System.out.println("RESULT        : FAIL ❌");
+			System.out.println("==================================================");
+			System.out.println();
+		}
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Validate Accept and Create Case Button</b><br>"
+				+ "<b>✅ Expected:</b> Accept and Create Case button should be visible after opening lead.<br>"
+				+ "<b>🟨 Actual:</b> Accessing button."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("VALIDATE ACCEPT AND CREATE CASE BUTTON");
+		System.out.println("EXPECTED : Button should be visible");
+		System.out.println("ACTUAL   : Accessing button");
+		System.out.println("==================================================");
+		System.out.println();
 	     p.Accept_and_Create_Case_Button();
-		 Thread.sleep(800);
+	     Report_Listen.log_print_in_report().log(Status.PASS,
+					"<b>🔹 Accept and Create Case Button Visible</b><br>"
+					+ "<b>✅ Expected:</b> Button should be present.<br>"
+					+ "<b>🟨 Actual:</b> Button accessed successfully."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("ACCEPT AND CREATE CASE BUTTON VISIBLE");
+			System.out.println("RESULT : PASS ✅");
+			System.out.println("==================================================");
+			System.out.println();
+	     WebElement Toast = l.toast();
+	     String toastText = Toast.getText().trim();
+	     Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>🔹 Toast Captured</b><br>"
+					+ "<b>📥 Input:</b> Toast Message = <b>" + toastText + "</b><br>"
+					+ "<b>✅ Expected:</b> Toast should be captured and printed successfully.<br>"
+					+ "<b>🟨 Actual:</b> Toast captured."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("TOAST CAPTURED");
+			System.out.println("Toast Message : " + toastText);
+			System.out.println("==================================================");
+			System.out.println();
+	     Login_negative_testcases.Toast_printer(toastText,d);
+	     rp.wait_for_invisibility(Toast);
+	 	Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Toast Disappeared</b><br>"
+				+ "<b>✅ Expected:</b> Toast should disappear after wait.<br>"
+				+ "<b>🟨 Actual:</b> Waited until toast became invisible."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("TOAST INVISIBILITY VALIDATED");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+	     LinkedHashMap<String,String> Label_content = new LinkedHashMap<String,String>();
+		 List<WebElement> Labels = p.Details_label();
+		 List<WebElement> Contents = p.Details_Content();
+		 Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>🔹 Read Lead Details Section</b><br>"
+					+ "<b>✅ Expected:</b> Labels and contents count should match and all details should be captured.<br>"
+					+ "<b>🟨 Actual:</b> Reading detail labels and values."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("READ LEAD DETAILS SECTION");
+			System.out.println("Labels Count   : " + Labels.size());
+			System.out.println("Contents Count : " + Contents.size());
+			System.out.println("==================================================");
+			System.out.println();
+		 if(Labels.size()==Contents.size()){
+			 Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>✅ Label/Content Count Match</b><br>"
+						+ "<b>Labels Count:</b> " + Labels.size() + "<br>"
+						+ "<b>Contents Count:</b> " + Contents.size()
+				);
+
+				System.out.println("Label/Content count matched ✅");
+				System.out.println();
+			 for(int m=0;m<Labels.size();m++){
+				 String Label = Labels.get(m).getText().trim();
+				 String Content = Contents.get(m).getText().trim();
+
+					System.out.println(Label + "  ->  " + Content);
+
+					Report_Listen.log_print_in_report().log(Status.PASS,
+							"<b>✅ Detail Captured</b><br>"
+							+ "<b>" + Label + ":</b> " + Content
+					);
+
+				 Label_content.put(Label, Content); 
+				 
+			 }}else {
+
+					Report_Listen.log_print_in_report().log(Status.FAIL,
+							"<b>❌ Label/Content Count Mismatch</b><br>"
+							+ "<b>Labels Count:</b> " + Labels.size() + "<br>"
+							+ "<b>Contents Count:</b> " + Contents.size()
+					);
+
+					System.out.println("Label/Content count mismatch ❌");
+					System.out.println("Labels Count   : " + Labels.size());
+					System.out.println("Contents Count : " + Contents.size());
+					System.out.println();
+				}
+		 Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>🔹 Print Final Lead Details Map</b><br>"
+					+ "<b>✅ Expected:</b> Final label-content pairs should print in order.<br>"
+					+ "<b>🟨 Actual:</b> Printing ordered lead details."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("FINAL LEAD DETAILS MAP");
+			System.out.println("==================================================");
+			System.out.println();
+
 		
+		 for(var details_pair:Label_content.entrySet()){
+			 
+			
+			 System.out.println(details_pair.getKey() + " -> " + details_pair.getValue());
+				System.out.println();
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+						"<b>" + details_pair.getKey() + ":</b> " + details_pair.getValue()
+				);
+	   } 
+		 Report_Listen.log_print_in_report().log(Status.PASS,
+					"<b>🔹 Lead List Data Reader and Clicker Completed</b><br>"
+					+ "<b>✅ Expected:</b> Lead data should be read, clicked, and details captured successfully.<br>"
+					+ "<b>🟨 Actual:</b> Test completed."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("LEAD LIST DATA READER AND CLICKER COMPLETED");
+			System.out.println("RESULT : PASS ✅");
+			System.out.println("==================================================");
+			System.out.println();
 	}
 	
 	
 	
+	
+	
+	
+
 	@Test(dataProvider="applyNowData")
 	public void frontend_form_filler(TreeMap<String, String> form_data) throws IOException, InterruptedException{
 
@@ -346,8 +614,7 @@ public class Leads extends SIde_Menu_Handler{
 	    System.out.println();
 
 	    submit.click();
-
-
+        Thread.sleep(1800);
 	    // ===================== ACCIDENT DETAILS =====================
 	    Report_Listen.log_print_in_report().log(Status.INFO,
 	            "<b>🔹 Fill Accident Details</b><br>"
@@ -396,7 +663,7 @@ public class Leads extends SIde_Menu_Handler{
 	    System.out.println();
 
 	    next_button.click();
-
+	    Thread.sleep(1800);
 
 	 // ===================== QUESTIONNAIRE START =====================
 
@@ -917,7 +1184,7 @@ public class Leads extends SIde_Menu_Handler{
 	    System.out.println("ACTUAL   : Clicking final Next");
 	    System.out.println("==================================================");
 	    System.out.println();
-
+	    Thread.sleep(1800);
 	    third_form_next_button.click();
 
 	    p.form_submit_success();

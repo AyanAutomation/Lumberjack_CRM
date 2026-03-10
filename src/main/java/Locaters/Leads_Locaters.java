@@ -104,11 +104,11 @@ public class Leads_Locaters extends Repeat{
 	@FindBy(xpath="//tr[contains(@class,'ant-table-row ant-table-row-level')]")
 	private List<WebElement> rows;
 	@FindBy(xpath="//*[text()='Accept & Create Case']/..")
-	private WebElement Accept_and_Create_Case_Button; /*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ; 
+	private WebElement Accept_and_Create_Case_Button; 
+	@FindBy(xpath="//*[@class='ant-descriptions-item-label']")
+	private List<WebElement> Details_label;
+	@FindBy(xpath="//*[@class='ant-descriptions-item-content']")
+	private List<WebElement> Details_Content ; /*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -322,7 +322,154 @@ public class Leads_Locaters extends Repeat{
 	return sixth_columns_cells;}
 	public WebElement Accept_and_Create_Case_Button(){
 	wait_for_theElement(Accept_and_Create_Case_Button);
-	return Accept_and_Create_Case_Button;}/*
+	return Accept_and_Create_Case_Button;}
+	public List<WebElement> Details_label(){
+	wait_for_theElement(Details_label);
+	return Details_label;}
+	public List<WebElement> Details_Content(){
+	wait_for_theElement(Details_Content);
+	return Details_Content;} /*
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
+	public WebElement (){
+	wait_for_theElement();
+	return ;}
 	public WebElement (){
 	wait_for_theElement();
 	return ;} */
