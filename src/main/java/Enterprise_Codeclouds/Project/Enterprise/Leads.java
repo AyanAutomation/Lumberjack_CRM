@@ -31,7 +31,7 @@ public class Leads extends SIde_Menu_Handler{
 	public void Lead_module_accessor() throws IOException, InterruptedException {
 
 		Leads_Locaters p = new Leads_Locaters(d);
-
+		
 		Report_Listen.log_print_in_report().log(Status.INFO,
 				"<b>🔹 Open Lead Module</b><br>"
 				+ "<b>✅ Expected:</b> Lead listing page should open successfully.<br>"
@@ -63,7 +63,24 @@ public class Leads extends SIde_Menu_Handler{
 		System.out.println();
 	}
 
-	
+	@Test
+	public void lead_filter_checker() throws IOException, InterruptedException{
+		
+		Leads_Locaters p = new Leads_Locaters(d);
+		Repeat rp = new Repeat(d);
+		Application_Locaters ap = new Application_Locaters(d);
+		Case_Appplications cs = new Case_Appplications();
+		
+		
+		Lead_module_accessor();
+		ap.Filter_clear().click();
+		WebElement Status_filter = ap.Application_status_filter();
+		Status_filter.click();
+		cs.Application_Filter_Option_Selector("Funded",d);
+		List<WebElement> stats = p.Lead_statuses();
+		
+		
+	}
 	
 	
 	@Test

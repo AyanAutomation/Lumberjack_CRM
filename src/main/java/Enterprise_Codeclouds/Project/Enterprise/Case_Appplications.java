@@ -523,7 +523,7 @@ public class Case_Appplications extends Header_Manager{
 		   p.Filter_clear().click();
 		   WebElement Status_filter = p.Application_status_filter();
 		   Status_filter.click();
-		   Application_Filter_Option_Selector("Funded");
+		   Application_Filter_Option_Selector("Funded",d);
 		   p.rows().get(1).click();
 		   Thread.sleep(800);}
 		   List<WebElement> Case_Tags;
@@ -2674,7 +2674,7 @@ public class Case_Appplications extends Header_Manager{
 			// rp.wait_for_invisibility(p.list_loader());
 		    WebElement Status_filter = p.Application_status_filter();
 			Status_filter.click();
-			Application_Filter_Option_Selector("Funded");
+			Application_Filter_Option_Selector("Funded",d);
 		 	p.rows().get(0).click();
 			Thread.sleep(800);}
 			List<WebElement> Case_Tags;
@@ -3693,7 +3693,7 @@ public class Case_Appplications extends Header_Manager{
 		   p.Filter_clear().click();
 		   WebElement Status_filter = p.Application_status_filter();
 		   Status_filter.click();
-		   Application_Filter_Option_Selector("Funded");
+		   Application_Filter_Option_Selector("Funded",d);
 		   p.rows().get(1).click();
 		   Thread.sleep(800);}
 		   List<WebElement> Case_Tags;
@@ -5665,7 +5665,7 @@ public class Case_Appplications extends Header_Manager{
 				rp.wait_for_invisibility(Generated_Toast);}
 	   
 	  
-	   public void Application_Filter_Option_Selector(String Option){
+	   public void Application_Filter_Option_Selector(String Option,WebDriver d){
 		   
 		   Application_Locaters p = new Application_Locaters(d);
 		   

@@ -108,9 +108,9 @@ public class Leads_Locaters extends Repeat{
 	@FindBy(xpath="//*[@class='ant-descriptions-item-label']")
 	private List<WebElement> Details_label;
 	@FindBy(xpath="//*[@class='ant-descriptions-item-content']")
-	private List<WebElement> Details_Content ; /*
-	@FindBy(xpath="")
-	private WebElement  ;
+	private List<WebElement> Details_Content ; 
+	@FindBy(xpath="//*[contains(@class,'ant-tag ant-tag-')]")
+	private List<WebElement> Lead_statuses;/*
 	@FindBy(xpath="")
 	private WebElement  ; 
 	@FindBy(xpath="")
@@ -328,10 +328,10 @@ public class Leads_Locaters extends Repeat{
 	return Details_label;}
 	public List<WebElement> Details_Content(){
 	wait_for_theElement(Details_Content);
-	return Details_Content;} /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}
+	return Details_Content;} 
+	public List<WebElement> Lead_statuses(){
+	wait_for_theElement(Lead_statuses);
+	return Lead_statuses;}/*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}
