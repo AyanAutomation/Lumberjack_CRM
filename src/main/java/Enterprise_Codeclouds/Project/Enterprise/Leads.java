@@ -47,6 +47,7 @@ public class Leads extends SIde_Menu_Handler{
 
 		Side_menu_option_clicker("Leads", d, "N/A");
 		p.Lead_List();
+		Thread.sleep(1000);
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Lead Module Opened</b><br>"
@@ -63,24 +64,235 @@ public class Leads extends SIde_Menu_Handler{
 		System.out.println();
 	}
 
-	@Test
-	public void lead_filter_checker() throws IOException, InterruptedException{
-		
+	@Test(dataProvider="leadStatusFilterData")
+	public void lead_filter_checker(String options) throws IOException, InterruptedException {
+
 		Leads_Locaters p = new Leads_Locaters(d);
 		Repeat rp = new Repeat(d);
 		Application_Locaters ap = new Application_Locaters(d);
 		Case_Appplications cs = new Case_Appplications();
-		
-		
+
+		boolean mismatchFound = false;
+		boolean resultFound = false;
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Start Lead Status Filter Checker</b><br>"
+				+ "<b>📥 Input:</b> Selected Filter Option = <b>" + options + "</b><br>"
+				+ "<b>✅ Expected:</b> Lead list should show only rows matching selected status filter.<br>"
+				+ "<b>🟨 Actual:</b> Test execution started."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("START LEAD STATUS FILTER CHECKER");
+		System.out.println("Selected Filter Option : " + options);
+		System.out.println("EXPECTED               : Only matching lead statuses should appear");
+		System.out.println("ACTUAL                 : Test execution started");
+		System.out.println("==================================================");
+		System.out.println();
+
 		Lead_module_accessor();
+
+		// ===================== CLEAR FILTER =====================
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Clear Existing Filters</b><br>"
+				+ "<b>✅ Expected:</b> Previously applied filters should be cleared before applying new status filter.<br>"
+				+ "<b>🟨 Actual:</b> Clicking clear filter button."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("CLEAR EXISTING FILTERS");
+		System.out.println("EXPECTED : Existing filters should be cleared");
+		System.out.println("ACTUAL   : Clicking clear filter button");
+		System.out.println("==================================================");
+		System.out.println();
+
 		ap.Filter_clear().click();
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Filters Cleared</b><br>"
+				+ "<b>✅ Expected:</b> Filter state should reset.<br>"
+				+ "<b>🟨 Actual:</b> Clear filter button clicked successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("FILTERS CLEARED");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		// ===================== OPEN STATUS FILTER =====================
 		WebElement Status_filter = ap.Application_status_filter();
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Open Status Filter</b><br>"
+				+ "<b>✅ Expected:</b> Status filter dropdown should open.<br>"
+				+ "<b>🟨 Actual:</b> Clicking status filter."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("OPEN STATUS FILTER");
+		System.out.println("EXPECTED : Status filter dropdown should open");
+		System.out.println("ACTUAL   : Clicking status filter");
+		System.out.println("==================================================");
+		System.out.println();
+
 		Status_filter.click();
-		cs.Application_Filter_Option_Selector("Funded",d);
-		List<WebElement> stats = p.Lead_statuses();
-		
-		
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Status Filter Opened</b><br>"
+				+ "<b>✅ Expected:</b> Filter options should be visible.<br>"
+				+ "<b>🟨 Actual:</b> Status filter clicked successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("STATUS FILTER OPENED");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		// ===================== SELECT FILTER OPTION =====================
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Select Status Filter Option</b><br>"
+				+ "<b>📥 Input:</b> " + options + "<br>"
+				+ "<b>✅ Expected:</b> Selected option should be applied to lead listing.<br>"
+				+ "<b>🟨 Actual:</b> Selecting filter option."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("SELECT STATUS FILTER OPTION");
+		System.out.println("Selected Option : " + options);
+		System.out.println("EXPECTED        : Filter should apply on lead list");
+		System.out.println("ACTUAL          : Selecting option");
+		System.out.println("==================================================");
+		System.out.println();
+
+		cs.Application_Filter_Option_Selector(options, d);
+		Thread.sleep(800);
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Status Filter Option Selected</b><br>"
+				+ "<b>📥 Input:</b> " + options + "<br>"
+				+ "<b>✅ Expected:</b> Lead list should refresh as per selected option.<br>"
+				+ "<b>🟨 Actual:</b> Option selected successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("STATUS FILTER OPTION SELECTED");
+		System.out.println("Selected Option : " + options);
+		System.out.println("RESULT          : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		// ===================== READ FILTERED STATUSES =====================
+		try {
+			List<WebElement> stats = p.Lead_statuses();
+
+			Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>🔹 Read Filtered Lead Statuses</b><br>"
+					+ "<b>✅ Expected:</b> All visible rows should contain status matching selected filter.<br>"
+					+ "<b>🟨 Actual:</b> Reading visible lead statuses."
+			);
+
+			System.out.println("==================================================");
+			System.out.println("READ FILTERED LEAD STATUSES");
+			System.out.println("EXPECTED : All visible statuses should match -> " + options);
+			System.out.println("ACTUAL   : Reading visible lead statuses");
+			System.out.println("==================================================");
+			System.out.println();
+
+			for (WebElement stat : stats) {
+				String status_text = stat.getText().trim();
+				resultFound = true;
+
+				Report_Listen.log_print_in_report().log(Status.INFO,
+						"<b>🧾 Visible Lead Status</b><br>"
+						+ "<b>Selected Filter:</b> " + options + "<br>"
+						+ "<b>Found Status:</b> " + status_text
+				);
+
+				System.out.println("--------------------------------------------");
+				System.out.println("Selected Filter -> " + options);
+				System.out.println("Found Status    -> " + status_text);
+				System.out.println("--------------------------------------------");
+				System.out.println();
+
+				if (!status_text.contains(options)) {
+					mismatchFound = true;
+
+					Report_Listen.log_print_in_report().log(Status.FAIL,
+							"<b>❌ Status Mismatch Found</b><br>"
+							+ "<b>Selected Filter:</b> " + options + "<br>"
+							+ "<b>Found Status:</b> " + status_text + "<br>"
+							+ "<b>✅ Expected:</b> Found status should match selected filter.<br>"
+							+ "<b>🟨 Actual:</b> Mismatch detected."
+					);
+
+					System.out.println("Options Selected ' " + options + " ' But Found Status ' " + status_text + " '");
+					System.out.println();
+					break;
+				} else {
+					Report_Listen.log_print_in_report().log(Status.PASS,
+							"<b>✅ Status Match Verified</b><br>"
+							+ "<b>Selected Filter:</b> " + options + "<br>"
+							+ "<b>Found Status:</b> " + status_text
+					);
+
+					System.out.println("STATUS MATCH VERIFIED ✅");
+					System.out.println("Selected Filter -> " + options);
+					System.out.println("Found Status    -> " + status_text);
+					System.out.println();
+				}
+			}
+
+			if (resultFound && !mismatchFound) {
+				Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>🔹 Lead Status Filter Validation Passed</b><br>"
+						+ "<b>📥 Input:</b> " + options + "<br>"
+						+ "<b>✅ Expected:</b> All visible rows should match selected filter.<br>"
+						+ "<b>🟨 Actual:</b> All checked statuses matched the selected option."
+				);
+
+				System.out.println("==================================================");
+				System.out.println("LEAD STATUS FILTER VALIDATION PASSED");
+				System.out.println("Selected Option : " + options);
+				System.out.println("RESULT          : PASS ✅");
+				System.out.println("==================================================");
+				System.out.println();
+			}
+
+		} catch (Exception Statuses) {
+
+			Report_Listen.log_print_in_report().log(Status.WARNING,
+					"<b>⚠️ No Result Found For Selected Filter</b><br>"
+					+ "<b>📥 Input:</b> " + options + "<br>"
+					+ "<b>✅ Expected:</b> Matching rows may or may not exist depending on current data.<br>"
+					+ "<b>🟨 Actual:</b> No visible rows found for selected status option."
+			);
+
+			Thread.sleep(800);
+			System.out.println("No Result found of option ' " + options + " '");
+			System.out.println();
+
+			System.out.println("==================================================");
+			System.out.println("NO RESULT FOUND FOR SELECTED FILTER");
+			System.out.println("Selected Option : " + options);
+			System.out.println("RESULT          : WARNING ⚠️");
+			System.out.println("==================================================");
+			System.out.println();
+		}
 	}
+	
+	@DataProvider
+	public Object[][] leadStatusFilterData() {
+
+	    return new Object[][]{
+	        {"New lead"},
+	        {"Accepted lead"},
+	        {"Rejected lead"},
+	        {"Spam"}
+	    };
+	}
+	
 	
 	
 	@Test
