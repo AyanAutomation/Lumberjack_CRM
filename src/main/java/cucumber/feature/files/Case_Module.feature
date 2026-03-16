@@ -65,6 +65,13 @@ Feature: Case Module (Add Case + Revised Contract + Message Template)
       # | 629     | Civil Rights        | Washington DC | 08/17/2023   | Broker      | 66500     | 01CV-5331  | Battery fire    | Redwood Axis Litigation Finance | 17400  | 29500    | 310     | 115      | 46  | Preservation   | Chain-of-Cust| Talia     | Kawson     | Attorney Étienne | attorney.etienne.cormier11@mailto.plus    | FrontRange Trial Mechanics      |
       # | 630     | Unpaid Wages        | Pennsylvania  | 12/05/2023   | Other       | 24000     | 17CV-1902  | Overtime unpaid | Blue Lantern Funding Co.        | 5600   | 9800     | 225     | 75       | 34  | Payroll integrity| Reconciliation| Maeve   | Theron     | Attorney Ainsley | attorney.ainsley.houde10@mailto.plus      | PrairieMotion Claims Studio     |
 
+    @Lien_Calculate
+    Scenario: Reading and calculating Open contracts payoff table calculation
+    Given Lien_Details_Calculater
+
+
+
+
 
   @revise_contract
   Scenario Outline: Buyout Add + Fees Changed in Revised Contract (reuse same dataset)

@@ -16,7 +16,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.Listeners;
 
 import com.aventstack.extentreports.Status;
+
+import Enterprise_Codeclouds.Project.Enterprise.Attorney_module;
 import Enterprise_Codeclouds.Project.Enterprise.Case_Appplications;
+import Enterprise_Codeclouds.Project.Enterprise.SIde_Menu_Handler;
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
@@ -165,11 +168,49 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		// ✅ REUSE your TestNG flow directly
 		super.Add_case(caseData, plaintiff, attorney, lawFirm, staff, email);
 	}
+	
+	     @Given("Lien_Details_Calculater")
+	     public void Lien_Details_Calculater() throws IOException, InterruptedException{
+		 
+	    	 bindDriver();
+	    	 
+	    	 
+	    	 Application_Locaters p = new Application_Locaters(d);
+	    	 Login_Locaters lg = new Login_Locaters(d);
+	 	     Repeat rp = new Repeat(d);
+	         Attorney_module at = new Attorney_module();
+		  
+	 	     
+	         
+	 
+	 	    SideMenu_Handler_Cucumber.Side_menu_option_clicker_by_cucumber("Applications", d,"N/A");
+			Thread.sleep(800);
+			p.landed_in_applicationList_confirmation();
+			p.Filter_clear().click();
+			   WebElement Status_filter = p.Application_status_filter();
+			   Status_filter.click();
+			   Application_Filter_Option_Selector("Funded",d);
+			   p.rows().get(1).click();
+			   Thread.sleep(800);
+			   List<WebElement> Case_Tags;
+			   try {
+			   Case_Tags = p.Case_tags();}
+			   catch(RuntimeException tags){
+				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+				   System.out.println();
+				   Thread.sleep(1200);
+				   Case_Tags = p.Case_tags();}
+			   String Case_id= Case_Tags.get(0).getText().trim();
+			   String case_status= Case_Tags.get(1).getText().trim();
+			   super.Pay_off_lien_list_Before_payment(Case_id);
+	     }
+	
+	
 
 	@Given("Buyout_Add_and_Fees_changed_in_Revised_Contract with data:")
 	public void Buyout_Add_and_Fees_changed_in_Revised_Contract(DataTable table)throws InterruptedException, IOException {
 
-	    bindDriver(); // super.d = Base_cucumber.D.get()
+	    bindDriver(); 
 
 	    Map<String, String> raw = new TreeMap<>(table.asMap(String.class, String.class));
 	    raw.remove("Key");

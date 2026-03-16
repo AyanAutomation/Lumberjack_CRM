@@ -403,7 +403,6 @@ public class Application_Locaters extends Login_Locaters{
 	return status_field_clear_button;}
 	public WebElement landed_in_applicationList_confirmation(){
 	wait_for_theElement(landed_in_applicationList_confirmation);
-	
 	return landed_in_applicationList_confirmation;}
 	public WebElement table_body(){
 	wait_for_theElement(table_body);

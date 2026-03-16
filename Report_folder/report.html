@@ -44,7 +44,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 12, 2026 07:21:17 PM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 15, 2026 06:20:54 PM</span></a>
 </li>
 </ul>
 </div>
@@ -76,6 +76,8 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="warning" href="#"><span>Warning</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -88,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Lead_List_Data_Reader_and_clicker</p>
+            <p class="name">lead_filter_checker</p>
             <p class="text-sm">
-              <span>7:21:19 PM</span> / <span>00:00:23:233</span>
+              <span>6:21:05 PM</span> / <span>00:00:17:497</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -98,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Lead_List_Data_Reader_and_clicker</h5>
-<span class='badge badge-success'>03.12.2026 7:21:19 PM</span>
-<span class='badge badge-danger'>03.12.2026 7:21:43 PM</span>
-<span class='badge badge-default'>00:00:23:233</span>
+<h5 class="test-status text-pass">lead_filter_checker</h5>
+<span class='badge badge-success'>03.15.2026 6:21:05 PM</span>
+<span class='badge badge-danger'>03.15.2026 6:21:23 PM</span>
+<span class='badge badge-default'>00:00:17:497</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -114,497 +116,571 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:19 PM</td>
+        <td>6:21:06 PM</td>
         <td>
-          <b>🔹 Start Lead List Data Reader and Clicker</b><br><b>📥 Input:</b> Target Lead Name = <b>Richardson charles</b><br><b>✅ Expected:</b> Lead list data should be read, target lead should be clicked, and details should be captured.<br><b>🟨 Actual:</b> Test execution started.
+          <b>🔹 Start Lead Status Filter Checker</b><br><b>📥 Input:</b> Selected Filter Option = <b>New lead</b><br><b>✅ Expected:</b> Lead list should show only rows matching selected status filter.<br><b>🟨 Actual:</b> Test execution started.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:19 PM</td>
+        <td>6:21:06 PM</td>
         <td>
           <b>🔹 Open Lead Module</b><br><b>✅ Expected:</b> Lead listing page should open successfully.<br><b>🟨 Actual:</b> Clicking side menu option Leads.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:24 PM</td>
+        <td>6:21:15 PM</td>
         <td>
           ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:26 PM</td>
+        <td>6:21:17 PM</td>
         <td>
           <b>🟦 Info:</b> Toast close button found and clicked.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:28 PM</td>
+        <td>6:21:20 PM</td>
         <td>
           <b>🔹 Lead Module Opened</b><br><b>✅ Expected:</b> Lead list should be visible.<br><b>🟨 Actual:</b> Lead list page loaded.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:29 PM</td>
+        <td>6:21:20 PM</td>
         <td>
-          <b>🔹 Read Lead Grid Data</b><br><b>✅ Expected:</b> All visible lead row data should be captured correctly into map.<br><b>🟨 Actual:</b> Reading lead name, amount, email, and state from listing.
+          <b>🔹 Clear Existing Filters</b><br><b>✅ Expected:</b> Previously applied filters should be cleared before applying new status filter.<br><b>🟨 Actual:</b> Clicking clear filter button.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:29 PM</td>
+        <td>6:21:20 PM</td>
         <td>
-          <b>✅ Lead Row Captured</b><br><b>Lead Name:</b> Callie Romey<br><b>Requested Amount:</b> $500.00<br><b>Email:</b> callieromey@hotmail.com<br><b>State:</b> Michigan
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:29 PM</td>
-        <td>
-          <b>✅ Lead Row Captured</b><br><b>Lead Name:</b> Donald Stipp<br><b>Requested Amount:</b> $20,000.00<br><b>Email:</b> donaldstipp1@gmail.com<br><b>State:</b> Indiana
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:29 PM</td>
-        <td>
-          <b>✅ Lead Row Captured</b><br><b>Lead Name:</b> Richardson charles<br><b>Requested Amount:</b> $1,000.00<br><b>Email:</b> kc5777658@gmail.com<br><b>State:</b> Indiana
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:29 PM</td>
-        <td>
-          <b>✅ Lead Row Captured</b><br><b>Lead Name:</b> Aaron Moore<br><b>Requested Amount:</b> $15,000.00<br><b>Email:</b> aaronmoore45@yahoo.com<br><b>State:</b> Indiana
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:29 PM</td>
-        <td>
-          <b>✅ Lead Row Captured</b><br><b>Lead Name:</b> Jacob D Stocker<br><b>Requested Amount:</b> $1,500.00<br><b>Email:</b> jacob.stocker@yahoo.com<br><b>State:</b> Indiana
+          <b>🔹 Filters Cleared</b><br><b>✅ Expected:</b> Filter state should reset.<br><b>🟨 Actual:</b> Clear filter button clicked successfully.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:29 PM</td>
+        <td>6:21:20 PM</td>
         <td>
-          <b>🔹 Print Lead Map Data</b><br><b>✅ Expected:</b> Captured lead map should be printable for verification.<br><b>🟨 Actual:</b> Printing all map entries.
+          <b>🔹 Open Status Filter</b><br><b>✅ Expected:</b> Status filter dropdown should open.<br><b>🟨 Actual:</b> Clicking status filter.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:21 PM</td>
+        <td>
+          <b>🔹 Status Filter Opened</b><br><b>✅ Expected:</b> Filter options should be visible.<br><b>🟨 Actual:</b> Status filter clicked successfully.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:29 PM</td>
+        <td>6:21:21 PM</td>
         <td>
-          <b>🔹 Search and Click Target Lead</b><br><b>📥 Input:</b> Target Lead = <b>Richardson charles</b><br><b>✅ Expected:</b> Matching lead should be found in listing and clicked.<br><b>🟨 Actual:</b> Searching through lead names.
+          <b>🔹 Select Status Filter Option</b><br><b>📥 Input:</b> New lead<br><b>✅ Expected:</b> Selected option should be applied to lead listing.<br><b>🟨 Actual:</b> Selecting filter option.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:29 PM</td>
+        <td>6:21:22 PM</td>
         <td>
-          <b>✅ Matching Lead Found</b><br><b>Lead Name:</b> Richardson charles<br><b>🟨 Actual:</b> Clicking matching lead.
+          <b>🔹 Status Filter Option Selected</b><br><b>📥 Input:</b> New lead<br><b>✅ Expected:</b> Lead list should refresh as per selected option.<br><b>🟨 Actual:</b> Option selected successfully.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:29 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🔹 Validate Accept and Create Case Button</b><br><b>✅ Expected:</b> Accept and Create Case button should be visible after opening lead.<br><b>🟨 Actual:</b> Accessing button.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:30 PM</td>
-        <td>
-          <b>🔹 Accept and Create Case Button Visible</b><br><b>✅ Expected:</b> Button should be present.<br><b>🟨 Actual:</b> Button accessed successfully.
+          <b>🔹 Read Filtered Lead Statuses</b><br><b>✅ Expected:</b> All visible rows should contain status matching selected filter.<br><b>🟨 Actual:</b> Reading visible lead statuses.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:31 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🔹 Toast Captured</b><br><b>📥 Input:</b> Toast Message = <b>Lead details loaded successfully</b><br><b>✅ Expected:</b> Toast should be captured and printed successfully.<br><b>🟨 Actual:</b> Toast captured.
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:31 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          ✅ Toast: Lead details loaded successfully
+          <b>✅ Status Match Verified</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:41 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🟦 Info:</b> Toast close button not found, ignored and continued.
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:41 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🔹 Toast Disappeared</b><br><b>✅ Expected:</b> Toast should disappear after wait.<br><b>🟨 Actual:</b> Waited until toast became invisible.
+          <b>✅ Status Match Verified</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:41 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🔹 Read Lead Details Section</b><br><b>✅ Expected:</b> Labels and contents count should match and all details should be captured.<br><b>🟨 Actual:</b> Reading detail labels and values.
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:41 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>✅ Label/Content Count Match</b><br><b>Labels Count:</b> 23<br><b>Contents Count:</b> 23
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:41 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Your Full Name:</b> Richardson charles
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:41 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Date of Birth:</b> 09/17/1997
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:41 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Phone Number:</b> (317) 722-9089
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:41 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Email:</b> kc5777658@gmail.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Mailing Street Address:</b> 6367 mission Terrace
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>City:</b> INDIANAPOLIS
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>State:</b> Indiana
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Lawyer's Name:</b> ---
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Lawyer's Phone Number:</b> ---
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Law Firm Name:</b> ---
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>When did the accident happen?:</b> 10/07/2025
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Where did the accident happen?:</b> Indianapolis
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>I am seeking an advance of:</b> 1000
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Describe the accident:</b> A: Losing my 2 fingers
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Describe the injuries you sustained during the accident:</b> A: Losing my fingers
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Since your accident, have you been injured in any other traumatic incidents?:</b> A: Yes
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: In the 5 years before the accident, did you have a violation for no auto insurance?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: In the PRESENT accident, were you in a vehicle owned by you?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Was that vehicle covered by insurance?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Have you previously received a settlement advance for this case?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:42 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Were other people injured in this accident?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>✅ Detail Captured</b><br><b>Q: Are you currently behind on child support?:</b> A: No
+          <b>✅ Status Match Verified</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🔹 Print Final Lead Details Map</b><br><b>✅ Expected:</b> Final label-content pairs should print in order.<br><b>🟨 Actual:</b> Printing ordered lead details.
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Your Full Name:</b> Richardson charles
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Date of Birth:</b> 09/17/1997
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Phone Number:</b> (317) 722-9089
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Email:</b> kc5777658@gmail.com
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Mailing Street Address:</b> 6367 mission Terrace
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>City:</b> INDIANAPOLIS
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>State:</b> Indiana
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Lawyer's Name:</b> ---
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Lawyer's Phone Number:</b> ---
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Law Firm Name:</b> ---
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>When did the accident happen?:</b> 10/07/2025
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Where did the accident happen?:</b> Indianapolis
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>I am seeking an advance of:</b> 1000
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Describe the accident:</b> A: Losing my 2 fingers
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Describe the injuries you sustained during the accident:</b> A: Losing my fingers
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Are you Enrolled in Medicare, Medicaid, or any other governmental health coverage?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Since your accident, have you been injured in any other traumatic incidents?:</b> A: Yes
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: In the 5 years before the accident, did you have a violation for no auto insurance?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: In the PRESENT accident, were you in a vehicle owned by you?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Was that vehicle covered by insurance?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Have you previously received a settlement advance for this case?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Were other people injured in this accident?:</b> A: No
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>7:21:43 PM</td>
-        <td>
-          <b>Q: Are you currently behind on child support?:</b> A: No
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:43 PM</td>
+        <td>6:21:23 PM</td>
         <td>
-          <b>🔹 Lead List Data Reader and Clicker Completed</b><br><b>✅ Expected:</b> Lead data should be read, clicked, and details captured successfully.<br><b>🟨 Actual:</b> Test completed.
+          <b>✅ Status Match Verified</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:23 PM</td>
+        <td>
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>7:21:43 PM</td>
+        <td>6:21:23 PM</td>
+        <td>
+          <b>✅ Status Match Verified</b><br><b>Selected Filter:</b> New lead<br><b>Found Status:</b> New lead
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:23 PM</td>
+        <td>
+          <b>🔹 Lead Status Filter Validation Passed</b><br><b>📥 Input:</b> New lead<br><b>✅ Expected:</b> All visible rows should match selected filter.<br><b>🟨 Actual:</b> All checked statuses matched the selected option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:23 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">lead_filter_checker</p>
+            <p class="text-sm">
+              <span>6:21:25 PM</span> / <span>00:00:19:295</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">lead_filter_checker</h5>
+<span class='badge badge-success'>03.15.2026 6:21:25 PM</span>
+<span class='badge badge-danger'>03.15.2026 6:21:45 PM</span>
+<span class='badge badge-default'>00:00:19:295</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:26 PM</td>
+        <td>
+          <b>🔹 Start Lead Status Filter Checker</b><br><b>📥 Input:</b> Selected Filter Option = <b>Accepted lead</b><br><b>✅ Expected:</b> Lead list should show only rows matching selected status filter.<br><b>🟨 Actual:</b> Test execution started.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:26 PM</td>
+        <td>
+          <b>🔹 Open Lead Module</b><br><b>✅ Expected:</b> Lead listing page should open successfully.<br><b>🟨 Actual:</b> Clicking side menu option Leads.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:34 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:36 PM</td>
+        <td>
+          <b>🟦 Info:</b> Toast close button found and clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:40 PM</td>
+        <td>
+          <b>🔹 Lead Module Opened</b><br><b>✅ Expected:</b> Lead list should be visible.<br><b>🟨 Actual:</b> Lead list page loaded.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:40 PM</td>
+        <td>
+          <b>🔹 Clear Existing Filters</b><br><b>✅ Expected:</b> Previously applied filters should be cleared before applying new status filter.<br><b>🟨 Actual:</b> Clicking clear filter button.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:40 PM</td>
+        <td>
+          <b>🔹 Filters Cleared</b><br><b>✅ Expected:</b> Filter state should reset.<br><b>🟨 Actual:</b> Clear filter button clicked successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:40 PM</td>
+        <td>
+          <b>🔹 Open Status Filter</b><br><b>✅ Expected:</b> Status filter dropdown should open.<br><b>🟨 Actual:</b> Clicking status filter.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:41 PM</td>
+        <td>
+          <b>🔹 Status Filter Opened</b><br><b>✅ Expected:</b> Filter options should be visible.<br><b>🟨 Actual:</b> Status filter clicked successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:41 PM</td>
+        <td>
+          <b>🔹 Select Status Filter Option</b><br><b>📥 Input:</b> Accepted lead<br><b>✅ Expected:</b> Selected option should be applied to lead listing.<br><b>🟨 Actual:</b> Selecting filter option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:44 PM</td>
+        <td>
+          <b>🔹 Status Filter Option Selected</b><br><b>📥 Input:</b> Accepted lead<br><b>✅ Expected:</b> Lead list should refresh as per selected option.<br><b>🟨 Actual:</b> Option selected successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:45 PM</td>
+        <td>
+          <b>🔹 Read Filtered Lead Statuses</b><br><b>✅ Expected:</b> All visible rows should contain status matching selected filter.<br><b>🟨 Actual:</b> Reading visible lead statuses.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:45 PM</td>
+        <td>
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> Accepted lead<br><b>Found Status:</b> Lead accepted
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:21:45 PM</td>
+        <td>
+          <b>❌ Status Mismatch Found</b><br><b>Selected Filter:</b> Accepted lead<br><b>Found Status:</b> Lead accepted<br><b>✅ Expected:</b> Found status should match selected filter.<br><b>🟨 Actual:</b> Mismatch detected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:45 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">lead_filter_checker</p>
+            <p class="text-sm">
+              <span>6:21:48 PM</span> / <span>00:00:17:082</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">lead_filter_checker</h5>
+<span class='badge badge-success'>03.15.2026 6:21:48 PM</span>
+<span class='badge badge-danger'>03.15.2026 6:22:05 PM</span>
+<span class='badge badge-default'>00:00:17:082</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:48 PM</td>
+        <td>
+          <b>🔹 Start Lead Status Filter Checker</b><br><b>📥 Input:</b> Selected Filter Option = <b>Rejected lead</b><br><b>✅ Expected:</b> Lead list should show only rows matching selected status filter.<br><b>🟨 Actual:</b> Test execution started.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:48 PM</td>
+        <td>
+          <b>🔹 Open Lead Module</b><br><b>✅ Expected:</b> Lead listing page should open successfully.<br><b>🟨 Actual:</b> Clicking side menu option Leads.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:21:57 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:21:59 PM</td>
+        <td>
+          <b>🟦 Info:</b> Toast close button found and clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:01 PM</td>
+        <td>
+          <b>🔹 Lead Module Opened</b><br><b>✅ Expected:</b> Lead list should be visible.<br><b>🟨 Actual:</b> Lead list page loaded.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:01 PM</td>
+        <td>
+          <b>🔹 Clear Existing Filters</b><br><b>✅ Expected:</b> Previously applied filters should be cleared before applying new status filter.<br><b>🟨 Actual:</b> Clicking clear filter button.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:02 PM</td>
+        <td>
+          <b>🔹 Filters Cleared</b><br><b>✅ Expected:</b> Filter state should reset.<br><b>🟨 Actual:</b> Clear filter button clicked successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:02 PM</td>
+        <td>
+          <b>🔹 Open Status Filter</b><br><b>✅ Expected:</b> Status filter dropdown should open.<br><b>🟨 Actual:</b> Clicking status filter.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:03 PM</td>
+        <td>
+          <b>🔹 Status Filter Opened</b><br><b>✅ Expected:</b> Filter options should be visible.<br><b>🟨 Actual:</b> Status filter clicked successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:03 PM</td>
+        <td>
+          <b>🔹 Select Status Filter Option</b><br><b>📥 Input:</b> Rejected lead<br><b>✅ Expected:</b> Selected option should be applied to lead listing.<br><b>🟨 Actual:</b> Selecting filter option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:04 PM</td>
+        <td>
+          <b>🔹 Status Filter Option Selected</b><br><b>📥 Input:</b> Rejected lead<br><b>✅ Expected:</b> Lead list should refresh as per selected option.<br><b>🟨 Actual:</b> Option selected successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:05 PM</td>
+        <td>
+          <b>🔹 Read Filtered Lead Statuses</b><br><b>✅ Expected:</b> All visible rows should contain status matching selected filter.<br><b>🟨 Actual:</b> Reading visible lead statuses.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:05 PM</td>
+        <td>
+          <b>🧾 Visible Lead Status</b><br><b>Selected Filter:</b> Rejected lead<br><b>Found Status:</b> Lead rejected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:22:05 PM</td>
+        <td>
+          <b>❌ Status Mismatch Found</b><br><b>Selected Filter:</b> Rejected lead<br><b>Found Status:</b> Lead rejected<br><b>✅ Expected:</b> Found status should match selected filter.<br><b>🟨 Actual:</b> Mismatch detected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:05 PM</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">lead_filter_checker</p>
+            <p class="text-sm">
+              <span>6:22:07 PM</span> / <span>00:00:17:211</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">lead_filter_checker</h5>
+<span class='badge badge-success'>03.15.2026 6:22:07 PM</span>
+<span class='badge badge-danger'>03.15.2026 6:22:24 PM</span>
+<span class='badge badge-default'>00:00:17:211</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:07 PM</td>
+        <td>
+          <b>🔹 Start Lead Status Filter Checker</b><br><b>📥 Input:</b> Selected Filter Option = <b>Spam</b><br><b>✅ Expected:</b> Lead list should show only rows matching selected status filter.<br><b>🟨 Actual:</b> Test execution started.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:07 PM</td>
+        <td>
+          <b>🔹 Open Lead Module</b><br><b>✅ Expected:</b> Lead listing page should open successfully.<br><b>🟨 Actual:</b> Clicking side menu option Leads.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:16 PM</td>
+        <td>
+          ✅ Toast: Login successful!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:18 PM</td>
+        <td>
+          <b>🟦 Info:</b> Toast close button found and clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:20 PM</td>
+        <td>
+          <b>🔹 Lead Module Opened</b><br><b>✅ Expected:</b> Lead list should be visible.<br><b>🟨 Actual:</b> Lead list page loaded.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:20 PM</td>
+        <td>
+          <b>🔹 Clear Existing Filters</b><br><b>✅ Expected:</b> Previously applied filters should be cleared before applying new status filter.<br><b>🟨 Actual:</b> Clicking clear filter button.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:21 PM</td>
+        <td>
+          <b>🔹 Filters Cleared</b><br><b>✅ Expected:</b> Filter state should reset.<br><b>🟨 Actual:</b> Clear filter button clicked successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:21 PM</td>
+        <td>
+          <b>🔹 Open Status Filter</b><br><b>✅ Expected:</b> Status filter dropdown should open.<br><b>🟨 Actual:</b> Clicking status filter.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:21 PM</td>
+        <td>
+          <b>🔹 Status Filter Opened</b><br><b>✅ Expected:</b> Filter options should be visible.<br><b>🟨 Actual:</b> Status filter clicked successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:22:21 PM</td>
+        <td>
+          <b>🔹 Select Status Filter Option</b><br><b>📥 Input:</b> Spam<br><b>✅ Expected:</b> Selected option should be applied to lead listing.<br><b>🟨 Actual:</b> Selecting filter option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:24 PM</td>
+        <td>
+          <b>🔹 Status Filter Option Selected</b><br><b>📥 Input:</b> Spam<br><b>✅ Expected:</b> Lead list should refresh as per selected option.<br><b>🟨 Actual:</b> Option selected successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>6:22:24 PM</td>
+        <td>
+          <b>⚠️ No Result Found For Selected Filter</b><br><b>📥 Input:</b> Spam<br><b>✅ Expected:</b> Matching rows may or may not exist depending on current data.<br><b>🟨 Actual:</b> No visible rows found for selected status option.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:22:24 PM</td>
         <td>
           Test passed
         </td>
@@ -628,13 +704,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 12, 2026 07:21:17 PM</h3>
+<h3>Mar 15, 2026 06:20:54 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 12, 2026 07:21:43 PM</h3>
+<h3>Mar 15, 2026 06:22:25 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -646,7 +722,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>2</h3>
 </div></div>
 </div>
 </div>
@@ -662,13 +738,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
+<div><small data-tooltip='25%'>
 <b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<small data-tooltip='50%'><b>2</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='25%'>1</b> others
 </small>
 </div>
 </div>
@@ -685,10 +761,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='52%'><b>37</b> events passed</small></div>
+<div><small data-tooltip='44%'><b>30</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>34</b> others
+<small data-tooltip='2%'><b>2</b> events failed,
+<b data-tooltip='%'>35</b> others
 </small>
 </div>
 </div>
@@ -704,7 +780,7 @@
 </div></div>
 <script>
 var timeline = {
-"Lead_List_Data_Reader_and_clicker":23.233
+"lead_filter_checker":17.497,"lead_filter_checker":19.295,"lead_filter_checker":17.082,"lead_filter_checker":17.211
 };
 </script>
 <div class="row">
@@ -748,8 +824,8 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 1,
-failParent: 0,
-warningParent: 0,
+failParent: 2,
+warningParent: 1,
 skipParent: 0,
 childCount: 5,
 passChild: 0,
@@ -764,9 +840,9 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 37,
-failEvents: 0,
-warningEvents: 0,
+passEvents: 30,
+failEvents: 2,
+warningEvents: 1,
 skipEvents: 0,
 infoEvents: 34
 };
