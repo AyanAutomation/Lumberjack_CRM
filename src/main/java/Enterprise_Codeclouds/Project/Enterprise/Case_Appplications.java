@@ -4420,7 +4420,7 @@ public class Case_Appplications extends Header_Manager{
 	        
            public void Pay_off_lien_list_Before_payment(String Case_Id) throws IOException, InterruptedException{
 	        	
-	        	Application_Locaters p = new Application_Locaters(d);
+	        	  Application_Locaters p = new Application_Locaters(d);
 			      Login_Locaters lg = new Login_Locaters(d);
 				  SIde_Menu_Handler sd = new SIde_Menu_Handler();
 				  Repeat rp = new Repeat(d);
@@ -4466,45 +4466,80 @@ public class Case_Appplications extends Header_Manager{
 				   catch(RuntimeException tags){
 					   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
 					   System.out.println();
-					   Thread.sleep(1200);
+					   FluentWait<WebDriver> w = new FluentWait<WebDriver>(d)
+						        .withTimeout(Duration.ofSeconds(30))
+						        .pollingEvery(Duration.ofMillis(500)).ignoring(Exception.class);
 					   Case_Tags = p.Case_tags();}}
 				   try{tab_selector("Liens",d);}
 					catch(Exception Lien_tab_retry){
 						Thread.sleep(800);
 						tab_selector("Liens",d);}
-		    	    WebElement payoff_button = p.Payoff_Button();
-		    	    rp.Scroll_to_element(payoff_button);
-		    	    rp.wait_for_Clickable(payoff_button);
-		    	    payoff_button.click();
-		    	    p.Payoff_table_title();
-		    	    List<WebElement> Cells;
-		    	    try{
-		    	    	Cells = p.modal_table_cells();}
-		    	    catch(Exception pay_off_table_rows_not_found){
-		    	    	Thread.sleep(800);
-		    	    	p.modal_table();
-		    	    	Cells = p.modal_table_cells();}
-		    	    int m=0;
-		    	    for(WebElement Cell:Cells){
-		    	    	
-		    	    	String cellvalue=Cell.getText().trim();
-		    	    	
-		    	    	
-		    	    	if(!cellvalue.contains("/")){
-		    	    		String cellvalue_clean = cellvalue .replace("$","") .replace(",","") .replace("\u00A0","") .trim();
-		    	    		double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
-		    	            double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
-		    	            PayoffTable_values_Before_Payment.put("month "+m, each_month_payable);/*
-	                        System.out.println("month "+m+"  "+ each_month_payable);
-	    	    	    	System.out.println(); */
-		    	            m++;}}
-		    	    Report_Listen.log_print_in_report().log(Status.INFO,
-		    	            "<b>🟨 Actual:</b> Stored payoff values BEFORE payment. Rows captured = <b>" + PayoffTable_values_Before_Payment.size() + "</b>"
-		    	    );
-		    	    System.out.println("Actual: Stored payoff values BEFORE payment. Rows = " + PayoffTable_values_Before_Payment.size());
-		    	    System.out.println();
+				   WebElement payoff_button = p.Payoff_Button();
+				   rp.Scroll_to_element(payoff_button);
+				   rp.wait_for_Clickable(payoff_button);
+				   payoff_button.click();
+				   p.Payoff_table_title();
 
-	        	     p.Close_Button().click();
+				   List<WebElement> Cells;
+				   try {
+				   	Cells = p.modal_table_cells();
+				   } catch (Exception pay_off_table_rows_not_found) {
+					   FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
+						        .withTimeout(Duration.ofSeconds(30))
+						        .pollingEvery(Duration.ofMillis(500)).ignoring(Exception.class);
+					   wait.until(driver -> {
+							p.modal_table();
+							return p.modal_table_cells().size() > 0;
+						});
+
+				   	Cells = p.modal_table_cells();
+				   }
+
+				   StringBuilder monthly_payable_log = new StringBuilder();
+
+				   int m = 0;
+				   for (WebElement Cell : Cells) {
+
+				   	String cellvalue = Cell.getText().trim();
+
+				   	if (!cellvalue.contains("/")) {
+
+				   		String cellvalue_clean = cellvalue.replace("$", "")
+				   				                          .replace(",", "")
+				   				                          .replace("\u00A0", "")
+				   				                          .trim();
+
+				   		double each_month_payable_raw = Double.parseDouble(cellvalue_clean);
+				   		double each_month_payable = Double.parseDouble(String.format("%.2f", each_month_payable_raw));
+
+				   		String month_name = "month " + m;
+
+				   		PayoffTable_values_Before_Payment.put(month_name, each_month_payable);
+
+				   		System.out.println(month_name + "  " + each_month_payable);
+				   		System.out.println();
+
+				   		monthly_payable_log.append("<b>")
+				   		                   .append(month_name)
+				   		                   .append(" :</b> ")
+				   		                   .append(each_month_payable)
+				   		                   .append("<br>");
+
+				   		m++;
+				   	}
+				   }
+
+				   Report_Listen.log_print_in_report().log(Status.INFO,
+				   	    "<b>🟨 Actual:</b> Stored payoff values BEFORE payment. Rows captured = <b>"
+				   	    + PayoffTable_values_Before_Payment.size()
+				   	    + "</b><br><br>"
+				   	    + monthly_payable_log.toString()
+				   );
+
+				   System.out.println("Actual: Stored payoff values BEFORE payment. Rows = " + PayoffTable_values_Before_Payment.size());
+				   System.out.println();
+
+				   p.Close_Button().click();
 	        	
 			       }
 	        

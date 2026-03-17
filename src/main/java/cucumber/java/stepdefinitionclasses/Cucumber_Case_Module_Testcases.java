@@ -169,8 +169,8 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		super.Add_case(caseData, plaintiff, attorney, lawFirm, staff, email);
 	}
 	
-	     @Given("Lien_Details_Calculater")
-	     public void Lien_Details_Calculater() throws IOException, InterruptedException{
+    @Given("Lien_Details_Calculater")
+	public void Lien_Details_Calculater() throws IOException, InterruptedException{
 		 
 	    	 bindDriver();
 	    	 
@@ -179,17 +179,20 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 	    	 Login_Locaters lg = new Login_Locaters(d);
 	 	     Repeat rp = new Repeat(d);
 	         Attorney_module at = new Attorney_module();
-		  
-	 	     
+		     
 	         
-	 
-	 	    SideMenu_Handler_Cucumber.Side_menu_option_clicker_by_cucumber("Applications", d,"N/A");
-			Thread.sleep(800);
-			p.landed_in_applicationList_confirmation();
-			p.Filter_clear().click();
+	         
+	         List<WebElement> lien_rows = null;
+	 	       SideMenu_Handler_Cucumber.Side_menu_option_clicker_by_cucumber("Applications", d,"N/A");
+			   Thread.sleep(800);
+			   p.landed_in_applicationList_confirmation();
+			   p.Filter_clear().click();
 			   WebElement Status_filter = p.Application_status_filter();
 			   Status_filter.click();
 			   Application_Filter_Option_Selector("Funded",d);
+			   WebElement Toast = lg.toast();
+			   String Toast_text = Toast.getText().trim();
+			   Login_negative_testcases.Toast_printer(Toast_text, d);
 			   p.rows().get(1).click();
 			   Thread.sleep(800);
 			   List<WebElement> Case_Tags;
@@ -198,14 +201,75 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			   catch(RuntimeException tags){
 				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
 				   System.out.println();
-				   Thread.sleep(1200);
+				   Thread.sleep(1900);
 				   Case_Tags = p.Case_tags();}
 			   String Case_id= Case_Tags.get(0).getText().trim();
 			   String case_status= Case_Tags.get(1).getText().trim();
-			   super.Pay_off_lien_list_Before_payment(Case_id);
+			   try{tab_selector("Liens",d);}
+				catch(Exception Lien_tab_retry){
+					Thread.sleep(800);
+					tab_selector("Liens",d);}
+			   try {
+		      		lien_rows =p.Open_Lien_table_contents();}
+		      		catch(Exception lien_row_catch){
+		      			Thread.sleep(1800);
+		      		   lien_rows =p.Open_Lien_table_contents();
+		      		}
+			   lien_rows.get(0).click();
+			   lien_details_reader(d);
+			  // super.Pay_off_lien_list_Before_payment(Case_id);
 	     }
 	
 	
+        public void lien_details_reader(WebDriver d) throws InterruptedException{
+    	  
+        	  Application_Locaters p = new Application_Locaters(d);
+		      Login_Locaters lg = new Login_Locaters(d);
+			  SIde_Menu_Handler sd = new SIde_Menu_Handler();
+			  Repeat rp = new Repeat(d);
+    	      
+			  
+			  double Amount_to_Plaintiff;
+			  
+			  pop_up_modal_label_values.clear();
+			  
+			  WebElement Modal = p.popup_modal();
+  		      List<WebElement> Labels;
+  		      try {Labels= p.Lien_Details_field_labels();}
+  		      catch(Exception mmll){
+  		    	  Thread.sleep(1800);
+  		    	Labels= p.Lien_Details_field_labels();
+  		    	System.out.println("⚠️ First attempt FAILED to fetch labels");
+  		    	System.out.println();
+  		        System.out.println("Retry Plan: Wait 800ms and retry once");
+  		        System.out.println();
+  		      }
+  		      
+  		      List<WebElement> Values = p.Lien_Details_field_values();
+  		      for(int v=0;v<Math.min(Labels.size(), Values.size());v++){
+  		    	  String Label_text = Labels.get(v).getText().trim();
+  		    	  String Value_text = Values.get(v).getText().trim();
+  		    	if(Value_text.contains("$") || Label_text.contains("AMOUNT TO PLAINTIFF:") || Label_text.contains("BUYOUT AMOUNT:")){
+
+  		    	    double Amount = Double.parseDouble(Value_text.replace("$","").replace(",","").replace("--","0").trim());
+  		    	    pop_up_modal_label_values.put(Label_text, Amount);}}
+  		      
+  		      for(var pair:pop_up_modal_label_values.entrySet()){
+  		    	  System.out.println(pair.getKey()+" "+pair.getValue());
+  		    	  System.out.println();
+  		      }
+  		   
+  		    Amount_to_Plaintiff = pop_up_modal_label_values.get("AMOUNT TO PLAINTIFF:");
+            double Document_fee_Amount_from_modal = pop_up_modal_label_values.get("DOCUMENT PREP");
+            double Fund_transfer_fee_Amount_from_modal = pop_up_modal_label_values.get("FUNDS TRANSFER FEE");
+    	  
+            double Total_paid_amount_including_fees = Amount_to_Plaintiff+Document_fee_Amount_from_modal+Fund_transfer_fee_Amount_from_modal;
+    	  System.out.println("Total paid amount to plaintiff including fees is ---------->   "+Total_paid_amount_including_fees);
+    	  System.out.println();
+      }
+    
+    
+    
 
 	@Given("Buyout_Add_and_Fees_changed_in_Revised_Contract with data:")
 	public void Buyout_Add_and_Fees_changed_in_Revised_Contract(DataTable table)throws InterruptedException, IOException {
