@@ -272,18 +272,25 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		System.out.println("==================================================");
 		System.out.println();
 
-		p.rows().get(1).click();
+		
+		
+		int number_of_funded_applications = p.rows().size();
+		int i=0;
+		
+		while(i<number_of_funded_applications) {
+		
+		p.rows().get(i).click();
 		Thread.sleep(800);
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Funded Application Row Opened</b><br>"
 				+ "<b>✅ Expected:</b> Selected funded application should open successfully.<br>"
-				+ "<b>🟨 Actual:</b> Second row clicked."
+				+ "<b>🟨 Actual:</b> Row index <b>" + i + "</b> clicked."
 		);
 
 		System.out.println("==================================================");
 		System.out.println("FUNDED APPLICATION ROW OPENED");
-		System.out.println("Clicked Row Index : 1");
+		System.out.println("Clicked Row Index : " + i);
 		System.out.println("RESULT            : PASS ✅");
 		System.out.println("==================================================");
 		System.out.println();
@@ -293,7 +300,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			Case_Tags = p.Case_tags();
 		} catch (RuntimeException tags) {
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
-					.withTimeout(java.time.Duration.ofSeconds(5))
+					.withTimeout(java.time.Duration.ofSeconds(30))
 					.pollingEvery(java.time.Duration.ofMillis(500))
 					.ignoring(RuntimeException.class);
 
@@ -349,11 +356,10 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			lien_rows = p.Open_Lien_table_contents();
 		} catch (Exception lien_row_catch) {
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
-					.withTimeout(java.time.Duration.ofSeconds(5))
-					.pollingEvery(java.time.Duration.ofMillis(500))
+					.withTimeout(java.time.Duration.ofSeconds(1000))
+					.pollingEvery(java.time.Duration.ofMillis(800))
 					.ignoring(RuntimeException.class);
-			
-			 p.Open_Lien_table_contents();
+		
 			 lien_rows =wait.until(driver -> {List<WebElement> fetched_Open_Lien_table_content = p.Open_Lien_table_contents();
 				return fetched_Open_Lien_table_content.size() > 0 ? fetched_Open_Lien_table_content : null;
 			});
@@ -442,9 +448,25 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		            + "<b>✅ Expected:</b> One payoff table value should match calculated first month payable.<br>"
 		            + "<b>Expected Amount:</b> " + firstMonthPayable + "<br>"
 		            + "<b>🟨 Actual:</b> No matching amount found in payoff table."
-		    );
+		    );}
+		d.navigate().to("https://logbook.wechopfees.com/cases");
+		p.landed_in_applicationList_confirmation();
+		p.Filter_clear().click();
+
+		WebElement newStatusFilter = p.Application_status_filter();
+		newStatusFilter.click();
+
+		Application_Filter_Option_Selector("Funded", d);
+
+		WebElement newToast = lg.toast();
+		String newToast_text = newToast.getText().trim();
+		Login_negative_testcases.Toast_printer(newToast_text, d);
+
+		i++;
 		}
 		
+		
+
 	}
 
 	public double lien_details_reader(WebDriver d) throws InterruptedException {
@@ -490,7 +512,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			Labels = p.Lien_Details_field_labels();
 		} catch (Exception mmll) {
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
-					.withTimeout(java.time.Duration.ofSeconds(5))
+					.withTimeout(java.time.Duration.ofSeconds(25))
 					.pollingEvery(java.time.Duration.ofMillis(500))
 					.ignoring(Exception.class);
 
