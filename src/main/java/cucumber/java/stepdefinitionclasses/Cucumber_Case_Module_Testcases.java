@@ -230,7 +230,8 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
     	      
 			  
 			  double Amount_to_Plaintiff;
-			  
+			  double Rate_of_interest_percentage = 0.0;
+			  double Rate_of_interest_amount;
 			  pop_up_modal_label_values.clear();
 			  
 			  WebElement Modal = p.popup_modal();
@@ -252,18 +253,37 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
   		    	if(Value_text.contains("$") || Label_text.contains("AMOUNT TO PLAINTIFF:") || Label_text.contains("BUYOUT AMOUNT:")){
 
   		    	    double Amount = Double.parseDouble(Value_text.replace("$","").replace(",","").replace("--","0").trim());
-  		    	    pop_up_modal_label_values.put(Label_text, Amount);}}
+  		    	    pop_up_modal_label_values.put(Label_text, Amount);}
+  		    	
+  		   // This block is only for percentage field like 38%
+  			  if(Label_text.contains("RATE OF INTEREST:")){
+
+  				  Rate_of_interest_percentage = Double.parseDouble(
+  						  Value_text.replace("%","").trim()
+  				  );
+
+  				  System.out.println("RATE OF INTEREST PERCENTAGE ---------->   " + Rate_of_interest_percentage);
+  				  System.out.println();
+  			  }}
   		      
   		      for(var pair:pop_up_modal_label_values.entrySet()){
   		    	  System.out.println(pair.getKey()+" "+pair.getValue());
   		    	  System.out.println();
   		      }
+  		      
   		   
   		    Amount_to_Plaintiff = pop_up_modal_label_values.get("AMOUNT TO PLAINTIFF:");
             double Document_fee_Amount_from_modal = pop_up_modal_label_values.get("DOCUMENT PREP");
             double Fund_transfer_fee_Amount_from_modal = pop_up_modal_label_values.get("FUNDS TRANSFER FEE");
-    	  
-            double Total_paid_amount_including_fees = Amount_to_Plaintiff+Document_fee_Amount_from_modal+Fund_transfer_fee_Amount_from_modal;
+            
+            // percentage amount of Amount_to_Plaintiff
+      	  Rate_of_interest_amount = (Amount_to_Plaintiff * Rate_of_interest_percentage) / 100;
+
+      	  System.out.println("RATE OF INTEREST AMOUNT ---------->   " + Rate_of_interest_amount);
+      	  System.out.println();
+
+      	  double Total_paid_amount_including_fees =(Amount_to_Plaintiff + Rate_of_interest_amount)+ Document_fee_Amount_from_modal+ Fund_transfer_fee_Amount_from_modal;
+
     	  System.out.println("Total paid amount to plaintiff including fees is ---------->   "+Total_paid_amount_including_fees);
     	  System.out.println();
       }
