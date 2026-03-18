@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -50,7 +51,7 @@ public class Case_Appplications extends Header_Manager{
  public TreeMap<String,Double> CURRENT_LIEN_BALANCE_Values = new TreeMap<String,Double>();
  public TreeMap<String,Double> RETURNED_AMT_Values = new TreeMap<String,Double>();
  public TreeMap<String,Double> PayoffTable_values_After_Payment =  new TreeMap<String,Double>();
- public TreeMap<String,Double> PayoffTable_values_Before_Payment =  new TreeMap<String,Double>();
+ public LinkedHashMap<String,Double> PayoffTable_values_Before_Payment =  new LinkedHashMap<String,Double>();
  public TreeMap<String,Double> PayoffTable_values_Revise_contract =  new TreeMap<String,Double>();
  public TreeMap<String,Double> pop_up_modal_label_values =  new TreeMap<String,Double>();
 	
@@ -4473,6 +4474,7 @@ public class Case_Appplications extends Header_Manager{
 				   try{tab_selector("Liens",d);}
 					catch(Exception Lien_tab_retry){
 						Thread.sleep(800);
+						
 						tab_selector("Liens",d);}
 				   WebElement payoff_button = p.Payoff_Button();
 				   rp.Scroll_to_element(payoff_button);
@@ -4540,6 +4542,7 @@ public class Case_Appplications extends Header_Manager{
 				   System.out.println();
 
 				   p.Close_Button().click();
+				
 	        	
 			       }
 	        

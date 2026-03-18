@@ -169,124 +169,503 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		super.Add_case(caseData, plaintiff, attorney, lawFirm, staff, email);
 	}
 	
-    @Given("Lien_Details_Calculater")
-	public void Lien_Details_Calculater() throws IOException, InterruptedException{
-		 
-	    	 bindDriver();
-	    	 
-	    	 
-	    	 Application_Locaters p = new Application_Locaters(d);
-	    	 Login_Locaters lg = new Login_Locaters(d);
-	 	     Repeat rp = new Repeat(d);
-	         Attorney_module at = new Attorney_module();
-		     
-	         
-	         
-	         List<WebElement> lien_rows = null;
-	 	       SideMenu_Handler_Cucumber.Side_menu_option_clicker_by_cucumber("Applications", d,"N/A");
-			   Thread.sleep(800);
-			   p.landed_in_applicationList_confirmation();
-			   p.Filter_clear().click();
-			   WebElement Status_filter = p.Application_status_filter();
-			   Status_filter.click();
-			   Application_Filter_Option_Selector("Funded",d);
-			   WebElement Toast = lg.toast();
-			   String Toast_text = Toast.getText().trim();
-			   Login_negative_testcases.Toast_printer(Toast_text, d);
-			   p.rows().get(1).click();
-			   Thread.sleep(800);
-			   List<WebElement> Case_Tags;
-			   try {
-			   Case_Tags = p.Case_tags();}
-			   catch(RuntimeException tags){
-				   System.out.println("RuntimeException Found in case tags fetching thereby retrying");
-				   System.out.println();
-				   Thread.sleep(1900);
-				   Case_Tags = p.Case_tags();}
-			   String Case_id= Case_Tags.get(0).getText().trim();
-			   String case_status= Case_Tags.get(1).getText().trim();
-			   try{tab_selector("Liens",d);}
-				catch(Exception Lien_tab_retry){
-					Thread.sleep(800);
-					tab_selector("Liens",d);}
-			   try {
-		      		lien_rows =p.Open_Lien_table_contents();}
-		      		catch(Exception lien_row_catch){
-		      			Thread.sleep(1800);
-		      		   lien_rows =p.Open_Lien_table_contents();
-		      		}
-			   lien_rows.get(0).click();
-			   lien_details_reader(d);
-			  // super.Pay_off_lien_list_Before_payment(Case_id);
-	     }
-	
-	
-        public void lien_details_reader(WebDriver d) throws InterruptedException{
-    	  
-        	  Application_Locaters p = new Application_Locaters(d);
-		      Login_Locaters lg = new Login_Locaters(d);
-			  SIde_Menu_Handler sd = new SIde_Menu_Handler();
-			  Repeat rp = new Repeat(d);
-    	      
-			  
-			  double Amount_to_Plaintiff;
-			  double Rate_of_interest_percentage = 0.0;
-			  double Rate_of_interest_amount;
-			  pop_up_modal_label_values.clear();
-			  
-			  WebElement Modal = p.popup_modal();
-  		      List<WebElement> Labels;
-  		      try {Labels= p.Lien_Details_field_labels();}
-  		      catch(Exception mmll){
-  		    	  Thread.sleep(1800);
-  		    	Labels= p.Lien_Details_field_labels();
-  		    	System.out.println("⚠️ First attempt FAILED to fetch labels");
-  		    	System.out.println();
-  		        System.out.println("Retry Plan: Wait 800ms and retry once");
-  		        System.out.println();
-  		      }
-  		      
-  		      List<WebElement> Values = p.Lien_Details_field_values();
-  		      for(int v=0;v<Math.min(Labels.size(), Values.size());v++){
-  		    	  String Label_text = Labels.get(v).getText().trim();
-  		    	  String Value_text = Values.get(v).getText().trim();
-  		    	if(Value_text.contains("$") || Label_text.contains("AMOUNT TO PLAINTIFF:") || Label_text.contains("BUYOUT AMOUNT:")){
+	@Given("Lien_Details_Calculater")
+	public void Lien_Details_Calculater() throws IOException, InterruptedException {
 
-  		    	    double Amount = Double.parseDouble(Value_text.replace("$","").replace(",","").replace("--","0").trim());
-  		    	    pop_up_modal_label_values.put(Label_text, Amount);}
-  		    	
-  		   // This block is only for percentage field like 38%
-  			  if(Label_text.contains("RATE OF INTEREST:")){
+		bindDriver();
 
-  				  Rate_of_interest_percentage = Double.parseDouble(
-  						  Value_text.replace("%","").trim()
-  				  );
+		Application_Locaters p = new Application_Locaters(d);
+		Login_Locaters lg = new Login_Locaters(d);
+		Repeat rp = new Repeat(d);
+		Attorney_module at = new Attorney_module();
 
-  				  System.out.println("RATE OF INTEREST PERCENTAGE ---------->   " + Rate_of_interest_percentage);
-  				  System.out.println();
-  			  }}
-  		      
-  		      for(var pair:pop_up_modal_label_values.entrySet()){
-  		    	  System.out.println(pair.getKey()+" "+pair.getValue());
-  		    	  System.out.println();
-  		      }
-  		      
-  		   
-  		    Amount_to_Plaintiff = pop_up_modal_label_values.get("AMOUNT TO PLAINTIFF:");
-            double Document_fee_Amount_from_modal = pop_up_modal_label_values.get("DOCUMENT PREP");
-            double Fund_transfer_fee_Amount_from_modal = pop_up_modal_label_values.get("FUNDS TRANSFER FEE");
-            
-            // percentage amount of Amount_to_Plaintiff
-      	  Rate_of_interest_amount = (Amount_to_Plaintiff * Rate_of_interest_percentage) / 100;
+		List<WebElement> lien_rows = null;
 
-      	  System.out.println("RATE OF INTEREST AMOUNT ---------->   " + Rate_of_interest_amount);
-      	  System.out.println();
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Start Lien Details Calculator</b><br>"
+				+ "<b>✅ Expected:</b> Open funded application, navigate to liens, open lien modal, and calculate payable amount.<br>"
+				+ "<b>🟨 Actual:</b> Execution started."
+		);
 
-      	  double Total_paid_amount_including_fees =(Amount_to_Plaintiff + Rate_of_interest_amount)+ Document_fee_Amount_from_modal+ Fund_transfer_fee_Amount_from_modal;
+		System.out.println("==================================================");
+		System.out.println("START LIEN DETAILS CALCULATOR");
+		System.out.println("EXPECTED : Open funded application and calculate lien amount");
+		System.out.println("ACTUAL   : Execution started");
+		System.out.println("==================================================");
+		System.out.println();
 
-    	  System.out.println("Total paid amount to plaintiff including fees is ---------->   "+Total_paid_amount_including_fees);
-    	  System.out.println();
-      }
+		SideMenu_Handler_Cucumber.Side_menu_option_clicker_by_cucumber("Applications", d, "N/A");
+		Thread.sleep(800);
+		p.landed_in_applicationList_confirmation();
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Applications Page Opened</b><br>"
+				+ "<b>✅ Expected:</b> Application list page should load successfully.<br>"
+				+ "<b>🟨 Actual:</b> Landed in application list confirmed."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("APPLICATIONS PAGE OPENED");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		p.Filter_clear().click();
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Clear Existing Filters</b><br>"
+				+ "<b>✅ Expected:</b> Existing filters should be cleared before new filter selection.<br>"
+				+ "<b>🟨 Actual:</b> Filter clear clicked."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("CLEAR EXISTING FILTERS");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		WebElement Status_filter = p.Application_status_filter();
+		Status_filter.click();
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Open Application Status Filter</b><br>"
+				+ "<b>✅ Expected:</b> Status filter dropdown should open.<br>"
+				+ "<b>🟨 Actual:</b> Status filter clicked."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("OPEN APPLICATION STATUS FILTER");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		Application_Filter_Option_Selector("Funded", d);
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Filter Option Selected</b><br>"
+				+ "<b>📥 Input:</b> Funded<br>"
+				+ "<b>✅ Expected:</b> Only funded applications should remain visible.<br>"
+				+ "<b>🟨 Actual:</b> Funded option selected."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("FILTER OPTION SELECTED");
+		System.out.println("Selected Option : Funded");
+		System.out.println("RESULT          : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		WebElement Toast = lg.toast();
+		String Toast_text = Toast.getText().trim();
+		Login_negative_testcases.Toast_printer(Toast_text, d);
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Toast Captured After Filter</b><br>"
+				+ "<b>📥 Input:</b> Toast = <b>" + Toast_text + "</b><br>"
+				+ "<b>✅ Expected:</b> Toast should confirm filter action or refresh event.<br>"
+				+ "<b>🟨 Actual:</b> Toast captured successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("TOAST CAPTURED AFTER FILTER");
+		System.out.println("Toast : " + Toast_text);
+		System.out.println("==================================================");
+		System.out.println();
+
+		p.rows().get(1).click();
+		Thread.sleep(800);
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Funded Application Row Opened</b><br>"
+				+ "<b>✅ Expected:</b> Selected funded application should open successfully.<br>"
+				+ "<b>🟨 Actual:</b> Second row clicked."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("FUNDED APPLICATION ROW OPENED");
+		System.out.println("Clicked Row Index : 1");
+		System.out.println("RESULT            : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		List<WebElement> Case_Tags;
+		try {
+			Case_Tags = p.Case_tags();
+		} catch (RuntimeException tags) {
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
+					.withTimeout(java.time.Duration.ofSeconds(5))
+					.pollingEvery(java.time.Duration.ofMillis(500))
+					.ignoring(RuntimeException.class);
+
+			Case_Tags = wait.until(driver -> {
+				List<WebElement> fetched_case_tags = p.Case_tags();
+				return fetched_case_tags.size() > 0 ? fetched_case_tags : null;
+			});
+
+			System.out.println("RuntimeException Found in case tags fetching thereby retrying");
+			System.out.println();
+			System.out.println("Retry Plan: FluentWait applied and case tags fetched on retry");
+			System.out.println();
+		}
+
+		String Case_id = Case_Tags.get(0).getText().trim();
+		String case_status = Case_Tags.get(1).getText().trim();
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Case Tags Captured</b><br>"
+				+ "<b>Case ID:</b> " + Case_id + "<br>"
+				+ "<b>Case Status:</b> " + case_status + "<br>"
+				+ "<b>✅ Expected:</b> Case tags should be readable after opening application.<br>"
+				+ "<b>🟨 Actual:</b> Tags captured successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("CASE TAGS CAPTURED");
+		System.out.println("Case ID     : " + Case_id);
+		System.out.println("Case Status : " + case_status);
+		System.out.println("==================================================");
+		System.out.println();
+
+		try {
+			tab_selector("Liens", d);
+		} catch (Exception Lien_tab_retry) {
+			Thread.sleep(800);
+			tab_selector("Liens", d);
+		}
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Liens Tab Opened</b><br>"
+				+ "<b>✅ Expected:</b> Liens tab should open successfully.<br>"
+				+ "<b>🟨 Actual:</b> Liens tab selected."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("LIENS TAB OPENED");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		try {
+			lien_rows = p.Open_Lien_table_contents();
+		} catch (Exception lien_row_catch) {
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
+					.withTimeout(java.time.Duration.ofSeconds(5))
+					.pollingEvery(java.time.Duration.ofMillis(500))
+					.ignoring(RuntimeException.class);
+			
+			 p.Open_Lien_table_contents();
+			 lien_rows =wait.until(driver -> {List<WebElement> fetched_Open_Lien_table_content = p.Open_Lien_table_contents();
+				return fetched_Open_Lien_table_content.size() > 0 ? fetched_Open_Lien_table_content : null;
+			});
+		}
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Read Open Lien Rows</b><br>"
+				+ "<b>✅ Expected:</b> Open lien table rows should be visible and accessible.<br>"
+				+ "<b>🟨 Actual:</b> Lien rows fetched successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("OPEN LIEN ROWS READ");
+		System.out.println("Total Rows : " + lien_rows.size());
+		System.out.println("==================================================");
+		System.out.println();
+
+		lien_rows.get(0).click();
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 First Lien Row Opened</b><br>"
+				+ "<b>✅ Expected:</b> First lien row should open lien details modal.<br>"
+				+ "<b>🟨 Actual:</b> First lien row clicked."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("FIRST LIEN ROW OPENED");
+		System.out.println("Clicked Row Index : 0");
+		System.out.println("RESULT            : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		double firstMonthPayable = lien_details_reader(d);
+		firstMonthPayable = Double.parseDouble(String.format("%.2f", firstMonthPayable));
+
+		super.Pay_off_lien_list_Before_payment(Case_id);
+
+		boolean matchFound = false;
+
+		for (var pair : PayoffTable_values_Before_Payment.entrySet()) {
+
+		    String firstMonthAmountText = pair.getValue().toString()
+		            .replace("$", "")
+		            .replace(",", "")
+		            .replace("--", "0")
+		            .trim();
+
+		    double firstMonthAmountFromTable = Double.parseDouble(firstMonthAmountText);
+		    firstMonthAmountFromTable = Double.parseDouble(String.format("%.2f", firstMonthAmountFromTable));
+
+		    if (Math.abs(firstMonthAmountFromTable - firstMonthPayable) < 0.001) {
+
+		        System.out.println("==================================================");
+		        System.out.println("FIRST MONTH PAYABLE MATCHED");
+		        System.out.println("Expected Amount : " + firstMonthPayable);
+		        System.out.println("Matched Amount  : " + firstMonthAmountFromTable);
+		        System.out.println("Source Key      : " + pair.getKey());
+		        System.out.println("RESULT          : PASS ✅");
+		        System.out.println("==================================================");
+		        System.out.println();
+
+		        Report_Listen.log_print_in_report().log(Status.PASS,
+		                "<b>🔹 First Month Payable Matched</b><br>"
+		                + "<b>✅ Expected:</b> Payoff table value should match calculated first month payable.<br>"
+		                + "<b>Expected Amount:</b> " + firstMonthPayable + "<br>"
+		                + "<b>Matched Amount:</b> " + firstMonthAmountFromTable + "<br>"
+		                + "<b>Source Key:</b> " + pair.getKey() + "<br>"
+		                + "<b>🟨 Actual:</b> Amount matched successfully."
+		        );
+
+		        matchFound = true;
+		        break;
+		    }
+		}
+
+		if (!matchFound) {
+		    System.out.println("==================================================");
+		    System.out.println("FIRST MONTH PAYABLE NOT MATCHED");
+		    System.out.println("Expected Amount : " + firstMonthPayable);
+		    System.out.println("RESULT          : FAIL ❌");
+		    System.out.println("==================================================");
+		    System.out.println();
+
+		    Report_Listen.log_print_in_report().log(Status.FAIL,
+		            "<b>🔹 First Month Payable Not Matched</b><br>"
+		            + "<b>✅ Expected:</b> One payoff table value should match calculated first month payable.<br>"
+		            + "<b>Expected Amount:</b> " + firstMonthPayable + "<br>"
+		            + "<b>🟨 Actual:</b> No matching amount found in payoff table."
+		    );
+		}
+		
+	}
+
+	public double lien_details_reader(WebDriver d) throws InterruptedException {
+
+		Application_Locaters p = new Application_Locaters(d);
+		
+
+		double Amount_to_Plaintiff;
+		double Rate_of_interest_percentage = 0.0;
+		double Rate_of_interest_amount;
+		double Rate_of_interest_each_month;
+		pop_up_modal_label_values.clear();
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Start Lien Details Reader</b><br>"
+				+ "<b>✅ Expected:</b> Lien detail modal labels and values should be read correctly for calculation.<br>"
+				+ "<b>🟨 Actual:</b> Reading modal values."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("START LIEN DETAILS READER");
+		System.out.println("EXPECTED : Modal labels and values should be read");
+		System.out.println("ACTUAL   : Reading modal values");
+		System.out.println("==================================================");
+		System.out.println();
+
+		WebElement Modal = p.popup_modal();
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Lien Modal Visible</b><br>"
+				+ "<b>✅ Expected:</b> Popup modal should be visible before reading values.<br>"
+				+ "<b>🟨 Actual:</b> Popup modal accessed successfully."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("LIEN MODAL VISIBLE");
+		System.out.println("RESULT : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+
+		List<WebElement> Labels;
+		try {
+			Labels = p.Lien_Details_field_labels();
+		} catch (Exception mmll) {
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
+					.withTimeout(java.time.Duration.ofSeconds(5))
+					.pollingEvery(java.time.Duration.ofMillis(500))
+					.ignoring(Exception.class);
+
+			Labels = wait.until(driver -> {
+					List<WebElement> fetched_labels = p.Lien_Details_field_labels();
+					return fetched_labels.size() > 0 ? fetched_labels : null;
+			});
+			System.out.println("⚠️ First attempt FAILED to fetch labels");
+			System.out.println();
+			System.out.println("Retry Plan: Wait 800ms and retry once");
+			System.out.println();
+
+			Report_Listen.log_print_in_report().log(Status.WARNING,
+					"<b>⚠️ First Attempt Failed To Fetch Labels</b><br>"
+					+ "<b>✅ Expected:</b> Labels should load in first attempt.<br>"
+					+ "<b>🟨 Actual:</b> Retry executed after wait."
+			);
+		}
+
+		List<WebElement> Values = p.Lien_Details_field_values();
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Modal Label/Value Count</b><br>"
+				+ "<b>Labels Count:</b> " + Labels.size() + "<br>"
+				+ "<b>Values Count:</b> " + Values.size()
+		);
+
+		System.out.println("==================================================");
+		System.out.println("MODAL LABEL/VALUE COUNT");
+		System.out.println("Labels Count : " + Labels.size());
+		System.out.println("Values Count : " + Values.size());
+		System.out.println("==================================================");
+		System.out.println();
+
+		for (int v = 0; v < Math.min(Labels.size(), Values.size()); v++) {
+
+			String Label_text = Labels.get(v).getText().trim();
+			String Value_text = Values.get(v).getText().trim();
+
+			Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>🧾 Modal Field Captured</b><br>"
+					+ "<b>" + Label_text + "</b> = " + Value_text
+			);
+
+			System.out.println(Label_text + " -> " + Value_text);
+			System.out.println();
+
+			if (Value_text.contains("$") || Label_text.contains("AMOUNT TO PLAINTIFF:") || Label_text.contains("BUYOUT AMOUNT:")) {
+
+				double Amount = Double.parseDouble(Value_text.replace("$", "").replace(",", "").replace("--", "0").trim());
+				pop_up_modal_label_values.put(Label_text, Amount);
+
+				Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>✅ Monetary Value Stored</b><br>"
+						+ "<b>" + Label_text + ":</b> " + Amount
+				);
+
+				System.out.println("Stored Monetary Value -> " + Label_text + " = " + Amount);
+				System.out.println();
+			}
+
+			// This block is only for percentage field like 38%
+			if (Label_text.contains("RATE OF INTEREST:")) {
+
+				Rate_of_interest_percentage = Double.parseDouble(
+						Value_text.replace("%", "").trim()
+				);
+
+				Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>✅ Rate Of Interest Percentage Captured</b><br>"
+						+ "<b>RATE OF INTEREST:</b> " + Rate_of_interest_percentage + "%"
+				);
+
+				System.out.println("RATE OF INTEREST PERCENTAGE ---------->   " + Rate_of_interest_percentage);
+				System.out.println();
+			}
+		}
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Stored Monetary Fields Summary</b><br>"
+				+ "<b>✅ Expected:</b> Required monetary values should be present in popup map.<br>"
+				+ "<b>🟨 Actual:</b> Printing stored values."
+		);
+
+		System.out.println("==================================================");
+		System.out.println("STORED MONETARY FIELDS SUMMARY");
+		System.out.println("==================================================");
+		System.out.println();
+
+		for (var pair : pop_up_modal_label_values.entrySet()) {
+			System.out.println(pair.getKey() + " " + pair.getValue());
+			System.out.println();
+
+			Report_Listen.log_print_in_report().log(Status.INFO,
+					"<b>" + pair.getKey() + "</b> = " + pair.getValue()
+			);
+		}
+
+		Amount_to_Plaintiff = pop_up_modal_label_values.get("AMOUNT TO PLAINTIFF:");
+		double Document_fee_Amount_from_modal = pop_up_modal_label_values.get("DOCUMENT PREP");
+		double Fund_transfer_fee_Amount_from_modal = pop_up_modal_label_values.get("FUNDS TRANSFER FEE");
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Base Calculation Inputs</b><br>"
+				+ "<b>AMOUNT TO PLAINTIFF:</b> " + Amount_to_Plaintiff + "<br>"
+				+ "<b>DOCUMENT PREP:</b> " + Document_fee_Amount_from_modal + "<br>"
+				+ "<b>FUNDS TRANSFER FEE:</b> " + Fund_transfer_fee_Amount_from_modal + "<br>"
+				+ "<b>RATE OF INTEREST %:</b> " + Rate_of_interest_percentage
+		);
+
+		System.out.println("==================================================");
+		System.out.println("BASE CALCULATION INPUTS");
+		System.out.println("AMOUNT TO PLAINTIFF : " + Amount_to_Plaintiff);
+		System.out.println("DOCUMENT PREP       : " + Document_fee_Amount_from_modal);
+		System.out.println("FUNDS TRANSFER FEE  : " + Fund_transfer_fee_Amount_from_modal);
+		System.out.println("RATE OF INTEREST %  : " + Rate_of_interest_percentage);
+		System.out.println("==================================================");
+		System.out.println();
+
+		// percentage amount of Amount_to_Plaintiff
+		Rate_of_interest_amount = (Amount_to_Plaintiff * Rate_of_interest_percentage) / 100;
+		// total percentage amount of Amount_to_Plaintiff
+		Rate_of_interest_amount = (Amount_to_Plaintiff * Rate_of_interest_percentage) / 100;
+		Rate_of_interest_amount = Double.parseDouble(String.format("%.2f", Rate_of_interest_amount));
+
+		// monthly interest amount
+		Rate_of_interest_each_month = Rate_of_interest_amount / 12;
+		Rate_of_interest_each_month = Double.parseDouble(String.format("%.2f", Rate_of_interest_each_month));
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Rate Of Interest Amount Calculated</b><br>"
+				+ "<b>Step 1 Formula:</b> (Amount_to_Plaintiff × Rate_of_interest_percentage) / 100<br>"
+				+ "<b>Step 1 Calculation:</b> (" + Amount_to_Plaintiff + " × " + Rate_of_interest_percentage + ") / 100<br>"
+				+ "<b>Total Interest Amount:</b> " + Rate_of_interest_amount + "<br><br>"
+				+ "<b>Step 2 Formula:</b> Total Interest Amount / 12<br>"
+				+ "<b>Step 2 Calculation:</b> " + Rate_of_interest_amount + " / 12<br>"
+				+ "<b>Monthly Interest Amount:</b> " + Rate_of_interest_each_month
+		);
+
+		System.out.println("TOTAL RATE OF INTEREST AMOUNT ---------->   " + Rate_of_interest_amount);
+		System.out.println();
+
+		System.out.println("RATE OF INTEREST EACH MONTH ---------->   " + Rate_of_interest_each_month);
+		System.out.println();
+
+		double Total_paid_amount_including_fees =
+				(Amount_to_Plaintiff + Rate_of_interest_each_month)
+				+ Document_fee_Amount_from_modal
+				+ Fund_transfer_fee_Amount_from_modal;
+
+		Total_paid_amount_including_fees = Double.parseDouble(String.format("%.2f", Total_paid_amount_including_fees));
+
+		Report_Listen.log_print_in_report().log(Status.PASS,
+				"<b>🔹 Total Paid Amount Including Fees Calculated</b><br>"
+				+ "<b>Formula:</b> (Amount_to_Plaintiff + Rate_of_interest_each_month) + Document_fee + Fund_transfer_fee<br>"
+				+ "<b>Calculation:</b> (" + Amount_to_Plaintiff + " + " + Rate_of_interest_each_month + ") + "
+				+ Document_fee_Amount_from_modal + " + " + Fund_transfer_fee_Amount_from_modal + "<br>"
+				+ "<b>Final Result:</b> " + Total_paid_amount_including_fees
+		);
+
+		System.out.println("Total paid amount to plaintiff including fees is ---------->   " + Total_paid_amount_including_fees);
+		System.out.println();
+
+		System.out.println("==================================================");
+		System.out.println("LIEN DETAILS CALCULATION COMPLETED");
+		System.out.println("TOTAL INTEREST AMOUNT  : " + Rate_of_interest_amount);
+		System.out.println("MONTHLY INTEREST AMOUNT: " + Rate_of_interest_each_month);
+		System.out.println("FINAL TOTAL            : " + Total_paid_amount_including_fees);
+		System.out.println("RESULT                 : PASS ✅");
+		System.out.println("==================================================");
+		System.out.println();
+		p.Close_Button().click();
+		
+		return Total_paid_amount_including_fees;
+	}
     
     
     

@@ -44,7 +44,7 @@
 <a href="#"><span class="badge badge-primary">Lumberjack</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 17, 2026 08:21:07 PM</span></a>
+<a href="#"><span class="badge badge-primary">Mar 18, 2026 06:11:31 PM</span></a>
 </li>
 </ul>
 </div>
@@ -75,7 +75,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="warning" href="#"><span>Warning</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -83,25 +83,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="4"
+        <li class="test-item"  status="warning" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Reading and calculating Open contracts payoff table calculation</p>
             <p class="text-sm">
-              <span>8:21:10 PM</span> / <span>00:00:24:096</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:11:36 PM</span> / <span>00:00:25:872</span>
+              <span class="badge warning-bg log float-right">Warning</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Reading and calculating Open contracts payoff table calculation</h5>
-<span class='badge badge-success'>03.17.2026 8:21:10 PM</span>
-<span class='badge badge-danger'>03.17.2026 8:21:34 PM</span>
-<span class='badge badge-default'>00:00:24:096</span>
+<h5 class="test-status text-warning">Reading and calculating Open contracts payoff table calculation</h5>
+<span class='badge badge-success'>03.18.2026 6:11:36 PM</span>
+<span class='badge badge-danger'>03.18.2026 6:12:02 PM</span>
+<span class='badge badge-default'>00:00:25:872</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -113,36 +113,344 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:36 PM</td>
+        <td>
+          <b>🔹 Start Lien Details Calculator</b><br><b>✅ Expected:</b> Open funded application, navigate to liens, open lien modal, and calculate payable amount.<br><b>🟨 Actual:</b> Execution started.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:16 PM</td>
+        <td>6:11:43 PM</td>
         <td>
           ✅ Toast: Login successful!
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:18 PM</td>
+        <td>6:11:44 PM</td>
         <td>
           <b>🟦 Info:</b> Toast close button found and clicked.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:22 PM</td>
+        <td>6:11:47 PM</td>
+        <td>
+          <b>🔹 Applications Page Opened</b><br><b>✅ Expected:</b> Application list page should load successfully.<br><b>🟨 Actual:</b> Landed in application list confirmed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:47 PM</td>
+        <td>
+          <b>🔹 Clear Existing Filters</b><br><b>✅ Expected:</b> Existing filters should be cleared before new filter selection.<br><b>🟨 Actual:</b> Filter clear clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:47 PM</td>
+        <td>
+          <b>🔹 Open Application Status Filter</b><br><b>✅ Expected:</b> Status filter dropdown should open.<br><b>🟨 Actual:</b> Status filter clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:48 PM</td>
+        <td>
+          <b>🔹 Filter Option Selected</b><br><b>📥 Input:</b> Funded<br><b>✅ Expected:</b> Only funded applications should remain visible.<br><b>🟨 Actual:</b> Funded option selected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:49 PM</td>
         <td>
           ✅ Toast: The list has been fetched successfully.
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>8:21:24 PM</td>
+        <td>6:11:50 PM</td>
         <td>
           <b>🟦 Info:</b> Toast close button found and clicked.
         </td>
       </tr>
       <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:50 PM</td>
+        <td>
+          <b>🔹 Toast Captured After Filter</b><br><b>📥 Input:</b> Toast = <b>The list has been fetched successfully.</b><br><b>✅ Expected:</b> Toast should confirm filter action or refresh event.<br><b>🟨 Actual:</b> Toast captured successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>8:21:34 PM</td>
+        <td>6:11:51 PM</td>
+        <td>
+          <b>🔹 Funded Application Row Opened</b><br><b>✅ Expected:</b> Selected funded application should open successfully.<br><b>🟨 Actual:</b> Second row clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:53 PM</td>
+        <td>
+          <b>🔹 Case Tags Captured</b><br><b>Case ID:</b> CASE ID: IN2600019<br><b>Case Status:</b> STATUS: Case open<br><b>✅ Expected:</b> Case tags should be readable after opening application.<br><b>🟨 Actual:</b> Tags captured successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:54 PM</td>
+        <td>
+          <b>🔹 Liens Tab Opened</b><br><b>✅ Expected:</b> Liens tab should open successfully.<br><b>🟨 Actual:</b> Liens tab selected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:54 PM</td>
+        <td>
+          <b>🔹 Read Open Lien Rows</b><br><b>✅ Expected:</b> Open lien table rows should be visible and accessible.<br><b>🟨 Actual:</b> Lien rows fetched successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:55 PM</td>
+        <td>
+          <b>🔹 First Lien Row Opened</b><br><b>✅ Expected:</b> First lien row should open lien details modal.<br><b>🟨 Actual:</b> First lien row clicked.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:55 PM</td>
+        <td>
+          <b>🔹 Start Lien Details Reader</b><br><b>✅ Expected:</b> Lien detail modal labels and values should be read correctly for calculation.<br><b>🟨 Actual:</b> Reading modal values.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:55 PM</td>
+        <td>
+          <b>🔹 Lien Modal Visible</b><br><b>✅ Expected:</b> Popup modal should be visible before reading values.<br><b>🟨 Actual:</b> Popup modal accessed successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>⚠️ First Attempt Failed To Fetch Labels</b><br><b>✅ Expected:</b> Labels should load in first attempt.<br><b>🟨 Actual:</b> Retry executed after wait.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🔹 Modal Label/Value Count</b><br><b>Labels Count:</b> 11<br><b>Values Count:</b> 11
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>LIEN STATUS:</b> = Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>CONTRACT TEMPLATE:</b> = Standard Contract (4% Annual Fees)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>RATE OF INTEREST:</b> = 38%
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>✅ Rate Of Interest Percentage Captured</b><br><b>RATE OF INTEREST:</b> 38.0%
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>AMOUNT TO PLAINTIFF:</b> = $500.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>✅ Monetary Value Stored</b><br><b>AMOUNT TO PLAINTIFF::</b> 500.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>BUYOUT AMOUNT:</b> = --
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>✅ Monetary Value Stored</b><br><b>BUYOUT AMOUNT::</b> 0.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:57 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>INTEREST START DATE:</b> = 03/13/2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>AGREEMENT DATE:</b> = 03/11/2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>DOCUMENT PREP</b> = $45.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>✅ Monetary Value Stored</b><br><b>DOCUMENT PREP:</b> 45.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>FUNDS TRANSFER FEE</b> = $0.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>✅ Monetary Value Stored</b><br><b>FUNDS TRANSFER FEE:</b> 0.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>APPLICATION CREATED:</b> = 03/12/2026
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🧾 Modal Field Captured</b><br><b>REQUESTED AMOUNT:</b> = $500.00
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>✅ Monetary Value Stored</b><br><b>REQUESTED AMOUNT::</b> 500.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🔹 Stored Monetary Fields Summary</b><br><b>✅ Expected:</b> Required monetary values should be present in popup map.<br><b>🟨 Actual:</b> Printing stored values.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>AMOUNT TO PLAINTIFF:</b> = 500.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>BUYOUT AMOUNT:</b> = 0.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>DOCUMENT PREP</b> = 45.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>FUNDS TRANSFER FEE</b> = 0.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>REQUESTED AMOUNT:</b> = 500.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🔹 Base Calculation Inputs</b><br><b>AMOUNT TO PLAINTIFF:</b> 500.0<br><b>DOCUMENT PREP:</b> 45.0<br><b>FUNDS TRANSFER FEE:</b> 0.0<br><b>RATE OF INTEREST %:</b> 38.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🔹 Rate Of Interest Amount Calculated</b><br><b>Step 1 Formula:</b> (Amount_to_Plaintiff × Rate_of_interest_percentage) / 100<br><b>Step 1 Calculation:</b> (500.0 × 38.0) / 100<br><b>Total Interest Amount:</b> 190.0<br><br><b>Step 2 Formula:</b> Total Interest Amount / 12<br><b>Step 2 Calculation:</b> 190.0 / 12<br><b>Monthly Interest Amount:</b> 15.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>🔹 Total Paid Amount Including Fees Calculated</b><br><b>Formula:</b> (Amount_to_Plaintiff + Rate_of_interest_each_month) + Document_fee + Fund_transfer_fee<br><b>Calculation:</b> (500.0 + 15.83) + 45.0 + 0.0<br><b>Final Result:</b> 560.83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:11:58 PM</td>
+        <td>
+          <b>📌 Action:</b> Open Payoff modal and capture values BEFORE payment.<br><b>Case ID:</b> CASE ID: IN2600019
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:12:01 PM</td>
+        <td>
+          <b>🟨 Actual:</b> Stored payoff values BEFORE payment. Rows captured = <b>36</b><br><br><b>month 0 :</b> 560.83<br><b>month 1 :</b> 576.67<br><b>month 2 :</b> 592.5<br><b>month 3 :</b> 608.33<br><b>month 4 :</b> 624.17<br><b>month 5 :</b> 640.0<br><b>month 6 :</b> 655.83<br><b>month 7 :</b> 671.67<br><b>month 8 :</b> 687.5<br><b>month 9 :</b> 703.33<br><b>month 10 :</b> 719.17<br><b>month 11 :</b> 735.0<br><b>month 12 :</b> 750.83<br><b>month 13 :</b> 766.67<br><b>month 14 :</b> 782.5<br><b>month 15 :</b> 798.33<br><b>month 16 :</b> 814.17<br><b>month 17 :</b> 830.0<br><b>month 18 :</b> 845.83<br><b>month 19 :</b> 861.67<br><b>month 20 :</b> 877.5<br><b>month 21 :</b> 893.33<br><b>month 22 :</b> 909.17<br><b>month 23 :</b> 925.0<br><b>month 24 :</b> 940.83<br><b>month 25 :</b> 956.67<br><b>month 26 :</b> 972.5<br><b>month 27 :</b> 988.33<br><b>month 28 :</b> 1004.17<br><b>month 29 :</b> 1020.0<br><b>month 30 :</b> 1035.83<br><b>month 31 :</b> 1051.67<br><b>month 32 :</b> 1067.5<br><b>month 33 :</b> 1083.33<br><b>month 34 :</b> 1099.17<br><b>month 35 :</b> 1115.0<br>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:12:01 PM</td>
+        <td>
+          <b>🔹 First Month Payable Matched</b><br><b>✅ Expected:</b> Payoff table value should match calculated first month payable.<br><b>Expected Amount:</b> 560.83<br><b>Matched Amount:</b> 560.83<br><b>Source Key:</b> month 0<br><b>🟨 Actual:</b> Amount matched successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:12:02 PM</td>
         <td>
           Test passed
         </td>
@@ -166,19 +474,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 17, 2026 08:21:07 PM</h3>
+<h3>Mar 18, 2026 06:11:31 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 17, 2026 08:21:35 PM</h3>
+<h3>Mar 18, 2026 06:12:03 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -200,13 +508,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
 <small data-tooltip='0%'><b>0</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<b>0</b> skipped, <b data-tooltip='100%'>1</b> others
 </small>
 </div>
 </div>
@@ -223,10 +531,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='60%'><b>3</b> events passed</small></div>
+<div><small data-tooltip='36%'><b>18</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>2</b> others
+<b data-tooltip='%'>31</b> others
 </small>
 </div>
 </div>
@@ -242,7 +550,7 @@
 </div></div>
 <script>
 var timeline = {
-"Reading and calculating Open contracts payoff table calculation":24.096
+"Reading and calculating Open contracts payoff table calculation":25.872
 };
 </script>
 <div class="row">
@@ -285,9 +593,9 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
+passParent: 0,
 failParent: 0,
-warningParent: 0,
+warningParent: 1,
 skipParent: 0,
 childCount: 5,
 passChild: 0,
@@ -302,11 +610,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 3,
+passEvents: 18,
 failEvents: 0,
-warningEvents: 0,
+warningEvents: 1,
 skipEvents: 0,
-infoEvents: 2
+infoEvents: 30
 };
 </script>        </div>
       </div>
