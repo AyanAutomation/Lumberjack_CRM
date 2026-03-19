@@ -1,25 +1,18 @@
 package cucumber.java.stepdefinitionclasses;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.TreeMap;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.testng.annotations.Listeners;
-
 import com.aventstack.extentreports.Status;
 
 import Enterprise_Codeclouds.Project.Enterprise.Attorney_module;
 import Enterprise_Codeclouds.Project.Enterprise.Case_Appplications;
-import Enterprise_Codeclouds.Project.Enterprise.SIde_Menu_Handler;
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
@@ -30,6 +23,14 @@ import io.cucumber.java.en.Given;
 
 public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 
+	
+	double Rate_of_interest_each_month_raw_from_modal;
+	double Rate_of_interest_each_month_from_modal;
+	double Base_paid_amount_without_interest_from_modal;
+	
+	
+	
+	
 	private void bindDriver() {
 		super.d = Base_cucumber.D.get();
 		super.Target_url = Base_cucumber.Target_url;
@@ -356,7 +357,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			lien_rows = p.Open_Lien_table_contents();
 		} catch (Exception lien_row_catch) {
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
-					.withTimeout(java.time.Duration.ofSeconds(1000))
+					.withTimeout(java.time.Duration.ofSeconds(60))
 					.pollingEvery(java.time.Duration.ofMillis(800))
 					.ignoring(RuntimeException.class);
 		
@@ -396,6 +397,135 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		firstMonthPayable = Double.parseDouble(String.format("%.2f", firstMonthPayable));
 
 		super.Pay_off_lien_list_Before_payment(Case_id);
+		
+		int successive_month_pass_count = 0;
+		int successive_month_fail_count = 0;
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Successive Month Payable Validation Started</b><br>"
+				+ "<b>✅ Expected:</b> Each next month payable should increase exactly as per rounded cumulative monthly-interest progression.<br>"
+				+ "<b>Base Amount Without Interest:</b> " + Base_paid_amount_without_interest_from_modal + "<br>"
+				+ "<b>Raw Monthly Interest:</b> " + Double.parseDouble(String.format("%.6f", Rate_of_interest_each_month_raw_from_modal)) + "<br>"
+				+ "<b>Rounded Monthly Interest (Display):</b> " + Rate_of_interest_each_month_from_modal + "<br>"
+				+ "<b>Total Months In Payoff Table:</b> " + PayoffTable_values_Before_Payment.size()
+		);
+
+		System.out.println("==================================================");
+		System.out.println("SUCCESSIVE MONTH PAYABLE VALIDATION STARTED");
+		System.out.println("Base Amount Without Interest : " + Base_paid_amount_without_interest_from_modal);
+		System.out.println("Raw Monthly Interest         : " + Double.parseDouble(String.format("%.6f", Rate_of_interest_each_month_raw_from_modal)));
+		System.out.println("Rounded Monthly Interest     : " + Rate_of_interest_each_month_from_modal);
+		System.out.println("Total Months In Table        : " + PayoffTable_values_Before_Payment.size());
+		System.out.println("==================================================");
+		System.out.println();
+
+		for (int month_index = 1; month_index < PayoffTable_values_Before_Payment.size(); month_index++) {
+
+			double previous_month_actual = PayoffTable_values_Before_Payment.get("month " + (month_index - 1));
+			previous_month_actual = Double.parseDouble(String.format("%.2f", previous_month_actual));
+
+			double current_month_actual = PayoffTable_values_Before_Payment.get("month " + month_index);
+			current_month_actual = Double.parseDouble(String.format("%.2f", current_month_actual));
+
+			double previous_month_expected =
+					Base_paid_amount_without_interest_from_modal + (Rate_of_interest_each_month_raw_from_modal * month_index);
+			previous_month_expected = Double.parseDouble(String.format("%.2f", previous_month_expected));
+
+			double current_month_expected =
+					Base_paid_amount_without_interest_from_modal + (Rate_of_interest_each_month_raw_from_modal * (month_index + 1));
+			current_month_expected = Double.parseDouble(String.format("%.2f", current_month_expected));
+
+			double actual_increase = current_month_actual - previous_month_actual;
+			actual_increase = Double.parseDouble(String.format("%.2f", actual_increase));
+
+			double expected_increase = current_month_expected - previous_month_expected;
+			expected_increase = Double.parseDouble(String.format("%.2f", expected_increase));
+
+			if (Math.abs(current_month_actual - current_month_expected) < 0.001
+					&& Math.abs(actual_increase - expected_increase) < 0.001) {
+
+				System.out.println("==================================================");
+				System.out.println("SUCCESSIVE MONTH PAYABLE MATCHED");
+				System.out.println("Case ID                : " + Case_id);
+				System.out.println("Previous Month         : month " + (month_index - 1));
+				System.out.println("Current Month          : month " + month_index);
+				System.out.println("Previous Actual Value  : " + previous_month_actual);
+				System.out.println("Current Actual Value   : " + current_month_actual);
+				System.out.println("Previous Expected Value: " + previous_month_expected);
+				System.out.println("Current Expected Value : " + current_month_expected);
+				System.out.println("Actual Increase        : " + actual_increase);
+				System.out.println("Expected Increase      : " + expected_increase);
+				System.out.println("RESULT                 : PASS ✅");
+				System.out.println("==================================================");
+				System.out.println();
+
+				Report_Listen.log_print_in_report().log(Status.PASS,
+						"<b>🔹 Successive Month Payable Matched</b><br>"
+						+ "<b>Case ID:</b> " + Case_id + "<br>"
+						+ "<b>Previous Month:</b> month " + (month_index - 1) + "<br>"
+						+ "<b>Current Month:</b> month " + month_index + "<br>"
+						+ "<b>Previous Actual Value:</b> " + previous_month_actual + "<br>"
+						+ "<b>Current Actual Value:</b> " + current_month_actual + "<br>"
+						+ "<b>Previous Expected Value:</b> " + previous_month_expected + "<br>"
+						+ "<b>Current Expected Value:</b> " + current_month_expected + "<br>"
+						+ "<b>Actual Increase:</b> " + actual_increase + "<br>"
+						+ "<b>Expected Increase:</b> " + expected_increase + "<br>"
+						+ "<b>🟨 Actual:</b> Successive month payable progression matched correctly."
+				);
+
+				successive_month_pass_count++;
+			}
+			else {
+
+				System.out.println("==================================================");
+				System.out.println("SUCCESSIVE MONTH PAYABLE NOT MATCHED");
+				System.out.println("Case ID                : " + Case_id);
+				System.out.println("Previous Month         : month " + (month_index - 1));
+				System.out.println("Current Month          : month " + month_index);
+				System.out.println("Previous Actual Value  : " + previous_month_actual);
+				System.out.println("Current Actual Value   : " + current_month_actual);
+				System.out.println("Previous Expected Value: " + previous_month_expected);
+				System.out.println("Current Expected Value : " + current_month_expected);
+				System.out.println("Actual Increase        : " + actual_increase);
+				System.out.println("Expected Increase      : " + expected_increase);
+				System.out.println("RESULT                 : FAIL ❌");
+				System.out.println("==================================================");
+				System.out.println();
+
+				Report_Listen.log_print_in_report().log(Status.FAIL,
+						"<b>🔹 Successive Month Payable Not Matched</b><br>"
+						+ "<b>Case ID:</b> " + Case_id + "<br>"
+						+ "<b>Previous Month:</b> month " + (month_index - 1) + "<br>"
+						+ "<b>Current Month:</b> month " + month_index + "<br>"
+						+ "<b>Previous Actual Value:</b> " + previous_month_actual + "<br>"
+						+ "<b>Current Actual Value:</b> " + current_month_actual + "<br>"
+						+ "<b>Previous Expected Value:</b> " + previous_month_expected + "<br>"
+						+ "<b>Current Expected Value:</b> " + current_month_expected + "<br>"
+						+ "<b>Actual Increase:</b> " + actual_increase + "<br>"
+						+ "<b>Expected Increase:</b> " + expected_increase + "<br>"
+						+ "<b>🟨 Actual:</b> Successive month payable progression did not match."
+				);
+
+				successive_month_fail_count++;
+			}
+		}
+
+		Report_Listen.log_print_in_report().log(Status.INFO,
+				"<b>🔹 Successive Month Payable Validation Summary</b><br>"
+				+ "<b>Case ID:</b> " + Case_id + "<br>"
+				+ "<b>Total Comparisons:</b> " + (PayoffTable_values_Before_Payment.size() - 1) + "<br>"
+				+ "<b>Matched Comparisons:</b> " + successive_month_pass_count + "<br>"
+				+ "<b>Failed Comparisons:</b> " + successive_month_fail_count
+		);
+
+		System.out.println("==================================================");
+		System.out.println("SUCCESSIVE MONTH PAYABLE VALIDATION SUMMARY");
+		System.out.println("Case ID            : " + Case_id);
+		System.out.println("Total Comparisons  : " + (PayoffTable_values_Before_Payment.size() - 1));
+		System.out.println("Matched Comparisons: " + successive_month_pass_count);
+		System.out.println("Failed Comparisons : " + successive_month_fail_count);
+		System.out.println("==================================================");
+		System.out.println();
 
 		boolean matchFound = false;
 
@@ -493,7 +623,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		System.out.println("==================================================");
 		System.out.println();
 
-		WebElement Modal = p.popup_modal();
+		p.popup_modal();
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Lien Modal Visible</b><br>"
@@ -522,13 +652,13 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			});
 			System.out.println("⚠️ First attempt FAILED to fetch labels");
 			System.out.println();
-			System.out.println("Retry Plan: Wait 800ms and retry once");
+			System.out.println("Retry Plan: FluentWait applied and labels fetched on retry");
 			System.out.println();
 
 			Report_Listen.log_print_in_report().log(Status.WARNING,
 					"<b>⚠️ First Attempt Failed To Fetch Labels</b><br>"
 					+ "<b>✅ Expected:</b> Labels should load in first attempt.<br>"
-					+ "<b>🟨 Actual:</b> Retry executed after wait."
+					+ "<b>🟨 Actual:</b> FluentWait retry executed and labels fetched successfully."
 			);
 		}
 
@@ -632,15 +762,22 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		System.out.println("==================================================");
 		System.out.println();
 
-		// percentage amount of Amount_to_Plaintiff
-		Rate_of_interest_amount = (Amount_to_Plaintiff * Rate_of_interest_percentage) / 100;
+
+
 		// total percentage amount of Amount_to_Plaintiff
 		Rate_of_interest_amount = (Amount_to_Plaintiff * Rate_of_interest_percentage) / 100;
 		Rate_of_interest_amount = Double.parseDouble(String.format("%.2f", Rate_of_interest_amount));
 
-		// monthly interest amount
-		Rate_of_interest_each_month = Rate_of_interest_amount / 12;
-		Rate_of_interest_each_month = Double.parseDouble(String.format("%.2f", Rate_of_interest_each_month));
+		// monthly interest amount (raw value kept for precise month progression validation)
+		Rate_of_interest_each_month_raw_from_modal = Rate_of_interest_amount / 12;
+
+		// rounded monthly interest amount for display / basic logs
+		Rate_of_interest_each_month = Double.parseDouble(String.format("%.2f", Rate_of_interest_each_month_raw_from_modal));
+		Rate_of_interest_each_month_from_modal = Rate_of_interest_each_month;
+
+		// base amount excluding monthly interest
+		Base_paid_amount_without_interest_from_modal =
+				Amount_to_Plaintiff + Document_fee_Amount_from_modal + Fund_transfer_fee_Amount_from_modal;
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Rate Of Interest Amount Calculated</b><br>"
