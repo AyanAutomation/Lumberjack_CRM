@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -37,9 +38,11 @@ public class Base {
         
         D.set(local_d);}
 	if(Browser.equalsIgnoreCase("Firefox")){
-		
+		 FirefoxOptions options = new FirefoxOptions();
 		 WebDriverManager.firefoxdriver().setup();
-		 local_d = new FirefoxDriver();
+		 if(Browser.contains("headless")) {
+				options.addArguments("headless");}
+		 local_d = new FirefoxDriver(options);
          
          D.set(local_d);}
 	d= D.get();

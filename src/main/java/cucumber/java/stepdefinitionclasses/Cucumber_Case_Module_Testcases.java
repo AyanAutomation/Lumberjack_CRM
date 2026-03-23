@@ -11,13 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
 import com.aventstack.extentreports.Status;
 
-import Enterprise_Codeclouds.Project.Enterprise.Attorney_module;
 import Enterprise_Codeclouds.Project.Enterprise.Case_Appplications;
 import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
 import Negative_Testcases.Login_negative_testcases;
-import Repeatative_codes.Repeat;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 
@@ -177,9 +175,6 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 
 		Application_Locaters p = new Application_Locaters(d);
 		Login_Locaters lg = new Login_Locaters(d);
-		Repeat rp = new Repeat(d);
-		Attorney_module at = new Attorney_module();
-
 		List<WebElement> lien_rows = null;
 
 		Report_Listen.log_print_in_report().log(Status.INFO,
