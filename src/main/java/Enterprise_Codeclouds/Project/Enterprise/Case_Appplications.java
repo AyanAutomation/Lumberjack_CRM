@@ -5706,6 +5706,7 @@ public class Case_Appplications extends Header_Manager{
 	   public void Application_Filter_Option_Selector(String Option,WebDriver d){
 		   
 		   Application_Locaters p = new Application_Locaters(d);
+		   Repeat rp = new Repeat(d);
 		   
 		  p.plaintiff_dropdown_list();
 		  List<WebElement> Options = p.Plaintiff_options();
@@ -5714,7 +5715,14 @@ public class Case_Appplications extends Header_Manager{
 			  if(option.getText().trim().equalsIgnoreCase(Option)){
 				  
 				  option.click();
-				  break;}}}
+				 break;}}
+		  try {
+		  WebElement Loader=p.Loader();
+		  rp.wait_for_invisibility(Loader);}
+		  catch(Exception lder){
+			  System.out.println("Loader not visible thereby ignoring and moving on");
+		  }
+	   }
 	
 	
 	

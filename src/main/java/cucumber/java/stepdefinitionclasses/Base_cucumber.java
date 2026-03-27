@@ -60,10 +60,11 @@ public class Base_cucumber {
 	@After
 	public void tearDown() {
 
-		WebDriver d = D.get();
+		WebDriver d = D.get(); 
 
 		// Close current scenario browser
-		d.quit();
+		
+	     d.quit();  
 
 		// Remove driver from ThreadLocal
 		D.remove();

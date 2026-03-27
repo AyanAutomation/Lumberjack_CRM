@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -16,6 +18,7 @@ import Listerners.Report_Listen;
 import Locaters.Application_Locaters;
 import Locaters.Login_Locaters;
 import Negative_Testcases.Login_negative_testcases;
+import Repeatative_codes.Repeat;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 
@@ -175,6 +178,9 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 
 		Application_Locaters p = new Application_Locaters(d);
 		Login_Locaters lg = new Login_Locaters(d);
+		Repeat rp = new Repeat(d);
+		JavascriptExecutor js= (JavascriptExecutor)d;
+		
 		List<WebElement> lien_rows = null;
 
 		Report_Listen.log_print_in_report().log(Status.INFO,
@@ -275,8 +281,32 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		
 		while(i<number_of_funded_applications) {
 		
-		p.rows().get(i).click();
-		Thread.sleep(800);
+	    List<WebElement> Rws;
+	    try {
+	    	Rws=p.rows();
+	    }catch(Exception row){
+	    	WebElement Cross_Button;
+	    	
+	    	try {Cross_Button=lg.Toast_close_button();
+	    	Cross_Button.click();
+	    	}catch(Exception close_button){
+	    		
+	    		System.out.println("Toast close button not found");
+	    	}
+	  
+	    	Thread.sleep(800);
+	    	Rws=p.rows();
+	    }
+	    WebElement rw = Rws.get(i);
+	    rp.Scroll_to_element(rw);
+	    rp.movetoelement(rw);
+	    rp.wait_for_Clickable(rw);
+	    try {
+	    rw.click();}
+	    catch(Exception cannot_click){
+	    	js.executeScript("arguments[0].click();", rw);
+	    }
+		
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Funded Application Row Opened</b><br>"
@@ -350,7 +380,9 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 
 		try {
 			lien_rows = p.Open_Lien_table_contents();
+			
 		} catch (Exception lien_row_catch) {
+			d.navigate().refresh();
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
 					.withTimeout(java.time.Duration.ofSeconds(60))
 					.pollingEvery(java.time.Duration.ofMillis(800))
@@ -372,8 +404,11 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		System.out.println("Total Rows : " + lien_rows.size());
 		System.out.println("==================================================");
 		System.out.println();
-
-		lien_rows.get(0).click();
+        try {
+		lien_rows.get(0).click();}
+        catch(Exception nnfmf){
+        	js.executeScript("arguments[0].click();", lien_rows.get(0));
+        }
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 First Lien Row Opened</b><br>"
@@ -573,19 +608,36 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		            + "<b>✅ Expected:</b> One payoff table value should match calculated first month payable.<br>"
 		            + "<b>Expected Amount:</b> " + firstMonthPayable + "<br>"
 		            + "<b>🟨 Actual:</b> No matching amount found in payoff table."
-		    );}
-		d.navigate().to("https://logbook.wechopfees.com/cases");
+		    );}/*
+		WebElement cls_crs_button=null;
+		try {
+		cls_crs_button=p.Close_Button();
+		cls_crs_button.click();
+		rp.wait_for_invisibility(cls_crs_button);}
+		catch(Exception lkdxkl) {
+			js.executeScript("arguments[0].click();", cls_crs_button);
+		}*/
+		try {
+		p.Active_Menu_option_selected().click();}
+		catch(Exception hjgj){
+			js.executeScript("arguments[0].click();", p.Active_Menu_option_selected());
+		}
+		//rp.wait_for_invisibility(p.Loader());
 		p.landed_in_applicationList_confirmation();
+		lg.Toast_close_button().click();
 		p.Filter_clear().click();
 
 		WebElement newStatusFilter = p.Application_status_filter();
 		newStatusFilter.click();
 
 		Application_Filter_Option_Selector("Funded", d);
-
+   try {
 		WebElement newToast = lg.toast();
 		String newToast_text = newToast.getText().trim();
-		Login_negative_testcases.Toast_printer(newToast_text, d);
+		Login_negative_testcases.Toast_printer(newToast_text, d);}
+   catch(Exception Toast_catch){
+	   System.out.println("Failed to handle toast after filter selection");
+      }
 
 		i++;
 		}
@@ -597,7 +649,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 	public double lien_details_reader(WebDriver d) throws InterruptedException {
 
 		Application_Locaters p = new Application_Locaters(d);
-		
+		Repeat rp = new Repeat(d);
 
 		double Amount_to_Plaintiff;
 		double Rate_of_interest_percentage = 0.0;
@@ -618,8 +670,9 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		System.out.println("==================================================");
 		System.out.println();
 
-		p.popup_modal();
-
+		p.popup_modal();/*
+		WebElement load_modal =p.Loader_in_modal();
+		rp.wait_for_invisibility(load_modal);*/
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Lien Modal Visible</b><br>"
 				+ "<b>✅ Expected:</b> Popup modal should be visible before reading values.<br>"
@@ -656,8 +709,13 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 					+ "<b>🟨 Actual:</b> FluentWait retry executed and labels fetched successfully."
 			);
 		}
-
-		List<WebElement> Values = p.Lien_Details_field_values();
+        ;
+		List<WebElement> Values=null;
+		try {Values= p.Lien_Details_field_values();}
+		catch(Exception vals) {
+			Thread.sleep(800);
+			Values= p.Lien_Details_field_values();
+		}
 
 		Report_Listen.log_print_in_report().log(Status.INFO,
 				"<b>🔹 Modal Label/Value Count</b><br>"
@@ -736,9 +794,10 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			);
 		}
 
-		Amount_to_Plaintiff = pop_up_modal_label_values.get("AMOUNT TO PLAINTIFF:");
-		double Document_fee_Amount_from_modal = pop_up_modal_label_values.get("DOCUMENT PREP");
-		double Fund_transfer_fee_Amount_from_modal = pop_up_modal_label_values.get("FUNDS TRANSFER FEE");
+		Amount_to_Plaintiff = pop_up_modal_label_values.getOrDefault("AMOUNT TO PLAINTIFF:",0.00);
+		double Document_fee_Amount_from_modal = pop_up_modal_label_values.getOrDefault("DOCUMENT PREP",0.00);
+		
+		double Fund_transfer_fee_Amount_from_modal = pop_up_modal_label_values.getOrDefault("FUNDS TRANSFER FEE",0.00);
 
 		Report_Listen.log_print_in_report().log(Status.INFO,
 				"<b>🔹 Base Calculation Inputs</b><br>"

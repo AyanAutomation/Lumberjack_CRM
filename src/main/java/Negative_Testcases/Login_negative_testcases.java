@@ -138,7 +138,10 @@ public class Login_negative_testcases extends Base{
 		        System.out.println("✅ Toast: " + Toast);
 		        System.out.println();
 		        Toast_close_Button=l.Toast_close_button();
-		        Toast_close_Button.click();
+		       try { Toast_close_Button.click();}
+		       catch(Exception m){
+		    	   System.out.println(Toast_close_Button+" Toast close button cannot be clicked");
+		       }
 		        
 		    } else {
 		        Report_Listen.log_print_in_report().log(Status.FAIL, "❌ Toast: " + Toast);

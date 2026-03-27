@@ -231,13 +231,13 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//*[@class='ant-descriptions-view']//*[contains(@class,'ant-descriptions-item-content')]")
 	private List<WebElement> Case_details_values; 
 	@FindBy(xpath="//*[@aria-label='edit']/../../../../../..//span[contains(@style,'min-width: 70px')]")
-	private List<WebElement> Application_Amount_values;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private List<WebElement> Application_Amount_values;
+	@FindBy(xpath="//div[contains(@class,'ant-table-wrapper')]//div[contains(@class,'ant-spin') and contains(@class,'ant-spin-spinning')]")
+	private WebElement Loader;
+	@FindBy(xpath="//*[contains(@class,'ant-menu-item-selected') and contains(@data-menu-id,'-/cases')]")
+	private WebElement  Active_Menu_option_selected;
+	@FindBy(xpath="//div[@role='dialog' and contains(@class,'ant-modal')]//div[contains(@class,'ant-modal-body')]//div[contains(@class,'ant-spin-spinning') and @aria-busy='true']")
+	private WebElement Loader_in_modal;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -846,16 +846,16 @@ public class Application_Locaters extends Login_Locaters{
 	return Case_details_values;}   
 	public List<WebElement> Application_Amount_values(){
 	wait_for_theElement(Application_Amount_values);
-	return Application_Amount_values;} /*  
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Application_Amount_values;}   
+	public WebElement Loader(){
+	wait_for_theElement(Loader);
+	return Loader;}   
+	public WebElement Active_Menu_option_selected(){
+	wait_for_theElement(Active_Menu_option_selected);
+	return Active_Menu_option_selected;}   
+	public WebElement Loader_in_modal(){
+	wait_for_theElement(Loader_in_modal);
+	return Loader_in_modal;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   
