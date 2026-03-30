@@ -64,7 +64,7 @@ public class Base_cucumber {
 
 		// Close current scenario browser
 		
-	     d.quit();  
+	    // d.quit();  
 
 		// Remove driver from ThreadLocal
 		D.remove();

@@ -237,11 +237,11 @@ public class Application_Locaters extends Login_Locaters{
 	@FindBy(xpath="//*[contains(@class,'ant-menu-item-selected') and contains(@data-menu-id,'-/cases')]")
 	private WebElement  Active_Menu_option_selected;
 	@FindBy(xpath="//div[@role='dialog' and contains(@class,'ant-modal')]//div[contains(@class,'ant-modal-body')]//div[contains(@class,'ant-spin-spinning') and @aria-busy='true']")
-	private WebElement Loader_in_modal;/*
-	@FindBy(xpath="")
-	private WebElement  ;
-	@FindBy(xpath="")
-	private WebElement  ;
+	private WebElement Loader_in_modal;
+	@FindBy(xpath="//*[contains(@class,'ant-pagination ant-pagination-end')]")
+	private WebElement Page_bottom_footer; 
+	@FindBy(xpath="//*[@data-node-key='CLOSED']")
+	private WebElement Closed_Lien_Tab_Accessor;/*
 	@FindBy(xpath="")
 	private WebElement  ;
 	@FindBy(xpath="")
@@ -855,22 +855,25 @@ public class Application_Locaters extends Login_Locaters{
 	return Active_Menu_option_selected;}   
 	public WebElement Loader_in_modal(){
 	wait_for_theElement(Loader_in_modal);
-	return Loader_in_modal;}   /*
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
-	public WebElement (){
-	wait_for_theElement();
-	return ;}   
+	return Loader_in_modal;}   
+	public WebElement Page_bottom_footer(){
+	wait_for_theElement(Page_bottom_footer);
+	return Page_bottom_footer;}   
+	public WebElement Pagination_option_box(){
+	WebElement Pagination_option_box = Page_bottom_footer().findElement(By.xpath(".//li[@class='ant-pagination-options']"));	
+	wait_for_theElement(Pagination_option_box);
+	return Pagination_option_box;}   
+	public WebElement pagination_list(){
+	WebElement pagination_list = Page_bottom_footer().findElement(By.xpath(".//div[@class='rc-virtual-list-holder-inner']"));
+	wait_for_theElement(pagination_list);
+	return pagination_list;}   
+	public List<WebElement> pagination_list_Options(){
+	List<WebElement> pagination_list_Options = pagination_list().findElements(By.xpath(".//*[@role='option']"));
+	wait_for_theElement(pagination_list_Options);
+	return pagination_list_Options;}   
+	public WebElement Closed_Lien_Tab_Accessor(){
+	wait_for_theElement(Closed_Lien_Tab_Accessor);
+	return Closed_Lien_Tab_Accessor;}   /*
 	public WebElement (){
 	wait_for_theElement();
 	return ;}   

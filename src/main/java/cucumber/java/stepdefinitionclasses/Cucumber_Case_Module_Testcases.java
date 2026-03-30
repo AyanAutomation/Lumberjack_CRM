@@ -199,6 +199,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		SideMenu_Handler_Cucumber.Side_menu_option_clicker_by_cucumber("Applications", d, "N/A");
 		Thread.sleep(800);
 		p.landed_in_applicationList_confirmation();
+		
 
 		Report_Listen.log_print_in_report().log(Status.PASS,
 				"<b>🔹 Applications Page Opened</b><br>"
@@ -274,7 +275,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		System.out.println("==================================================");
 		System.out.println();
 
-		
+		pagination_changer("50 / page");
 		
 		int number_of_funded_applications = p.rows().size();
 		int i=0;
@@ -382,6 +383,7 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 			lien_rows = p.Open_Lien_table_contents();
 			
 		} catch (Exception lien_row_catch) {
+			try{
 			d.navigate().refresh();
 			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
 					.withTimeout(java.time.Duration.ofSeconds(60))
@@ -390,7 +392,12 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		
 			 lien_rows =wait.until(driver -> {List<WebElement> fetched_Open_Lien_table_content = p.Open_Lien_table_contents();
 				return fetched_Open_Lien_table_content.size() > 0 ? fetched_Open_Lien_table_content : null;
-			});
+			});}catch(Exception no_open_lien_found){
+				
+				p.Closed_Lien_Tab_Accessor().click();
+				lien_rows = p.Open_Lien_table_contents();
+				
+			}
 		}
 
 		Report_Listen.log_print_in_report().log(Status.INFO,
@@ -624,7 +631,9 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 		}
 		//rp.wait_for_invisibility(p.Loader());
 		p.landed_in_applicationList_confirmation();
-		lg.Toast_close_button().click();
+		try{lg.Toast_close_button().click();}catch(Exception cssjfhs){
+			System.out.println("failed to click toast close button post landing in Application List");
+		}Thread.sleep(800);
 		p.Filter_clear().click();
 
 		WebElement newStatusFilter = p.Application_status_filter();
@@ -650,7 +659,12 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 
 		Application_Locaters p = new Application_Locaters(d);
 		Repeat rp = new Repeat(d);
-
+		JavascriptExecutor js= (JavascriptExecutor)d;
+		
+		List<WebElement> lien_rows = null;
+		
+		
+		
 		double Amount_to_Plaintiff;
 		double Rate_of_interest_percentage = 0.0;
 		double Rate_of_interest_amount;
@@ -708,13 +722,42 @@ public class Cucumber_Case_Module_Testcases extends Case_Appplications {
 					+ "<b>✅ Expected:</b> Labels should load in first attempt.<br>"
 					+ "<b>🟨 Actual:</b> FluentWait retry executed and labels fetched successfully."
 			);
-		}
-        ;
+		};
+		
 		List<WebElement> Values=null;
 		try {Values= p.Lien_Details_field_values();}
 		catch(Exception vals) {
 			Thread.sleep(800);
-			Values= p.Lien_Details_field_values();
+			p.Close_Button().click();
+			Thread.sleep(800);
+			try {
+				lien_rows = p.Open_Lien_table_contents();
+				
+			} catch (Exception lien_row_catch) {
+				try{
+				d.navigate().refresh();
+				FluentWait<WebDriver> wait = new FluentWait<WebDriver>(d)
+						.withTimeout(java.time.Duration.ofSeconds(60))
+						.pollingEvery(java.time.Duration.ofMillis(800))
+						.ignoring(RuntimeException.class);
+			
+				 lien_rows =wait.until(driver -> {List<WebElement> fetched_Open_Lien_table_content = p.Open_Lien_table_contents();
+					return fetched_Open_Lien_table_content.size() > 0 ? fetched_Open_Lien_table_content : null;
+				});}catch(Exception no_open_lien_found){
+					
+					p.Closed_Lien_Tab_Accessor().click();
+					lien_rows = p.Open_Lien_table_contents();
+					
+				}
+			}try {
+				lien_rows.get(0).click();}
+	        catch(Exception nnfmf){
+	        	js.executeScript("arguments[0].click();", lien_rows.get(0));
+	        }
+			p.popup_modal();
+			Thread.sleep(800);
+			List<WebElement> Refetched_values= p.Lien_Details_field_values();
+			Values= Refetched_values;
 		}
 
 		Report_Listen.log_print_in_report().log(Status.INFO,

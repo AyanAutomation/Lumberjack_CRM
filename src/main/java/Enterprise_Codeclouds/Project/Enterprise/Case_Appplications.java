@@ -75,6 +75,38 @@ public class Case_Appplications extends Header_Manager{
 	
 	
 	
+	
+	public void pagination_changer(String pg_options){
+		
+		Application_Locaters p = new Application_Locaters(d);
+		Login_Locaters lg = new Login_Locaters(d);
+		Repeat rp = new Repeat(d);
+		
+		WebElement footer = p.Page_bottom_footer();
+		rp.Scroll_to_element(footer);
+		WebElement pg_box = p.Pagination_option_box();
+		pg_box.click();
+		p.pagination_list();
+		List<WebElement> opts =p.pagination_list_Options();
+		for(WebElement opt:opts){
+			
+			String opt_text= opt.getText().trim();
+			if(opt_text.contains(pg_options)){
+				opt.click();
+				break;}}
+		 try {
+				WebElement newToast = lg.toast();
+				String newToast_text = newToast.getText().trim();
+				Login_negative_testcases.Toast_printer(newToast_text, d);}
+		   catch(Exception Toast_catch){
+			   System.out.println("Failed to handle toast after filter selection");
+		      }
+		rp.Scroll_to_element(p.Application_page_top_section());
+		
+		
+	}
+	
+	
 	public void Email_sender(
 	        TreeMap<String, String> Case_Data,
 	        TreeMap<String, String> Plaintiff,
